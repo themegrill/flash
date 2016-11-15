@@ -239,6 +239,11 @@ function flash_fonts_url() {
 endif;
 
 /**
+ * Load TGM Activation file.
+ */
+require get_template_directory() . '/inc/class-tgm-plugin-activation.php';
+
+/**
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
