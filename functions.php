@@ -278,3 +278,10 @@ require get_template_directory() . '/inc/woocommerce.php';
  * Load SiteOrigin Panels compatibility file.
  */
 require get_template_directory() . '/inc/siteorigin-panels.php';
+
+/**
+ * Load Demo Importer Configs.
+ */
+if ( class_exists( 'TG_Demo_Importer' ) ) {
+	require get_template_directory() . '/inc/demo-config.php';
+}

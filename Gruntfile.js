@@ -104,6 +104,25 @@ module.exports = function( grunt ){
 			}
 		},
 
+		// Add Textdomain.
+		addtextdomain: {
+			options: {
+				textdomain: 'flash',
+				updateDomains: ['demo-importer']
+			},
+			target: {
+				files: {
+					src: [
+						'**/*.php',
+						'!am/**',
+						'!node_modules/**',
+						'!inc/demo-importer/includes/wordpress-importer/**',
+						'!library/**'
+					]
+				}
+			}
+		},
+
 		// Check textdomain errors.
 		checktextdomain: {
 			options: {
