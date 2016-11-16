@@ -149,7 +149,8 @@ module.exports = function( grunt ){
 					'!Gruntfile.js',
 					'!package.json',
 					'!node_modules/**',
-					'!sass/**'
+					'!sass/**',
+					'README.md'
 				],
 				dest: 'flash',
 				expand: true
