@@ -73,5 +73,8 @@ Unless otherwise specified, all the theme files, scripts and images including th
 
 == Changelog ==
 
+= 1.0.1 - 2016-11-16 =
+* Adds TGM Activation File to recommend Flash Toolkit and SiteOrigin Pagebuilder
+
 = 1.0.0 - 2016-10-27 =
 * Initial Release
