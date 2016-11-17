@@ -431,25 +431,6 @@ function flash_customize_register( $wp_customize ) {
 		)
 	);
 
-	// Page Header Option
-	$wp_customize->add_setting(
-		'flash_pageheader',
-		array(
-			'default'           => '1',
-			'sanitize_callback' => 'flash_sanitize_checkbox',
-		)
-	);
-
-	$wp_customize->add_control(
-		'flash_pageheader',
-		array(
-			'type'        => 'checkbox',
-			'label'       => esc_html__( 'Enable Pageheader', 'flash' ),
-			'section'     => 'flash_page_header_options',
-			'description' => esc_html__('Check the box to enable page header.', 'flash'),
-		)
-	);
-
 	// Breadcrumbs Option
 	$wp_customize->add_setting(
 		'flash_remove_breadcrumbs',
@@ -466,7 +447,6 @@ function flash_customize_register( $wp_customize ) {
 			'label'           => esc_html__( 'Remove breadcrumbs from page header', 'flash' ),
 			'section'         => 'flash_page_header_options',
 			'description'     => esc_html__('Check the box to remove breadcrumbs from page header.', 'flash'),
-			'active_callback' => 'flash_pageheader_active_filter'
 		)
 	);
 
@@ -487,7 +467,6 @@ function flash_customize_register( $wp_customize ) {
 				'label'           => esc_html__( 'Pageheader background' , 'flash' ),
 				'priority'        => 50,
 				'section'         => 'flash_page_header_options',
-				'active_callback' => 'flash_pageheader_active_filter'
 			)
 		)
 	);
