@@ -131,12 +131,14 @@ if ( get_theme_mod( 'flash_disable_preloader', '' ) != 1 ) : ?>
 	</a>
 	<?php endif; // End header image check. ?>
 
+	<?php if( !is_front_page() ) : ?>
 	<nav id="flash-breadcrumbs" class="breadcrumb-trail breadcrumbs">
 		<div class="tg-container">
 			<?php flash_page_title(); ?>
 			<?php flash_breadcrumbs(); ?>
 		</div>
 	</nav>
+	<?php endif; ?>
 
 	<div id="content" class="site-content">
 		<div class="tg-container">
