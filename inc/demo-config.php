@@ -25,6 +25,7 @@ function flash_demo_importer_config( $demo_config ) {
 		'flash-default' => array(
 			'name'         => __( 'Flash Default', 'flash' ),
 			'demo_url'     => 'http://demo.themegrill.com/flash/',
+			'demo_pack'    => true,
 			'core_options' => array(
 				'blogname'       => 'Flash',
 				'page_on_front'  => 'Home',
@@ -32,36 +33,36 @@ function flash_demo_importer_config( $demo_config ) {
 			),
 			'siteorigin_panels_data_update' => array(
 				'homepage' => array(
-				   'post_title'  => 'Home',
-				   'data_update' => array(
+					'post_title'  => 'Home',
+					'data_update' => array(
 
-					/**
-					 * Dropdown Categories - Handles widgets Category ID.
-					 *
-					 * A. Core Post Category:
-					 *    1. themegrill_flash_portfolio
-					 *    2. themegrill_flash_blog
-					 *
-					 * Note: Supported Taxonomy:
-					 *    A. Core Post Category - category
-					 */
-					'dropdown_categories' => array(
-						'category' => array (
-							'FT_Widget_Blog' => array(
-								14 => array(
-									'category' => 'Blog'
-								)
+						/**
+						 * Dropdown Categories - Handles widgets Category ID.
+						 *
+						 * A. Core Post Category:
+						 *    1. themegrill_flash_portfolio
+						 *    2. themegrill_flash_blog
+						 *
+						 * Note: Supported Taxonomy:
+						 *    A. Core Post Category - category
+						 */
+						'dropdown_categories' => array(
+							'category' => array (
+								'FT_Widget_Blog' => array(
+									14 => array(
+										'category' => 'Blog'
+									)
+								),
 							),
-						),
-						'portfolio_cat' => array(
-							'FT_Widget_Portfolio' => array(
-								4 => array(
-									'categories' => 'portfolio'
-								)
+							'portfolio_cat' => array(
+								'FT_Widget_Portfolio' => array(
+									4 => array(
+										'categories' => 'portfolio'
+									)
+								),
 							),
-						),
-					  )
-				   )
+						)
+					)
 				)
 			),
 			'customizer_data_update' => array(
@@ -92,6 +93,7 @@ function flash_demo_importer_config( $demo_config ) {
 		'flash-corporate' => array(
 			'name'         => __( 'Flash Corporate', 'flash' ),
 			'demo_url'     => 'http://demo.themegrill.com/flash-corporate/',
+			'demo_pack'    => true,
 			'core_options' => array(
 				'blogname'       => 'Flash Corporate',
 				'page_on_front'  => 'Home',
@@ -99,36 +101,36 @@ function flash_demo_importer_config( $demo_config ) {
 			),
 			'siteorigin_panels_data_update' => array(
 				'homepage' => array(
-				   'post_title'  => 'Home',
-				   'data_update' => array(
+					'post_title'  => 'Home',
+					'data_update' => array(
 
-					/**
-					 * Dropdown Categories - Handles widgets Category ID.
-					 *
-					 * A. Core Post Category:
-					 *    1. themegrill_flash_portfolio
-					 *    2. themegrill_flash_blog
-					 *
-					 * Note: Supported Taxonomy:
-					 *    A. Core Post Category - category
-					 */
-					'dropdown_categories' => array(
-						'category' => array (
-							'FT_Widget_Blog' => array(
-								6 => array(
-									'category' => 'building'
-								)
+						/**
+						 * Dropdown Categories - Handles widgets Category ID.
+						 *
+						 * A. Core Post Category:
+						 *    1. themegrill_flash_portfolio
+						 *    2. themegrill_flash_blog
+						 *
+						 * Note: Supported Taxonomy:
+						 *    A. Core Post Category - category
+						 */
+						'dropdown_categories' => array(
+							'category' => array (
+								'FT_Widget_Blog' => array(
+									6 => array(
+										'category' => 'building'
+									)
+								),
 							),
-						),
-						'portfolio_cat' => array(
-							'FT_Widget_Portfolio' => array(
-								4 => array(
-									'categories' => 'portfolio'
-								)
+							'portfolio_cat' => array(
+								'FT_Widget_Portfolio' => array(
+									4 => array(
+										'categories' => 'portfolio'
+									)
+								),
 							),
-						),
-					  )
-				   )
+						)
+					)
 				)
 			),
 			'customizer_data_update' => array(
@@ -158,6 +160,7 @@ function flash_demo_importer_config( $demo_config ) {
 		'flash-food' => array(
 			'name'         => __( 'Flash Food', 'flash' ),
 			'demo_url'     => 'http://demo.themegrill.com/flash-food/',
+			'demo_pack'    => true,
 			'core_options' => array(
 				'blogname'       => 'Flash Food',
 				'page_on_front'  => 'Home',
@@ -165,36 +168,36 @@ function flash_demo_importer_config( $demo_config ) {
 			),
 			'siteorigin_panels_data_update' => array(
 				'homepage' => array(
-				   'post_title'  => 'Home',
-				   'data_update' => array(
+					'post_title'  => 'Home',
+					'data_update' => array(
 
-					/**
-					 * Dropdown Categories - Handles widgets Category ID.
-					 *
-					 * A. Core Post Category:
-					 *    1. themegrill_flash_portfolio
-					 *    2. themegrill_flash_blog
-					 *
-					 * Note: Supported Taxonomy:
-					 *    A. Core Post Category - category
-					 */
-					'dropdown_categories' => array(
-						'category' => array (
-							'FT_Widget_Blog' => array(
-								5 => array(
-									'category' => 'Blog'
-								)
+						/**
+						 * Dropdown Categories - Handles widgets Category ID.
+						 *
+						 * A. Core Post Category:
+						 *    1. themegrill_flash_portfolio
+						 *    2. themegrill_flash_blog
+						 *
+						 * Note: Supported Taxonomy:
+						 *    A. Core Post Category - category
+						 */
+						'dropdown_categories' => array(
+							'category' => array (
+								'FT_Widget_Blog' => array(
+									5 => array(
+										'category' => 'Blog'
+									)
+								),
 							),
-						),
-						'portfolio_cat' => array(
-							'FT_Widget_Portfolio' => array(
-								4 => array(
-									'categories' => 'portfolio'
-								)
+							'portfolio_cat' => array(
+								'FT_Widget_Portfolio' => array(
+									4 => array(
+										'categories' => 'portfolio'
+									)
+								),
 							),
-						),
-					  )
-				   )
+						)
+					)
 				)
 			),
 			'customizer_data_update' => array(
@@ -226,6 +229,7 @@ function flash_demo_importer_config( $demo_config ) {
 		'flash-construction' => array(
 			'name'         => __( 'Flash Construction', 'flash' ),
 			'demo_url'     => 'http://demo.themegrill.com/flash-construction/',
+			'demo_pack'    => true,
 			'core_options' => array(
 				'blogname'       => 'Flash Construction',
 				'page_on_front'  => 'Home',
@@ -233,36 +237,36 @@ function flash_demo_importer_config( $demo_config ) {
 			),
 			'siteorigin_panels_data_update' => array(
 				'homepage' => array(
-				   'post_title'  => 'Home',
-				   'data_update' => array(
+					'post_title'  => 'Home',
+					'data_update' => array(
 
-					/**
-					 * Dropdown Categories - Handles widgets Category ID.
-					 *
-					 * A. Core Post Category:
-					 *    1. themegrill_flash_portfolio
-					 *    2. themegrill_flash_blog
-					 *
-					 * Note: Supported Taxonomy:
-					 *    A. Core Post Category - category
-					 */
-					'dropdown_categories' => array(
-						'category' => array (
-							'FT_Widget_Blog' => array(
-								9 => array(
-									'category' => 'Blog'
-								)
+						/**
+						 * Dropdown Categories - Handles widgets Category ID.
+						 *
+						 * A. Core Post Category:
+						 *    1. themegrill_flash_portfolio
+						 *    2. themegrill_flash_blog
+						 *
+						 * Note: Supported Taxonomy:
+						 *    A. Core Post Category - category
+						 */
+						'dropdown_categories' => array(
+							'category' => array (
+								'FT_Widget_Blog' => array(
+									9 => array(
+										'category' => 'Blog'
+									)
+								),
 							),
-						),
-						'portfolio_cat' => array(
-							'FT_Widget_Portfolio' => array(
-								4 => array(
-									'categories' => 'portfolio'
-								)
+							'portfolio_cat' => array(
+								'FT_Widget_Portfolio' => array(
+									4 => array(
+										'categories' => 'portfolio'
+									)
+								),
 							),
-						),
-					  )
-				   )
+						)
+					)
 				)
 			),
 			'customizer_data_update' => array(
