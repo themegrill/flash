@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-add_filter( 'themegrill_demo_importer_config', 'tg_demo_importer_config' );
+add_filter( 'themegrill_demo_importer_config', 'flash_demo_importer_config' );
 
 /**
  * Setup demo importer config.
@@ -20,7 +20,7 @@ add_filter( 'themegrill_demo_importer_config', 'tg_demo_importer_config' );
  * @param  array $demo_config
  * @return array
  */
-function tg_demo_importer_config( $demo_config ) {
+function flash_demo_importer_config( $demo_config ) {
 	$new_demo_config = array(
 		'flash-default' => array(
 			'name'         => __( 'Flash Default', 'flash' ),
@@ -75,19 +75,16 @@ function tg_demo_importer_config( $demo_config ) {
 					'siteorigin-panels' => array(
 						'name' => __( 'Page Builder by SiteOrigin', 'flash' ),
 						'slug' => 'siteorigin-panels/siteorigin-panels.php',
-						'link' => 'https://wordpress.org/plugins/siteorigin-panels/'
 					),
 					'flash-toolkit' => array(
 						'name' => __( 'Flash Toolkit', 'flash' ),
 						'slug' => 'flash-toolkit/flash-toolkit.php',
-						'link' => 'https://wordpress.org/plugins/flash-toolkit/'
 					),
 				),
 				'recommended' => array(
 					'contact-form-7' => array(
 						'name' => __( 'Contact Form', 'flash' ),
 						'slug' => 'contact-form-7/contact-form-7.php',
-						'link' => 'https://wordpress.org/plugins/contact-form-7/'
 					),
 				)
 			)
@@ -144,19 +141,16 @@ function tg_demo_importer_config( $demo_config ) {
 					'siteorigin-panels' => array(
 						'name' => __( 'Page Builder by SiteOrigin', 'flash' ),
 						'slug' => 'siteorigin-panels/siteorigin-panels.php',
-						'link' => 'https://wordpress.org/plugins/siteorigin-panels/'
 					),
 					'flash-toolkit' => array(
 						'name' => __( 'Flash Toolkit', 'flash' ),
 						'slug' => 'flash-toolkit/flash-toolkit.php',
-						'link' => 'https://wordpress.org/plugins/flash-toolkit/'
 					),
 				),
 				'recommended' => array(
 					'contact-form-7' => array(
 						'name' => __( 'Contact Form', 'flash' ),
 						'slug' => 'contact-form-7/contact-form-7.php',
-						'link' => 'https://wordpress.org/plugins/contact-form-7/'
 					),
 				)
 			)
@@ -215,19 +209,16 @@ function tg_demo_importer_config( $demo_config ) {
 					'siteorigin-panels' => array(
 						'name' => __( 'Page Builder by SiteOrigin', 'flash' ),
 						'slug' => 'siteorigin-panels/siteorigin-panels.php',
-						'link' => 'https://wordpress.org/plugins/siteorigin-panels/'
 					),
 					'flash-toolkit' => array(
 						'name' => __( 'Flash Toolkit', 'flash' ),
 						'slug' => 'flash-toolkit/flash-toolkit.php',
-						'link' => 'https://wordpress.org/plugins/flash-toolkit/'
 					),
 				),
 				'recommended' => array(
 					'contact-form-7' => array(
 						'name' => __( 'Contact Form', 'flash' ),
 						'slug' => 'contact-form-7/contact-form-7.php',
-						'link' => 'https://wordpress.org/plugins/contact-form-7/'
 					),
 				)
 			)
@@ -286,19 +277,16 @@ function tg_demo_importer_config( $demo_config ) {
 					'siteorigin-panels' => array(
 						'name' => __( 'Page Builder by SiteOrigin', 'flash' ),
 						'slug' => 'siteorigin-panels/siteorigin-panels.php',
-						'link' => 'https://wordpress.org/plugins/siteorigin-panels/'
 					),
 					'flash-toolkit' => array(
 						'name' => __( 'Flash Toolkit', 'flash' ),
 						'slug' => 'flash-toolkit/flash-toolkit.php',
-						'link' => 'https://wordpress.org/plugins/flash-toolkit/'
 					),
 				),
 				'recommended' => array(
 					'contact-form-7' => array(
 						'name' => __( 'Contact Form', 'flash' ),
 						'slug' => 'contact-form-7/contact-form-7.php',
-						'link' => 'https://wordpress.org/plugins/contact-form-7/'
 					),
 				)
 			)
