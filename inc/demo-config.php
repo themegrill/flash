@@ -49,14 +49,14 @@ function flash_demo_importer_config( $demo_config ) {
 						'dropdown_categories' => array(
 							'category' => array (
 								'FT_Widget_Blog' => array(
-									14 => array(
+									15 => array(
 										'category' => 'Blog'
 									)
 								),
 							),
 							'portfolio_cat' => array(
 								'FT_Widget_Portfolio' => array(
-									4 => array(
+									5 => array(
 										'categories' => 'portfolio'
 									)
 								),
