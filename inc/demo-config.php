@@ -251,17 +251,17 @@ function flash_demo_importer_config( $demo_config ) {
 						 *    A. Core Post Category - category
 						 */
 						'dropdown_categories' => array(
-							'category' => array (
-								'FT_Widget_Blog' => array(
-									9 => array(
-										'category' => 'Blog'
+							'portfolio_cat' => array(
+								'FT_Widget_Portfolio' => array(
+									17 => array(
+										'categories' => 'works'
 									)
 								),
 							),
-							'portfolio_cat' => array(
-								'FT_Widget_Portfolio' => array(
-									4 => array(
-										'categories' => 'portfolio'
+							'category' => array (
+								'FT_Widget_Blog' => array(
+									21 => array(
+										'category' => 'Blog'
 									)
 								),
 							),
