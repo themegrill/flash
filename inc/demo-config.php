@@ -182,17 +182,17 @@ function flash_demo_importer_config( $demo_config ) {
 						 *    A. Core Post Category - category
 						 */
 						'dropdown_categories' => array(
-							'category' => array (
-								'FT_Widget_Blog' => array(
+							'portfolio_cat' => array(
+								'FT_Widget_Portfolio' => array(
 									5 => array(
-										'category' => 'Blog'
+										'categories' => 'All category'
 									)
 								),
 							),
-							'portfolio_cat' => array(
-								'FT_Widget_Portfolio' => array(
-									4 => array(
-										'categories' => 'portfolio'
+							'category' => array (
+								'FT_Widget_Blog' => array(
+									8 => array(
+										'category' => 'Blog'
 									)
 								),
 							),
@@ -202,7 +202,7 @@ function flash_demo_importer_config( $demo_config ) {
 			),
 			'customizer_data_update' => array(
 				'nav_menu_locations' => array(
-					'primary'	=> 'Primary Menu',
+					'primary'	=> 'Primary',
 					'social'	=> 'Social',
 					'footer'	=> 'Footer Menu',
 				)
