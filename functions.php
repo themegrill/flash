@@ -88,17 +88,27 @@ function flash_setup() {
 endif;
 add_action( 'after_setup_theme', 'flash_setup' );
 
+if ( ! isset( $content_width ) ) {
+	$content_width = 780; /* pixels */
+}
+
+if ( ! function_exists( 'flash_content_width' ) ) :
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
- * Priority 0 to make it available to lower priority callbacks.
- *
  * @global int $content_width
- */
+ **/
 function flash_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'flash_content_width', 640 );
+	global $content_width;
+
+	$classes = flash_get_layout();
+
+	if ( $classes == 'full-width' ) {
+		$content_width = 1200;
+	}
 }
-add_action( 'after_setup_theme', 'flash_content_width', 0 );
+endif;
+add_action( 'template_redirect', 'flash_content_width' );
 
 /**
  * Register widget area.
