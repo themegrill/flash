@@ -90,12 +90,12 @@ function flash_demo_importer_config( $demo_config ) {
 				)
 			)
 		),
-		'flash-corporate' => array(
-			'name'         => __( 'Flash Corporate', 'flash' ),
-			'demo_url'     => 'http://demo.themegrill.com/flash-corporate/',
+		'flash-onepage' => array(
+			'name'         => __( 'Flash OnePage', 'flash' ),
+			'demo_url'     => 'http://demo.themegrill.com/flash-one-page/',
 			'demo_pack'    => true,
 			'core_options' => array(
-				'blogname'       => 'Flash Corporate',
+				'blogname'       => 'Flash One Page',
 				'page_on_front'  => 'Home',
 				'page_for_posts' => 'Blog',
 			),
@@ -115,17 +115,17 @@ function flash_demo_importer_config( $demo_config ) {
 						 *    A. Core Post Category - category
 						 */
 						'dropdown_categories' => array(
-							'category' => array (
-								'FT_Widget_Blog' => array(
-									6 => array(
-										'category' => 'building'
-									)
-								),
-							),
 							'portfolio_cat' => array(
 								'FT_Widget_Portfolio' => array(
 									4 => array(
 										'categories' => 'portfolio'
+									)
+								),
+							),
+							'category' => array (
+								'FT_Widget_Blog' => array(
+									8 => array(
+										'category' => 'building'
 									)
 								),
 							),
