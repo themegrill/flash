@@ -2,7 +2,7 @@
 Author: ThemeGrill
 Requires at least: WordPress 4.3
 Tested up to: WordPress 4.6
-Version: 1.0.0
+Version: 1.0.2
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 Tags: one-column, two-columns, left-sidebar, right-sidebar, grid-layout, custom-background, custom-colors, custom-menu, custom-logo, featured-images, footer-widgets, full-width-template, theme-options, threaded-comments, translation-ready, blog, e-commerce
@@ -73,11 +73,12 @@ Unless otherwise specified, all the theme files, scripts and images including th
 
 == Changelog ==
 
-= 1.0.2 - TBD =
+= 1.0.2 - 2016-11-25 =
 * Feature - Set content width based on layout chosen by user
 * Feature - Adds support for WordPress Gallery
 * Feature - Adds demo config to support TG Demo Importer Plugin
 * Tweaks - Introduced welcome page for theme
+* Fix - Menu Spacing Issue
 
 = 1.0.1 - 2016-11-16 =
 * Adds TGM Activation File to recommend Flash Toolkit and SiteOrigin Pagebuilder
