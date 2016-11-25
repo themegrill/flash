@@ -73,6 +73,12 @@ Unless otherwise specified, all the theme files, scripts and images including th
 
 == Changelog ==
 
+= 1.0.2 - TBD =
+* Feature - Set content width based on layout chosen by user
+* Feature - Adds support for WordPress Gallery
+* Feature - Adds demo config to support TG Demo Importer Plugin
+* Tweaks - Introduced welcome page for theme
+
 = 1.0.1 - 2016-11-16 =
 * Adds TGM Activation File to recommend Flash Toolkit and SiteOrigin Pagebuilder
 
