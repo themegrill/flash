@@ -1206,7 +1206,8 @@ Header
     padding-right: 0;
 }
 
-#site-navigation ul.sub-menu {
+#site-navigation ul.sub-menu,
+.menu ul li ul.children {
     background-color: #fff;
     min-width: 200px;
     padding: 0;
@@ -1227,7 +1228,8 @@ Header
     transition: all 0.5s ease;
 }
 
-#site-navigation ul.sub-menu li {
+#site-navigation ul.sub-menu li,
+.menu ul li ul.children li{
     text-align: center;
     width: 100%;
     padding: 10px 30px;
@@ -1243,7 +1245,8 @@ Header
     color: #30afb8;
 }
 
-#site-navigation li:hover ul.sub-menu {
+#site-navigation li:hover ul.sub-menu,
+.menu ul li:hover > ul.children {
     opacity: 1;
     visibility: visible;
     top: 100%;
@@ -1253,7 +1256,8 @@ Header
     color: #4c5867;
 }
 
-#site-navigation ul li ul.sub-menu li.menu-item-has-children ul {
+#site-navigation ul li ul.sub-menu li.menu-item-has-children ul,
+.menu ul li ul li ul.children  {
     left: 50%;
     opacity: 0;
     visibility: hidden;
@@ -1270,7 +1274,8 @@ Header
     color: #4c5867;
 }
 
-#site-navigation ul li ul.sub-menu li.menu-item-has-children:hover ul {
+#site-navigation ul li ul.sub-menu li.menu-item-has-children:hover ul,
+.menu ul li ul li:hover ul.children {
     top: 0;
     opacity: 1;
     visibility: visible;
@@ -1740,7 +1745,6 @@ body.transparent.header-sticky #masthead-sticky-wrapper.is-sticky #masthead .hea
 .archive .transparent-logo {
     display: none;
 }
-
 
 /*--------------------------------------------------------------
 Slider
