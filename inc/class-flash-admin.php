@@ -284,6 +284,8 @@ class Flash_Admin {
 				</li>
 				<li><a href="<?php echo esc_url( 'https://wordpress.org/plugins/contact-form-7/' ); ?>" target="_blank"><?php esc_html_e( 'Contact Form 7', 'flash' ); ?></a></li>
 				<li><a href="<?php echo esc_url( 'https://wordpress.org/plugins/woocommerce/' ); ?>" target="_blank"><?php esc_html_e( 'WooCommerce', 'flash' ); ?></a></li>
+				<li><a href="<?php echo esc_url( 'https://wordpress.org/plugins/restaurantpress/' ); ?>" target="_blank"><?php esc_html_e( 'RestaurantPress', 'flash' ); ?></a>
+					<?php esc_html_e(' by ThemeGrill', 'flash'); ?></li>
 			</ol>
 
 		</div>
