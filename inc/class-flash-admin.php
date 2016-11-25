@@ -127,7 +127,7 @@ class Flash_Admin {
 		<p class="flash-actions">
 			<a href="<?php echo esc_url( 'http://themegrill.com/themes/flash/' ); ?>" class="button button-secondary" target="_blank"><?php esc_html_e( 'Theme Info', 'flash' ); ?></a>
 
-			<a href="<?php echo esc_url( apply_filters( 'flash_demo_url', 'http://demo.themegrill.com/flash/demos/' ) ); ?>" class="button button-secondary docs" target="_blank"><?php esc_html_e( 'View Demo', 'flash' ); ?></a>
+			<a href="<?php echo esc_url( apply_filters( 'flash_demo_url', 'http://demo.themegrill.com/flash/demos/' ) ); ?>" class="button button-primary docs" target="_blank"><?php esc_html_e( 'View Multiple Demos', 'flash' ); ?></a>
 
 			<a href="<?php echo esc_url( apply_filters( 'flash_rating_url', 'http://wordpress.org/support/view/theme-reviews/flash?filter=5' ) ); ?>" class="button button-secondary docs" target="_blank"><?php esc_html_e( 'Rate this theme', 'flash' ); ?></a>
 		</p>

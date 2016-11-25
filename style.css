@@ -3065,6 +3065,12 @@ Blogs
 
 .blog-section .tg-blog-widget-layout-2 .blog-content .entry-title a {
     font-size: 18px;
+    line-height: 24px;
+    display: block;
+}
+
+.tg-blog-widget-layout-2 .entry-title {
+  margin-top: 15px;
 }
 
 .blog-section .tg-blog-widget-layout-2 .blog-content .post-readmore {
