@@ -4,7 +4,7 @@ Theme URI: http://themegrill.com/themes/flash
 Author: ThemeGrill
 Author URI: http://themegrill.com
 Description: Ultimate Business Theme with blazing fast speed
-Version: 1.0.1
+Version: 1.0.2
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: flash
@@ -1198,7 +1198,7 @@ Header
 #site-navigation ul li a {
     font-size: 14px;
 }
- 
+
 #site-navigation ul li:hover > a,
 #site-navigation ul li.current-menu-item > a,
 #site-navigation ul li.current_page_item  > a{
