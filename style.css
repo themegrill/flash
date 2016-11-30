@@ -1739,13 +1739,15 @@ body.transparent.header-sticky #masthead-sticky-wrapper.is-sticky #masthead .hea
     display: none;
 }
 
-.transparent.header-sticky .is-sticky .custom-logo {
+.transparent.header-sticky .is-sticky .custom-logo,
+body.transparent .transparent-logo {
     display: block;
 }
-
+.transparent-logo,
 .blog .transparent-logo,
 .single .transparent-logo,
-.archive .transparent-logo {
+.archive .transparent-logo,
+body.transparent .custom-logo {
     display: none;
 }
 
