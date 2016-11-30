@@ -264,6 +264,11 @@ require get_template_directory() . '/inc/template-tags.php';
 require get_template_directory() . '/inc/extras.php';
 
 /**
+ * Kirki Toolkit.
+ */
+require get_template_directory() . '/inc/kirki/kirki.php';
+
+/**
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
