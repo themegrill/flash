@@ -12,8 +12,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-function flash_demo_importer_installable_packs( $demo_packs ) {
-	$new_demo_packs = array(
+/**
+ * Setup demo importer packages.
+ *
+ * @param  array $packages
+ * @return array
+ */
+function flash_demo_importer_packages( $packages ) {
+	$new_packages = array(
 		'flash-default' => array(
 			'name'    => __( 'Flash Default', 'flash' ),
 			'preview' => 'http://demo.themegrill.com/flash/',
@@ -32,6 +38,6 @@ function flash_demo_importer_installable_packs( $demo_packs ) {
 		),
 	);
 
-	return array_merge( $new_demo_packs, $demo_packs );
+	return array_merge( $new_packages, $packages );
 }
-add_filter( 'themegrill_demo_importer_installable_packs', 'flash_demo_importer_installable_packs' );
+add_filter( 'themegrill_demo_importer_packages', 'flash_demo_importer_packages' );
