@@ -203,19 +203,20 @@ Kirki::add_field( 'flash_config', array(
 
 /** Header Cart Setting */
 Kirki::add_field( 'flash_config', array(
-	'type'        => 'checkbox',
-	'settings'    => 'flash_header_cart',
-	'label'       => esc_html__( 'Remove Header Cart Icon', 'flash' ),
-	'description' => esc_html__( 'Check the box to remove woocommerce cart icon near menu.', 'flash' ),
-	'section'     => 'flash_header_options',
-	'default'     => '',
-	'priority'    => 30,
+	'type'            => 'checkbox',
+	'settings'        => 'flash_header_cart',
+	'label'           => esc_html__( 'Remove Header Cart Icon', 'flash' ),
+	'description'     => esc_html__( 'Check the box to remove woocommerce cart icon near menu.', 'flash' ),
+	'section'         => 'flash_header_options',
+	'default'         => '',
+	'priority'        => 30,
+	'active_callback' => 'flash_is_woocommerce_active',
 ) );
 
 /** Sticky Header Setting */
 Kirki::add_field( 'flash_config', array(
 	'type'        => 'checkbox',
-	'settings'    => 'flash_header_cart',
+	'settings'    => 'flash_sticky_header',
 	'label'       => esc_html__( 'Sticky Header', 'flash' ),
 	'description' => esc_html__( 'Check the box to make the header section sticky when user scrolls down.', 'flash' ),
 	'section'     => 'flash_header_options',
@@ -658,9 +659,11 @@ function flash_customize_register( $wp_customize ) {
 add_action( 'customize_register', 'flash_customize_register' );
 
 // Header Cart Icon Active Callback
-function flash_woocommerce_active_filter() {
+function flash_is_woocommerce_active() {
 	if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
 		return true;
+	} else {
+		return false;
 	}
 }
 
