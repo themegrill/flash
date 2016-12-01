@@ -37,10 +37,10 @@ Kirki::add_panel( 'flash_theme_options', array(
 
 /** General Section */
 Kirki::add_section( 'flash_general_options', array(
-    'title'          => esc_html__( 'General Settings', 'flash' ),
-    'panel'          => 'flash_theme_options',
-    'priority'       => 10,
-    'capability'     => 'edit_theme_options',
+	'title'          => esc_html__( 'General Settings', 'flash' ),
+	'panel'          => 'flash_theme_options',
+	'priority'       => 10,
+	'capability'     => 'edit_theme_options',
 ) );
 
 /** Site Layout Settings */
@@ -82,10 +82,10 @@ Kirki::add_field( 'flash_config', array(
 
 /** Top Header Section */
 Kirki::add_section( 'flash_top_header_options', array(
-    'title'          => esc_html__( 'Top Header Settings', 'flash' ),
-    'panel'          => 'flash_theme_options',
-    'priority'       => 20,
-    'capability'     => 'edit_theme_options',
+	'title'          => esc_html__( 'Top Header Settings', 'flash' ),
+	'panel'          => 'flash_theme_options',
+	'priority'       => 20,
+	'capability'     => 'edit_theme_options',
 ) );
 
 /** Top Header Enable/Disable Setting */
@@ -168,10 +168,10 @@ Kirki::add_field( 'flash_config', array(
 
 /** Header Section */
 Kirki::add_section( 'flash_header_options', array(
-    'title'          => esc_html__( 'Header Settings', 'flash' ),
-    'panel'          => 'flash_theme_options',
-    'priority'       => 30,
-    'capability'     => 'edit_theme_options',
+	'title'          => esc_html__( 'Header Settings', 'flash' ),
+	'panel'          => 'flash_theme_options',
+	'priority'       => 30,
+	'capability'     => 'edit_theme_options',
 ) );
 
 /** Logo and Menu Position */
@@ -226,10 +226,10 @@ Kirki::add_field( 'flash_config', array(
 
 /** Page Header Section */
 Kirki::add_section( 'flash_page_header_options', array(
-    'title'          => esc_html__( 'Page Header Settings', 'flash' ),
-    'panel'          => 'flash_theme_options',
-    'priority'       => 40,
-    'capability'     => 'edit_theme_options',
+	'title'          => esc_html__( 'Page Header Settings', 'flash' ),
+	'panel'          => 'flash_theme_options',
+	'priority'       => 40,
+	'capability'     => 'edit_theme_options',
 ) );
 
 /** Remove Breadcrumbs setting */
@@ -255,10 +255,10 @@ Kirki::add_field( 'flash_config', array(
 
 /** Archive Page */
 Kirki::add_section( 'flash_archive_options', array(
-    'title'          => esc_html__( 'Archive Page Settings', 'flash' ),
-    'panel'          => 'flash_theme_options',
-    'priority'       => 50,
-    'capability'     => 'edit_theme_options',
+	'title'          => esc_html__( 'Archive Page Settings', 'flash' ),
+	'panel'          => 'flash_theme_options',
+	'priority'       => 50,
+	'capability'     => 'edit_theme_options',
 ) );
 
 /** Blog Styles */
@@ -351,10 +351,10 @@ Kirki::add_field( 'flash_config', array(
 
 /** Post Settings */
 Kirki::add_section( 'flash_post_options', array(
-    'title'          => esc_html__( 'Post Settings', 'flash' ),
-    'panel'          => 'flash_theme_options',
-    'priority'       => 60,
-    'capability'     => 'edit_theme_options',
+	'title'          => esc_html__( 'Post Settings', 'flash' ),
+	'panel'          => 'flash_theme_options',
+	'priority'       => 60,
+	'capability'     => 'edit_theme_options',
 
 ) );
 
@@ -399,10 +399,10 @@ Kirki::add_field( 'flash_config', array(
 
 /** Page Settings */
 Kirki::add_section( 'flash_page_options', array(
-    'title'          => esc_html__( 'Page Settings', 'flash' ),
-    'panel'          => 'flash_theme_options',
-    'priority'       => 70,
-    'capability'     => 'edit_theme_options',
+	'title'          => esc_html__( 'Page Settings', 'flash' ),
+	'panel'          => 'flash_theme_options',
+	'priority'       => 70,
+	'capability'     => 'edit_theme_options',
 ) );
 
 /** Page Layout */
@@ -424,10 +424,10 @@ Kirki::add_field( 'flash_config', array(
 
 /** Footer  */
 Kirki::add_section( 'flash_footer_options', array(
-    'title'          => esc_html__( 'Footer Settings', 'flash' ),
-    'panel'          => 'flash_theme_options',
-    'priority'       => 80,
-    'capability'     => 'edit_theme_options',
+	'title'          => esc_html__( 'Footer Settings', 'flash' ),
+	'panel'          => 'flash_theme_options',
+	'priority'       => 80,
+	'capability'     => 'edit_theme_options',
 ) );
 
 /** Footer Widget */
@@ -449,10 +449,10 @@ Kirki::add_field( 'flash_config', array(
 
 /** Advanced Settings  */
 Kirki::add_section( 'flash_advanced_section', array(
-    'title'          => esc_html__( 'Advanced Settings', 'flash' ),
-    'panel'          => 'flash_theme_options',
-    'priority'       => 90,
-    'capability'     => 'edit_theme_options',
+	'title'          => esc_html__( 'Advanced Settings', 'flash' ),
+	'panel'          => 'flash_theme_options',
+	'priority'       => 90,
+	'capability'     => 'edit_theme_options',
 
 ) );
 
