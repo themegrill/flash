@@ -54,6 +54,10 @@ Waypoints, Copyright (c) 2011-2014, Caleb Troughton
 License: MIT License, http://www.opensource.org/licenses/MIT
 Source: http://imakewebthings.com/waypoints/
 
+Kirki, Copyright (c) 2016 Aristeides Stathopoulos
+License: MIT License, http://www.opensource.org/licenses/MIT
+Source: https://github.com/aristath/kirki
+
 External resources linked to the Flash theme:
 
 Montserrat, Copyright (c), 2011-2016, Julieta Ulanovsky
