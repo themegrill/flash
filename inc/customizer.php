@@ -1475,6 +1475,9 @@ function flash_frontend_css() {
 			width: 1px;
 			overflow: hidden;
 		}
+		.logo .logo-text{
+			padding: 0;
+		}
 		';
 	}
 

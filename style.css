@@ -1594,6 +1594,9 @@ body.transparent #masthead .header-bottom .search-wrap .search-icon {
 .center-logo-below-menu .logo .logo-image {
     float: none;
 }
+.center-logo-below-menu .logo .logo-image {
+    padding: 20px 0 0 0;
+}
 
 .center-logo-below-menu #site-navigation {
     float: left;
@@ -1741,7 +1744,7 @@ body.transparent.header-sticky #masthead-sticky-wrapper.is-sticky #masthead .hea
 
 .transparent.header-sticky .is-sticky .custom-logo,
 body.transparent .transparent-logo {
-    display: block;
+    display: inline-block;
 }
 .transparent-logo,
 .blog .transparent-logo,
@@ -2657,13 +2660,13 @@ Testimonial
     text-align: left;
 }
 
-.testimonial-container .testimonial-wrapper .testimonial-slide .testominial-content-wrapper {
+.testimonial-container .testimonial-wrapper .testimonial-slide .testimonial-content-wrapper {
     background: #fff;
     padding: 20px 30px;
     position: relative;
 }
 
-.testimonial-container .testimonial-wrapper .testimonial-slide .testominial-content-wrapper::before {
+.testimonial-container .testimonial-wrapper .testimonial-slide .testimonial-content-wrapper::before {
     border-bottom: 34px solid transparent;
     border-left: 20px solid #fff;
     content: " ";
@@ -2678,14 +2681,14 @@ Testimonial
     z-index: -9;
 }
 
-.testimonial-container .testimonial-wrapper .testimonial-slide .testominial-content-wrapper .testimonial-icon {
+.testimonial-container .testimonial-wrapper .testimonial-slide .testimonial-content-wrapper .testimonial-icon {
     display: inline-block;
     vertical-align: top;
     color: #31afb8;
     font-size: 18px;
 }
 
-.testimonial-container .testimonial-wrapper .testimonial-slide .testominial-content-wrapper .testimonial-content {
+.testimonial-container .testimonial-wrapper .testimonial-slide .testimonial-content-wrapper .testimonial-content {
     width: 93%;
     display: inline-block;
     margin-left: 15px;
