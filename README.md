@@ -58,6 +58,10 @@ Kirki, Copyright (c) 2016 Aristeides Stathopoulos
 License: MIT License, http://www.opensource.org/licenses/MIT
 Source: https://github.com/aristath/kirki
 
+TGM-Plugin-Activation, Copyright (c) 2016 TGM
+License: GNU GPL, Version 2, http://www.gnu.org/licenses/gpl-2.0.html
+Source: https://github.com/TGMPA/TGM-Plugin-Activation
+
 External resources linked to the Flash theme:
 
 Montserrat, Copyright (c), 2011-2016, Julieta Ulanovsky
