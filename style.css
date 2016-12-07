@@ -4,7 +4,7 @@ Theme URI: http://themegrill.com/themes/flash
 Author: ThemeGrill
 Author URI: http://themegrill.com
 Description: Ultimate Business Theme with blazing fast speed
-Version: 1.0.1
+Version: 1.0.2
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: flash
@@ -112,6 +112,7 @@ td {
     outline: 0;
     padding: 0;
     vertical-align: baseline;
+    word-break: break-word;
 }
 
 html {
@@ -1198,7 +1199,9 @@ Header
     font-size: 14px;
 }
 
-#site-navigation ul li a:hover {
+#site-navigation ul li:hover > a,
+#site-navigation ul li.current-menu-item > a,
+#site-navigation ul li.current_page_item  > a{
     color: #30afb8;
 }
 
@@ -1206,7 +1209,8 @@ Header
     padding-right: 0;
 }
 
-#site-navigation ul.sub-menu {
+#site-navigation ul.sub-menu,
+.menu ul li ul.children {
     background-color: #fff;
     min-width: 200px;
     padding: 0;
@@ -1227,7 +1231,8 @@ Header
     transition: all 0.5s ease;
 }
 
-#site-navigation ul.sub-menu li {
+#site-navigation ul.sub-menu li,
+.menu ul li ul.children li{
     text-align: center;
     width: 100%;
     padding: 10px 30px;
@@ -1243,7 +1248,8 @@ Header
     color: #30afb8;
 }
 
-#site-navigation li:hover ul.sub-menu {
+#site-navigation li:hover ul.sub-menu,
+.menu ul li:hover > ul.children {
     opacity: 1;
     visibility: visible;
     top: 100%;
@@ -1253,7 +1259,8 @@ Header
     color: #4c5867;
 }
 
-#site-navigation ul li ul.sub-menu li.menu-item-has-children ul {
+#site-navigation ul li ul.sub-menu li.menu-item-has-children ul,
+.menu ul li ul li ul.children  {
     left: 50%;
     opacity: 0;
     visibility: hidden;
@@ -1270,7 +1277,8 @@ Header
     color: #4c5867;
 }
 
-#site-navigation ul li ul.sub-menu li.menu-item-has-children:hover ul {
+#site-navigation ul li ul.sub-menu li.menu-item-has-children:hover ul,
+.menu ul li ul li:hover ul.children {
     top: 0;
     opacity: 1;
     visibility: visible;
@@ -1586,6 +1594,9 @@ body.transparent #masthead .header-bottom .search-wrap .search-icon {
 .center-logo-below-menu .logo .logo-image {
     float: none;
 }
+.center-logo-below-menu .logo .logo-image {
+    padding: 20px 0 0 0;
+}
 
 .center-logo-below-menu #site-navigation {
     float: left;
@@ -1731,16 +1742,17 @@ body.transparent.header-sticky #masthead-sticky-wrapper.is-sticky #masthead .hea
     display: none;
 }
 
-.transparent.header-sticky .is-sticky .custom-logo {
-    display: block;
+.transparent.header-sticky .is-sticky .custom-logo,
+body.transparent .transparent-logo {
+    display: inline-block;
 }
-
+.transparent-logo,
 .blog .transparent-logo,
 .single .transparent-logo,
-.archive .transparent-logo {
+.archive .transparent-logo,
+body.transparent .custom-logo {
     display: none;
 }
-
 
 /*--------------------------------------------------------------
 Slider
@@ -2648,13 +2660,13 @@ Testimonial
     text-align: left;
 }
 
-.testimonial-container .testimonial-wrapper .testimonial-slide .testominial-content-wrapper {
+.testimonial-container .testimonial-wrapper .testimonial-slide .testimonial-content-wrapper {
     background: #fff;
     padding: 20px 30px;
     position: relative;
 }
 
-.testimonial-container .testimonial-wrapper .testimonial-slide .testominial-content-wrapper::before {
+.testimonial-container .testimonial-wrapper .testimonial-slide .testimonial-content-wrapper::before {
     border-bottom: 34px solid transparent;
     border-left: 20px solid #fff;
     content: " ";
@@ -2669,14 +2681,14 @@ Testimonial
     z-index: -9;
 }
 
-.testimonial-container .testimonial-wrapper .testimonial-slide .testominial-content-wrapper .testimonial-icon {
+.testimonial-container .testimonial-wrapper .testimonial-slide .testimonial-content-wrapper .testimonial-icon {
     display: inline-block;
     vertical-align: top;
     color: #31afb8;
     font-size: 18px;
 }
 
-.testimonial-container .testimonial-wrapper .testimonial-slide .testominial-content-wrapper .testimonial-content {
+.testimonial-container .testimonial-wrapper .testimonial-slide .testimonial-content-wrapper .testimonial-content {
     width: 93%;
     display: inline-block;
     margin-left: 15px;

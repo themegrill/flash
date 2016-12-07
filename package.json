@@ -1,11 +1,11 @@
 {
-  "name": "estore-pro",
-  "title": "eStore Pro",
-  "version": "2.0.6",
-  "homepage": "http://themegrill.com/themes/estore/",
+  "name": "Flash",
+  "title": "Flash",
+  "version": "1.0.2",
+  "homepage": "http://themegrill.com/themes/flash/",
   "repository": {
     "type": "git",
-    "url": "git@bitbucket.org:ThemeGrill/estore-pro.git"
+    "url": "git@github.com:themegrill/flash.git"
   },
   "license": "GPL-3.0+",
   "main": "Gruntfile.js",

@@ -6,6 +6,472 @@
  */
 
 /**
+ * Configuration for Kirki Toolkit
+ */
+function flash_kirki_configuration() {
+	return array( 'url_path'     => get_stylesheet_directory_uri() . '/inc/kirki/' );
+}
+add_filter( 'kirki/config', 'flash_kirki_configuration' );
+
+/** Flash Kirki Config */
+Kirki::add_config( 'flash_config', array(
+	'capability'    => 'edit_theme_options',
+	'option_type'   => 'theme_mod',
+) );
+
+/** Customizer Options Using Kirki Toolkit */
+Kirki::add_field( 'flash_config', array(
+	'type'        => 'image',
+	'settings'    => 'flash_transparent_logo',
+	'label'       => esc_html__( 'Transparent Logo', 'flash' ),
+	'section'     => 'title_tagline',
+	'default'     => '',
+	'priority'    => 8,
+) );
+
+/** Theme Options Panel */
+Kirki::add_panel( 'flash_theme_options', array(
+	'priority'    => 100,
+	'title'       => esc_html__( 'Flash Theme Options', 'flash' ),
+) );
+
+/** General Section */
+Kirki::add_section( 'flash_general_options', array(
+	'title'          => esc_html__( 'General Settings', 'flash' ),
+	'panel'          => 'flash_theme_options',
+	'priority'       => 10,
+	'capability'     => 'edit_theme_options',
+) );
+
+/** Site Layout Settings */
+Kirki::add_field( 'flash_config', array(
+	'type'        => 'select',
+	'settings'    => 'flash_site_layout',
+	'label'       => esc_html__( 'Site Layout', 'flash' ),
+	'section'     => 'flash_general_options',
+	'default'     => 'wide',
+	'priority'    => 10,
+	'multiple'    => 1,
+	'choices'     => array(
+		'wide'  => esc_attr__( 'Wide Layout', 'flash' ),
+		'boxed' => esc_attr__( 'Boxed Layout', 'flash' ),
+	),
+) );
+
+/** Preloader Options */
+Kirki::add_field( 'flash_config', array(
+	'type'        => 'checkbox',
+	'settings'    => 'flash_disable_preloader',
+	'label'       => esc_html__( 'Disable Preloader?', 'flash' ),
+	'description' => esc_html__( 'Check the box to disable preloader animation shown while opening the site.', 'flash' ),
+	'section'     => 'flash_general_options',
+	'default'     => '',
+	'priority'    => 20,
+) );
+
+/** Scroll to Top button Options */
+Kirki::add_field( 'flash_config', array(
+	'type'        => 'checkbox',
+	'settings'    => 'flash_disable_back_to_top',
+	'label'       => esc_html__( 'Disable Back to Top Button?', 'flash' ),
+	'description' => esc_html__( 'Check the box to disable back to top button.', 'flash' ),
+	'section'     => 'flash_general_options',
+	'default'     => '',
+	'priority'    => 30,
+) );
+
+/** Top Header Section */
+Kirki::add_section( 'flash_top_header_options', array(
+	'title'          => esc_html__( 'Top Header Settings', 'flash' ),
+	'panel'          => 'flash_theme_options',
+	'priority'       => 20,
+	'capability'     => 'edit_theme_options',
+) );
+
+/** Top Header Enable/Disable Setting */
+Kirki::add_field( 'flash_top_header', array(
+	'type'        => 'checkbox',
+	'settings'    => 'flash_top_header',
+	'label'       => esc_html__( 'Enable Top Header', 'flash' ),
+	'section'     => 'flash_top_header_options',
+	'default'     => '1',
+	'priority'    => 10,
+) );
+
+/** Top Header Left Settings */
+Kirki::add_field( 'flash_config', array(
+	'type'        => 'select',
+	'settings'    => 'flash_top_header_left',
+	'label'       => esc_html__( 'Top Header Left Content', 'flash' ),
+	'section'     => 'flash_top_header_options',
+	'default'     => 'disable',
+	'priority'    => 20,
+	'multiple'    => 1,
+	'choices'     => array(
+		'social-menu'  => esc_attr__( 'Social Menu', 'flash' ),
+		'header-text'  => esc_attr__( 'Top Header Text', 'flash' ),
+		'disable'      => esc_attr__( 'Disable', 'flash' ),
+	),
+	'active_callback'  => array(
+		array(
+			'setting'  => 'flash_top_header',
+			'operator' => '==',
+			'value'    => 1,
+		),
+	)
+) );
+
+/** Top Header Right Settings */
+Kirki::add_field( 'flash_config', array(
+	'type'        => 'select',
+	'settings'    => 'flash_top_header_right',
+	'label'       => esc_html__( 'Top Header Right Content', 'flash' ),
+	'section'     => 'flash_top_header_options',
+	'default'     => 'disable',
+	'priority'    => 30,
+	'multiple'    => 1,
+	'choices'     => array(
+		'social-menu'  => esc_attr__( 'Social Menu', 'flash' ),
+		'header-text'  => esc_attr__( 'Top Header Text', 'flash' ),
+		'disable'      => esc_attr__( 'Disable', 'flash' ),
+	),
+	'active_callback'  => array(
+		array(
+			'setting'  => 'flash_top_header',
+			'operator' => '==',
+			'value'    => 1,
+		),
+	)
+) );
+
+/** Top Header Text */
+Kirki::add_field( 'flash_config', array(
+	'type'        => 'code',
+	'settings'    => 'flash_top_header_text',
+	'label'       => esc_html__( 'Top Header Text Content', 'flash' ),
+	'section'     => 'flash_top_header_options',
+	'default'     => '',
+	'priority'    => 40,
+	'choices'     => array(
+		'language' => 'html',
+		'theme'    => 'monokai',
+		'height'   => 250,
+	),
+	'active_callback'  => array(
+		array(
+			'setting'  => 'flash_top_header',
+			'operator' => '==',
+			'value'    => 1,
+		),
+	),
+) );
+
+/** Header Section */
+Kirki::add_section( 'flash_header_options', array(
+	'title'          => esc_html__( 'Header Settings', 'flash' ),
+	'panel'          => 'flash_theme_options',
+	'priority'       => 30,
+	'capability'     => 'edit_theme_options',
+) );
+
+/** Logo and Menu Position */
+Kirki::add_field( 'flash_config', array(
+	'type'        => 'select',
+	'settings'    => 'flash_logo_position',
+	'label'       => esc_html__( 'Logo and Menu Position', 'flash' ),
+	'section'     => 'flash_header_options',
+	'default'     => 'left-logo-right-menu',
+	'priority'    => 10,
+	'multiple'    => 1,
+	'choices'     => array(
+		'left-logo-right-menu'    => esc_attr__( 'Left Logo and Right Menu', 'flash' ),
+		'right-logo-left-menu'    => esc_attr__( 'Right Logo and Left Menu', 'flash' ),
+		'center-logo-below-menu'  => esc_attr__( 'Center Logo and Below Menu', 'flash' ),
+	),
+) );
+
+/** Search Icon Setting */
+Kirki::add_field( 'flash_config', array(
+	'type'        => 'checkbox',
+	'settings'    => 'flash_header_search',
+	'label'       => esc_html__( 'Remove Header Search Box', 'flash' ),
+	'description' => esc_html__( 'Check the box to remove search icon near menu.', 'flash' ),
+	'section'     => 'flash_header_options',
+	'default'     => '',
+	'priority'    => 20,
+) );
+
+/** Header Cart Setting */
+Kirki::add_field( 'flash_config', array(
+	'type'            => 'checkbox',
+	'settings'        => 'flash_header_cart',
+	'label'           => esc_html__( 'Remove Header Cart Icon', 'flash' ),
+	'description'     => esc_html__( 'Check the box to remove woocommerce cart icon near menu.', 'flash' ),
+	'section'         => 'flash_header_options',
+	'default'         => '',
+	'priority'        => 30,
+	'active_callback' => 'flash_is_woocommerce_active',
+) );
+
+/** Sticky Header Setting */
+Kirki::add_field( 'flash_config', array(
+	'type'        => 'checkbox',
+	'settings'    => 'flash_sticky_header',
+	'label'       => esc_html__( 'Sticky Header', 'flash' ),
+	'description' => esc_html__( 'Check the box to make the header section sticky when user scrolls down.', 'flash' ),
+	'section'     => 'flash_header_options',
+	'default'     => '',
+	'priority'    => 40,
+) );
+
+/** Page Header Section */
+Kirki::add_section( 'flash_page_header_options', array(
+	'title'          => esc_html__( 'Page Header Settings', 'flash' ),
+	'panel'          => 'flash_theme_options',
+	'priority'       => 40,
+	'capability'     => 'edit_theme_options',
+) );
+
+/** Remove Breadcrumbs setting */
+Kirki::add_field( 'flash_config', array(
+	'type'        => 'checkbox',
+	'settings'    => 'flash_remove_breadcrumbs',
+	'label'       => esc_html__( 'Remove breadcrumbs from page header', 'flash' ),
+	'description' => esc_html__( 'Check the box to remove breadcrumbs from page header.', 'flash' ),
+	'section'     => 'flash_page_header_options',
+	'default'     => '',
+	'priority'    => 10,
+) );
+
+/** Page Header Background Setting */
+Kirki::add_field( 'flash_config', array(
+	'type'        => 'image',
+	'settings'    => 'flash_pageheader_background',
+	'label'       => esc_html__( 'Page Header Background', 'flash' ),
+	'section'     => 'flash_page_header_options',
+	'default'     => '',
+	'priority'    => 20,
+) );
+
+/** Archive Page */
+Kirki::add_section( 'flash_archive_options', array(
+	'title'          => esc_html__( 'Archive Page Settings', 'flash' ),
+	'panel'          => 'flash_theme_options',
+	'priority'       => 50,
+	'capability'     => 'edit_theme_options',
+) );
+
+/** Blog Styles */
+Kirki::add_field( 'flash_config', array(
+	'type'        => 'select',
+	'settings'    => 'flash_blog_style',
+	'label'       => esc_html__( 'Blog Style', 'flash' ),
+	'section'     => 'flash_archive_options',
+	'default'     => 'classic-layout',
+	'priority'    => 10,
+	'multiple'    => 1,
+	'choices'     => array(
+		'classic-layout'      => esc_attr__( 'Classic', 'flash' ),
+		'full-width-archive'  => esc_attr__( 'Classic Full Width Image', 'flash' ),
+		'grid-view'           => esc_attr__( 'Grid Layout', 'flash' ),
+	),
+) );
+
+/** Archive Page Layout */
+Kirki::add_field( 'flash_config', array(
+	'type'        => 'radio-image',
+	'settings'    => 'flash_archive_layout',
+	'label'       => esc_html__( 'Archive Page Layout', 'flash' ),
+	'section'     => 'flash_archive_options',
+	'default'     => 'right-sidebar',
+	'priority'    => 20,
+	'multiple'    => 1,
+	'choices'     => array(
+		'right-sidebar'     => get_template_directory_uri() . '/images/right-sidebar.png',
+		'left-sidebar'      => get_template_directory_uri() . '/images/left-sidebar.png',
+		'full-width'        => get_template_directory_uri() . '/images/full-width.png',
+		'full-width-center' => get_template_directory_uri() . '/images/full-width-center.png',
+	),
+) );
+
+/** Meta - Date */
+Kirki::add_field( 'flash_config', array(
+	'type'        => 'checkbox',
+	'settings'    => 'flash_remove_meta_date',
+	'label'       => esc_html__( 'Remove date from post meta', 'flash' ),
+	'description' => esc_html__( 'Check the box to remove date from post meta.', 'flash' ),
+	'section'     => 'flash_archive_options',
+	'default'     => '',
+	'priority'    => 30,
+) );
+
+/** Meta - Author */
+Kirki::add_field( 'flash_config', array(
+	'type'        => 'checkbox',
+	'settings'    => 'flash_remove_meta_author',
+	'label'       => esc_html__( 'Remove author from post meta', 'flash' ),
+	'description' => esc_html__( 'Check the box to remove author from post meta.', 'flash' ),
+	'section'     => 'flash_archive_options',
+	'default'     => '',
+	'priority'    => 40,
+) );
+
+/** Meta - Comment Count */
+Kirki::add_field( 'flash_config', array(
+	'type'        => 'checkbox',
+	'settings'    => 'flash_remove_meta_comment_count',
+	'label'       => esc_html__( 'Remove comment count from post meta', 'flash' ),
+	'description' => esc_html__( 'Check the box to remove comment count from post meta.', 'flash' ),
+	'section'     => 'flash_archive_options',
+	'default'     => '',
+	'priority'    => 50,
+) );
+
+/** Meta - Category */
+Kirki::add_field( 'flash_config', array(
+	'type'        => 'checkbox',
+	'settings'    => 'flash_remove_meta_category',
+	'label'       => esc_html__( 'Remove category from post meta', 'flash' ),
+	'description' => esc_html__( 'Check the box to remove category from post meta.', 'flash' ),
+	'section'     => 'flash_archive_options',
+	'default'     => '',
+	'priority'    => 60,
+) );
+
+/** Meta - Tag */
+Kirki::add_field( 'flash_config', array(
+	'type'        => 'checkbox',
+	'settings'    => 'flash_remove_meta_tag',
+	'label'       => esc_html__( 'Remove tag from post meta', 'flash' ),
+	'description' => esc_html__( 'Check the box to remove tag from post meta.', 'flash' ),
+	'section'     => 'flash_archive_options',
+	'default'     => '',
+	'priority'    => 70,
+) );
+
+/** Post Settings */
+Kirki::add_section( 'flash_post_options', array(
+	'title'          => esc_html__( 'Post Settings', 'flash' ),
+	'panel'          => 'flash_theme_options',
+	'priority'       => 60,
+	'capability'     => 'edit_theme_options',
+
+) );
+
+/** Post Layout */
+Kirki::add_field( 'flash_config', array(
+	'type'        => 'radio-image',
+	'settings'    => 'flash_post_layout',
+	'label'       => esc_html__( 'Single Post Layout', 'flash' ),
+	'section'     => 'flash_post_options',
+	'default'     => 'right-sidebar',
+	'priority'    => 10,
+	'multiple'    => 1,
+	'choices'     => array(
+		'right-sidebar'     => get_template_directory_uri() . '/images/right-sidebar.png',
+		'left-sidebar'      => get_template_directory_uri() . '/images/left-sidebar.png',
+		'full-width'        => get_template_directory_uri() . '/images/full-width.png',
+		'full-width-center' => get_template_directory_uri() . '/images/full-width-center.png',
+	),
+) );
+
+/** Author Bio */
+Kirki::add_field( 'flash_config', array(
+	'type'        => 'checkbox',
+	'settings'    => 'flash_remove_single_bio',
+	'label'       => esc_html__( 'Remove Author Bio from post', 'flash' ),
+	'description' => esc_html__('Check the box to remove Author Bio from post', 'flash'),
+	'section'     => 'flash_post_options',
+	'default'     => '',
+	'priority'    => 20,
+) );
+
+/** Post Navigation */
+Kirki::add_field( 'flash_config', array(
+	'type'        => 'checkbox',
+	'settings'    => 'flash_remove_single_nav',
+	'label'       => esc_html__( 'Remove next/previous link from post', 'flash' ),
+	'description' => esc_html__('Check the box to remove next/previous link from post', 'flash'),
+	'section'     => 'flash_post_options',
+	'default'     => '',
+	'priority'    => 30,
+) );
+
+/** Page Settings */
+Kirki::add_section( 'flash_page_options', array(
+	'title'          => esc_html__( 'Page Settings', 'flash' ),
+	'panel'          => 'flash_theme_options',
+	'priority'       => 70,
+	'capability'     => 'edit_theme_options',
+) );
+
+/** Page Layout */
+Kirki::add_field( 'flash_config', array(
+	'type'        => 'radio-image',
+	'settings'    => 'flash_page_layout',
+	'label'       => esc_html__( 'Page Layout', 'flash' ),
+	'section'     => 'flash_page_options',
+	'default'     => 'right-sidebar',
+	'priority'    => 10,
+	'multiple'    => 1,
+	'choices'     => array(
+		'right-sidebar'     => get_template_directory_uri() . '/images/right-sidebar.png',
+		'left-sidebar'      => get_template_directory_uri() . '/images/left-sidebar.png',
+		'full-width'        => get_template_directory_uri() . '/images/full-width.png',
+		'full-width-center' => get_template_directory_uri() . '/images/full-width-center.png',
+	),
+) );
+
+/** Footer  */
+Kirki::add_section( 'flash_footer_options', array(
+	'title'          => esc_html__( 'Footer Settings', 'flash' ),
+	'panel'          => 'flash_theme_options',
+	'priority'       => 80,
+	'capability'     => 'edit_theme_options',
+) );
+
+/** Footer Widget */
+Kirki::add_field( 'flash_config', array(
+	'type'        => 'select',
+	'settings'    => 'flash_footer_widgets',
+	'label'       => esc_html__( 'Footer Widget Area', 'flash' ),
+	'section'     => 'flash_footer_options',
+	'default'     => '4',
+	'priority'    => 10,
+	'multiple'    => 1,
+	'choices'     => array(
+		'1'         => esc_html__( '1 Footer Widgets', 'flash' ),
+		'2'         => esc_html__( '2 Footer Widgets', 'flash' ),
+		'3'         => esc_html__( '3 Footer Widgets', 'flash' ),
+		'4'         => esc_html__( '4 Footer Widgets', 'flash' ),
+	),
+) );
+
+/** Advanced Settings  */
+Kirki::add_section( 'flash_advanced_section', array(
+	'title'          => esc_html__( 'Advanced Settings', 'flash' ),
+	'panel'          => 'flash_theme_options',
+	'priority'       => 90,
+	'capability'     => 'edit_theme_options',
+
+) );
+
+
+Kirki::add_field( 'flash_config', array(
+	'type'        => 'code',
+	'settings'    => 'flash_custom_css',
+	'label'       => esc_html__( 'Custom CSS', 'flash' ),
+	'section'     => 'flash_advanced_section',
+	'default'     => '',
+	'priority'    => 10,
+	'choices'     => array(
+		'language' => 'css',
+		'theme'    => 'monokai',
+		'height'   => 250,
+	),
+) );
+
+/**
  * Sets up the WordPress core custom header and custom background features.
  *
  * @since Flash 1.0
@@ -74,27 +540,6 @@ function flash_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 
-	// Transparent Logo
-	$wp_customize->add_setting(
-		'flash_transparent_logo',
-		array(
-			'default'           => '',
-			'sanitize_callback' => 'esc_url_raw',
-		)
-	);
-
-	$wp_customize->add_control(
-		new WP_Customize_Image_Control(
-			$wp_customize,
-			'flash_transparent_logo',
-			array(
-				'label'           => esc_html__( 'Transparent Logo' , 'flash' ),
-				'priority'        => 8, // Place right after Site Logo Option
-				'section'         => 'title_tagline',
-			)
-		)
-	);
-
 	// Add color scheme setting and control.
 	$wp_customize->add_setting( 'color_scheme', array(
 		'default'           => 'default',
@@ -149,629 +594,6 @@ function flash_customize_register( $wp_customize ) {
 		'section'     => 'colors',
 	) ) );
 
-	/* Theme Options Panel */
-	$wp_customize->add_panel(
-		'flash_theme_options',
-		array(
-			'priority'       => 100,
-			'capability'     => 'edit_theme_options',
-			'title'          => esc_html__( 'Flash Theme Options', 'flash' ),
-			'description'    => esc_html__( 'Customize options related to Flash theme', 'flash' ),
-		)
-	);
-
-
-	// General Options
-	$wp_customize->add_section(
-		'flash_general_options',
-		array(
-			'title'         => esc_html__( 'General Settings', 'flash' ),
-			'priority'      => 10,
-			'panel'         => 'flash_theme_options',
-			'description'   => esc_html__( '', 'flash' ),
-		)
-	);
-
-	// Layout Option
-	$wp_customize->add_setting(
-		'flash_site_layout',
-		array(
-			'default'           => 'wide',
-			'sanitize_callback' => 'flash_sanitize_choices',
-		)
-	);
-
-	$wp_customize->add_control(
-		'flash_site_layout',
-		array(
-			'type'        => 'select',
-			'label'       => esc_html__( 'Site Layout', 'flash' ),
-			'section'     => 'flash_general_options',
-			'description' => esc_html__( 'Select site layout.', 'flash' ),
-			'choices'     => array(
-				'wide'     => esc_html__( 'Wide Layout', 'flash' ),
-				'boxed'    => esc_html__( 'Boxed Layout', 'flash' ),
-			),
-		)
-	);
-
-	// Preloader
-	$wp_customize->add_setting(
-		'flash_disable_preloader',
-		array(
-			'default'           => '',
-			'sanitize_callback' => 'flash_sanitize_checkbox',
-		)
-	);
-
-	$wp_customize->add_control(
-		'flash_disable_preloader',
-		array(
-			'type'        => 'checkbox',
-			'label'       => esc_html__('Disable Preloader?', 'flash'),
-			'section'     => 'flash_general_options',
-			'description' => esc_html__('Check the box to disable preloader animation shown while opening the site.', 'flash'),
-		)
-	);
-
-	// Back to top Button
-	$wp_customize->add_setting(
-		'flash_disable_back_to_top',
-		array(
-			'default'           => '',
-			'sanitize_callback' => 'flash_sanitize_checkbox',
-		)
-	);
-
-	$wp_customize->add_control(
-		'flash_disable_back_to_top',
-		array(
-			'type'        => 'checkbox',
-			'label'       => esc_html__('Disable Back to Top Button?', 'flash'),
-			'section'     => 'flash_general_options',
-			'description' => esc_html__('Check the box to disable back to top button.', 'flash'),
-		)
-	);
-
-	// Top Header Options
-	$wp_customize->add_section(
-		'flash_top_header_options',
-		array(
-			'title'         => esc_html__( 'Top Header Settings', 'flash' ),
-			'priority'      => 20,
-			'panel'         => 'flash_theme_options',
-			'description'   => esc_html__( 'Top Header Related Options', 'flash' ),
-		)
-	);
-
-	$wp_customize->add_setting(
-		'flash_top_header',
-		array(
-			'default'           => '1',
-			'sanitize_callback' => 'flash_sanitize_checkbox',
-		)
-	);
-
-	$wp_customize->add_control(
-		'flash_top_header',
-		array(
-			'type'        => 'checkbox',
-			'label'       => esc_html__('Enable Top Header', 'flash'),
-			'section'     => 'flash_top_header_options',
-			'description' => esc_html__('Check the box to show social menu and header contact info on top header section.', 'flash'),
-		)
-	);
-
-	$wp_customize->add_setting(
-		'flash_top_header_left',
-		array(
-			'default'           => 'disable',
-			'sanitize_callback' => 'flash_sanitize_choices',
-		)
-	);
-
-	$wp_customize->add_control(
-		'flash_top_header_left',
-		array(
-			'type'        => 'select',
-			'label'       => esc_html__('Top Header Left Content', 'flash'),
-			'section'     => 'flash_top_header_options',
-			'description' => esc_html__('Select content for Top Header Left Part.', 'flash'),
-			'choices'     => array(
-				'social-menu'    => esc_html__( 'Social Menu', 'flash' ),
-				'header-text'    => esc_html__( 'Top Header Text', 'flash' ),
-				'disable'        => esc_html__( 'Disable', 'flash' ),
-			),
-			'active_callback' => 'flash_top_header_active_filter',
-		)
-	);
-
-	$wp_customize->add_setting(
-		'flash_top_header_right',
-		array(
-			'default'           => 'disable',
-			'sanitize_callback' => 'flash_sanitize_choices',
-		)
-	);
-
-	$wp_customize->add_control(
-		'flash_top_header_right',
-		array(
-			'type'        => 'select',
-			'label'       => esc_html__('Top Header Right Content', 'flash'),
-			'section'     => 'flash_top_header_options',
-			'description' => esc_html__('Select content for Top Header Right Part.', 'flash'),
-			'choices' => array(
-				'social-menu'    => esc_html__( 'Social Menu', 'flash' ),
-				'header-text'    => esc_html__( 'Top Header Text', 'flash' ),
-				'disable'        => esc_html__( 'Disable', 'flash' ),
-			),
-			'active_callback' => 'flash_top_header_active_filter',
-		)
-	);
-
-	// Header Text
-	$wp_customize->add_setting(
-		'flash_top_header_text',
-		array(
-			'default'           => '',
-			'sanitize_callback' => 'flash_sanitize_text',
-		)
-	);
-
-	$wp_customize->add_control(
-		'flash_top_header_text',
-		array(
-			'type'            => 'textarea',
-			'label'           => esc_html__('Top Header Text Content', 'flash'),
-			'section'         => 'flash_top_header_options',
-			'description'     => esc_html__('Add content for Top Header Text.', 'flash'),
-			'active_callback' => 'flash_top_header_text_active_filter',
-		)
-	);
-
-	// Header
-	$wp_customize->add_section(
-		'flash_header_options',
-		array(
-			'title'         => esc_html__( 'Header Settings', 'flash' ),
-			'priority'      => 30,
-			'panel'         => 'flash_theme_options',
-		)
-	);
-
-	$wp_customize->add_setting(
-		'flash_logo_position',
-		array(
-			'default'           => 'left-logo-right-menu',
-			'sanitize_callback' => 'flash_sanitize_choices',
-		)
-	);
-
-	$wp_customize->add_control(
-		'flash_logo_position',
-		array(
-			'type'        => 'select',
-			'label'       => esc_html__( 'Logo Position', 'flash' ),
-			'section'     => 'flash_header_options',
-			'description' => esc_html__('Select position for Header Menu.', 'flash'),
-			'choices' => array(
-				'left-logo-right-menu'     => esc_html__( 'Left Logo & Right Menu', 'flash' ),
-				'right-logo-left-menu'     => esc_html__( 'Right Logo & Left Menu', 'flash' ),
-				'center-logo-below-menu'   => esc_html__( 'Center Logo & Below Menu', 'flash' ),
-			),
-		)
-	);
-
-	// Header Search Icon
-	$wp_customize->add_setting(
-		'flash_header_search',
-		array(
-			'default'           => '',
-			'sanitize_callback' => 'flash_sanitize_checkbox',
-		)
-	);
-
-	$wp_customize->add_control(
-		'flash_header_search',
-		array(
-			'type'        => 'checkbox',
-			'label'       => esc_html__( 'Remove Header Search Box.', 'flash' ),
-			'section'     => 'flash_header_options',
-			'description' => esc_html__('Check the box to remove search icon near menu.', 'flash'),
-		)
-	);
-
-	// Header Search Icon
-	$wp_customize->add_setting(
-		'flash_header_cart',
-		array(
-			'default'           => '',
-			'sanitize_callback' => 'flash_sanitize_checkbox',
-		)
-	);
-
-	$wp_customize->add_control(
-		'flash_header_cart',
-		array(
-			'type'            => 'checkbox',
-			'label'           => esc_html__( 'Remove Header Cart Icon.', 'flash' ),
-			'section'         => 'flash_header_options',
-			'description'     => esc_html__('Check the box to remove woocommerce cart icon near menu.', 'flash'),
-			'active_callback' => 'flash_woocommerce_active_filter'
-		)
-	);
-
-	// Header Search Icon
-	$wp_customize->add_setting(
-		'flash_sticky_header',
-		array(
-			'default'           => '',
-			'sanitize_callback' => 'flash_sanitize_checkbox',
-		)
-	);
-
-	$wp_customize->add_control(
-		'flash_sticky_header',
-		array(
-			'type'        => 'checkbox',
-			'label'       => esc_html__( 'Sticky Header', 'flash' ),
-			'section'     => 'flash_header_options',
-			'description' => esc_html__('Check the box to make the header section sticky when user scrolls down.', 'flash'),
-		)
-	);
-
-	// Page Header
-	$wp_customize->add_section(
-		'flash_page_header_options',
-		array(
-			'title'         => esc_html__( 'Page Header Settings', 'flash' ),
-			'priority'      => 30,
-			'panel'         => 'flash_theme_options',
-		)
-	);
-
-	// Breadcrumbs Option
-	$wp_customize->add_setting(
-		'flash_remove_breadcrumbs',
-		array(
-			'default'           => '',
-			'sanitize_callback' => 'flash_sanitize_checkbox',
-		)
-	);
-
-	$wp_customize->add_control(
-		'flash_remove_breadcrumbs',
-		array(
-			'type'            => 'checkbox',
-			'label'           => esc_html__( 'Remove breadcrumbs from page header', 'flash' ),
-			'section'         => 'flash_page_header_options',
-			'description'     => esc_html__('Check the box to remove breadcrumbs from page header.', 'flash'),
-		)
-	);
-
-	// Pageheader background
-	$wp_customize->add_setting(
-		'flash_pageheader_background',
-		array(
-			'default'           => '',
-			'sanitize_callback' => 'esc_url_raw',
-		)
-	);
-
-	$wp_customize->add_control(
-		new WP_Customize_Image_Control(
-			$wp_customize,
-			'flash_pageheader_background',
-			array(
-				'label'           => esc_html__( 'Pageheader background' , 'flash' ),
-				'priority'        => 50,
-				'section'         => 'flash_page_header_options',
-			)
-		)
-	);
-
-	// Blog Options
-	$wp_customize->add_section(
-		'flash_archive_options',
-		array(
-			'title'         => esc_html__( 'Archive Page Settings', 'flash' ),
-			'priority'      => 40,
-			'panel'         => 'flash_theme_options',
-			'description'   => esc_html__( 'Blog Related Options', 'flash' ),
-		)
-	);
-
-	$wp_customize->add_setting(
-		'flash_blog_style',
-		array(
-			'default'           => 'classic-layout',
-			'sanitize_callback' => 'flash_sanitize_choices',
-		)
-	);
-
-	$wp_customize->add_control(
-		'flash_blog_style',
-		array(
-			'type'        => 'select',
-			'label'       => esc_html__( 'Blog Style', 'flash' ),
-			'section'     => 'flash_archive_options',
-			'description' => esc_html__( 'Select listing style for archive pages.', 'flash' ),
-			'choices' => array(
-				'classic-layout'      => esc_html__( 'Classic', 'flash' ),
-				'full-width-archive'  => esc_html__( 'Classic Full Width Image', 'flash' ),
-				'grid-view'           => esc_html__( 'Grid Layout', 'flash' ),
-			),
-		)
-	);
-
-	// Archive Layout
-	$wp_customize->add_setting(
-		'flash_archive_layout',
-		array(
-			'default'           => 'right-sidebar',
-			'sanitize_callback' => 'flash_sanitize_choices',
-		)
-	);
-
-	// Add the layout control.
-	$wp_customize->add_control(
-		new Flash_Image_Radio_Control (
-			$wp_customize,
-			'flash_archive_layout',
-			array(
-				'label'   => esc_html__( 'Archive Page Layout', 'flash' ),
-				'section' => 'flash_archive_options',
-				'type'    => 'radio',
-				'choices' => array(
-					'right-sidebar'     => get_template_directory_uri() . '/images/right-sidebar.png',
-					'left-sidebar'      => get_template_directory_uri() . '/images/left-sidebar.png',
-					'full-width'        => get_template_directory_uri() . '/images/full-width.png',
-					'full-width-center' => get_template_directory_uri() . '/images/full-width-center.png',
-				)
-			)
-		)
-	);
-
-	// Post Meta Settings
-	$wp_customize->add_setting(
-		'flash_remove_meta_date',
-		array(
-			'default'           => '',
-			'sanitize_callback' => 'flash_sanitize_checkbox',
-		)
-	);
-
-	$wp_customize->add_control(
-		'flash_remove_meta_date',
-		array(
-			'type'            => 'checkbox',
-			'label'           => esc_html__( 'Remove date from post meta', 'flash' ),
-			'section'         => 'flash_archive_options',
-			'description'     => esc_html__('Check the box to remove date from post meta.', 'flash'),
-		)
-	);
-
-	$wp_customize->add_setting(
-		'flash_remove_meta_author',
-		array(
-			'default'           => '',
-			'sanitize_callback' => 'flash_sanitize_checkbox',
-		)
-	);
-
-	$wp_customize->add_control(
-		'flash_remove_meta_author',
-		array(
-			'type'            => 'checkbox',
-			'label'           => esc_html__( 'Remove author from post meta', 'flash' ),
-			'section'         => 'flash_archive_options',
-			'description'     => esc_html__('Check the box to remove author from post meta.', 'flash'),
-		)
-	);
-
-	$wp_customize->add_setting(
-		'flash_remove_meta_comment_count',
-		array(
-			'default'           => '',
-			'sanitize_callback' => 'flash_sanitize_checkbox',
-		)
-	);
-
-	$wp_customize->add_control(
-		'flash_remove_meta_comment_count',
-		array(
-			'type'            => 'checkbox',
-			'label'           => esc_html__( 'Remove comment count from post meta', 'flash' ),
-			'section'         => 'flash_archive_options',
-			'description'     => esc_html__('Check the box to remove comment count from post meta.', 'flash'),
-		)
-	);
-
-	$wp_customize->add_setting(
-		'flash_remove_meta_category',
-		array(
-			'default'           => '',
-			'sanitize_callback' => 'flash_sanitize_checkbox',
-		)
-	);
-
-	$wp_customize->add_control(
-		'flash_remove_meta_category',
-		array(
-			'type'            => 'checkbox',
-			'label'           => esc_html__( 'Remove category from post meta', 'flash' ),
-			'section'         => 'flash_archive_options',
-			'description'     => esc_html__('Check the box to remove category from post meta.', 'flash'),
-		)
-	);
-
-	$wp_customize->add_setting(
-		'flash_remove_meta_tag',
-		array(
-			'default'           => '',
-			'sanitize_callback' => 'flash_sanitize_checkbox',
-		)
-	);
-
-	$wp_customize->add_control(
-		'flash_remove_meta_tag',
-		array(
-			'type'            => 'checkbox',
-			'label'           => esc_html__( 'Remove tag from post meta', 'flash' ),
-			'section'         => 'flash_archive_options',
-			'description'     => esc_html__('Check the box to remove tag from post meta.', 'flash'),
-		)
-	);
-
-
-	// Post Options
-	$wp_customize->add_section(
-		'flash_post_options',
-		array(
-			'title'         => esc_html__( 'Post Settings', 'flash' ),
-			'priority'      => 50,
-			'panel'         => 'flash_theme_options',
-		)
-	);
-
-	// Post Layout
-	$wp_customize->add_setting(
-		'flash_post_layout',
-		array(
-			'default'           => 'right-sidebar',
-			'sanitize_callback' => 'flash_sanitize_choices',
-		)
-	);
-
-	// Add the layout control.
-	$wp_customize->add_control(
-		new Flash_Image_Radio_Control (
-			$wp_customize,
-			'flash_post_layout',
-			array(
-				'label'   => esc_html__( 'Single Post Layout', 'flash' ),
-				'section' => 'flash_post_options',
-				'type'    => 'radio',
-				'choices' => array(
-					'right-sidebar'     => get_template_directory_uri() . '/images/right-sidebar.png',
-					'left-sidebar'      => get_template_directory_uri() . '/images/left-sidebar.png',
-					'full-width'        => get_template_directory_uri() . '/images/full-width.png',
-					'full-width-center' => get_template_directory_uri() . '/images/full-width-center.png',
-				)
-			)
-		)
-	);
-
-	$wp_customize->add_setting(
-		'flash_remove_single_bio',
-		array(
-			'default'           => '',
-			'sanitize_callback' => 'flash_sanitize_checkbox',
-		)
-	);
-
-	$wp_customize->add_control(
-		'flash_remove_single_bio',
-		array(
-			'type'            => 'checkbox',
-			'label'           => esc_html__( 'Remove Author Bio from post', 'flash' ),
-			'section'         => 'flash_post_options',
-			'description'     => esc_html__('Check the box to remove Author Bio from post', 'flash'),
-		)
-	);
-
-	$wp_customize->add_setting(
-		'flash_remove_single_nav',
-		array(
-			'default'           => '',
-			'sanitize_callback' => 'flash_sanitize_checkbox',
-		)
-	);
-
-	$wp_customize->add_control(
-		'flash_remove_single_nav',
-		array(
-			'type'            => 'checkbox',
-			'label'           => esc_html__( 'Remove next/previous link from post', 'flash' ),
-			'section'         => 'flash_post_options',
-			'description'     => esc_html__('Check the box to remove next/previous link from post', 'flash'),
-		)
-	);
-
-	// Page Options
-	$wp_customize->add_section(
-		'flash_page_options',
-		array(
-			'title'         => esc_html__( 'Page Settings', 'flash' ),
-			'priority'      => 50,
-			'panel'         => 'flash_theme_options',
-		)
-	);
-
-		// Page Layout
-	$wp_customize->add_setting(
-		'flash_page_layout',
-		array(
-			'default'           => 'right-sidebar',
-			'sanitize_callback' => 'flash_sanitize_choices',
-		)
-	);
-
-	// Add the layout control.
-	$wp_customize->add_control(
-		new Flash_Image_Radio_Control (
-			$wp_customize,
-			'flash_page_layout',
-			array(
-				'label'   => esc_html__( 'Page Layout', 'flash' ),
-				'section' => 'flash_page_options',
-				'type'    => 'radio',
-				'choices' => array(
-					'right-sidebar'     => get_template_directory_uri() . '/images/right-sidebar.png',
-					'left-sidebar'      => get_template_directory_uri() . '/images/left-sidebar.png',
-					'full-width'        => get_template_directory_uri() . '/images/full-width.png',
-					'full-width-center' => get_template_directory_uri() . '/images/full-width-center.png',
-				)
-			)
-		)
-	);
-
-	// Footer Options
-	$wp_customize->add_section(
-		'flash_footer_options',
-		array(
-			'title'         => esc_html__( 'Footer Settings', 'flash' ),
-			'priority'      => 60,
-			'panel'         => 'flash_theme_options',
-			'description'   => esc_html__( 'Footer Related Options', 'flash' ),
-		)
-	);
-
-	$wp_customize->add_setting(
-		'flash_footer_widgets',
-		array(
-			'default'           => '4',
-			'sanitize_callback' => 'flash_sanitize_choices',
-		)
-	);
-
-	$wp_customize->add_control(
-		'flash_footer_widgets',
-		array(
-			'type'        => 'select',
-			'label'       => esc_html__( 'Footer Widget Area', 'flash' ),
-			'section'     => 'flash_footer_options',
-			'description' => esc_html__( 'Select Footer Widget Area Layout', 'flash' ),
-			'choices' => array(
-				'1'         => esc_html__( '1 Footer Widgets', 'flash' ),
-				'2'         => esc_html__( '2 Footer Widgets', 'flash' ),
-				'3'         => esc_html__( '3 Footer Widgets', 'flash' ),
-				'4'         => esc_html__( '4 Footer Widgets', 'flash' ),
-			),
-		)
-	);
-
 	// Typography Options
 	$flash_fonts_families = array(
 		'flash_body_font' => array(
@@ -815,8 +637,8 @@ function flash_customize_register( $wp_customize ) {
 		$wp_customize->add_setting(
 			$flash_fonts_family['id'],
 			array(
-				'default' => $flash_fonts_family['default'],
-				'capability' => 'edit_theme_options',
+				'default'           => $flash_fonts_family['default'],
+				'capability'        => 'edit_theme_options',
 				'sanitize_callback' => 'flash_fonts_sanitize'
 			)
 		);
@@ -833,85 +655,11 @@ function flash_customize_register( $wp_customize ) {
 			)
 		);
 	}
-
-	// Advanced Options
-	$wp_customize->add_section(
-		'flash_advanced_section',
-		array(
-			'priority' => 80,
-			'title'    => esc_html__( 'Advanced Settings', 'flash' ),
-			'panel'    => 'flash_theme_options'
-		)
-	);
-
-	$wp_customize->add_setting(
-		'flash_custom_css',
-		array(
-			'default'              => '',
-			'sanitize_callback'    => 'wp_filter_nohtml_kses',
-			'sanitize_js_callback' => 'wp_filter_nohtml_kses'
-		)
-	);
-
-	$wp_customize->add_control(
-		'flash_custom_css',
-		array(
-			'type'            => 'textarea',
-			'label'           => esc_html__('Custom CSS', 'flash'),
-			'section'         => 'flash_advanced_section',
-		)
-	);
 }
 add_action( 'customize_register', 'flash_customize_register' );
 
-
-// Sanitize Choices
-function flash_sanitize_choices( $input, $setting ) {
-	global $wp_customize;
-
-	$control = $wp_customize->get_control( $setting->id );
-
-	if ( array_key_exists( $input, $control->choices ) ) {
-		return $input;
-	} else {
-		return $setting->default;
-	}
-}
-
-// Sanitize Checkbox
-function flash_sanitize_checkbox( $input ) {
-	if ( $input == 1 ) {
-		return 1;
-	} else {
-		return '';
-	}
-}
-
-// Sanitize Text
-function flash_sanitize_text( $input ) {
-	return wp_kses_post( force_balance_tags( $input ) );
-}
-
-// Top Header Active callback
-function flash_top_header_active_filter(){
-	if ( ( get_theme_mod( 'flash_top_header', '' ) == '1' )  ) {
-		return true;
-	}
-}
-
-// Top Header Text Active Callback
-function flash_top_header_text_active_filter() {
-	if ( ( get_theme_mod( 'flash_top_header', '' ) == '1' )  ) {
-		if( ( get_theme_mod( 'flash_top_header_left', 'disable' ) == 'header-text' ) || ( get_theme_mod( 'flash_top_header_right', 'disable' ) == 'header-text' ) ) {
-			return true;
-		}
-	} else {
-		return false;
-	}
-}
-
 // Header Cart Icon Active Callback
-function flash_woocommerce_active_filter() {
+function flash_is_woocommerce_active() {
 	if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
 		return true;
 	} else {
@@ -919,18 +667,12 @@ function flash_woocommerce_active_filter() {
 	}
 }
 
-function flash_pageheader_active_filter() {
-	if ( ( get_theme_mod( 'flash_pageheader', '' ) == '1' )  ) {
-		return true;
-	}
-}
-
-// google fonts sanitize
+// Sanitize Google Font
 function flash_fonts_sanitize( $input, $setting ) {
-  // Get the list of choices from the control associated with the setting.
-  $choices = $setting->manager->get_control( $setting->id )->choices;
-  // If the input is a valid key, return it, else, return the default.
-  return ( array_key_exists( $input, $choices ) ? $input : $setting->default );
+	// Get the list of choices from the control associated with the setting.
+	$choices = $setting->manager->get_control( $setting->id )->choices;
+	// If the input is a valid key, return it, else, return the default.
+	return ( array_key_exists( $input, $choices ) ? $input : $setting->default );
 }
 
 
@@ -1182,7 +924,7 @@ function flash_get_color_scheme_css( $colors ) {
 	}
 
 	/* Link Color */
-	#site-navigation ul li:hover > a,#site-navigation ul.sub-menu li:hover > a,#site-navigation ul li ul.sub-menu li.menu-item-has-children ul li:hover > a,#site-navigation ul li ul.sub-menu li.menu-item-has-children:hover > .menu-item,body.transparent #masthead .header-bottom #site-navigation ul li:hover > .menu-item,body.transparent #masthead .header-bottom #site-navigation ul li:hover > a,body.transparent #masthead .header-bottom #site-navigation ul.sub-menu li:hover > a,body.transparent #masthead .header-bottom #site-navigation ul.sub-menu li.menu-item-has-children ul li:hover > a,body.transparent.header-sticky #masthead-sticky-wrapper #masthead .header-bottom #site-navigation ul.sub-menu li > a:hover,.tg-service-widget .service-title-wrap a:hover,.tg-service-widget .service-more,.feature-product-section .button-group button:hover ,.fun-facts-section .fun-facts-icon-wrap,.fun-facts-section .tg-fun-facts-widget.tg-fun-facts-layout-2 .counter-wrapper,.blog-section .row:nth-child(odd) .blog-content .entry-title a:hover,.blog-section .row:nth-child(even) .blog-content .entry-title a:hover ,.blog-section .tg-blog-widget-layout-2 .blog-content .read-more-container .read-more a,footer.footer-layout #top-footer .widget-title::first-letter,footer.footer-layout #top-footer .widget ul li a:hover,footer.footer-layout #bottom-footer .copyright .copyright-text a:hover,footer.footer-layout #bottom-footer .footer-menu ul li a:hover,.archive #primary .entry-content-block h2.entry-title a:hover,.blog #primary .entry-content-block h2.entry-title a:hover,#secondary .widget ul li a:hover,.woocommerce-Price-amount.amount,.team-wrapper .team-content-wrapper .team-social a:hover,.testimonial-container .testimonial-wrapper .testimonial-slide .testominial-content-wrapper .testimonial-icon,.footer-menu li a:hover,.tg-feature-product-filter-layout .button.is-checked:hover{
+	#site-navigation ul li:hover > a,#site-navigation ul li.current-menu-item > a,#site-navigation ul li.current_page_item  > a,#site-navigation ul.sub-menu li:hover > a,#site-navigation ul li ul.sub-menu li.menu-item-has-children ul li:hover > a,#site-navigation ul li ul.sub-menu li.menu-item-has-children:hover > .menu-item,body.transparent #masthead .header-bottom #site-navigation ul li:hover > .menu-item,body.transparent #masthead .header-bottom #site-navigation ul li:hover > a,body.transparent #masthead .header-bottom #site-navigation ul.sub-menu li:hover > a,body.transparent #masthead .header-bottom #site-navigation ul.sub-menu li.menu-item-has-children ul li:hover > a,body.transparent.header-sticky #masthead-sticky-wrapper #masthead .header-bottom #site-navigation ul.sub-menu li > a:hover,.tg-service-widget .service-title-wrap a:hover,.tg-service-widget .service-more,.feature-product-section .button-group button:hover ,.fun-facts-section .fun-facts-icon-wrap,.fun-facts-section .tg-fun-facts-widget.tg-fun-facts-layout-2 .counter-wrapper,.blog-section .row:nth-child(odd) .blog-content .entry-title a:hover,.blog-section .row:nth-child(even) .blog-content .entry-title a:hover ,.blog-section .tg-blog-widget-layout-2 .blog-content .read-more-container .read-more a,footer.footer-layout #top-footer .widget-title::first-letter,footer.footer-layout #top-footer .widget ul li a:hover,footer.footer-layout #bottom-footer .copyright .copyright-text a:hover,footer.footer-layout #bottom-footer .footer-menu ul li a:hover,.archive #primary .entry-content-block h2.entry-title a:hover,.blog #primary .entry-content-block h2.entry-title a:hover,#secondary .widget ul li a:hover,.woocommerce-Price-amount.amount,.team-wrapper .team-content-wrapper .team-social a:hover,.testimonial-container .testimonial-wrapper .testimonial-slide .testominial-content-wrapper .testimonial-icon,.footer-menu li a:hover,.tg-feature-product-filter-layout .button.is-checked:hover{
 		color: {$colors['link_color']};
 	}
 
@@ -1309,7 +1051,7 @@ function flash_link_color_css() {
 
 	$css = '
 	/* Link Color */
-		#site-navigation ul li:hover > a,#site-navigation ul.sub-menu li:hover > a,#site-navigation ul li ul.sub-menu li.menu-item-has-children ul li:hover > a,#site-navigation ul li ul.sub-menu li.menu-item-has-children:hover > .menu-item,body.transparent #masthead .header-bottom #site-navigation ul li:hover > .menu-item,body.transparent #masthead .header-bottom #site-navigation ul li:hover > a,body.transparent #masthead .header-bottom #site-navigation ul.sub-menu li:hover > a,body.transparent #masthead .header-bottom #site-navigation ul.sub-menu li.menu-item-has-children ul li:hover > a,body.transparent.header-sticky #masthead-sticky-wrapper #masthead .header-bottom #site-navigation ul.sub-menu li > a:hover,.tg-service-widget .service-title-wrap a:hover,.tg-service-widget .service-more,.feature-product-section .button-group button:hover ,.fun-facts-section .fun-facts-icon-wrap,.fun-facts-section .tg-fun-facts-widget.tg-fun-facts-layout-2 .counter-wrapper,.blog-section .row:nth-child(odd) .blog-content .entry-title a:hover,.blog-section .row:nth-child(even) .blog-content .entry-title a:hover ,.blog-section .tg-blog-widget-layout-2 .blog-content .read-more-container .read-more a,footer.footer-layout #top-footer .widget-title::first-letter,footer.footer-layout #top-footer .widget ul li a:hover,footer.footer-layout #bottom-footer .copyright .copyright-text a:hover,footer.footer-layout #bottom-footer .footer-menu ul li a:hover,.archive #primary .entry-content-block h2.entry-title a:hover,.blog #primary .entry-content-block h2.entry-title a:hover,#secondary .widget ul li a:hover,.woocommerce-Price-amount.amount,.team-wrapper .team-content-wrapper .team-social a:hover,.testimonial-container .testimonial-wrapper .testimonial-slide .testominial-content-wrapper .testimonial-icon,.footer-menu li a:hover,.tg-feature-product-filter-layout .button.is-checked:hover{
+		#site-navigation ul li:hover > a,#site-navigation ul li.current-menu-item > a,#site-navigation ul li.current_page_item  > a,#site-navigation ul.sub-menu li:hover > a,#site-navigation ul li ul.sub-menu li.menu-item-has-children ul li:hover > a,#site-navigation ul li ul.sub-menu li.menu-item-has-children:hover > .menu-item,body.transparent #masthead .header-bottom #site-navigation ul li:hover > .menu-item,body.transparent #masthead .header-bottom #site-navigation ul li:hover > a,body.transparent #masthead .header-bottom #site-navigation ul.sub-menu li:hover > a,body.transparent #masthead .header-bottom #site-navigation ul.sub-menu li.menu-item-has-children ul li:hover > a,body.transparent.header-sticky #masthead-sticky-wrapper #masthead .header-bottom #site-navigation ul.sub-menu li > a:hover,.tg-service-widget .service-title-wrap a:hover,.tg-service-widget .service-more,.feature-product-section .button-group button:hover ,.fun-facts-section .fun-facts-icon-wrap,.fun-facts-section .tg-fun-facts-widget.tg-fun-facts-layout-2 .counter-wrapper,.blog-section .row:nth-child(odd) .blog-content .entry-title a:hover,.blog-section .row:nth-child(even) .blog-content .entry-title a:hover ,.blog-section .tg-blog-widget-layout-2 .blog-content .read-more-container .read-more a,footer.footer-layout #top-footer .widget-title::first-letter,footer.footer-layout #top-footer .widget ul li a:hover,footer.footer-layout #bottom-footer .copyright .copyright-text a:hover,footer.footer-layout #bottom-footer .footer-menu ul li a:hover,.archive #primary .entry-content-block h2.entry-title a:hover,.blog #primary .entry-content-block h2.entry-title a:hover,#secondary .widget ul li a:hover,.woocommerce-Price-amount.amount,.team-wrapper .team-content-wrapper .team-social a:hover,.testimonial-container .testimonial-wrapper .testimonial-slide .testominial-content-wrapper .testimonial-icon,.footer-menu li a:hover,.tg-feature-product-filter-layout .button.is-checked:hover{
 		color: %1$s;
 	}
 
@@ -1474,6 +1216,9 @@ function flash_frontend_css() {
 			height: 1px;
 			width: 1px;
 			overflow: hidden;
+		}
+		.logo .logo-text{
+			padding: 0;
 		}
 		';
 	}

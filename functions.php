@@ -264,6 +264,11 @@ require get_template_directory() . '/inc/template-tags.php';
 require get_template_directory() . '/inc/extras.php';
 
 /**
+ * Kirki Toolkit.
+ */
+require get_template_directory() . '/inc/kirki/kirki.php';
+
+/**
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
@@ -288,6 +293,11 @@ require get_template_directory() . '/inc/woocommerce.php';
  * Load SiteOrigin Panels compatibility file.
  */
 require get_template_directory() . '/inc/siteorigin-panels.php';
+
+/**
+ * Load Welcome page file.
+ */
+require get_template_directory() . '/inc/class-flash-admin.php';
 
 /**
  * Load Demo Importer Configs.
