@@ -42,7 +42,7 @@ if ( get_theme_mod( 'flash_disable_preloader', '' ) != 1 ) : ?>
 
 	<header id="masthead" class="site-header" role="banner">
 		<?php
-		if ( get_theme_mod( 'flash_top_header', '' == '1') ) : ?>
+		if ( get_theme_mod( 'flash_top_header', '1') == '1' ) : ?>
 		<div class="header-top">
 			<div class="tg-container">
 				<div class="tg-column-wrapper clearfix">
