@@ -124,12 +124,7 @@ if ( get_theme_mod( 'flash_disable_preloader', '' ) != 1 ) : ?>
 		</div>
 	</header><!-- #masthead -->
 
-
-	<?php if ( get_header_image() && !is_front_page() ) : ?>
-	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-		<img src="<?php header_image(); ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="">
-	</a>
-	<?php endif; // End header image check. ?>
+	<?php get_template_part( 'template-parts/header-media' ); ?>
 
 	<?php if( !is_front_page() ) : ?>
 	<nav id="flash-breadcrumbs" class="breadcrumb-trail breadcrumbs">

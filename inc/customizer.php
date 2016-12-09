@@ -521,6 +521,7 @@ function flash_custom_header_and_background() {
 		'height'               => 280,
 		'flex-height'          => true,
 		'header-text'          => true,
+		'video'                => true,
 	) ) );
 }
 add_action( 'after_setup_theme', 'flash_custom_header_and_background' );
