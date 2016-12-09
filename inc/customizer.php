@@ -898,6 +898,8 @@ function flash_color_scheme_css() {
 	wp_add_inline_style( 'flash-style', $color_scheme_css );
 }
 
+add_action( 'wp_enqueue_scripts', 'flash_color_scheme_css' );
+
 /**
  * Returns CSS for the color schemes.
  *
@@ -916,7 +918,7 @@ function flash_get_color_scheme_css( $colors ) {
 	) );
 
 	return <<<CSS
-	/* Color Scheme */
+	/* Predefined Color Schemes CSS */
 
 	/* Background Color */
 	body {
@@ -1040,6 +1042,11 @@ function flash_link_color_css() {
 	$default_color   = $color_scheme[1];
 	$link_color = get_theme_mod( 'link_color', $default_color );
 
+	// Don't do anything if the current color is the default.
+	if ( $link_color === $default_color ) {
+		return;
+	}
+
 	// Convert link color to rgba.
 	$link_color_rgb = flash_hex2rgb( $link_color );
 
@@ -1050,7 +1057,7 @@ function flash_link_color_css() {
 	$border_color = vsprintf( 'rgba( %1$s, %2$s, %3$s, 0.8)', $link_color_rgb );
 
 	$css = '
-	/* Link Color */
+	/* Custom Link Color */
 		#site-navigation ul li:hover > a,#site-navigation ul li.current-menu-item > a,#site-navigation ul li.current_page_item  > a,#site-navigation ul.sub-menu li:hover > a,#site-navigation ul li ul.sub-menu li.menu-item-has-children ul li:hover > a,#site-navigation ul li ul.sub-menu li.menu-item-has-children:hover > .menu-item,body.transparent #masthead .header-bottom #site-navigation ul li:hover > .menu-item,body.transparent #masthead .header-bottom #site-navigation ul li:hover > a,body.transparent #masthead .header-bottom #site-navigation ul.sub-menu li:hover > a,body.transparent #masthead .header-bottom #site-navigation ul.sub-menu li.menu-item-has-children ul li:hover > a,body.transparent.header-sticky #masthead-sticky-wrapper #masthead .header-bottom #site-navigation ul.sub-menu li > a:hover,.tg-service-widget .service-title-wrap a:hover,.tg-service-widget .service-more,.feature-product-section .button-group button:hover ,.fun-facts-section .fun-facts-icon-wrap,.fun-facts-section .tg-fun-facts-widget.tg-fun-facts-layout-2 .counter-wrapper,.blog-section .row:nth-child(odd) .blog-content .entry-title a:hover,.blog-section .row:nth-child(even) .blog-content .entry-title a:hover ,.blog-section .tg-blog-widget-layout-2 .blog-content .read-more-container .read-more a,footer.footer-layout #top-footer .widget-title::first-letter,footer.footer-layout #top-footer .widget ul li a:hover,footer.footer-layout #bottom-footer .copyright .copyright-text a:hover,footer.footer-layout #bottom-footer .footer-menu ul li a:hover,.archive #primary .entry-content-block h2.entry-title a:hover,.blog #primary .entry-content-block h2.entry-title a:hover,#secondary .widget ul li a:hover,.woocommerce-Price-amount.amount,.team-wrapper .team-content-wrapper .team-social a:hover,.testimonial-container .testimonial-wrapper .testimonial-slide .testominial-content-wrapper .testimonial-icon,.footer-menu li a:hover,.tg-feature-product-filter-layout .button.is-checked:hover{
 		color: %1$s;
 	}
@@ -1118,6 +1125,11 @@ function flash_main_text_color_css() {
 	$default_color   = $color_scheme[2];
 	$main_text_color = get_theme_mod( 'main_text_color', $default_color );
 
+	// Don't do anything if the current color is the default.
+	if ( $main_text_color === $default_color ) {
+		return;
+	}
+
 	// Convert main text hex color to rgba.
 	$main_text_color_rgb = flash_hex2rgb( $main_text_color );
 
@@ -1130,7 +1142,7 @@ function flash_main_text_color_css() {
 	$border_color = vsprintf( 'rgba( %1$s, %2$s, %3$s, 0.2)', $main_text_color_rgb );
 
 	$css = '
-		/* Main Text Color */
+		/* Custom Main Text Color */
 		.tg-slider-widget .swiper-button-next::before,.tg-slider-widget .swiper-button-prev::before,.tg-slider-widget .swiper-wrapper .slider-content .caption-title,.section-title-wrapper .section-title,.tg-service-widget .service-title-wrap a ,.team-wrapper .team-content-wrapper .team-title a,.testimonial-container .testimonial-wrapper .testimonial-slide .testimonial-client-detail .client-detail-block .testimonial-title,.blog-section .row:nth-child(odd) .blog-content .entry-title a,.blog-section .row:nth-child(even) .blog-content .entry-title a,.blog-section .tg-blog-widget:hover .blog-content .entry-title a:hover,.blog-section .tg-blog-widget-layout-2:hover .blog-content .entry-title a,.pricing-table-section .tg-pricing-table-widget .pricing-table-title ,.pricing-table-section .tg-pricing-table-widget .pricing,.pricing-table-section .tg-pricing-table-widget .btn-wrapper a,.pricing-table-section .tg-pricing-table-widget.standard .popular-batch,.single-post #primary .author-description .author-description-block .author-title,.section-title-wrapper .section-title,.tg-service-widget .service-title-wrap a,.tg-service-widget .service-title-wrap a {
 			color: %1$s;
 		}
@@ -1165,8 +1177,13 @@ function flash_secondary_text_color_css() {
 	$default_color   = $color_scheme[3];
 	$secondary_text_color = get_theme_mod( 'secondary_text_color', $default_color );
 
+	// Don't do anything if the current color is the default.
+	if ( $secondary_text_color === $default_color ) {
+		return;
+	}
+
 	$css = '
-		/* Secondary Text Color */
+		/* Custom Secondary Text Color */
 		.tg-service-widget .service-content-wrap,.section-title-wrapper .section-description,.team-wrapper .team-content-wrapper .team-content,.testimonial-container .testimonial-wrapper .testimonial-slide .testominial-content-wrapper .testimonial-content,body, button, input, select, textarea,.archive #primary .entry-content-block .entry-content, .blog #primary .entry-content-block .entry-content {
 			color: %1$s;
 		}
