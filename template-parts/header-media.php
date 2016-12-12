@@ -6,6 +6,6 @@
 if ( function_exists('the_custom_header_markup') ) {
 	the_custom_header_markup();
 } else {
-	the_custom_header_markup();
+	the_header_image_tag();
 }
 ?>
