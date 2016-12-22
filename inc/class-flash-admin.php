@@ -128,6 +128,13 @@ class Flash_Admin {
 			<a href="<?php echo esc_url( apply_filters( 'flash_demo_url', 'http://demo.themegrill.com/flash/demos/' ) ); ?>" class="button button-primary docs" target="_blank"><?php esc_html_e( 'View Multiple Demos', 'flash' ); ?></a>
 
 			<a href="<?php echo esc_url( apply_filters( 'flash_rating_url', 'http://wordpress.org/support/view/theme-reviews/flash?filter=5' ) ); ?>" class="button button-secondary docs" target="_blank"><?php esc_html_e( 'Rate this theme', 'flash' ); ?></a>
+
+			<?php
+			if( is_plugin_active( 'themegrill-demo-importer/themegrill-demo-importer.php' ) ) { ?>
+			<a href="<?php echo esc_url( admin_url( 'themes.php?page=demo-importer' ) ); ?>" class="button button-secondary">
+				<?php esc_html_e( 'Demo Importer', 'flash' ); ?>
+			</a>
+			<?php } ?>
 		</p>
 
 		<h2 class="nav-tab-wrapper">
