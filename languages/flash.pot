@@ -1109,7 +1109,7 @@ msgid "Flash"
 msgstr ""
 
 #. Theme URI of the plugin/theme
-msgid "http://themegrill.com/themes/flash"
+msgid "https://themegrill.com/themes/flash"
 msgstr ""
 
 #. Description of the plugin/theme
@@ -1121,7 +1121,7 @@ msgid "ThemeGrill"
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "http://themegrill.com"
+msgid "https://themegrill.com"
 msgstr ""
 
 #. Template Name of the plugin/theme

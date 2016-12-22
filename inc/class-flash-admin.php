@@ -123,9 +123,9 @@ class Flash_Admin {
 		</div>
 
 		<p class="flash-actions">
-			<a href="<?php echo esc_url( 'http://themegrill.com/themes/flash/' ); ?>" class="button button-secondary" target="_blank"><?php esc_html_e( 'Theme Info', 'flash' ); ?></a>
+			<a href="<?php echo esc_url( 'https://themegrill.com/themes/flash/' ); ?>" class="button button-secondary" target="_blank"><?php esc_html_e( 'Theme Info', 'flash' ); ?></a>
 
-			<a href="<?php echo esc_url( apply_filters( 'flash_demo_url', 'http://demo.themegrill.com/flash/demos/' ) ); ?>" class="button button-primary docs" target="_blank"><?php esc_html_e( 'View Multiple Demos', 'flash' ); ?></a>
+			<a href="<?php echo esc_url( apply_filters( 'flash_demo_url', 'https://demo.themegrill.com/flash/demos/' ) ); ?>" class="button button-primary docs" target="_blank"><?php esc_html_e( 'View Multiple Demos', 'flash' ); ?></a>
 
 			<a href="<?php echo esc_url( apply_filters( 'flash_rating_url', 'http://wordpress.org/support/view/theme-reviews/flash?filter=5' ) ); ?>" class="button button-secondary docs" target="_blank"><?php esc_html_e( 'Rate this theme', 'flash' ); ?></a>
 
@@ -187,19 +187,19 @@ class Flash_Admin {
 					<div class="col">
 						<h3><?php esc_html_e( 'Documentation', 'flash' ); ?></h3>
 						<p><?php esc_html_e( 'Please view our documentation page to setup the theme.', 'flash' ) ?></p>
-						<p><a href="<?php echo esc_url( 'http://docs.themegrill.com/flash/' ); ?>" class="button button-secondary"><?php esc_html_e( 'Documentation', 'flash' ); ?></a></p>
+						<p><a href="<?php echo esc_url( 'https://docs.themegrill.com/flash/' ); ?>" class="button button-secondary"><?php esc_html_e( 'Documentation', 'flash' ); ?></a></p>
 					</div>
 
 					<div class="col">
 						<h3><?php esc_html_e( 'Got theme support question?', 'flash' ); ?></h3>
 						<p><?php esc_html_e( 'Please put it in our dedicated support forum.', 'flash' ) ?></p>
-						<p><a href="<?php echo esc_url( 'http://themegrill.com/support-forum/' ); ?>" class="button button-secondary"><?php esc_html_e( 'Support Forum', 'flash' ); ?></a></p>
+						<p><a href="<?php echo esc_url( 'https://themegrill.com/support-forum/' ); ?>" class="button button-secondary"><?php esc_html_e( 'Support Forum', 'flash' ); ?></a></p>
 					</div>
 
 					<div class="col">
 						<h3><?php esc_html_e( 'Got sales related question?', 'flash' ); ?></h3>
 						<p><?php esc_html_e( 'Please send it via our sales contact page.', 'flash' ) ?></p>
-						<p><a href="<?php echo esc_url( 'http://themegrill.com/contact/' ); ?>" class="button button-secondary"><?php esc_html_e( 'Contact Page', 'flash' ); ?></a></p>
+						<p><a href="<?php echo esc_url( 'https://themegrill.com/contact/' ); ?>" class="button button-secondary"><?php esc_html_e( 'Contact Page', 'flash' ); ?></a></p>
 					</div>
 				</div>
 			</div>
