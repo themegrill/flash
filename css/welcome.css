@@ -50,23 +50,26 @@ pre.changelog span {
 .about-wrap {
     max-width: 100%;
 }
-.about-wrap h1 {
-  display: block;
-  text-align: center;
-  width: 100%;
-  font-size: 38px;
-  font-weight: 600;
+.about-wrap .notice {
+	display: block !important;
 }
 
 .welcome-description-wrap {
-  display: inline-block;
-  width: 100%;
-  margin: 20px 0;
+	width: 100%;
+	margin: 0 0 20px;
+	display: inline-block;
 }
-.about-wrap .about-text,.flash-screenshot {
-  margin: 20px 10px;
-  width: 47%;
-  float: left;
+.flash-screenshot,
+.about-wrap .about-text {
+	width: 47%;
+	float: left;
+	margin: 20px 5px;
+}
+.flash-screenshot {
+  float: right;
+}
+.about-wrap .about-text {
+	margin-left: 0;
 }
 
 .about-wrap table td h3 {

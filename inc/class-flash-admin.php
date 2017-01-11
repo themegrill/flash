@@ -54,7 +54,6 @@ class Flash_Admin {
 
 		wp_enqueue_style( 'flash-message', get_template_directory_uri() . '/css/message.css', array(), $flash_version );
 
-
 		// Let's bail on theme activation.
 		if ( 'themes.php' == $pagenow && isset( $_GET['activated'] ) ) {
 			add_action( 'admin_notices', array( $this, 'welcome_notice' ) );
@@ -109,15 +108,14 @@ class Flash_Admin {
 		$major_version = substr( $flash_version, 0, 3 );
 		?>
 		<div class="flash-theme-info">
-				<h1>
-					<?php esc_html_e('About', 'flash'); ?>
-					<?php echo $theme->display( 'Name' ); ?>
-					<?php printf( esc_html__( '%s', 'flash' ), $major_version ); ?>
-				</h1>
+			<h1>
+				<?php esc_html_e( 'About', 'flash' ); ?>
+				<?php echo $theme->display( 'Name' ); ?>
+				<?php printf( esc_html__( '%s', 'flash' ), $major_version ); ?>
+			</h1>
 
 			<div class="welcome-description-wrap">
-				<div class="about-text"><?php echo $theme->display( 'Description' ); ?></div>
-
+				<p class="about-text"><?php echo $theme->display( 'Description' ); ?></p>
 				<div class="flash-screenshot">
 					<img src="<?php echo esc_url( get_template_directory_uri() ) . '/screenshot.jpg'; ?>" />
 				</div>
@@ -133,7 +131,7 @@ class Flash_Admin {
 		</p>
 
 		<h2 class="nav-tab-wrapper">
-			<a class="nav-tab <?php if ( empty( $_GET['tab'] ) && $_GET['page'] == 'flash-welcome' ) echo 'nav-tab-active'; ?>" href="<?php echo esc_url( admin_url( add_query_arg( array( 'page' => 'flash-welcome' ), 'themes.php' ) ) ); ?>">
+			<a class="nav-tab <?php if ( $_GET['page'] == 'flash-welcome' ) echo 'nav-tab-active'; ?>" href="<?php echo esc_url( admin_url( add_query_arg( array( 'page' => 'flash-welcome' ), 'themes.php' ) ) ); ?>">
 				<?php echo $theme->display( 'Name' ); ?>
 			</a>
 			<a class="nav-tab <?php if ( isset( $_GET['tab'] ) && $_GET['tab'] == 'supported_plugins' ) echo 'nav-tab-active'; ?>" href="<?php echo esc_url( admin_url( add_query_arg( array( 'page' => 'flash-welcome', 'tab' => 'supported_plugins' ), 'themes.php' ) ) ); ?>">
