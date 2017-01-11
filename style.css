@@ -1753,7 +1753,21 @@ body.transparent .transparent-logo {
 body.transparent .custom-logo {
     display: none;
 }
+#wp-custom-header-video {
+    display: block;
+    min-height: 300px;
+    min-height: 75vh;
+    width: 100%;
+}
 
+.wp-custom-header{
+    position: relative;
+}
+.wp-custom-header-video-button{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
 /*--------------------------------------------------------------
 Slider
 --------------------------------------------------------------*/
@@ -4039,7 +4053,6 @@ WooCommerce
     margin-right: 5px;
     display: inline-block;
 }
-
 .woocommerce nav.woocommerce-pagination {
     text-align: left;
 }
