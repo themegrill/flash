@@ -2671,7 +2671,7 @@ Fun Facts
     color: #fff;
 }
 
-.fun-facts-section .fun-facts-icon-wrap {
+.fun-facts-icon-wrap {
     display: block;
     text-align: center;
     color: #30afb8;
@@ -2695,7 +2695,9 @@ Fun Facts
     color: #fff;
 }
 
-.fun-facts-section .tg-fun-facts-widget.tg-fun-facts-layout-2 .fun-facts-icon-wrap {
+/*----------------- tg-fun-facts-layout-2 -----------------*/
+
+.tg-fun-facts-widget.tg-fun-facts-layout-2 .fun-facts-icon-wrap {
     background-color: rgba(255, 255, 255, 0.2);
     border: 5px solid rgba(255, 255, 255, 0.5);
     border-radius: 100%;
@@ -2707,11 +2709,11 @@ Fun Facts
     height: 120px;
 }
 
-.fun-facts-section .tg-fun-facts-widget.tg-fun-facts-layout-2 .fun-facts-title-wrap {
+.tg-fun-facts-widget.tg-fun-facts-layout-2 .fun-facts-title-wrap {
     line-height: 15px;
 }
 
-.fun-facts-section .tg-fun-facts-widget.tg-fun-facts-layout-2 .counter-wrapper {
+.tg-fun-facts-widget.tg-fun-facts-layout-2 .counter-wrapper {
     font-size: 46px;
     color: #30afb8;
     margin-bottom: 10px;
