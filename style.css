@@ -2097,19 +2097,19 @@ Team
     text-align: center;
 }
 
-.team-wrapper .team-content-wrapper .team-title {
+.team-wrapper .team-title {
     font-size: 18px;
 }
 
-.team-wrapper .team-content-wrapper .team-title a {
+.team-wrapper .team-title a {
     color: #313b48;
 }
 
-.team-wrapper .team-content-wrapper .team-title a:hover {
+.team-wrapper .team-title a:hover {
     color: #2299a1;
 }
 
-.team-wrapper .team-content-wrapper .team-designation {
+.team-wrapper .team-designation {
     position: relative;
 }
 
@@ -2117,7 +2117,7 @@ Team
     width: 100%;
 }
 
-.team-wrapper .team-content-wrapper .team-designation:after {
+.team-wrapper .team-designation:after {
     position: absolute;
     left: 50%;
     bottom: -10px;
@@ -2132,12 +2132,12 @@ Team
     transform: translateX(-50%);
 }
 
-.team-wrapper .team-content-wrapper .team-content {
+.team-wrapper .team-content {
     color: #777777;
     margin: 30px 0 20px;
 }
 
-.team-wrapper .team-content-wrapper .team-social {
+.team-wrapper .team-social {
     background: #fff none repeat scroll 0 0;
     left: 50%;
     margin-left: -45%;
@@ -2147,14 +2147,16 @@ Team
     width: 90%;
 }
 
-.team-wrapper .team-content-wrapper .team-social a {
+.team-wrapper .team-social a {
     font-size: 18px;
     margin: 0 8px;
 }
 
-.team-wrapper .team-content-wrapper .team-social a:hover {
+.team-wrapper .team-social a:hover {
     color: #2299a1;
 }
+
+/*-----------------tg-team-layout-2 -----------------*/
 
 .tg-team-widget.tg-team-layout-2 {
     position: relative;
@@ -2169,35 +2171,37 @@ Team
     top: 0;
 }
 
-.tg-team-widget.tg-team-layout-2 .team-wrapper .team-content-wrapper {
+.tg-team-widget.tg-team-layout-2 .team-content-wrapper{
     text-align: left;
 }
 
-.tg-team-widget.tg-team-layout-2 .team-wrapper .team-content-wrapper .team-designation::after {
+.tg-team-widget.tg-team-layout-2 .team-designation::after {
     left: 15px;
 }
 
-.tg-team-widget.tg-team-layout-2 .team-wrapper .team-content-wrapper .team-social {
+.tg-team-widget.tg-team-layout-2 .team-social {
     position: static;
     margin-left: 0;
     width: 100%;
     border-top: 1px solid #e7e7e7;
 }
 
+/*-----------------tg-team-layout-3 -----------------*/
+
 .tg-team-widget.tg-team-layout-3::before {
     display: none;
 }
 
-.tg-team-widget.tg-team-layout-3 .team-wrapper .team-img {
+.tg-team-widget.tg-team-layout-3 .team-img {
     position: relative;
 }
 
-.tg-team-widget.tg-team-layout-3 .team-wrapper .team-img img {
+.tg-team-widget.tg-team-layout-3 .team-img img {
     border-radius: 50%;
     width: 100%;
 }
 
-.tg-team-widget.tg-team-layout-3 .team-wrapper .team-img .team-social {
+.tg-team-widget.tg-team-layout-3 .team-img .team-social {
     background: rgba(60, 180, 186, 0.8) none repeat scroll 0 0;
     border-radius: 50%;
     border-top: medium none;
@@ -2214,7 +2218,7 @@ Team
     transition: all 0.5s ease;
 }
 
-.tg-team-widget.tg-team-layout-3 .team-wrapper .team-img .team-social .team-social-block {
+.tg-team-widget.tg-team-layout-3 .team-social-block {
     position: absolute;
     top: 50%;
     left: 0;
@@ -2222,23 +2226,23 @@ Team
     text-align: center;
 }
 
-.tg-team-widget.tg-team-layout-3 .team-wrapper .team-img .team-social .team-social-block a {
+.tg-team-widget.tg-team-layout-3 .team-social-block a {
     font-size: 18px;
     margin: 0 8px;
     color: #fff;
 }
 
-.tg-team-widget.tg-team-layout-3 .team-wrapper .team-content-wrapper {
+.tg-team-widget.tg-team-layout-3 .team-content-wrapper {
     position: unset;
     padding-top: 30px;
     text-align: center;
 }
 
-.tg-team-widget.tg-team-layout-3 .team-wrapper .team-content-wrapper .team-designation::after {
+.tg-team-widget.tg-team-layout-3 .team-designation::after {
     display: none;
 }
 
-.tg-team-widget.tg-team-layout-3 .team-wrapper .team-content-wrapper .team-content {
+.tg-team-widget.tg-team-layout-3 .team-content {
     display: none;
 }
 
