@@ -111,9 +111,10 @@ function flash_footer_copyright() {
 	?>
 <div class="copyright">
 	<span class="copyright-text">
-	<?php printf( esc_html__( 'Copyright %1$s %2$s %3$s.', 'flash' ), '&copy; ', date( 'Y' ), get_bloginfo( 'name' ) ); ?>
+	<?php printf( esc_html__( 'Copyright %1$s %2$s', 'flash' ), '&copy; ', date( 'Y' ) ); ?>
+	<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php echo get_bloginfo( 'name' ); ?></a>
 	<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'flash' ), 'Flash', '<a href="http://themegrill.com/themes/flash" rel="designer">ThemeGrill</a>' ); ?>
-	<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'flash' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'flash' ), 'WordPress' ); ?></a>
+	<?php printf( esc_html__( 'Proudly powered by %s', 'flash' ), '<a href="'.esc_url( __( 'https://wordpress.org/', 'flash' ) ).'">' . esc_html__( 'WordPress', 'flash' ) . '</a>' ); ?>
 	</span>
 </div><!-- .copyright -->
 <?php
