@@ -1008,9 +1008,18 @@ Header
     color: #99a3b0;
 }
 
+/*-----------------Social menu-----------------*/
 .social-menu li a {
     background-color: #fff;
     border-radius: 100%;
+    font-size: 12px;
+    font-family: fontawesome;
+    text-align: center;
+    display: inline-block;
+    line-height: 30px;
+    height: 30px;
+    width: 30px;
+    color: #99a3b0;
 }
 
 .transparent .social-menu li a {
@@ -1020,114 +1029,46 @@ Header
     height: auto;
     width: auto;
 }
-
-.social-menu li a[href*="facebook.com"] {
-    height: 30px;
-    width: 30px;
-    line-height: 30px;
-    color: #99a3b0;
-    display: inline-block;
-}
-
-.social-menu li a[href*="facebook.com"]:hover {
-    color: #333333;
-}
-
-.transparent .social-menu li a[href*="facebook.com"]:hover {
-    color: #99a3b0;
-}
-
 .social-menu li a[href*="facebook.com"]::before {
     content: "\f09a";
-    font-size: 12px;
-    font-family: fontawesome;
-    text-align: center;
-    display: inline-block;
-    line-height: 30px;
-    height: 30px;
-    width: 30px;
 }
-
-.social-menu li a[href*="twitter.com"] {
-    height: 30px;
-    width: 30px;
-    line-height: 30px;
-    color: #99a3b0;
-    display: inline-block;
+.social-menu li a[href*="linkedin.com"]::before {
+    content: "\f0e1";
+}
+.social-menu li a[href*="twitter.com"]::before {
+    content: "\f099";
+}
+.social-menu li a[href*="plus.google.com"]::before {
+    content: "\f0d5";
 }
 
 .social-menu li a[href*="twitter.com"]:hover {
+    color: #333333;
+}
+.social-menu li a[href*="plus.google.com"]:hover {
+    color: #333333;
+}
+.social-menu li a[href*="linkedin.com"]:hover {
+    color: #333333;
+}
+.social-menu li a[href*="facebook.com"]:hover {
     color: #333333;
 }
 
 .transparent .social-menu li a[href*="twitter.com"]:hover {
     color: #99a3b0;
 }
-
-.social-menu li a[href*="twitter.com"]::before {
-    content: "\f099";
-    font-size: 12px;
-    font-family: fontawesome;
-    text-align: center;
-    display: inline-block;
-    line-height: 30px;
-    height: 30px;
-    width: 30px;
-}
-
-.social-menu li a[href*="plus.google.com"] {
-    height: 30px;
-    width: 30px;
-    line-height: 30px;
+.transparent .social-menu li a[href*="facebook.com"]:hover {
     color: #99a3b0;
-    display: inline-block;
 }
-
-.social-menu li a[href*="plus.google.com"]:hover {
-    color: #333333;
-}
-
 .transparent .social-menu li a[href*="plus.google.com"]:hover {
     color: #99a3b0;
 }
-
-.social-menu li a[href*="plus.google.com"]::before {
-    content: "\f0d5";
-    font-size: 12px;
-    font-family: fontawesome;
-    text-align: center;
-    display: inline-block;
-    line-height: 30px;
-    height: 30px;
-    width: 30px;
-}
-
-.social-menu li a[href*="linkedin.com"] {
-    height: 30px;
-    width: 30px;
-    line-height: 30px;
-    color: #99a3b0;
-    display: inline-block;
-}
-
-.social-menu li a[href*="linkedin.com"]:hover {
-    color: #333333;
-}
-
 .transparent .social-menu li a[href*="linkedin.com"]:hover {
     color: #99a3b0;
 }
 
-.social-menu li a[href*="linkedin.com"]::before {
-    content: "\f0e1";
-    font-size: 12px;
-    font-family: fontawesome;
-    text-align: center;
-    display: inline-block;
-    line-height: 30px;
-    height: 30px;
-    width: 30px;
-}
+
 
 .transparent .social-menu li a[href*="facebook.com"],
 .transparent .social-menu li a[href*="linkedin.com"],
@@ -1142,6 +1083,7 @@ Header
 .transparent .is-sticky .social-menu li a[href*="plus.google.com"] {
     color: #333333;
 }
+
 
 .logo {
     float: left;
