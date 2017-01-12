@@ -2501,11 +2501,9 @@ Feature product
     background: transparent linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.5)) repeat scroll 0 0;
 }
 
-.feature-product-section .tg-feature-product-layout-3 .featured-image-desc::before {
-    display: none;
-}
-
-.feature-product-section .tg-feature-product-layout-3 .featured-image-desc span {
+.feature-product-section .tg-feature-product-layout-3 .featured-image-desc::before,
+.feature-product-section .tg-feature-product-layout-3 .featured-image-desc span,
+.feature-product-section .tg-feature-product-layout-3 .feature-inner-block .feature-desc-wrap {
     display: none;
 }
 
@@ -2517,10 +2515,6 @@ Feature product
     -o-transform: translate(0);
     transform: translate(0);
     bottom: 2%;
-}
-
-.feature-product-section .tg-feature-product-layout-3 .feature-desc-wrap {
-    display: none;
 }
 
 .feature-product-section .button-group {
