@@ -2581,17 +2581,17 @@ Testimonial
     padding: 0 0 50px;
 }
 
-.testimonial-container .testimonial-wrapper .testimonial-slide {
+.testimonial-container .testimonial-slide {
     text-align: left;
 }
 
-.testimonial-container .testimonial-wrapper .testimonial-slide .testimonial-content-wrapper {
+.testimonial-container .testimonial-content-wrapper {
     background: #fff;
     padding: 20px 30px;
     position: relative;
 }
 
-.testimonial-container .testimonial-wrapper .testimonial-slide .testimonial-content-wrapper::before {
+.testimonial-container .testimonial-content-wrapper::before {
     border-bottom: 34px solid transparent;
     border-left: 20px solid #fff;
     content: " ";
@@ -2606,40 +2606,40 @@ Testimonial
     z-index: -9;
 }
 
-.testimonial-container .testimonial-wrapper .testimonial-slide .testimonial-content-wrapper .testimonial-icon {
+.testimonial-container .testimonial-icon {
     display: inline-block;
     vertical-align: top;
     color: #31afb8;
     font-size: 18px;
 }
 
-.testimonial-container .testimonial-wrapper .testimonial-slide .testimonial-content-wrapper .testimonial-content {
+.testimonial-container .testimonial-content {
     width: 93%;
     display: inline-block;
     margin-left: 15px;
     color: #777777;
 }
 
-.testimonial-container .testimonial-wrapper .testimonial-slide .testimonial-client-detail {
+.testimonial-container .testimonial-client-detail {
     margin-top: 40px;
 }
 
-.testimonial-container .testimonial-wrapper .testimonial-slide .testimonial-client-detail .testimonial-img {
+.testimonial-container .testimonial-img {
     display: inline-block;
     float: left;
 }
 
-.testimonial-container .testimonial-wrapper .testimonial-slide .testimonial-client-detail .client-detail-block {
+.testimonial-container .client-detail-block {
     display: inline-block;
     margin-left: 20px;
 }
 
-.testimonial-container .testimonial-wrapper .testimonial-slide .testimonial-client-detail .client-detail-block .testimonial-title {
+.testimonial-container .testimonial-title {
     color: #313b48;
     font-size: 16px;
 }
 
-.testimonial-container .testimonial-wrapper .testimonial-slide .testimonial-client-detail .client-detail-block .testimonial-degicnation {
+.testimonial-container .testimonial-degicnation {
     color: #666666;
     font-size: 14px;
     font-weight: 400;
