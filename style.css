@@ -1084,7 +1084,7 @@ Header
     color: #333333;
 }
 
-
+/*-----------------Logo-----------------*/
 .logo {
     float: left;
     padding: 0;
@@ -1109,15 +1109,17 @@ Header
     margin: 0;
 }
 
-.logo .logo-text .site-title {
+.logo-text .site-title {
     font-size: 22px;
     font-weight: 500;
     line-height: 24px;
 }
 
-.logo .logo-text .site-title span {
+.logo-text .site-title span {
     font-weight: 700;
 }
+
+/*-----------------Site Navigation-----------------*/
 
 #site-navigation {
     float: right;
@@ -1241,7 +1243,7 @@ Header
     transform: translateY(-50%) rotate(-90deg);
 }
 
-body.transparent.header-sticky #masthead-sticky-wrapper.is-sticky #masthead .header-bottom #site-navigation ul li.current-flash-item a,
+.transparent.header-sticky #masthead-sticky-wrapper.is-sticky #site-navigation ul li.current-flash-item a,
 #site-navigation ul li.current-flash-item a {
     color: #30AFB8;
 }
@@ -1249,6 +1251,7 @@ body.transparent.header-sticky #masthead-sticky-wrapper.is-sticky #masthead .hea
 .header-bottom {
     background: #fff;
 }
+
 
 .header-bottom .search-wrap {
     float: right;
