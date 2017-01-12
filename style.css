@@ -1872,7 +1872,7 @@ Section Title
     margin-bottom: 30px !important;
 }
 
-.section-title-wrapper .section-title {
+.section-title {
     color: #313b48;
     font-weight: 700;
     text-align: center;
@@ -1881,8 +1881,8 @@ Section Title
     margin-bottom: 20px;
 }
 
-.section-title-wrapper .section-title:before,
-.section-title-wrapper .section-title:after {
+.section-title:before,
+.section-title:after {
     background: #e1e1e1 none repeat scroll 0 0;
     bottom: -5px;
     content: "";
@@ -1893,7 +1893,7 @@ Section Title
     width: 100px;
 }
 
-.section-title-wrapper .section-title:after {
+.section-title:after {
     background: #30afb8 none repeat scroll 0 0;
     bottom: -6px;
     height: 3px;
@@ -1901,7 +1901,7 @@ Section Title
     width: 30px;
 }
 
-.section-title-wrapper .section-description {
+.section-description {
     text-align: center;
     color: #777777;
 }
