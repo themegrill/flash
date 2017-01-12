@@ -1994,6 +1994,8 @@ Service
     color: #777777;
 }
 
+/*-----------------tg-service-layout-2 -----------------*/
+
 .tg-service-widget.tg-service-layout-2 .service-content-wrap {
     margin: 0 0 10px;
 }
@@ -2019,7 +2021,7 @@ Service
     text-align: center;
 }
 
-.tg-service-widget.tg-service-layout-2 .service-icon-title-wrapper .service-icon-wrap {
+.tg-service-widget.tg-service-layout-2 .service-icon-wrap {
 	background: transparent none repeat scroll 0 0;
 	border-radius: 50%;
 	color: #000;
@@ -2040,11 +2042,11 @@ Service
 
 }
 
-.tg-service-widget.tg-service-layout-2 .service-icon-title-wrapper .service-icon-wrap::after {
+.tg-service-widget.tg-service-layout-2 .service-icon-wrap::after {
     display: none;
 }
 
-.tg-service-widget.tg-service-layout-2 .service-icon-title-wrapper .service-icon-wrap::before {
+.tg-service-widget.tg-service-layout-2 .service-icon-wrap::before {
 	border: 2px solid #000;
 	border-radius: 100%;
 	content: "";
@@ -2057,19 +2059,21 @@ Service
 	width: 82px;
 }
 
-.tg-service-widget.tg-service-layout-2 .service-icon-title-wrapper .service-icon-wrap:hover {
+.tg-service-widget.tg-service-layout-2 .service-icon-wrap:hover {
 	background: #000 none repeat scroll 0 0;
 	color: #fff;
 }
 
-.tg-service-widget.tg-service-layout-2 .service-icon-title-wrapper .service-title-wrap a {
+.tg-service-widget.tg-service-layout-2 .service-title-wrap a {
     line-height: 24px;
 }
 
-.tg-service-widget.tg-service-layout-3 .service-icon-title-wrapper .service-title-wrap {
+.tg-service-widget.tg-service-layout-3 .service-title-wrap {
     line-height: 24px;
     margin-top: 20px;
 }
+
+/*-----------------tg-service-layout-3 -----------------*/
 
 .tg-service-widget.tg-service-layout-3 .service-content-wrap {
     margin: 15px 0;
