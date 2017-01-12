@@ -2260,33 +2260,17 @@ Call To Action
     position: relative;
 }
 
-.cta-overlay {
-    background: rgba(0, 0, 0, 0.5) none repeat scroll 0 0;
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
-}
-
-.call-to-action-section .overlay {
-    background-color: rgba(0, 0, 0, 0.2);
-}
-
-.call-to-action-section .section-title-wrapper .section-title {
+.call-to-action-section .section-title {
     color: #fff;
     font-size: 32px;
 }
 
-.call-to-action-section .section-title-wrapper .section-title::before {
+.call-to-action-section .section-title::before,
+.call-to-action-section .section-title::after {
     display: none;
 }
 
-.call-to-action-section .section-title-wrapper .section-title::after {
-    display: none;
-}
-
-.call-to-action-section .section-title-wrapper .section-subtitle {
+.call-to-action-section .section-subtitle {
     color: #fff;
     font-size: 14px;
     position: relative;
@@ -2320,6 +2304,8 @@ Call To Action
     border-color: #30afb8;
 }
 
+/*----------------- call-to-action-section-layout-2 -----------------*/
+
 .call-to-action-section .call-to-action-section-layout-2 {
     display: inline-block;
 }
@@ -2333,12 +2319,12 @@ Call To Action
     width: 75%;
 }
 
-.call-to-action-section .call-to-action-section-layout-2 .section-title-wrapper .section-title {
+.call-to-action-section .call-to-action-section-layout-2 .section-title {
     margin-bottom: 0;
     text-align: left;
 }
 
-.call-to-action-section .call-to-action-section-layout-2 .section-title-wrapper .section-subtitle {
+.call-to-action-section .call-to-action-section-layout-2 .section-subtitle {
     color: #fff;
     font-size: 14px;
     padding: 0 10px;
