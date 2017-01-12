@@ -1911,32 +1911,32 @@ Section Title
 About
 --------------------------------------------------------------*/
 
-.about-section .about-content-wrapper {
+.about-content-wrapper {
     display: inline-block;
     float: none;
     vertical-align: middle;
 }
 
-.about-section .about-content-wrapper .btn-wrapper {
+.about-section .btn-wrapper {
     margin-top: 30px;
 }
 
-.about-section .about-content-wrapper .btn-wrapper a {
+.about-section .btn-wrapper a {
     background-color: #30afb8;
     border-radius: 0;
     color: #fff;
     padding: 7px 35px;
 }
 
-.about-section .about-content-wrapper .btn-wrapper a:hover {
+.about-section .btn-wrapper a:hover {
     background-color: #2299a1;
 }
 
-.about-section .about-content-wrapper .section-description {
+.about-section .section-description {
     margin-top: 12px;
 }
 
-.about-section .about-section-image {
+.about-section-image {
     display: inline-block;
     float: none;
     margin-right: -5px;
