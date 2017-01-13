@@ -1,9 +1,5 @@
 jQuery(document).ready(function() {
 
-	jQuery('.main-navigation .menu-toggle').on('click', function() {
-		jQuery('.main-navigation .menu').slideToggle('slow');
-	});
-
 	jQuery('.main-navigation .menu-item-has-children').append('<span class="sub-toggle"> <i class="fa fa-angle-down"></i> </span>');
 
 	jQuery('.main-navigation .sub-toggle').on('click', function() {
@@ -82,6 +78,15 @@ jQuery(document).ready(function() {
 });
 
 jQuery(window).load(function() {
+
+	var width = Math.max(window.innerWidth, document.documentElement.clientWidth);
+
+	if (width && width <= 980) {
+		jQuery('.main-navigation .menu-toggle, .main-navigation a').click(function() {
+			jQuery('.main-navigation .menu').slideToggle('slow');
+		});
+	}
+
 	if(typeof Swiper === 'function'){
 		//SWIPER SLIDER
 		var main_slider = new Swiper ('.tg-slider-widget .swiper-container', {
