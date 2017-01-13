@@ -1675,12 +1675,14 @@ Header
 
 .transparent.header-sticky .custom-logo,
 .transparent.header-sticky .is-sticky .transparent-logo,
-.transparent-logo {
+.transparent-logo,
+.transparent .custom-logo{
     display: none;
 }
 
 .transparent.header-sticky .is-sticky .custom-logo,
-.transparent.header-sticky .transparent-logo {
+.transparent.header-sticky .transparent-logo,
+.transparent .transparent-logo {
     display: block;
 }
 
