@@ -208,7 +208,7 @@ textarea {
     color: #333333;
     font-family: 'Poppins', sans-serif;
     font-size: 14px;
-    line-height: 1.8;
+    line-height: 1.5;
     font-weight: 400;
 }
 
@@ -1270,7 +1270,10 @@ Header
     cursor: pointer;
     color: #99a3b0;
     font-size: 14px;
-    padding: 2px 9px;
+    height: 30px;
+    width: 30px;
+    line-height: 30px;
+    text-align: center;
     border: 1px solid #9ca6b2;
     border-radius: 100%;
     -webkit-transition: all 0.5s ease;
@@ -1328,7 +1331,10 @@ Header
 
 .header-bottom .flash-cart-views {
     font-size: 14px;
-    padding: 2px 6px;
+    height: 30px;
+    width: 30px;
+    line-height: 30px;
+    text-align: center;
     border: 1px solid #9ca6b2;
     border-radius: 100%;
 }
@@ -1343,7 +1349,10 @@ Header
     border-radius: 100%;
     font-size: 12px;
     left: 17px;
-    padding: 1px 8px;
+    height: 20px;
+    width: 20px;
+    line-height: 20px;
+    text-align: center;
     position: absolute;
     top: -10px;
     color: #fff;
@@ -1387,14 +1396,14 @@ Header
 
 .boxed .site {
     background: #fff none repeat scroll 0 0;
-    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.3);
     margin: 30px 0;
     position: relative;
 }
 
 .boxed .tg-container {
     width: 100%;
-    padding: 0 15px;
+    padding: 0 30px;
 }
 
 .transparent #masthead {
@@ -1789,29 +1798,29 @@ Slider
     color: #313b48;
     font-size: 48px;
     font-weight: 800;
-    line-height: 50px;
+    line-height: 1.5;
     text-transform: uppercase;
 }
 
-.tg-slider-widget .swiper-wrapper .caption-desc {
+.tg-slider-widget .caption-desc {
     font-size: 24px;
     line-height: 35px;
     margin: 30px 0;
     text-transform: capitalize;
 }
 
-.tg-slider-widget .swiper-wrapper .btn-wrapper {
+.tg-slider-widget .btn-wrapper {
     display: inline-block;
 }
 
-.tg-slider-widget .swiper-wrapper .btn-wrapper a {
+.tg-slider-widget .btn-wrapper a {
     border: 3px solid #313b48;
     display: inline-block;
     font-size: 20px;
     padding: 7px 26px;
 }
 
-.tg-slider-widget .swiper-wrapper .btn-wrapper a:hover {
+.tg-slider-widget .btn-wrapper a:hover {
     background: #313b48;
     color: #fff;
     border-color: #313b48;
@@ -1982,7 +1991,8 @@ Service
     color: #313b48;
     font-size: 18px;
     font-weight: 700;
-    line-height: 58px;
+    line-height: 1.5;
+    margin-top: 15px;
 }
 
 .tg-service-widget .service-title-wrap a:hover {
@@ -2080,7 +2090,7 @@ Service
 }
 
 .tg-service-layout-2 .service-title-wrap {
-    margin: 5px 0;
+    margin: 15px 0 5px;
 }
 .service-image-wrap img {
   width: 100%;
@@ -2092,7 +2102,7 @@ Team
 --------------------------------------------------------------*/
 
 .team-wrapper .team-content-wrapper {
-    padding-top: 40px;
+    padding-top: 30px;
     position: relative;
     text-align: center;
 }
@@ -2211,6 +2221,7 @@ Team
     position: absolute;
     top: 0;
     width: 100%;
+    margin: 0;
     opacity: 0;
     visibility: hidden;
     -webkit-transition: all 0.5s ease;
@@ -2273,6 +2284,7 @@ Call To Action
 .call-to-action-section .section-subtitle {
     color: #fff;
     font-size: 14px;
+    line-height: 1.5;
     position: relative;
     text-align: center;
 }
@@ -2287,16 +2299,17 @@ Call To Action
     border-radius: 50px;
     color: #fff;
     font-size: 22px;
-    padding: 10px 50px;
+    height: 50px;
+    width: 250px;
+    line-height: 50px;
     position: relative;
     margin-left: 30px;
-    width: 300px;
-    margin-top: 20px;
+    width: 250px;
+    display: inline-block;
 }
 
 .call-to-action-section .btn-wrapper a:first-child {
     margin-left: 0;
-    margin-top: 0;
 }
 
 .call-to-action-section .btn-wrapper a:hover {
@@ -2307,16 +2320,13 @@ Call To Action
 /*----------------- call-to-action-section-layout-2 -----------------*/
 
 .call-to-action-section .call-to-action-section-layout-2 {
-    display: inline-block;
-}
-
-.call-to-action-section .call-to-action-section-layout-2 .overlay {
-    background-color: rgba(64, 180, 186, 0.8);
+    display: table;
 }
 
 .call-to-action-section .call-to-action-section-layout-2 .section-title-wrapper {
-    float: left;
+    display: table-cell;
     width: 75%;
+    vertical-align: middle;
 }
 
 .call-to-action-section .call-to-action-section-layout-2 .section-title {
@@ -2334,7 +2344,8 @@ Call To Action
 
 .call-to-action-section .call-to-action-section-layout-2 .btn-wrapper {
     width: 25%;
-    float: right;
+    display: table-cell;
+    vertical-align: middle;
     margin-top: 0;
 }
 
@@ -2344,6 +2355,7 @@ Call To Action
 
 .call-to-action-section .call-to-action-section-layout-2 .btn-wrapper a:first-child {
     margin-left: 30px;
+    margin-bottom: 15px;
 }
 
 
@@ -2676,8 +2688,7 @@ Fun Facts
     text-align: center;
     color: #30afb8;
     font-size: 64px;
-    line-height: 64px;
-    margin-bottom: 30px;
+    line-height: 1.5;
 }
 
 .fun-facts-section .counter-wrapper {
@@ -2685,7 +2696,7 @@ Fun Facts
     font-weight: 700;
     line-height: 46px;
     display: block;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
 }
 
 .fun-facts-section .fun-facts-title-wrap {
@@ -2767,10 +2778,9 @@ Blogs
     transition: all 0.5s ease;
 }
 
-.blog-section .tg-blog-widget-layout-1:hover .blog-content .entry-title a {
+.blog-section .tg-blog-widget-layout-1 .blog-content:hover .entry-title a {
     color: #fff;
 }
-
 .blog-section .row:nth-child(odd) .blog-content {
     float: left;
     padding: 15px 5px 15px 20px;
@@ -2955,6 +2965,9 @@ Blogs
 .blog-section .row:nth-child(even) .tg-blog-widget:hover .post-image::before {
     border-left: 15px solid #30afb8;
 }
+.blog-section .tg-blog-widget-layout-1 .entry-title a:hover {
+  color: #fff;
+}
 
 /*----------------- tg-blog-widget-layout-2 -----------------*/
 
@@ -3082,23 +3095,23 @@ Clients
 Footer
 --------------------------------------------------------------*/
 
-footer.footer-layout #top-footer {
+#top-footer {
     background-color: #313b48;
     padding: 80px 0 30px;
 }
 
-footer.footer-layout #top-footer .footer-logo {
+#top-footer .footer-logo {
     display: inline-block;
     width: 100%;
     margin-bottom: 15px;
 }
 
-footer.footer-layout #top-footer .footer-logo .logo-image {
+#top-footer .footer-logo .logo-image {
     float: left;
     padding: 5px;
 }
 
-footer.footer-layout #top-footer .footer-logo .site-title {
+#top-footer .footer-logo .site-title {
     font-size: 32px;
     color: #fff;
     font-weight: 700;
@@ -3106,14 +3119,14 @@ footer.footer-layout #top-footer .footer-logo .site-title {
     line-height: 42px;
 }
 
-footer.footer-layout #top-footer .textwidget {
+#top-footer .textwidget {
     font-size: 15px;
     color: #fff;
     line-height: 24px;
     font-weight: 400;
 }
 
-footer.footer-layout #top-footer .widget-title {
+#top-footer .widget-title {
     font-size: 18px;
     border-left: 3px solid #30afb8;
     font-weight: 600;
@@ -3123,25 +3136,25 @@ footer.footer-layout #top-footer .widget-title {
     padding-left: 20px;
 }
 
-footer.footer-layout #top-footer .widget-title::first-letter {
+#top-footer .widget-title::first-letter {
     color: #30afb8;
 }
 
-footer.footer-layout #top-footer .widget {
+#top-footer .widget {
     margin-bottom: 30px;
 }
 
-footer.footer-layout #top-footer .widget ul {
+#top-footer .widget ul {
     margin: 0;
 }
 
-footer.footer-layout #top-footer .widget ul li {
+#top-footer .widget ul li {
     position: relative;
     padding: 0 0 10px 20px;
     font-size: 12px;
 }
 
-footer.footer-layout #top-footer .widget ul li::after {
+#top-footer .widget ul li::after {
     color: #fff;
     content: "\f105";
     font-family: fontawesome;
@@ -3150,16 +3163,16 @@ footer.footer-layout #top-footer .widget ul li::after {
     top: 0;
 }
 
-footer.footer-layout #top-footer .widget ul li a {
+#top-footer .widget ul li a {
     font-size: 14px;
     color: #fff;
 }
 
-footer.footer-layout #top-footer .widget ul li a:hover {
+#top-footer .widget ul li a:hover {
     color: #30afb8;
 }
 
-footer.footer-layout #top-footer .widget_tag_cloud .tagcloud a {
+#top-footer .widget_tag_cloud .tagcloud a {
     border: 1px solid #fff;
     color: #fff;
     display: inline-block;
@@ -3167,58 +3180,58 @@ footer.footer-layout #top-footer .widget_tag_cloud .tagcloud a {
     padding: 0 5px;
 }
 
-footer.footer-layout #top-footer .widget_tag_cloud .tagcloud a:hover {
+#top-footer .widget_tag_cloud .tagcloud a:hover {
     background-color: #30afb8;
     border-color: #30afb8;
 }
 
-footer.footer-layout #bottom-footer {
+#bottom-footer {
     padding: 20px 0;
     background-color: #28313d;
 }
 
-footer.footer-layout #bottom-footer .copyright {
+#bottom-footer .copyright {
     float: left;
 }
 
-footer.footer-layout #bottom-footer .copyright .copyright-text {
+#bottom-footer .copyright-text {
     color: #fff;
     font-size: 12px;
 }
 
-footer.footer-layout #bottom-footer .copyright .copyright-text a {
+#bottom-footer .copyright-text a {
     color: #bcbaba;
 }
 
-footer.footer-layout #bottom-footer .copyright .copyright-text a:hover {
+#bottom-footer .copyright-text a:hover {
     color: #30afb8;
 }
 
-footer.footer-layout #bottom-footer .footer-menu {
+#bottom-footer .footer-menu {
     float: right;
     margin: 0;
 }
 
-footer.footer-layout #bottom-footer .footer-menu ul li {
+#bottom-footer .footer-menu ul li {
     float: left;
 }
 
-footer.footer-layout #bottom-footer .footer-menu ul li::after {
+#bottom-footer .footer-menu ul li::after {
     content: "|";
     padding: 0 5px;
     color: #fff;
 }
 
-footer.footer-layout #bottom-footer .footer-menu ul li:last-child::after {
+#bottom-footer .footer-menu ul li:last-child::after {
     display: none;
 }
 
-footer.footer-layout #bottom-footer .footer-menu ul li a {
+#bottom-footer .footer-menu ul li a {
     color: #fff;
     font-size: 12px;
 }
 
-footer.footer-layout #bottom-footer .footer-menu ul li a:hover {
+#bottom-footer .footer-menu ul li a:hover {
     color: #30afb8;
 }
 

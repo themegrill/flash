@@ -7,11 +7,8 @@ responsive CSS
         padding: 0 1%;
         width: 98%;
     }
-    body.boxed {
+    .boxed {
         width: 97%;
-    }
-    body {
-        overflow: hidden;
     }
 }
 
@@ -24,24 +21,9 @@ responsive CSS
     .header-bottom {
         position: relative;
     }
-    .center-logo-below-menu .logo,
-    .logo {
-        display: inline-block;
-        float: none;
-        left: 50%;
-        padding: 0;
-        position: absolute;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        width: auto;
-    }
     #site-navigation {
-        position: absolute;
-        left: 0;
-        top: 0;
-        float: none;
-        padding: 22px 0;
-        width: 100%;
+        float: right;
+        padding: 20px 0;
     }
     #site-navigation ul li:hover > a::before,
     #site-navigation ul li.current-menu-item > a::before {
@@ -60,10 +42,10 @@ responsive CSS
     #site-navigation .menu-toggle {
         cursor: pointer;
         display: inline-block;
-        margin-left: 20px;
+        font-size: 20px;
     }
     #site-navigation ul li,
-    body.transparent #site-navigation ul li {
+    .transparent #site-navigation ul li {
         float: none;
         margin-right: 0;
         padding: 0;
@@ -71,7 +53,7 @@ responsive CSS
         border-bottom: 1px solid rgba(0, 0, 0, 0.1)
     }
     #site-navigation ul li:last-child,
-    body.transparent #site-navigation ul li:last-child {
+    .transparent #site-navigation ul li:last-child {
         border-bottom: none;
     }
     #site-navigation ul.submenu li {
@@ -81,7 +63,7 @@ responsive CSS
         display: none;
     }
     #site-navigation ul.sub-menu,
-    body.transparent #site-navigation ul.sub-menu {
+    .transparent #site-navigation ul.sub-menu {
         background: #fff none repeat scroll 0 0;
         display: none;
         border-radius: 0;
@@ -111,8 +93,8 @@ responsive CSS
     }
     #site-navigation ul.sub-menu li a,
     #site-navigation ul.sub-menu li ul.sub-menu li a,
-    body.transparent #masthead .header-bottom #site-navigation ul li a,
-    body.transparent #masthead .header-bottom #site-navigation ul.sub-menu li a {
+    .transparent #site-navigation ul li a,
+    .transparent #site-navigation ul.sub-menu li a {
         color: #4c5867;
         display: block;
         line-height: 42px;
@@ -159,11 +141,12 @@ responsive CSS
         color: #fff;
     }
     #site-navigation ul li.menu-item-has-children:hover .sub-toggle,
-    body.transparent #masthead .header-bottom #site-navigation ul li:hover .sub-toggle {
+    .transparent #site-navigation ul li:hover .sub-toggle {
         color: #fff;
         cursor: pointer;
     }
-    #site-navigation ul li.menu-item-has-children ul.submenu li a {
+    #site-navigation ul li.menu-item-has-children ul.submenu li a,
+    .transparent .is-sticky #site-navigation ul li .sub-toggle {
         color: #FFF;
     }
     #site-navigation ul li ul.sub-menu li.menu-item-has-children ul {
@@ -186,11 +169,11 @@ responsive CSS
         cursor: pointer;
         color: #fff;
     }
-    body.transparent #masthead .header-bottom #site-navigation ul li:hover a::before {
+    .transparent #site-navigation ul li:hover a::before {
         display: none;
     }
-    body.transparent.header-sticky #masthead-sticky-wrapper #masthead .header-bottom #site-navigation ul li a,
-    body.transparent.header-sticky #masthead-sticky-wrapper #masthead .header-bottom #site-navigation .menu-toggle {
+    .transparent.header-sticky #site-navigation ul li a,
+    .transparent.header-sticky #site-navigation .menu-toggle {
         color: #333333;
     }
 }
@@ -205,16 +188,16 @@ responsive CSS
     .team-img {
         text-align: center;
     }
-    .tg-team-widget.tg-team-layout-2 .team-wrapper .team-content-wrapper .team-designation::after {
+    .tg-team-widget.tg-team-layout-2 .team-designation::after {
         left: 50%;
     }
-    .tg-slider-widget .swiper-wrapper .slider-content .caption-title {
-        font-size: 24px;
-        line-height: 30px;
+    .tg-slider-widget .caption-title {
+        font-size: 30px;
+        line-height: 1.5;
     }
-    .tg-slider-widget .swiper-wrapper .slider-content .caption-desc {
+    .tg-slider-widget .caption-desc {
         font-size: 16px;
-        line-height: 24px;
+        line-height: 1.5;
         margin: 10px 0;
     }
     .blog-section .tg-blog-widget {
@@ -232,13 +215,13 @@ responsive CSS
         float: none;
         width: 100%;
     }
-    .tg-service-widget.tg-service-layout-2 .service-icon-title-wrapper .service-icon-wrap {
+    .tg-service-widget.tg-service-layout-2 .service-icon-wrap {
         margin: 0 auto 5px;
     }
     .tg-service-widget .service-content-wrap {
         margin: 0 0 10px;
     }
-    .feature-product-section .tg-feature-product-layout-2 .tg-container .tg-column-wrapper .tg-feature-product-widget {
+    .feature-product-section .tg-feature-product-layout-2 .tg-feature-product-widget {
         width: 30.33%;
     }
     .tg-service-widget .service-more {
@@ -274,17 +257,11 @@ responsive CSS
         float: none;
         width: 100%;
     }
-    .tg-slider-widget .swiper-wrapper .slider-content {
-        top: 60%;
-    }
     .tg-blog-widget-layout-1 .row {
         margin-bottom: 20px;
     }
     .tg-blog-widget-layout-1 .row:last-child {
         margin-bottom: 0;
-    }
-    .blog-section .tg-blog-widget-layout-1 {
-        margin-left: -3%;
     }
     .blog-section .tg-column-wrapper.tg-blog-widget-layout-1 .tg-column-2 {
         margin-left: 3%;
@@ -312,11 +289,11 @@ responsive CSS
     #top-footer .tg-column-wrapper .tg-column-4:last-child {
         margin: 0;
     }
-    footer.footer-layout #bottom-footer {
+    #bottom-footer {
         text-align: center;
     }
-    footer.footer-layout #bottom-footer .copyright,
-    footer.footer-layout #bottom-footer .footer-menu {
+    #bottom-footer .copyright,
+    #bottom-footer .footer-menu {
         float: none;
         display: inline-block;
     }
@@ -333,19 +310,17 @@ responsive CSS
     .call-to-action-section .btn-wrapper a {
         display: block;
         margin: 20px auto 0;
-        width: 60%;
         font-size: 14px;
     }
-    .call-to-action-section .btn-wrapper a:first-child {
-        display: block;
+    .call-to-action-section .btn-wrapper a:first-child, 
+    .call-to-action-section .call-to-action-section-layout-2 .btn-wrapper a:first-child {
         margin: 0 auto 20px;
-        width: 60%;
     }
     .call-to-action-section .section-title-wrapper .section-title {
         font-size: 23px;
     }
-    .feature-product-section .tg-feature-product-layout-2 .tg-container .tg-column-wrapper .tg-feature-product-widget,
-    .feature-product-section .tg-container .tg-column-wrapper .tg-feature-product-widget {
+    .feature-product-section .tg-feature-product-layout-2 .tg-feature-product-widget,
+    .feature-product-section .tg-feature-product-widget {
         width: 47%;
     }
     .blog-section .tg-column-wrapper.tg-blog-widget-layout-1 .tg-column-2,
@@ -386,6 +361,9 @@ responsive CSS
     .archive #primary .post .entry-content-block {
         width: 100%;
     }
+    .header-top{
+        display: none;
+    }
 }
 
 @media(max-width: 480px) {
@@ -398,14 +376,11 @@ responsive CSS
         padding: 0;
         transform: scale(0.8);
     }
-    body.transparent .header-bottom .search-wrap {
+    .transparent .header-bottom .search-wrap {
         padding: 5px 0 5px 40px;
     }
-    body.transparent #site-navigation {
+    .transparent #site-navigation {
         padding: 8px 0;
-    }
-    .header-top{
-        display: none;
     }
     .logo {
         left: 40%;
@@ -416,30 +391,34 @@ responsive CSS
     .logo .logo-text .site-title {
         line-height: 24px;
     }
-    .tg-slider-widget.slider-content-left .swiper-wrapper .slider-content .caption-desc,
-    .tg-slider-widget.slider-content-center .swiper-wrapper .slider-content .caption-desc {
+    .tg-slider-widget.slider-content-left .caption-desc,
+    .tg-slider-widget.slider-content-center .caption-desc {
         font-size: 12px;
         line-height: 16px;
     }
-    .tg-slider-widget.slider-content-left .swiper-wrapper .slider-content .caption-title,
-    .tg-slider-widget.slider-content-center .swiper-wrapper .slider-content .caption-title {
+    .tg-slider-widget.slider-content-left .caption-title,
+    .tg-slider-widget.slider-content-center .caption-title {
         font-size: 14px;
         line-height: 18px;
     }
-    .tg-slider-widget .swiper-wrapper .slider-content .btn-wrapper a {
+    .tg-slider-widget .btn-wrapper a {
         font-size: 10px;
         padding: 2px 15px;
     }
-    .logo .logo-text .site-title {
+    .logo .site-title {
         font-size: 18px;
         line-height: 24px;
     }
     .site-description {
         font-size: 12px;
     }
+    .center-logo-below-menu .logo,
+    .logo {
+    padding: 20px 0;
+    }
     .call-to-action-section .btn-wrapper a,
     .call-to-action-section .btn-wrapper a:first-child {
-        width: 67%;
+        width: 200px;
     }
     .slider-arrow {
         display: none;
@@ -451,27 +430,37 @@ responsive CSS
         text-align: center;
         width: 100%;
     }
-    .feature-product-section .tg-feature-product-layout-2 .tg-container .tg-column-wrapper .tg-feature-product-widget,
-    .feature-product-section .tg-container .tg-column-wrapper .tg-feature-product-widget {
+    .feature-product-section .tg-feature-product-layout-2 .tg-feature-product-widget,
+    .feature-product-section .tg-feature-product-widget {
         width: 97%;
     }
-    .tg-slider-widget .swiper-wrapper .slider-content .caption-desc {
+    .tg-slider-widget .caption-desc {
         display: none;
     }
-    .tg-slider-widget .swiper-wrapper .slider-content .caption-title {
+    .tg-slider-widget .caption-title {
         margin-bottom: 10px;
     }
+    .header-bottom .search-wrap{
+        display: none;
+    }
+.header-bottom .cart-wrap{
+    padding: 20px 10px;
+}
+.call-to-action-section .call-to-action-section-layout-2 .section-title-wrapper, 
+.call-to-action-section .call-to-action-section-layout-2 .btn-wrapper {
+  display: block;
+  width: 100%;
+}
+.call-to-action-section .call-to-action-section-layout-2 .section-title{
+    text-align: center;
+}
 }
 
 @media(max-width: 320px) {
-    .tg-slider-widget .swiper-wrapper .slider-content .caption-desc {
+    .tg-slider-widget .caption-desc {
         display: none;
     }
-    .tg-slider-widget .swiper-wrapper .slider-content .caption-title {
+    .tg-slider-widget .caption-title {
         margin-bottom: 10px;
-    }
-    .logo {
-        left: 50%;
-        width: 230px;
     }
 }
