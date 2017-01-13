@@ -21,10 +21,14 @@ responsive CSS
     .header-bottom {
         position: relative;
     }
-    #site-navigation {
+    #site-navigation,.center-logo-below-menu #site-navigation {
         float: right;
         padding: 20px 0;
     }
+    .center-logo-below-menu .logo {
+  float: left;
+  width: auto;
+}
     #site-navigation ul li:hover > a::before,
     #site-navigation ul li.current-menu-item > a::before {
         display: none;
