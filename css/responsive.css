@@ -386,9 +386,6 @@ responsive CSS
     .transparent #site-navigation {
         padding: 8px 0;
     }
-    .logo {
-        left: 40%;
-    }
     .logo-text {
         padding: 20px 0;
     }
@@ -419,6 +416,9 @@ responsive CSS
     .center-logo-below-menu .logo,
     .logo {
     padding: 20px 0;
+    }
+    .center-logo-below-menu .logo .logo-image {
+      padding: 0;
     }
     .call-to-action-section .btn-wrapper a,
     .call-to-action-section .btn-wrapper a:first-child {
@@ -457,6 +457,10 @@ responsive CSS
 }
 .call-to-action-section .call-to-action-section-layout-2 .section-title{
     text-align: center;
+}
+
+.boxed .tg-container {
+  padding: 0 15px;
 }
 }
 
