@@ -1344,11 +1344,11 @@ Header
 }
 
 .header-bottom .searchform .btn {
-    background: #30afb8;
+    background-color: #30afb8;
 }
 
 .header-bottom .searchform .btn:hover {
-    background: #2299a1;
+    background-color: #2299a1;
 }
 
 .search-submit .fa {
@@ -3119,19 +3119,9 @@ Blogs
 .blog-section .tg-blog-widget-layout-2:hover {
     background-color: #FCFCFC;
 }
-
-.blog-section .tg-blog-widget-layout-2:hover .entry-title a {
-    color: #313b48;
-}
-
 .blog-section .tg-blog-widget-layout-2:hover .entry-meta a {
     color: #919191;
 }
-
-.blog-section .tg-blog-widget-layout-2:hover .entry-summary {
-    color: #777777;
-}
-
 .tg-blog-widget-layout-2 .blog-content p {
     margin: 0 0 10px;
 }
