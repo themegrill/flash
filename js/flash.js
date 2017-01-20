@@ -1,6 +1,6 @@
 jQuery(document).ready(function() {
 
-	jQuery('.main-navigation .menu-toggle').on('click', function() {
+	jQuery('.main-navigation .menu-toggle, .main-navigation a').on('click', function() {
 		jQuery('.main-navigation .menu').slideToggle('slow');
 	});
 
@@ -52,15 +52,6 @@ jQuery(document).ready(function() {
 		    scrollThreshold: 0.5,
 		    filter: '',
 		    easing: 'swing',
-		    begin: function() {
-		        //I get fired when the animation is starting
-		    },
-		    end: function() {
-		        //I get fired when the animation is ending
-		    },
-		    scrollChange: function() {
-		        //I get fired when you enter a section and I pass the list item of the section
-		    }
 		});
 	});
 
