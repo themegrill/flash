@@ -769,6 +769,9 @@ common
     float: left;
     margin-right: 3px;
 }
+.site{
+    background-color: #fff;
+}
 
 
 /*--------------------------------------------------------------
@@ -1205,11 +1208,10 @@ Header
     transition: all 0.5s ease;
 }
 
-#site-navigation ul.sub-menu li,
-.menu ul li ul.children li {
-    text-align: center;
-    width: 100%;
-    padding: 10px 30px;
+#site-navigation ul li ul li {
+  padding: 15px 10px;
+  text-align: left;
+  width: 100%;
 }
 
 #site-navigation ul.sub-menu li:hover {
@@ -1233,7 +1235,7 @@ Header
     color: #4c5867;
 }
 
-#site-navigation ul li ul.sub-menu li.menu-item-has-children ul,
+#site-navigation .sub-menu li.menu-item-has-children ul,
 .menu ul li ul li ul.children {
     left: 50%;
     opacity: 0;
@@ -1243,11 +1245,11 @@ Header
     transition: all 0.5s ease;
 }
 
-#site-navigation ul li ul.sub-menu li.menu-item-has-children ul li:hover a {
+#site-navigation .sub-menu li.menu-item-has-children ul li:hover a {
     color: #30afb8;
 }
 
-#site-navigation ul li ul.sub-menu li.menu-item-has-children ul li a {
+#site-navigation .sub-menu li.menu-item-has-children ul li a {
     color: #4c5867;
 }
 
@@ -1258,7 +1260,14 @@ Header
     visibility: visible;
 }
 
-#site-navigation ul li ul.sub-menu li.menu-item-has-children:hover .sub-toggle {
+.sub-toggle {
+    color: #333333;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#site-navigation ul li.menu-item-has-children:hover > .sub-toggle {
     color: #30afb8;
 }
 
@@ -1291,14 +1300,14 @@ Header
     position: relative;
 }
 
-.transparent.header-sticky .header-bottom .search-wrap .search-icon:hover,
-.transparent .header-bottom .search-wrap .search-icon:hover,
-.header-bottom .search-wrap .search-icon:hover {
+.transparent.header-sticky .search-icon:hover,
+.transparent .search-icon:hover,
+.header-bottom .search-icon:hover {
     border-color: #30afb8;
     color: #30afb8;
 }
 
-.header-bottom .search-wrap .search-icon {
+.header-bottom .search-icon {
     cursor: pointer;
     color: #99a3b0;
     font-size: 14px;
@@ -1452,11 +1461,11 @@ Header
     color: #fff;
 }
 
-.transparent .header-top .contact-info span {
+.transparent .contact-info span {
     color: #fff;
 }
 
-.transparent .header-top .contact-info li {
+.transparent .contact-info li {
     color: #fff;
 }
 
@@ -1466,8 +1475,8 @@ Header
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-.transparent .header-bottom .logo-text,
-.transparent .header-bottom .logo-text a {
+.transparent .logo-text,
+.transparent .logo-text a {
     color: #fff;
 }
 

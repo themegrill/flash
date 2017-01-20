@@ -271,6 +271,9 @@ responsive CSS
         margin-left: 3%;
         width: 47%;
     }
+    .header-top{
+        display: none;
+    }
 }
 
 @media(max-width: 600px) {
@@ -364,9 +367,6 @@ responsive CSS
     .blog #primary .post .entry-content-block,
     .archive #primary .post .entry-content-block {
         width: 100%;
-    }
-    .header-top{
-        display: none;
     }
 }
 
