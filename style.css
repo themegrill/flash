@@ -1209,7 +1209,7 @@ Header
 }
 
 #site-navigation ul li ul li {
-  padding: 15px 10px;
+  padding: 10px;
   text-align: left;
   width: 100%;
 }
@@ -1852,7 +1852,7 @@ Slider
 .tg-slider-widget .caption-desc {
     font-size: 24px;
     line-height: 35px;
-    margin: 30px 0;
+    margin: 10px 0 30px 0;
     text-transform: capitalize;
 }
 
@@ -2322,7 +2322,7 @@ Call To Action
     position: relative;
 }
 
-.call-to-action-section .section-title {
+.call-to-action-section .section-title-wrapper .section-title {
     color: #fff;
     font-size: 32px;
 }
@@ -3107,7 +3107,7 @@ Blogs
     color: #8e8e8e;
 }
 
-.blog-section .tg-blog-widget-layout-2 .read-more-container .entry-author a {
+.tg-blog-widget-layout-2 .read-more-container .entry-author a {
     color: #8e8e8e;
     font-size: 12px;
 }
@@ -3953,14 +3953,13 @@ WooCommerce
     padding: 0;
 }
 
-.woocommerce ul.products li.product .onsale,
-.woocommerce span.onsale {
-    padding: 5px 9px;
-}
-
+.woocommerce span.onsale,
 .woocommerce ul.products li.product .onsale {
     background-color: #30afb8;
-    padding: 5px 10px;
+    padding: 0;
+    height: 50px;
+    width: 50px;
+    line-height: 50px;
 }
 
 .woocommerce ul.products li.product .button,
@@ -4035,3 +4034,7 @@ WooCommerce
 
 
 /*# sourceMappingURL=style.css.map */
+
+.slider-image > img{
+    height: 100vh;
+}
