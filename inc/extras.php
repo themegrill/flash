@@ -523,6 +523,13 @@ function flash_register_required_plugins() {
 			'required'  => false,
 			'version'   => '1.0.0',
 		),
+		// ThemeGrill Demo Importer
+		array(
+			'name'      => 'ThemeGrill Demo Importer',
+			'slug'      => 'themegrill-demo-importer',
+			'required'  => false,
+			'version'   => '1.0.0',
+		),
 	);
 	/*
 	 * Array of configuration settings. Amend each line as needed.
