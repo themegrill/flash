@@ -2503,7 +2503,8 @@ Feature product
     color: #fff;
 }
 
-.feature-product-section .tg-feature-product-widget:hover .featured-image-desc {
+.tg-feature-product-layout-1 .tg-feature-product-widget:hover .featured-image-desc,
+.tg-feature-product-layout-2 .tg-feature-product-widget:hover .featured-image-desc {
     visibility: visible;
     opacity: 1;
     -webkit-transform: translate(-50%, -50%) scale(1);
@@ -2553,10 +2554,6 @@ Feature product
 
 
 /*----------------- tg-feature-product-layout-3 -----------------*/
-
-.feature-product-section .tg-feature-product-layout-3 .tg-container {
-    width: 1200px;
-}
 
 .feature-product-section .tg-feature-product-layout-3 .featured-image-desc {
     visibility: visible;
@@ -2640,11 +2637,6 @@ Feature product
     -moz-transition: all 0.5s ease;
     transition: all 0.5s ease;
 }
-
-.tg-feature-product-layout-1 .grid {
-    margin-left: -3%;
-}
-
 
 /*--------------------------------------------------------------
 Testimonial
