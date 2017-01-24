@@ -1919,7 +1919,13 @@ Slider
     background: #30afb8;
 }
 
-
+.tg-slider-widget .swiper-container{
+    height: calc(100vh - 120px);
+}
+.tg-slider-widget .slider-image img {
+    height: 100%;
+    max-width: none;
+}
 /*--------------------------------------------------------------
 Section Title
 --------------------------------------------------------------*/
@@ -2783,7 +2789,7 @@ Fun Facts
 .tg-fun-facts-widget.tg-fun-facts-layout-2 .counter-wrapper {
     font-size: 46px;
     color: #30afb8;
-    margin-bottom: 10px;
+    margin: 10px 0;
 }
 
 
@@ -3962,6 +3968,9 @@ WooCommerce
     line-height: 50px;
 }
 
+#add_payment_method table.cart img, .woocommerce-cart table.cart img, .woocommerce-checkout table.cart img{
+    width: auto;
+}
 .woocommerce ul.products li.product .button,
 .woocommerce #respond input#submit.alt,
 .woocommerce a.button.alt,
@@ -4034,7 +4043,3 @@ WooCommerce
 
 
 /*# sourceMappingURL=style.css.map */
-
-.slider-image > img{
-    height: 100vh;
-}

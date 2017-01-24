@@ -159,3 +159,22 @@ jQuery(window).load(function() {
 		});
 	}
 });
+
+$( document.body ).on( 'tg-slider-widget', function() {
+		var headerClass = $( '.site-header' );
+		var headerHeight  = headerClass.height();
+		var windowHeight = $( window ).height();
+		var sliderClass = $( '.tg-slider-widget .swiper-container' );
+
+		if ( headerClass.hasClass( '.site-header' )) {
+			sliderClass.css( {
+				'height': windowHeight 
+			} );
+		}else {
+			sliderClass.css( {
+				'height': windowHeight - headerHeight 
+			});
+		}
+
+	
+	}).trigger( 'tg-slider-widget' );

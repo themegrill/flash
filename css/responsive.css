@@ -441,6 +441,7 @@ responsive CSS
         width: 100%;
     }
     .feature-product-section .tg-feature-product-layout-2 .tg-feature-product-widget,
+    .feature-product-section .tg-feature-product-layout-2 .tg-feature-product-widget.tg-column-3,
     .feature-product-section .tg-feature-product-widget {
         width: 97%;
     }
