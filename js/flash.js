@@ -48,6 +48,15 @@ jQuery(document).ready(function() {
 		    scrollThreshold: 0.5,
 		    filter: '',
 		    easing: 'swing',
+		    begin: function() {
+		        //I get fired when the animation is starting
+		    },
+		    end: function() {
+		        //I get fired when the animation is ending
+		    },
+		    scrollChange: function() {
+		        //I get fired when you enter a section and I pass the list item of the section
+		    }
 		});
 	});
 
@@ -159,22 +168,3 @@ jQuery(window).load(function() {
 		});
 	}
 });
-
-$( document.body ).on( 'tg-slider-widget', function() {
-		var headerClass = $( '.site-header' );
-		var headerHeight  = headerClass.height();
-		var windowHeight = $( window ).height();
-		var sliderClass = $( '.tg-slider-widget .swiper-container' );
-
-		if ( headerClass.hasClass( '.site-header' )) {
-			sliderClass.css( {
-				'height': windowHeight 
-			} );
-		}else {
-			sliderClass.css( {
-				'height': windowHeight - headerHeight 
-			});
-		}
-
-	
-	}).trigger( 'tg-slider-widget' );

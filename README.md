@@ -2,7 +2,7 @@
 Author: ThemeGrill
 Requires at least: WordPress 4.3
 Tested up to: WordPress 4.6
-Version: 1.0.3
+Version: 1.0.4
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 Tags: one-column, two-columns, left-sidebar, right-sidebar, grid-layout, custom-background, custom-colors, custom-menu, custom-logo, featured-images, footer-widgets, full-width-template, theme-options, threaded-comments, translation-ready, blog, e-commerce
@@ -10,14 +10,14 @@ Tags: one-column, two-columns, left-sidebar, right-sidebar, grid-layout, custom-
 == Description ==
 Ultimate Business Theme
 
-For more information about Flash please go to http://themegrill.com/themes/flash
+For more information about Flash please go to https://themegrill.com/themes/flash
 
 == Installation ==
 
 1. In your admin panel, go to Appearance -> Themes and click the 'Add New' button.
 2. Type in Flash in the search form and press the 'Enter' key on your keyboard.
 3. Click on the 'Activate' button to use your new theme right away.
-4. Go to http://themegrill.com/themes/flash for a guide on how to customize this theme.
+4. Go to https://themegrill.com/themes/flash for a guide on how to customize this theme.
 5. Navigate to Appearance > Customize in your admin panel and customize to taste.
 
 == Copyright ==
@@ -80,6 +80,10 @@ Source: https://pixabay.com/en/office-desk-work-study-tech-791733/
 Unless otherwise specified, all the theme files, scripts and images including the screenshot image are licensed under [GNU GPL] (http://www.gnu.org/licenses/gpl-3.0.txt), version 3 or later.
 
 == Changelog ==
+
+= 1.0.4 - 2016-12-22 =
+* Feature - Adds Support for Video Header introduced in WordPress 4.7
+* Tweaks - Recommends ThemeGrill Demo Importer Plugin
 
 = 1.0.3 - 2016-12-07 =
 * Feature - ThemeGrill Demo Importer Plugin Integration
