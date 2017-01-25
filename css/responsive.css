@@ -182,7 +182,7 @@ responsive CSS
     }
 }
 
-@media(max-width: 768px) {
+@media (max-width: 768px) {
     #top-footer .tg-column-wrapper .tg-column-4 {
         width: 47%;
     }
@@ -389,9 +389,6 @@ responsive CSS
     .transparent .header-bottom .search-wrap {
         padding: 5px 0 5px 40px;
     }
-    .transparent #site-navigation {
-        padding: 8px 0;
-    }
     .logo-text {
         padding: 20px 0;
     }
@@ -442,7 +439,8 @@ responsive CSS
     }
     .feature-product-section .tg-feature-product-layout-2 .tg-feature-product-widget,
     .feature-product-section .tg-feature-product-layout-2 .tg-feature-product-widget.tg-column-3,
-    .feature-product-section .tg-feature-product-widget {
+    .feature-product-section .tg-feature-product-widget.tg-column-4,
+    .feature-product-section .tg-feature-product-layout-2 .tg-feature-product-widget.tg-column-4 {
         width: 97%;
     }
     .tg-slider-widget .caption-desc {
