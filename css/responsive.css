@@ -268,17 +268,22 @@ responsive CSS
         float: none;
         width: 100%;
     }
+    .blog-section .tg-column-wrapper.tg-blog-widget-layout-1 .tg-column-2,
+    .blog-section .tg-column-wrapper.tg-blog-widget-layout-1 .row:nth-child(2n+1) .post-image,
+    .blog-section .tg-column-wrapper.tg-blog-widget-layout-1 .row:nth-child(2n+1) .blog-content,
+    .blog-section .tg-column-wrapper.tg-blog-widget-layout-1 .row:nth-child(2n) .post-image,
+    .blog-section .tg-column-wrapper.tg-blog-widget-layout-1 .row:nth-child(2n) .blog-content {
+        width: 100%;
+        margin: 0 0 20px;
+    }
     .tg-blog-widget-layout-1 .row {
         margin-bottom: 20px;
     }
     .tg-blog-widget-layout-1 .row:last-child {
         margin-bottom: 0;
     }
-    .blog-section .tg-column-wrapper.tg-blog-widget-layout-1 .tg-column-2 {
-        margin-left: 3%;
-        width: 47%;
-    }
-    .header-top{
+
+   .header-top{
         display: none;
     }
 }
@@ -335,14 +340,6 @@ responsive CSS
     }
     .feature-product-section .tg-feature-product-widget {
         width: 47%;
-    }
-    .blog-section .tg-column-wrapper.tg-blog-widget-layout-1 .tg-column-2,
-    .blog-section .tg-column-wrapper.tg-blog-widget-layout-1 .row:nth-child(2n+1) .post-image,
-    .blog-section .tg-column-wrapper.tg-blog-widget-layout-1 .row:nth-child(2n+1) .blog-content,
-    .blog-section .tg-column-wrapper.tg-blog-widget-layout-1 .row:nth-child(2n) .post-image,
-    .blog-section .tg-column-wrapper.tg-blog-widget-layout-1 .row:nth-child(2n) .blog-content {
-        width: 100%;
-        margin: 0 0 20px;
     }
     .blog-section .row:nth-child(2n+1) .post-image::before,
     .blog-section .row:nth-child(2n) .post-image::before {

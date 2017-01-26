@@ -1447,6 +1447,12 @@ Header
     padding: 0 30px;
 }
 
+@media(max-width: 980px) {
+    .boxed .tg-container {
+        width: 98%;
+    }
+}
+
 .transparent #masthead {
     position: absolute;
     top: 0;
@@ -3047,7 +3053,6 @@ Blogs
     position: absolute;
     text-align: center;
     top: 0;
-    width: 20%;
 }
 
 .blog-section .tg-blog-widget-layout-2 .post-image .entry-date .fa {
