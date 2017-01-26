@@ -2077,7 +2077,9 @@ Service
     display: inline-block;
     position: relative;
 }
-
+.tg-service-widget .service-more:hover {
+  color: #1c9ba4;
+}
 .tg-service-widget .service-more:after {
     content: "\f178";
     font-family: FontAwesome;
@@ -3135,10 +3137,18 @@ Blogs
 .blog-section .tg-blog-widget-layout-2:hover .entry-meta a {
     color: #919191;
 }
+
 .tg-blog-widget-layout-2 .blog-content p {
     margin: 0 0 10px;
 }
 
+.blog-section .tg-blog-widget-layout-2 .entry-title a:hover,
+.blog-section .tg-blog-widget-layout-2 .tg-blog-widget:hover .blog-content .entry-title a:hover,
+.blog-section .tg-blog-widget-layout-2 .read-more-container .read-more:hover a,
+.tg-blog-widget-layout-2 .read-more-container .entry-author:hover a,
+.tg-blog-widget-layout-2 .read-more-container .entry-author:hover {
+    color: #239CA4;
+}
 
 /*--------------------------------------------------------------
 Clients
@@ -3369,8 +3379,11 @@ Archive
     color: #8e8e8e;
 }
 
-#primary .entry-meta .entry-author {
+.entry-meta .entry-author {
     margin-left: 15px;
+}
+.entry-meta .entry-author:hover{
+    color: #30AFB8;
 }
 
 #primary .entry-meta .comments-link {
@@ -3590,7 +3603,9 @@ Bread Crumb
     line-height: 18px;
     padding: 0 14px;
 }
-
+.breadcrumb-trail.breadcrumbs .trail-items li span:hover{
+    color: #30AFB8;
+}
 .breadcrumb-trail.breadcrumbs .trail-items li span a {
     color: #a1a1a1;
 }
@@ -3639,6 +3654,9 @@ Post Page
 .single .entry-content-block .entry-meta a {
     font-size: 12px;
 }
+.post .entry-content-block .entry-meta a:hover{
+    color: #30afb8;
+}
 .single .entry-content-block .entry-meta .entry-author,.single .entry-content-block .entry-meta .comments-link {
     margin-left: 15px;
 }
@@ -3656,6 +3674,9 @@ Post Page
 .single .entry-content-block .entry-footer span a {
     color: #8e8e8e;
     font-size: 12px;
+}
+.post .entry-content-block .entry-footer span a:hover{
+    color: #30AFB8;
 }
 .author-description {
     border-bottom: 1px solid #c5c5c5;
@@ -3902,7 +3923,9 @@ Comments
     height: 45px;
     line-height: 30px;
 }
-
+#respond #commentform .form-submit input:hover {
+    background-color: #1c9ba4;
+}
 
 /*--------------------------------------------------------------
 WooCommerce
