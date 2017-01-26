@@ -3654,7 +3654,8 @@ Post Page
 .single .entry-content-block .entry-meta a {
     font-size: 12px;
 }
-.post .entry-content-block .entry-meta a:hover{
+.post .entry-content-block .entry-meta a:hover,
+.post .entry-content-block .entry-meta span:hover{
     color: #30afb8;
 }
 .single .entry-content-block .entry-meta .entry-author,.single .entry-content-block .entry-meta .comments-link {
