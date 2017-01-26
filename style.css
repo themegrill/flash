@@ -1601,22 +1601,8 @@ Header
 .header-sticky .is-sticky #masthead {
     z-index: 99 !important;
 }
-
-.header-sticky .is-sticky .header-top {
-    background: #f1f5f8;
-    border: none;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-}
-
 .header-sticky .is-sticky .header-bottom {
     background: #fff;
-    border: none;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    transition: all 0.5s ease;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 }
 
@@ -1641,13 +1627,12 @@ Header
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-.transparent.header-sticky #site-navigation .menu-toggle .fa {
+.transparent.header-sticky #site-navigation .menu-toggle .fa,
+.transparent.header-sticky #site-navigation ul li a,
+.transparent.header-sticky .flash-cart-views a {
     color: #fff;
 }
 
-.transparent.header-sticky #site-navigation ul li a {
-    color: #fff;
-}
 
 .transparent.header-sticky #site-navigation ul.sub-menu li a {
     color: #333333;
@@ -1661,9 +1646,6 @@ Header
     border-color: #fff;
 }
 
-.transparent.header-sticky .flash-cart-views a {
-    color: #fff;
-}
 
 .transparent.header-sticky .search-icon {
     color: #fff;
@@ -1685,10 +1667,14 @@ Header
 }
 
 .transparent.header-sticky .is-sticky .header-top .contact-info li,
-.transparent.header-sticky .is-sticky .header-top .contact-info li span {
+.transparent.header-sticky .is-sticky .header-top .contact-info li span,
+.transparent.header-sticky .is-sticky .logo-text,
+.transparent.header-sticky .is-sticky .logo-text a,
+.transparent.header-sticky .is-sticky #site-navigation ul li a,
+.transparent.header-sticky .is-sticky #site-navigation ul.sub-menu li a,
+.transparent.header-sticky .is-sticky .flash-cart-views a {
     color: #333333;
 }
-
 .transparent.header-sticky .is-sticky .header-bottom {
     background: #fff;
     border: none;
@@ -1697,20 +1683,11 @@ Header
     transition: all 0.5s ease;
 }
 
-.transparent.header-sticky .is-sticky .logo-text,
-.transparent.header-sticky .is-sticky .logo-text a {
-    color: #333333;
-}
 
-.transparent.header-sticky .is-sticky #site-navigation .menu-toggle .fa {
-    color: #333333;
-}
 
-.transparent.header-sticky .is-sticky #site-navigation ul li a,
-.transparent.header-sticky .is-sticky #site-navigation ul.sub-menu li a,
-.transparent.header-sticky .is-sticky .flash-cart-views a {
-    color: #333333;
-}
+
+
+
 
 .transparent.header-sticky .is-sticky .flash-cart-views {
     border-color: #333333;
@@ -2387,6 +2364,7 @@ Call To Action
 
 .call-to-action-section .call-to-action-section-layout-2 {
     display: table;
+    width: 100%;
 }
 
 .call-to-action-section .call-to-action-section-layout-2 .section-title-wrapper {
