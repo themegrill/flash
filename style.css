@@ -1683,12 +1683,6 @@ Header
     transition: all 0.5s ease;
 }
 
-
-
-
-
-
-
 .transparent.header-sticky .is-sticky .flash-cart-views {
     border-color: #333333;
 }
@@ -1727,7 +1721,6 @@ Header
     bottom: 0;
     left: 0;
 }
-
 
 /*--------------------------------------------------------------
 Slider
@@ -3357,15 +3350,12 @@ Archive
     color: #8e8e8e;
 }
 
-.entry-meta .entry-author {
-    margin-left: 15px;
-}
-.entry-meta .entry-author:hover{
-    color: #30AFB8;
+.entry-meta span{
+    margin-right: 15px;
 }
 
-#primary .entry-meta .comments-link {
-    margin-left: 15px;
+.entry-meta .entry-author:hover{
+    color: #30AFB8;
 }
 
 #secondary {
@@ -3473,42 +3463,35 @@ Archive
     margin-left: 15px;
 }
 
-.blog  .entry-thumbnail,
-.archive  .entry-thumbnail {
+.blog  .entry-thumbnail {
     float: left;
     width: 33.7%;
 }
 
-.blog .entry-content-block,
-.archive .entry-content-block {
+.blog .entry-content-block{
     width: 60%;
 }
 
-.blog #primary .post .entry-content-block .entry-content,
-.archive #primary .post .entry-content-block .entry-content {
+#primary .post .entry-content-block .entry-content {
     border: none;
 }
 
-.blog.full-width-archive #primary .post,
-.archive.full-width-archive #primary .post {
+.full-width-archive #primary .post{
     margin-bottom: 0;
     width: 100%;
 }
 
-.blog.full-width-archive #primary .post .entry-thumbnail,
-.archive.full-width-archive #primary .post .entry-thumbnail {
+.full-width-archive #primary .post .entry-thumbnail{
     width: 100%;
     float: none;
     margin-right: 0;
 }
 
-.blog.full-width-archive #primary .post .entry-thumbnail img,
-.archive.full-width-archive #primary .post .entry-thumbnail img {
+.full-width-archive #primary .post .entry-thumbnail img {
     width: 100%;
 }
 
-.blog.full-width-archive #primary .post .entry-content-block,
-.archive.full-width-archive #primary .post .entry-content-block {
+.full-width-archive #primary .post .entry-content-block {
     overflow: unset;
     width: 94%;
     position: relative;
@@ -3518,8 +3501,7 @@ Archive
     background: #fff;
 }
 
-.blog.grid-view #primary .post,
-.archive.grid-view #primary .post {
+.grid-view #primary .post {
     display: inline-block;
     margin-bottom: 30px;
     margin-right: 1%;
@@ -3527,18 +3509,20 @@ Archive
     width: 48%;
 }
 
-.blog.grid-view #primary .post .entry-thumbnail,
-.archive.grid-view #primary .post .entry-thumbnail {
+.grid-view #primary .post .entry-thumbnail {
     width: 100%;
 }
 
-.blog.grid-view #primary .post .entry-content-block,
-.archive.grid-view #primary .post .entry-content-block {
+.grid-view #primary .post .entry-content-block {
     position: unset;
     width: 100%;
 }
-
-
+.entry-content-block .entry-title {
+    font-size: 18px;
+}
+.grid-view .entry-header{
+    margin-top: 10px;
+}
 /*--------------------------------------------------------------
 Bread Crumb
 --------------------------------------------------------------*/
@@ -3635,9 +3619,6 @@ Post Page
 .post .entry-content-block .entry-meta a:hover,
 .post .entry-content-block .entry-meta span:hover{
     color: #30afb8;
-}
-.single .entry-content-block .entry-meta .entry-author,.single .entry-content-block .entry-meta .comments-link {
-    margin-left: 15px;
 }
 .single .entry-content-block .entry-content {
     border-bottom: 1px solid #c5c5c5;
