@@ -371,6 +371,12 @@ responsive CSS
     .archive #primary .post .entry-content-block {
         width: 100%;
     }
+    .about-section .section-title, .about-section .section-description {
+      text-align: center;
+    }
+    .about-section  .about-section-image{
+        display: none;
+    }
 }
 
 @media(max-width: 480px) {

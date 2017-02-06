@@ -1592,6 +1592,7 @@ Header
 
 .center-logo-below-menu .logo .logo-image {
     padding: 20px 0 0 0;
+    display: inline-block;
 }
 
 .center-logo-below-menu #site-navigation {
@@ -1894,10 +1895,6 @@ Slider
     border-color: #30afb8;
     background: #30afb8;
 }
-
-.tg-slider-widget .swiper-container{
-    height: calc(100vh - 120px);
-}
 .tg-slider-widget .slider-image img {
     height: 100%;
     max-width: none;
@@ -1948,11 +1945,15 @@ Section Title
 /*--------------------------------------------------------------
 About
 --------------------------------------------------------------*/
+.about-section .tg-column-wrapper{
+    margin: 0;
+}
 
-.about-content-wrapper {
-    display: inline-block;
-    float: none;
+.about-section .about-content-wrapper {
+    display: table-cell;
+    float: left;
     vertical-align: middle;
+    padding-left: 3%;
 }
 
 .about-section .btn-wrapper {
@@ -1972,14 +1973,28 @@ About
 
 .about-section .section-description {
     margin-top: 12px;
+    text-align: left;
+}
+.about-content-wrapper .section-title {
+  text-align: left;
 }
 
-.about-section-image {
-    display: inline-block;
-    float: none;
+.about-section .about-section-image {
+    display: table-cell;
+    float: right;
     margin-right: -5px;
     text-align: center;
     vertical-align: middle;
+    padding-left: 3%;
+}
+
+.about-section .section-title::before, .about-section .section-title::after {
+  left: 0;
+  margin: 0;
+  display: none;
+}
+.about-section .section-title::after {
+    margin-left: 35px;
 }
 
 
@@ -2029,7 +2044,7 @@ Service
 }
 
 .tg-service-widget .service-content-wrap {
-    margin: 25px 0 10px;
+    margin: 10px 0;
     color: #777777;
 }
 
@@ -2227,6 +2242,7 @@ Team
     position: static;
     margin-left: 0;
     width: 100%;
+    background: transparent;
     border-top: 1px solid #e7e7e7;
 }
 
@@ -2335,11 +2351,10 @@ Call To Action
     color: #fff;
     font-size: 22px;
     height: 50px;
-    width: 250px;
     line-height: 50px;
     position: relative;
     margin-left: 30px;
-    width: 250px;
+    padding: 0 20px;
     display: inline-block;
 }
 
@@ -3536,6 +3551,7 @@ Bread Crumb
     float: left;
     font-weight: 400;
     font-size: 25px;
+    padding: 6px 0;
 }
 
 .breadcrumb-trail.breadcrumbs .trail-items {
@@ -3564,9 +3580,6 @@ Bread Crumb
     position: relative;
     line-height: 18px;
     padding: 0 14px;
-}
-.breadcrumb-trail.breadcrumbs .trail-items li span:hover{
-    color: #30AFB8;
 }
 .breadcrumb-trail.breadcrumbs .trail-items li span a {
     color: #a1a1a1;
