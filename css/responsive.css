@@ -319,6 +319,8 @@ responsive CSS
     .about-section .about-content-wrapper {
         text-align: center;
         width: 100%;
+        float: none;
+        padding: 0;
     }
     .about-section .tg-column-wrapper {
         text-align: center;
@@ -371,7 +373,7 @@ responsive CSS
     .archive #primary .post .entry-content-block {
         width: 100%;
     }
-    .about-section .section-title, .about-section .section-description {
+    .about-content-wrapper .section-title, .about-content-wrapper .section-description {
       text-align: center;
     }
     .about-section  .about-section-image{

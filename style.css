@@ -206,7 +206,7 @@ input,
 select,
 textarea {
     color: #333333;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 14px;
     line-height: 1.5;
     font-weight: 400;
@@ -231,7 +231,7 @@ blockquote {
     margin: 0 15px;
     font-size: 20px;
     font-style: italic;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 300;
 }
 
@@ -241,7 +241,7 @@ address {
 
 pre {
     background: #eee;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 15px;
     font-size: 1.5rem;
     line-height: 1.6;
