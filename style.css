@@ -3593,7 +3593,9 @@ Bread Crumb
     position: absolute;
     top: 0;
 }
-
+.page-template-pagebuilder .breadcrumb-trail.breadcrumbs {
+  margin: 0;
+}
 
 /*--------------------------------------------------------------
 Post Page
