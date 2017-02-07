@@ -1895,7 +1895,7 @@ Slider
     border-color: #30afb8;
     background: #30afb8;
 }
-.tg-slider-widget .slider-image img {
+.full-screen.tg-slider-widget .slider-image img {
     height: 100%;
     max-width: none;
 }
