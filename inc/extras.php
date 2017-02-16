@@ -41,9 +41,13 @@ function flash_body_classes( $classes ) {
 	$logo_class = esc_attr( get_theme_mod( 'flash_logo_position', 'left-logo-right-menu' ) );
 	$classes[]  = $logo_class;
 
-	if( ( is_archive() || ( is_home() && !is_front_page() ) || is_search() ) ) {
+	if( ( is_archive() || ( is_home() && !is_front_page() ) ) ) {
 		$classes[] = esc_attr( get_theme_mod( 'flash_archive_layout', 'right-sidebar' ) );
 		$classes[] = esc_attr( get_theme_mod( 'flash_blog_style', 'classic-layout' ) );
+	}
+
+	if( is_search() ) {
+		$classes[] = esc_attr( get_theme_mod( 'flash_archive_layout', 'right-sidebar' ) );
 	}
 
 	if( is_single() ) {
