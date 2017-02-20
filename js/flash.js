@@ -108,7 +108,8 @@ jQuery(window).load(function() {
 			paginationClickable: true,
 			slidesPerView: 1,
 			nextButton: '.swiper-button-next',
-			prevButton: '.swiper-button-prev'
+			prevButton: '.swiper-button-prev',
+			autoplay: 2000,
 		});
 		//TESTIMONIAL SLIDER
 		var testimonial_slider = new Swiper ('.tg-testimonial-widget .swiper-container', {
