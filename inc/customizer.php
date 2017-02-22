@@ -456,20 +456,21 @@ Kirki::add_section( 'flash_advanced_section', array(
 
 ) );
 
-
-Kirki::add_field( 'flash_config', array(
-	'type'        => 'code',
-	'settings'    => 'flash_custom_css',
-	'label'       => esc_html__( 'Custom CSS', 'flash' ),
-	'section'     => 'flash_advanced_section',
-	'default'     => '',
-	'priority'    => 10,
-	'choices'     => array(
-		'language' => 'css',
-		'theme'    => 'monokai',
-		'height'   => 250,
-	),
-) );
+if ( ! function_exists( 'wp_update_custom_css_post' ) ) {
+	Kirki::add_field( 'flash_config', array(
+		'type'        => 'code',
+		'settings'    => 'flash_custom_css',
+		'label'       => esc_html__( 'Custom CSS', 'flash' ),
+		'section'     => 'flash_advanced_section',
+		'default'     => '',
+		'priority'    => 10,
+		'choices'     => array(
+			'language' => 'css',
+			'theme'    => 'monokai',
+			'height'   => 250,
+		),
+	) );
+}
 
 /**
  * Sets up the WordPress core custom header and custom background features.

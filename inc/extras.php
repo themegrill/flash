@@ -630,3 +630,24 @@ function flash_register_required_plugins() {
 	);
 	tgmpa( $plugins, $config );
 }
+
+/**
+ * Migrate any existing theme CSS codes added in Customize Options to the core option added in WordPress 4.7
+ *
+ * @since Flash 1.0.6
+ */
+function flash_custom_css_migrate() {
+	if ( function_exists( 'wp_update_custom_css_post' ) ) {
+		$custom_css = get_theme_mod( 'flash_custom_css' );
+		if ( $custom_css ) {
+			$core_css = wp_get_custom_css(); // Preserve any CSS already added to the core option.
+			$return = wp_update_custom_css_post( $core_css . $custom_css );
+			if ( ! is_wp_error( $return ) ) {
+				// Remove the old theme_mod, so that the CSS is stored in only one place moving forward.
+				remove_theme_mod( 'flash_custom_css' );
+			}
+		}
+	}
+}
+
+add_action( 'after_setup_theme', 'flash_custom_css_migrate' );
