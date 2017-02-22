@@ -127,7 +127,7 @@ class Flash_Admin {
 
 			<a href="<?php echo esc_url( apply_filters( 'flash_demo_url', 'https://demo.themegrill.com/flash/demos/' ) ); ?>" class="button button-primary docs" target="_blank"><?php esc_html_e( 'View Multiple Demos', 'flash' ); ?></a>
 
-			<a href="<?php echo esc_url( apply_filters( 'flash_rating_url', 'http://wordpress.org/support/view/theme-reviews/flash?filter=5' ) ); ?>" class="button button-secondary docs" target="_blank"><?php esc_html_e( 'Rate this theme', 'flash' ); ?></a>
+			<a href="<?php echo esc_url( apply_filters( 'flash_rating_url', 'https://wordpress.org/support/view/theme-reviews/flash?filter=5' ) ); ?>" class="button button-secondary docs" target="_blank"><?php esc_html_e( 'Rate this theme', 'flash' ); ?></a>
 
 			<?php
 			if( is_plugin_active( 'themegrill-demo-importer/themegrill-demo-importer.php' ) ) { ?>
@@ -181,7 +181,7 @@ class Flash_Admin {
 					<div class="col">
 						<h3><?php esc_html_e( 'Theme Customizer', 'flash' ); ?></h3>
 						<p><?php esc_html_e( 'All Theme Options are available via Customize screen.', 'flash' ) ?></p>
-						<p><a href="<?php echo admin_url( 'customize.php' ); ?>" class="button button-secondary"><?php esc_html_e( 'Customize', 'flash' ); ?></a></p>
+						<p><a href="<?php echo esc_url( admin_url( 'customize.php' ) ); ?>" class="button button-secondary"><?php esc_html_e( 'Customize', 'flash' ); ?></a></p>
 					</div>
 
 					<div class="col">

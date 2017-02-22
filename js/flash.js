@@ -70,10 +70,25 @@ jQuery(document).ready(function() {
 		}
 	}
 
-
 	// Preloader
 	if(jQuery('#preloader-background').length > 0) {
 		setTimeout(function(){jQuery('#preloader-background').hide();}, 600);
+	}
+
+	// Full Screen Slider
+	var headerClass = jQuery( '.site-header' );
+	var headerHeight  = headerClass.height();
+	var windowHeight = jQuery( window ).height();
+	var sliderClass = jQuery( '.tg-slider-widget.full-screen .swiper-container' );
+
+	if (jQuery('body').hasClass('transparent')) {
+		sliderClass.css( {
+			'height': windowHeight
+		} );
+	} else {
+		sliderClass.css( {
+			'height' : windowHeight - headerHeight
+		});
 	}
 });
 
@@ -93,7 +108,8 @@ jQuery(window).load(function() {
 			paginationClickable: true,
 			slidesPerView: 1,
 			nextButton: '.swiper-button-next',
-			prevButton: '.swiper-button-prev'
+			prevButton: '.swiper-button-prev',
+			autoplay: 2000,
 		});
 		//TESTIMONIAL SLIDER
 		var testimonial_slider = new Swiper ('.tg-testimonial-widget .swiper-container', {
