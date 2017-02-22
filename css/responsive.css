@@ -389,9 +389,6 @@ responsive CSS
         padding: 0;
         transform: scale(0.8);
     }
-    .transparent .header-bottom .search-wrap {
-        padding: 5px 0 5px 40px;
-    }
     .logo-text {
         padding: 20px 0;
     }

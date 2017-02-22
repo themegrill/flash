@@ -1495,10 +1495,6 @@ Header
     color: #fff;
 }
 
-.transparent .is-sticky #site-navigation ul li .sub-toggle {
-    color: #333333;
-}
-
 .transparent #site-navigation ul.sub-menu li {
     padding: 0;
 }
@@ -1527,16 +1523,13 @@ Header
     display: none;
 }
 
-.transparent #site-navigation ul.sub-menu li:hover a {
+.transparent #site-navigation ul.sub-menu li:hover a,
+.transparent #site-navigation ul.sub-menu li.menu-item-has-children ul li:hover a {
     color: #30afb8;
 }
 
 .transparent #site-navigation ul.sub-menu li.menu-item-has-children ul li a {
     color: #4c5867;
-}
-
-.transparent #site-navigation ul.sub-menu li.menu-item-has-children ul li:hover a {
-    color: #30afb8;
 }
 
 .transparent .cart-wrap .flash-cart-views {
