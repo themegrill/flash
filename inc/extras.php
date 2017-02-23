@@ -149,7 +149,7 @@ function flash_breadcrumbs() {
 		echo '<ul class="trail-items">';
 
 		// Home page
-		echo '<li class="trail-item trail-begin"><a class="trail-home" href="' . esc_html( get_home_url() ) . '" title="' . $home_title . '"><span>' . $home_title . '</span></a></li>';
+		echo '<li class="trail-item trail-begin"><a class="trail-home" href="' . esc_url( get_home_url() ) . '" title="' . $home_title . '"><span>' . $home_title . '</span></a></li>';
 
 		if ( is_archive() && is_tax() && !is_category() && !is_tag() ) {
 

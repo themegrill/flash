@@ -87,7 +87,7 @@ class Flash_Admin {
 		?>
 		<div id="message" class="updated flash-message">
 			<a class="flash-message-close notice-dismiss" href="<?php echo esc_url( wp_nonce_url( remove_query_arg( array( 'activated' ), add_query_arg( 'flash-hide-notice', 'welcome' ) ), 'flash_hide_notices_nonce', '_flash_notice_nonce' ) ); ?>"><?php _e( 'Dismiss', 'flash' ); ?></a>
-			<p><?php printf( esc_html__( 'Welcome! Thank you for choosing Flash! To fully take advantage of the best our theme can offer please make sure you visit our %swelcome page%s.', 'flash' ), '<a href="' . esc_url( admin_url( 'themes.php?page=flash-welcome' ) ) . '">', '</a>' ); ?></p>
+			<p><?php printf( esc_html__( 'Welcome! Thank you for choosing Flash! To fully take advantage of the best our theme can offer please make sure you visit our %1$swelcome page%2$s.', 'flash' ), '<a href="' . esc_url( admin_url( 'themes.php?page=flash-welcome' ) ) . '">', '</a>' ); ?></p>
 			<p class="submit">
 				<a class="button-secondary" href="<?php echo esc_url( admin_url( 'themes.php?page=flash-welcome' ) ); ?>"><?php esc_html_e( 'Get started with Flash', 'flash' ); ?></a>
 			</p>
