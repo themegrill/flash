@@ -101,8 +101,8 @@ class Flash_Admin {
 	 * @access private
 	 */
 	private function intro() {
-		global $flash_version;
 		$theme = wp_get_theme( get_template() );
+		$flash_version = $theme['Version'];
 
 		// Drop minor version if 0
 		$major_version = substr( $flash_version, 0, 3 );
@@ -111,7 +111,7 @@ class Flash_Admin {
 			<h1>
 				<?php esc_html_e( 'About', 'flash' ); ?>
 				<?php echo $theme->display( 'Name' ); ?>
-				<?php printf( esc_html__( '%s', 'flash' ), $major_version ); ?>
+				<?php printf( '%s', $major_version ); ?>
 			</h1>
 
 			<div class="welcome-description-wrap">
