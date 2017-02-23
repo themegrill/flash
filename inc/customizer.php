@@ -9,7 +9,7 @@
  * Configuration for Kirki Toolkit
  */
 function flash_kirki_configuration() {
-	return array( 'url_path'     => get_stylesheet_directory_uri() . '/inc/kirki/' );
+	return array( 'url_path'     => get_template_directory_uri() . '/inc/kirki/' );
 }
 add_filter( 'kirki/config', 'flash_kirki_configuration' );
 
