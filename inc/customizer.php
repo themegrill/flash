@@ -78,7 +78,15 @@ Kirki::add_field( 'flash_config', array(
 	'type'        => 'custom',
 	'settings'    => 'flash_demo_link',
 	'section'     => 'flash_important_links',
-	'default'     => '<a target="_blank" href="' . esc_url( 'https://demo.themegrill.com/flash/demos/' ) . '">'.esc_html( 'View Demo', 'flash' ).'</a>',
+	'default'     => '<a target="_blank" href="' . esc_url( 'https://demo.themegrill.com/flash/demos/' ) . '">'.esc_html( 'View Free Demos', 'flash' ).'</a>',
+	'priority'    => 50,
+) );
+
+Kirki::add_field( 'flash_config', array(
+	'type'        => 'custom',
+	'settings'    => 'flash_pro_demo_link',
+	'section'     => 'flash_important_links',
+	'default'     => '<a target="_blank" href="' . esc_url( 'https://demo.themegrill.com/flash-pro/demos/' ) . '">'.esc_html( 'View Pro Demos', 'flash' ).'</a>',
 	'priority'    => 50,
 ) );
 
