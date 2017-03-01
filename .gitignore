@@ -19,3 +19,6 @@ project.properties
 
 # Windows junk
 Thumbs.db
+
+# Zip File
+flash.zip
