@@ -35,6 +35,53 @@ Kirki::add_panel( 'flash_theme_options', array(
 	'title'       => esc_html__( 'Flash Theme Options', 'flash' ),
 ) );
 
+/** Important Links Section */
+Kirki::add_section( 'flash_important_links', array(
+	'title'          => esc_html__( 'Flash Important Links', 'flash' ),
+	'priority'       => 10,
+	'capability'     => 'edit_theme_options',
+) );
+
+Kirki::add_field( 'flash_config', array(
+	'type'        => 'custom',
+	'settings'    => 'flash_view_pro_link',
+	'section'     => 'flash_important_links',
+	'default'     => '<a target="_blank" href="' . esc_url( 'https://themegrill.com/themes/flash/' ) . '">'.esc_html( 'View Pro', 'flash' ).'</a>',
+	'priority'    => 10,
+) );
+
+Kirki::add_field( 'flash_config', array(
+	'type'        => 'custom',
+	'settings'    => 'flash_theme_info_link',
+	'section'     => 'flash_important_links',
+	'default'     => '<a target="_blank" href="' . esc_url( 'https://themegrill.com/themes/flash/' ) . '">'.esc_html( 'Theme Info', 'flash' ).'</a>',
+	'priority'    => 20,
+) );
+
+Kirki::add_field( 'flash_config', array(
+	'type'        => 'custom',
+	'settings'    => 'flash_support_link',
+	'section'     => 'flash_important_links',
+	'default'     => '<a target="_blank" href="' . esc_url( 'https://themegrill.com/support-forum/' ) . '">'.esc_html( 'Support', 'flash' ).'</a>',
+	'priority'    => 30,
+) );
+
+Kirki::add_field( 'flash_config', array(
+	'type'        => 'custom',
+	'settings'    => 'flash_doc_link',
+	'section'     => 'flash_important_links',
+	'default'     => '<a target="_blank" href="' . esc_url( 'https://docs.themegrill.com/flash/' ) . '">'.esc_html( 'Documentation', 'flash' ).'</a>',
+	'priority'    => 40,
+) );
+
+Kirki::add_field( 'flash_config', array(
+	'type'        => 'custom',
+	'settings'    => 'flash_demo_link',
+	'section'     => 'flash_important_links',
+	'default'     => '<a target="_blank" href="' . esc_url( 'https://demo.themegrill.com/flash/demos/' ) . '">'.esc_html( 'View Demo', 'flash' ).'</a>',
+	'priority'    => 50,
+) );
+
 /** General Section */
 Kirki::add_section( 'flash_general_options', array(
 	'title'          => esc_html__( 'General Settings', 'flash' ),
@@ -1259,3 +1306,37 @@ function flash_frontend_css() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'flash_frontend_css', 14 );
+
+/*
+ * Custom Scripts
+ */
+add_action( 'customize_controls_print_footer_scripts', 'flash_customizer_custom_scripts' );
+
+function flash_customizer_custom_scripts() { ?>
+<style>
+	/* Theme Instructions Panel CSS */
+	li#accordion-section-flash_important_links h3.accordion-section-title, li#accordion-section-flash_important_links h3.accordion-section-title:focus { background-color: #30AFB8 !important; color: #fff !important; }
+	li#accordion-section-flash_important_links h3.accordion-section-title:hover { background-color: #1C9BA4 !important; color: #fff !important; }
+	li#accordion-section-flash_important_links h3.accordion-section-title:after { color: #fff !important; }
+	/* Upsell button CSS */
+	#sub-accordion-section-flash_important_links a {
+		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#8fc800+0,8fc800+100;Green+Flat+%232 */
+		background: #30AFB8;
+		color: #fff;
+		display: block;
+		margin: 15px 0 0;
+		padding: 5px 0;
+		text-align: center;
+		font-weight: 600;
+		text-decoration: none;
+		padding: 8px 0;
+	}
+
+	#sub-accordion-section-flash_important_links a:hover {
+		color: #ffffff;
+		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#006e2e+0,006e2e+100;Green+Flat+%233 */
+		background:#1C9BA4;
+	}
+</style>
+<?php
+}
