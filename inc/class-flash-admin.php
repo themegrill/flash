@@ -125,9 +125,11 @@ class Flash_Admin {
 		<p class="flash-actions">
 			<a href="<?php echo esc_url( 'https://themegrill.com/themes/flash/' ); ?>" class="button button-secondary" target="_blank"><?php esc_html_e( 'Theme Info', 'flash' ); ?></a>
 
-			<a href="<?php echo esc_url( apply_filters( 'flash_demo_url', 'https://demo.themegrill.com/flash/demos/' ) ); ?>" class="button button-primary docs" target="_blank"><?php esc_html_e( 'View Multiple Demos', 'flash' ); ?></a>
+			<a href="<?php echo esc_url( apply_filters( 'flash_demo_url', 'https://demo.themegrill.com/flash/demos/' ) ); ?>" class="button button-secondary docs" target="_blank"><?php esc_html_e( 'View Free Demos', 'flash' ); ?></a>
 
-			<a href="<?php echo esc_url( apply_filters( 'flash_rating_url', 'https://wordpress.org/support/view/theme-reviews/flash?filter=5' ) ); ?>" class="button button-secondary docs" target="_blank"><?php esc_html_e( 'Rate this theme', 'flash' ); ?></a>
+			<a href="<?php echo esc_url( apply_filters( 'flash_pro_theme_url', 'https://themegrill.com/themes/flash/' ) ); ?>" class="button button-primary docs" target="_blank"><?php esc_html_e( 'View Pro', 'flash' ); ?></a>
+
+			<a href="<?php echo esc_url( apply_filters( 'flash_pro_demo_url', 'https://demo.themegrill.com/flash-pro/demos/' ) ); ?>" class="button button-primary docs" target="_blank"><?php esc_html_e( 'View Pro Demos', 'flash' ); ?></a>
 
 			<?php
 			if( is_plugin_active( 'themegrill-demo-importer/themegrill-demo-importer.php' ) ) { ?>
@@ -197,10 +199,17 @@ class Flash_Admin {
 					</div>
 
 					<div class="col">
+						<h3><?php esc_html_e( 'Need more features?', 'flash' ); ?></h3>
+						<p><?php esc_html_e( 'Upgrade to PRO version for more exciting features.', 'flash' ) ?></p>
+						<p><a href="<?php echo esc_url( 'https://themegrill.com/themes/flash/' ); ?>" class="button button-secondary"><?php esc_html_e( 'View Pro', 'flash' ); ?></a></p>
+					</div>
+
+					<div class="col">
 						<h3><?php esc_html_e( 'Got sales related question?', 'flash' ); ?></h3>
 						<p><?php esc_html_e( 'Please send it via our sales contact page.', 'flash' ) ?></p>
 						<p><a href="<?php echo esc_url( 'https://themegrill.com/contact/' ); ?>" class="button button-secondary"><?php esc_html_e( 'Contact Page', 'flash' ); ?></a></p>
 					</div>
+
 				</div>
 			</div>
 
