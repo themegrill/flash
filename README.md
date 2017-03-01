@@ -2,7 +2,7 @@
 Author: ThemeGrill
 Requires at least: WordPress 4.3
 Tested up to: WordPress 4.6
-Version: 1.0.7
+Version: 1.0.8
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 Tags: one-column, two-columns, left-sidebar, right-sidebar, grid-layout, custom-background, custom-colors, custom-menu, custom-logo, featured-images, footer-widgets, full-width-template, theme-options, threaded-comments, translation-ready, blog, e-commerce
@@ -80,6 +80,10 @@ Source: https://pixabay.com/en/office-desk-work-study-tech-791733/
 Unless otherwise specified, all the theme files, scripts and images including the screenshot image are licensed under [GNU GPL] (http://www.gnu.org/licenses/gpl-3.0.txt), version 3 or later.
 
 == Changelog ==
+
+= 1.0.8 - 2017-03-01 =
+* Fix - Kirki URL Path for Child theme support
+* Tweaks - Add Upsell Link
 
 = 1.0.7 - 2017-02-23 =
 * Tweaks - Display Theme Version on Welcome page
