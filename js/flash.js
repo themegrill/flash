@@ -94,14 +94,32 @@ jQuery(window).load(function() {
 	}
 
 	if(typeof Swiper === 'function'){
-		//SWIPER SLIDER
-		var main_slider = new Swiper ('.tg-slider-widget .swiper-container', {
-			paginationClickable: true,
-			slidesPerView: 1,
-			nextButton: '.swiper-button-next',
-			prevButton: '.swiper-button-prev',
-			autoplay: 2000,
+		// Main Slider
+		jQuery('.tg-section.tg-slider-widget').each(function(index, element){
+			var container  = jQuery(this).find('.swiper-container');
+			var nextButton = jQuery(this).find('.swiper-button-next');
+			var prevButton = jQuery(this).find('.swiper-button-prev');
+
+			sliderInstance = "tgsliderinstance-" + index;
+
+			var sliderInstance = new Swiper (container, {
+				paginationClickable: true,
+				slidesPerView: 1,
+				nextButton: nextButton,
+				prevButton: prevButton,
+				autoplay: 4000,
+				speed: 1000,
+			});
+
+			jQuery(this).on('mouseenter', function(){
+				sliderInstance.stopAutoplay();
+			});
+
+			jQuery(this).on('mouseleave', function(){
+				sliderInstance.startAutoplay();
+			});
 		});
+
 		//TESTIMONIAL SLIDER
 		var testimonial_slider = new Swiper ('.tg-testimonial-widget .swiper-container', {
 			pagination: '.swiper-pagination',
