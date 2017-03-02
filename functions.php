@@ -84,6 +84,11 @@ function flash_setup() {
 	add_theme_support( 'siteorigin-panels', array(
 		'margin-bottom' => 0,
 	) );
+
+	/**
+	 * Enable Support for selective refresh widgets in Customizer
+	 */
+	add_theme_support( 'customize-selective-refresh-widgets' );
 }
 endif;
 add_action( 'after_setup_theme', 'flash_setup' );
