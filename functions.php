@@ -84,13 +84,14 @@ function flash_setup() {
 	add_theme_support( 'siteorigin-panels', array(
 		'margin-bottom' => 0,
 	) );
+
+	/**
+	 * Enable Support for selective refresh widgets in Customizer
+	 */
+	add_theme_support( 'customize-selective-refresh-widgets' );
 }
 endif;
 add_action( 'after_setup_theme', 'flash_setup' );
-
-if ( ! isset( $content_width ) ) {
-	$content_width = 780; /* pixels */
-}
 
 if ( ! function_exists( 'flash_content_width' ) ) :
 /**
@@ -99,16 +100,17 @@ if ( ! function_exists( 'flash_content_width' ) ) :
  * @global int $content_width
  **/
 function flash_content_width() {
-	global $content_width;
+	$content_width = 780;
 
 	$classes = flash_get_layout();
-
 	if ( $classes == 'full-width' ) {
 		$content_width = 1200;
 	}
+
+	$GLOBALS['content_width'] = apply_filters( 'flash_content_width', $content_width );
 }
+add_action( 'after_setup_theme', 'flash_content_width', 0 );
 endif;
-add_action( 'template_redirect', 'flash_content_width' );
 
 /**
  * Register widget area.

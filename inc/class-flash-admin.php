@@ -87,7 +87,7 @@ class Flash_Admin {
 		?>
 		<div id="message" class="updated flash-message">
 			<a class="flash-message-close notice-dismiss" href="<?php echo esc_url( wp_nonce_url( remove_query_arg( array( 'activated' ), add_query_arg( 'flash-hide-notice', 'welcome' ) ), 'flash_hide_notices_nonce', '_flash_notice_nonce' ) ); ?>"><?php _e( 'Dismiss', 'flash' ); ?></a>
-			<p><?php printf( esc_html__( 'Welcome! Thank you for choosing Flash! To fully take advantage of the best our theme can offer please make sure you visit our %swelcome page%s.', 'flash' ), '<a href="' . esc_url( admin_url( 'themes.php?page=flash-welcome' ) ) . '">', '</a>' ); ?></p>
+			<p><?php printf( esc_html__( 'Welcome! Thank you for choosing Flash! To fully take advantage of the best our theme can offer please make sure you visit our %1$swelcome page%2$s.', 'flash' ), '<a href="' . esc_url( admin_url( 'themes.php?page=flash-welcome' ) ) . '">', '</a>' ); ?></p>
 			<p class="submit">
 				<a class="button-secondary" href="<?php echo esc_url( admin_url( 'themes.php?page=flash-welcome' ) ); ?>"><?php esc_html_e( 'Get started with Flash', 'flash' ); ?></a>
 			</p>
@@ -101,8 +101,8 @@ class Flash_Admin {
 	 * @access private
 	 */
 	private function intro() {
-		global $flash_version;
 		$theme = wp_get_theme( get_template() );
+		$flash_version = $theme['Version'];
 
 		// Drop minor version if 0
 		$major_version = substr( $flash_version, 0, 3 );
@@ -111,7 +111,7 @@ class Flash_Admin {
 			<h1>
 				<?php esc_html_e( 'About', 'flash' ); ?>
 				<?php echo $theme->display( 'Name' ); ?>
-				<?php printf( esc_html__( '%s', 'flash' ), $major_version ); ?>
+				<?php printf( '%s', $major_version ); ?>
 			</h1>
 
 			<div class="welcome-description-wrap">
@@ -125,9 +125,11 @@ class Flash_Admin {
 		<p class="flash-actions">
 			<a href="<?php echo esc_url( 'https://themegrill.com/themes/flash/' ); ?>" class="button button-secondary" target="_blank"><?php esc_html_e( 'Theme Info', 'flash' ); ?></a>
 
-			<a href="<?php echo esc_url( apply_filters( 'flash_demo_url', 'https://demo.themegrill.com/flash/demos/' ) ); ?>" class="button button-primary docs" target="_blank"><?php esc_html_e( 'View Multiple Demos', 'flash' ); ?></a>
+			<a href="<?php echo esc_url( apply_filters( 'flash_demo_url', 'https://demo.themegrill.com/flash/demos/' ) ); ?>" class="button button-secondary docs" target="_blank"><?php esc_html_e( 'View Free Demos', 'flash' ); ?></a>
 
-			<a href="<?php echo esc_url( apply_filters( 'flash_rating_url', 'https://wordpress.org/support/view/theme-reviews/flash?filter=5' ) ); ?>" class="button button-secondary docs" target="_blank"><?php esc_html_e( 'Rate this theme', 'flash' ); ?></a>
+			<a href="<?php echo esc_url( apply_filters( 'flash_pro_theme_url', 'https://themegrill.com/themes/flash/' ) ); ?>" class="button button-primary docs" target="_blank"><?php esc_html_e( 'View Pro', 'flash' ); ?></a>
+
+			<a href="<?php echo esc_url( apply_filters( 'flash_pro_demo_url', 'https://demo.themegrill.com/flash-pro/demos/' ) ); ?>" class="button button-primary docs" target="_blank"><?php esc_html_e( 'View Pro Demos', 'flash' ); ?></a>
 
 			<?php
 			if( is_plugin_active( 'themegrill-demo-importer/themegrill-demo-importer.php' ) ) { ?>
@@ -197,10 +199,17 @@ class Flash_Admin {
 					</div>
 
 					<div class="col">
+						<h3><?php esc_html_e( 'Need more features?', 'flash' ); ?></h3>
+						<p><?php esc_html_e( 'Upgrade to PRO version for more exciting features.', 'flash' ) ?></p>
+						<p><a href="<?php echo esc_url( 'https://themegrill.com/themes/flash/' ); ?>" class="button button-secondary"><?php esc_html_e( 'View Pro', 'flash' ); ?></a></p>
+					</div>
+
+					<div class="col">
 						<h3><?php esc_html_e( 'Got sales related question?', 'flash' ); ?></h3>
 						<p><?php esc_html_e( 'Please send it via our sales contact page.', 'flash' ) ?></p>
 						<p><a href="<?php echo esc_url( 'https://themegrill.com/contact/' ); ?>" class="button button-secondary"><?php esc_html_e( 'Contact Page', 'flash' ); ?></a></p>
 					</div>
+
 				</div>
 			</div>
 
