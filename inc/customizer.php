@@ -588,8 +588,6 @@ add_action( 'after_setup_theme', 'flash_custom_header_and_background' );
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
 function flash_customize_register( $wp_customize ) {
-	// Custom Controls
-	require_once get_template_directory() . '/inc/class-customizer-control-radio-image.php';
 
 	$color_scheme = flash_get_color_scheme();
 
