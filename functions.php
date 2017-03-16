@@ -82,7 +82,8 @@ function flash_setup() {
 	 * Enable support for SiteOrigin Page Builder
 	 */
 	add_theme_support( 'siteorigin-panels', array(
-		'margin-bottom' => 0,
+		'margin-bottom'         => 0,
+		'recommended-widgets' 	=> false,
 	) );
 
 	/**
