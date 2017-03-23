@@ -141,7 +141,7 @@ function flash_save_custom_meta( $post_id ) {
 	// loop through fields and save the data
 	foreach ( $flash_metabox_field_transparency as $field ) {
 		$old = get_post_meta( $post_id, $field['id'], true );
-		$new = sanitize_text_field($_POST[$field['id']]);
+		$new = ( isset( $_POST[$field['id']] ) ? sanitize_text_field( $_POST[$field['id']] ) : '' );
 		if ($new && $new != $old) {
 			update_post_meta( $post_id,$field['id'],$new );
 		} elseif ('' == $new && $old) {
