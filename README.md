@@ -81,6 +81,12 @@ Unless otherwise specified, all the theme files, scripts and images including th
 
 == Changelog ==
 
+= 1.0.9 - TBD =
+* Fix - Transparent Metabox Data Saving Issue
+* Fix - Slow Slider Speed and Stop Autoplay on Hover
+* Tweaks - Support for Selective Refresh Widgets in Customizer
+* Tweaks - String Translation
+
 = 1.0.8 - 2017-03-01 =
 * Fix - Kirki URL Path for Child theme support
 * Tweaks - Add Upsell Link
