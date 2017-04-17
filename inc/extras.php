@@ -319,7 +319,7 @@ function flash_breadcrumbs() {
 		} else if ( get_query_var('paged') ) {
 
 			// Paginated archives
-			echo '<li class="trail-item"><span>'.esc_html__( 'Page', 'flash' ) . esc_html( get_query_var('paged') ) . '</span></li>';
+			echo '<li class="trail-item"><span>'.esc_html__( 'Page ', 'flash' ) . esc_html( get_query_var('paged') ) . '</span></li>';
 
 		} else if ( is_search() ) {
 
@@ -364,6 +364,10 @@ function flash_page_title() {
 	}
 	else {
 		$flash_header_title = '';
+	}
+
+	if( flash_is_woocommerce_page() ) {
+		$flash_header_title = woocommerce_page_title($echo = false);
 	}
 
 	echo '<h1 class="trail-title">';

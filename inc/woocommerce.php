@@ -20,6 +20,9 @@ add_action('woocommerce_after_main_content', 'flash_wc_wrapper_end', 10);
 // @see extras.php:148 flash_breadcrumbs()
 remove_action( 'woocommerce_before_main_content','woocommerce_breadcrumb', 20, 0);
 
+// Remove Page Title from Shop Page
+add_filter( 'woocommerce_show_page_title', '__return_false' );
+
 function flash_wc_wrapper_start() {
 	echo '<div id="primary" class="content-area">';
 		echo '<main id="main" class="site-main" role="main">';
