@@ -145,6 +145,18 @@ function flash_breadcrumbs() {
 	// Do not display on the homepage
 	if ( get_theme_mod( 'flash_remove_breadcrumbs', '' ) != '1' ) {
 
+		if( flash_is_woocommerce_page() ) {
+			woocommerce_breadcrumb(
+				array(
+					'delimiter' => '',
+					'before'    => '<span>',
+					'after'     => '</span>',
+				)
+			);
+
+			return false;
+		}
+
 		// Build the breadcrums
 		echo '<ul class="trail-items">';
 
