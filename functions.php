@@ -74,9 +74,12 @@ function flash_setup() {
 	) );
 
 	/**
-	 * Enable support for woocommerce
+	 * Enable support for woocommerce and woocommerce 3.0 product gallery
 	 */
 	add_theme_support( 'woocommerce' );
+	add_theme_support( 'wc-product-gallery-zoom' );
+	add_theme_support( 'wc-product-gallery-lightbox' );
+	add_theme_support( 'wc-product-gallery-slider' );
 
 	/**
 	 * Enable support for SiteOrigin Page Builder
