@@ -2,7 +2,7 @@
 Author: ThemeGrill
 Requires at least: WordPress 4.3
 Tested up to: WordPress 4.6
-Version: 1.0.8
+Version: 1.0.9
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 Tags: one-column, two-columns, left-sidebar, right-sidebar, grid-layout, custom-background, custom-colors, custom-menu, custom-logo, featured-images, footer-widgets, full-width-template, theme-options, threaded-comments, translation-ready, blog, e-commerce
@@ -81,12 +81,13 @@ Unless otherwise specified, all the theme files, scripts and images including th
 
 == Changelog ==
 
-= 1.0.9 - TBD =
+= 1.0.9 - 2017-04-18 =
 * Fix - Transparent Metabox Data Saving Issue
 * Fix - Slow Slider Speed and Stop Autoplay on Hover
 * Tweaks - Support for Selective Refresh Widgets in Customizer
 * Tweaks - String Translation
 * Tweaks - Fix breadcrumbs being displayed on two places on woocommerce pages
+* Tweaks - New Screenshot
 * Add - Support for WooCommerce 3.0 Product Gallery
 
 = 1.0.8 - 2017-03-01 =
