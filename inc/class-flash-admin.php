@@ -138,7 +138,7 @@ class Flash_Admin {
 			</a>
 			<?php } ?>
 
-			<a href="<?php echo esc_url( 'http://wordpress.org/support/view/theme-reviews/estore?filter=5' ); ?>" class="button button-secondary" target="_blank"><?php esc_html_e( 'Rate this theme', 'flash' ); ?></a>
+			<a href="<?php echo esc_url( 'http://wordpress.org/support/view/theme-reviews/flash?filter=5' ); ?>" class="button button-secondary" target="_blank"><?php esc_html_e( 'Rate this theme', 'flash' ); ?></a>
 		</p>
 
 		<h2 class="nav-tab-wrapper">
@@ -147,6 +147,9 @@ class Flash_Admin {
 			</a>
 			<a class="nav-tab <?php if ( isset( $_GET['tab'] ) && $_GET['tab'] == 'supported_plugins' ) echo 'nav-tab-active'; ?>" href="<?php echo esc_url( admin_url( add_query_arg( array( 'page' => 'flash-welcome', 'tab' => 'supported_plugins' ), 'themes.php' ) ) ); ?>">
 				<?php esc_html_e( 'Supported Plugins', 'flash' ); ?>
+			</a>
+			<a class="nav-tab <?php if ( isset( $_GET['tab'] ) && $_GET['tab'] == 'free_vs_pro' ) echo 'nav-tab-active'; ?>" href="<?php echo esc_url( admin_url( add_query_arg( array( 'page' => 'flash-welcome', 'tab' => 'free_vs_pro' ), 'themes.php' ) ) ); ?>">
+				<?php esc_html_e( 'Free Vs Pro', 'flash' ); ?>
 			</a>
 			<a class="nav-tab <?php if ( isset( $_GET['tab'] ) && $_GET['tab'] == 'changelog' ) echo 'nav-tab-active'; ?>" href="<?php echo esc_url( admin_url( add_query_arg( array( 'page' => 'flash-welcome', 'tab' => 'changelog' ), 'themes.php' ) ) ); ?>">
 				<?php esc_html_e( 'Changelog', 'flash' ); ?>
@@ -321,6 +324,195 @@ class Flash_Admin {
 				<li><a href="<?php echo esc_url( 'https://wordpress.org/plugins/restaurantpress/' ); ?>" target="_blank"><?php esc_html_e( 'RestaurantPress', 'flash' ); ?></a>
 					<?php esc_html_e(' by ThemeGrill', 'flash'); ?></li>
 			</ol>
+
+		</div>
+		<?php
+	}
+
+		/**
+	 * Output the free vs pro screen.
+	 */
+	public function free_vs_pro_screen() {
+		?>
+		<div class="wrap about-wrap">
+
+			<?php $this->intro(); ?>
+
+			<p class="about-description"><?php esc_html_e( 'Upgrade to PRO version for more exciting features.', 'flash' ); ?></p>
+
+			<table>
+				<thead>
+					<tr>
+						<th class="table-feature-title"><h3><?php esc_html_e('Features', 'flash'); ?></h3></th>
+						<th><h3><?php esc_html_e('Flash', 'flash'); ?></h3></th>
+						<th><h3><?php esc_html_e('Flash Pro', 'flash'); ?></h3></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><h3><?php esc_html_e('Header Layouts', 'flash'); ?></h3></td>
+						<td><?php esc_html_e('3', 'flash'); ?></td>
+						<td><?php esc_html_e('6', 'flash'); ?></td>
+					</tr>
+					<tr>
+						<td><h3><?php esc_html_e('Google Fonts', 'flash'); ?></h3></td>
+						<td><?php esc_html_e('3', 'flash'); ?></td>
+						<td><?php esc_html_e('800+', 'flash'); ?></td>
+					</tr>
+					<tr>
+						<td><h3><?php esc_html_e('Font Size options', 'flash'); ?></h3></td>
+						<td><span class="dashicons dashicons-no"></span></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
+					</tr>
+					<tr>
+						<td><h3><?php esc_html_e('Color Palette', 'flash'); ?></h3></td>
+						<td><?php esc_html_e('Primary Color Option', 'flash'); ?></td>
+						<td><?php esc_html_e('13+ Color Options', 'flash'); ?></td>
+					</tr>
+					<tr>
+						<td><h3><?php esc_html_e('Translation Ready', 'flash'); ?></h3></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
+					</tr>
+					<tr>
+						<td><h3><?php esc_html_e('Woocommerce Compatible', 'flash'); ?></h3></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
+					</tr>
+					<tr>
+						<td><h3><?php esc_html_e('YITH Wishlist Compatible', 'flash'); ?></h3></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
+					</tr>
+					<tr>
+						<td><h3><?php esc_html_e('WPML Compatible', 'flash'); ?></h3></td>
+						<td><span class="dashicons dashicons-no"></span></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
+					</tr>
+					<tr>
+						<td><h3><?php esc_html_e('Polylang Compatible', 'flash'); ?></h3></td>
+						<td><span class="dashicons dashicons-no"></span></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
+					</tr>
+					<tr>
+						<td><h3><?php esc_html_e('Footer Copyright Editor', 'flash'); ?></h3></td>
+						<td><span class="dashicons dashicons-no"></span></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
+					</tr>
+					<tr>
+						<td><h3><?php esc_html_e('Custom Widget Area Builder', 'flash'); ?></h3></td>
+						<td><span class="dashicons dashicons-no"></span></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
+					</tr>
+					<tr>
+						<td><h3><?php esc_html_e('Video Background', 'flash'); ?></h3></td>
+						<td><span class="dashicons dashicons-no"></span></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
+					</tr>
+					<tr>
+						<td><h3><?php esc_html_e('Widget Animations', 'flash'); ?></h3></td>
+						<td><span class="dashicons dashicons-no"></span></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
+					</tr>
+					<tr>
+						<td><h3><?php esc_html_e('Demo Content', 'flash'); ?></h3></td>
+						<td><?php esc_html_e('3', 'flash'); ?></td>
+						<td><?php esc_html_e('7', 'flash'); ?></td>
+					</tr>
+					<tr>
+						<td><h3><?php esc_html_e('Support', 'flash'); ?></h3></td>
+						<td><?php esc_html_e('Forum', 'flash'); ?></td>
+						<td><?php esc_html_e('Forum + Emails/Support Ticket', 'flash'); ?></td>
+					</tr>
+					<tr>
+						<td><h3><?php esc_html_e('FT: Heading Widget', 'flash'); ?></h3></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
+						<td><span class="dashicons dashicons-yes"></span>(<?php esc_html_e('3 New Styles', 'flash'); ?>)</td>
+					</tr>
+					<tr>
+						<td><h3><?php esc_html_e('FT: Service Widget', 'flash'); ?></h3></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
+						<td><span class="dashicons dashicons-yes"></span>(<?php esc_html_e('3 New Styles', 'flash'); ?>)</td>
+					</tr>
+					<tr>
+						<td><h3><?php esc_html_e('FT: Call To Action Widget', 'flash'); ?></h3></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
+						<td><span class="dashicons dashicons-yes"></span>(<?php esc_html_e('3 New Styles', 'flash'); ?>)</td>
+					</tr>
+					<tr>
+						<td><h3><?php esc_html_e('FT: Testimonial Widget', 'flash'); ?></h3></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
+						<td><span class="dashicons dashicons-yes"></span>(<?php esc_html_e('4 New Styles', 'flash'); ?>)</td>
+					</tr>
+					<tr>
+						<td><h3><?php esc_html_e('FT: Team Widget', 'flash'); ?></h3></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
+						<td><span class="dashicons dashicons-yes"></span>(<?php esc_html_e('4 New Styles', 'flash'); ?>)</td>
+					</tr>
+					<tr>
+						<td><h3><?php esc_html_e('FT: Portfolio Widget', 'flash'); ?></h3></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
+						<td><span class="dashicons dashicons-yes"></span>(<?php esc_html_e('1 New Style', 'flash'); ?>)</td>
+					</tr>
+					<tr>
+						<td><h3><?php esc_html_e('FT: Animated Number Counter', 'flash'); ?></h3></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
+						<td><span class="dashicons dashicons-yes"></span>(<?php esc_html_e('4 New Styles', 'flash'); ?>)</td>
+					</tr>
+					<tr>
+						<td><h3><?php esc_html_e('FT: Blog', 'flash'); ?></h3></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
+						<td><span class="dashicons dashicons-yes"></span>(<?php esc_html_e('3 New Styles', 'flash'); ?>)</td>
+					</tr>
+					<tr>
+						<td><h3><?php esc_html_e('FT: Google Map', 'flash'); ?></h3></td>
+						<td><span class="dashicons dashicons-no"></span></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
+					</tr>
+					<tr>
+						<td><h3><?php esc_html_e('FT: Post Slider', 'flash'); ?></h3></td>
+						<td><span class="dashicons dashicons-no"></span></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
+					</tr>
+					<tr>
+						<td><h3><?php esc_html_e('FT: Progress Bar', 'flash'); ?></h3></td>
+						<td><span class="dashicons dashicons-no"></span></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
+					</tr>
+					<tr>
+						<td><h3><?php esc_html_e('FT: Instagram Slider', 'flash'); ?></h3></td>
+						<td><span class="dashicons dashicons-no"></span></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
+					</tr>
+					<tr>
+						<td><h3><?php esc_html_e('FT: Pricing Table', 'flash'); ?></h3></td>
+						<td><span class="dashicons dashicons-no"></span></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
+					</tr>
+					<tr>
+						<td><h3><?php esc_html_e('FT: Separator', 'flash'); ?></h3></td>
+						<td><span class="dashicons dashicons-no"></span></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
+					</tr>
+					<tr>
+						<td><h3><?php esc_html_e('FT: Woocommerce Category Slider', 'flash'); ?></h3></td>
+						<td><span class="dashicons dashicons-no"></span></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
+					</tr>
+					<tr>
+						<td><h3><?php esc_html_e('FT: Woocommerce Product Tab', 'flash'); ?></h3></td>
+						<td><span class="dashicons dashicons-no"></span></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td class="btn-wrapper">
+							<a href="<?php echo esc_url( apply_filters( 'flash_pro_theme_url', 'http://themegrill.com/themes/flash-pro/' ) ); ?>" class="button button-secondary docs" target="_blank"><?php _e( 'View Pro', 'flash' ); ?></a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
 
 		</div>
 		<?php
