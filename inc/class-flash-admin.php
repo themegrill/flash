@@ -137,6 +137,8 @@ class Flash_Admin {
 				<?php esc_html_e( 'Demo Importer', 'flash' ); ?>
 			</a>
 			<?php } ?>
+
+			<a href="<?php echo esc_url( 'http://wordpress.org/support/view/theme-reviews/estore?filter=5' ); ?>" class="button button-secondary" target="_blank"><?php esc_html_e( 'Rate this theme', 'flash' ); ?></a>
 		</p>
 
 		<h2 class="nav-tab-wrapper">
@@ -208,6 +210,24 @@ class Flash_Admin {
 						<h3><?php esc_html_e( 'Got sales related question?', 'flash' ); ?></h3>
 						<p><?php esc_html_e( 'Please send it via our sales contact page.', 'flash' ) ?></p>
 						<p><a href="<?php echo esc_url( 'https://themegrill.com/contact/' ); ?>" class="button button-secondary"><?php esc_html_e( 'Contact Page', 'flash' ); ?></a></p>
+					</div>
+
+					<div class="col">
+						<h3>
+							<?php
+							esc_html_e( 'Translate', 'flash' );
+							echo ' ' . $theme->display( 'Name' );
+							?>
+						</h3>
+						<p><?php esc_html_e( 'Click below to translate this theme into your own language.', 'flash' ) ?></p>
+						<p>
+							<a href="<?php echo esc_url( 'http://translate.wordpress.org/projects/wp-themes/flash' ); ?>" class="button button-secondary">
+								<?php
+								esc_html_e( 'Translate', 'flash' );
+								echo ' ' . $theme->display( 'Name' );
+								?>
+							</a>
+						</p>
 					</div>
 
 				</div>
