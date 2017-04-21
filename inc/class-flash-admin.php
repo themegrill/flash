@@ -508,7 +508,7 @@ class Flash_Admin {
 						<td></td>
 						<td></td>
 						<td class="btn-wrapper">
-							<a href="<?php echo esc_url( apply_filters( 'flash_pro_theme_url', 'http://themegrill.com/themes/flash-pro/' ) ); ?>" class="button button-secondary docs" target="_blank"><?php _e( 'View Pro', 'flash' ); ?></a>
+							<a href="<?php echo esc_url( apply_filters( 'flash_pro_theme_url', 'http://themegrill.com/themes/flash/' ) ); ?>" class="button button-secondary docs" target="_blank"><?php _e( 'View Pro', 'flash' ); ?></a>
 						</td>
 					</tr>
 				</tbody>
