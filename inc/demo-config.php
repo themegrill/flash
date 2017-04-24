@@ -36,6 +36,14 @@ function flash_demo_importer_packages( $packages ) {
 			'name'    => __( 'Flash Construction', 'flash' ),
 			'preview' => 'http://demo.themegrill.com/flash-construction/',
 		),
+		'flash-food-v2' => array(
+			'name'    => __( 'Flash Food V2', 'flash' ),
+			'preview' => 'http://demo.themegrill.com/flash-food-v2/',
+		),
+		'flash-construction-v2' => array(
+			'name'    => __( 'Flash Construction V2', 'flash' ),
+			'preview' => 'http://demo.themegrill.com/flash-construction-v2/',
+		),
 	);
 
 	return array_merge( $new_packages, $packages );
