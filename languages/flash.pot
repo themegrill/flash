@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Flash 1.1.0\n"
 "Report-Msgid-Bugs-To: themegrill@gmail.com\n"
-"POT-Creation-Date: 2017-04-21 06:07:25+00:00\n"
+"POT-Creation-Date: 2017-04-25 10:10:12+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -1130,6 +1130,42 @@ msgstr ""
 
 #: inc/demo-config.php:36
 msgid "Flash Construction"
+msgstr ""
+
+#: inc/demo-config.php:40
+msgid "Flash Food V2"
+msgstr ""
+
+#: inc/demo-config.php:44
+msgid "Flash Construction V2"
+msgstr ""
+
+#: inc/demo-config.php:48
+msgid "Flash Pro Default"
+msgstr ""
+
+#: inc/demo-config.php:53
+msgid "Flash Pro Church"
+msgstr ""
+
+#: inc/demo-config.php:58
+msgid "Flash Pro Education"
+msgstr ""
+
+#: inc/demo-config.php:63
+msgid "Flash Pro Gym"
+msgstr ""
+
+#: inc/demo-config.php:68
+msgid "Flash Pro Health"
+msgstr ""
+
+#: inc/demo-config.php:73
+msgid "Flash Pro Store"
+msgstr ""
+
+#: inc/demo-config.php:78
+msgid "Flash Pro Wedding"
 msgstr ""
 
 #: inc/extras.php:118
