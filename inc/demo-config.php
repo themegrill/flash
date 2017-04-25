@@ -22,27 +22,62 @@ function flash_demo_importer_packages( $packages ) {
 	$new_packages = array(
 		'flash-default' => array(
 			'name'    => __( 'Flash Default', 'flash' ),
-			'preview' => 'http://demo.themegrill.com/flash/',
+			'preview' => 'https://demo.themegrill.com/flash/',
 		),
 		'flash-onepage' => array(
 			'name'    => __( 'Flash OnePage', 'flash' ),
-			'preview' => 'http://demo.themegrill.com/flash-one-page/',
+			'preview' => 'https://demo.themegrill.com/flash-one-page/',
 		),
 		'flash-food' => array(
 			'name'    => __( 'Flash Food', 'flash' ),
-			'preview' => 'http://demo.themegrill.com/flash-food/',
+			'preview' => 'https://demo.themegrill.com/flash-food/',
 		),
 		'flash-construction' => array(
 			'name'    => __( 'Flash Construction', 'flash' ),
-			'preview' => 'http://demo.themegrill.com/flash-construction/',
+			'preview' => 'https://demo.themegrill.com/flash-construction/',
 		),
 		'flash-food-v2' => array(
 			'name'    => __( 'Flash Food V2', 'flash' ),
-			'preview' => 'http://demo.themegrill.com/flash-food-v2/',
+			'preview' => 'https://demo.themegrill.com/flash-food-v2/',
 		),
 		'flash-construction-v2' => array(
 			'name'    => __( 'Flash Construction V2', 'flash' ),
-			'preview' => 'http://demo.themegrill.com/flash-construction-v2/',
+			'preview' => 'https://demo.themegrill.com/flash-construction-v2/',
+		),
+		'flash-pro-default' => array(
+			'name'    => __( 'Flash Pro Default', 'flash' ),
+			'preview' => 'https://demo.themegrill.com/flash-pro/',
+			'pro_link'=> 'https://themegrill.com/themes/flash/'
+		),
+		'flash-pro-church' => array(
+			'name'    => __( 'Flash Pro Church', 'flash' ),
+			'preview' => 'https://demo.themegrill.com/flash-pro-church/',
+			'pro_link'=> 'https://themegrill.com/themes/flash/'
+		),
+		'flash-pro-education' => array(
+			'name'    => __( 'Flash Pro Education', 'flash' ),
+			'preview' => 'https://demo.themegrill.com/flash-pro-education/',
+			'pro_link'=> 'https://themegrill.com/themes/flash/'
+		),
+		'flash-pro-gym' => array(
+			'name'    => __( 'Flash Pro Gym', 'flash' ),
+			'preview' => 'https://demo.themegrill.com/flash-pro-gym/',
+			'pro_link'=> 'https://themegrill.com/themes/flash/'
+		),
+		'flash-pro-health' => array(
+			'name'    => __( 'Flash Pro Health', 'flash' ),
+			'preview' => 'https://demo.themegrill.com/flash-pro-health/',
+			'pro_link'=> 'https://themegrill.com/themes/flash/'
+		),
+		'flash-pro-store' => array(
+			'name'    => __( 'Flash Pro Store', 'flash' ),
+			'preview' => 'https://demo.themegrill.com/flash-pro-store/',
+			'pro_link'=> 'https://themegrill.com/themes/flash/'
+		),
+		'flash-pro-wedding' => array(
+			'name'    => __( 'Flash Pro Wedding', 'flash' ),
+			'preview' => 'https://demo.themegrill.com/flash-pro-wedding/',
+			'pro_link'=> 'https://themegrill.com/themes/flash/'
 		),
 	);
 
