@@ -59,6 +59,11 @@ function flash_demo_importer_packages( $packages ) {
 			'preview' => 'https://demo.themegrill.com/flash-pro-education/',
 			'pro_link'=> 'https://themegrill.com/themes/flash/'
 		),
+		'flash-pro-gym' => array(
+			'name'    => __( 'Flash Pro Gym', 'flash' ),
+			'preview' => 'https://demo.themegrill.com/flash-pro-gym/',
+			'pro_link'=> 'https://themegrill.com/themes/flash/'
+		),
 	);
 
 	return array_merge( $new_packages, $packages );
