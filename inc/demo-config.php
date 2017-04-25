@@ -54,6 +54,11 @@ function flash_demo_importer_packages( $packages ) {
 			'preview' => 'https://demo.themegrill.com/flash-pro-church/',
 			'pro_link'=> 'https://themegrill.com/themes/flash/'
 		),
+		'flash-pro-education' => array(
+			'name'    => __( 'Flash Pro Education', 'flash' ),
+			'preview' => 'https://demo.themegrill.com/flash-pro-education/',
+			'pro_link'=> 'https://themegrill.com/themes/flash/'
+		),
 	);
 
 	return array_merge( $new_packages, $packages );
