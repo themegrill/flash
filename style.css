@@ -587,6 +587,15 @@ Clearings
     text-align: center;
 }
 
+.alignleft {
+	float: left;
+	margin-right: 24px;
+}
+
+.alignright {
+	float: right;
+	margin-left: 24px;
+}
 
 /*--------------------------------------------------------------
 grid
