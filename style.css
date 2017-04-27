@@ -695,7 +695,24 @@ Colors
     display: block;
 }
 
+.wp-caption,
+.gallery-caption {
+	color: #666;
+	font-size: 13px;
+	font-style: italic;
+	margin-bottom: 21px;
+	max-width: 100%;
+}
 
+.wp-caption img[class*="wp-image-"] {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-caption .wp-caption-text {
+	margin: 11px 0;
+}
 /*--------------------------------------------------------------
 common
 --------------------------------------------------------------*/

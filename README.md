@@ -80,6 +80,9 @@ Source: https://pixabay.com/en/office-desk-work-study-tech-791733/
 Unless otherwise specified, all the theme files, scripts and images including the screenshot image are licensed under [GNU GPL] (http://www.gnu.org/licenses/gpl-3.0.txt), version 3 or later.
 
 == Changelog ==
+== TBD ==
+* Add - CSS for Wp-Caption 
+
 = 1.1.1 - 2017-04-25 =
 * Add - Pro theme demo reference added in demo config file
 
