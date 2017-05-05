@@ -195,7 +195,7 @@ function flash_scripts() {
 	wp_enqueue_style( 'flash-fonts', flash_fonts_url(), array(), null );
 
 	// Font Awessome
-	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome'.$suffix.'.css' , array(), false, false);
+	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome'.$suffix.'.css' , array(), '4.7.0', false);
 	// Swiper CSS
 	wp_register_style( 'swiper', get_template_directory_uri() . '/css/swiper'.$suffix.'.css' , array(), false, false);
 
