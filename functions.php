@@ -197,19 +197,19 @@ function flash_scripts() {
 	// Font Awessome
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome'.$suffix.'.css' , array(), '4.7.0', false);
 	// Swiper CSS
-	wp_register_style( 'swiper', get_template_directory_uri() . '/css/swiper'.$suffix.'.css' , array(), false, false);
+	wp_register_style( 'swiper', get_template_directory_uri() . '/css/swiper'.$suffix.'.css' , array(), '3.4.2', false);
 
 	wp_enqueue_style( 'flash-style', get_stylesheet_uri() );
 
 	// Responsive
 	wp_enqueue_style( 'responsive', get_template_directory_uri() . '/css/responsive'.$suffix.'.css' , array(), false, false);
 
-	wp_register_script( 'swiper', get_template_directory_uri() . '/js/swiper.jquery'.$suffix.'.js', array('jquery'), '', true );
+	wp_register_script( 'swiper', get_template_directory_uri() . '/js/swiper.jquery'.$suffix.'.js', array('jquery'), '3.4.2', true );
 
 	if( get_theme_mod( 'flash_sticky_header', '' ) == '1') {
 		wp_enqueue_script( 'sticky', get_template_directory_uri() . '/js/jquery.sticky'.$suffix.'.js', array('jquery'), '', true );
 	}
-	wp_register_script( 'isotope', get_template_directory_uri() . '/js/isotope.pkgd'.$suffix.'.js', array('jquery'), '', true );
+	wp_register_script( 'isotope', get_template_directory_uri() . '/js/isotope.pkgd'.$suffix.'.js', array('jquery'), '3.0.4', true );
 
 	wp_register_script( 'waypoints', get_template_directory_uri() . '/js/waypoints'.$suffix.'.js', array('jquery'), '', true );
 

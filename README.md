@@ -83,6 +83,8 @@ Unless otherwise specified, all the theme files, scripts and images including th
 == TBD ==
 * Add - CSS for Wp-Caption 
 * Tweaks - Updated Font Awesome to `v.4.7.0` for new icon support
+* Tweaks - Updated Isotope to `v3.0.4` for new icon support
+* Tweaks - Updated Swiper to `v3.4.2` for new icon support
 
 = 1.1.1 - 2017-04-25 =
 * Add - Pro theme demo reference added in demo config file
