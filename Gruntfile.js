@@ -155,6 +155,63 @@ module.exports = function( grunt ){
 				dest: 'flash',
 				expand: true
 			}
+		},
+
+		// Copy
+		copy: {
+			facss: {
+				files: [{
+					cwd: 'bower_components/font-awesome/css',  // set working folder / root to copy
+					src: '**/*.css',           // copy all files and subfolders
+					dest: 'css/',    // destination folder
+					expand: true           // required when using cwd
+				}]
+			},
+			fafonts: {
+				files: [{
+					cwd: 'bower_components/font-awesome/fonts',  // set working folder / root to copy
+					src: '**/*',           // copy all files and subfolders
+					dest: 'fonts/',    // destination folder
+					expand: true           // required when using cwd
+				}]
+			},
+			counterup: {
+				files: [{
+					cwd: 'bower_components/jquery.counterup/',  // set working folder / root to copy
+					src: '**/*.js',           // copy all files and subfolders
+					dest: 'js/',    // destination folder
+					expand: true           // required when using cwd
+				}]
+			},
+			isotope: {
+				files: [{
+					cwd: 'bower_components/isotope/dist/',  // set working folder / root to copy
+					src: '**/*.js',           // copy all files and subfolders
+					dest: 'js/',    // destination folder
+					expand: true           // required when using cwd
+				}]
+			},
+			swipercss: {
+				files: [{
+					cwd: 'bower_components/swiper/dist/css/',  // set working folder / root to copy
+					src: '**/*.js',           // copy all files and subfolders
+					dest: 'css/',    // destination folder
+					expand: true           // required when using cwd
+				}]
+			},
+			swiperjs: {
+				files: [{
+					cwd: 'bower_components/swiper/dist/js/',  // set working folder / root to copy
+					src: ['**/*.js', '!maps/*.js', '!swiper.jquery.umd.js', '!swiper.jquery.umd.min.js', '!swiper.js', '!swiper.min.js' ],           // copy all files and subfolders
+					dest: 'js/',    // destination folder
+					expand: true           // required when using cwd
+				}]
+			},
+		},
+		bower: {
+			update: {
+				//just run 'grunt bower:install' and you'll see files from your Bower packages in lib directory
+			}
 		}
 	});
 
@@ -167,6 +224,8 @@ module.exports = function( grunt ){
 	grunt.loadNpmTasks( 'grunt-contrib-compress' );
     grunt.loadNpmTasks( 'grunt-contrib-sass' );
     grunt.loadNpmTasks( 'grunt-contrib-cssmin' );
+    grunt.loadNpmTasks('grunt-contrib-copy');
+	grunt.loadNpmTasks('grunt-bower-task');
 
 	// Register tasks
 	grunt.registerTask( 'default', [
@@ -177,6 +236,11 @@ module.exports = function( grunt ){
 
 	grunt.registerTask( 'css', [
 		'sass'
+	]);
+
+	grunt.registerTask( 'update', [
+		'bower',
+		'copy',
 	]);
 
 	grunt.registerTask( 'dev', [

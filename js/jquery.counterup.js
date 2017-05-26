@@ -1,12 +1,12 @@
 /*!
- * jquery.counterup.js 2.0.5
+ * jquery.counterup.js 2.1.0
  *
  * Copyright 2013, Benjamin Intal http://gambit.ph @bfintal
  * Released under the GPL v2 License
  *
  * Amended by Jeremy Paris, Ciro Mattia Gonano and others
  *
- * Date: Jun 21, 2016
+ * Date: Feb 24, 2017
  */
 (function ($) {
     "use strict";
@@ -17,7 +17,10 @@
         var settings = $.extend({
                 'time': 400,
                 'delay': 10,
+                'offset': 100,
+                'beginAt': 0,
                 'formatter': false,
+                'context': 'window',
                 callback: function () {
                 }
             }, options),
@@ -29,16 +32,21 @@
             var $this = $(this),
                 counter = {
                     time: $(this).data('counterup-time') || settings.time,
-                    delay: $(this).data('counterup-delay') || settings.delay
+                    delay: $(this).data('counterup-delay') || settings.delay,
+                    offset: $(this).data('counterup-offset') || settings.offset,
+                    beginAt: $(this).data('counterup-beginat') || settings.beginAt,
+                    context: $(this).data('counterup-context') || settings.context
                 };
 
             var counterUpper = function () {
                 var nums = [];
                 var divisions = counter.time / counter.delay;
-                var num = $this.text();
+                var num = $(this).attr('data-num') ? $(this).attr('data-num') : $this.text();
                 var isComma = /[0-9]+,[0-9]+/.test(num);
                 num = num.replace(/,/g, '');
                 var decimalPlaces = (num.split('.')[1] || []).length;
+                if (counter.beginAt > num)
+                    counter.beginAt = num;
 
                 var isTime = /[0-9]+:[0-9]+:[0-9]+/.test(num);
 
@@ -54,7 +62,7 @@
                 }
 
                 // Generate list of incremental numbers to display
-                for (var i = divisions; i >= 1; i--) {
+                for (var i = divisions; i >= counter.beginAt / num * divisions; i--) {
 
                     var newNum = parseFloat(num / divisions * i).toFixed(decimalPlaces);
 
@@ -80,15 +88,14 @@
                 }
 
                 $this.data('counterup-nums', nums);
-                $this.text('0');
+                $this.text(counter.beginAt);
 
                 // Updates the number until we're done
                 var f = function () {
-                	if(!$this.data('counterup-nums'))
-                	{
- 						settings.callback.call(this);
- 						return;
- 					}
+                    if (!$this.data('counterup-nums')) {
+                        settings.callback.call(this);
+                        return;
+                    }
                     $this.html($this.data('counterup-nums').shift());
                     if ($this.data('counterup-nums').length) {
                         setTimeout($this.data('counterup-func'), counter.delay);
@@ -108,7 +115,7 @@
             $this.waypoint(function (direction) {
                 counterUpper();
                 this.destroy(); //-- Waypoint 3.0 version of triggerOnce
-            }, {offset: '100%'});
+            }, {offset: counter.offset + "%", context: counter.context});
         });
 
     };

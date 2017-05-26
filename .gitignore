@@ -14,6 +14,9 @@ project.properties
 /node_modules/
 /deploy/
 
+#Bower
+/bower_components/
+
 # OS X metadata
 .DS_Store
 
