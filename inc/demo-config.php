@@ -79,6 +79,11 @@ function flash_demo_importer_packages( $packages ) {
 			'preview' => 'https://demo.themegrill.com/flash-pro-wedding/',
 			'pro_link'=> 'https://themegrill.com/themes/flash/'
 		),
+		'flash-pro-agency' => array(
+			'name'    => __( 'Flash Pro Agency', 'flash' ),
+			'preview' => 'https://demo.themegrill.com/flash-pro-agency/',
+			'pro_link'=> 'https://themegrill.com/themes/flash/'
+		),
 	);
 
 	return array_merge( $new_packages, $packages );
