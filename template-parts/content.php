@@ -10,6 +10,13 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
+	<?php
+	/**
+	 * flash_before_post_content hook
+	 */
+	do_action( 'flash_before_post_content' ); ?>
+
 	<?php
 	$blog_style = get_theme_mod( 'flash_blog_style', 'classic-layout' );
 	if ( !is_singular() ) {
@@ -65,4 +72,11 @@
 			<?php flash_entry_footer(); ?>
 		</footer><!-- .entry-footer -->
 	</div>
+
+	<?php
+	/**
+	 * flash_after_post_content hook
+	 */
+	do_action( 'flash_after_post_content' ); ?>
+
 </article><!-- #post-## -->

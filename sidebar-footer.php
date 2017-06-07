@@ -25,7 +25,9 @@ if( !is_active_sidebar( 'flash_footer_sidebar1' ) &&
 		<div class="tg-column-wrapper">
 
 			<?php
-
+			/**
+			 * flash_before_footer_sidebar hook
+			 */
 			do_action( 'flash_before_footer_sidebar' );
 
 			$footer_sidebar_count = get_theme_mod('flash_footer_widgets', '4');
@@ -44,7 +46,9 @@ if( !is_active_sidebar( 'flash_footer_sidebar1' ) &&
 				</div>
 
 			<?php }
-
+			/**
+			 * flash_after_footer_sidebar hook
+			 */
 			do_action( 'flash_after_footer_sidebar' );
 			?>
 		</div>

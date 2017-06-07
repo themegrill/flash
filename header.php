@@ -37,8 +37,20 @@ if ( get_theme_mod( 'flash_disable_preloader', '' ) != 1 ) : ?>
 </div>
 <?php endif; ?>
 
+<?php
+/**
+ * flash_before hook
+ */
+do_action( 'flash_before' ); ?>
+
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'flash' ); ?></a>
+
+	<?php
+	/**
+	 * flash_before_header hook
+	 */
+	do_action( 'flash_before_header' ); ?>
 
 	<header id="masthead" class="site-header" role="banner">
 		<?php
@@ -124,6 +136,12 @@ if ( get_theme_mod( 'flash_disable_preloader', '' ) != 1 ) : ?>
 		</div>
 	</header><!-- #masthead -->
 
+	<?php
+	/**
+	 * flash_after_header hook
+	 */
+	do_action( 'flash_after_header' ); ?>
+
 	<?php get_template_part( 'template-parts/header-media' ); ?>
 
 	<?php if( !is_front_page() ) : ?>
@@ -134,6 +152,12 @@ if ( get_theme_mod( 'flash_disable_preloader', '' ) != 1 ) : ?>
 		</div>
 	</nav>
 	<?php endif; ?>
+
+	<?php
+	/**
+	 * flash_before_main hook
+	 */
+	do_action( 'flash_before_main' ); ?>
 
 	<div id="content" class="site-content">
 		<div class="tg-container">
