@@ -10,6 +10,13 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
+	<?php
+	/**
+	 * flash_before_post_content hook
+	 */
+	do_action( 'flash_before_post_content' ); ?>
+
 	<header class="entry-header">
 		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 
@@ -27,4 +34,11 @@
 	<footer class="entry-footer">
 		<?php flash_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
+
+	<?php
+	/**
+	 * flash_after_post_content hook
+	 */
+	do_action( 'flash_after_post_content' ); ?>
+
 </article><!-- #post-## -->

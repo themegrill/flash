@@ -11,6 +11,12 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
+	<?php
+	/**
+	 * flash_before_post_content hook
+	 */
+	do_action( 'flash_before_post_content' ); ?>
+
 	<div class="entry-content">
 		<?php
 			the_content();
@@ -37,4 +43,11 @@
 			?>
 		</footer><!-- .entry-footer -->
 	<?php endif; ?>
+
+	<?php
+	/**
+	 * flash_after_post_content hook
+	 */
+	do_action( 'flash_after_post_content' ); ?>
+
 </article><!-- #post-## -->

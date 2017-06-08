@@ -16,6 +16,20 @@ if ( ! is_active_sidebar( 'flash_left_sidebar' ) ) {
 
 if($layout == 'left-sidebar') { ?>
 <aside id="secondary" class="widget-area" role="complementary">
+
+	<?php
+	/**
+	 * flash_before_sidebar hook
+	 */
+	do_action( 'flash_before_sidebar' ); ?>
+
 	<?php dynamic_sidebar( 'flash_left_sidebar' ); ?>
+
+	<?php
+	/**
+	 * flash_after_sidebar hook
+	 */
+	do_action( 'flash_after_sidebar' ); ?>
+
 </aside><!-- #secondary -->
 <?php } ?>
