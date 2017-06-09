@@ -82,6 +82,7 @@ Unless otherwise specified, all the theme files, scripts and images including th
 == Changelog ==
 == TBD ==
 * Add - CSS for Wp-Caption 
+* Fix - Header image size fix
 
 = 1.1.1 - 2017-04-25 =
 * Add - Pro theme demo reference added in demo config file
