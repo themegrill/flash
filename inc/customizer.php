@@ -576,6 +576,7 @@ function flash_custom_header_and_background() {
 		'width'                => 1286,
 		'height'               => 280,
 		'flex-height'          => true,
+		'flex-width'           => true,
 		'header-text'          => true,
 		'video'                => true,
 	) ) );
