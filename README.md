@@ -2,7 +2,7 @@
 Author: ThemeGrill
 Requires at least: WordPress 4.3
 Tested up to: WordPress 4.6
-Version: 1.1.0
+Version: 1.1.2
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 Tags: one-column, two-columns, left-sidebar, right-sidebar, grid-layout, custom-background, custom-colors, custom-menu, custom-logo, featured-images, footer-widgets, full-width-template, theme-options, threaded-comments, translation-ready, blog, e-commerce
@@ -81,10 +81,11 @@ Unless otherwise specified, all the theme files, scripts and images including th
 
 == Changelog ==
 == TBD ==
-* Add - CSS for Wp-Caption
+* 1.1.2 - 2017-06-12 =
 * Fix - Header image size fix
 * Tweaks - New screeshot image added
 * Tweaks - Slider text shadow CSS adjustment
+* Add - Added theme action hooks
 
 = 1.1.1 - 2017-04-25 =
 * Add - Pro theme demo reference added in demo config file
