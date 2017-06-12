@@ -84,6 +84,7 @@ Unless otherwise specified, all the theme files, scripts and images including th
 * Add - CSS for Wp-Caption
 * Fix - Header image size fix
 * Tweaks - New screeshot image added
+* Tweaks - Slider text shadow CSS adjustment
 
 = 1.1.1 - 2017-04-25 =
 * Add - Pro theme demo reference added in demo config file
