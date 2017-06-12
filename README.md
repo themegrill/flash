@@ -73,16 +73,17 @@ Images used in Screenshot of Flash theme:
 Logo, Copyright © 2016, ThemeGrill
 License: GNU GPL, Version 3, https://www.gnu.org/licenses/gpl-3.0.html
 
-Desk Picture, Copyright (c), Kaboompics
+Image used in screenshot
 License: CC0 Public Domain, https://creativecommons.org/publicdomain/zero/1.0/deed.en
-Source: https://pixabay.com/en/office-desk-work-study-tech-791733/
+Source: https://pixabay.com/en/coffee-book-flowers-setting-2390136/
 
 Unless otherwise specified, all the theme files, scripts and images including the screenshot image are licensed under [GNU GPL] (http://www.gnu.org/licenses/gpl-3.0.txt), version 3 or later.
 
 == Changelog ==
 == TBD ==
-* Add - CSS for Wp-Caption 
+* Add - CSS for Wp-Caption
 * Fix - Header image size fix
+* Tweaks - New screeshot image added
 
 = 1.1.1 - 2017-04-25 =
 * Add - Pro theme demo reference added in demo config file
