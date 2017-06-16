@@ -375,7 +375,7 @@ class Flash_Admin {
 						<td><span class="dashicons dashicons-yes"></span></td>
 					</tr>
 					<tr>
-						<td><h3><?php esc_html_e('Woocommerce Compatible', 'flash'); ?></h3></td>
+						<td><h3><?php esc_html_e('WooCommerce Compatible', 'flash'); ?></h3></td>
 						<td><span class="dashicons dashicons-yes"></span></td>
 						<td><span class="dashicons dashicons-yes"></span></td>
 					</tr>
@@ -495,12 +495,12 @@ class Flash_Admin {
 						<td><span class="dashicons dashicons-yes"></span></td>
 					</tr>
 					<tr>
-						<td><h3><?php esc_html_e('FT: Woocommerce Category Slider', 'flash'); ?></h3></td>
+						<td><h3><?php esc_html_e('FT: WooCommerce Category Slider', 'flash'); ?></h3></td>
 						<td><span class="dashicons dashicons-no"></span></td>
 						<td><span class="dashicons dashicons-yes"></span></td>
 					</tr>
 					<tr>
-						<td><h3><?php esc_html_e('FT: Woocommerce Product Tab', 'flash'); ?></h3></td>
+						<td><h3><?php esc_html_e('FT: WooCommerce Product Tab', 'flash'); ?></h3></td>
 						<td><span class="dashicons dashicons-no"></span></td>
 						<td><span class="dashicons dashicons-yes"></span></td>
 					</tr>

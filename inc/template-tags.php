@@ -58,7 +58,7 @@ function flash_entry_footer() {
 			/* translators: used between list items, there is a space after the comma */
 			$categories_list = get_the_category_list( esc_html__( ', ', 'flash' ) );
 			if ( $categories_list && flash_categorized_blog() ) {
-				printf( '<span class="cat-links"><i class="fa fa-calendar"></i> %1$s </span>', $categories_list ); // WPCS: XSS OK.
+				printf( '<span class="cat-links"><i class="fa fa-folder-open"></i> %1$s </span>', $categories_list ); // WPCS: XSS OK.
 			}
 		}
 
