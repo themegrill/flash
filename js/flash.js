@@ -109,6 +109,7 @@ jQuery(window).load(function() {
 				prevButton: prevButton,
 				autoplay: 4000,
 				speed: 1000,
+				loop: true,
 			});
 
 			jQuery(this).on('mouseenter', function(){
