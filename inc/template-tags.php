@@ -33,7 +33,7 @@ function flash_posted_on() {
 	}
 
 	if( (get_theme_mod( 'flash_remove_meta_author', '') != '1' ) ) {
-		echo '<span class="entry-author"> ' . $byline . '</span>';
+		echo '<span class="entry-author vcard author"> ' . $byline . '</span>';
 	}
 
 	if( (get_theme_mod( 'flash_remove_meta_comment_count', '') != '1' ) ) {
