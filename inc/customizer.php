@@ -13,6 +13,10 @@ function flash_kirki_configuration() {
 }
 add_filter( 'kirki/config', 'flash_kirki_configuration' );
 
+if ( ! class_exists( 'Kirki' ) ) {
+	exit;
+}
+
 /** Flash Kirki Config */
 Kirki::add_config( 'flash_config', array(
 	'capability'    => 'edit_theme_options',
