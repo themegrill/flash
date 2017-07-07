@@ -138,7 +138,7 @@ class Flash_Admin {
 			</a>
 			<?php } ?>
 
-			<a href="<?php echo esc_url( 'http://wordpress.org/support/view/theme-reviews/flash?filter=5' ); ?>" class="button button-secondary" target="_blank"><?php esc_html_e( 'Rate this theme', 'flash' ); ?></a>
+			<a href="<?php echo esc_url( 'https://wordpress.org/support/theme/flash/reviews/?filter=5' ); ?>" class="button button-secondary" target="_blank"><?php esc_html_e( 'Rate this theme', 'flash' ); ?></a>
 		</p>
 
 		<h2 class="nav-tab-wrapper">
