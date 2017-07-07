@@ -19,17 +19,22 @@ module.exports = function( grunt ){
 				'Gruntfile.js',
 				'<%= dirs.js %>/*.js',
 				'!<%= dirs.js %>/*.min.js',
+				'!<%= dirs.js %>/flash.js',
 				'!<%= dirs.js %>/swiper.jquery.js',
 				'!<%= dirs.js %>/swiper.jquery.min.js',
-				'!<%= dirs.js %>/flash.js',
-				'<%= dirs.js %>/customizer.js'
 			]
 		},
 
 		// Minify all .js files.
 		uglify: {
-			 options: {
-        		preserveComments: /(?:^!|@(?:license|preserve|cc_on))/
+			options: {
+				ie8: true,
+				parse: {
+					strict: false
+				},
+				output: {
+					comments : /@license|@preserve|^!/
+				}
 			},
 			frontend: {
 				files: [{
@@ -52,8 +57,7 @@ module.exports = function( grunt ){
 		// Compile all .scss files.
 		sass: {
 			options: {
-				sourcemap: 'none',
-				loadPath: require( 'node-bourbon' ).includePaths
+				sourceMap: 'none'
 			},
 			compile: {
 				files: [{
