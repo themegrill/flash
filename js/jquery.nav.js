@@ -18,7 +18,6 @@
  */
 
 ;(function($, window, document, undefined){
-
 	// our plugin constructor
 	var OnePageNav = function(elem, options){
 		this.elem = elem;
@@ -40,6 +39,7 @@
 			changeHash: false,
 			easing: 'swing',
 			filter: null,
+			scrollOffset: 0,
 			scrollSpeed: 750,
 			scrollThreshold: 0.5,
 			begin: false,
@@ -119,7 +119,7 @@
 				$target = $('#' + linkHref);
 
 				if($target.length) {
-					topPos = $target.offset().top;
+					topPos = $target.position().top;
 					self.sections[linkHref] = Math.round(topPos);
 				}
 			});
@@ -204,10 +204,9 @@
 		},
 
 		scrollTo: function(target, callback) {
-			var offset = $(target).offset().top;
-
+			var offset = $(target).position().top;
 			$('html, body').animate({
-				scrollTop: offset
+				scrollTop: offset - this.config.scrollOffset,
 			}, this.config.scrollSpeed, this.config.easing, callback);
 		},
 
