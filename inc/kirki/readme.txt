@@ -1,10 +1,10 @@
 === Kirki ===
 Contributors: aristath, fovoc, igmoweb
 Tags: customizer,options framework, theme, mods, toolkit
-Donate link: http://kirki.org/
-Requires at least: 4.4
-Tested up to: 4.6.1
-Stable tag: 2.3.7
+Donate link: https://aristath.github.io/donate
+Requires at least: 4.8
+Tested up to: 4.8
+Stable tag: 3.0.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -13,21 +13,17 @@ The ultimate toolkit for theme developers using the WordPress Customizer
 
 == Description ==
 
-[![Build Status](https://travis-ci.org/aristath/kirki.svg?branch=master)](https://travis-ci.org/aristath/kirki) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/aristath/kirki/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/aristath/kirki/?branch=master) [![Code Climate](https://codeclimate.com/github/aristath/kirki/badges/gpa.svg)](https://codeclimate.com/github/aristath/kirki) [![License](https://img.shields.io/badge/license-GPL--2.0%2B-red.svg)](https://raw.githubusercontent.com/aristath/kirki/master/LICENSE) [![Join the chat at https://gitter.im/aristath/kirki](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/aristath/kirki?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Build Status](https://travis-ci.org/aristath/kirki.svg?branch=develop)](https://travis-ci.org/aristath/kirki) [![Code Climate](https://codeclimate.com/github/aristath/kirki/badges/gpa.svg)](https://codeclimate.com/github/aristath/kirki) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/66d6d8b6a4654cd18686ed1cd9f1bfb3)](https://www.codacy.com/app/aristath/kirki?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=aristath/kirki&amp;utm_campaign=Badge_Grade) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/aristath/kirki/badges/quality-score.png?b=develop)](https://scrutinizer-ci.com/g/aristath/kirki/?branch=develop)
 
-Kirki is a Toolkit allowing WordPress developers to use the Customizer and take advantage of its advanced features and flexibility by abstracting the code and making it easier for everyone to create beautiful and meaningful user experiences.
+Using Kirki theme developers can create rich experiences for the WordPress Customizer using best coding practices.
 
-Kirki does not replace the WordPress Customizer API, you can still use the default WordPress methods and we advise you to familiarize yourselves with it. An excellent handbook for the WordPress Customizer can be found on the developer.wordpress.org website.
+Included are 30 custom control types ranging from simple sliders to complex typography controls with Google-Fonts integration, automatic CSS generation, `postMessage` scripts automatically generated, tooltips and a lot of extras that make developing themes a lot faster for developers and meaningful for users.
 
-What Kirki does is save you time… LOTS of time!
+We advise you to familiarize yourself with the Customizer API before you start writing your theme using Kirki. An excellent handbook for the WordPress Customizer can be found on the [developer.wordpress.org](https://developer.wordpress.org/themes/customize-api/) website.
 
-Easily add configurations for your project, create panels, sections and add fields with ease.
+You can find detailed documentation on how to use Kirki on [https://aristath.github.io/kirki/](https://aristath.github.io/kirki/)
 
-Automatically create CSS from your fields, and make the customizer’s preview instant with our automatic postMessage scripts creation!
-
-Add Google Fonts with our typography field, add tooltips to help your users and build awesome products!
-
-You can find detailed documentation on how to use Kirki on [https://kirki.org](https://kirki.org)
+[Development and issues on github](https://github.com/aristath/kirki).
 
 == Installation ==
 
@@ -36,6 +32,164 @@ Simply install as a normal WordPress plugin and activate.
 If you want to integrate Kirki in your theme or plugin, please read the instructions on [our ducumentation site](https://kirki.org/docs/advanced/integration.html).
 
 == Changelog ==
+
+= 3.0.9 =
+
+July 8 2017, dev time: 7 hours.
+
+* Fix: Add alpha option to multicolor control. Props @danielortiz [#1321](https://github.com/aristath/kirki/issues/1321), [#1449](https://github.com/aristath/kirki/pull/1449)
+* Fix: Googlefonts output when `default` argument contains `font-weight` instead of `variant` [#1443](https://github.com/aristath/kirki/issues/1443)
+* Fix: Removed the `Kirki_Custom_Build` class.
+* Fix: Plugin does not exist error when Kirki is embedded in a theme [#1448](https://github.com/aristath/kirki/issues/1448)
+* Fix: Code simplifications and optimizations.
+
+= 3.0.8 =
+
+June 27 2017, dev time: 4 hours.
+
+* Fix: Typography controls without a variant defined were adding font-weight in the customizer [#1436](https://github.com/aristath/kirki/issues/1436)
+* Fix: Set default webfonts loading method to `link` [#1438](https://github.com/aristath/kirki/issues/1438)
+* Fix: Bug that prevents custom args from being passed to custom controls [#1425](https://github.com/aristath/kirki/issues/1425). Props @danielortiz
+* Fix: `exclude` argument in `output` when combined with `choice` [#1416](https://github.com/aristath/kirki/issues/1416)
+* Fix: `active_callback` operators for greater/smaller etc [#1427](https://github.com/aristath/kirki/issues/1427)
+
+= 3.0.7 =
+
+June 26 2017, dev time: 1 hour.
+
+* Fix: GoogleFonts links were not getting properly created [#1430](https://github.com/aristath/kirki/issues/1430)
+* Fix: Incorrect logic when `Kirki::add_field()` only has 1 argument defined [#1429](https://github.com/aristath/kirki/issues/1429)
+
+= 3.0.6 =
+
+June 25, 2017, dev time: 5 minutes.
+
+* Fix: Typo, PHP 5.2 compatibility.
+
+= 3.0.5 =
+
+June 25, 2017, dev time: 5 hours.
+
+* Fix: Conflict with the MaxStore Pro theme [#1405](https://github.com/aristath/kirki/issues/1405)
+* Fix: CSS Output for Typography controls [#1423](https://github.com/aristath/kirki/issues/1423)
+* Fix: PHP Warning in Repeater control. [#1417](https://github.com/aristath/kirki/issues/1417)
+* Fix: CSS conflict with the Shortcake plugin [#1418](https://github.com/aristath/kirki/issues/1418)
+* Fix: `Kirki_Fonts_Google::$force_load_all_variants` was not working in version 3.0
+* Fix: PHP Warning in typography control when the value was corrupted [#1426](https://github.com/aristath/kirki/issues/1426)
+* Fix: Notice about incorrect `wp_add_inline_style` when googlefont URL was throwing error [#1410](https://github.com/aristath/kirki/issues/1410)
+* Fix: Unable to delete the plugin when it's also embedded in the active theme and plugin version is deactivated [#1421](https://github.com/aristath/kirki/issues/1421)
+* Fix: PHP 5.2 compatibility.
+
+= 3.0.4 =
+
+June 23, 2017, dev time: 2 hours.
+
+* Fix: Added extra checks to avoid PHP Warning in the `Kirki_Fonts_Google` class [#1402](https://github.com/aristath/kirki/issues/1402).
+* Fix: `fontawesome` control was throwing a warning in the theme-check plugin.
+* Fix: Added the "Default" button back in image controls [#1401](https://github.com/aristath/kirki/issues/1401)
+* Fix: Number controls sanitization memory issue [#1404](https://github.com/aristath/kirki/issues/1404)
+* Fix: Typography controls font-weight output [#1370](https://github.com/aristath/kirki/issues/1370)
+* Fix: The `icon` argument was not working for Panels.
+
+= 3.0.3 =
+
+June 22, 2017, dev time: 10 minutes/
+
+* Fix: Error when color is not properly formatted.
+
+= 3.0.2 =
+
+June 22, 2017, dev time: 15 minutes.
+
+* Fix: CSS bugfixes in the `editor` control.
+* Fix: Improvements when embedding Kirki in a theme.
+
+= 3.0.1 =
+
+June 22, 2017, dev time: 5 minutes.
+
+* Fix: Undefined index PHP Notice.
+
+= 3.0.0 =
+
+June 22, 2017, dev time: 243 hours.
+
+This is a major release. Many things have been refactored and optimized. Please keep a backup before updating.
+
+* Fix: Refactored the reset module. [#1334](https://github.com/aristath/kirki/pull/1334)
+* Fix: Refactored the postMessage module [#1333](https://github.com/aristath/kirki/issues/1333)
+* Fix: PHP mode on CodeMirror. [#1003](https://github.com/aristath/kirki/issues/1003)
+* Fix: Dynamic repeater labels now use the label instead of value when picking up label from select field. [#1230](https://github.com/aristath/kirki/issues/1230)
+* Fix: Sanitization for number fields. [#1240](https://github.com/aristath/kirki/issues/1240)
+* Fix: Checkboxes sanitization. [#1195](https://github.com/aristath/kirki/issues/1195)
+* Fix: Link functionality in editor field. [#968](https://github.com/aristath/kirki/issues/968), [#1159](https://github.com/aristath/kirki/issues/1159)
+* Fix: Issues in Field Type editor [#1260](https://github.com/aristath/kirki/issues/1260)
+* Fix: Problems with sortable control [#1253](https://github.com/aristath/kirki/issues/1253), [#1197](https://github.com/aristath/kirki/issues/1197), [#1198](https://github.com/aristath/kirki/issues/1198)
+* Fix: inaccessibility of options panel [#1194](https://github.com/aristath/kirki/issues/1194)
+* Fix: Fields "checkbox", "toggle" and "switch" don't save as boolean in PHP, instead integer 0/1 [#1195](https://github.com/aristath/kirki/issues/1195)
+* Fix: Tooltip not working for switch [#1225](https://github.com/aristath/kirki/issues/1225)
+* Fix: Tooltip height fix in [#1228](https://github.com/aristath/kirki/issues/1228)
+* Fix: Tooltip not closing when clicking outside of icon [#1226](https://github.com/aristath/kirki/issues/1226)
+* Fix: Issue with visual representation of color picker (alpha iris) [#1218](https://github.com/aristath/kirki/issues/1218)
+* Fix: Reset is "undefined" [#1210](https://github.com/aristath/kirki/issues/1210)
+* Fix: Controls that save arrays cause PHP Notices [#1199](https://github.com/aristath/kirki/issues/1199)
+* Fix: Disabled the "loading" module by default. Use the `kirki/modules` filter to enable.
+* Fix: Refactored saving user-meta (`'option_type' => 'user_meta'`). [#1325](https://github.com/aristath/kirki/issues/1325)
+* Fix: Code fields reset [#1122](https://github.com/aristath/kirki/issues/1122)
+* Fix: Typography fields reset [#1193](https://github.com/aristath/kirki/issues/1193), [#1219](https://github.com/aristath/kirki/issues/1219)
+* Fix: Multicolor fields reset [#916](https://github.com/aristath/kirki/issues/916)
+* Fix: Custom fonts not displayed as active in the font list after saving [#1110](https://github.com/aristath/kirki/issues/916)
+* Fix: Support for `media_query` when using `'transport' => 'auto'`. [#1184](https://github.com/aristath/kirki/issues/1184), [#1127](https://github.com/aristath/kirki/issues/1127)
+* Fix: Typography field bug when switching Google Fonts with different weights [#1180](https://github.com/aristath/kirki/issues/1180)
+* Fix: Font Variant outputs invalid property value (typography field) [#1058](https://github.com/aristath/kirki/issues/1058)
+* Fix: Updated webfonts. [#1303](https://github.com/aristath/kirki/issues/1303)
+* Fix: required argument not work with postMessage type. [#1031](https://github.com/aristath/kirki/issues/1031)
+* Fix: Notice: Undefined index, repeater field. [#1291](https://github.com/aristath/kirki/issues/1291)
+* Fix: 403 errors for CSS and JS files on localhost. [#1309](https://github.com/aristath/kirki/issues/1309)
+* Fix: Customizer doesn't load if ACF PRO is active. [#1302](https://github.com/aristath/kirki/issues/1302)
+* Fix: Enqueued google font even if not in use. [#1297](https://github.com/aristath/kirki/issues/1297)
+* Fix: Default dimension value does not process well percent units [#1254](https://github.com/aristath/kirki/issues/1254), [#497](https://github.com/aristath/kirki/issues/497)
+* Fix: Editor field issue with RTL languages [#340](https://github.com/aristath/kirki/issues/340)
+* Fix: Windows Server Issues [#1318](https://github.com/aristath/kirki/issues/1318)
+* New: Added code to automatically handle translations when Kirki is embedded in a theme [#1381](https://github.com/aristath/kirki/issues/1381)
+* New: Automating postMessage for composite fields. [#694](https://github.com/aristath/kirki/issues/694)
+* New: OR logic in field dependencies. [#839](https://github.com/aristath/kirki/issues/839)
+* New: Radio-image labels. [#1090](https://github.com/aristath/kirki/issues/1090), [#1220](https://github.com/aristath/kirki/issues/1220)
+* New: Typography fields support for `prefix`, `suffix`, `value_pattern` in `output` argument. [#1183](https://github.com/aristath/kirki/issues/1183)
+* New: Multi-selects in repeater fields. [#780](https://github.com/aristath/kirki/issues/780), [#1261](https://github.com/aristath/kirki/issues/1261)
+* New: Typography fields now support live-updating using `'transport' => 'auto'`. [#1184](https://github.com/aristath/kirki/issues/1184), [#528](https://github.com/aristath/kirki/issues/528), [#1186](https://github.com/aristath/kirki/issues/1186)
+* New: Typography fields now support filtering the available fonts. [#1202](https://github.com/aristath/kirki/issues/1202)
+* New: Typography fields now support loading multiple variants. [#992](https://github.com/aristath/kirki/issues/992), [#1082](https://github.com/aristath/kirki/issues/1082), [#1114](https://github.com/aristath/kirki/issues/1114)
+* New: Select fields now support optgroups. [#1120](https://github.com/aristath/kirki/issues/1120)
+* New: Added new background control-type. [#741](https://github.com/aristath/kirki/issues/741), [#1283](https://github.com/aristath/kirki/pull/1283), [#952](https://github.com/aristath/kirki/pull/952)
+* New: Replaced selectize with select2. [#1177](https://github.com/aristath/kirki/issues/1177)
+* New: Notifications for number fields when value is invalid depending on min/max/step values.
+* New: Rebuilt typography control using select2. [cafb89b ](https://github.com/aristath/kirki/commit/e27fa1ff19ab52b34467bfb306b5870d858f409f)
+* New: Allow modifying values instead of replacing them when using `js_vars` with `function` set to `html` by using the `value_pattern` parameter and the `$` placeholder. [#1137](https://github.com/aristath/kirki/pull/1137)
+* New: Updated CodeMirror. [fff6df0](https://github.com/aristath/kirki/commit/34fdaa562fdd33fa595db927ee597265a753b3b4)
+* New: Added word-spacing to the typography control. [#1163](https://github.com/aristath/kirki/issues/1163)
+* New: Refactored file structure to make fields self-contained entities, easier to decouple & debug.
+* New: Introducing "modules".
+* New: Refactored the tooltips feature (now a module).
+* New: Selective refreshes are now a module.
+* New: postMessage is now a module.
+* New: Refactored section & panel icons (now a module).
+* New: Customizer-Styling is now a module.
+* New: Customizer-Branding is now a module.
+* New: CSS-Output is now a module.
+* New: Abstracted the "spacing" control and created a new "dimensions" control from it.
+* New: Allow saving site-options(`'option_type' => 'site_option'`) [#1326](https://github.com/aristath/kirki/issues/1326)
+* New: Added 2 new methods for enqueueing google fonts. See the [`kirki/googlefonts_load_method`](https://github.com/aristath/kirki/blob/9e3e4a6928339bdcd0f7520d305c145a80a06c8a/modules/webfonts/class-kirki-modules-webfonts.php#L100) filter.
+* New: Googlefonts now by default added inline in the stylesheet to avoid an extra call to the GoogleFonts API. (SEO & performance improvement).
+
+= 2.3.8 =
+
+May 28, 2017, dev time: 15 minutes.
+
+This is a maintenance release that prepares for 3.0.0 coming soon.
+
+* Fix: Updating webfonts.
+* New: Added ability to use upgrade notices. Needed for v3.0 in a few days.
 
 = 2.3.7 =
 
@@ -701,3 +855,9 @@ May 26, 2014
 May 9, 2014
 
 * Initial version
+
+== Upgrade Notice ==
+
+= 3.0.0 =
+
+This is a major update, please keep a backup of your files and database before updating.
