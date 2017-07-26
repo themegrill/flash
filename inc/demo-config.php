@@ -94,3 +94,19 @@ function flash_demo_importer_packages( $packages ) {
 	return array_merge( $new_packages, $packages );
 }
 add_filter( 'themegrill_demo_importer_packages', 'flash_demo_importer_packages' );
+
+/**
+ * Setup demo importer required plugins.
+ *
+ * @param  array $plugins
+ * @return array
+ */
+function flash_demo_importer_required_plugins( $plugins ) {
+	$required_plugins = array(
+		'flash-toolkit/flash-toolkit.php',
+		'siteorigin-panels/siteorigin-panels.php'
+	);
+
+	return array_merge( $required_plugins, $plugins );
+}
+add_filter( 'themegrill_demo_importer_flash_required_plugins', 'flash_demo_importer_required_plugins' );

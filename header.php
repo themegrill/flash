@@ -100,38 +100,68 @@ do_action( 'flash_before' ); ?>
 						endif; ?>
 					</div>
 				</div>
+				<div class="site-navigation-wrapper">
+					<nav id="site-navigation" class="main-navigation" role="navigation">
+						<div class="menu-toggle">
+							<i class="fa fa-bars"></i>
+						</div>
+						<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+					</nav><!-- #site-navigation -->
 
-				<?php if( get_theme_mod( 'flash_header_search', '' ) !=  '1' ) : ?>
-				<div class="search-wrap">
-					<div class="search-icon">
-						<i class="fa fa-search"></i>
-					</div>
-					<div class="search-box">
-						<?php get_search_form(); ?>
-					</div>
+					<?php $logo_position = get_theme_mod( 'flash_logo_position', 'left-logo-right-menu' ); ?>
+
+					<?php if ( $logo_position == 'center-logo-below-menu' ): ?>
+						<div class="header-action-container">
+							<?php if( ( get_theme_mod( 'flash_header_cart', '' ) !=  '1' ) && class_exists( 'WooCommerce' ) ) : ?>
+							<div class="cart-wrap">
+								<div class="flash-cart-views">
+									<a href="<?php echo esc_url( WC()->cart->get_cart_url() ); ?>" class="wcmenucart-contents">
+										<i class="fa fa-opencart"></i>
+										<span class="cart-value"><?php echo wp_kses_data ( WC()->cart->get_cart_contents_count() ); ?></span>
+									</a>
+								</div>
+								<?php the_widget( 'WC_Widget_Cart', '' ); ?>
+							</div>
+							<?php endif; ?>
+
+							<?php if( get_theme_mod( 'flash_header_search', '' ) !=  '1' ) : ?>
+							<div class="search-wrap">
+								<div class="search-icon">
+									<i class="fa fa-search"></i>
+								</div>
+								<div class="search-box">
+									<?php get_search_form(); ?>
+								</div>
+							</div>
+							<?php endif; ?>
+						</div>
+					<?php endif ?>
 				</div>
-				<?php endif; ?>
 
-				<?php if( ( get_theme_mod( 'flash_header_cart', '' ) !=  '1' ) && class_exists( 'WooCommerce' ) ) : ?>
-				<div class="cart-wrap">
-					<div class="flash-cart-views">
-						<a href="<?php echo esc_url( WC()->cart->get_cart_url() ); ?>" class="wcmenucart-contents">
-							<i class="fa fa-opencart"></i>
-							<span class="cart-value"><?php echo wp_kses_data ( WC()->cart->get_cart_contents_count() ); ?></span>
-						</a>
+				<div class="header-action-container">
+					<?php if( ( get_theme_mod( 'flash_header_cart', '' ) !=  '1' ) && class_exists( 'WooCommerce' ) ) : ?>
+					<div class="cart-wrap">
+						<div class="flash-cart-views">
+							<a href="<?php echo esc_url( WC()->cart->get_cart_url() ); ?>" class="wcmenucart-contents">
+								<i class="fa fa-opencart"></i>
+								<span class="cart-value"><?php echo wp_kses_data ( WC()->cart->get_cart_contents_count() ); ?></span>
+							</a>
+						</div>
+						<?php the_widget( 'WC_Widget_Cart', '' ); ?>
 					</div>
-					<?php the_widget( 'WC_Widget_Cart', '' ); ?>
+					<?php endif; ?>
+
+					<?php if( get_theme_mod( 'flash_header_search', '' ) !=  '1' ) : ?>
+					<div class="search-wrap">
+						<div class="search-icon">
+							<i class="fa fa-search"></i>
+						</div>
+						<div class="search-box">
+							<?php get_search_form(); ?>
+						</div>
+					</div>
+					<?php endif; ?>
 				</div>
-				<?php endif; ?>
-
-				<nav id="site-navigation" class="main-navigation" role="navigation">
-					<div class="menu-toggle">
-						<i class="fa fa-bars"></i>
-					</div>
-					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
-				</nav><!-- #site-navigation -->
-
-
 			</div>
 		</div>
 	</header><!-- #masthead -->

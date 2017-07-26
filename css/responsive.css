@@ -26,9 +26,16 @@ responsive CSS
         padding: 20px 0;
     }
     .center-logo-below-menu .logo {
-  float: left;
-  width: auto;
-}
+    	float: left;
+    	width: auto;
+    }
+    .left-logo-below-menu .header-bottom .site-navigation-wrapper,
+    .center-logo-below-menu .header-bottom .site-navigation-wrapper {
+    	width: auto;
+    	float: right;
+    	text-align: left;
+    	position: static;
+    }
     #site-navigation ul li:hover > a::before,
     #site-navigation ul li.current-menu-item > a::before {
         display: none;
@@ -333,7 +340,7 @@ responsive CSS
         margin: 20px auto 0;
         font-size: 14px;
     }
-    .call-to-action-section .btn-wrapper a:first-child, 
+    .call-to-action-section .btn-wrapper a:first-child,
     .call-to-action-section .call-to-action-section-layout-2 .btn-wrapper a:first-child {
         margin: 0 auto 20px;
     }
@@ -457,7 +464,7 @@ responsive CSS
 .header-bottom .cart-wrap{
     padding: 20px 10px;
 }
-.call-to-action-section .call-to-action-section-layout-2 .section-title-wrapper, 
+.call-to-action-section .call-to-action-section-layout-2 .section-title-wrapper,
 .call-to-action-section .call-to-action-section-layout-2 .btn-wrapper {
   display: block;
   width: 100%;
