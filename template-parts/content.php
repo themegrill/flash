@@ -42,6 +42,8 @@
 			<?php
 			if ( !is_single() ) :
 				the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+			else:
+				the_title( '<div class="entry-title hidden">', '</div>' );
 			endif;
 			?>
 		</header><!-- .entry-header -->
