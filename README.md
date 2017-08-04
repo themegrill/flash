@@ -81,7 +81,7 @@ Unless otherwise specified, all the theme files, scripts and images including th
 
 == Changelog ==
 * Version TBD =
-* Tweak - Updated fontawesome files
+* Tweak - Updated fontawesome to `v4.7.0` and it's list files.
 * Tweak - Kirki updated to `v3.0.9`
 
 = 1.1.3 - 2017-06-16 =
