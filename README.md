@@ -84,6 +84,8 @@ Unless otherwise specified, all the theme files, scripts and images including th
 * Tweak - Updated fontawesome to `v4.7.0` and it's list files
 * Fix   - Scroll offset for one page menu 
 * Tweak - Kirki updated to `v3.0.9`
+* Fix   - Menu alignment center. 
+* Fix   - Blog widget styling. 
 
 = 1.1.3 - 2017-06-16 =
 * Tweak - Standardized WooCommerce string
