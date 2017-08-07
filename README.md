@@ -86,6 +86,7 @@ Unless otherwise specified, all the theme files, scripts and images including th
 * Tweak - Kirki updated to `v3.0.9`
 * Fix   - Menu alignment center. 
 * Fix   - Blog widget styling. 
+* Fix 	- List style in post
 
 = 1.1.3 - 2017-06-16 =
 * Tweak - Standardized WooCommerce string
