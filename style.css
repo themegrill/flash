@@ -1025,18 +1025,17 @@ Header
 	align-items: center;
 }
 
-.header-top .tg-column-2 {
-	width: auto;
+.header-top .left-content,
+.header-top .right-content {
+	flex: 1;
 }
-
-.header-top .tg-column-2:last-child {
+.header-top .right-content ul {
 	float: right;
 }
 
 .header-top .contact-info,
 .header-top .social-menu {
 	list-style: none;
-	flex: 1
 }
 
 .header-top .contact-info li {
@@ -1054,7 +1053,6 @@ Header
 .header-top .social-menu {
 	line-height: 30px;
 	margin: 0;
-	float: right;
 }
 
 .header-top .social-menu li {

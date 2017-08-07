@@ -305,6 +305,10 @@ responsive CSS
         line-height: 24px;
         display: inline-block;
     }
+    .header-top .tg-column-wrapper{
+        flex-direction: column;
+        text-align: center;
+    }
     #top-footer .tg-column-wrapper {
         margin: 0 3%;
     }

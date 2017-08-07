@@ -58,8 +58,12 @@ do_action( 'flash_before' ); ?>
 		<div class="header-top">
 			<div class="tg-container">
 				<div class="tg-column-wrapper clearfix">
-					<?php echo flash_top_header_content( 'flash_top_header_left' ); ?>
-					<?php echo flash_top_header_content( 'flash_top_header_right' ); ?>
+					<div class="left-content">
+						<?php echo flash_top_header_content( 'flash_top_header_left' ); ?>
+					</div>
+					<div class="right-content">
+						<?php echo flash_top_header_content( 'flash_top_header_right' ); ?>
+					</div>
 				</div>
 			</div>
 		</div>
