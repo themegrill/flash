@@ -1759,7 +1759,8 @@ Header
 .transparent.header-sticky .is-sticky .logo-text a,
 .transparent.header-sticky .is-sticky #site-navigation ul li a,
 .transparent.header-sticky .is-sticky #site-navigation ul.sub-menu li a,
-.transparent.header-sticky .is-sticky .flash-cart-views a {
+.transparent.header-sticky .is-sticky .flash-cart-views a, 
+.transparent.header-sticky .is-sticky #site-navigation .menu-toggle .fa {
 	color: #333333;
 }
 .transparent.header-sticky .is-sticky .header-bottom {
