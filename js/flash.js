@@ -1,10 +1,6 @@
-jQuery(document).ready(function() {
+	jQuery(document).ready(function() {
 
 	jQuery('.main-navigation .menu-item-has-children').append('<span class="sub-toggle"> <i class="fa fa-angle-down"></i> </span>');
-
-	jQuery('.main-navigation .sub-toggle').on('click', function() {
-		jQuery(this).parent('.menu-item-has-children').children('ul.sub-menu').first().slideToggle('1000');
-	});
 
 	jQuery('.search-wrap .search-icon').on('click', function() {
 		jQuery('.search-wrap .search-box').toggleClass('active');
@@ -16,6 +12,18 @@ jQuery(document).ready(function() {
 			time: 1000
 		});
 	}
+
+	// Dropdown toggle on mobile on click
+	jQuery('.main-navigation .sub-toggle').on('click', function() {
+		var currentSubMenu = jQuery( this ).parent('li'),
+		menuWithChildren = jQuery( this ).closest('.menu').find('.menu-item-has-children');
+
+		// Slideup other menu item
+		menuWithChildren.not(currentSubMenu).removeClass('mobile-menu--slided').children('ul').slideUp(1000);
+		// Toggle current menu item
+		currentSubMenu.toggleClass('mobile-menu--slided').children('ul').slideToggle( 1000);
+
+	});
 
 	// Scroll to Top
 	jQuery(document).ready(function(){

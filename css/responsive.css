@@ -140,6 +140,12 @@ responsive CSS
     #site-navigation ul.sub-menu li:hover .sub-toggle i {
         color: #ffffff;
     }
+
+    #site-navigation ul li.menu-item-has-children.mobile-menu--slided .sub-toggle .fa{
+        transform: rotate(180deg);
+        transition: all 1s;
+    }
+    
     #site-navigation ul li.menu-item-has-children .sub-toggle {
         position: absolute;
         top: 11px;

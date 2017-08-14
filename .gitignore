@@ -22,3 +22,6 @@ Thumbs.db
 
 # Zip File
 flash.zip
+
+# Package Json file
+/package-lock.json
