@@ -3608,8 +3608,12 @@ Archive
 }
 
 .full-width-archive #primary .post{
-	margin-bottom: 0;
+	margin-bottom: 50px;
 	width: 100%;
+}
+
+.full-width-archive #primary .post.has-post-thumbnail{
+	margin-bottom: 0;
 }
 
 .full-width-archive #primary .post .entry-thumbnail{
@@ -3623,6 +3627,16 @@ Archive
 }
 
 .full-width-archive #primary .post .entry-content-block {
+	overflow: unset;
+	width: 94%;
+	position: relative;
+	top: 0;
+	padding: 20px 20px 0 20px;
+	margin: 0 auto;
+	background: #fff;
+}
+
+.full-width-archive #primary .post.has-post-thumbnail .entry-content-block {
 	overflow: unset;
 	width: 94%;
 	position: relative;
