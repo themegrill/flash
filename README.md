@@ -84,6 +84,7 @@ Unless otherwise specified, all the theme files, scripts and images including th
 * Fix 	- Dropdown toggle on mobile on click
 * Fix 	- Link color not working in content section
 * Fix 	- Slider image not centered in full view port height
+* Fix 	- Blog post overlapping the bread crumb bar
 
 = 1.1.4 - 2017-07-08 =
 * Tweak - Updated fontawesome to `v4.7.0` and it's list files
