@@ -478,7 +478,7 @@ Kirki::add_section( 'flash_footer_options', array(
 
 /** Footer Widget */
 Kirki::add_field( 'flash_config', array(
-	'type'        => 'select',
+	'type'        => 'radio-image',
 	'settings'    => 'flash_footer_widgets',
 	'label'       => esc_html__( 'Footer Widget Area', 'flash' ),
 	'section'     => 'flash_footer_options',
@@ -486,10 +486,10 @@ Kirki::add_field( 'flash_config', array(
 	'priority'    => 10,
 	'multiple'    => 1,
 	'choices'     => array(
-		'1'         => esc_html__( '1 Footer Widgets', 'flash' ),
-		'2'         => esc_html__( '2 Footer Widgets', 'flash' ),
-		'3'         => esc_html__( '3 Footer Widgets', 'flash' ),
-		'4'         => esc_html__( '4 Footer Widgets', 'flash' ),
+		'1'    => get_template_directory_uri() . '/images/col-1.png',
+		'2'    => get_template_directory_uri() . '/images/col-2.png',
+		'3'    => get_template_directory_uri() . '/images/col-3.png',
+		'4'    => get_template_directory_uri() . '/images/col-4.png',
 	),
 ) );
 
