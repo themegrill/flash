@@ -104,7 +104,7 @@ Kirki::add_section( 'flash_general_options', array(
 
 /** Site Layout Settings */
 Kirki::add_field( 'flash_config', array(
-	'type'        => 'select',
+	'type'        => 'radio-buttonset',
 	'settings'    => 'flash_site_layout',
 	'label'       => esc_html__( 'Site Layout', 'flash' ),
 	'section'     => 'flash_general_options',
@@ -233,7 +233,7 @@ Kirki::add_section( 'flash_header_options', array(
 
 /** Logo and Menu Position */
 Kirki::add_field( 'flash_config', array(
-	'type'        => 'select',
+	'type'        => 'radio-image',
 	'settings'    => 'flash_logo_position',
 	'label'       => esc_html__( 'Logo and Menu Position', 'flash' ),
 	'section'     => 'flash_header_options',
@@ -241,9 +241,9 @@ Kirki::add_field( 'flash_config', array(
 	'priority'    => 10,
 	'multiple'    => 1,
 	'choices'     => array(
-		'left-logo-right-menu'    => esc_attr__( 'Left Logo and Right Menu', 'flash' ),
-		'right-logo-left-menu'    => esc_attr__( 'Right Logo and Left Menu', 'flash' ),
-		'center-logo-below-menu'  => esc_attr__( 'Center Logo and Below Menu', 'flash' ),
+		'left-logo-right-menu'    => get_template_directory_uri() . '/images/left-logo.png',
+		'right-logo-left-menu'    => get_template_directory_uri() . '/images/RIGHT.png',
+		'center-logo-below-menu'  => get_template_directory_uri() . '/images/center-below.png',
 	),
 ) );
 
