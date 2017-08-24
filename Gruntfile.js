@@ -148,6 +148,7 @@ module.exports = function( grunt ){
 					'!.*/**',
 					'!Gruntfile.js',
 					'!package.json',
+					'!package-lock.json',
 					'!node_modules/**',
 					'!sass/**',
 					'README.md'
