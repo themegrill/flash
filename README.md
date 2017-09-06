@@ -80,6 +80,9 @@ Source: https://pixabay.com/en/coffee-book-flowers-setting-2390136/
 Unless otherwise specified, all the theme files, scripts and images including the screenshot image are licensed under [GNU GPL] (http://www.gnu.org/licenses/gpl-3.0.txt), version 3 or later.
 
 == Changelog ==
+= Version TBD =
+* Fix 	- Mobile menu toggle not working
+
 = 1.1.5 - 2017-08-24 =
 * Fix 	- Dropdown toggle on mobile on click
 * Fix 	- Link color not working in content section
