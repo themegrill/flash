@@ -94,7 +94,7 @@ jQuery(document).ready(function() {
 	jQuery(window).load(function() {
 	
 		jQuery('.main-navigation .menu-toggle').click(function() {
-			jQuery('.main-navigation .menu').slideToggle('slow');
+			jQuery('.main-navigation .menu').toggleClass('show-menu');
 		});
 	
 		if(typeof Swiper === 'function'){
