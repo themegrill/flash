@@ -288,7 +288,7 @@ function flash_breadcrumbs() {
 			echo '<li class="trail-item"><a class="item-month" href="' . esc_url( get_month_link( get_the_time( __( 'Y', 'flash' ) ), get_the_time( __( 'M', 'flash' ) ) ) ) . '" title="' . esc_attr( get_the_time( __( 'M', 'flash' ) ) ) . '"><span>' . esc_html( get_the_time( __( 'M', 'flash' ) ) ) . '</span></a></li>';
 
 			// Day display
-			echo '<li class="trail-item"><span>' . esc_html( gget_the_time( __( 'jS', 'flash' ) ) . get_the_time( __( 'M', 'flash' ) ) ) .'</span></li>';
+			echo '<li class="trail-item"><span>' . esc_html( get_the_time( __( 'jS', 'flash' ) ) . get_the_time( __( 'M', 'flash' ) ) ) .'</span></li>';
 
 		} else if ( is_month() ) {
 
