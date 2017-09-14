@@ -316,7 +316,7 @@ Kirki::add_section( 'flash_archive_options', array(
 
 /** Blog Styles */
 Kirki::add_field( 'flash_config', array(
-	'type'        => 'select',
+	'type'        => 'radio-image',
 	'settings'    => 'flash_blog_style',
 	'label'       => esc_html__( 'Blog Style', 'flash' ),
 	'section'     => 'flash_archive_options',
@@ -324,9 +324,9 @@ Kirki::add_field( 'flash_config', array(
 	'priority'    => 10,
 	'multiple'    => 1,
 	'choices'     => array(
-		'classic-layout'      => esc_attr__( 'Classic', 'flash' ),
-		'full-width-archive'  => esc_attr__( 'Classic Full Width Image', 'flash' ),
-		'grid-view'           => esc_attr__( 'Grid Layout', 'flash' ),
+		'classic-layout'      => get_template_directory_uri() . '/images/blog-style-classic.png',
+		'full-width-archive'  => get_template_directory_uri() . '/images/blog-style-classic-full.png',
+		'grid-view'           => get_template_directory_uri() . '/images/blog-style-grid.png',
 	),
 ) );
 
