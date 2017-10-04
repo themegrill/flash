@@ -1267,7 +1267,7 @@ Header
 	transition: all 0.5s ease;
 }
 
-#site-navigation ul.sub-menu li:hover a {
+#site-navigation ul.sub-menu li:hover > a {
 	color: #30afb8;
 }
 
@@ -1292,7 +1292,7 @@ Header
 	transition: all 0.5s ease;
 }
 
-#site-navigation .sub-menu li.menu-item-has-children ul li:hover a {
+#site-navigation .sub-menu li.menu-item-has-children ul li:hover > a {
 	color: #30afb8;
 }
 
