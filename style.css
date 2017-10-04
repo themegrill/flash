@@ -1300,8 +1300,8 @@ Header
 	color: #4c5867;
 }
 
-#site-navigation ul li ul.sub-menu li.menu-item-has-children:hover ul,
-.menu ul li ul li:hover ul.children {
+#site-navigation ul li ul.sub-menu li.menu-item-has-children:hover > ul,
+.menu ul li ul li:hover > ul.children {
 	top: 0;
 	opacity: 1;
 	visibility: visible;
@@ -1336,7 +1336,7 @@ Header
 
 .header-bottom {
 	background: #fff;
-}
+}a
 
 
 /*-----------------Header Search and Cart-----------------*/
