@@ -1802,6 +1802,7 @@ Header
 
 .wp-custom-header {
 	position: relative;
+	text-align: center;
 }
 
 .wp-custom-header-video-button {
