@@ -15,13 +15,20 @@ jQuery(document).ready(function() {
 	
 		// Dropdown toggle on mobile on click
 		jQuery('.main-navigation .sub-toggle').on('click', function() {
+			var currentIcon = jQuery( this ).children('.fa');
 			var currentSubMenu = jQuery( this ).parent('li'),
-			menuWithChildren = jQuery( this ).closest('.menu').find('.menu-item-has-children');
-	
-			// Slideup other menu item
-			menuWithChildren.not(currentSubMenu).removeClass('mobile-menu--slided').children('ul').slideUp(1000);
-			// Toggle current menu item
-			currentSubMenu.toggleClass('mobile-menu--slided').children('ul').slideToggle( 1000);
+			menuWithChildren = currentSubMenu.siblings('.menu-item-has-children');
+			
+		// get siblings icons
+		var siblingsIcon = menuWithChildren.find('.fa');
+		// var animateIcons = currentIcon + siblingsIcon;
+		currentIcon.toggleClass('animate-icon');
+		if ( siblingsIcon.hasClass( 'animate-icon' ) ) {
+			siblingsIcon.removeClass( 'animate-icon' );
+		}
+
+		menuWithChildren.not(currentSubMenu).removeClass('mobile-menu--slided').children('ul').slideUp('1000');
+		currentSubMenu.toggleClass('mobile-menu--slided').children('ul').slideToggle('1000');
 	
 		});
 	
