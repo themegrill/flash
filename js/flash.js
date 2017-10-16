@@ -1,37 +1,37 @@
 jQuery(document).ready(function() {
-	
+
 		jQuery('.main-navigation .menu-item-has-children').append('<span class="sub-toggle"> <i class="fa fa-angle-down"></i> </span>');
-	
+
 		jQuery('.search-wrap .search-icon').on('click', function() {
 			jQuery('.search-wrap .search-box').toggleClass('active');
 		});
-	
+
 		if ( typeof jQuery.fn.counterUp !== 'undefined' ) {
 			jQuery('.counter').counterUp({
 				delay: 10,
 				time: 1000
 			});
 		}
-	
+
 		// Dropdown toggle on mobile on click
 		jQuery('.main-navigation .sub-toggle').on('click', function() {
 			var currentIcon = jQuery( this ).children('.fa');
 			var currentSubMenu = jQuery( this ).parent('li'),
 			menuWithChildren = currentSubMenu.siblings('.menu-item-has-children');
-			
-		// get siblings icons
-		var siblingsIcon = menuWithChildren.find('.fa');
-		// var animateIcons = currentIcon + siblingsIcon;
-		currentIcon.toggleClass('animate-icon');
-		if ( siblingsIcon.hasClass( 'animate-icon' ) ) {
-			siblingsIcon.removeClass( 'animate-icon' );
-		}
 
-		menuWithChildren.not(currentSubMenu).removeClass('mobile-menu--slided').children('ul').slideUp('1000');
-		currentSubMenu.toggleClass('mobile-menu--slided').children('ul').slideToggle('1000');
-	
+			// get siblings icons
+			var siblingsIcon = menuWithChildren.find('.fa');
+
+			currentIcon.toggleClass('animate-icon');
+
+			if ( siblingsIcon.hasClass( 'animate-icon' ) ) {
+				siblingsIcon.removeClass( 'animate-icon' );
+			}
+
+			menuWithChildren.not(currentSubMenu).removeClass('mobile-menu--slided').children('ul').slideUp('1000');
+			currentSubMenu.toggleClass('mobile-menu--slided').children('ul').slideToggle('1000');
 		});
-	
+
 		// Scroll to Top
 		jQuery(document).ready(function(){
 			jQuery('#scroll-up').hide();
@@ -51,7 +51,7 @@ jQuery(document).ready(function() {
 				});
 			});
 		});
-	
+
 		// One Page Nav
 		jQuery(window).load(function() {
 			var top_offset = jQuery('#masthead-sticky-wrapper').height() - 1;
@@ -65,7 +65,7 @@ jQuery(document).ready(function() {
 				easing: 'swing',
 			});
 		});
-	
+
 		// Sticky menu
 		if(typeof jQuery.fn.sticky !== 'undefined'){
 			var wpAdminBar = jQuery('#wpadminbar');
@@ -75,18 +75,18 @@ jQuery(document).ready(function() {
 				jQuery('.header-sticky .site-header').sticky({topSpacing:0});
 			}
 		}
-	
+
 		// Preloader
 		if(jQuery('#preloader-background').length > 0) {
 			setTimeout(function(){jQuery('#preloader-background').hide();}, 600);
 		}
-	
+
 		// Full Screen Slider
 		var headerClass = jQuery( '.site-header' );
 		var headerHeight  = headerClass.height();
 		var windowHeight = jQuery( window ).height();
 		var sliderClass = jQuery( '.tg-slider-widget.full-screen .swiper-container' );
-	
+
 		if (jQuery('body').hasClass('transparent')) {
 			sliderClass.css( {
 				'height': windowHeight
@@ -97,22 +97,22 @@ jQuery(document).ready(function() {
 			});
 		}
 	});
-	
+
 	jQuery(window).load(function() {
-	
+
 		jQuery('.main-navigation .menu-toggle').click(function() {
 			jQuery('.main-navigation .menu').slideToggle('slow');
 		});
-	
+
 		if(typeof Swiper === 'function'){
 			// Main Slider
 			jQuery('.tg-section.tg-slider-widget').each(function(index, element){
 				var container  = jQuery(this).find('.swiper-container');
 				var nextButton = jQuery(this).find('.swiper-button-next');
 				var prevButton = jQuery(this).find('.swiper-button-prev');
-	
+
 				sliderInstance = "tgsliderinstance-" + index;
-	
+
 				var sliderInstance = new Swiper (container, {
 					paginationClickable: true,
 					slidesPerView: 1,
@@ -122,16 +122,16 @@ jQuery(document).ready(function() {
 					speed: 1000,
 					loop: true,
 				});
-	
+
 				jQuery(this).on('mouseenter', function(){
 					sliderInstance.stopAutoplay();
 				});
-	
+
 				jQuery(this).on('mouseleave', function(){
 					sliderInstance.startAutoplay();
 				});
 			});
-	
+
 			//TESTIMONIAL SLIDER
 			var testimonial_slider = new Swiper ('.tg-testimonial-widget .swiper-container', {
 				pagination: '.swiper-pagination',
@@ -167,14 +167,14 @@ jQuery(document).ready(function() {
 				direction: 'horizontal'
 			});
 		}
-	
+
 		// Isotope
 		if(typeof jQuery.fn.isotope === 'function'){
 			var $grid = jQuery('.grid').isotope({
 				itemSelector: '.element-item',
 				layoutMode: 'fitRows'
 			});
-	
+
 			// filter functions
 			var filterFns = {
 				// show if number is greater than 50
@@ -205,4 +205,4 @@ jQuery(document).ready(function() {
 			});
 		}
 	});
-	
+
