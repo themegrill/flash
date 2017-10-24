@@ -1984,6 +1984,26 @@ Slider
 	width: 50%;
 }
 
+.tg-slider-widget.slider-control-bottom-right .slider-arrow {
+  bottom: 28px;
+  right: 100px;
+  position: absolute;
+  width: 105px; }
+
+.tg-slider-widget.slider-control-bottom-right .swiper-button-next,
+.tg-slider-widget.slider-control-bottom-right .swiper-button-prev {
+  opacity: 1;
+  visibility: visible; }
+
+.tg-slider-widget.slider-control-bottom-right .swiper-button-next {
+  right: 0;
+  display: inline-block; }
+
+.tg-slider-widget.slider-control-bottom-right .swiper-button-prev {
+  left: 0;
+  display: inline-block;
+  float: left; }
+
 .tg-slider-widget.slider-light .slider-image .overlay {
 	background-color: transparent;
 }
