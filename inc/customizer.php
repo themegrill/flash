@@ -904,6 +904,7 @@ function flash_customize_preview_scripts() {
 	wp_localize_script( 'flash-color-scheme-control', 'colorScheme', flash_get_color_schemes() );
 }
 add_action( 'customize_controls_enqueue_scripts', 'flash_customize_preview_scripts', 99 );
+add_action( 'customize_preview_init', 'flash_customize_preview_scripts', 99 );
 
 /**
  * Enqueues front-end CSS for color scheme.

@@ -1336,8 +1336,22 @@ Header
 
 .header-bottom {
 	background: #fff;
-}a
+}
 
+#site-navigation ul li.menu-item-has-children .sub-toggle .fa {
+	-webkit-transition: transform 0.5s ease;
+	-moz-transition: transform 0.5s ease;
+	-ms-transition: transform 0.5s ease;
+	-o-transition: transform 0.5s ease;
+	transition: transform 0.5s ease;
+ }
+.animate-icon {
+	-webkit-transform: rotate(180deg);
+	-moz-transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
+	-o-transform: rotate(180deg);
+	transform: rotate(180deg);
+}
 
 /*-----------------Header Search and Cart-----------------*/
 .header-bottom .tg-container {
@@ -1969,6 +1983,26 @@ Slider
 	line-height: 30px;
 	width: 50%;
 }
+
+.tg-slider-widget.slider-control-bottom-right .slider-arrow {
+  bottom: 28px;
+  right: 100px;
+  position: absolute;
+  width: 105px; }
+
+.tg-slider-widget.slider-control-bottom-right .swiper-button-next,
+.tg-slider-widget.slider-control-bottom-right .swiper-button-prev {
+  opacity: 1;
+  visibility: visible; }
+
+.tg-slider-widget.slider-control-bottom-right .swiper-button-next {
+  right: 0;
+  display: inline-block; }
+
+.tg-slider-widget.slider-control-bottom-right .swiper-button-prev {
+  left: 0;
+  display: inline-block;
+  float: left; }
 
 .tg-slider-widget.slider-light .slider-image .overlay {
 	background-color: transparent;

@@ -82,6 +82,8 @@ Unless otherwise specified, all the theme files, scripts and images including th
 == Changelog ==
 = Version TBD =
 * Fix 	- Mobile menu toggle not working
+* Fix 	- Header media not aligning center
+* Fix - Customizer live preview not working.
 
 = 1.1.5 - 2017-08-24 =
 * Fix 	- Dropdown toggle on mobile on click
