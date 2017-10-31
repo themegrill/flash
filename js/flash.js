@@ -76,6 +76,19 @@ jQuery(document).ready(function() {
 			}
 		}
 
+		// fix sub menu going out of viewport 
+		( function flashFixSubmenu() {
+			var subMenu = jQuery( '#site-navigation .menu-item-has-children, #site-navigation .page_item_has_children' );
+			
+			subMenu.hover( function() {
+				if ( ! jQuery(this).children( 'ul.sub-menu, ul.children' ).visible() ) {
+					jQuery(this).children( 'ul.sub-menu, ul.children' ).addClass( 'sub-menu--left' );
+				}
+			}, function() {
+				jQuery(this).children( 'ul.sub-menu, ul.children' ).removeClass( 'sub-menu--left' );
+			});
+		}) ();
+
 		// Preloader
 		if(jQuery('#preloader-background').length > 0) {
 			setTimeout(function(){jQuery('#preloader-background').hide();}, 600);
