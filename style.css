@@ -2773,6 +2773,10 @@ Feature product
 	transition: all 0.5s ease;
 }
 
+.tg-feature-product-layout-1 .grid {
+  margin-left: -3%; 
+}
+
 /*--------------------------------------------------------------
 Testimonial
 --------------------------------------------------------------*/
