@@ -1261,6 +1261,13 @@ Header
 	width: 100%;
 }
 
+#site-navigation .menu-primary-container > ul > li .sub-menu li .sub-menu.sub-menu--left {
+	left: -100%;
+	right: 100%;
+	-ms-transform: translate(0, 0);
+	transform: translate(0, 0);
+}
+
 #site-navigation ul.sub-menu li:hover {
 	-webkit-transition: all 0.5s ease;
 	-moz-transition: all 0.5s ease;
