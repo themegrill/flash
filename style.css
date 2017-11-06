@@ -1262,6 +1262,7 @@ Header
 }
 
 #site-navigation ul li .sub-menu li .sub-menu.sub-menu--left {
+	transition: transform 0.35s, visibility 0.5s, opacity 0.5s;
 	left: -100%;
 	right: 100%;
 	-ms-transform: translate(0, 0);
@@ -1291,6 +1292,7 @@ Header
 
 #site-navigation .sub-menu li.menu-item-has-children ul,
 .menu ul li ul li ul.children {
+	display: none;
 	left: 50%;
 	opacity: 0;
 	visibility: hidden;
@@ -1309,6 +1311,7 @@ Header
 
 #site-navigation ul li ul.sub-menu li.menu-item-has-children:hover > ul,
 .menu ul li ul li:hover > ul.children {
+	display: inline-block;
 	top: 0;
 	opacity: 1;
 	visibility: visible;
