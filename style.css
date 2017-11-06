@@ -1261,7 +1261,7 @@ Header
 	width: 100%;
 }
 
-#site-navigation .menu-primary-container > ul > li .sub-menu li .sub-menu.sub-menu--left {
+#site-navigation ul li .sub-menu li .sub-menu.sub-menu--left {
 	left: -100%;
 	right: 100%;
 	-ms-transform: translate(0, 0);
