@@ -203,16 +203,18 @@ Kirki::add_field( 'flash_config', array(
 
 /** Top Header Text */
 Kirki::add_field( 'flash_config', array(
-	'type'        => 'code',
+	'type'        => 'editor',
 	'settings'    => 'flash_top_header_text',
 	'label'       => esc_html__( 'Top Header Text Content', 'flash' ),
 	'section'     => 'flash_top_header_options',
 	'default'     => '',
 	'priority'    => 40,
-	'choices'     => array(
-		'language' => 'html',
-		'theme'    => 'monokai',
-		'height'   => 250,
+	'transport'	  =>	'postMessage',
+	'js_vars'			=>	array(
+		array(
+			'element'		=>	'.header-top .left-content',
+			'function'		=>	'html'
+		)
 	),
 	'active_callback'  => array(
 		array(
