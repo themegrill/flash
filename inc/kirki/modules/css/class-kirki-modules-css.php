@@ -70,9 +70,9 @@ class Kirki_Modules_CSS {
 			'Kirki_Modules_CSS_Generator'               => '/class-kirki-modules-css-generator.php',
 			'Kirki_Output'                              => '/class-kirki-output.php',
 			'Kirki_Output_Field_Background'             => '/field/class-kirki-output-field-background.php',
+			'Kirki_Output_Field_Image'                  => '/field/class-kirki-output-field-image.php',
 			'Kirki_Output_Field_Multicolor'             => '/field/class-kirki-output-field-multicolor.php',
 			'Kirki_Output_Field_Dimensions'             => '/field/class-kirki-output-field-dimensions.php',
-			'Kirki_Output_Field_Gradient'               => '/field/class-kirki-output-field-gradient.php',
 			'Kirki_Output_Field_Typography'             => '/field/class-kirki-output-field-typography.php',
 			'Kirki_Output_Property'                     => '/property/class-kirki-output-property.php',
 			'Kirki_Output_Property_Background_Image'    => '/property/class-kirki-output-property-background-image.php',
@@ -192,7 +192,7 @@ class Kirki_Modules_CSS {
 				$styles = self::loop_controls( $config_id );
 				$styles = apply_filters( "kirki/{$config_id}/dynamic_css", $styles );
 				if ( ! empty( $styles ) ) {
-					wp_enqueue_style( 'kirki-styles-' . $config_id, trailingslashit( Kirki::$url ) . 'assets/css/kirki-styles.css', null, null );
+					wp_enqueue_style( 'kirki-styles-' . $config_id, trailingslashit( Kirki::$url ) . 'assets/css/kirki-styles.css', array(), KIRKI_VERSION );
 					wp_add_inline_style( 'kirki-styles-' . $config_id, $styles );
 				}
 			}
@@ -216,7 +216,7 @@ class Kirki_Modules_CSS {
 	 * @access public
 	 */
 	public function frontend_styles() {
-		wp_enqueue_style( 'kirki-styles-php', admin_url( 'admin-ajax.php' ) . '?action=kirki_dynamic_css', null, null );
+		wp_enqueue_style( 'kirki-styles-php', admin_url( 'admin-ajax.php' ) . '?action=kirki_dynamic_css', array(), KIRKI_VERSION );
 	}
 
 	/**
