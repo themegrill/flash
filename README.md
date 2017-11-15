@@ -80,6 +80,9 @@ Source: https://pixabay.com/en/coffee-book-flowers-setting-2390136/
 Unless otherwise specified, all the theme files, scripts and images including the screenshot image are licensed under [GNU GPL] (http://www.gnu.org/licenses/gpl-3.0.txt), version 3 or later.
 
 == Changelog ==
+= TBD =
+* Tweak - Kirki updated to `v3.0.15`
+
 = 1.1.6 - 2017-10-30 =
 * Fix 	- Mobile menu toggle not working
 * Fix 	- Header media not aligning center
