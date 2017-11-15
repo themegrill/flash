@@ -1913,9 +1913,9 @@ Slider
 	position: relative;
 }
 
-.tg-slider-widget .swiper-slide {
+/*.tg-slider-widget .swiper-slide {
 	width: 100% !important;
-}
+}*/
 
 .tg-slider-widget .slider-content {
 	text-align: center;
