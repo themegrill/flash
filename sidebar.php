@@ -14,7 +14,7 @@ if ( ! is_active_sidebar( 'flash_right_sidebar' ) ) {
 	return;
 }
 
-if($layout == 'right-sidebar') { ?>
+if( $layout == 'right-sidebar' || flash_is_woocommerce_pages() ) { ?>
 <aside id="secondary" class="widget-area" role="complementary">
 
 	<?php
