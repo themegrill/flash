@@ -4189,3 +4189,31 @@ WooCommerce
 .woocommerce .woocommerce-breadcrumb span:first-of-type::before{
 	content: none;
 }
+
+.woocommerce-breadcrumb {
+	float: right;
+	margin: 0;
+	padding: 14px 0;
+}
+
+.woocommerce-breadcrumb span{
+	font-size: 12px;
+	color: #a1a1a1;
+	position: relative;
+	line-height: 18px;
+	padding: 0 14px;
+}
+
+.woocommerce-breadcrumb span::before {
+	color: #a1a1a1;
+	content: "\f105";
+	font-family: fontawesome;
+	left: 0;
+	position: absolute;
+	top: 0;
+}
+
+.woocommerce-breadcrumb span:first-of-type::before{
+	content: none;
+}
+
