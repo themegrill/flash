@@ -105,3 +105,42 @@
 		}
 	}( container ) );
 } )();
+
+/**
+ * Scrollbar on small device menu when header is sticky
+ *
+ */
+jQuery( window ).load( function () {
+
+	// Check screen width and if sticky header
+	if ( window.matchMedia( '(max-width: 980px)' ).matches && jQuery( '#masthead-sticky-wrapper' ).length >= 1 ) {
+
+		// Available viewport height
+		var screenHeight = jQuery( window ).height();
+
+		// Get top and bottom header
+		var headerTop = jQuery( '#masthead > .header-top' );
+		var headerBtm = jQuery( '#masthead > .header-bottom' );
+
+		// Height of top and bottom header
+		var headerTopHt = 0;
+		var headerBtmHt = 0;
+
+		if ( headerTop.length > 0 ) {
+			headerTopHt = headerTop.outerHeight();
+		}
+
+		if ( headerBtm.length > 0 ) {
+			headerBtmHt = headerBtm.outerHeight();
+		}
+
+		// Actual height available for menu
+		var availableMenuHeight = screenHeight-headerTopHt-headerBtmHt-10; // Reduce extra 10 px height
+
+		var menu = jQuery( '#site-navigation' ).find( 'ul' ).first();
+
+		menu.css( 'max-height', availableMenuHeight );
+		menu.addClass( 'menu-scrollbar' );
+
+	}
+} );
