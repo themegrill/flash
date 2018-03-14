@@ -40,6 +40,9 @@ responsive CSS
     #site-navigation ul li.current-menu-item > a::before {
         display: none;
     }
+    #masthead #site-navigation .menu-scrollbar {
+        overflow-y: scroll;
+    }
     #site-navigation .menu {
         background: #fff none repeat scroll 0 0;
         display: none;

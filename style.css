@@ -1272,6 +1272,7 @@ Header
 }
 
 #site-navigation li:hover ul.sub-menu,
+#site-navigation ul li.focus ul.sub-menu,
 .menu ul li:hover > ul.children {
 	opacity: 1;
 	visibility: visible;
@@ -4189,3 +4190,4 @@ WooCommerce
 .woocommerce .woocommerce-breadcrumb span:first-of-type::before{
 	content: none;
 }
+
