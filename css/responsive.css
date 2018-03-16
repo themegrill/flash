@@ -219,8 +219,11 @@ responsive CSS
         margin: 0;
     }
     .blog-section .tg-blog-widget-layout-2 .tg-column-3 {
-        margin-left: 0;
-        width: 100%;
+        margin-left: 15px;
+        width: 47%;
+    }
+    .blog-section .tg-blog-widget-layout-2 .tg-column-3:nth-of-type(2n+1) {
+        clear: both;
     }
     #primary,
     #secondary {
@@ -390,6 +393,10 @@ responsive CSS
     }
     .about-section  .about-section-image{
         display: none;
+    }
+    .blog-section .tg-blog-widget-layout-2 .tg-column-3 {
+        margin-left: 0;
+        width: 100%;
     }
 }
 
