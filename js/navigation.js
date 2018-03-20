@@ -135,7 +135,7 @@ jQuery( window ).load( function () {
 		}
 
 		// Actual height available for menu
-		var availableMenuHeight = screenHeight-headerTopHt-headerBtmHt-10; // Reduce extra 10 px height
+		var availableMenuHeight = screenHeight-headerTopHt-headerBtmHt-50; // Reduce extra 50 px height
 
 		var menu = jQuery( '#site-navigation' ).find( 'ul' ).first();
 
