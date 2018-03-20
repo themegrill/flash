@@ -126,11 +126,11 @@ jQuery( window ).load( function () {
 		var headerTopHt = 0;
 		var headerBtmHt = 0;
 
-		if ( headerTop.length > 0 ) {
+		if ( headerTop.length > 0 && headerTop.css( 'display' ) != 'none' ) {
 			headerTopHt = headerTop.outerHeight();
 		}
 
-		if ( headerBtm.length > 0 ) {
+		if ( headerBtm.length > 0 && headerBtm.css( 'display' ) != 'none' ) {
 			headerBtmHt = headerBtm.outerHeight();
 		}
 
