@@ -1272,7 +1272,7 @@ Header
 }
 
 #site-navigation li:hover ul.sub-menu,
-#site-navigation ul li.focus ul.sub-menu,
+#site-navigation ul li.focus > ul.sub-menu,
 .menu ul li:hover > ul.children {
 	opacity: 1;
 	visibility: visible;
@@ -1302,6 +1302,7 @@ Header
 }
 
 #site-navigation ul li ul.sub-menu li.menu-item-has-children:hover > ul,
+#site-navigation ul li ul.sub-menu li.menu-item-has-children.focus > ul,
 .menu ul li ul li:hover > ul.children {
 	top: 0;
 	opacity: 1;
