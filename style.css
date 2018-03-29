@@ -2194,6 +2194,10 @@ Service
 
 /*-----------------tg-service-layout-2 -----------------*/
 
+.tg-service-layout-2 {
+	margin: 20px 0;
+}
+
 .tg-service-widget.tg-service-layout-2 .service-content-wrap {
 	margin: 0 0 10px;
 }
