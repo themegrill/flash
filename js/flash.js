@@ -13,7 +13,12 @@ jQuery( document ).ready( function () {
 	// Append caret icon on menu item with submenu
 	jQuery( '.main-navigation .menu-item-has-children' ).append( '<span class="sub-toggle"> <i class="fa fa-angle-down"></i> </span>' );
 
-	// Dropdown toggle on mobile on click
+	// Mobile menu toggle clicking on hamburger icon
+	jQuery( '.main-navigation .menu-toggle' ).click( function () {
+		jQuery( '.main-navigation .menu' ).slideToggle( 'slow' );
+	} );
+
+	// Mobile submenu toggle on click
 	jQuery( '.main-navigation .sub-toggle' ).on( 'click', function () {
 		var currentIcon = jQuery( this ).children( '.fa' );
 		var currentSubMenu = jQuery( this ).parent( 'li' ),
@@ -46,6 +51,13 @@ jQuery( document ).ready( function () {
 		} );
 	} );
 
+	// One page nav: close nav on menu item click
+	jQuery( '#site-navigation li > a[href*="#"]' ).click( function () {
+		if ( window.matchMedia( '(max-width: 980px)' ).matches ) {
+			jQuery( '.main-navigation .menu' ).slideUp( 'slow' );
+		}
+	} );
+
 	// Sticky menu
 	if ( typeof jQuery.fn.sticky !== 'undefined' ) {
 		var wpAdminBar = jQuery( '#wpadminbar' );
@@ -55,10 +67,6 @@ jQuery( document ).ready( function () {
 			jQuery( '.header-sticky .site-header' ).sticky( { topSpacing: 0 } );
 		}
 	}
-
-	jQuery( '.main-navigation .menu-toggle' ).click( function () {
-		jQuery( '.main-navigation .menu' ).slideToggle( 'slow' );
-	} );
 
 	/**
 	 * Widgets
