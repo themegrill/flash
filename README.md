@@ -80,6 +80,9 @@ Source: https://pixabay.com/en/coffee-book-flowers-setting-2390136/
 Unless otherwise specified, all the theme files, scripts and images including the screenshot image are licensed under [GNU GPL] (http://www.gnu.org/licenses/gpl-3.0.txt), version 3 or later.
 
 == Changelog ==
+= TBD =
+* Fix - Responsive menu item click on onepage.
+
 = 1.1.8 - 2018-03-23 =
 * Tweak - Submenu accessible in touchscreen
 * Fix - Scrollbar on sticky small screen menu.

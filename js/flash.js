@@ -1,6 +1,33 @@
 jQuery( document ).ready( function () {
 
 	/**
+	 * Onepage nav closing issue on menu item click
+	 */
+	// Hide nav if screen size <= 980px
+	function hideNav( mdmScreen ) {
+		if ( mdmScreen.matches ) { // If media query matches
+			jQuery( '.main-navigation .menu' ).slideUp( 'slow' );
+		} else {
+			jQuery( '#site-navigation ul' ).show();
+		}
+	}
+
+	// Define match media size ( <= 980px )
+	var mdmScreen = window.matchMedia( "(max-width: 980px)" );
+
+	// Hide
+	hideNav( mdmScreen );
+
+	// Show/hide menu on resize state change
+	mdmScreen.addListener( hideNav );
+
+	// Hide nav on Onepage menu item click if screen size <= 980px
+	jQuery( '#site-navigation li > a[href*="#"]' ).click( function () {
+		hideNav( mdmScreen );
+	} );
+	// End Onepage nav
+
+	/**
 	 * Search
 	 */
 	jQuery( '.search-wrap .search-icon' ).on( 'click', function () {
@@ -13,7 +40,12 @@ jQuery( document ).ready( function () {
 	// Append caret icon on menu item with submenu
 	jQuery( '.main-navigation .menu-item-has-children' ).append( '<span class="sub-toggle"> <i class="fa fa-angle-down"></i> </span>' );
 
-	// Dropdown toggle on mobile on click
+	// Mobile menu toggle clicking on hamburger icon
+	jQuery( '.main-navigation .menu-toggle' ).click( function () {
+		jQuery( '.main-navigation .menu' ).slideToggle( 'slow' );
+	} );
+
+	// Mobile submenu toggle on click
 	jQuery( '.main-navigation .sub-toggle' ).on( 'click', function () {
 		var currentIcon = jQuery( this ).children( '.fa' );
 		var currentSubMenu = jQuery( this ).parent( 'li' ),
@@ -55,10 +87,6 @@ jQuery( document ).ready( function () {
 			jQuery( '.header-sticky .site-header' ).sticky( { topSpacing: 0 } );
 		}
 	}
-
-	jQuery( '.main-navigation .menu-toggle' ).click( function () {
-		jQuery( '.main-navigation .menu' ).slideToggle( 'slow' );
-	} );
 
 	/**
 	 * Widgets
