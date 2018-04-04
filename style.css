@@ -3304,7 +3304,13 @@ Blogs
 /*--------------------------------------------------------------
 Clients
 --------------------------------------------------------------*/
-
+.client-wrapper.swiper-wrapper {
+	display: -webkit-flex; /* Safari */
+    -webkit-justify-content: center; /* Safari 6.1+ */
+	display: flex;
+	justify-content: center;
+	margin: 0 auto;
+}
 
 /*--------------------------------------------------------------
 Footer

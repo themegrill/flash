@@ -207,7 +207,8 @@ jQuery( window ).load( function () {
 			paginationClickable: true,
 			slidesPerView: 4,
 			autoplay: 1000,
-			direction: 'horizontal'
+			direction: 'horizontal',
+			setWrapperSize: true
 		} );
 	}
 
