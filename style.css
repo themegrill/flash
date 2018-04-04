@@ -1776,9 +1776,15 @@ Header
 .transparent.header-sticky .is-sticky #site-navigation ul li a,
 .transparent.header-sticky .is-sticky #site-navigation ul.sub-menu li a,
 .transparent.header-sticky .is-sticky .flash-cart-views a,
-.transparent.header-sticky .is-sticky #site-navigation .menu-toggle .fa {
+.transparent.header-sticky .is-sticky #site-navigation .menu-toggle .fa,
+.transparent.header-sticky .is-sticky #site-navigation ul li .sub-toggle {
 	color: #333333;
 }
+
+.transparent.header-sticky .is-sticky #site-navigation ul li:hover > .sub-toggle {
+	color: #30afb8;
+}
+
 .transparent.header-sticky .is-sticky .header-bottom {
 	background: #fff;
 	border: none;
