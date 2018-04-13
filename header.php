@@ -112,10 +112,14 @@ do_action( 'flash_before' ); ?>
 
 					<?php if ( $logo_position == 'center-logo-below-menu' ): ?>
 						<div class="header-action-container">
-							<?php if( ( get_theme_mod( 'flash_header_cart', '' ) !=  '1' ) && class_exists( 'WooCommerce' ) ) : ?>
+
+							<?php if( ( get_theme_mod( 'flash_header_cart', '' ) !=  '1' ) && class_exists( 'WooCommerce' ) ) :
+							$cart_url = function_exists( 'wc_get_cart_url' ) ? wc_get_cart_url() : WC()->cart->get_cart_url();
+							?>
+
 							<div class="cart-wrap">
 								<div class="flash-cart-views">
-									<a href="<?php echo esc_url( WC()->cart->get_cart_url() ); ?>" class="wcmenucart-contents">
+									<a href="<?php echo esc_url( $cart_url ); ?>" class="wcmenucart-contents">
 										<i class="fa fa-opencart"></i>
 										<span class="cart-value"><?php echo wp_kses_data ( WC()->cart->get_cart_contents_count() ); ?></span>
 									</a>
@@ -142,7 +146,10 @@ do_action( 'flash_before' ); ?>
 					<?php if( ( get_theme_mod( 'flash_header_cart', '' ) !=  '1' ) && class_exists( 'WooCommerce' ) ) : ?>
 					<div class="cart-wrap">
 						<div class="flash-cart-views">
-							<a href="<?php echo esc_url( WC()->cart->get_cart_url() ); ?>" class="wcmenucart-contents">
+
+							<?php $cart_url = function_exists( 'wc_get_cart_url' ) ? wc_get_cart_url() : WC()->cart->get_cart_url(); ?>
+
+							<a href="<?php echo esc_url( $cart_url ); ?>" class="wcmenucart-contents">
 								<i class="fa fa-opencart"></i>
 								<span class="cart-value"><?php echo wp_kses_data ( WC()->cart->get_cart_contents_count() ); ?></span>
 							</a>

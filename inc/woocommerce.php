@@ -38,9 +38,10 @@ add_filter( 'woocommerce_add_to_cart_fragments', 'flash_woocommerce_header_add_t
 
 function flash_woocommerce_header_add_to_cart_fragment( $fragments ) {
 	ob_start();
+	$cart_url = function_exists( 'wc_get_cart_url' ) ? wc_get_cart_url() : WC()->cart->get_cart_url();
 	?>
 	<div class="flash-cart-views">
-		<a href="<?php echo esc_url( WC()->cart->get_cart_url() ); ?>" class="wcmenucart-contents">
+		<a href="<?php echo esc_url( $cart_url ); ?>" class="wcmenucart-contents">
 			<i class="fa fa-opencart"></i>
 			<span class="cart-value"><?php echo wp_kses_data ( WC()->cart->get_cart_contents_count() ); ?></span>
 		</a>
