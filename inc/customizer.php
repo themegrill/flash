@@ -408,6 +408,34 @@ Kirki::add_section( 'flash_post_options', array(
 
 ) );
 
+/** Related Posts option */
+Kirki::add_field( 'flash_config', array(
+	'type'        => 'switch',
+	'settings'    => 'flash_related_post_option',
+	'label'       => esc_html__( 'Enable Related Posts', 'flash' ),
+	'section'     => 'flash_post_options',
+	'default'     => 0,
+) );
+
+Kirki::add_field( 'flash_config', array(
+	'type'        => 'radio',
+	'settings'    => 'flash_related_post_option_display',
+	'label'       => esc_html__( 'Display Related Posts By:', 'flash' ),
+	'section'     => 'flash_post_options',
+	'default'     => 'categories',
+	'choices'     => array(
+		'categories'   => esc_attr__( 'Categories', 'flash' ),
+		'tags' => esc_attr__( 'Tags', 'flash' ),
+	),
+	'active_callback' => array(
+		array(
+			'setting'  => 'flash_related_post_option',
+			'operator' => '==',
+			'value'    => 1,
+		),
+	),
+) );
+
 /** Post Layout */
 Kirki::add_field( 'flash_config', array(
 	'type'        => 'radio-image',
