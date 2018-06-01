@@ -26,20 +26,20 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Elements
 # Forms
 # Navigation
-  ## Links
-  ## Menus
+## Links
+## Menus
 # Accessibility
 # Alignments
 # Clearings
 # Widgets
 # Content
-  ## Posts and pages
-  ## Comments
+## Posts and pages
+## Comments
 # Infinite scroll
 # Media
-  ## Captions
-  ## Galleries
-  --------------------------------------------------------------*/
+## Captions
+## Galleries
+--------------------------------------------------------------*/
 
 
 /*--------------------------------------------------------------
@@ -658,74 +658,74 @@ Colors
 
 
 /*--------------------------------------------------------------
- Galleries
- --------------------------------------------------------------*/
+Galleries
+--------------------------------------------------------------*/
 
- .gallery {
+.gallery {
 	margin-bottom: 1.5em;
- }
+}
 
- .gallery-item {
+.gallery-item {
 	display: inline-block;
 	text-align: center;
 	vertical-align: top;
 	width: 100%;
- }
+}
 
- .gallery-columns-2 .gallery-item {
+.gallery-columns-2 .gallery-item {
 	max-width: 50%;
- }
+}
 
- .gallery-columns-3 .gallery-item {
+.gallery-columns-3 .gallery-item {
 	max-width: 33.33%;
- }
+}
 
- .gallery-columns-4 .gallery-item {
+.gallery-columns-4 .gallery-item {
 	max-width: 25%;
- }
+}
 
- .gallery-columns-5 .gallery-item {
+.gallery-columns-5 .gallery-item {
 	max-width: 20%;
- }
+}
 
- .gallery-columns-6 .gallery-item {
+.gallery-columns-6 .gallery-item {
 	max-width: 16.66%;
- }
+}
 
- .gallery-columns-7 .gallery-item {
+.gallery-columns-7 .gallery-item {
 	max-width: 14.28%;
- }
+}
 
- .gallery-columns-8 .gallery-item {
+.gallery-columns-8 .gallery-item {
 	max-width: 12.5%;
- }
+}
 
- .gallery-columns-9 .gallery-item {
+.gallery-columns-9 .gallery-item {
 	max-width: 11.11%;
- }
+}
 
- .gallery-caption {
+.gallery-caption {
 	display: block;
- }
+}
 
- .wp-caption,
- .gallery-caption {
+.wp-caption,
+.gallery-caption {
 	color: #666;
 	font-size: 13px;
 	font-style: italic;
 	margin-bottom: 21px;
 	max-width: 100%;
- }
+}
 
- .wp-caption img[class*="wp-image-"] {
+.wp-caption img[class*="wp-image-"] {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
- }
+}
 
- .wp-caption .wp-caption-text {
+.wp-caption .wp-caption-text {
 	margin: 11px 0;
- }
+}
 /*--------------------------------------------------------------
 common
 --------------------------------------------------------------*/
@@ -1018,7 +1018,7 @@ Header
 .header-top .tg-column-wrapper {
 	margin-left: 0;
 	display: -webkit-box;
-    display: -ms-flexbox;
+	display: -ms-flexbox;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -1345,7 +1345,7 @@ Header
 	-ms-transition: transform 0.5s ease;
 	-o-transition: transform 0.5s ease;
 	transition: transform 0.5s ease;
- }
+}
 .animate-icon {
 	-webkit-transform: rotate(180deg);
 	-moz-transform: rotate(180deg);
@@ -1991,24 +1991,28 @@ Slider
 }
 
 .tg-slider-widget.slider-control-bottom-right .slider-arrow {
-  bottom: 28px;
-  right: 100px;
-  position: absolute;
-  width: 105px; }
+	bottom: 28px;
+	right: 100px;
+	position: absolute;
+	width: 105px; 
+}
 
 .tg-slider-widget.slider-control-bottom-right .swiper-button-next,
 .tg-slider-widget.slider-control-bottom-right .swiper-button-prev {
-  opacity: 1;
-  visibility: visible; }
+	opacity: 1;
+	visibility: visible; 
+}
 
 .tg-slider-widget.slider-control-bottom-right .swiper-button-next {
-  right: 0;
-  display: inline-block; }
+	right: 0;
+	display: inline-block; 
+}
 
 .tg-slider-widget.slider-control-bottom-right .swiper-button-prev {
-  left: 0;
-  display: inline-block;
-  float: left; }
+	left: 0;
+	display: inline-block;
+	float: left; 
+}
 
 .tg-slider-widget.slider-light .slider-image .overlay {
 	background-color: transparent;
@@ -2784,7 +2788,7 @@ Feature product
 }
 
 .tg-feature-product-layout-1 .grid {
-  margin-left: -3%;
+	margin-left: -3%;
 }
 
 /*--------------------------------------------------------------
@@ -3304,7 +3308,7 @@ Clients
 --------------------------------------------------------------*/
 .client-wrapper.swiper-wrapper {
 	display: -webkit-flex; /* Safari */
-    -webkit-justify-content: center; /* Safari 6.1+ */
+	-webkit-justify-content: center; /* Safari 6.1+ */
 	display: flex;
 	justify-content: center;
 	margin: 0 auto;
@@ -3537,10 +3541,6 @@ Archive
 
 .entry-meta span{
 	margin-right: 15px;
-}
-
-.entry-meta .entry-author:hover{
-	color: #30AFB8;
 }
 
 #secondary {
@@ -3917,6 +3917,26 @@ Post Page
 	text-align: right;
 }
 
+.related-posts-wrapper {
+	margin-top: 30px;
+}
+.related-posts-wrapper .related-posts-main-title {
+	margin-bottom: 20px;
+}
+
+.related-posts-wrapper .post-thumbnails {
+	margin-bottom: 20px;
+}
+.related-posts-wrapper .post-thumbnails img {
+	padding: 0;
+}
+.related-posts-wrapper .entry-title {
+	font-size: 18px;
+}
+.related-posts-wrapper .entry-title a:hover,
+.related-posts-wrapper .entry-meta > span a:hover {
+	color:#30afb8;
+}
 
 /*--------------------------------------------------------------
 404 page
