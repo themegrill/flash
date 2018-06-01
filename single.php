@@ -28,6 +28,10 @@ get_header(); ?>
 				get_template_part( 'template-parts/post-navigation', '' );
 			}
 
+			if ( get_theme_mod( 'flash_related_post_option', 0 ) == 1) {
+				get_template_part( 'inc/related-posts' );
+			}
+
 			/**
 			 * flash_before_comment_template hook
 			 */

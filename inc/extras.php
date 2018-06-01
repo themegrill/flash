@@ -704,6 +704,11 @@ function flash_custom_css_migrate() {
 
 add_action( 'after_setup_theme', 'flash_custom_css_migrate' );
 
+if ( ! function_exists( 'flash_related_posts' ) ) {
+
+	/**
+	* Display the related posts.
+	*/
 function flash_related_posts() {
 		wp_reset_postdata();
 		global $post;
