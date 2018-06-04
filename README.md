@@ -80,8 +80,11 @@ Source: https://pixabay.com/en/coffee-book-flowers-setting-2390136/
 Unless otherwise specified, all the theme files, scripts and images including the screenshot image are licensed under [GNU GPL] (http://www.gnu.org/licenses/gpl-3.0.txt), version 3 or later.
 
 == Changelog ==
-= 1.2.0 - 2018-04-30 = 
-* Tweak - Fixed deprecated WC function Fix 
+= TBD =
+* Feature - Added related posts
+
+= 1.2.0 - 2018-04-30 =
+* Tweak - Fixed deprecated WC function Fix
 
 = 1.1.9 - 2018-04-02 =
 * Fix - Responsive menu item click on onepage.
@@ -108,10 +111,10 @@ Unless otherwise specified, all the theme files, scripts and images including th
 
 = 1.1.4 - 2017-08-08 =
 * Tweak - Updated fontawesome to `v4.7.0` and it's list files
-* Fix   - Scroll offset for one page menu 
+* Fix   - Scroll offset for one page menu
 * Tweak - Kirki updated to `v3.0.9`
-* Fix   - Menu alignment center 
-* Fix   - Blog widget styling 
+* Fix   - Menu alignment center
+* Fix   - Blog widget styling
 * Fix 	- List style in post
 * Tweak - Migrated demo preview screen shots
 
