@@ -1224,7 +1224,9 @@ Header
 
 #site-navigation ul li:hover > a,
 #site-navigation ul li.current-menu-item > a,
-#site-navigation ul li.current_page_item > a {
+#site-navigation ul li.current_page_item > a,
+#site-navigation ul li.current_page_ancestor > a,
+#site-navigation ul li.current-menu-ancestor > a {
 	color: #30afb8;
 }
 
