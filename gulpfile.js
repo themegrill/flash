@@ -46,7 +46,7 @@ var info = {
 	authorUrl: 'https://themegrill.com/',
 	authorEmail: 'themegrill@gmail.com',
 	teamEmail: '',
-	localUrl: 'flashpro.local'
+	localUrl: 'flash.local'
 };
 
 /**
@@ -178,6 +178,7 @@ function compileSass() {
 				outputStyle: 'expanded'
 			} )
 		)
+		.pipe( gulp.dest( paths.scss.dest ) )
 		.on( 'error', notify.onError() );
 }
 
