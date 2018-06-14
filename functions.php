@@ -227,6 +227,9 @@ function flash_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
+	// Replace main style for RTL.
+	wp_style_add_data( 'flash-style', 'rtl', 'replace' );
 }
 add_action( 'wp_enqueue_scripts', 'flash_scripts' );
 
