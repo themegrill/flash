@@ -1,0 +1,12 @@
+{
+  "extends": [
+    "stylelint-config-wordpress/scss"
+  ],
+
+  "rules": {
+    "no-eol-whitespace": [ true, {
+      "ignore": ["empty-lines"]
+    } ],
+    "function-url-quotes": "always"
+  }
+}
