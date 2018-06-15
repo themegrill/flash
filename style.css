@@ -103,16 +103,15 @@ caption, th, td {
 	text-align: left;
 }
 
-blockquote:before, blockquote:after {
-	content: "";
-}
-
-q:before, q:after {
-	content: "";
-}
-
-blockquote, q {
+blockquote,
+q {
 	quotes: "" "";
+}
+
+blockquote:before, blockquote:after,
+q:before,
+q:after {
+	content: "";
 }
 
 a:focus, a:hover, a:active {
@@ -197,7 +196,7 @@ sup {
 }
 
 sub {
-	top: .5ex;
+	top: 0.5ex;
 }
 
 small {
@@ -332,7 +331,7 @@ button, input, select, textarea {
 	transition: background 0.5s ease;
 	border-radius: 0;
 	-webkit-appearance: none;
-	-webkit-border-radius: 0px;
+	-webkit-border-radius: 0;
 }
 
 input[type="button"], input[type="reset"], input[type="submit"] {
@@ -352,7 +351,7 @@ input[type="button"], input[type="reset"], input[type="submit"] {
 	transition: background 0.5s ease;
 	border-radius: 0;
 	-webkit-appearance: none;
-	-webkit-border-radius: 0px;
+	-webkit-border-radius: 0;
 }
 
 .navigation .nav-links a:hover, .bttn:hover, button {
@@ -386,7 +385,7 @@ input[type="text"], input[type="email"], input[type="url"], input[type="password
 	width: 100%;
 	-webkit-appearance: none;
 	border-radius: 0;
-	-webkit-border-radius: 0px;
+	-webkit-border-radius: 0;
 }
 
 input[type="text"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="password"]:focus, input[type="search"]:focus {
@@ -436,47 +435,37 @@ a:hover {
 /*--------------------------------------------------------------
 Clearings
 --------------------------------------------------------------*/
-.clearfix:before, .clearfix:after {
+.clearfix:after, .clearfix:before,
+.row:after,
+.row:before,
+.entry-content:after,
+.entry-content:before,
+.comment-content:after,
+.comment-content:before,
+.site-header:after,
+.site-header:before,
+.site-content:after,
+.site-content:before,
+.site-footer:after,
+.site-footer:before,
+.tg-container:after,
+.tg-container:before {
 	content: '';
 	display: table;
 }
 
-.row:before, .row:after {
-	content: '';
-	display: table;
+.clearfix:after,
+.row:after,
+.entry-content:after,
+.comment-content:after,
+.site-header:after,
+.site-content:after,
+.site-footer:after,
+.tg-container:after {
+	clear: both;
 }
 
-.entry-content:before, .entry-content:after {
-	content: '';
-	display: table;
-}
-
-.comment-content:before, .comment-content:after {
-	content: '';
-	display: table;
-}
-
-.site-header:before, .site-header:after {
-	content: '';
-	display: table;
-}
-
-.site-content:before, .site-content:after {
-	content: '';
-	display: table;
-}
-
-.site-footer:before, .site-footer:after {
-	content: '';
-	display: table;
-}
-
-.tg-container:after, .tg-container:before {
-	content: '';
-	display: table;
-}
-
-.clearfix:after, .row:after, .entry-content:after, .comment-content:after, .site-header:after, .site-content:after, .site-footer:after, .tg-container:after, .clear {
+.clear {
 	clear: both;
 }
 
@@ -726,7 +715,7 @@ Preloader CSS
 
 #preloader span {
 	display: block;
-	bottom: 0px;
+	bottom: 0;
 	width: 9px;
 	height: 5px;
 	background: #21858c;
@@ -762,7 +751,7 @@ Preloader CSS
 @-webkit-keyframes preloader {
 	0% {
 		height: 5px;
-		-webkit-transform: translateY(0px);
+		-webkit-transform: translateY(0);
 		background: #21858c;
 	}
 	25% {
@@ -772,12 +761,12 @@ Preloader CSS
 	}
 	50% {
 		height: 5px;
-		-webkit-transform: translateY(0px);
+		-webkit-transform: translateY(0);
 		background: #21858c;
 	}
 	100% {
 		height: 5px;
-		-webkit-transform: translateY(0px);
+		-webkit-transform: translateY(0);
 		background: #21858c;
 	}
 }
@@ -785,8 +774,8 @@ Preloader CSS
 @keyframes preloader {
 	0% {
 		height: 5px;
-		-webkit-transform: translateY(0px);
-		transform: translateY(0px);
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
 		background: #21858c;
 	}
 	25% {
@@ -797,14 +786,14 @@ Preloader CSS
 	}
 	50% {
 		height: 5px;
-		-webkit-transform: translateY(0px);
-		transform: translateY(0px);
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
 		background: #21858c;
 	}
 	100% {
 		height: 5px;
-		-webkit-transform: translateY(0px);
-		transform: translateY(0px);
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
 		background: #21858c;
 	}
 }
@@ -1137,12 +1126,12 @@ Header
 	transition: all 0.5s ease;
 }
 
-#site-navigation .sub-menu li.menu-item-has-children ul li:hover > a {
-	color: #30afb8;
-}
-
 #site-navigation .sub-menu li.menu-item-has-children ul li a {
 	color: #4c5867;
+}
+
+#site-navigation .sub-menu li.menu-item-has-children ul li:hover > a {
+	color: #30afb8;
 }
 
 #site-navigation ul li ul.sub-menu li.menu-item-has-children:hover > ul, #site-navigation ul li ul.sub-menu li.menu-item-has-children.focus > ul {
@@ -1364,8 +1353,8 @@ Header
 
 .boxed .site {
 	background: #fff none repeat scroll 0 0;
-	-webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.3);
-	box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.3);
+	-webkit-box-shadow: 0 0 12px 1px rgba(0, 0, 0, 0.3);
+	box-shadow: 0 0 12px 1px rgba(0, 0, 0, 0.3);
 	margin: 30px 0;
 	position: relative;
 }
@@ -1726,7 +1715,7 @@ Slider
 }
 
 .tg-slider-widget .swiper-button-next::before {
-	content: "\f105";
+	content: "\" /*rtl:"\"*/;
 	font-family: fontawesome;
 	font-size: 30px;
 	color: #313b48;
@@ -1750,7 +1739,7 @@ Slider
 }
 
 .tg-slider-widget .swiper-button-prev::before {
-	content: "\f104";
+	content: "\" /*rtl:"\"*/;
 	font-family: fontawesome;
 	font-size: 30px;
 	color: #313b48;
@@ -1947,14 +1936,9 @@ Section Title
 }
 
 .section-title:after {
-	background: #e1e1e1 none repeat scroll 0 0;
-	bottom: -5px;
 	content: "";
-	height: 1px;
 	left: 50%;
-	margin-left: -50px;
 	position: absolute;
-	width: 100px;
 	background: #30afb8 none repeat scroll 0 0;
 	bottom: -6px;
 	height: 3px;
@@ -2012,17 +1996,8 @@ About
 	padding-left: 3%;
 }
 
-.about-section .section-title::before {
-	left: 0;
-	margin: 0;
+.about-section .section-title::before, .about-section .section-title::after {
 	display: none;
-}
-
-.about-section .section-title::after {
-	left: 0;
-	margin: 0;
-	display: none;
-	margin-left: 35px;
 }
 
 /*--------------------------------------------------------------
@@ -3192,7 +3167,7 @@ Footer
 
 #top-footer .widget ul li::after {
 	color: #fff;
-	content: "\f105";
+	content: "\" /*rtl:"\"*/;
 	font-family: fontawesome;
 	left: 0;
 	position: absolute;
@@ -3414,7 +3389,7 @@ Archive
 
 #secondary .widget ul li::after {
 	color: #000;
-	content: "\f105";
+	content: "\" /*rtl:"\"*/;
 	font-family: fontawesome;
 	left: 0;
 	position: absolute;
@@ -3589,7 +3564,7 @@ Bread Crumb
 
 .breadcrumb-trail.breadcrumbs .trail-items li span::before {
 	color: #a1a1a1;
-	content: "\f105";
+	content: "\" /*rtl:"\"*/;
 	font-family: fontawesome;
 	left: 0;
 	position: absolute;
