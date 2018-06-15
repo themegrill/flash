@@ -200,7 +200,7 @@ function flash_scripts() {
 	wp_register_style( 'swiper', get_template_directory_uri() . '/css/swiper'.$suffix.'.css' , array(), false, false);
 
 	wp_enqueue_style( 'flash-style', get_stylesheet_uri() );
-	wp_enqueue_style( 'flash-rtl-style', get_stylesheet_uri() );
+	wp_style_add_data( 'flash-style', 'rtl', 'replace' );
 
 	// Responsive
 	wp_enqueue_style( 'responsive', get_template_directory_uri() . '/css/responsive'.$suffix.'.css' , array(), false, false);

@@ -2543,7 +2543,7 @@ a:hover {
 	width: 100%;
 	-webkit-transform: scale(1);
 	transform: scale(1);
-	background: transparent -webkit-gradient(linear, right top, right bottom, from(transparent), to(rgba(0, 0, 0, 0.5))) repeat scroll 100% 0;
+	background: transparent -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(0, 0, 0, 0.5))) repeat scroll 100% 0;
 	background: transparent linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.5)) repeat scroll 100% 0;
 }
 

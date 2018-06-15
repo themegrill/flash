@@ -1,0 +1,15 @@
+@function unicode($str) {
+
+    @return unquote('"') + unquote(str-insert($str, "\\", 1)) + unquote('"');
+}
+
+@function lrt-to-rtl($ltr_value, $rtl_value, $is_unicode: false) {
+
+    @if $is_unicode == true {
+
+        @return unicode($ltr_value) #{"/*rtl:" + unicode($rtl_value) + "*/"};
+    } @else {
+
+        @return $ltr_value #{"/*rtl:" + $rtl_value + "*/"};
+    }
+}
