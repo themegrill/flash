@@ -2454,7 +2454,7 @@ Service
 		}
 
 		&:after {
-			content: "\f178";
+			content: lrt-to-rtl("\f178", "\f177", true);
 			font-family: FontAwesome;
 			font-weight: 400;
 			position: absolute;
