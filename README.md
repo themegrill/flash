@@ -80,6 +80,9 @@ Source: https://pixabay.com/en/coffee-book-flowers-setting-2390136/
 Unless otherwise specified, all the theme files, scripts and images including the screenshot image are licensed under [GNU GPL] (http://www.gnu.org/licenses/gpl-3.0.txt), version 3 or later.
 
 == Changelog ==
+= TBD =
+* Feature - Added RTL language support
+
 = 1.2.1 - 2018-04-30 =
 * Feature - Added related posts
 
