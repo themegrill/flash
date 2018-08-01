@@ -312,8 +312,6 @@ require get_template_directory() . '/inc/siteorigin-panels.php';
 require get_template_directory() . '/inc/class-flash-admin.php';
 
 /**
- * Load Demo Importer Configs.
+ * Load Demo Importer compatibility file.
  */
-if ( class_exists( 'TG_Demo_Importer' ) ) {
-	require get_template_directory() . '/inc/demo-config.php';
-}
+require get_template_directory() . '/inc/demo-importer/class-demo-importer.php';
