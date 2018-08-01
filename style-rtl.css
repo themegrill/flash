@@ -799,7 +799,7 @@ common
 }
 
 .post-navigation {
-	margin-top: 30px;
+	margin: 30px 0;
 	display: inline-block;
 	width: 100%;
 }
@@ -1397,6 +1397,10 @@ a,
 	border-top: none;
 	border-right: none;
 	border-bottom: 1px solid #a1a1a1;
+}
+
+.header-bottom .search-box button[type="submit"] {
+	margin-bottom: 0;
 }
 
 .header-bottom .searchform .btn {
@@ -3520,6 +3524,10 @@ Archive
 
 #secondary .searchform .btn:hover {
 	background: #30afb8 none repeat scroll 100% 0;
+}
+
+#secondary .searchform button[type="submit"] {
+	margin-bottom: 0;
 }
 
 #secondary .widget {
