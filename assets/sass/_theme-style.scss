@@ -2923,9 +2923,7 @@ Feature product
 			-ms-transform: scale(1);
 			-o-transform: scale(1);
 			transform: scale(1);
-			background: transparent
-			linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.5)) repeat
-			scroll 0 0;
+			background: transparent	linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.5)) repeat scroll 0 0;
 			
 			&:before,
 			span {
@@ -3573,12 +3571,6 @@ Clients
 --------------------------------------------------------------*/
 
 .client-wrapper.swiper-wrapper {
-	display: -webkit-flex;
-	
-	/* Safari */
-	-webkit-justify-content: center;
-	
-	/* Safari 6.1+ */
 	display: flex;
 	justify-content: center;
 	margin: 0 auto;
