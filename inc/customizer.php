@@ -39,61 +39,6 @@ Kirki::add_panel( 'flash_theme_options', array(
 	'title'       => esc_html__( 'Flash Theme Options', 'flash' ),
 ) );
 
-/** Important Links Section */
-Kirki::add_section( 'flash_important_links', array(
-	'title'          => esc_html__( 'Flash Important Links', 'flash' ),
-	'priority'       => 10,
-	'capability'     => 'edit_theme_options',
-) );
-
-Kirki::add_field( 'flash_config', array(
-	'type'        => 'custom',
-	'settings'    => 'flash_view_pro_link',
-	'section'     => 'flash_important_links',
-	'default'     => '<a target="_blank" href="' . esc_url( 'https://themegrill.com/themes/flash/' ) . '">'.esc_html( 'View Pro', 'flash' ).'</a>',
-	'priority'    => 10,
-) );
-
-Kirki::add_field( 'flash_config', array(
-	'type'        => 'custom',
-	'settings'    => 'flash_theme_info_link',
-	'section'     => 'flash_important_links',
-	'default'     => '<a target="_blank" href="' . esc_url( 'https://themegrill.com/themes/flash/' ) . '">'.esc_html( 'Theme Info', 'flash' ).'</a>',
-	'priority'    => 20,
-) );
-
-Kirki::add_field( 'flash_config', array(
-	'type'        => 'custom',
-	'settings'    => 'flash_support_link',
-	'section'     => 'flash_important_links',
-	'default'     => '<a target="_blank" href="' . esc_url( 'https://themegrill.com/support-forum/' ) . '">'.esc_html( 'Support', 'flash' ).'</a>',
-	'priority'    => 30,
-) );
-
-Kirki::add_field( 'flash_config', array(
-	'type'        => 'custom',
-	'settings'    => 'flash_doc_link',
-	'section'     => 'flash_important_links',
-	'default'     => '<a target="_blank" href="' . esc_url( 'https://docs.themegrill.com/flash/' ) . '">'.esc_html( 'Documentation', 'flash' ).'</a>',
-	'priority'    => 40,
-) );
-
-Kirki::add_field( 'flash_config', array(
-	'type'        => 'custom',
-	'settings'    => 'flash_demo_link',
-	'section'     => 'flash_important_links',
-	'default'     => '<a target="_blank" href="' . esc_url( 'https://demo.themegrill.com/flash/demos/' ) . '">'.esc_html( 'View Free Demos', 'flash' ).'</a>',
-	'priority'    => 50,
-) );
-
-Kirki::add_field( 'flash_config', array(
-	'type'        => 'custom',
-	'settings'    => 'flash_pro_demo_link',
-	'section'     => 'flash_important_links',
-	'default'     => '<a target="_blank" href="' . esc_url( 'https://demo.themegrill.com/flash-pro/demos/' ) . '">'.esc_html( 'View Pro Demos', 'flash' ).'</a>',
-	'priority'    => 50,
-) );
-
 /** General Section */
 Kirki::add_section( 'flash_general_options', array(
 	'title'          => esc_html__( 'General Settings', 'flash' ),
@@ -1337,6 +1282,61 @@ function flash_frontend_css() {
 }
 add_action( 'wp_enqueue_scripts', 'flash_frontend_css', 14 );
 
+add_action( 'customize_register', 'flash_upsell_options' );
+
+function flash_upsell_options( $wp_customize ) {
+
+	/**
+	 * Class to include upsell link campaign for theme.
+	 *
+	 * Class FLASH_Upsell_Section
+	 */
+	class FLASH_Upsell_Section extends WP_Customize_Section {
+		public $type = 'flash-upsell-section';
+		public $url  = '';
+		public $id   = '';
+
+		/**
+		 * Gather the parameters passed to client JavaScript via JSON.
+		 *
+		 * @return array The array to be exported to the client as JSON.
+		 */
+		public function json() {
+			$json        = parent::json();
+			$json['url'] = esc_url( $this->url );
+			$json['id']  = $this->id;
+
+			return $json;
+		}
+
+		/**
+		 * An Underscore (JS) template for rendering this section.
+		 */
+		protected function render_template() {
+			?>
+			<li id="accordion-section-{{ data.id }}" class="flash-upsell-accordion-section control-section-{{ data.type }} cannot-expand accordion-section">
+				<h3 class="accordion-section-title"><a href="{{{ data.url }}}" target="_blank">{{ data.title }}</a></h3>
+			</li>
+			<?php
+		}
+	}
+
+	// Register `FLASH_Upsell_Section` type section.
+	$wp_customize->register_section_type( 'FLASH_Upsell_Section' );
+
+	// Add `FLASH_Upsell_Section` to display pro link.
+	$wp_customize->add_section(
+		new FLASH_Upsell_Section( $wp_customize, 'flash_upsell_section',
+			array(
+				'title'      => esc_html__( 'View PRO version', 'flash' ),
+				'url'        => 'https://themegrill.com/themes/flash/?utm_source=flash-customizer&utm_medium=view-pro-link&utm_campaign=view-pro#free-vs-pro',
+				'capability' => 'edit_theme_options',
+				'priority'   => 1,
+			)
+		)
+	);
+}
+
 /*
  * Custom Scripts
  */
@@ -1368,5 +1368,22 @@ function flash_customizer_custom_scripts() { ?>
 		background:#1C9BA4;
 	}
 </style>
+
+	<script>
+		( function ( $, api ) {
+			api.sectionConstructor['flash-upsell-section'] = api.Section.extend( {
+
+				// No events for this type of section.
+				attachEvents : function () {
+				},
+
+				// Always make the section active.
+				isContextuallyActive : function () {
+					return true;
+				}
+			} );
+		} )( jQuery, wp.customize );
+
+	</script>
 <?php
 }
