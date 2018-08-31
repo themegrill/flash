@@ -81,6 +81,7 @@ Unless otherwise specified, all the theme files, scripts and images including th
 
 == Changelog ==
 = TBD =
+* Update - Upsell link
 * Update - Screenshot updated as per new wordpress.org guideline
 
 = 1.2.2 - 2018-06-18 =
