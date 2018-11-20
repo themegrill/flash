@@ -2553,9 +2553,6 @@ Archive
     margin-right: 30px;
     width: 33.7%; }
 
-.entry-content-block {
-  overflow: hidden; }
-
 .entry-meta .entry-date a .updated:not(.published) {
   display: none; }
 
