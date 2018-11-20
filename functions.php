@@ -93,6 +93,9 @@ function flash_setup() {
 	 * Enable Support for selective refresh widgets in Customizer
 	 */
 	add_theme_support( 'customize-selective-refresh-widgets' );
+
+	// Gutenberg layout support.
+	add_theme_support( 'align-wide' );
 }
 endif;
 add_action( 'after_setup_theme', 'flash_setup' );
