@@ -59,7 +59,7 @@ module.exports = function( grunt ){
 			compile: {
 				files: [{
 					expand: true,
-					cwd: '<%= dirs.css %>/',
+					cwd: 'assets/<%= dirs.css %>/',
 					src: ['*.scss'],
 					dest: '',
 					ext: '.css'
