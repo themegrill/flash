@@ -51,3 +51,16 @@ function flash_woocommerce_header_add_to_cart_fragment( $fragments ) {
 	$fragments['div.flash-cart-views'] = ob_get_clean();
 	return $fragments;
 }
+
+/**
+ * Check if the current viewed page is of WooCommerce
+ *
+ * @return void
+ */
+function flash_is_woocommerce_pages() {
+	if ( is_shop() || is_product() || is_product_category() || is_product_tag() ) {
+		return true;
+	}
+
+	return false;
+}
