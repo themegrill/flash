@@ -39,61 +39,6 @@ Kirki::add_panel( 'flash_theme_options', array(
 	'title'       => esc_html__( 'Flash Theme Options', 'flash' ),
 ) );
 
-/** Important Links Section */
-Kirki::add_section( 'flash_important_links', array(
-	'title'          => esc_html__( 'Flash Important Links', 'flash' ),
-	'priority'       => 10,
-	'capability'     => 'edit_theme_options',
-) );
-
-Kirki::add_field( 'flash_config', array(
-	'type'        => 'custom',
-	'settings'    => 'flash_view_pro_link',
-	'section'     => 'flash_important_links',
-	'default'     => '<a target="_blank" href="' . esc_url( 'https://themegrill.com/themes/flash/' ) . '">'.esc_html( 'View Pro', 'flash' ).'</a>',
-	'priority'    => 10,
-) );
-
-Kirki::add_field( 'flash_config', array(
-	'type'        => 'custom',
-	'settings'    => 'flash_theme_info_link',
-	'section'     => 'flash_important_links',
-	'default'     => '<a target="_blank" href="' . esc_url( 'https://themegrill.com/themes/flash/' ) . '">'.esc_html( 'Theme Info', 'flash' ).'</a>',
-	'priority'    => 20,
-) );
-
-Kirki::add_field( 'flash_config', array(
-	'type'        => 'custom',
-	'settings'    => 'flash_support_link',
-	'section'     => 'flash_important_links',
-	'default'     => '<a target="_blank" href="' . esc_url( 'https://themegrill.com/support-forum/' ) . '">'.esc_html( 'Support', 'flash' ).'</a>',
-	'priority'    => 30,
-) );
-
-Kirki::add_field( 'flash_config', array(
-	'type'        => 'custom',
-	'settings'    => 'flash_doc_link',
-	'section'     => 'flash_important_links',
-	'default'     => '<a target="_blank" href="' . esc_url( 'https://docs.themegrill.com/flash/' ) . '">'.esc_html( 'Documentation', 'flash' ).'</a>',
-	'priority'    => 40,
-) );
-
-Kirki::add_field( 'flash_config', array(
-	'type'        => 'custom',
-	'settings'    => 'flash_demo_link',
-	'section'     => 'flash_important_links',
-	'default'     => '<a target="_blank" href="' . esc_url( 'https://demo.themegrill.com/flash/demos/' ) . '">'.esc_html( 'View Free Demos', 'flash' ).'</a>',
-	'priority'    => 50,
-) );
-
-Kirki::add_field( 'flash_config', array(
-	'type'        => 'custom',
-	'settings'    => 'flash_pro_demo_link',
-	'section'     => 'flash_important_links',
-	'default'     => '<a target="_blank" href="' . esc_url( 'https://demo.themegrill.com/flash-pro/demos/' ) . '">'.esc_html( 'View Pro Demos', 'flash' ).'</a>',
-	'priority'    => 50,
-) );
-
 /** General Section */
 Kirki::add_section( 'flash_general_options', array(
 	'title'          => esc_html__( 'General Settings', 'flash' ),
@@ -406,6 +351,34 @@ Kirki::add_section( 'flash_post_options', array(
 	'priority'       => 60,
 	'capability'     => 'edit_theme_options',
 
+) );
+
+/** Related Posts option */
+Kirki::add_field( 'flash_config', array(
+	'type'        => 'switch',
+	'settings'    => 'flash_related_post_option',
+	'label'       => esc_html__( 'Enable Related Posts', 'flash' ),
+	'section'     => 'flash_post_options',
+	'default'     => 0,
+) );
+
+Kirki::add_field( 'flash_config', array(
+	'type'        => 'radio',
+	'settings'    => 'flash_related_post_option_display',
+	'label'       => esc_html__( 'Display Related Posts By:', 'flash' ),
+	'section'     => 'flash_post_options',
+	'default'     => 'categories',
+	'choices'     => array(
+		'categories'   => esc_attr__( 'Categories', 'flash' ),
+		'tags' => esc_attr__( 'Tags', 'flash' ),
+	),
+	'active_callback' => array(
+		array(
+			'setting'  => 'flash_related_post_option',
+			'operator' => '==',
+			'value'    => 1,
+		),
+	),
 ) );
 
 /** Post Layout */
@@ -976,7 +949,7 @@ function flash_get_color_scheme_css( $colors ) {
 	}
 
 	/* Link Color */
-	#site-navigation ul li:hover > a,#site-navigation ul li.current-menu-item > a,#site-navigation ul li.current_page_item  > a,#site-navigation ul.sub-menu li:hover > a,#site-navigation ul li ul.sub-menu li.menu-item-has-children ul li:hover > a,#site-navigation ul li ul.sub-menu li.menu-item-has-children:hover > .menu-item,body.transparent #masthead .header-bottom #site-navigation ul li:hover > .menu-item,body.transparent #masthead .header-bottom #site-navigation ul li:hover > a,body.transparent #masthead .header-bottom #site-navigation ul.sub-menu li:hover > a,body.transparent #masthead .header-bottom #site-navigation ul.sub-menu li.menu-item-has-children ul li:hover > a,body.transparent.header-sticky #masthead-sticky-wrapper #masthead .header-bottom #site-navigation ul.sub-menu li > a:hover,.tg-service-widget .service-title-wrap a:hover,.tg-service-widget .service-more,.feature-product-section .button-group button:hover ,.fun-facts-section .fun-facts-icon-wrap,.fun-facts-section .tg-fun-facts-widget.tg-fun-facts-layout-2 .counter-wrapper,.blog-section .tg-blog-widget-layout-2 .blog-content .read-more-container .read-more a,footer.footer-layout #top-footer .widget-title::first-letter,footer.footer-layout #top-footer .widget ul li a:hover,footer.footer-layout #bottom-footer .copyright .copyright-text a:hover,footer.footer-layout #bottom-footer .footer-menu ul li a:hover,.archive #primary .entry-content-block h2.entry-title a:hover,.blog #primary .entry-content-block h2.entry-title a:hover,#secondary .widget ul li a:hover,.woocommerce-Price-amount.amount,.team-wrapper .team-content-wrapper .team-social a:hover,.testimonial-container .testimonial-wrapper .testimonial-slide .testominial-content-wrapper .testimonial-icon,.footer-menu li a:hover,.tg-feature-product-filter-layout .button.is-checked:hover,.testimonial-container .testimonial-icon,#site-navigation ul li.menu-item-has-children:hover > .sub-toggle,#secondary .widget ul li a,#comments .comment-list article.comment-body .reply a,.tg-slider-widget .btn-wrapper a{
+	#site-navigation ul li:hover > a, #site-navigation ul li.current-menu-item > a, #site-navigation ul li.current_page_item > a, #site-navigation ul li.current_page_ancestor > a, #site-navigation ul li.current-menu-ancestor > a, #site-navigation ul.sub-menu li:hover > a,#site-navigation ul li ul.sub-menu li.menu-item-has-children ul li:hover > a,#site-navigation ul li ul.sub-menu li.menu-item-has-children:hover > .menu-item,body.transparent #masthead .header-bottom #site-navigation ul li:hover > .menu-item,body.transparent #masthead .header-bottom #site-navigation ul li:hover > a,body.transparent #masthead .header-bottom #site-navigation ul.sub-menu li:hover > a,body.transparent #masthead .header-bottom #site-navigation ul.sub-menu li.menu-item-has-children ul li:hover > a,body.transparent.header-sticky #masthead-sticky-wrapper #masthead .header-bottom #site-navigation ul.sub-menu li > a:hover,.tg-service-widget .service-title-wrap a:hover,.tg-service-widget .service-more,.feature-product-section .button-group button:hover ,.fun-facts-section .fun-facts-icon-wrap,.fun-facts-section .tg-fun-facts-widget.tg-fun-facts-layout-2 .counter-wrapper,.blog-section .tg-blog-widget-layout-2 .blog-content .read-more-container .read-more a,footer.footer-layout #top-footer .widget-title::first-letter,footer.footer-layout #top-footer .widget ul li a:hover,footer.footer-layout #bottom-footer .copyright .copyright-text a:hover,footer.footer-layout #bottom-footer .footer-menu ul li a:hover,.archive #primary .entry-content-block h2.entry-title a:hover,.blog #primary .entry-content-block h2.entry-title a:hover,#secondary .widget ul li a:hover,.woocommerce-Price-amount.amount,.team-wrapper .team-content-wrapper .team-social a:hover,.testimonial-container .testimonial-wrapper .testimonial-slide .testominial-content-wrapper .testimonial-icon,.footer-menu li a:hover,.tg-feature-product-filter-layout .button.is-checked:hover,.testimonial-container .testimonial-icon,#site-navigation ul li.menu-item-has-children:hover > .sub-toggle,#secondary .widget ul li a,#comments .comment-list article.comment-body .reply a,.tg-slider-widget .btn-wrapper a{
 		color: {$colors['link_color']};
 	}
 
@@ -1103,7 +1076,8 @@ function flash_link_color_css() {
 
 	$css = '
 	/* Custom Link Color */
-		#site-navigation ul li:hover > a,#site-navigation ul li.current-menu-item > a,#site-navigation ul li.current_page_item  > a,#site-navigation ul.sub-menu li:hover > a,#site-navigation ul li ul.sub-menu li.menu-item-has-children ul li:hover > a,#site-navigation ul li ul.sub-menu li.menu-item-has-children:hover > .menu-item,body.transparent #masthead .header-bottom #site-navigation ul li:hover > .menu-item,body.transparent #masthead .header-bottom #site-navigation ul li:hover > a,body.transparent #masthead .header-bottom #site-navigation ul.sub-menu li:hover > a,body.transparent #masthead .header-bottom #site-navigation ul.sub-menu li.menu-item-has-children ul li:hover > a,body.transparent.header-sticky #masthead-sticky-wrapper #masthead .header-bottom #site-navigation ul.sub-menu li > a:hover,.tg-service-widget .service-title-wrap a:hover,.tg-service-widget .service-more,.feature-product-section .button-group button:hover ,.fun-facts-section .fun-facts-icon-wrap,.fun-facts-section .tg-fun-facts-widget.tg-fun-facts-layout-2 .counter-wrapper,.blog-section .tg-blog-widget-layout-2 .blog-content .read-more-container .read-more a,footer.footer-layout #top-footer .widget-title::first-letter,footer.footer-layout #top-footer .widget ul li a:hover,footer.footer-layout #bottom-footer .copyright .copyright-text a:hover,footer.footer-layout #bottom-footer .footer-menu ul li a:hover,.archive #primary .entry-content-block h2.entry-title a:hover,.blog #primary .entry-content-block h2.entry-title a:hover,#secondary .widget ul li a:hover,.woocommerce-Price-amount.amount,.team-wrapper .team-content-wrapper .team-social a:hover,.testimonial-container .testimonial-wrapper .testimonial-slide .testominial-content-wrapper .testimonial-icon,.footer-menu li a:hover,.tg-feature-product-filter-layout .button.is-checked:hover,.testimonial-container .testimonial-icon,#site-navigation ul li.menu-item-has-children:hover > .sub-toggle,.woocommerce-error::before, .woocommerce-info::before, .woocommerce-message::before,#primary .post .entry-content-block .entry-meta a:hover,#primary .post .entry-content-block .entry-meta span:hover,.entry-meta span:hover a,.post .entry-content-block .entry-footer span a:hover,#secondary .widget ul li a,#comments .comment-list article.comment-body .reply a,.tg-slider-widget .btn-wrapper a,.entry-content a{
+	#site-navigation ul li:hover > a, #site-navigation ul li.current-menu-item > a, #site-navigation ul li.current_page_item > a, #site-navigation ul li.current_page_ancestor > a, #site-navigation ul li.current-menu-ancestor > a,#site-navigation ul.sub-menu li:hover > a,#site-navigation ul li ul.sub-menu li.menu-item-has-children ul li:hover > a,#site-navigation ul li ul.sub-menu li.menu-item-has-children:hover > .menu-item,body.transparent #masthead .header-bottom #site-navigation ul li:hover > .menu-item,body.transparent #masthead .header-bottom #site-navigation ul li:hover > a,body.transparent #masthead .header-bottom #site-navigation ul.sub-menu li:hover > a,body.transparent #masthead .header-bottom #site-navigation ul.sub-menu li.menu-item-has-children ul li:hover > a,body.transparent.header-sticky #masthead-sticky-wrapper #masthead .header-bottom #site-navigation ul.sub-menu li > a:hover,.tg-service-widget .service-title-wrap a:hover,.tg-service-widget .service-more,.feature-product-section .button-group button:hover ,.fun-facts-section .fun-facts-icon-wrap,.fun-facts-section .tg-fun-facts-widget.tg-fun-facts-layout-2 .counter-wrapper,.blog-section .tg-blog-widget-layout-2 .blog-content .read-more-container .read-more a,footer.footer-layout #top-footer .widget-title::first-letter,footer.footer-layout #top-footer .widget ul li a:hover,footer.footer-layout #bottom-footer .copyright .copyright-text a:hover,footer.footer-layout #bottom-footer .footer-menu ul li a:hover,.archive #primary .entry-content-block h2.entry-title a:hover,.blog #primary .entry-content-block h2.entry-title a:hover,#secondary .widget ul li a:hover,.woocommerce-Price-amount.amount,.team-wrapper .team-content-wrapper .team-social a:hover,.testimonial-container .testimonial-wrapper .testimonial-slide .testominial-content-wrapper .testimonial-icon,.footer-menu li a:hover,.tg-feature-product-filter-layout .button.is-checked:hover,.testimonial-container .testimonial-icon,#site-navigation ul li.menu-item-has-children:hover > .sub-toggle,.woocommerce-error::before, .woocommerce-info::before, .woocommerce-message::before,#primary .post .entry-content-block .entry-meta a:hover,#primary .post .entry-content-block .entry-meta span:hover,.entry-meta span:hover a,.post .entry-content-block .entry-footer span a:hover,#secondary .widget ul li a,#comments .comment-list article.comment-body .reply a,.tg-slider-widget .btn-wrapper a,.entry-content a, .related-posts-wrapper .entry-title a:hover,
+		.related-posts-wrapper .entry-meta > span a:hover{
 			color: %1$s;
 	}
 
@@ -1308,6 +1282,61 @@ function flash_frontend_css() {
 }
 add_action( 'wp_enqueue_scripts', 'flash_frontend_css', 14 );
 
+add_action( 'customize_register', 'flash_upsell_options' );
+
+function flash_upsell_options( $wp_customize ) {
+
+	/**
+	 * Class to include upsell link campaign for theme.
+	 *
+	 * Class FLASH_Upsell_Section
+	 */
+	class FLASH_Upsell_Section extends WP_Customize_Section {
+		public $type = 'flash-upsell-section';
+		public $url  = '';
+		public $id   = '';
+
+		/**
+		 * Gather the parameters passed to client JavaScript via JSON.
+		 *
+		 * @return array The array to be exported to the client as JSON.
+		 */
+		public function json() {
+			$json        = parent::json();
+			$json['url'] = esc_url( $this->url );
+			$json['id']  = $this->id;
+
+			return $json;
+		}
+
+		/**
+		 * An Underscore (JS) template for rendering this section.
+		 */
+		protected function render_template() {
+			?>
+			<li id="accordion-section-{{ data.id }}" class="flash-upsell-accordion-section control-section-{{ data.type }} cannot-expand accordion-section">
+				<h3 class="accordion-section-title"><a href="{{{ data.url }}}" target="_blank">{{ data.title }}</a></h3>
+			</li>
+			<?php
+		}
+	}
+
+	// Register `FLASH_Upsell_Section` type section.
+	$wp_customize->register_section_type( 'FLASH_Upsell_Section' );
+
+	// Add `FLASH_Upsell_Section` to display pro link.
+	$wp_customize->add_section(
+		new FLASH_Upsell_Section( $wp_customize, 'flash_upsell_section',
+			array(
+				'title'      => esc_html__( 'View PRO version', 'flash' ),
+				'url'        => 'https://themegrill.com/themes/flash/?utm_source=flash-customizer&utm_medium=view-pro-link&utm_campaign=view-pro#free-vs-pro',
+				'capability' => 'edit_theme_options',
+				'priority'   => 1,
+			)
+		)
+	);
+}
+
 /*
  * Custom Scripts
  */
@@ -1316,9 +1345,42 @@ add_action( 'customize_controls_print_footer_scripts', 'flash_customizer_custom_
 function flash_customizer_custom_scripts() { ?>
 <style>
 	/* Theme Instructions Panel CSS */
-	li#accordion-section-flash_important_links h3.accordion-section-title, li#accordion-section-flash_important_links h3.accordion-section-title:focus { background-color: #30AFB8 !important; color: #fff !important; }
-	li#accordion-section-flash_important_links h3.accordion-section-title:hover { background-color: #1C9BA4 !important; color: #fff !important; }
-	li#accordion-section-flash_important_links h3.accordion-section-title:after { color: #fff !important; }
+	li#accordion-section-flash_upsell_section h3.accordion-section-title {
+		background-color: #30AFB8 !important;
+		border-left-color: #14848c !important;
+		color: #fff !important;
+	}
+
+	#accordion-section-flash_upsell_section h3 a:after {
+		content: '\f345';
+		color: #fff;
+		position: absolute;
+		top: 12px;
+		right: 10px;
+		z-index: 1;
+		font: 400 20px/1 dashicons;
+		speak: none;
+		display: block;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		text-decoration: none!important;
+	}
+
+	li#accordion-section-flash_upsell_section h3.accordion-section-title a {
+		display: block;
+		color: #fff !important;
+		text-decoration: none;
+	}
+	li#accordion-section-flash_upsell_section h3.accordion-section-title a:focus {
+		box-shadow: none;
+	}
+	li#accordion-section-flash_upsell_section h3.accordion-section-title:hover {
+		background-color: #1C9BA4 !important;
+		color: #fff !important;
+	}
+	li#accordion-section-flash_upsell_section h3.accordion-section-title:after {
+		color: #fff !important;
+	}
 	/* Upsell button CSS */
 	#sub-accordion-section-flash_important_links a {
 		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#8fc800+0,8fc800+100;Green+Flat+%232 */
@@ -1339,5 +1401,22 @@ function flash_customizer_custom_scripts() { ?>
 		background:#1C9BA4;
 	}
 </style>
+
+	<script>
+		( function ( $, api ) {
+			api.sectionConstructor['flash-upsell-section'] = api.Section.extend( {
+
+				// No events for this type of section.
+				attachEvents : function () {
+				},
+
+				// Always make the section active.
+				isContextuallyActive : function () {
+					return true;
+				}
+			} );
+		} )( jQuery, wp.customize );
+
+	</script>
 <?php
 }

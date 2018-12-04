@@ -2,7 +2,7 @@
 Author: ThemeGrill
 Requires at least: WordPress 4.3
 Tested up to: WordPress 4.6
-Version: 1.1.7
+Version: 1.2.2
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 Tags: one-column, two-columns, left-sidebar, right-sidebar, grid-layout, custom-background, custom-colors, custom-menu, custom-logo, featured-images, footer-widgets, full-width-template, theme-options, threaded-comments, translation-ready, blog, e-commerce
@@ -83,6 +83,29 @@ Unless otherwise specified, all the theme files, scripts and images including th
 = TBD = 
 * Fix   - Woocommerce page not showing left sidebar
 
+= Version 1.2.4 - 2018-11-20 =
+* Added - Gutenberg compatibility
+
+= Version 1.2.3 - 2018-08-31 =
+* Update - Upsell link
+* Update - Screenshot updated as per new wordpress.org guideline
+
+= 1.2.2 - 2018-06-18 =
+* Feature - Added RTL language support
+
+= 1.2.1 - 2018-04-30 =
+* Feature - Added related posts
+
+= 1.2.0 - 2018-04-30 =
+* Tweak - Fixed deprecated WC function Fix
+
+= 1.1.9 - 2018-04-02 =
+* Fix - Responsive menu item click on onepage.
+
+= 1.1.8 - 2018-03-23 =
+* Tweak - Submenu accessible in touchscreen
+* Fix - Scrollbar on sticky small screen menu.
+
 = 1.1.7 - 2017-11-15 =
 * Tweak - Kirki updated to `v3.0.15`
 
@@ -101,10 +124,10 @@ Unless otherwise specified, all the theme files, scripts and images including th
 
 = 1.1.4 - 2017-08-08 =
 * Tweak - Updated fontawesome to `v4.7.0` and it's list files
-* Fix   - Scroll offset for one page menu 
+* Fix   - Scroll offset for one page menu
 * Tweak - Kirki updated to `v3.0.9`
-* Fix   - Menu alignment center 
-* Fix   - Blog widget styling 
+* Fix   - Menu alignment center
+* Fix   - Blog widget styling
 * Fix 	- List style in post
 * Tweak - Migrated demo preview screen shots
 

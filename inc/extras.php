@@ -117,7 +117,7 @@ function flash_footer_copyright() {
 	<span class="copyright-text">
 		<?php printf( esc_html__( 'Copyright %1$s %2$s', 'flash' ), '&copy; ', date( 'Y' ) ); ?>
 		<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php echo get_bloginfo( 'name' ); ?></a>
-		<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'flash' ), 'Flash', '<a href="http://themegrill.com/themes/flash" rel="designer">ThemeGrill</a>' ); ?>
+		<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'flash' ), 'Flash', '<a href="http://themegrill.com/themes/flash" rel="author">ThemeGrill</a>' ); ?>
 		<?php printf( esc_html__( 'Proudly powered by %s', 'flash' ), '<a href="'.esc_url( __( 'https://wordpress.org/', 'flash' ) ).'">' . esc_html__( 'WordPress', 'flash' ) . '</a>' ); ?>
 	</span>
 </div><!-- .copyright -->
@@ -524,7 +524,7 @@ function flash_custom_fonts() {
 function flash_is_woocommerce_page () {
 
 	if(  flash_is_woocommerce_active() ) {
-		
+
 		if( is_woocommerce() ) {
 			return true;
 		}
@@ -703,3 +703,47 @@ function flash_custom_css_migrate() {
 }
 
 add_action( 'after_setup_theme', 'flash_custom_css_migrate' );
+
+if ( ! function_exists( 'flash_related_posts' ) ) {
+
+	/**
+	* Display the related posts.
+	*/
+function flash_related_posts() {
+		wp_reset_postdata();
+		global $post;
+
+		// Define shared post arguments
+		$args = array(
+			'no_found_rows'          => true,
+			'update_post_meta_cache' => false,
+			'update_post_term_cache' => false,
+			'ignore_sticky_posts'    => 1,
+			'orderby'                => 'rand',
+			'post__not_in'           => array( $post->ID ),
+			'posts_per_page'         => 3,
+		);
+
+		// Related by categories.
+		if ( get_theme_mod( 'flash_related_post_option_display', 'categories' ) == 'categories' ) {
+			$cats                 = wp_get_post_categories( $post->ID, array( 'fields' => 'ids' ) );
+			$args['category__in'] = $cats;
+		}
+
+		// Related by tags.
+		if ( get_theme_mod( 'flash_related_post_option_display', 'categories' ) == 'tags' ) {
+			$tags            = wp_get_post_tags( $post->ID, array( 'fields' => 'ids' ) );
+			$args['tag__in'] = $tags;
+
+			if ( ! $tags ) {
+				$break = true;
+			}
+		}
+
+		$query = ! isset( $break ) ? new WP_Query( $args ) : new WP_Query();
+
+		return $query;
+
+	}
+
+}

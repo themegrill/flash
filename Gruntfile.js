@@ -36,7 +36,8 @@ module.exports = function( grunt ){
 					expand: true,
 					cwd: '<%= dirs.js %>/',
 					src: [
-						'flash.js'
+						'flash.js',
+						'navigation.js'
 					],
 					dest: '<%= dirs.js %>/',
 					ext: '.min.js'
@@ -58,7 +59,7 @@ module.exports = function( grunt ){
 			compile: {
 				files: [{
 					expand: true,
-					cwd: '<%= dirs.css %>/',
+					cwd: 'assets/<%= dirs.css %>/',
 					src: ['*.scss'],
 					dest: '',
 					ext: '.css'

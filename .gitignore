@@ -10,6 +10,13 @@ project.properties
 # Sass
 .sass-cache
 
+# Dependencies
+/node_modules/
+/deploy/
+/vendor/
+/dist/
+package-lock.json
+
 # Grunt
 /node_modules/
 /deploy/
