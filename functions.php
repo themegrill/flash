@@ -315,6 +315,11 @@ require get_template_directory() . '/inc/siteorigin-panels.php';
 require get_template_directory() . '/inc/class-flash-admin.php';
 
 /**
+ * Load new theme notice file.
+ */
+require get_template_directory() . '/inc/class-flash-new-theme-notice.php';
+
+/**
  * Load Demo Importer Configs.
  */
 if ( class_exists( 'TG_Demo_Importer' ) ) {
