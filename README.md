@@ -81,7 +81,8 @@ Unless otherwise specified, all the theme files, scripts and images including th
 
 == Changelog ==
 = TBD = 
-* Fix   - Woocommerce page not showing left sidebar
+* Fix - Gallery margin for Gutenberg
+* Fix - Woocommerce page not showing left sidebar
 
 = Version 1.2.4 - 2018-11-20 =
 * Added - Gutenberg compatibility
