@@ -82,6 +82,7 @@ Unless otherwise specified, all the theme files, scripts and images including th
 == Changelog ==
 = TBD =
 * Updated - Isotope library to 3.0.6 
+* Updated - Kirki to 3.0.35.3
 
 = Version 1.2.5 - 2018-12-05 =
 * Fix - Gallery margin for Gutenberg
