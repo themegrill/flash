@@ -8,9 +8,11 @@
  * @package     Kirki
  * @subpackage  Controls
  * @copyright   Copyright (c) 2017, Aristeides Stathopoulos
- * @license     http://opensource.org/licenses/https://opensource.org/licenses/MIT
+ * @license    https://opensource.org/licenses/MIT
  * @since       1.0
  */
+
+// @codingStandardsIgnoreFile Generic.Files.OneClassPerFile.MultipleFound Generic.Classes.DuplicateClassName.Found
 
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -18,45 +20,55 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Adds a "code" control, using CodeMirror.
+ * Show warning if old WordPress.
  */
-class Kirki_Control_Code extends Kirki_Control_Base {
-
+if ( ! class_exists( 'WP_Customize_Code_Editor_Control' ) ) {
 	/**
-	 * The control type.
-	 *
-	 * @access public
-	 * @var string
+	 * Adds a warning message instead of the control.
 	 */
-	public $type = 'kirki-code';
+	class Kirki_Control_Code extends Kirki_Control_Base {
 
-	/**
-	 * An Underscore (JS) template for this control's content (but not its container).
-	 *
-	 * Class variables for this control class are available in the `data` JS object;
-	 * export custom variables by overriding {@see WP_Customize_Control::to_json()}.
-	 *
-	 * @see WP_Customize_Control::print_template()
-	 *
-	 * @access protected
-	 */
-	protected function content_template() {
-		global $wp_version;
-		// If we're on WP 4.9+, then we don't need to add anything here.
-		if ( version_compare( $wp_version, '4.9-beta' ) >= 0 ) {
-			return;
+		/**
+		 * The message.
+		 *
+		 * @since 3.0.21
+		 */
+		protected function content_template() {
+			?>
+			<div class="notice notice-error" data-type="error"><div class="notification-message">
+				<?php esc_html_e( 'Please update your WordPress installation to a version newer than 4.9 to access the code control.', 'kirki' ); ?>
+			</div></div>
+			<?php
 		}
-		?>
-		<label>
-			<# if ( data.label ) { #><span class="customize-control-title">{{{ data.label }}}</span><# } #>
-			<!-- Hardcoded error message for older WordPress versions. -->
-			<ul><li class="notice notice-warning"><?php esc_attr_e( 'Update to WordPress 4.9 or greater for syntax highlighting.', 'kirki' ); ?></li></ul>
+	}
+} else {
 
-			<# if ( data.description ) { #><span class="description customize-control-description">{{{ data.description }}}</span><# } #>
-			<div class="codemirror-kirki-wrapper">
-				<textarea {{{ data.inputAttrs }}} data-language="{{ data.choices.language }}" class="kirki-codemirror-editor" {{{ data.link }}}>{{{ data.value }}}</textarea>
-			</div>
-		</label>
-		<?php
+	/**
+	 * Adds a "code" control, alias of the WP_Customize_Code_Editor_Control class.
+	 */
+	class Kirki_Control_Code extends WP_Customize_Code_Editor_Control {
+
+		/**
+		 * Whitelisting the "required" argument.
+		 *
+		 * @since 3.0.17
+		 * @access public
+		 * @var array
+		 */
+		public $required = array();
+
+		/**
+		 * Refresh the parameters passed to the JavaScript via JSON.
+		 *
+		 * @see WP_Customize_Control::to_json()
+		 */
+		public function to_json() {
+
+			// Get the basics from the parent class.
+			parent::to_json();
+
+			// Required.
+			$this->json['required'] = $this->required;
+		}
 	}
 }

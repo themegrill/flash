@@ -8,7 +8,7 @@
  * @category    Core
  * @author      Aristeides Stathopoulos
  * @copyright   Copyright (c) 2017, Aristeides Stathopoulos
- * @license     http://opensource.org/licenses/https://opensource.org/licenses/MIT
+ * @license    https://opensource.org/licenses/MIT
  * @since       1.0
  */
 
@@ -80,6 +80,36 @@ class Kirki extends Kirki_Init {
 	public static $sections = array();
 
 	/**
+	 * An array containing all panels to be removed.
+	 *
+	 * @static
+	 * @access public
+	 * @since 3.0.17
+	 * @var array
+	 */
+	public static $panels_to_remove = array();
+
+	/**
+	 * An array containing all sections to be removed.
+	 *
+	 * @static
+	 * @access public
+	 * @since 3.0.17
+	 * @var array
+	 */
+	public static $sections_to_remove = array();
+
+	/**
+	 * An array containing all controls to be removed.
+	 *
+	 * @static
+	 * @access public
+	 * @since 3.0.17
+	 * @var array
+	 */
+	public static $controls_to_remove = array();
+
+	/**
 	 * Modules object.
 	 *
 	 * @access public
@@ -98,7 +128,6 @@ class Kirki extends Kirki_Init {
 	 * @return mixed The saved value of the field.
 	 */
 	public static function get_option( $config_id = '', $field_id = '' ) {
-
 		return Kirki_Values::get_value( $config_id, $field_id );
 	}
 
@@ -111,9 +140,8 @@ class Kirki extends Kirki_Init {
 	 * @param array  $args      The configuration options.
 	 */
 	public static function add_config( $config_id, $args = array() ) {
-
-		$config = Kirki_Config::get_instance( $config_id, $args );
-		$config_args = $config->get_config();
+		$config                             = Kirki_Config::get_instance( $config_id, $args );
+		$config_args                        = $config->get_config();
 		self::$config[ $config_args['id'] ] = $config_args;
 	}
 
@@ -126,17 +154,34 @@ class Kirki extends Kirki_Init {
 	 * @param array  $args The panel arguments.
 	 */
 	public static function add_panel( $id = '', $args = array() ) {
-
-		$args['id']          = esc_attr( $id );
-		$args['description'] = ( isset( $args['description'] ) ) ? esc_textarea( $args['description'] ) : '';
-		$args['priority']    = ( isset( $args['priority'] ) ) ? esc_attr( $args['priority'] ) : 10;
-		$args['type']        = ( isset( $args['type'] ) ) ? $args['type'] : 'default';
-		$args['type']        = 'kirki-' . $args['type'];
-		if ( ! isset( $args['active_callback'] ) ) {
-			$args['active_callback'] = ( isset( $args['required'] ) ) ? array( 'Kirki_Active_Callback', 'evaluate' ) : '__return_true';
+		$args['id'] = $id;
+		if ( ! isset( $args['description'] ) ) {
+			$args['description'] = '';
 		}
+		if ( ! isset( $args['priority'] ) ) {
+			$args['priority'] = 10;
+		}
+		if ( ! isset( $args['type'] ) ) {
+			$args['type'] = 'default';
+		}
+		if ( false === strpos( $args['type'], 'kirki-' ) ) {
+			$args['type'] = 'kirki-' . $args['type'];
+		}
+		self::$panels[ $id ] = $args;
+	}
 
-		self::$panels[ $args['id'] ] = $args;
+	/**
+	 * Remove a panel.
+	 *
+	 * @static
+	 * @access public
+	 * @since 3.0.17
+	 * @param string $id   The ID for this panel.
+	 */
+	public static function remove_panel( $id = '' ) {
+		if ( ! in_array( $id, self::$panels_to_remove, true ) ) {
+			self::$panels_to_remove[] = $id;
+		}
 	}
 
 	/**
@@ -148,18 +193,35 @@ class Kirki extends Kirki_Init {
 	 * @param array  $args The section arguments.
 	 */
 	public static function add_section( $id, $args ) {
-
-		$args['id']          = esc_attr( $id );
-		$args['panel']       = ( isset( $args['panel'] ) ) ? esc_attr( $args['panel'] ) : '';
-		$args['description'] = ( isset( $args['description'] ) ) ? esc_textarea( $args['description'] ) : '';
-		$args['priority']    = ( isset( $args['priority'] ) ) ? esc_attr( $args['priority'] ) : 10;
-		$args['type']        = ( isset( $args['type'] ) ) ? $args['type'] : 'default';
-		$args['type']        = 'kirki-' . $args['type'];
-		if ( ! isset( $args['active_callback'] ) ) {
-			$args['active_callback'] = ( isset( $args['required'] ) ) ? array( 'Kirki_Active_Callback', 'evaluate' ) : '__return_true';
+		$args['id'] = $id;
+		if ( ! isset( $args['description'] ) ) {
+			$args['description'] = '';
+		}
+		if ( ! isset( $args['priority'] ) ) {
+			$args['priority'] = 10;
+		}
+		if ( ! isset( $args['type'] ) ) {
+			$args['type'] = 'default';
+		}
+		if ( false === strpos( $args['type'], 'kirki-' ) ) {
+			$args['type'] = 'kirki-' . $args['type'];
 		}
 
-		self::$sections[ $args['id'] ] = $args;
+		self::$sections[ $id ] = $args;
+	}
+
+	/**
+	 * Remove a section.
+	 *
+	 * @static
+	 * @access public
+	 * @since 3.0.17
+	 * @param string $id   The ID for this panel.
+	 */
+	public static function remove_section( $id = '' ) {
+		if ( ! in_array( $id, self::$sections_to_remove, true ) ) {
+			self::$sections_to_remove[] = $id;
+		}
 	}
 
 	/**
@@ -171,9 +233,8 @@ class Kirki extends Kirki_Init {
 	 * @param array  $args      The field arguments.
 	 */
 	public static function add_field( $config_id, $args ) {
-
 		if ( doing_action( 'customize_register' ) ) {
-			_doing_it_wrong( __METHOD__, esc_attr__( 'Kirki fields should not be added on customize_register. Please add them directly, or on init.', 'kirki' ), '3.0.10' );
+			_doing_it_wrong( __METHOD__, esc_html__( 'Kirki fields should not be added on customize_register. Please add them directly, or on init.', 'kirki' ), '3.0.10' );
 		}
 
 		// Early exit if 'type' is not defined.
@@ -181,7 +242,12 @@ class Kirki extends Kirki_Init {
 			return;
 		}
 
-		$str = str_replace( array( '-', '_' ), ' ', $args['type'] );
+		// If the field is font-awesome, enqueue the icons on the frontend.
+		if ( class_exists( 'Kirki_Modules_CSS' ) && ( 'fontawesome' === $args['type'] || 'kirki-fontawesome' === $args['type'] ) ) {
+			Kirki_Modules_CSS::add_fontawesome_script();
+		}
+
+		$str       = str_replace( array( '-', '_' ), ' ', $args['type'] );
 		$classname = 'Kirki_Field_' . str_replace( ' ', '_', ucwords( $str ) );
 		if ( class_exists( $classname ) ) {
 			new $classname( $config_id, $args );
@@ -194,9 +260,21 @@ class Kirki extends Kirki_Init {
 				return;
 			}
 		}
-
 		new Kirki_Field( $config_id, $args );
+	}
 
+	/**
+	 * Remove a control.
+	 *
+	 * @static
+	 * @access public
+	 * @since 3.0.17
+	 * @param string $id The field ID.
+	 */
+	public static function remove_control( $id ) {
+		if ( ! in_array( $id, self::$controls_to_remove, true ) ) {
+			self::$controls_to_remove[] = $id;
+		}
 	}
 
 	/**
@@ -210,7 +288,6 @@ class Kirki extends Kirki_Init {
 	 * @return string
 	 */
 	public static function get_config_param( $id, $param ) {
-
 		if ( ! isset( self::$config[ $id ] ) || ! isset( self::$config[ $id ][ $param ] ) ) {
 			return '';
 		}

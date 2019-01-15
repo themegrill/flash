@@ -7,7 +7,7 @@
  * @package     Kirki
  * @subpackage  Controls
  * @copyright   Copyright (c) 2017, Aristeides Stathopoulos
- * @license     http://opensource.org/licenses/https://opensource.org/licenses/MIT
+ * @license    https://opensource.org/licenses/MIT
  * @since       3.0.12
  */
 
@@ -33,12 +33,47 @@ class Kirki_Control_Base extends WP_Customize_Control {
 	public $option_type = 'theme_mod';
 
 	/**
+	 * Option name (if using options).
+	 *
+	 * @access public
+	 * @var string
+	 */
+	public $option_name = false;
+
+	/**
 	 * The kirki_config we're using for this control
 	 *
 	 * @access public
 	 * @var string
 	 */
 	public $kirki_config = 'global';
+
+	/**
+	 * Whitelisting the "required" argument.
+	 *
+	 * @since 3.0.17
+	 * @access public
+	 * @var array
+	 */
+	public $required = array();
+
+	/**
+	 * Whitelisting the "preset" argument.
+	 *
+	 * @since 3.0.26
+	 * @access public
+	 * @var array
+	 */
+	public $preset = array();
+
+	/**
+	 * Whitelisting the "css_vars" argument.
+	 *
+	 * @since 3.0.28
+	 * @access public
+	 * @var string
+	 */
+	public $css_vars = '';
 
 	/**
 	 * Extra script dependencies.
@@ -59,7 +94,6 @@ class Kirki_Control_Base extends WP_Customize_Control {
 
 		// Build the suffix for the script.
 		$suffix  = '';
-		$suffix .= ( Kirki_Util::get_wp_version() >= 4.9 ) ? '' : '-legacy';
 		$suffix .= ( ! defined( 'SCRIPT_DEBUG' ) || true !== SCRIPT_DEBUG ) ? '.min' : '';
 
 		// The Kirki plugin URL.
@@ -72,27 +106,46 @@ class Kirki_Control_Base extends WP_Customize_Control {
 		// Enqueue selectWoo.
 		wp_enqueue_script( 'selectWoo', trailingslashit( Kirki::$url ) . 'assets/vendor/selectWoo/js/selectWoo.full.js', array( 'jquery' ), '1.0.1', true );
 		wp_enqueue_style( 'selectWoo', trailingslashit( Kirki::$url ) . 'assets/vendor/selectWoo/css/selectWoo.css', array(), '1.0.1' );
-		wp_enqueue_style( 'kirki-selectWoo', trailingslashit( Kirki::$url ) . 'assets/vendor/selectWoo/kirki.css', null );
+		wp_enqueue_style( 'kirki-selectWoo', trailingslashit( Kirki::$url ) . 'assets/vendor/selectWoo/kirki.css', array(), KIRKI_VERSION );
 
 		// Enqueue the script.
 		wp_enqueue_script(
 			'kirki-script',
-			"{$kirki_url}controls/js/dist/script{$suffix}.js",
+			"{$kirki_url}controls/js/script{$suffix}.js",
 			array(
 				'jquery',
 				'customize-base',
 				'wp-color-picker-alpha',
 				'selectWoo',
 				'jquery-ui-button',
-				'jquery-ui-spinner',
+				'jquery-ui-datepicker',
 			),
-			KIRKI_VERSION
+			KIRKI_VERSION,
+			false
 		);
+
+		wp_localize_script(
+			'kirki-script',
+			'kirkiL10n',
+			array(
+				'isScriptDebug'        => ( defined( 'SCRIPT_DEBUG' ) && true === SCRIPT_DEBUG ),
+				'noFileSelected'       => esc_html__( 'No File Selected', 'kirki' ),
+				'remove'               => esc_html__( 'Remove', 'kirki' ),
+				'default'              => esc_html__( 'Default', 'kirki' ),
+				'selectFile'           => esc_html__( 'Select File', 'kirki' ),
+				'standardFonts'        => esc_html__( 'Standard Fonts', 'kirki' ),
+				'googleFonts'          => esc_html__( 'Google Fonts', 'kirki' ),
+				'defaultCSSValues'     => esc_html__( 'CSS Defaults', 'kirki' ),
+				'defaultBrowserFamily' => esc_html__( 'Default Browser Font-Family', 'kirki' ),
+			)
+		);
+
+		$suffix = str_replace( '.min', '', $suffix );
 
 		// Enqueue the style.
 		wp_enqueue_style(
 			'kirki-styles',
-			"{$kirki_url}controls/css/styles.css",
+			"{$kirki_url}controls/css/styles{$suffix}.css",
 			array(),
 			KIRKI_VERSION
 		);
@@ -104,32 +157,60 @@ class Kirki_Control_Base extends WP_Customize_Control {
 	 * @see WP_Customize_Control::to_json()
 	 */
 	public function to_json() {
+
 		// Get the basics from the parent class.
 		parent::to_json();
-		// Default.
+
+		// Default value.
 		$this->json['default'] = $this->setting->default;
 		if ( isset( $this->default ) ) {
 			$this->json['default'] = $this->default;
 		}
+
+		// Required.
+		$this->json['required'] = $this->required;
+
 		// Output.
 		$this->json['output'] = $this->output;
+
 		// Value.
 		$this->json['value'] = $this->value();
+
 		// Choices.
 		$this->json['choices'] = $this->choices;
+
 		// The link.
 		$this->json['link'] = $this->get_link();
+
 		// The ID.
 		$this->json['id'] = $this->id;
+
 		// Translation strings.
 		$this->json['l10n'] = $this->l10n();
+
 		// The ajaxurl in case we need it.
 		$this->json['ajaxurl'] = admin_url( 'admin-ajax.php' );
+
 		// Input attributes.
 		$this->json['inputAttrs'] = '';
 		foreach ( $this->input_attrs as $attr => $value ) {
 			$this->json['inputAttrs'] .= $attr . '="' . esc_attr( $value ) . '" ';
 		}
+
+		// The kirki-config.
+		$this->json['kirkiConfig'] = $this->kirki_config;
+
+		// The option-type.
+		$this->json['kirkiOptionType'] = $this->option_type;
+
+		// The option-name.
+		$this->json['kirkiOptionName'] = $this->option_name;
+
+		// The preset.
+		$this->json['preset'] = $this->preset;
+
+		// The CSS-Variables.
+		$this->json['css-var'] = $this->css_vars;
 	}
 
 	/**

@@ -6,7 +6,7 @@
  * @category    Core
  * @author      Aristeides Stathopoulos
  * @copyright   Copyright (c) 2017, Aristeides Stathopoulos
- * @license     http://opensource.org/licenses/https://opensource.org/licenses/MIT
+ * @license    https://opensource.org/licenses/MIT
  * @since       1.0
  */
 
@@ -60,6 +60,7 @@ class Kirki_Helper {
 	 */
 	public static function recurse( $array, $array1 ) {
 		foreach ( $array1 as $key => $value ) {
+
 			// Create new key in $array, if it is empty or not an array.
 			if ( ! isset( $array[ $key ] ) || ( isset( $array[ $key ] ) && ! is_array( $array[ $key ] ) ) ) {
 				$array[ $key ] = array();
@@ -76,13 +77,55 @@ class Kirki_Helper {
 
 	/**
 	 * Initialize the WP_Filesystem
+	 *
+	 * @static
+	 * @access public
+	 * @return object WP_Filesystem
 	 */
 	public static function init_filesystem() {
-		global $wp_filesystem;
-		if ( empty( $wp_filesystem ) ) {
-			require_once( ABSPATH . '/wp-admin/includes/file.php' );
-			WP_Filesystem();
+		$credentials = array();
+
+		if ( ! defined( 'FS_METHOD' ) ) {
+			define( 'FS_METHOD', 'direct' );
 		}
+
+		$method = defined( 'FS_METHOD' ) ? FS_METHOD : false;
+
+		if ( 'ftpext' === $method ) {
+			// If defined, set it to that, Else, set to NULL.
+			$credentials['hostname'] = defined( 'FTP_HOST' ) ? preg_replace( '|\w+://|', '', FTP_HOST ) : null;
+			$credentials['username'] = defined( 'FTP_USER' ) ? FTP_USER : null;
+			$credentials['password'] = defined( 'FTP_PASS' ) ? FTP_PASS : null;
+
+			// Set FTP port.
+			if ( strpos( $credentials['hostname'], ':' ) && null !== $credentials['hostname'] ) {
+				list( $credentials['hostname'], $credentials['port'] ) = explode( ':', $credentials['hostname'], 2 );
+				if ( ! is_numeric( $credentials['port'] ) ) {
+					unset( $credentials['port'] );
+				}
+			} else {
+				unset( $credentials['port'] );
+			}
+
+			// Set connection type.
+			if ( ( defined( 'FTP_SSL' ) && FTP_SSL ) && 'ftpext' === $method ) {
+				$credentials['connection_type'] = 'ftps';
+			} elseif ( ! array_filter( $credentials ) ) {
+				$credentials['connection_type'] = null;
+			} else {
+				$credentials['connection_type'] = 'ftp';
+			}
+		}
+
+		// The WordPress filesystem.
+		global $wp_filesystem;
+
+		if ( empty( $wp_filesystem ) ) {
+			require_once wp_normalize_path( ABSPATH . '/wp-admin/includes/file.php' );
+			WP_Filesystem( $credentials );
+		}
+
+		return $wp_filesystem;
 	}
 
 	/**
@@ -102,7 +145,7 @@ class Kirki_Helper {
 
 		$attachment = wp_cache_get( 'kirki_image_id_' . md5( $url ), null );
 		if ( false === $attachment ) {
-			$attachment = $wpdb->get_col( $wpdb->prepare( "SELECT ID FROM $wpdb->posts WHERE guid = %s;", $url ) );
+			$attachment = $wpdb->get_col( $wpdb->prepare( "SELECT ID FROM $wpdb->posts WHERE guid = %s;", $url ) ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery
 			wp_cache_add( 'kirki_image_id_' . md5( $url ), $attachment, null );
 		}
 
@@ -119,7 +162,6 @@ class Kirki_Helper {
 	 * @return array
 	 */
 	public static function get_image_from_url( $url ) {
-
 		$image_id = self::get_image_id( $url );
 		$image    = wp_get_attachment_image_src( $image_id, 'full' );
 
@@ -129,7 +171,6 @@ class Kirki_Helper {
 			'height'    => $image[2],
 			'thumbnail' => $image[3],
 		);
-
 	}
 
 	/**
@@ -141,7 +182,6 @@ class Kirki_Helper {
 	 * @return array
 	 */
 	public static function get_posts( $args ) {
-
 		if ( is_string( $args ) ) {
 			$args = add_query_arg(
 				array(
@@ -153,6 +193,7 @@ class Kirki_Helper {
 		}
 
 		// Get the posts.
+		// TODO: WordPress.VIP.RestrictedFunctions.get_posts_get_posts.
 		$posts = get_posts( $args );
 
 		// Properly format the array.
@@ -163,7 +204,6 @@ class Kirki_Helper {
 		wp_reset_postdata();
 
 		return $items;
-
 	}
 
 	/**
@@ -174,7 +214,6 @@ class Kirki_Helper {
 	 * @return array
 	 */
 	public static function get_taxonomies() {
-
 		$items = array();
 
 		// Get the taxonomies.
@@ -192,7 +231,6 @@ class Kirki_Helper {
 		}
 
 		return $items;
-
 	}
 
 	/**
@@ -203,7 +241,6 @@ class Kirki_Helper {
 	 * @return array
 	 */
 	public static function get_post_types() {
-
 		$items = array();
 
 		// Get the post types.
@@ -219,7 +256,6 @@ class Kirki_Helper {
 		}
 
 		return $items;
-
 	}
 
 	/**
@@ -231,7 +267,6 @@ class Kirki_Helper {
 	 * @return array
 	 */
 	public static function get_terms( $taxonomies ) {
-
 		$items = array();
 
 		// Get the post types.
@@ -243,7 +278,6 @@ class Kirki_Helper {
 		}
 
 		return $items;
-
 	}
 
 	/**
@@ -255,7 +289,6 @@ class Kirki_Helper {
 	 * @return array
 	 */
 	public static function get_material_design_colors( $context = 'primary' ) {
-
 		$colors = array(
 			'primary'     => array( '#FFFFFF', '#000000', '#F44336', '#E91E63', '#9C27B0', '#673AB7', '#3F51B5', '#2196F3', '#03A9F4', '#00BCD4', '#009688', '#4CAF50', '#8BC34A', '#CDDC39', '#FFEB3B', '#FFC107', '#FF9800', '#FF5722', '#795548', '#9E9E9E', '#607D8B' ),
 			'red'         => array( '#FFEBEE', '#FFCDD2', '#EF9A9A', '#E57373', '#EF5350', '#F44336', '#E53935', '#D32F2F', '#C62828', '#B71C1C', '#FF8A80', '#FF5252', '#FF1744', '#D50000' ),
@@ -264,7 +297,7 @@ class Kirki_Helper {
 			'deep-purple' => array( '#EDE7F6', '#D1C4E9', '#B39DDB', '#9575CD', '#7E57C2', '#673AB7', '#5E35B1', '#512DA8', '#4527A0', '#311B92', '#B388FF', '#7C4DFF', '#651FFF', '#6200EA' ),
 			'indigo'      => array( '#E8EAF6', '#C5CAE9', '#9FA8DA', '#7986CB', '#5C6BC0', '#3F51B5', '#3949AB', '#303F9F', '#283593', '#1A237E', '#8C9EFF', '#536DFE', '#3D5AFE', '#304FFE' ),
 			'blue'        => array( '#E3F2FD', '#BBDEFB', '#90CAF9', '#64B5F6', '#42A5F5', '#2196F3', '#1E88E5', '#1976D2', '#1565C0', '#0D47A1', '#82B1FF', '#448AFF', '#2979FF', '#2962FF' ),
-			'light_blue'  => array( '#E1F5FE', '#B3E5FC', '#81D4fA', '#4fC3F7', '#29B6FC', '#03A9F4', '#039BE5', '#0288D1', '#0277BD', '#01579B', '#80D8FF', '#40C4FF', '#00B0FF', '#0091EA' ),
+			'light-blue'  => array( '#E1F5FE', '#B3E5FC', '#81D4fA', '#4fC3F7', '#29B6FC', '#03A9F4', '#039BE5', '#0288D1', '#0277BD', '#01579B', '#80D8FF', '#40C4FF', '#00B0FF', '#0091EA' ),
 			'cyan'        => array( '#E0F7FA', '#B2EBF2', '#80DEEA', '#4DD0E1', '#26C6DA', '#00BCD4', '#00ACC1', '#0097A7', '#00838F', '#006064', '#84FFFF', '#18FFFF', '#00E5FF', '#00B8D4' ),
 			'teal'        => array( '#E0F2F1', '#B2DFDB', '#80CBC4', '#4DB6AC', '#26A69A', '#009688', '#00897B', '#00796B', '#00695C', '#004D40', '#A7FFEB', '#64FFDA', '#1DE9B6', '#00BFA5' ),
 			'green'       => array( '#E8F5E9', '#C8E6C9', '#A5D6A7', '#81C784', '#66BB6A', '#4CAF50', '#43A047', '#388E3C', '#2E7D32', '#1B5E20', '#B9F6CA', '#69F0AE', '#00E676', '#00C853' ),
@@ -280,7 +313,6 @@ class Kirki_Helper {
 		);
 
 		switch ( $context ) {
-
 			case '50':
 			case '100':
 			case '200':
@@ -333,7 +365,7 @@ class Kirki_Helper {
 					return $colors[ $context ];
 				}
 				return $colors['primary'];
-		} // End switch().
+		}
 	}
 
 	/**
@@ -344,7 +376,6 @@ class Kirki_Helper {
 	 * @return array
 	 */
 	public static function get_dashicons() {
-
 		return array(
 			'admin-menu'     => array( 'menu', 'admin-site', 'dashboard', 'admin-post', 'admin-media', 'admin-links', 'admin-page', 'admin-comments', 'admin-appearance', 'admin-plugins', 'admin-users', 'admin-tools', 'admin-settings', 'admin-network', 'admin-home', 'admin-generic', 'admin-collapse', 'filter', 'admin-customizer', 'admin-multisite' ),
 			'welcome-screen' => array( 'welcome-write-blog', 'welcome-add-page', 'welcome-view-site', 'welcome-widgets-menus', 'welcome-comments', 'welcome-learn-more' ),
@@ -362,6 +393,55 @@ class Kirki_Helper {
 			'notifications'  => array( 'yes', 'no', 'no-alt', 'plus', 'plus-alt', 'minus', 'dismiss', 'marker', 'star-filled', 'star-half', 'star-empty', 'flag', 'warning' ),
 			'misc'           => array( 'location', 'location-alt', 'vault', 'shield', 'shield-alt', 'sos', 'search', 'slides', 'analytics', 'chart-pie', 'chart-bar', 'chart-line', 'chart-area', 'groups', 'businessman', 'id', 'id-alt', 'products', 'awards', 'forms', 'testimonial', 'portfolio', 'book', 'book-alt', 'download', 'upload', 'backup', 'clock', 'lightbulb', 'microphone', 'desktop', 'tablet', 'smartphone', 'phone', 'index-card', 'carrot', 'building', 'store', 'album', 'palmtree', 'tickets-alt', 'money', 'smiley', 'thumbs-up', 'thumbs-down', 'layout' ),
 		);
+	}
 
+	/**
+	 * Compares the 2 values given the condition
+	 *
+	 * @param mixed  $value1   The 1st value in the comparison.
+	 * @param mixed  $value2   The 2nd value in the comparison.
+	 * @param string $operator The operator we'll use for the comparison.
+	 * @return boolean whether The comparison has succeded (true) or failed (false).
+	 */
+	public static function compare_values( $value1, $value2, $operator ) {
+		if ( '===' === $operator ) {
+			return $value1 === $value2;
+		}
+		if ( '!==' === $operator ) {
+			return $value1 !== $value2;
+		}
+		if ( ( '!=' === $operator || 'not equal' === $operator ) ) {
+			return $value1 != $value2; // WPCS: loose comparison ok.
+		}
+		if ( ( '>=' === $operator || 'greater or equal' === $operator || 'equal or greater' === $operator ) ) {
+			return $value2 >= $value1;
+		}
+		if ( ( '<=' === $operator || 'smaller or equal' === $operator || 'equal or smaller' === $operator ) ) {
+			return $value2 <= $value1;
+		}
+		if ( ( '>' === $operator || 'greater' === $operator ) ) {
+			return $value2 > $value1;
+		}
+		if ( ( '<' === $operator || 'smaller' === $operator ) ) {
+			return $value2 < $value1;
+		}
+		if ( 'contains' === $operator || 'in' === $operator ) {
+			if ( is_array( $value1 ) && is_array( $value2 ) ) {
+				foreach ( $value2 as $val ) {
+					if ( in_array( $val, $value1 ) ) { // phpcs:ignore WordPress.PHP.StrictInArray.MissingTrueStrict
+						return true;
+					}
+				}
+				return false;
+			}
+			if ( is_array( $value1 ) && ! is_array( $value2 ) ) {
+				return in_array( $value2, $value1 ); // phpcs:ignore WordPress.PHP.StrictInArray.MissingTrueStrict
+			}
+			if ( is_array( $value2 ) && ! is_array( $value1 ) ) {
+				return in_array( $value1, $value2 ); // phpcs:ignore WordPress.PHP.StrictInArray.MissingTrueStrict
+			}
+			return ( false !== strrpos( $value1, $value2 ) || false !== strpos( $value2, $value1 ) );
+		}
+		return $value1 == $value2; // WPCS: loose comparison ok.
 	}
 }

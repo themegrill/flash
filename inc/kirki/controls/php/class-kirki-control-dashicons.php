@@ -5,7 +5,7 @@
  * @package     Kirki
  * @subpackage  Controls
  * @copyright   Copyright (c) 2017, Aristeides Stathopoulos
- * @license     http://opensource.org/licenses/https://opensource.org/licenses/MIT
+ * @license    https://opensource.org/licenses/MIT
  * @since       2.2.4
  */
 
@@ -34,7 +34,6 @@ class Kirki_Control_Dashicons extends Kirki_Control_Base {
 	 */
 	public function to_json() {
 		parent::to_json();
-
 		$this->json['icons'] = Kirki_Helper::get_dashicons();
 	}
 
@@ -50,7 +49,7 @@ class Kirki_Control_Dashicons extends Kirki_Control_Base {
 	 */
 	protected function content_template() {
 		?>
-		<# if ( data.label ) { #><span class="customize-control-title">{{ data.label }}</span><# } #>
+		<# if ( data.label ) { #><span class="customize-control-title">{{{ data.label }}}</span><# } #>
 		<# if ( data.description ) { #><span class="description customize-control-description">{{{ data.description }}}</span><# } #>
 		<div class="icons-wrapper">
 			<# if ( ! _.isUndefined( data.choices ) && 1 < _.size( data.choices ) ) { #>

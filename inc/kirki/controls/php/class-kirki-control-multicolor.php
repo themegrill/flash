@@ -5,7 +5,7 @@
  * @package     Kirki
  * @subpackage  Controls
  * @copyright   Copyright (c) 2017, Aristeides Stathopoulos
- * @license     http://opensource.org/licenses/https://opensource.org/licenses/MIT
+ * @license    https://opensource.org/licenses/MIT
  * @since       2.2.7
  */
 
@@ -36,6 +36,16 @@ class Kirki_Control_Multicolor extends Kirki_Control_Base {
 	public $alpha = true;
 
 	/**
+	 * Refresh the parameters passed to the JavaScript via JSON.
+	 *
+	 * @access public
+	 */
+	public function to_json() {
+		parent::to_json();
+		$this->json['alpha'] = (bool) $this->alpha;
+	}
+
+	/**
 	 * An Underscore (JS) template for this control's content (but not its container).
 	 *
 	 * Class variables for this control class are available in the `data` JS object;
@@ -57,20 +67,12 @@ class Kirki_Control_Multicolor extends Kirki_Control_Base {
 			<# for ( key in data.choices ) { #>
 				<# if ( 'irisArgs' !== key ) { #>
 					<div class="multicolor-single-color-wrapper">
-						<# if ( data.choices[ key ] ) { #>
-							<label for="{{ data.id }}-{{ key }}">{{ data.choices[ key ] }}</label>
-						<# } #>
-						<input {{{ data.inputAttrs }}} id="{{ data.id }}-{{ key }}" type="text" data-palette="{{ data.palette }}" data-default-color="{{ data.default[ key ] }}" data-alpha="{{ data.alpha }}" value="{{ data.value[ key ] }}" class="kirki-color-control color-picker multicolor-index-{{ key }}" />
+						<input {{{ data.inputAttrs }}} id="{{ data.id }}-{{ key }}" type="text" data-palette="{{ data.palette }}" data-default-color="{{ data.default[ key ] }}" data-alpha="{{ data.alpha }}" value="{{ data.value[ key ] }}" class="kirki-color-control color-picker multicolor-index-{{ key }}" data-label="<# if ( data.choices[ key ] ) { #>{{ data.choices[ key ] }}<# } else { #>{{ key }}<# } #>" />
 					</div>
 				<# } #>
 			<# } #>
 		</div>
-		<div class="iris-target"></div>
-		<?php if ( Kirki_Util::get_wp_version() >= 4.9 ) : ?>
-			<input class="multicolor-hidden-value" type="hidden" {{{ data.link }}}>
-		<?php else : ?>
-			<input class="multicolor-hidden-value" type="hidden" value='{{{ JSON.stringify( data.value ) }}}' {{{ data.link }}}>
-		<?php endif; ?>
+		<input class="multicolor-hidden-value" type="hidden" {{{ data.link }}}>
 		<?php
 	}
 }
