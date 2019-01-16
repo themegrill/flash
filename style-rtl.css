@@ -6,7 +6,7 @@ Author: ThemeGrill
 Author URI: https://themegrill.com
 Description: Flash is free responsive multipurpose WordPress theme – truly a versatile theme perfect for any type of website you want. Like never before, it provides multiple pre-built demos which can be imported in seconds using ThemeGrill Demo Importer Plugin. The theme fully integrates with Flash Toolkit and SiteOrigin’s Page Builder Plugin that makes theme more user-friendly and easy. Additionally, theme features multiple blog layouts, WooCommerce support, multiple header styles, multiple color options etc.
 License: GNU General Public License v3 or later
-Version: 1.2.3
+Version: 1.2.6
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: flash
 Tags: one-column, two-columns, left-sidebar, right-sidebar, grid-layout, custom-background, custom-colors, custom-menu, custom-logo, featured-images, footer-widgets, full-width-template, theme-options, threaded-comments, translation-ready, blog, e-commerce
@@ -556,6 +556,45 @@ Clearings
 
 .hidden {
 	display: none;
+}
+
+.full-width,
+.full-width-center {
+	overflow: hidden;
+}
+
+.full-width .alignfull,
+.full-width-center .alignfull {
+	margin-right: calc(50% - 50vw);
+	margin-left: calc(50% - 50vw);
+	max-width: unset;
+}
+
+.full-width .alignfull img,
+.full-width-center .alignfull img {
+	max-width: unset;
+}
+
+.full-width .alignwide,
+.full-width-center .alignwide {
+	margin-right: -100px;
+	margin-left: -100px;
+	max-width: unset;
+}
+
+.full-width.boxed #content,
+.full-width-center.boxed #content {
+	overflow: hidden;
+}
+
+.full-width.boxed .alignwide,
+.full-width-center.boxed .alignwide {
+	margin-right: -100px;
+	margin-left: -100px;
+}
+
+ul.wp-block-gallery {
+	margin: 0;
 }
 
 /*--------------------------------------------------------------
@@ -3374,10 +3413,6 @@ Archive
 	float: right;
 	margin-left: 30px;
 	width: 33.7%;
-}
-
-.entry-content-block {
-	overflow: hidden;
 }
 
 .entry-meta .entry-date a .updated:not(.published) {
