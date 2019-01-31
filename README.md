@@ -80,6 +80,9 @@ Source: https://pixabay.com/en/coffee-book-flowers-setting-2390136/
 Unless otherwise specified, all the theme files, scripts and images including the screenshot image are licensed under [GNU GPL] (http://www.gnu.org/licenses/gpl-3.0.txt), version 3 or later.
 
 == Changelog ==
+= TBD =
+* Tweak - Modify pingback url autodiscovery for single posts, pages, or attachments.
+
 = Version 1.2.6 - 2019-01-16 =
 * Updated - Isotope library to 3.0.6 
 * Updated - Kirki to 3.0.35.3
