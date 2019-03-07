@@ -24,7 +24,7 @@ if ( ! class_exists( 'Flash_Admin' ) ) :
 		public function __construct() {
 			add_action( 'admin_menu', array( $this, 'admin_menu' ) );
 			add_action( 'wp_loaded', array( __CLASS__, 'hide_notices' ) );
-			add_action( 'load-themes.php', array( $this, 'admin_notice' ) );
+			add_action( 'wp_loaded', array( $this, 'admin_notice' ) );
 		}
 
 		/**
@@ -33,9 +33,9 @@ if ( ! class_exists( 'Flash_Admin' ) ) :
 		public function admin_menu() {
 			$theme = wp_get_theme( get_template() );
 
-			$page = add_theme_page( esc_html__( 'About', 'flash' ) . ' ' . $theme->display( 'Name' ), esc_html__( 'About', 'flash' ) . ' ' . $theme->display( 'Name' ), 'activate_plugins', 'flash-welcome', array(
+			$page = add_theme_page( esc_html__( 'About', 'flash' ) . ' ' . $theme->display( 'Name' ), esc_html__( 'About', 'flash' ) . ' ' . $theme->display( 'Name' ), 'activate_plugins', 'flash-sitelibrary', array(
 				$this,
-				'welcome_screen',
+				'sitelibrary_screen',
 			) );
 			add_action( 'admin_print_styles-' . $page, array( $this, 'enqueue_styles' ) );
 		}
@@ -58,11 +58,8 @@ if ( ! class_exists( 'Flash_Admin' ) ) :
 			wp_enqueue_style( 'flash-message', get_template_directory_uri() . '/css/message.css', array(), $flash_version );
 
 			// Let's bail on theme activation.
-			if ( 'themes.php' == $pagenow && isset( $_GET['activated'] ) ) {
-				add_action( 'admin_notices', array( $this, 'welcome_notice' ) );
-				update_option( 'flash_admin_notice_welcome', 1 );
-				// No option? Let run the notice wizard again..
-			} elseif ( ! get_option( 'flash_admin_notice_welcome' ) ) {
+			$notice_nag = get_option( 'flash_admin_notice_welcome' );
+			if ( ! $notice_nag ) {
 				add_action( 'admin_notices', array( $this, 'welcome_notice' ) );
 			}
 		}
@@ -75,11 +72,20 @@ if ( ! class_exists( 'Flash_Admin' ) ) :
 				if ( ! wp_verify_nonce( $_GET['_flash_notice_nonce'], 'flash_hide_notices_nonce' ) ) {
 					wp_die( __( 'Action failed. Please refresh the page and retry.', 'flash' ) );
 				}
+
 				if ( ! current_user_can( 'manage_options' ) ) {
 					wp_die( __( 'Cheatin&#8217; huh?', 'flash' ) );
 				}
+
 				$hide_notice = sanitize_text_field( $_GET['flash-hide-notice'] );
 				update_option( 'flash_admin_notice_' . $hide_notice, 1 );
+
+				// Hide.
+				if ( 'welcome' === $_GET['flash-hide-notice'] ) {
+					update_option( 'flash_admin_notice_' . $hide_notice, 1 );
+				} else { // Show.
+					delete_option( 'flash_admin_notice_' . $hide_notice );
+				}
 			}
 		}
 
@@ -155,15 +161,23 @@ if ( ! class_exists( 'Flash_Admin' ) ) :
 			</p>
 
 			<h2 class="nav-tab-wrapper">
-				<a class="nav-tab <?php if ( $_GET['page'] == 'flash-welcome' ) {
+				<a class="nav-tab <?php if ( empty( $_GET['tab'] ) && $_GET['page'] == 'flash-sitelibrary' ) {
 					echo 'nav-tab-active';
-				} ?>" href="<?php echo esc_url( admin_url( add_query_arg( array( 'page' => 'flash-welcome' ), 'themes.php' ) ) ); ?>">
-					<?php echo $theme->display( 'Name' ); ?>
+				} ?>" href="<?php echo esc_url( admin_url( add_query_arg( array( 'page' => 'flash-sitelibrary' ), 'themes.php' ) ) ); ?>">
+					<?php esc_html_e( 'Site Library', 'flash' ); ?>
+				</a>
+				<a class="nav-tab <?php if ( isset( $_GET['tab'] ) && $_GET['tab'] == 'welcome' ) {
+					echo 'nav-tab-active';
+				} ?>" href="<?php echo esc_url( admin_url( add_query_arg( array(
+					'page' => 'flash-sitelibrary',
+					'tab'  => 'welcome',
+				), 'themes.php' ) ) ); ?>">
+					<?php esc_html_e( 'Getting Started', 'flash' ); ?>
 				</a>
 				<a class="nav-tab <?php if ( isset( $_GET['tab'] ) && $_GET['tab'] == 'supported_plugins' ) {
 					echo 'nav-tab-active';
 				} ?>" href="<?php echo esc_url( admin_url( add_query_arg( array(
-					'page' => 'flash-welcome',
+					'page' => 'flash-sitelibrary',
 					'tab'  => 'supported_plugins',
 				), 'themes.php' ) ) ); ?>">
 					<?php esc_html_e( 'Supported Plugins', 'flash' ); ?>
@@ -171,7 +185,7 @@ if ( ! class_exists( 'Flash_Admin' ) ) :
 				<a class="nav-tab <?php if ( isset( $_GET['tab'] ) && $_GET['tab'] == 'free_vs_pro' ) {
 					echo 'nav-tab-active';
 				} ?>" href="<?php echo esc_url( admin_url( add_query_arg( array(
-					'page' => 'flash-welcome',
+					'page' => 'flash-sitelibrary',
 					'tab'  => 'free_vs_pro',
 				), 'themes.php' ) ) ); ?>">
 					<?php esc_html_e( 'Free Vs Pro', 'flash' ); ?>
@@ -179,7 +193,7 @@ if ( ! class_exists( 'Flash_Admin' ) ) :
 				<a class="nav-tab <?php if ( isset( $_GET['tab'] ) && $_GET['tab'] == 'changelog' ) {
 					echo 'nav-tab-active';
 				} ?>" href="<?php echo esc_url( admin_url( add_query_arg( array(
-					'page' => 'flash-welcome',
+					'page' => 'flash-sitelibrary',
 					'tab'  => 'changelog',
 				), 'themes.php' ) ) ); ?>">
 					<?php esc_html_e( 'Changelog', 'flash' ); ?>
@@ -189,10 +203,10 @@ if ( ! class_exists( 'Flash_Admin' ) ) :
 		}
 
 		/**
-		 * Welcome screen page.
+		 * Site library screen page.
 		 */
-		public function welcome_screen() {
-			$current_tab = empty( $_GET['tab'] ) ? 'about' : sanitize_title( $_GET['tab'] );
+		public function sitelibrary_screen() {
+			$current_tab = empty( $_GET['tab'] ) ? 'library' : sanitize_title( $_GET['tab'] );
 
 			// Look for a {$current_tab}_screen method.
 			if ( is_callable( array( $this, $current_tab . '_screen' ) ) ) {
@@ -200,7 +214,30 @@ if ( ! class_exists( 'Flash_Admin' ) ) :
 			}
 
 			// Fallback to about screen.
-			return $this->about_screen();
+			return $this->sitelibrary_display_screen();
+		}
+
+		/**
+		 * Render site library.
+		 */
+		public function sitelibrary_display_screen() {
+			?>
+			<div class="wrap about-wrap">
+				<?php
+				$this->intro();
+
+				// Display site library.
+				echo FLash_Site_Library::flash_site_library_page_content();
+				?>
+			</div>
+			<?php
+		}
+
+		/**
+		 * Welcome screen page.
+		 */
+		public function welcome_screen() {
+			$this->about_screen();
 		}
 
 		/**
@@ -215,6 +252,15 @@ if ( ! class_exists( 'Flash_Admin' ) ) :
 
 				<div class="changelog point-releases">
 					<div class="under-the-hood two-col">
+						<div class="col">
+							<h3><?php esc_html_e( 'Import Demo', 'flash' ); ?></h3>
+							<p><?php esc_html_e( 'Needs ThemeGrill Demo Importer plugin.', 'flash' ) ?></p>
+
+							<div class="submit">
+								<a class="btn-get-started button button-primary button-hero" href="#" data-name="" data-slug="" aria-label="<?php esc_html_e( 'Import', 'flash' ); ?>"><?php esc_html_e( 'Import', 'flash' ); ?></a>
+							</div>
+						</div>
+
 						<div class="col">
 							<h3><?php esc_html_e( 'Theme Customizer', 'flash' ); ?></h3>
 							<p><?php esc_html_e( 'All Theme Options are available via Customize screen.', 'flash' ) ?></p>
