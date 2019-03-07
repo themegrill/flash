@@ -82,7 +82,7 @@ Unless otherwise specified, all the theme files, scripts and images including th
 == Changelog ==
 = TBD =
 * Tweak - Modify pingback url autodiscovery for single posts, pages, or attachments.
-* Tweak - Added site library and demo import process in About eStore page.
+* Tweak - Added site library and demo import process in About Flash page.
 
 = Version 1.2.6 - 2019-01-16 =
 * Updated - Isotope library to 3.0.6 
