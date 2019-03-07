@@ -89,11 +89,23 @@ if ( ! class_exists( 'Flash_Admin' ) ) :
 		public function welcome_notice() {
 			?>
 			<div id="message" class="updated flash-message">
-				<a class="flash-message-close notice-dismiss" href="<?php echo esc_url( wp_nonce_url( remove_query_arg( array( 'activated' ), add_query_arg( 'flash-hide-notice', 'welcome' ) ), 'flash_hide_notices_nonce', '_flash_notice_nonce' ) ); ?>"><?php _e( 'Dismiss', 'flash' ); ?></a>
-				<p><?php printf( esc_html__( 'Welcome! Thank you for choosing Flash! To fully take advantage of the best our theme can offer please make sure you visit our %1$swelcome page%2$s.', 'flash' ), '<a href="' . esc_url( admin_url( 'themes.php?page=flash-welcome' ) ) . '">', '</a>' ); ?></p>
-				<p class="submit">
-					<a class="button-secondary" href="<?php echo esc_url( admin_url( 'themes.php?page=flash-welcome' ) ); ?>"><?php esc_html_e( 'Get started with Flash', 'flash' ); ?></a>
-				</p>
+				<a class="flash-message-close notice-dismiss" href="<?php echo esc_url( wp_nonce_url( remove_query_arg( array( 'activated' ), add_query_arg( 'flash-hide-notice', 'welcome' ) ), 'flash_hide_notices_nonce', '_flash_notice_nonce' ) ); ?>">
+					<?php esc_html_e( 'Dismiss', 'flash' ); ?>
+				</a>
+
+				<div class="flash-message-wrapper">
+					<div class="flash-logo">
+						<img src="<?php echo get_template_directory_uri(); ?>/img/flash-logo.png" alt="<?php esc_html_e( 'Flash', 'flash' ); ?>" /><?php // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped, Squiz.PHP.EmbeddedPhp.SpacingBeforeClose ?>
+					</div>
+
+					<p>
+						<?php printf( esc_html__( 'Welcome! Thank you for choosing Flash! To fully take advantage of the best our theme can offer please make sure you visit our %1$swelcome page%2$s.', 'flash' ), '<a href="' . esc_url( admin_url( 'themes.php?page=flash-welcome' ) ) . '">', '</a>' ); ?>
+					</p>
+
+					<div class="submit">
+						<a class="btn-get-started button button-primary button-hero" href="#" data-name="" data-slug="" aria-label="<?php esc_html_e( 'Get started with Flash', 'flash' ); ?>"><?php esc_html_e( 'Get started with Flash', 'flash' ); ?></a>
+					</div>
+				</div>
 			</div>
 			<?php
 		}
