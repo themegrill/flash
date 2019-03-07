@@ -118,22 +118,20 @@ if ( ! class_exists( 'Flash_Admin' ) ) :
 		private function intro() {
 			$theme         = wp_get_theme( get_template() );
 			$flash_version = $theme['Version'];
-
-			// Drop minor version if 0
-			$major_version = substr( $flash_version, 0, 3 );
 			?>
-			<div class="flash-theme-info">
-				<h1>
-					<?php esc_html_e( 'About', 'flash' ); ?>
-					<?php echo $theme->display( 'Name' ); ?>
-					<?php printf( '%s', $major_version ); ?>
-				</h1>
+			<div class="header">
+				<div class="info">
+					<h1>
+						<?php esc_html_e( 'About', 'flash' ); ?>
+						<?php echo $theme->display( 'Name' ); ?>
+						<span class="version-container"><?php echo esc_html( $flash_version ); ?></span>
+					</h1>
 
-				<div class="welcome-description-wrap">
-					<p class="about-text"><?php echo $theme->display( 'Description' ); ?></p>
-					<div class="flash-screenshot">
-						<img src="<?php echo esc_url( get_template_directory_uri() ) . '/screenshot.jpg'; ?>" />
+					<div class="tg-about-text about-text">
+						<?php echo $theme->display( 'Description' ); ?>
 					</div>
+
+					<a href="https://themegrill.com/" target="_blank" class="wp-badge tg-welcome-logo"></a>
 				</div>
 			</div>
 
