@@ -2,121 +2,122 @@
 /**
  * Flash functions and definitions.
  *
- * @link https://developer.wordpress.org/themes/basics/theme-functions/
+ * @link    https://developer.wordpress.org/themes/basics/theme-functions/
  *
  * @package Flash
  */
 
 if ( ! function_exists( 'flash_setup' ) ) :
-/**
- * Sets up theme defaults and registers support for various WordPress features.
- *
- * Note that this function is hooked into the after_setup_theme hook, which
- * runs before the init hook. The init hook is too late for some features, such
- * as indicating support for post thumbnails.
- */
-function flash_setup() {
-	/*
-	 * Make theme available for translation.
-	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on Flash, use a find and replace
-	 * to change 'flash' to the name of your theme in all the template files.
-	 */
-	load_theme_textdomain( 'flash', get_template_directory() . '/languages' );
-
-	// Add default posts and comments RSS feed links to head.
-	add_theme_support( 'automatic-feed-links' );
-
-	/*
-	 * Let WordPress manage the document title.
-	 * By adding theme support, we declare that this theme does not use a
-	 * hard-coded <title> tag in the document head, and expect WordPress to
-	 * provide it for us.
-	 */
-	add_theme_support( 'title-tag' );
-
-	/*
-	 * Enable support for Post Thumbnails on posts and pages.
+	/**
+	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
-	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
+	 * Note that this function is hooked into the after_setup_theme hook, which
+	 * runs before the init hook. The init hook is too late for some features, such
+	 * as indicating support for post thumbnails.
 	 */
-	add_theme_support( 'post-thumbnails' );
+	function flash_setup() {
+		/*
+		 * Make theme available for translation.
+		 * Translations can be filed in the /languages/ directory.
+		 * If you're building a theme based on Flash, use a find and replace
+		 * to change 'flash' to the name of your theme in all the template files.
+		 */
+		load_theme_textdomain( 'flash', get_template_directory() . '/languages' );
 
-	/**
-	 * Image size
-	 */
-	add_image_size( 'flash-square', '300', '300', true );
-	add_image_size( 'flash-big', '800', '400', true );
-	add_image_size( 'flash-grid', '370', '270', true );
+		// Add default posts and comments RSS feed links to head.
+		add_theme_support( 'automatic-feed-links' );
 
-	/**
-	 * Enable support for site Logo
-	 */
-	add_theme_support( 'custom-logo' );
+		/*
+		 * Let WordPress manage the document title.
+		 * By adding theme support, we declare that this theme does not use a
+		 * hard-coded <title> tag in the document head, and expect WordPress to
+		 * provide it for us.
+		 */
+		add_theme_support( 'title-tag' );
 
-	// This theme uses wp_nav_menu() in one location.
-	register_nav_menus( array(
-		'primary' => esc_html__( 'Primary', 'flash' ),
-		'social'  => esc_html__( 'Social', 'flash' ),
-		'footer'  => esc_html__( 'Footer', 'flash' ),
-	) );
+		/*
+		 * Enable support for Post Thumbnails on posts and pages.
+		 *
+		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
+		 */
+		add_theme_support( 'post-thumbnails' );
 
-	/*
-	 * Switch default core markup for search form, comment form, and comments
-	 * to output valid HTML5.
-	 */
-	add_theme_support( 'html5', array(
-		'search-form',
-		'comment-form',
-		'comment-list',
-		'gallery',
-		'caption',
-	) );
+		/**
+		 * Image size
+		 */
+		add_image_size( 'flash-square', '300', '300', true );
+		add_image_size( 'flash-big', '800', '400', true );
+		add_image_size( 'flash-grid', '370', '270', true );
 
-	/**
-	 * Enable support for woocommerce and woocommerce 3.0 product gallery
-	 */
-	add_theme_support( 'woocommerce' );
-	add_theme_support( 'wc-product-gallery-zoom' );
-	add_theme_support( 'wc-product-gallery-lightbox' );
-	add_theme_support( 'wc-product-gallery-slider' );
+		/**
+		 * Enable support for site Logo
+		 */
+		add_theme_support( 'custom-logo' );
 
-	/**
-	 * Enable support for SiteOrigin Page Builder
-	 */
-	add_theme_support( 'siteorigin-panels', array(
-		'margin-bottom'         => 0,
-		'recommended-widgets' 	=> false,
-	) );
+		// This theme uses wp_nav_menu() in one location.
+		register_nav_menus( array(
+			'primary' => esc_html__( 'Primary', 'flash' ),
+			'social'  => esc_html__( 'Social', 'flash' ),
+			'footer'  => esc_html__( 'Footer', 'flash' ),
+		) );
 
-	/**
-	 * Enable Support for selective refresh widgets in Customizer
-	 */
-	add_theme_support( 'customize-selective-refresh-widgets' );
+		/*
+		 * Switch default core markup for search form, comment form, and comments
+		 * to output valid HTML5.
+		 */
+		add_theme_support( 'html5', array(
+			'search-form',
+			'comment-form',
+			'comment-list',
+			'gallery',
+			'caption',
+		) );
 
-	// Gutenberg layout support.
-	add_theme_support( 'align-wide' );
-}
+		/**
+		 * Enable support for woocommerce and woocommerce 3.0 product gallery
+		 */
+		add_theme_support( 'woocommerce' );
+		add_theme_support( 'wc-product-gallery-zoom' );
+		add_theme_support( 'wc-product-gallery-lightbox' );
+		add_theme_support( 'wc-product-gallery-slider' );
+
+		/**
+		 * Enable support for SiteOrigin Page Builder
+		 */
+		add_theme_support( 'siteorigin-panels', array(
+			'margin-bottom'       => 0,
+			'recommended-widgets' => false,
+		) );
+
+		/**
+		 * Enable Support for selective refresh widgets in Customizer
+		 */
+		add_theme_support( 'customize-selective-refresh-widgets' );
+
+		// Gutenberg layout support.
+		add_theme_support( 'align-wide' );
+	}
 endif;
 add_action( 'after_setup_theme', 'flash_setup' );
 
 if ( ! function_exists( 'flash_content_width' ) ) :
-/**
- * Set the content width in pixels, based on the theme's design and stylesheet.
- *
- * @global int $content_width
- **/
-function flash_content_width() {
-	$content_width = 780;
+	/**
+	 * Set the content width in pixels, based on the theme's design and stylesheet.
+	 *
+	 * @global int $content_width
+	 **/
+	function flash_content_width() {
+		$content_width = 780;
 
-	$classes = flash_get_layout();
-	if ( $classes == 'full-width' ) {
-		$content_width = 1200;
+		$classes = flash_get_layout();
+		if ( $classes == 'full-width' ) {
+			$content_width = 1200;
+		}
+
+		$GLOBALS['content_width'] = apply_filters( 'flash_content_width', $content_width );
 	}
 
-	$GLOBALS['content_width'] = apply_filters( 'flash_content_width', $content_width );
-}
-add_action( 'after_setup_theme', 'flash_content_width', 0 );
+	add_action( 'after_setup_theme', 'flash_content_width', 0 );
 endif;
 
 /**
@@ -186,6 +187,7 @@ function flash_widgets_init() {
 		'after_title'   => '</h3>',
 	) );
 }
+
 add_action( 'widgets_init', 'flash_widgets_init' );
 
 /**
@@ -198,30 +200,30 @@ function flash_scripts() {
 	wp_enqueue_style( 'flash-fonts', flash_fonts_url(), array(), null );
 
 	// Font Awessome
-	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome'.$suffix.'.css' , array(), false, false);
+	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome' . $suffix . '.css', array(), false, false );
 	// Swiper CSS
-	wp_register_style( 'swiper', get_template_directory_uri() . '/css/swiper'.$suffix.'.css' , array(), false, false);
+	wp_register_style( 'swiper', get_template_directory_uri() . '/css/swiper' . $suffix . '.css', array(), false, false );
 
 	wp_enqueue_style( 'flash-style', get_stylesheet_uri() );
 	wp_style_add_data( 'flash-style', 'rtl', 'replace' );
 
 	// Responsive
-	wp_enqueue_style( 'responsive', get_template_directory_uri() . '/css/responsive'.$suffix.'.css' , array(), false, false);
+	wp_enqueue_style( 'responsive', get_template_directory_uri() . '/css/responsive' . $suffix . '.css', array(), false, false );
 	wp_style_add_data( 'responsive', 'rtl', 'replace' );
-	wp_register_script( 'swiper', get_template_directory_uri() . '/js/swiper.jquery'.$suffix.'.js', array('jquery'), '', true );
+	wp_register_script( 'swiper', get_template_directory_uri() . '/js/swiper.jquery' . $suffix . '.js', array( 'jquery' ), '', true );
 
-	if( get_theme_mod( 'flash_sticky_header', '' ) == '1') {
-		wp_enqueue_script( 'sticky', get_template_directory_uri() . '/js/jquery.sticky'.$suffix.'.js', array('jquery'), '', true );
+	if ( get_theme_mod( 'flash_sticky_header', '' ) == '1' ) {
+		wp_enqueue_script( 'sticky', get_template_directory_uri() . '/js/jquery.sticky' . $suffix . '.js', array( 'jquery' ), '', true );
 	}
-	wp_register_script( 'isotope', get_template_directory_uri() . '/js/isotope.pkgd'.$suffix.'.js', array('jquery'), '', true );
+	wp_register_script( 'isotope', get_template_directory_uri() . '/js/isotope.pkgd' . $suffix . '.js', array( 'jquery' ), '', true );
 
-	wp_register_script( 'waypoints', get_template_directory_uri() . '/js/waypoints'.$suffix.'.js', array('jquery'), '', true );
+	wp_register_script( 'waypoints', get_template_directory_uri() . '/js/waypoints' . $suffix . '.js', array( 'jquery' ), '', true );
 
-	wp_register_script( 'counterup', get_template_directory_uri() . '/js/jquery.counterup'.$suffix.'.js', array('jquery'), '', true );
+	wp_register_script( 'counterup', get_template_directory_uri() . '/js/jquery.counterup' . $suffix . '.js', array( 'jquery' ), '', true );
 
-	wp_enqueue_script( 'nav', get_template_directory_uri() . '/js/jquery.nav'.$suffix.'.js', array('jquery'), '', true );
+	wp_enqueue_script( 'nav', get_template_directory_uri() . '/js/jquery.nav' . $suffix . '.js', array( 'jquery' ), '', true );
 
-	wp_enqueue_script( 'flash-custom', get_template_directory_uri() . '/js/flash'.$suffix.'.js', array('jquery'), '', true );
+	wp_enqueue_script( 'flash-custom', get_template_directory_uri() . '/js/flash' . $suffix . '.js', array( 'jquery' ), '', true );
 
 	wp_enqueue_script( 'flash-navigation', get_template_directory_uri() . '/js/navigation' . $suffix . '.js', array( 'jquery' ), '', true );
 
@@ -234,33 +236,34 @@ function flash_scripts() {
 	// Replace main style for RTL.
 	wp_style_add_data( 'flash-style', 'rtl', 'replace' );
 }
+
 add_action( 'wp_enqueue_scripts', 'flash_scripts' );
 
 if ( ! function_exists( 'flash_fonts_url' ) ) :
-/**
- * Register Google fonts for Flash.
- *
- * Create your own flash_fonts_url() function to override in a child theme.
- *
- * @return string Google fonts URL for the theme.
- */
-function flash_fonts_url() {
+	/**
+	 * Register Google fonts for Flash.
+	 *
+	 * Create your own flash_fonts_url() function to override in a child theme.
+	 *
+	 * @return string Google fonts URL for the theme.
+	 */
+	function flash_fonts_url() {
 
-	$fonts_url = '';
-	$fonts     = array();
-	$subsets   = 'latin,latin-ext';
+		$fonts_url = '';
+		$fonts     = array();
+		$subsets   = 'latin,latin-ext';
 
-	$fonts[] = get_theme_mod( 'flash_body_font', 'Montserrat:400,700');
+		$fonts[] = get_theme_mod( 'flash_body_font', 'Montserrat:400,700' );
 
-	if ( $fonts ) {
-		$fonts_url = add_query_arg( array(
-			'family' => urlencode( implode( '|', $fonts ) ),
-			'subset' => urlencode( $subsets ),
-		), 'https://fonts.googleapis.com/css' );
+		if ( $fonts ) {
+			$fonts_url = add_query_arg( array(
+				'family' => urlencode( implode( '|', $fonts ) ),
+				'subset' => urlencode( $subsets ),
+			), 'https://fonts.googleapis.com/css' );
+		}
+
+		return $fonts_url;
 	}
-
-	return $fonts_url;
-}
 endif;
 
 /**
@@ -310,14 +313,25 @@ require get_template_directory() . '/inc/woocommerce.php';
 require get_template_directory() . '/inc/siteorigin-panels.php';
 
 /**
- * Load Welcome page file.
+ * Load required files for Flash notice in Admin page only.
  */
-require get_template_directory() . '/inc/class-flash-admin.php';
+if ( is_admin() ) {
 
-/**
- * Load new theme notice file.
- */
-require get_template_directory() . '/inc/class-flash-new-theme-notice.php';
+	/**
+	 * Load Welcome page file.
+	 */
+	require get_template_directory() . '/inc/class-flash-admin.php';
+
+	/**
+	 * Load new theme notice file.
+	 */
+	require get_template_directory() . '/inc/class-flash-new-theme-notice.php';
+
+	/**
+	 * Load site library file.
+	 */
+	require get_template_directory() . '/inc/admin/class-flash-site-library.php';
+}
 
 /**
  * Load Demo Importer Configs.
