@@ -30,8 +30,41 @@ jQuery( document ).ready( function () {
 	/**
 	 * Search
 	 */
+	var hideSearchForm = function() {
+		jQuery( '.search-wrap .search-box' ).removeClass( 'active' );
+	};
 	jQuery( '.search-wrap .search-icon' ).on( 'click', function () {
 		jQuery( '.search-wrap .search-box' ).toggleClass( 'active' );
+
+		// focus after some time to fix conflict with toggleClass
+		setTimeout( function () {
+			jQuery( '.search-wrap .search-box.active input' ).focus();
+		}, 200 );
+
+		// For esc key press.
+		jQuery( document ).on( 'keyup', function ( e ) {
+
+			// on esc key press.
+			if ( 27 === e.keyCode ) {
+				// if search box is opened
+				if ( jQuery( '.search-wrap .search-box' ).hasClass( 'active' ) ) {
+					hideSearchForm();
+				}
+
+			}
+		} );
+
+		jQuery( document ).on( 'click.outEvent', function( e ) {
+			if ( e.target.closest( '.search-wrap' )  ) {
+				return;
+			}
+
+			hideSearchForm();
+
+			// Unbind current click event.
+			jQuery( document ).off( 'click.outEvent' );
+		} );
+
 	} );
 
 	/**
