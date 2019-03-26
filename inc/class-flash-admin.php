@@ -33,7 +33,6 @@ if ( ! class_exists( 'Flash_Admin' ) ) :
 		 * Localize array for import button AJAX request.
 		 */
 		public function flash_ajax_enqueue_scripts() {
-			wp_enqueue_script( 'plugin-install' );
 			wp_enqueue_script( 'updates' );
 			wp_enqueue_script( 'flash-plugin-install-helper', get_template_directory_uri() . '/js/plugin-handle.js', array( 'jquery' ), 1, true );
 			wp_localize_script(
@@ -73,6 +72,7 @@ if ( ! class_exists( 'Flash_Admin' ) ) :
 					}
 				}
 			} else {
+				wp_enqueue_script( 'plugin-install' );
 				$response['redirect'] = admin_url( '/themes.php?page=demo-importer&browse=all&flash-hide-notice=welcome' );
 				/**
 				 * Install Plugin.
