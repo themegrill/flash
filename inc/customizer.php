@@ -92,7 +92,7 @@ Kirki::add_section( 'flash_top_header_options', array(
 
 /** Top Header Enable/Disable Setting */
 Kirki::add_field( 'flash_top_header', array(
-	'type'        => 'checkbox',
+	'type'        => 'toggle',
 	'settings'    => 'flash_top_header',
 	'label'       => esc_html__( 'Enable Top Header', 'flash' ),
 	'section'     => 'flash_top_header_options',
@@ -217,7 +217,7 @@ Kirki::add_field( 'flash_config', array(
 
 /** Sticky Header Setting */
 Kirki::add_field( 'flash_config', array(
-	'type'        => 'checkbox',
+	'type'        => 'toggle',
 	'settings'    => 'flash_sticky_header',
 	'label'       => esc_html__( 'Sticky Header', 'flash' ),
 	'section'     => 'flash_header_options',
@@ -353,6 +353,23 @@ Kirki::add_section( 'flash_post_options', array(
 
 ) );
 
+/** Post Layout */
+Kirki::add_field( 'flash_config', array(
+	'type'        => 'radio-image',
+	'settings'    => 'flash_post_layout',
+	'label'       => esc_html__( 'Single Post Layout', 'flash' ),
+	'section'     => 'flash_post_options',
+	'default'     => 'right-sidebar',
+	'priority'    => 10,
+	'multiple'    => 1,
+	'choices'     => array(
+		'right-sidebar'     => get_template_directory_uri() . '/images/right-sidebar.png',
+		'left-sidebar'      => get_template_directory_uri() . '/images/left-sidebar.png',
+		'full-width'        => get_template_directory_uri() . '/images/full-width.png',
+		'full-width-center' => get_template_directory_uri() . '/images/full-width-center.png',
+	),
+) );
+
 /** Related Posts option */
 Kirki::add_field( 'flash_config', array(
 	'type'        => 'switch',
@@ -378,23 +395,6 @@ Kirki::add_field( 'flash_config', array(
 			'operator' => '==',
 			'value'    => 1,
 		),
-	),
-) );
-
-/** Post Layout */
-Kirki::add_field( 'flash_config', array(
-	'type'        => 'radio-image',
-	'settings'    => 'flash_post_layout',
-	'label'       => esc_html__( 'Single Post Layout', 'flash' ),
-	'section'     => 'flash_post_options',
-	'default'     => 'right-sidebar',
-	'priority'    => 10,
-	'multiple'    => 1,
-	'choices'     => array(
-		'right-sidebar'     => get_template_directory_uri() . '/images/right-sidebar.png',
-		'left-sidebar'      => get_template_directory_uri() . '/images/left-sidebar.png',
-		'full-width'        => get_template_directory_uri() . '/images/full-width.png',
-		'full-width-center' => get_template_directory_uri() . '/images/full-width-center.png',
 	),
 ) );
 
