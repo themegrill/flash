@@ -492,29 +492,6 @@ function flash_get_layout() {
 }
 endif;
 
-add_action('wp_head', 'flash_custom_fonts');
-/**
- * Returns typography.
- *
- * @since Flash 1.0
- */
-function flash_custom_fonts() {
-	$flash_custom_fonts_values = '';
-	$body_font = get_theme_mod( 'flash_body_font', 'Montserrat:400,700');
-	$google_fonts = flash_google_fonts();
-	$font_family = $google_fonts[ $body_font ];
-
-	if( isset( $font_family ) ) {
-		$flash_custom_fonts_values .= 'body { font-family: "'.$font_family.'"; }';
-	}
-
-
-	if( !empty( $flash_custom_fonts_values ) ) {
-		?>
-		<style type="text/css"><?php echo $flash_custom_fonts_values; ?></style>
-		<?php
-	}
-}
 /**
 * Returns true if on a page which uses WooCommerce templates (cart and checkout are standard pages with shortcodes and which are also included)
 *

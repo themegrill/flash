@@ -196,9 +196,6 @@ add_action( 'widgets_init', 'flash_widgets_init' );
 function flash_scripts() {
 	$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
 
-	// Add custom fonts, used in the main stylesheet.
-	wp_enqueue_style( 'flash-fonts', flash_fonts_url(), array(), null );
-
 	// Font Awessome
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome' . $suffix . '.css', array(), false, false );
 	// Swiper CSS
@@ -238,33 +235,6 @@ function flash_scripts() {
 }
 
 add_action( 'wp_enqueue_scripts', 'flash_scripts' );
-
-if ( ! function_exists( 'flash_fonts_url' ) ) :
-	/**
-	 * Register Google fonts for Flash.
-	 *
-	 * Create your own flash_fonts_url() function to override in a child theme.
-	 *
-	 * @return string Google fonts URL for the theme.
-	 */
-	function flash_fonts_url() {
-
-		$fonts_url = '';
-		$fonts     = array();
-		$subsets   = 'latin,latin-ext';
-
-		$fonts[] = get_theme_mod( 'flash_body_font', 'Montserrat:400,700' );
-
-		if ( $fonts ) {
-			$fonts_url = add_query_arg( array(
-				'family' => urlencode( implode( '|', $fonts ) ),
-				'subset' => urlencode( $subsets ),
-			), 'https://fonts.googleapis.com/css' );
-		}
-
-		return $fonts_url;
-	}
-endif;
 
 /**
  * Load TGM Activation file.
@@ -339,3 +309,43 @@ if ( is_admin() ) {
 if ( class_exists( 'TG_Demo_Importer' ) ) {
 	require get_template_directory() . '/inc/demo-config.php';
 }
+
+/**
+ * Fetch and set the typography value as Kirki defines within the theme.
+ *
+ * @since Flash 1.2.8
+ */
+function flash_font_family_change() {
+	// Lets bail out if no 'theme_mods_flash' option found.
+	if ( false === ( $mods = get_option( "theme_mods_flash" ) ) ) {
+		return;
+	}
+
+	// Lets bail out if no 'flash_typography_transfer_free' option found.
+	if ( get_option( 'flash_typography_transfer_free' ) ) {
+		return;
+	}
+
+	// Assign the free theme body font family.
+	$typography_options = get_theme_mod( 'flash_body_font', 'Montserrat:400,700' );
+
+	$font_family = 'Montserrat';
+	if ( $typography_options == 'Raleway:400,600,700' ) {
+		$font_family = 'Raleway';
+	} elseif ( $typography_options == 'Ruda:400,700' ) {
+		$font_family = 'Ruda';
+	}
+
+	$value = array(
+		'font-family'    => $font_family,
+		'variant'        => 'regular',
+	);
+
+	// Update the 'flash_body_font' theme mod.
+	set_theme_mod( 'flash_body_font', $value );
+
+	// Set transfer as complete.
+	update_option( 'flash_typography_transfer_free', 1 );
+}
+
+add_action( 'after_setup_theme', 'flash_font_family_change' );

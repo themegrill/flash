@@ -493,6 +493,37 @@ if ( ! function_exists( 'wp_update_custom_css_post' ) ) {
 	) );
 }
 
+/** Google Font Settings Section  */
+Kirki::add_section( 'flash_google_font_section', array(
+	'title'      => esc_html__( 'Google Font Settings', 'flash' ),
+	'panel'      => 'flash_theme_options',
+	'priority'   => 110,
+	'capability' => 'edit_theme_options',
+
+) );
+
+Kirki::add_field( 'flash_config', array(
+	'type'     => 'typography',
+	'settings' => 'flash_body_font',
+	'label'    => esc_attr__( 'Body Typography', 'kirki' ),
+	'section'  => 'flash_google_font_section',
+	'default'  => array(
+		'font-family'    => 'Montserrat',
+		'variant'        => 'regular',
+	),
+	'priority' => 10,
+	'output'   => array(
+		array(
+			'element' => array( 'body' ),
+		),
+	),
+	'js_vars'  => array(
+		array(
+			'element' => array( 'body' ),
+		),
+	),
+) );
+
 /**
  * Sets up the WordPress core custom header and custom background features.
  *
@@ -615,68 +646,6 @@ function flash_customize_register( $wp_customize ) {
 		'label'       => esc_html__( 'Secondary Text Color', 'flash' ),
 		'section'     => 'colors',
 	) ) );
-
-	// Typography Options
-	$flash_fonts_families = array(
-		'flash_body_font' => array(
-			'id'      => 'flash_body_font',
-			'default' => 'Montserrat:400,700',
-			'title'   => esc_html__( 'Body font. Default is "Montserrat".', 'flash' ),
-		)
-	);
-
-	// Google Fonts Options
-	$wp_customize->add_section(
-		'flash_google_font_section',
-		array(
-			'priority' => 70,
-			'title'    => esc_html__( 'Google Font Settings', 'flash' ),
-			'panel'    => 'flash_theme_options'
-		)
-	);
-
-	// Typography Options
-	$flash_fonts_families = array(
-		'flash_body_font' => array(
-			'id'      => 'flash_body_font',
-			'default' => 'Montserrat:400,700',
-			'title'   => esc_html__( 'Body font. Default is "Montserrat".', 'flash' ),
-		)
-	);
-
-	// Google Fonts Options
-	$wp_customize->add_section(
-		'flash_google_font_section',
-		array(
-			'priority' => 70,
-			'title'    => esc_html__( 'Google Font Settings', 'flash' ),
-			'panel'    => 'flash_theme_options'
-		)
-	);
-
-	foreach ($flash_fonts_families as $flash_fonts_family) {
-
-		$wp_customize->add_setting(
-			$flash_fonts_family['id'],
-			array(
-				'default'           => $flash_fonts_family['default'],
-				'capability'        => 'edit_theme_options',
-				'sanitize_callback' => 'flash_fonts_sanitize'
-			)
-		);
-
-		$flash_google_fonts_family = flash_google_fonts();
-
-		$wp_customize->add_control($flash_fonts_family['id'],
-			array(
-				'label'   => $flash_fonts_family['title'],
-				'type'    => 'select',
-				'section' => 'flash_google_font_section',
-				'setting' => $flash_fonts_family['id'],
-				'choices' => $flash_google_fonts_family
-			)
-		);
-	}
 }
 add_action( 'customize_register', 'flash_customize_register' );
 
@@ -851,23 +820,6 @@ function flash_sanitize_color_scheme( $value ) {
 	return $value;
 }
 endif; // flash_sanitize_color_scheme
-
-
-if ( ! function_exists( 'flash_google_fonts' ) ) :
-/**
- * Custom google fonts.
- */
-	function flash_google_fonts() {
-
-		$flash_googlefonts = array(
-			"Montserrat:400,700"    => "Montserrat",
-			"Raleway:400,600,700"	=> "Raleway",
-			"Ruda:400,700"          => "Ruda"
-		);
-
-	   return $flash_googlefonts;
-	}
-endif;
 
 
 /**
