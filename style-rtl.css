@@ -4210,6 +4210,14 @@ WooCommerce
 	content: none;
 }
 
+#secondary .widget_products ul.product_list_widget li img {
+	padding: 0 0 20px 0;
+}
+
+#secondary .widget_products ul li {
+	clear: both;
+}
+
 .woocommerce-breadcrumb {
 	float: left;
 	margin: 0;
