@@ -1137,6 +1137,14 @@ Header
 		content: "\f0d5";
 	}
 
+	&[href*="pinterest.com"]::before {
+		content: "\f231";
+	}
+
+	&[href*="instagram.com"]::before {
+		content: "\f16d";
+	}
+
 	&[href*="youtube.com"]::before {
 		content: "\f16a";
 	}
@@ -1145,6 +1153,8 @@ Header
 	&[href*="plus.google.com"]:hover,
 	&[href*="linkedin.com"]:hover,
 	&[href*="facebook.com"]:hover,
+	&[href*="pinterest.com"]:hover,
+	&[href*="instagram.com"]:hover,
 	&[href*="youtube.com"]:hover {
 		color: #333;
 	}

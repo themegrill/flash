@@ -1066,11 +1066,19 @@ Header
 	content: "\f0d5";
 }
 
+.social-menu li a[href*="pinterest.com"]::before {
+	content: "\f231";
+}
+
+.social-menu li a[href*="instagram.com"]::before {
+	content: "\f16d";
+}
+
 .social-menu li a[href*="youtube.com"]::before {
 	content: "\f16a";
 }
 
-.social-menu li a[href*="twitter.com"]:hover, .social-menu li a[href*="plus.google.com"]:hover, .social-menu li a[href*="linkedin.com"]:hover, .social-menu li a[href*="facebook.com"]:hover, .social-menu li a[href*="youtube.com"]:hover {
+.social-menu li a[href*="twitter.com"]:hover, .social-menu li a[href*="plus.google.com"]:hover, .social-menu li a[href*="linkedin.com"]:hover, .social-menu li a[href*="facebook.com"]:hover, .social-menu li a[href*="pinterest.com"]:hover, .social-menu li a[href*="instagram.com"]:hover, .social-menu li a[href*="youtube.com"]:hover {
 	color: #333;
 }
 
