@@ -782,6 +782,7 @@ common
 	padding: 10px 16px;
 	position: fixed;
 	opacity: 0.5;
+	z-index: 9999;
 	filter: alpha(opacity=50);
 	/* For IE8 and earlier */
 	right: 20px;
