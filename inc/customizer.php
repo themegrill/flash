@@ -505,7 +505,7 @@ Kirki::add_section( 'flash_google_font_section', array(
 Kirki::add_field( 'flash_config', array(
 	'type'     => 'typography',
 	'settings' => 'flash_body_font',
-	'label'    => esc_attr__( 'Body Typography', 'kirki' ),
+	'label'    => esc_attr__( 'Body Typography', 'flash' ),
 	'section'  => 'flash_google_font_section',
 	'default'  => array(
 		'font-family'    => 'Montserrat',
