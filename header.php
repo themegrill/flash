@@ -22,6 +22,12 @@
 <body <?php body_class(); ?>>
 
 <?php
+if ( function_exists( 'wp_body_open' ) ) {
+	wp_body_open();
+}
+?>
+
+<?php
 if ( get_theme_mod( 'flash_disable_preloader', '' ) != 1 ) : ?>
 <div id="preloader-background">
 	<div id="spinners">
