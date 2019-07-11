@@ -22,6 +22,13 @@
 <body <?php body_class(); ?>>
 
 <?php
+/**
+ * WordPress function to load custom scripts after body.
+ *
+ * Introduced in WordPress 5.2.0
+ *
+ * @since Flash 1.3.0
+ */
 if ( function_exists( 'wp_body_open' ) ) {
 	wp_body_open();
 }
