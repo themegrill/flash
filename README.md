@@ -2,7 +2,7 @@
 Author: ThemeGrill
 Requires at least: WordPress 4.3
 Tested up to: WordPress 5.0.3
-Version: 1.2.6
+Version: 1.3.0
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 Tags: one-column, two-columns, left-sidebar, right-sidebar, grid-layout, custom-background, custom-colors, custom-menu, custom-logo, featured-images, footer-widgets, full-width-template, theme-options, threaded-comments, translation-ready, blog, e-commerce
@@ -80,7 +80,7 @@ Source: https://pixabay.com/en/coffee-book-flowers-setting-2390136/
 Unless otherwise specified, all the theme files, scripts and images including the screenshot image are licensed under [GNU GPL] (http://www.gnu.org/licenses/gpl-3.0.txt), version 3 or later.
 
 == Changelog ==
-= Version TBD =
+= Version 1.3.0 - 2019-07-11 =
 * Tweak - Added `wp_body_open` function to support WordPress 5.2 `wp_body_open` hook.
 * Tweak - Added message to make user aware while installing and activating the ThemeGrill demo importer plugin.
 

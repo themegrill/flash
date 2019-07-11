@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v3 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Flash 1.2.9\n"
+"Project-Id-Version: Flash 1.3.0\n"
 "Report-Msgid-Bugs-To: themegrill@gmail.com\n"
-"POT-Creation-Date: 2019-06-25 09:04:36+00:00\n"
+"POT-Creation-Date: 2019-07-11 10:05:24+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -13,16 +13,16 @@ msgstr ""
 "Language-Team: ThemeGrill <themegrill@gmail.com\n"
 "X-Generator: grunt-wp-i18n 0.5.4\n"
 
-#: inc/class-flash-admin.php:528 inc/class-flash-admin.php:533
-#: inc/class-flash-admin.php:593
+#: inc/class-flash-admin.php:536 inc/class-flash-admin.php:541
+#: inc/class-flash-admin.php:601
 msgid "3"
 msgstr ""
 
-#: inc/class-flash-admin.php:529
+#: inc/class-flash-admin.php:537
 msgid "6"
 msgstr ""
 
-#: inc/class-flash-admin.php:594
+#: inc/class-flash-admin.php:602
 msgid "7"
 msgstr ""
 
@@ -112,7 +112,7 @@ msgstr ""
 msgid "Add widgets here for footer sidebar 4."
 msgstr ""
 
-#: header.php:46
+#: header.php:59
 msgid "Skip to content"
 msgstr ""
 
@@ -124,7 +124,7 @@ msgstr ""
 msgid "Processing..."
 msgstr ""
 
-#: inc/class-flash-admin.php:115 inc/class-flash-admin.php:210
+#: inc/class-flash-admin.php:115 inc/class-flash-admin.php:212
 msgid "About"
 msgstr ""
 
@@ -150,340 +150,352 @@ msgid ""
 "our theme can offer please make sure you visit our %1$swelcome page%2$s."
 msgstr ""
 
-#: inc/class-flash-admin.php:191 inc/class-flash-site-library.php:97
+#: inc/class-flash-admin.php:189
+msgid ""
+"Clicking the button below will install and activate the ThemeGrill demo "
+"importer plugin."
+msgstr ""
+
+#: inc/class-flash-admin.php:193 inc/class-flash-site-library.php:97
 msgid "Get started with Flash"
 msgstr ""
 
-#: inc/class-flash-admin.php:224
+#: inc/class-flash-admin.php:226
 msgid "Theme Info"
 msgstr ""
 
-#: inc/class-flash-admin.php:226
+#: inc/class-flash-admin.php:228
 msgid "View Free Demos"
 msgstr ""
 
-#: inc/class-flash-admin.php:228 inc/class-flash-admin.php:371
-#: inc/class-flash-admin.php:708
+#: inc/class-flash-admin.php:230 inc/class-flash-admin.php:379
+#: inc/class-flash-admin.php:716
 msgid "View Pro"
 msgstr ""
 
-#: inc/class-flash-admin.php:230
+#: inc/class-flash-admin.php:232
 msgid "View Pro Demos"
 msgstr ""
 
-#: inc/class-flash-admin.php:235
+#: inc/class-flash-admin.php:237
 msgid "Demo Importer"
 msgstr ""
 
-#: inc/class-flash-admin.php:239
+#: inc/class-flash-admin.php:241
 msgid "Rate this theme"
 msgstr ""
 
-#: inc/class-flash-admin.php:246
+#: inc/class-flash-admin.php:248
 msgid "Site Library"
 msgstr ""
 
-#: inc/class-flash-admin.php:254
+#: inc/class-flash-admin.php:256
 msgid "Getting Started"
 msgstr ""
 
-#: inc/class-flash-admin.php:262
+#: inc/class-flash-admin.php:264
 msgid "Supported Plugins"
 msgstr ""
 
-#: inc/class-flash-admin.php:270
+#: inc/class-flash-admin.php:272
 msgid "Free Vs Pro"
 msgstr ""
 
-#: inc/class-flash-admin.php:278
+#: inc/class-flash-admin.php:280
 msgid "Changelog"
 msgstr ""
 
-#: inc/class-flash-admin.php:335
+#: inc/class-flash-admin.php:312
+msgid ""
+"Clicking the \"Import\" button in any of the demos below will install and "
+"activate the ThemeGrill demo importer plugin."
+msgstr ""
+
+#: inc/class-flash-admin.php:343
 msgid "Import Demo"
 msgstr ""
 
-#: inc/class-flash-admin.php:336
+#: inc/class-flash-admin.php:344
 msgid "Needs ThemeGrill Demo Importer plugin."
 msgstr ""
 
-#: inc/class-flash-admin.php:339 inc/class-flash-site-library.php:97
+#: inc/class-flash-admin.php:347 inc/class-flash-site-library.php:97
 msgid "Import"
 msgstr ""
 
-#: inc/class-flash-admin.php:344
+#: inc/class-flash-admin.php:352
 msgid "Theme Customizer"
 msgstr ""
 
-#: inc/class-flash-admin.php:345
+#: inc/class-flash-admin.php:353
 msgid "All Theme Options are available via Customize screen."
 msgstr ""
 
-#: inc/class-flash-admin.php:347
+#: inc/class-flash-admin.php:355
 msgid "Customize"
 msgstr ""
 
-#: inc/class-flash-admin.php:352 inc/class-flash-admin.php:355
+#: inc/class-flash-admin.php:360 inc/class-flash-admin.php:363
 msgid "Documentation"
 msgstr ""
 
-#: inc/class-flash-admin.php:353
+#: inc/class-flash-admin.php:361
 msgid "Please view our documentation page to setup the theme."
 msgstr ""
 
-#: inc/class-flash-admin.php:360
+#: inc/class-flash-admin.php:368
 msgid "Got theme support question?"
 msgstr ""
 
-#: inc/class-flash-admin.php:361
+#: inc/class-flash-admin.php:369
 msgid "Please put it in our dedicated support forum."
 msgstr ""
 
-#: inc/class-flash-admin.php:363
+#: inc/class-flash-admin.php:371
 msgid "Support Forum"
 msgstr ""
 
-#: inc/class-flash-admin.php:368
+#: inc/class-flash-admin.php:376
 msgid "Need more features?"
 msgstr ""
 
-#: inc/class-flash-admin.php:369 inc/class-flash-admin.php:515
+#: inc/class-flash-admin.php:377 inc/class-flash-admin.php:523
 msgid "Upgrade to PRO version for more exciting features."
 msgstr ""
 
-#: inc/class-flash-admin.php:376
+#: inc/class-flash-admin.php:384
 msgid "Got sales related question?"
 msgstr ""
 
-#: inc/class-flash-admin.php:377
+#: inc/class-flash-admin.php:385
 msgid "Please send it via our sales contact page."
 msgstr ""
 
-#: inc/class-flash-admin.php:379
+#: inc/class-flash-admin.php:387
 msgid "Contact Page"
 msgstr ""
 
-#: inc/class-flash-admin.php:386 inc/class-flash-admin.php:394
+#: inc/class-flash-admin.php:394 inc/class-flash-admin.php:402
 msgid "Translate"
 msgstr ""
 
-#: inc/class-flash-admin.php:390
+#: inc/class-flash-admin.php:398
 msgid "Click below to translate this theme into your own language."
 msgstr ""
 
-#: inc/class-flash-admin.php:407
+#: inc/class-flash-admin.php:415
 msgid "Return to Updates"
 msgstr ""
 
-#: inc/class-flash-admin.php:407
+#: inc/class-flash-admin.php:415
 msgid "Return to Dashboard &rarr; Updates"
 msgstr ""
 
-#: inc/class-flash-admin.php:410
+#: inc/class-flash-admin.php:418
 msgid "Go to Dashboard &rarr; Home"
 msgstr ""
 
-#: inc/class-flash-admin.php:410
+#: inc/class-flash-admin.php:418
 msgid "Go to Dashboard"
 msgstr ""
 
-#: inc/class-flash-admin.php:427
+#: inc/class-flash-admin.php:435
 msgid "View changelog below."
 msgstr ""
 
-#: inc/class-flash-admin.php:481
+#: inc/class-flash-admin.php:489
 msgid "This theme recommends following plugins."
 msgstr ""
 
-#: inc/class-flash-admin.php:484
+#: inc/class-flash-admin.php:492
 msgid "Social Icons"
 msgstr ""
 
-#: inc/class-flash-admin.php:485 inc/class-flash-admin.php:489
-#: inc/class-flash-admin.php:499
+#: inc/class-flash-admin.php:493 inc/class-flash-admin.php:497
+#: inc/class-flash-admin.php:507
 msgid " by ThemeGrill"
 msgstr ""
 
-#: inc/class-flash-admin.php:488
+#: inc/class-flash-admin.php:496
 msgid "Easy Social Sharing"
 msgstr ""
 
-#: inc/class-flash-admin.php:492
+#: inc/class-flash-admin.php:500
 msgid "Contact Form 7"
 msgstr ""
 
-#: inc/class-flash-admin.php:495
+#: inc/class-flash-admin.php:503
 msgid "WooCommerce"
 msgstr ""
 
-#: inc/class-flash-admin.php:498
+#: inc/class-flash-admin.php:506
 msgid "RestaurantPress"
 msgstr ""
 
-#: inc/class-flash-admin.php:520
+#: inc/class-flash-admin.php:528
 msgid "Features"
 msgstr ""
 
-#: inc/class-flash-admin.php:522
+#: inc/class-flash-admin.php:530
 msgid "Flash Pro"
 msgstr ""
 
-#: inc/class-flash-admin.php:527
+#: inc/class-flash-admin.php:535
 msgid "Header Layouts"
 msgstr ""
 
-#: inc/class-flash-admin.php:532
+#: inc/class-flash-admin.php:540
 #: inc/kirki/controls/php/class-kirki-control-base.php:137
 msgid "Google Fonts"
 msgstr ""
 
-#: inc/class-flash-admin.php:534
+#: inc/class-flash-admin.php:542
 msgid "800+"
 msgstr ""
 
-#: inc/class-flash-admin.php:537
+#: inc/class-flash-admin.php:545
 msgid "Font Size options"
 msgstr ""
 
-#: inc/class-flash-admin.php:542
+#: inc/class-flash-admin.php:550
 msgid "Color Palette"
 msgstr ""
 
-#: inc/class-flash-admin.php:543
+#: inc/class-flash-admin.php:551
 msgid "Primary Color Option"
 msgstr ""
 
-#: inc/class-flash-admin.php:544
+#: inc/class-flash-admin.php:552
 msgid "13+ Color Options"
 msgstr ""
 
-#: inc/class-flash-admin.php:547
+#: inc/class-flash-admin.php:555
 msgid "Translation Ready"
 msgstr ""
 
-#: inc/class-flash-admin.php:552
+#: inc/class-flash-admin.php:560
 msgid "WooCommerce Compatible"
 msgstr ""
 
-#: inc/class-flash-admin.php:557
+#: inc/class-flash-admin.php:565
 msgid "YITH Wishlist Compatible"
 msgstr ""
 
-#: inc/class-flash-admin.php:562
+#: inc/class-flash-admin.php:570
 msgid "WPML Compatible"
 msgstr ""
 
-#: inc/class-flash-admin.php:567
+#: inc/class-flash-admin.php:575
 msgid "Polylang Compatible"
 msgstr ""
 
-#: inc/class-flash-admin.php:572
+#: inc/class-flash-admin.php:580
 msgid "Footer Copyright Editor"
 msgstr ""
 
-#: inc/class-flash-admin.php:577
+#: inc/class-flash-admin.php:585
 msgid "Custom Widget Area Builder"
 msgstr ""
 
-#: inc/class-flash-admin.php:582
+#: inc/class-flash-admin.php:590
 msgid "Video Background"
 msgstr ""
 
-#: inc/class-flash-admin.php:587
+#: inc/class-flash-admin.php:595
 msgid "Widget Animations"
 msgstr ""
 
-#: inc/class-flash-admin.php:592
+#: inc/class-flash-admin.php:600
 msgid "Demo Content"
 msgstr ""
 
-#: inc/class-flash-admin.php:597
+#: inc/class-flash-admin.php:605
 msgid "Support"
 msgstr ""
 
-#: inc/class-flash-admin.php:598
+#: inc/class-flash-admin.php:606
 msgid "Forum"
 msgstr ""
 
-#: inc/class-flash-admin.php:599
+#: inc/class-flash-admin.php:607
 msgid "Forum + Emails/Support Ticket"
 msgstr ""
 
-#: inc/class-flash-admin.php:602
+#: inc/class-flash-admin.php:610
 msgid "FT: Heading Widget"
 msgstr ""
 
-#: inc/class-flash-admin.php:605 inc/class-flash-admin.php:613
-#: inc/class-flash-admin.php:621 inc/class-flash-admin.php:660
+#: inc/class-flash-admin.php:613 inc/class-flash-admin.php:621
+#: inc/class-flash-admin.php:629 inc/class-flash-admin.php:668
 msgid "3 New Styles"
 msgstr ""
 
-#: inc/class-flash-admin.php:610
+#: inc/class-flash-admin.php:618
 msgid "FT: Service Widget"
 msgstr ""
 
-#: inc/class-flash-admin.php:618
+#: inc/class-flash-admin.php:626
 msgid "FT: Call To Action Widget"
 msgstr ""
 
-#: inc/class-flash-admin.php:626
+#: inc/class-flash-admin.php:634
 msgid "FT: Testimonial Widget"
 msgstr ""
 
-#: inc/class-flash-admin.php:629 inc/class-flash-admin.php:637
-#: inc/class-flash-admin.php:652
+#: inc/class-flash-admin.php:637 inc/class-flash-admin.php:645
+#: inc/class-flash-admin.php:660
 msgid "4 New Styles"
 msgstr ""
 
-#: inc/class-flash-admin.php:634
+#: inc/class-flash-admin.php:642
 msgid "FT: Team Widget"
 msgstr ""
 
-#: inc/class-flash-admin.php:642
+#: inc/class-flash-admin.php:650
 msgid "FT: Portfolio Widget"
 msgstr ""
 
-#: inc/class-flash-admin.php:644
+#: inc/class-flash-admin.php:652
 msgid "1 New Style"
 msgstr ""
 
-#: inc/class-flash-admin.php:649
+#: inc/class-flash-admin.php:657
 msgid "FT: Animated Number Counter"
 msgstr ""
 
-#: inc/class-flash-admin.php:657
+#: inc/class-flash-admin.php:665
 msgid "FT: Blog"
 msgstr ""
 
-#: inc/class-flash-admin.php:665
+#: inc/class-flash-admin.php:673
 msgid "FT: Google Map"
 msgstr ""
 
-#: inc/class-flash-admin.php:670
+#: inc/class-flash-admin.php:678
 msgid "FT: Post Slider"
 msgstr ""
 
-#: inc/class-flash-admin.php:675
+#: inc/class-flash-admin.php:683
 msgid "FT: Progress Bar"
 msgstr ""
 
-#: inc/class-flash-admin.php:680
+#: inc/class-flash-admin.php:688
 msgid "FT: Instagram Slider"
 msgstr ""
 
-#: inc/class-flash-admin.php:685
+#: inc/class-flash-admin.php:693
 msgid "FT: Pricing Table"
 msgstr ""
 
-#: inc/class-flash-admin.php:690
+#: inc/class-flash-admin.php:698
 msgid "FT: Separator"
 msgstr ""
 
-#: inc/class-flash-admin.php:695
+#: inc/class-flash-admin.php:703
 msgid "FT: WooCommerce Category Slider"
 msgstr ""
 
-#: inc/class-flash-admin.php:700
+#: inc/class-flash-admin.php:708
 msgid "FT: WooCommerce Product Tab"
 msgstr ""
 
