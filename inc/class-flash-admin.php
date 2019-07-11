@@ -185,6 +185,8 @@ if ( ! class_exists( 'Flash_Admin' ) ) :
 
 					<p>
 						<?php printf( esc_html__( 'Welcome! Thank you for choosing Flash! To fully take advantage of the best our theme can offer please make sure you visit our %1$swelcome page%2$s.', 'flash' ), '<a href="' . esc_url( admin_url( 'themes.php?page=flash-welcome' ) ) . '">', '</a>' ); ?>
+
+						<span class="plugin-install-notice"><?php esc_html_e( 'Clicking the button below will install and activate the ThemeGrill demo importer plugin.', 'flash' ); ?></span>
 					</p>
 
 					<div class="submit">
@@ -304,7 +306,13 @@ if ( ! class_exists( 'Flash_Admin' ) ) :
 			<div class="wrap about-wrap">
 				<?php
 				$this->intro();
+				?>
 
+				<div class="plugin-install-notice">
+					<?php esc_html_e( 'Clicking the "Import" button in any of the demos below will install and activate the ThemeGrill demo importer plugin.', 'flash' ); ?>
+				</div>
+
+				<?php
 				// Display site library.
 				echo FLash_Site_Library::flash_site_library_page_content();
 				?>
