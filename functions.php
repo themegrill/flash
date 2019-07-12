@@ -293,11 +293,6 @@ if ( is_admin() ) {
 	require get_template_directory() . '/inc/class-flash-admin.php';
 
 	/**
-	 * Load new theme notice file.
-	 */
-	require get_template_directory() . '/inc/class-flash-new-theme-notice.php';
-
-	/**
 	 * Load site library file.
 	 */
 	require get_template_directory() . '/inc/class-flash-site-library.php';

@@ -1,7 +1,7 @@
 === Flash ===
 Author: ThemeGrill
 Requires at least: WordPress 4.3
-Tested up to: WordPress 5.0.3
+Tested up to: WordPress 5.2.2
 Version: 1.3.0
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
@@ -80,6 +80,9 @@ Source: https://pixabay.com/en/coffee-book-flowers-setting-2390136/
 Unless otherwise specified, all the theme files, scripts and images including the screenshot image are licensed under [GNU GPL] (http://www.gnu.org/licenses/gpl-3.0.txt), version 3 or later.
 
 == Changelog ==
+= Version TBD =
+* Remove - Removed dashboard message to align with the theme review guidelines
+
 = Version 1.3.0 - 2019-07-11 =
 * Tweak - Added `wp_body_open` function to support WordPress 5.2 `wp_body_open` hook.
 * Tweak - Added message to make user aware while installing and activating the ThemeGrill demo importer plugin.
@@ -96,7 +99,7 @@ Unless otherwise specified, all the theme files, scripts and images including th
 * Tweak - Added site library and demo import process in About Flash page.
 
 = Version 1.2.6 - 2019-01-16 =
-* Updated - Isotope library to 3.0.6 
+* Updated - Isotope library to 3.0.6
 * Updated - Kirki to 3.0.35.3
 
 = Version 1.2.5 - 2018-12-05 =
