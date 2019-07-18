@@ -54,6 +54,7 @@ module.exports = function( grunt ){
 		sass: {
 			options: {
 				sourcemap: 'none',
+				linefeed: 'crlf',
 				loadPath: require( 'node-bourbon' ).includePaths
 			},
 			compile: {
@@ -138,7 +139,7 @@ module.exports = function( grunt ){
 		// Compress files and folders.
 		compress: {
 			options: {
-				archive: 'flash.zip'
+				archive: 'dist/flash.zip'
 			},
 			files: {
 				src: [

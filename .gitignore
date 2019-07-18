@@ -10,6 +10,9 @@ project.properties
 # Sass
 .sass-cache
 
+# Dist folder
+/dist/
+
 # Dependencies
 /node_modules/
 /deploy/
