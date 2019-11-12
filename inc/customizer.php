@@ -291,6 +291,7 @@ Kirki::add_field( 'flash_config', array(
 		'left-sidebar'      => get_template_directory_uri() . '/images/left-sidebar.png',
 		'full-width'        => get_template_directory_uri() . '/images/full-width.png',
 		'full-width-center' => get_template_directory_uri() . '/images/full-width-center.png',
+		'stretched-layout'  => get_template_directory_uri() . '/images/stretched-layout.png',
 	),
 ) );
 
@@ -367,6 +368,7 @@ Kirki::add_field( 'flash_config', array(
 		'left-sidebar'      => get_template_directory_uri() . '/images/left-sidebar.png',
 		'full-width'        => get_template_directory_uri() . '/images/full-width.png',
 		'full-width-center' => get_template_directory_uri() . '/images/full-width-center.png',
+		'stretched-layout'  => get_template_directory_uri() . '/images/stretched-layout.png',
 	),
 ) );
 
@@ -440,6 +442,7 @@ Kirki::add_field( 'flash_config', array(
 		'left-sidebar'      => get_template_directory_uri() . '/images/left-sidebar.png',
 		'full-width'        => get_template_directory_uri() . '/images/full-width.png',
 		'full-width-center' => get_template_directory_uri() . '/images/full-width-center.png',
+		'stretched-layout'  => get_template_directory_uri() . '/images/stretched-layout.png',
 	),
 ) );
 

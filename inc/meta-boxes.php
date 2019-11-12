@@ -11,40 +11,53 @@ $flash_page_layout = array(
 	'default-layout' => array(
 		'id'    => 'flash_page_layout',
 		'value' => 'default-layout',
-		'label' => esc_html__( 'Default Layout', 'flash' )
+		'label' => esc_html__( 'Default Layout', 'flash' ),
+		'label_id' => 'flash_page_default_layout',
 	),
 	'right-sidebar' => array(
 		'id'	=> 'flash_page_layout',
 		'value' => 'right-sidebar',
-		'label' => esc_html__( 'Right Sidebar', 'flash' )
+		'label' => esc_html__( 'Right Sidebar', 'flash' ),
+		'label_id' => 'flash_page_right_sidebar_layout',
 	),
 	'left-sidebar' 	=> array(
 		'id'	=> 'flash_page_layout',
 		'value' => 'left-sidebar',
-		'label' => esc_html__( 'Left Sidebar', 'flash' )
+		'label' => esc_html__( 'Left Sidebar', 'flash' ),
+		'label_id' => 'flash_page_left_sidebar_layout',
 	),
 	'full-width' => array(
 		'id'	=> 'flash_page_layout',
 		'value' => 'full-width',
-		'label' => esc_html__( 'Full Width', 'flash' )
+		'label' => esc_html__( 'Full Width', 'flash' ),
+		'label_id' => 'flash_page_full_width_layout',
 	),
 	'full-width-center' => array(
 		'id'	=> 'flash_page_layout',
 		'value' => 'full-width-center',
-		'label' => esc_html__( 'Full Width Center', 'flash' )
+		'label' => esc_html__( 'Full Width Center', 'flash' ),
+		'label_id' => 'flash_page_full_width_center_layout',
+	),
+	'stretched-layout' => array(
+		'id'	=> 'flash_page_layout',
+		'value' => 'stretched-layout',
+		'label' => esc_html__( 'Stretched Layout', 'flash' ),
+		'label_id' => 'flash_page_stretched_layout',
 	)
 );
 
 $flash_metabox_field_transparency = array(
 	array(
-		'id'	=> 'flash_transparency',
-		'value' => 'transparent',
-		'label' => esc_html__( 'Transparent Header', 'flash' )
+		'id'       => 'flash_transparency',
+		'value'    => 'transparent',
+		'label'    => esc_html__( 'Transparent Header', 'flash' ),
+		'label_id' => 'transparent',
 	),
 	array(
-		'id'	=> 'flash_transparency',
-		'value' => 'non-transparent',
-		'label' => esc_html__( 'Non Transparent Header', 'flash' )
+		'id'       => 'flash_transparency',
+		'value'    => 'non-transparent',
+		'label'    => esc_html__( 'Non Transparent Header', 'flash' ),
+		'label_id' => 'non-transparent',
 	)
 );
 add_action( 'add_meta_boxes', 'flash_add_custom_box' );
@@ -85,18 +98,18 @@ function flash_meta_form( $flash_metabox_field ) {
 			case 'flash_page_layout':
 				if( empty( $flash_meta ) ) { $flash_meta = 'default-layout'; } ?>
 
-				<input class="post-format" type="radio" name="<?php echo $field['id']; ?>" value="<?php echo $field['value']; ?>" <?php checked( $field['value'], $flash_meta ); ?>/>
-				<label class="post-format-icon"><?php echo $field['label']; ?></label><br/>
+				<input class="post-format" type="radio" id="<?php echo $field['label_id']; ?>" name="<?php echo $field['id']; ?>" value="<?php echo $field['value']; ?>" <?php checked( $field['value'], $flash_meta ); ?>/>
+				<label class="post-format-icon" for="<?php echo $field['label_id']; ?>"><?php echo $field['label']; ?></label><br/>
 				<?php
 
 			break;
 
 			// Team Designation
 			case 'flash_transparency':
-				if( empty( $flash_meta ) ) { $flash_meta = 'non-transparent'; } ?>
+				if( empty( $flash_meta ) ) { $flash_meta = 'non_transparent'; } ?>
 
-				<input class="post-format" type="radio" name="<?php echo $field['id']; ?>" value="<?php echo $field['value']; ?>" <?php checked( $field['value'], $flash_meta ); ?>/>
-				<label class="post-format-icon"><?php echo $field['label']; ?></label><br/>
+				<input class="post-format" type="radio" id="<?php echo $field['label_id']; ?>" name="<?php echo $field['id']; ?>" value="<?php echo $field['value']; ?>" <?php checked( $field['value'], $flash_meta ); ?>/>
+				<label class="post-format-icon" for="<?php echo $field['label_id']; ?>"><?php echo $field['label']; ?></label><br/>
 				<?php
 			break;
 		}

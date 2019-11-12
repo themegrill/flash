@@ -597,6 +597,20 @@ Clearings
 	margin-right: -100px;
 }
 
+.stretched-layout .tg-container {
+	max-width: 100%;
+}
+.stretched-layout #primary{
+	width: 100%;
+}
+
+@media (max-width: 1200px) {
+	.stretched-layout .tg-container {
+		padding: 0;
+		width: 100%;
+	}
+}
+
 ul.wp-block-gallery {
 	margin: 0;
 }
