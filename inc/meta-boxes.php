@@ -8,40 +8,40 @@
 
 global $flash_page_layout, $flash_metabox_field_transparency;
 $flash_page_layout = array(
-	'default-layout' => array(
-		'id'    => 'flash_page_layout',
-		'value' => 'default-layout',
-		'label' => esc_html__( 'Default Layout', 'flash' ),
+	'default-layout'    => array(
+		'id'       => 'flash_page_layout',
+		'value'    => 'default-layout',
+		'label'    => esc_html__( 'Default Layout', 'flash' ),
 		'label_id' => 'flash_page_default_layout',
 	),
-	'right-sidebar' => array(
-		'id'	=> 'flash_page_layout',
-		'value' => 'right-sidebar',
-		'label' => esc_html__( 'Right Sidebar', 'flash' ),
+	'right-sidebar'     => array(
+		'id'       => 'flash_page_layout',
+		'value'    => 'right-sidebar',
+		'label'    => esc_html__( 'Right Sidebar', 'flash' ),
 		'label_id' => 'flash_page_right_sidebar_layout',
 	),
-	'left-sidebar' 	=> array(
-		'id'	=> 'flash_page_layout',
-		'value' => 'left-sidebar',
-		'label' => esc_html__( 'Left Sidebar', 'flash' ),
+	'left-sidebar'      => array(
+		'id'       => 'flash_page_layout',
+		'value'    => 'left-sidebar',
+		'label'    => esc_html__( 'Left Sidebar', 'flash' ),
 		'label_id' => 'flash_page_left_sidebar_layout',
 	),
-	'full-width' => array(
-		'id'	=> 'flash_page_layout',
-		'value' => 'full-width',
-		'label' => esc_html__( 'Full Width', 'flash' ),
+	'full-width'        => array(
+		'id'       => 'flash_page_layout',
+		'value'    => 'full-width',
+		'label'    => esc_html__( 'Full Width', 'flash' ),
 		'label_id' => 'flash_page_full_width_layout',
 	),
 	'full-width-center' => array(
-		'id'	=> 'flash_page_layout',
-		'value' => 'full-width-center',
-		'label' => esc_html__( 'Full Width Center', 'flash' ),
+		'id'       => 'flash_page_layout',
+		'value'    => 'full-width-center',
+		'label'    => esc_html__( 'Full Width Center', 'flash' ),
 		'label_id' => 'flash_page_full_width_center_layout',
 	),
-	'stretched-layout' => array(
-		'id'	=> 'flash_page_layout',
-		'value' => 'stretched-layout',
-		'label' => esc_html__( 'Stretched Layout', 'flash' ),
+	'stretched-layout'  => array(
+		'id'       => 'flash_page_layout',
+		'value'    => 'stretched-layout',
+		'label'    => esc_html__( 'Stretched Layout', 'flash' ),
 		'label_id' => 'flash_page_stretched_layout',
 	)
 );

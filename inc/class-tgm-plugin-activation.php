@@ -770,8 +770,8 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 					require_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php';
 				}
 
-				$title     = ( 'update' === $install_type ) ? $this->strings['updating'] : $this->strings['installing'];
-				$skin_args = array(
+				$title         = ( 'update' === $install_type ) ? $this->strings['updating'] : $this->strings['installing'];
+				$skin_args     = array(
 					'type'   => ( 'bundled' !== $this->plugins[ $slug ]['source_type'] ) ? 'web' : 'upload',
 					'title'  => sprintf( $title, $this->plugins[ $slug ]['name'] ),
 					'url'    => esc_url_raw( $url ),

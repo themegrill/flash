@@ -112,7 +112,7 @@ if ( ! class_exists( 'Flash_Admin' ) ) :
 		public function admin_menu() {
 			$theme = wp_get_theme( get_template() );
 
-			$page = add_theme_page( esc_html__( 'About', 'flash' ) . ' ' . $theme->display( 'Name' ), esc_html__( 'About', 'flash' ) . ' ' . $theme->display( 'Name' ), 'activate_plugins', 'flash-sitelibrary', array(
+			$page  = add_theme_page( esc_html__( 'About', 'flash' ) . ' ' . $theme->display( 'Name' ), esc_html__( 'About', 'flash' ) . ' ' . $theme->display( 'Name' ), 'activate_plugins', 'flash-sitelibrary', array(
 				$this,
 				'sitelibrary_screen',
 			) );
@@ -331,8 +331,7 @@ if ( ! class_exists( 'Flash_Admin' ) ) :
 		 * Output the about screen.
 		 */
 		public function about_screen() {
-			$theme = wp_get_theme( get_template() );
-			?>
+			$theme = wp_get_theme( get_template() );?>
 			<div class="wrap about-wrap">
 
 				<?php $this->intro(); ?>
@@ -485,7 +484,6 @@ if ( ! class_exists( 'Flash_Admin' ) ) :
 			<div class="wrap about-wrap">
 
 				<?php $this->intro(); ?>
-
 				<p class="about-description"><?php esc_html_e( 'This theme recommends following plugins.', 'flash' ); ?></p>
 				<ol>
 					<li>
@@ -504,9 +502,9 @@ if ( ! class_exists( 'Flash_Admin' ) ) :
 					</li>
 					<li>
 						<a href="<?php echo esc_url( 'https://wordpress.org/plugins/restaurantpress/' ); ?>" target="_blank"><?php esc_html_e( 'RestaurantPress', 'flash' ); ?></a>
-						<?php esc_html_e( ' by ThemeGrill', 'flash' ); ?></li>
+						<?php esc_html_e( ' by ThemeGrill', 'flash' ); ?>
+					</li>
 				</ol>
-
 			</div>
 			<?php
 		}
@@ -521,7 +519,6 @@ if ( ! class_exists( 'Flash_Admin' ) ) :
 				<?php $this->intro(); ?>
 
 				<p class="about-description"><?php esc_html_e( 'Upgrade to PRO version for more exciting features.', 'flash' ); ?></p>
-
 				<table>
 					<thead>
 					<tr>
@@ -609,64 +606,49 @@ if ( ! class_exists( 'Flash_Admin' ) ) :
 					<tr>
 						<td><h3><?php esc_html_e( 'FT: Heading Widget', 'flash' ); ?></h3></td>
 						<td><span class="dashicons dashicons-yes"></span></td>
-						<td>
-							<span class="dashicons dashicons-yes"></span>(<?php esc_html_e( '3 New Styles', 'flash' ); ?>
-							)
+						<td><span class="dashicons dashicons-yes"></span>(<?php esc_html_e( '3 New Styles', 'flash' ); ?>)
 						</td>
 					</tr>
 					<tr>
 						<td><h3><?php esc_html_e( 'FT: Service Widget', 'flash' ); ?></h3></td>
 						<td><span class="dashicons dashicons-yes"></span></td>
-						<td>
-							<span class="dashicons dashicons-yes"></span>(<?php esc_html_e( '3 New Styles', 'flash' ); ?>
-							)
+						<td><span class="dashicons dashicons-yes"></span>(<?php esc_html_e( '3 New Styles', 'flash' ); ?>)
 						</td>
 					</tr>
 					<tr>
 						<td><h3><?php esc_html_e( 'FT: Call To Action Widget', 'flash' ); ?></h3></td>
 						<td><span class="dashicons dashicons-yes"></span></td>
-						<td>
-							<span class="dashicons dashicons-yes"></span>(<?php esc_html_e( '3 New Styles', 'flash' ); ?>
-							)
+						<td><span class="dashicons dashicons-yes"></span>(<?php esc_html_e( '3 New Styles', 'flash' ); ?>)
 						</td>
 					</tr>
 					<tr>
 						<td><h3><?php esc_html_e( 'FT: Testimonial Widget', 'flash' ); ?></h3></td>
 						<td><span class="dashicons dashicons-yes"></span></td>
-						<td>
-							<span class="dashicons dashicons-yes"></span>(<?php esc_html_e( '4 New Styles', 'flash' ); ?>
-							)
+						<td><span class="dashicons dashicons-yes"></span>(<?php esc_html_e( '4 New Styles', 'flash' ); ?>)
 						</td>
 					</tr>
 					<tr>
 						<td><h3><?php esc_html_e( 'FT: Team Widget', 'flash' ); ?></h3></td>
 						<td><span class="dashicons dashicons-yes"></span></td>
-						<td>
-							<span class="dashicons dashicons-yes"></span>(<?php esc_html_e( '4 New Styles', 'flash' ); ?>
-							)
+						<td><span class="dashicons dashicons-yes"></span>(<?php esc_html_e( '4 New Styles', 'flash' ); ?>)
 						</td>
 					</tr>
 					<tr>
 						<td><h3><?php esc_html_e( 'FT: Portfolio Widget', 'flash' ); ?></h3></td>
 						<td><span class="dashicons dashicons-yes"></span></td>
-						<td><span class="dashicons dashicons-yes"></span>(<?php esc_html_e( '1 New Style', 'flash' ); ?>
-							)
+						<td><span class="dashicons dashicons-yes"></span>(<?php esc_html_e( '1 New Style', 'flash' ); ?>)
 						</td>
 					</tr>
 					<tr>
 						<td><h3><?php esc_html_e( 'FT: Animated Number Counter', 'flash' ); ?></h3></td>
 						<td><span class="dashicons dashicons-yes"></span></td>
-						<td>
-							<span class="dashicons dashicons-yes"></span>(<?php esc_html_e( '4 New Styles', 'flash' ); ?>
-							)
+						<td><span class="dashicons dashicons-yes"></span>(<?php esc_html_e( '4 New Styles', 'flash' ); ?>)
 						</td>
 					</tr>
 					<tr>
 						<td><h3><?php esc_html_e( 'FT: Blog', 'flash' ); ?></h3></td>
 						<td><span class="dashicons dashicons-yes"></span></td>
-						<td>
-							<span class="dashicons dashicons-yes"></span>(<?php esc_html_e( '3 New Styles', 'flash' ); ?>
-							)
+						<td><span class="dashicons dashicons-yes"></span>(<?php esc_html_e( '3 New Styles', 'flash' ); ?>)
 						</td>
 					</tr>
 					<tr>
