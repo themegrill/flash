@@ -597,6 +597,21 @@ Clearings
 	margin-left: -100px;
 }
 
+.stretched-layout .tg-container {
+	max-width: 100%;
+}
+
+.stretched-layout #primary {
+	width: 100%;
+}
+
+@media (max-width: 1200px) {
+	.stretched-layout .tg-container {
+		padding: 0;
+		width: 100%;
+	}
+}
+
 ul.wp-block-gallery {
 	margin: 0;
 }
@@ -4292,4 +4307,12 @@ WooCommerce
 
 .woocommerce-breadcrumb span:first-of-type:before {
 	content: none;
+}
+
+.stretched-layout .tg-container {
+	max-width: 1200px;
+}
+
+.stretched-layout .site-content .tg-container {
+	max-width: 100%;
 }
