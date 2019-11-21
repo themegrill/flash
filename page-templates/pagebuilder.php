@@ -40,5 +40,5 @@ get_header(); ?>
 	 */
 	do_action( 'flash_after_body_content' ); ?>
 
-	<?php
+<?php
 get_footer();

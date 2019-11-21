@@ -191,6 +191,7 @@ do_action( 'flash_before' ); ?>
 	do_action( 'flash_after_header' ); ?>
 
 	<?php get_template_part( 'template-parts/header-media' ); ?>
+
 	<?php if( !is_front_page() ) : ?>
 	<nav id="flash-breadcrumbs" class="breadcrumb-trail breadcrumbs">
 		<div class="tg-container">

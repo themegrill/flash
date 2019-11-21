@@ -100,7 +100,7 @@ function flash_top_header_content( $position ) {
 	} elseif ( ( get_theme_mod( $position ) == 'social-menu' ) ) {
 		$social_menu = wp_nav_menu( array( 'theme_location' => 'social', 'menu_class' => 'social-menu', 'fallback_cb' => false, 'link_before' => '<span class="screen-reader-text">', 'link_after' => '</span>', 'depth' => 1, ) );
 		return $social_menu;
-		}
+	}
 
 }
 endif;

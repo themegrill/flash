@@ -331,7 +331,8 @@ if ( ! class_exists( 'Flash_Admin' ) ) :
 		 * Output the about screen.
 		 */
 		public function about_screen() {
-			$theme = wp_get_theme( get_template() );?>
+			$theme = wp_get_theme( get_template() );
+			?>
 			<div class="wrap about-wrap">
 
 				<?php $this->intro(); ?>
@@ -606,50 +607,42 @@ if ( ! class_exists( 'Flash_Admin' ) ) :
 					<tr>
 						<td><h3><?php esc_html_e( 'FT: Heading Widget', 'flash' ); ?></h3></td>
 						<td><span class="dashicons dashicons-yes"></span></td>
-						<td><span class="dashicons dashicons-yes"></span>(<?php esc_html_e( '3 New Styles', 'flash' ); ?>)
-						</td>
+						<td><span class="dashicons dashicons-yes"></span>(<?php esc_html_e( '3 New Styles', 'flash' ); ?>)</td>
 					</tr>
 					<tr>
 						<td><h3><?php esc_html_e( 'FT: Service Widget', 'flash' ); ?></h3></td>
 						<td><span class="dashicons dashicons-yes"></span></td>
-						<td><span class="dashicons dashicons-yes"></span>(<?php esc_html_e( '3 New Styles', 'flash' ); ?>)
-						</td>
+						<td><span class="dashicons dashicons-yes"></span>(<?php esc_html_e( '3 New Styles', 'flash' ); ?>)</td>
 					</tr>
 					<tr>
 						<td><h3><?php esc_html_e( 'FT: Call To Action Widget', 'flash' ); ?></h3></td>
 						<td><span class="dashicons dashicons-yes"></span></td>
-						<td><span class="dashicons dashicons-yes"></span>(<?php esc_html_e( '3 New Styles', 'flash' ); ?>)
-						</td>
+						<td><span class="dashicons dashicons-yes"></span>(<?php esc_html_e( '3 New Styles', 'flash' ); ?>)</td>
 					</tr>
 					<tr>
 						<td><h3><?php esc_html_e( 'FT: Testimonial Widget', 'flash' ); ?></h3></td>
 						<td><span class="dashicons dashicons-yes"></span></td>
-						<td><span class="dashicons dashicons-yes"></span>(<?php esc_html_e( '4 New Styles', 'flash' ); ?>)
-						</td>
+						<td><span class="dashicons dashicons-yes"></span>(<?php esc_html_e( '4 New Styles', 'flash' ); ?>)</td>
 					</tr>
 					<tr>
 						<td><h3><?php esc_html_e( 'FT: Team Widget', 'flash' ); ?></h3></td>
 						<td><span class="dashicons dashicons-yes"></span></td>
-						<td><span class="dashicons dashicons-yes"></span>(<?php esc_html_e( '4 New Styles', 'flash' ); ?>)
-						</td>
+						<td><span class="dashicons dashicons-yes"></span>(<?php esc_html_e( '4 New Styles', 'flash' ); ?>)</td>
 					</tr>
 					<tr>
 						<td><h3><?php esc_html_e( 'FT: Portfolio Widget', 'flash' ); ?></h3></td>
 						<td><span class="dashicons dashicons-yes"></span></td>
-						<td><span class="dashicons dashicons-yes"></span>(<?php esc_html_e( '1 New Style', 'flash' ); ?>)
-						</td>
+						<td><span class="dashicons dashicons-yes"></span>(<?php esc_html_e( '1 New Style', 'flash' ); ?>)</td>
 					</tr>
 					<tr>
 						<td><h3><?php esc_html_e( 'FT: Animated Number Counter', 'flash' ); ?></h3></td>
 						<td><span class="dashicons dashicons-yes"></span></td>
-						<td><span class="dashicons dashicons-yes"></span>(<?php esc_html_e( '4 New Styles', 'flash' ); ?>)
-						</td>
+						<td><span class="dashicons dashicons-yes"></span>(<?php esc_html_e( '4 New Styles', 'flash' ); ?>)</td>
 					</tr>
 					<tr>
 						<td><h3><?php esc_html_e( 'FT: Blog', 'flash' ); ?></h3></td>
 						<td><span class="dashicons dashicons-yes"></span></td>
-						<td><span class="dashicons dashicons-yes"></span>(<?php esc_html_e( '3 New Styles', 'flash' ); ?>)
-						</td>
+						<td><span class="dashicons dashicons-yes"></span>(<?php esc_html_e( '3 New Styles', 'flash' ); ?>)</td>
 					</tr>
 					<tr>
 						<td><h3><?php esc_html_e( 'FT: Google Map', 'flash' ); ?></h3></td>
