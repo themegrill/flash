@@ -170,6 +170,132 @@ Kirki::add_field( 'flash_config', array(
 	),
 ) );
 
+/** Menu Section */
+Kirki::add_section( 'flash_menu_options', array(
+	'title'      => esc_html__( 'Menu Settings', 'flash' ),
+	'panel'      => 'flash_theme_options',
+	'priority'   => 25,
+	'capability' => 'edit_theme_options',
+) );
+
+/* Menu font color*/
+Kirki::add_field( 'flash_config', array(
+	'type'        => 'multicolor',
+	'settings'    => 'flash_menu_font_color',
+	'label'       => esc_html__( 'Menu Font Color', 'flash' ),
+	'description' => esc_html__( 'Controls the menu font color, hover color and active color', 'flash' ),
+	'section'     => 'flash_menu_options',
+	'priority'    => 10,
+	'choices'     => array(
+		'link'   => esc_attr__( 'Color', 'flash' ),
+		'hover'  => esc_attr__( 'Hover', 'flash' ),
+		'active' => esc_attr__( 'Active', 'flash' ),
+	),
+	'default'     => array(
+		'link'   => '#333333',
+		'hover'  => '#30afb8',
+		'active' => '#30afb8',
+	),
+	'transport'   => 'auto',
+	'output'      => array(
+		array(
+			'choice'   => 'link',
+			'element'  => '#site-navigation ul li a,.transparent.header-sticky .is-sticky #site-navigation ul li a, .transparent #site-navigation ul li a',
+			'function' => 'css',
+			'property' => 'color',
+			'exclude'  => array( '#333333' ),
+		),
+		array(
+			'choice'   => 'hover',
+			'element'  => '#site-navigation ul li:hover > a,body.transparent.header-sticky #masthead-sticky-wrapper #masthead .header-bottom #site-navigation ul li:hover > a,body.transparent #masthead .header-bottom #site-navigation ul li:hover > a',
+			'function' => 'css',
+			'property' => 'color',
+			'exclude'  => array( '#30afb8', '#30AFB8' ),
+		),
+		array(
+			'choice'   => 'active',
+			'element'  => '#site-navigation ul li.current-menu-item > a, #site-navigation ul li.current_page_item  > a,#site-navigation ul li.current-menu-item > a, #site-navigation ul li.current_page_item  > a, body.transparent.header-sticky #masthead-sticky-wrapper.is-sticky #masthead .header-bottom #site-navigation ul li.current-flash-item a, #site-navigation ul li.current-flash-item a',
+			'function' => 'css',
+			'property' => 'color',
+			'exclude'  => array( '#30afb8', '#30AFB8' ),
+		),
+	),
+) );
+
+/* Main menu font size */
+Kirki::add_field( 'flash_config', array(
+	'type'        => 'slider',
+	'settings'    => 'flash_menu_font_size',
+	'label'       => esc_html__( 'Menu Font Size', 'flash' ),
+	'description' => esc_html__( 'Controls the font size of menu.', 'flash' ),
+	'section'     => 'flash_menu_options',
+	'priority'    => 10,
+	'default'     => 14,
+	'choices'     => array(
+		'min' => 1,
+		'max' => 100,
+	),
+	'transport'   => 'auto',
+	'exclude'     => array(
+		'14',
+	),
+	'output'      => array(
+		array(
+			'element'  => '#site-navigation ul li a',
+			'function' => 'css',
+			'property' => 'font-size',
+			'units'    => 'px',
+		),
+	),
+) );
+
+/* Main Menu Item padding */
+Kirki::add_field( 'flash_config', array(
+	'type'        => 'slider',
+	'settings'    => 'flash_menu_item_padding',
+	'label'       => esc_html__( 'Main Menu Item Padding', 'flash' ),
+	'description' => esc_html__( 'Controls the padding between main navigation item.', 'flash' ),
+	'section'     => 'flash_menu_options',
+	'priority'    => 10,
+	'default'     => 30,
+	'choices'     => array(
+		'min' => 1,
+		'max' => 200,
+	),
+	'transport'   => 'auto',
+	'output'      => array(
+		array(
+			'element'  => '#site-navigation ul li',
+			'function' => 'css',
+			'property' => 'padding-right',
+			'units'    => 'px',
+		),
+	),
+) );
+
+/* Menu typography*/
+Kirki::add_field( 'flash_config', array(
+	'type'        => 'typography',
+	'settings'    => 'flash_menu_typography',
+	'label'       => esc_html__( 'Menu Typography', 'flash' ),
+	'description' => esc_html__( 'Controls the typography of menu not sub menu', 'flash' ),
+	'section'     => 'flash_menu_options',
+	'priority'    => 10,
+	'transport'   => 'auto',
+	'default'     => array(
+		'font-family'    => 'Montserrat',
+		'variant'        => 'regular',
+		'letter-spacing' => '0',
+		'subsets'        => array( 'latin-ext' ),
+		'text-transform' => 'normal',
+	),
+	'output'      => array(
+		array(
+			'element' => '#site-navigation ul li',
+		),
+	),
+) );
+
 /** Header Section */
 Kirki::add_section( 'flash_header_options', array(
 	'title'      => esc_html__( 'Header Settings', 'flash' ),

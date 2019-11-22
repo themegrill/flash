@@ -344,3 +344,4 @@ function flash_font_family_change() {
 }
 
 add_action( 'after_setup_theme', 'flash_font_family_change' );
+
