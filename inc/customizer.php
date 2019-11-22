@@ -351,6 +351,33 @@ Kirki::add_field( 'flash_config', array(
 	'priority' => 40,
 ) );
 
+/* Header border width size */
+Kirki::add_field( 'flash_config', array(
+	'type'        => 'slider',
+	'settings'    => 'flash_border_width',
+	'label'       => esc_html__( 'Border width', 'flash' ),
+	'description' => esc_html__( 'Controls the border width in header section.', 'flash' ),
+	'section'     => 'flash_header_options',
+	'priority'    => 50,
+	'default'     => 1,
+	'choices'     => array(
+		'min' => 0,
+		'max' => 5,
+	),
+	'transport'   => 'auto',
+	'exclude'     => array(
+		'1',
+	),
+	'output'      => array(
+		array(
+			'element'  => '.transparent .header-bottom',
+			'function' => 'css',
+			'property' => 'border-width',
+			'units'    => 'px',
+		),
+	),
+) );
+
 /** Page Header Section */
 Kirki::add_section( 'flash_page_header_options', array(
 	'title'      => esc_html__( 'Page Header Settings', 'flash' ),
