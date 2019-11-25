@@ -200,7 +200,7 @@ Kirki::add_field( 'flash_config', array(
 	'output'      => array(
 		array(
 			'choice'   => 'link',
-			'element'  => '#site-navigation ul li a,.transparent.header-sticky .is-sticky #site-navigation ul li a, .transparent #site-navigation ul li a',
+			'element'  => '#site-navigation ul li a,.transparent.header-sticky .is-sticky #site-navigation ul li a, .transparent #site-navigation ul li a, .transparent.header-sticky #site-navigation ul li a',
 			'function' => 'css',
 			'property' => 'color',
 			'exclude'  => array( '#333333' ),
@@ -214,7 +214,7 @@ Kirki::add_field( 'flash_config', array(
 		),
 		array(
 			'choice'   => 'active',
-			'element'  => '#site-navigation ul li.current-menu-item > a, #site-navigation ul li.current_page_item  > a,#site-navigation ul li.current-menu-item > a, #site-navigation ul li.current_page_item  > a, body.transparent.header-sticky #masthead-sticky-wrapper.is-sticky #masthead .header-bottom #site-navigation ul li.current-flash-item a, #site-navigation ul li.current-flash-item a',
+			'element'  => '#site-navigation ul li.current-menu-item > a, #site-navigation ul li.current_page_item  > a,.transparent #site-navigation ul li.current-menu-item > a, #site-navigation ul li.current_page_item  > a, body.transparent.header-sticky #masthead-sticky-wrapper.is-sticky #masthead .header-bottom #site-navigation ul li.current-flash-item a, #site-navigation ul li.current-flash-item a',
 			'function' => 'css',
 			'property' => 'color',
 			'exclude'  => array( '#30afb8', '#30AFB8' ),
@@ -349,6 +349,57 @@ Kirki::add_field( 'flash_config', array(
 	'section'  => 'flash_header_options',
 	'default'  => '',
 	'priority' => 40,
+) );
+
+/* Sticky menu font color*/
+Kirki::add_field( 'flash_config', array(
+	'type'        => 'multicolor',
+	'settings'    => 'flash_sticky_menu_font_color',
+	'label'       => esc_html__( 'Sticky Menu Font Color', 'flash' ),
+	'description' => esc_html__( 'Controls the sticky menu font color, hover color and active color', 'flash' ),
+	'section'     => 'flash_header_options',
+	'priority'    => 50,
+	'choices'     => array(
+		'link'   => esc_attr__( 'Color', 'flash' ),
+		'hover'  => esc_attr__( 'Hover', 'flash' ),
+		'active' => esc_attr__( 'Active', 'flash' ),
+	),
+	'default'     => array(
+		'link'   => '#333333',
+		'hover'  => '#30afb8',
+		'active' => '#30afb8',
+	),
+	'transport'   => 'auto',
+	'output'      => array(
+		array(
+			'choice'   => 'link',
+			'element'  => '.transparent.header-sticky .is-sticky #site-navigation ul li a, .transparent #site-navigation ul li a',
+			'function' => 'css',
+			'property' => 'color',
+			'exclude'  => array( '#333333' ),
+		),
+		array(
+			'choice'   => 'hover',
+			'element'  => '.transparent.header-sticky .is-sticky #site-navigation ul li:hover > a,.header-sticky #site-navigation ul li:hover > a, body.transparent.header-sticky #masthead-sticky-wrapper #masthead .header-bottom #site-navigation ul li:hover > a',
+			'function' => 'css',
+			'property' => 'color',
+			'exclude'  => array( '#30afb8', '#30AFB8' ),
+		),
+		array(
+			'choice'   => 'active',
+			'element'  => '#site-navigation ul li.current-menu-item > a, #site-navigation ul li.current_page_item  > a, body.transparent.header-sticky #masthead-sticky-wrapper.is-sticky #masthead .header-bottom #site-navigation ul li.current-flash-item a, #site-navigation ul li.current-flash-item a',
+			'function' => 'css',
+			'property' => 'color',
+			'exclude'  => array( '#30afb8', '#30AFB8' ),
+		),
+	),
+	'active_callback'  => array(
+		array(
+			'setting'  => 'flash_sticky_header',
+			'operator' => '==',
+			'value'    => 1,
+		),
+	)
 ) );
 
 /* Header border width size */
