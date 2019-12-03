@@ -214,7 +214,7 @@ Kirki::add_field( 'flash_config', array(
 		),
 		array(
 			'choice'   => 'active',
-			'element'  => '#site-navigation ul li.current-menu-item > a, #site-navigation ul li.current_page_item  > a,.transparent #site-navigation ul li.current-menu-item > a, #site-navigation ul li.current_page_item  > a, body.transparent.header-sticky #masthead-sticky-wrapper.is-sticky #masthead .header-bottom #site-navigation ul li.current-flash-item a, #site-navigation ul li.current-flash-item a',
+			'element'  => '.transparent #site-navigation ul li.current-menu-item > a, #site-navigation ul li.current_page_item > a, body.transparent.header-sticky #masthead-sticky-wrapper.is-sticky #masthead .header-bottom #site-navigation ul li.current-flash-item a, #site-navigation ul li.current-flash-item a',
 			'function' => 'css',
 			'property' => 'color',
 			'exclude'  => array( '#30afb8', '#30AFB8' ),
@@ -373,7 +373,7 @@ Kirki::add_field( 'flash_config', array(
 	'output'      => array(
 		array(
 			'choice'   => 'link',
-			'element'  => '.transparent.header-sticky .is-sticky #site-navigation ul li a, .transparent #site-navigation ul li a',
+			'element'  => '.transparent.header-sticky .is-sticky #site-navigation ul li a, .transparent #site-navigation ul li a, #site-navigation ul li a',
 			'function' => 'css',
 			'property' => 'color',
 			'exclude'  => array( '#333333' ),
@@ -387,7 +387,7 @@ Kirki::add_field( 'flash_config', array(
 		),
 		array(
 			'choice'   => 'active',
-			'element'  => '#site-navigation ul li.current-menu-item > a, #site-navigation ul li.current_page_item  > a, body.transparent.header-sticky #masthead-sticky-wrapper.is-sticky #masthead .header-bottom #site-navigation ul li.current-flash-item a, #site-navigation ul li.current-flash-item a',
+			'element'  => '.transparent.header-sticky .is-sticky #site-navigation ul li.current-menu-item > a,.transparent.header-sticky .is-sticky #site-navigation ul li.current_page_item  > a, body.transparent.header-sticky #masthead-sticky-wrapper.is-sticky #masthead .header-bottom #site-navigation ul li.current-flash-item a, #site-navigation ul li.current-flash-item a,.is-sticky #site-navigation ul li.current-menu-item > a,.is-sticky #site-navigation ul li.current_page_item  > a, #site-navigation ul li.current-menu-item > a, #site-navigation ul li.current_page_item  > a',
 			'function' => 'css',
 			'property' => 'color',
 			'exclude'  => array( '#30afb8', '#30AFB8' ),
