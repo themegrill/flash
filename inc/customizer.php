@@ -320,6 +320,16 @@ Kirki::add_field( 'flash_config', array(
 	),
 ) );
 
+/** Button Setting */
+Kirki::add_field( 'flash_config', array(
+	'type'     => 'checkbox',
+	'settings' => 'flash_header_button',
+	'label'    => esc_html__( 'Enable Header Button', 'flash' ),
+	'section'  => 'flash_header_options',
+	'default'  => '',
+	'priority' => 20,
+) );
+
 /** Search Icon Setting */
 Kirki::add_field( 'flash_config', array(
 	'type'     => 'checkbox',
