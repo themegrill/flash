@@ -320,16 +320,6 @@ Kirki::add_field( 'flash_config', array(
 	),
 ) );
 
-/** Button Setting */
-Kirki::add_field( 'flash_config', array(
-	'type'     => 'checkbox',
-	'settings' => 'flash_header_button',
-	'label'    => esc_html__( 'Enable Header Button', 'flash' ),
-	'section'  => 'flash_header_options',
-	'default'  => '',
-	'priority' => 20,
-) );
-
 /** Search Icon Setting */
 Kirki::add_field( 'flash_config', array(
 	'type'     => 'checkbox',
@@ -347,9 +337,38 @@ Kirki::add_field( 'flash_config', array(
 	'label'           => esc_html__( 'Remove Header Cart Icon', 'flash' ),
 	'section'         => 'flash_header_options',
 	'default'         => '',
-	'priority'        => 30,
+	'priority'        => 20,
 	'active_callback' => 'flash_is_woocommerce_active',
 ) );
+
+/** Button Setting */
+Kirki::add_field( 'flash_config', array(
+	'label'    => esc_html__( 'Header Button', 'flash' ),
+	'section'  => 'flash_header_options',
+	'default'  => '',
+	'priority' => 30,
+) );
+
+/** Button text */
+Kirki::add_field('flash_config', array(
+		'type'            => 'text',
+		'settings'        => 'flash_header_button_text',
+		'label'           => esc_html__( 'Header Button', 'flash' ),
+		'description' => esc_html__( 'Button Text', 'flash' ),
+		'section'         => 'flash_header_options',
+		'default'         => '',
+		'priority' => 30,
+	));
+
+/** Button link */
+Kirki::add_field('flash_config', array(
+		'type'            => 'text',
+		'settings'        => 'flash_header_button_link',
+		'description'     => esc_html__( 'Button Link', 'flash' ),
+		'section'         => 'flash_header_options',
+		'default'         => '#',
+		'priority' => 30,
+	));
 
 /** Sticky Header Setting */
 Kirki::add_field( 'flash_config', array(
@@ -445,6 +464,22 @@ Kirki::add_section( 'flash_page_header_options', array(
 	'panel'      => 'flash_theme_options',
 	'priority'   => 40,
 	'capability' => 'edit_theme_options',
+) );
+
+/** Page Header Size */
+Kirki::add_field( 'flash_config', array(
+	'type'     => 'radio-image',
+	'settings' => 'flash_pageheader_size',
+	'label'    => esc_html__( 'Page Header Size', 'flash' ),
+	'section'  => 'flash_page_header_options',
+	'default'  => 'small',
+	'priority' => 10,
+	'multiple' => 1,
+	'choices'  => array(
+		'small'  => get_template_directory_uri() . '/images/small-page-header-size.png',
+		'medium' => get_template_directory_uri() . '/images/medium-page-header-size.png',
+		'big'    => get_template_directory_uri() . '/images/large-page-header-size.png',
+	),
 ) );
 
 /** Remove Breadcrumbs setting */
