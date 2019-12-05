@@ -483,6 +483,30 @@ Kirki::add_field( 'flash_config', array(
 	),
 ) );
 
+/* Header Button Border Radius */
+Kirki::add_field( 'flash_config', array(
+	'type'        => 'slider',
+	'settings'    => 'flash_header_button_border_radius',
+	'label'       => esc_html__( 'Border Radius', 'flash' ),
+	'section'     => 'flash_header_options',
+	'priority'    => 30,
+	'default'     => 3,
+	'choices'     => array(
+		'min'  => 0,
+		'max'  => 30,
+		'step' => 1,
+	),
+	'transport'   => 'auto',
+	'output'      => array(
+		array(
+			'element'  => '.flash-header-button a.tg-header-button',
+			'function' => 'css',
+			'property' => 'border-radius',
+			'units'    => 'px',
+		),
+	),
+) );
+
 /** Sticky Header Setting */
 Kirki::add_field( 'flash_config', array(
 	'type'     => 'toggle',
