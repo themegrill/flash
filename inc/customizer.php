@@ -370,6 +370,119 @@ Kirki::add_field('flash_config', array(
 		'priority' => 30,
 	));
 
+/* Button Color Options*/
+Kirki::add_field( 'flash_config', array(
+	'type'        => 'multicolor',
+	'settings'    => 'flash_header_button_color',
+	'section'     => 'flash_header_options',
+	'priority'    => 30,
+	'choices'     => array(
+		'link'   => esc_attr__( 'Color', 'flash' ),
+		'background-color' => esc_attr__( 'Background Color', 'flash' ),
+		'background-hover-color' => esc_attr__( 'Background Hover Color', 'flash' ),
+	),
+	'default'     => array(
+		'link'   => '#ffffff',
+		'background-color' => '#30afb8',
+		'background-hover-color' => '#37b6b7',
+	),
+	'transport'   => 'auto',
+	'output'      => array(
+		array(
+			'choice'   => 'link',
+			'element'  => '.flash-header-button a.tg-header-button',
+			'function' => 'css',
+			'property' => 'color',
+			'exclude'  => array( '#ffffff', '#FFFFFF' ),
+		),
+		array(
+			'choice'   => 'background-color',
+			'element'  => '.flash-header-button .tg-header-button',
+			'function' => 'css',
+			'property' => 'background-color',
+			'exclude'  => array( '#30afb8', '#30AFB8' ),
+		),
+		array(
+			'choice'   => 'background-hover-color',
+			'element'  => '.flash-header-button .tg-header-button:hover',
+			'function' => 'css',
+			'property' => 'background-color',
+			'exclude'  => array( '#37b6b7', '#37B6B7' ),
+		),
+	),
+) );
+
+/* Header button font size */
+Kirki::add_field( 'flash_config', array(
+	'type'        => 'slider',
+	'settings'    => 'header_button_font_size',
+	'label' => esc_html__( 'Font Size', 'flash' ),
+	'section'     => 'flash_header_options',
+	'priority'    => 30,
+	'default'     => 14,
+	'choices'     => array(
+		'min' => 12,
+		'max' => 30,
+	),
+	'transport'   => 'auto',
+	'exclude'     => array(
+		'14',
+	),
+	'output'      => array(
+		array(
+			'element'  => '.flash-header-button a.tg-header-button',
+			'function' => 'css',
+			'property' => 'font-size',
+			'units'    => 'px',
+		),
+	),
+) );
+
+/* Header button  typography*/
+Kirki::add_field( 'flash_config', array(
+	'type'        => 'typography',
+	'settings'    => 'flash_header_button_typography',
+	'label'       => esc_html__( 'Typography', 'flash' ),
+	'section'     => 'flash_header_options',
+	'priority'    => 30,
+	'transport'   => 'auto',
+	'default'     => array(
+		'font-family'    => 'Montserrat',
+		'variant'        => 'regular',
+		'letter-spacing' => '0',
+		'subsets'        => array( 'latin-ext' ),
+		'text-transform' => 'normal',
+	),
+	'output'      => array(
+		array(
+			'element' => '.flash-header-button a.tg-header-button',
+		),
+	),
+) );
+
+/* Header Button Item Padding */
+Kirki::add_field( 'flash_config', array(
+	'type'        => 'slider',
+	'settings'    => 'flash_header_button_padding',
+	'label'       => esc_html__( 'Button Padding', 'flash' ),
+	'section'     => 'flash_header_options',
+	'priority'    => 30,
+	'default'     => 10,
+	'choices'     => array(
+		'min' => 5,
+		'max' => 20,
+	),
+	'transport'   => 'auto',
+	'output'      => array(
+		array(
+			'element'  => '.flash-header-button a.tg-header-button',
+			'function' => 'css',
+			'property' => 'padding',
+			'units'    => 'px',
+		),
+	),
+) );
+
 /** Sticky Header Setting */
 Kirki::add_field( 'flash_config', array(
 	'type'     => 'toggle',
