@@ -304,21 +304,12 @@ Kirki::add_section( 'flash_header_options', array(
 	'capability' => 'edit_theme_options',
 ) );
 
-/** Header Main Section */
-Kirki::add_section( 'flash_header_main', array(
-	'title'      => esc_html__( 'Header Main Area', 'flash' ),
-	'panel'      => 'flash_theme_options',
-	'section'    => 'flash_header_options',
-	'priority'   => 30,
-	'capability' => 'edit_theme_options',
-) );
-
 /** Logo and Menu Position */
 Kirki::add_field( 'flash_config', array(
 	'type'     => 'radio-image',
 	'settings' => 'flash_logo_position',
 	'label'    => esc_html__( 'Logo and Menu Position', 'flash' ),
-	'section'  => 'flash_header_main',
+	'section'  => 'flash_header_options',
 	'default'  => 'left-logo-right-menu',
 	'priority' => 10,
 	'multiple' => 1,
@@ -334,7 +325,7 @@ Kirki::add_field( 'flash_config', array(
 	'type'     => 'checkbox',
 	'settings' => 'flash_header_search',
 	'label'    => esc_html__( 'Remove Header Search Box', 'flash' ),
-	'section'  => 'flash_header_main',
+	'section'  => 'flash_header_options',
 	'default'  => '',
 	'priority' => 20,
 ) );
@@ -344,25 +335,16 @@ Kirki::add_field( 'flash_config', array(
 	'type'            => 'checkbox',
 	'settings'        => 'flash_header_cart',
 	'label'           => esc_html__( 'Remove Header Cart Icon', 'flash' ),
-	'section'         => 'flash_header_main',
+	'section'         => 'flash_header_options',
 	'default'         => '',
 	'priority'        => 20,
 	'active_callback' => 'flash_is_woocommerce_active',
 ) );
 
-/** Header Button Section */
-Kirki::add_section( 'flash_button_section', array(
-	'title'      => esc_html__( 'Header Main Area', 'flash' ),
-	'panel'      => 'flash_theme_options',
-	'section'    => 'flash_header_options',
-	'priority'   => 30,
-	'capability' => 'edit_theme_options',
-) );
-
 /** Button Setting */
 Kirki::add_field( 'flash_config', array(
 	'label'    => esc_html__( 'Header Button', 'flash' ),
-	'section'  => 'flash_button_section',
+	'section'  => 'flash_header_options',
 	'default'  => '',
 	'priority' => 30,
 ) );
@@ -373,7 +355,7 @@ Kirki::add_field('flash_config', array(
 		'settings'        => 'flash_header_button_text',
 		'label'           => esc_html__( 'Header Button', 'flash' ),
 		'description' => esc_html__( 'Button Text', 'flash' ),
-		'section'         => 'flash_button_section',
+		'section'         => 'flash_header_options',
 		'default'         => '',
 		'priority' => 30,
 	));
@@ -383,7 +365,7 @@ Kirki::add_field('flash_config', array(
 		'type'            => 'text',
 		'settings'        => 'flash_header_button_link',
 		'description'     => esc_html__( 'Button Link', 'flash' ),
-		'section'         => 'flash_button_section',
+		'section'         => 'flash_header_options',
 		'default'         => '#',
 		'priority' => 30,
 	));
@@ -392,7 +374,7 @@ Kirki::add_field('flash_config', array(
 Kirki::add_field( 'flash_config', array(
 	'type'        => 'multicolor',
 	'settings'    => 'flash_header_button_color',
-	'section'     => 'flash_button_section',
+	'section'     => 'flash_header_options',
 	'priority'    => 30,
 	'choices'     => array(
 		'link'   => esc_attr__( 'Color', 'flash' ),
@@ -435,7 +417,7 @@ Kirki::add_field( 'flash_config', array(
 	'type'        => 'slider',
 	'settings'    => 'header_button_font_size',
 	'label' => esc_html__( 'Font Size', 'flash' ),
-	'section'     => 'flash_button_section',
+	'section'     => 'flash_header_options',
 	'priority'    => 30,
 	'default'     => 14,
 	'choices'     => array(
@@ -461,7 +443,7 @@ Kirki::add_field( 'flash_config', array(
 	'type'        => 'typography',
 	'settings'    => 'flash_header_button_typography',
 	'label'       => esc_html__( 'Typography', 'flash' ),
-	'section'     => 'flash_button_section',
+	'section'     => 'flash_header_options',
 	'priority'    => 30,
 	'transport'   => 'auto',
 	'default'     => array(
@@ -483,7 +465,7 @@ Kirki::add_field( 'flash_config', array(
 	'type'        => 'slider',
 	'settings'    => 'flash_header_button_padding',
 	'label'       => esc_html__( 'Button Padding', 'flash' ),
-	'section'     => 'flash_button_section',
+	'section'     => 'flash_header_options',
 	'priority'    => 30,
 	'default'     => 10,
 	'choices'     => array(
@@ -506,7 +488,7 @@ Kirki::add_field( 'flash_config', array(
 	'type'        => 'slider',
 	'settings'    => 'flash_header_button_border_radius',
 	'label'       => esc_html__( 'Border Radius', 'flash' ),
-	'section'     => 'flash_button_section',
+	'section'     => 'flash_header_options',
 	'priority'    => 30,
 	'default'     => 3,
 	'choices'     => array(
