@@ -750,6 +750,7 @@ common
 .tg-container {
 	max-width: 1200px;
 	margin: 0 auto;
+	padding: 0 15px;
 }
 
 .overlay {
@@ -4791,6 +4792,75 @@ WooCommerce
 
 }
 
+#site-navigation{
+	
+	ul{
+
+		.flash-header-button{
+	
+			.tg-header-button{
+				color: #fff;
+
+			}	
+
+		} 
+
+	}
+}
+
+#site-navigation{
+	
+	ul{
+
+		li.flash-header-button{
+
+			&:hover{
+
+				a.tg-header-button{
+					color: #fff;
+				}
+
+			}
+
+		}
+
+	}
+
+}
+
+body.transparent{
+	
+	#masthead{
+
+		.header-bottom{
+
+			#site-navigation{
+	
+				ul{
+
+					li.flash-header-button{
+
+						&:hover{
+
+							a.tg-header-button{
+								color: #fff;
+							}
+
+						}
+
+					}
+
+				}
+
+			}
+
+		}
+
+	}
+
+
+}
+
 .right-logo-left-menu{
 	
 	.header-bottom{
@@ -4822,4 +4892,16 @@ WooCommerce
 		}
 
 	}
+}
+
+.pageheader-medium{
+	padding: 30px 0;
+}
+
+.pageheader-small{
+	padding: 15px 0;
+}
+
+.pageheader-big{
+	padding: 50px 0;
 }
