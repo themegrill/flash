@@ -607,7 +607,7 @@ Clearings
 
 @media (max-width: 1200px) {
 	.stretched-layout .tg-container {
-		padding: 0;
+		padding: 0 15px;
 		width: 100%;
 	}
 }
