@@ -1706,6 +1706,13 @@ a,
 	.boxed .tg-container {
 		width: 98%;
 	}
+
+	.center-logo-below-menu{
+		.flash-header-button{
+			margin: 20px 15px 0 0;
+			float: right;
+		}
+	}	
 }
 
 .transparent {
@@ -4767,5 +4774,52 @@ WooCommerce
 		.tg-container{
 			max-width: 100%;
 		}
+	}
+}
+
+.flash-header-button{
+
+	.tg-header-button{
+		color: #fff;
+		background: #30AFB8;
+		margin-left: 25px;
+
+		&:hover{
+		background: #14848c;
+		}
+	}
+
+}
+
+.right-logo-left-menu{
+	
+	.header-bottom{
+
+		.flash-header-button{
+
+			a.tg-header-button{
+				margin-right: 25px;
+				margin-left: 0;
+			}
+
+		}
+
+	}
+}
+
+
+.center-logo-below-menu{
+	
+	.header-bottom{
+
+		.flash-header-button{
+
+			a.tg-header-button{
+				margin-right: 0;
+				margin-left: 0;
+			}
+
+		}
+
 	}
 }
