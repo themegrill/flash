@@ -760,21 +760,20 @@ endif;
 
 add_action( 'wp_head', 'flash_pingback_header' );
 
-if ( ! function_exists( 'flash_header_button' ) ) :
-/**
-* Header button.
-*/
-function flash_header_button() {
+function flash_header_button_append( $items, $args ) {
 
-	$button_text = get_theme_mod( 'flash_header_button_text', 'login' );
-	$button_link = get_theme_mod( 'flash_header_button_link', '#' );
+	$button_text   = get_theme_mod( 'flash_header_button_text' );
+	$button_link   = get_theme_mod( 'flash_header_button_link' );
 
-	if( ! empty( $button_text ) ) {
-	?>
-		<a href=" <?php echo esc_url( $button_link )?>" class="tg-header-button"> <?php echo sanitize_text_field( $button_text )?> </a>
-	<?php
+	if ( 'primary' === $args->theme_location && $button_text ) {
+
+		$items .= '<li class="flash-header-button">';
+		$items .= '<a href="' . esc_url( $button_link ) . '" class="tg-header-button">';
+		$items .= $button_text;
+		$items .= '</a>';
+		$items .= '</li>';
 	}
-}
-endif;
 
-add_action( 'flash_header_button', 'flash_header_button', 20 );
+	return $items;
+}
+add_filter( 'wp_nav_menu_items', 'flash_header_button_append', 10, 2 );
