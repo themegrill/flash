@@ -4874,20 +4874,44 @@ WooCommerce
 	ul{
 	
 		li{
-
-			&:hover{
-				a.tg-header-button{
-					color: #fff;
-				}
-
-			}
-
 			a.tg-header-button{
 				color: #fff;
 			}
 
 		}
-
 	}	
 
 }
+
+
+body.transparent{
+
+		#masthead{
+
+			.header-bottom{
+
+				#site-navigation{
+
+					ul{
+					
+						li.flash-header-button{
+
+							&:hover{
+								
+								a.tg-header-button{
+									color: #fff;
+								}
+							}
+						}
+
+					}
+
+				}	
+
+			}
+
+		}	
+
+}
+
+ 

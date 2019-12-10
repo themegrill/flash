@@ -4368,10 +4368,10 @@ WooCommerce
 	padding: 90px 0;
 }
 
-#site-navigation ul li:hover a.tg-header-button {
+#site-navigation ul li a.tg-header-button {
 	color: #fff;
 }
 
-#site-navigation ul li a.tg-header-button {
+body.transparent #masthead .header-bottom #site-navigation ul li.flash-header-button:hover a.tg-header-button {
 	color: #fff;
 }
