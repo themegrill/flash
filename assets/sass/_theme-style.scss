@@ -586,16 +586,24 @@ Clearings
 }
 
 @media (max-width: 1200px) {
-	.stretched-layout .tg-container {
-		padding: 0 15px;
+	body .tg-container {
 		width: 100%;
+		padding: 0 15px;
 	}
 
-	.stretched-layout .site-content .tg-container{
-	padding: 0;
+	body{
+
+		.site-content{
+
+			.tg-container{
+				padding: 0;
+			}
+
+		}
+
 	}
 
-
+	
 }
 
 ul {
@@ -757,6 +765,14 @@ common
 	max-width: 1200px;
 	margin: 0 auto;
 	padding: 0 15px;
+}
+
+.site-content{
+	
+	.tg-container{
+		padding: 0;
+	}
+
 }
 
 .overlay {
@@ -1709,6 +1725,16 @@ a,
 }
 
 @media (max-width: 980px) {
+	
+	.site-navigation-wrapper #site-navigation ul .flash-header-button .tg-header-button{
+		color: #4c5867;
+	}
+
+	#site-navigation ul .flash-header-button .tg-header-button{
+		
+		background: none;
+		margin: 0;
+	}
 
 	.boxed .tg-container {
 		width: 98%;
@@ -4798,75 +4824,6 @@ WooCommerce
 
 }
 
-#site-navigation{
-	
-	ul{
-
-		.flash-header-button{
-	
-			.tg-header-button{
-				color: #fff;
-
-			}	
-
-		} 
-
-	}
-}
-
-#site-navigation{
-	
-	ul{
-
-		li.flash-header-button{
-
-			&:hover{
-
-				a.tg-header-button{
-					color: #fff;
-				}
-
-			}
-
-		}
-
-	}
-
-}
-
-body.transparent{
-	
-	#masthead{
-
-		.header-bottom{
-
-			#site-navigation{
-	
-				ul{
-
-					li.flash-header-button{
-
-						&:hover{
-
-							a.tg-header-button{
-								color: #fff;
-							}
-
-						}
-
-					}
-
-				}
-
-			}
-
-		}
-
-	}
-
-
-}
-
 .right-logo-left-menu{
 	
 	.header-bottom{
@@ -4910,4 +4867,27 @@ body.transparent{
 
 .pageheader-big{
 	padding: 90px 0;
+}
+
+#site-navigation{
+
+	ul{
+	
+		li{
+
+			&:hover{
+				a.tg-header-button{
+					color: #fff;
+				}
+
+			}
+
+			a.tg-header-button{
+				color: #fff;
+			}
+
+		}
+
+	}	
+
 }
