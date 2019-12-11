@@ -390,25 +390,31 @@ Kirki::add_field( 'flash_config', array(
 	'output'      => array(
 		array(
 			'choice'   => 'link',
-			'element'  => '#site-navigation ul .flash-header-button a.tg-header-button,
-			 header#masthead .header-bottom nav#site-navigation ul.menu li.flash-header-button:hover a.tg-header-button',
+			'element'  => '#site-navigation ul #flash-header-button a.tg-header-button,
+			 header#masthead .header-bottom nav#site-navigation ul.menu li#flash-header-button:hover a.tg-header-button',
 			'function' => 'css',
 			'property' => 'color',
 			'exclude'  => array( '#ffffff', '#FFFFFF' ),
 		),
 		array(
 			'choice'   => 'background-color',
-			'element'  => '.flash-header-button .tg-header-button',
+			'element'  => '#flash-header-button .tg-header-button',
 			'function' => 'css',
 			'property' => 'background-color',
 			'exclude'  => array( '#30afb8', '#30AFB8' ),
 		),
 		array(
 			'choice'   => 'background-hover-color',
-			'element'  => '.flash-header-button .tg-header-button:hover',
+			'element'  => '#flash-header-button .tg-header-button:hover',
 			'function' => 'css',
 			'property' => 'background-color',
 			'exclude'  => array( '#37b6b7', '#37B6B7' ),
+		),
+		array(
+			'choice'   => 'link',
+			'element'  => '#site-navigation ul li:hover > a,body.transparent.header-sticky #masthead-sticky-wrapper #masthead .header-bottom #site-navigation ul li:hover > a,body.transparent #masthead .header-bottom #site-navigation ul li:hover > a',
+			'function' => 'css',
+			'property' => '@media (max-width: 980px)',
 		),
 	),
 ) );
@@ -431,7 +437,7 @@ Kirki::add_field( 'flash_config', array(
 	),
 	'output'      => array(
 		array(
-			'element'  => '.flash-header-button a.tg-header-button',
+			'element'  => '#flash-header-button a.tg-header-button',
 			'function' => 'css',
 			'property' => 'font-size',
 			'units'    => 'px',
@@ -456,7 +462,7 @@ Kirki::add_field( 'flash_config', array(
 	),
 	'output'      => array(
 		array(
-			'element' => '.flash-header-button a.tg-header-button',
+			'element' => '#flash-header-button a.tg-header-button',
 		),
 	),
 ) );
@@ -476,7 +482,7 @@ Kirki::add_field( 'flash_config', array(
 	'transport'   => 'auto',
 	'output'      => array(
 		array(
-			'element'  => '.flash-header-button a.tg-header-button',
+			'element'  => '#flash-header-button a.tg-header-button',
 			'function' => 'css',
 			'property' => 'padding',
 			'units'    => 'px',
@@ -500,7 +506,7 @@ Kirki::add_field( 'flash_config', array(
 	'transport'   => 'auto',
 	'output'      => array(
 		array(
-			'element'  => '.flash-header-button a.tg-header-button',
+			'element'  => '#flash-header-button a.tg-header-button',
 			'function' => 'css',
 			'property' => 'border-radius',
 			'units'    => 'px',

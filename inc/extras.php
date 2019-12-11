@@ -767,7 +767,7 @@ function flash_header_button_append( $items, $args ) {
 
 	if ( 'primary' === $args->theme_location && $button_text ) {
 
-		$items .= '<li class="flash-header-button">';
+		$items .= '<li class="flash-header-button" id="flash-header-button">';
 		$items .= '<a href="' . esc_url( $button_link ) . '" class="tg-header-button">';
 		$items .= $button_text;
 		$items .= '</a>';

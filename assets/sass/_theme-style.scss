@@ -603,7 +603,7 @@ Clearings
 
 	}
 
-	
+
 }
 
 ul {
@@ -768,7 +768,7 @@ common
 }
 
 .site-content{
-	
+
 	.tg-container{
 		padding: 0;
 	}
@@ -1725,13 +1725,13 @@ a,
 }
 
 @media (max-width: 980px) {
-	
-	.site-navigation-wrapper #site-navigation ul .flash-header-button .tg-header-button{
+
+	.site-navigation-wrapper #site-navigation ul #flash-header-button .tg-header-button{
 		color: #4c5867;
 	}
 
-	#site-navigation ul .flash-header-button .tg-header-button{
-		
+	#site-navigation ul #flash-header-button .tg-header-button{
+
 		background: none;
 		margin: 0;
 	}
@@ -1741,11 +1741,11 @@ a,
 	}
 
 	.center-logo-below-menu{
-		.flash-header-button{
+		#flash-header-button{
 			margin: 20px 15px 0 0;
 			float: right;
 		}
-	}	
+	}
 }
 
 .transparent {
@@ -4810,7 +4810,7 @@ WooCommerce
 	}
 }
 
-.flash-header-button{
+#flash-header-button{
 
 	.tg-header-button{
 		color: #fff;
@@ -4825,10 +4825,10 @@ WooCommerce
 }
 
 .right-logo-left-menu{
-	
+
 	.header-bottom{
 
-		.flash-header-button{
+		#flash-header-button{
 
 			a.tg-header-button{
 				margin-right: 25px;
@@ -4842,10 +4842,10 @@ WooCommerce
 
 
 .center-logo-below-menu{
-	
+
 	.header-bottom{
 
-		.flash-header-button{
+		#flash-header-button{
 
 			a.tg-header-button{
 				margin-right: 0;
@@ -4872,14 +4872,14 @@ WooCommerce
 #site-navigation{
 
 	ul{
-	
+
 		li{
 			a.tg-header-button{
 				color: #fff;
 			}
 
 		}
-	}	
+	}
 
 }
 
@@ -4893,11 +4893,11 @@ body.transparent{
 				#site-navigation{
 
 					ul{
-					
-						li.flash-header-button{
+
+						li#flash-header-button{
 
 							&:hover{
-								
+
 								a.tg-header-button{
 									color: #fff;
 								}
@@ -4906,12 +4906,11 @@ body.transparent{
 
 					}
 
-				}	
+				}
 
 			}
 
-		}	
+		}
 
 }
 
- 
