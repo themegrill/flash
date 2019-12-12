@@ -1294,7 +1294,7 @@ Header
 }
 
 #site-navigation ul li a {
-	color: #4c5867;
+	color: #333;
 }
 
 #site-navigation .sub-menu li.menu-item-has-children ul {
@@ -1314,7 +1314,7 @@ Header
 }
 
 #site-navigation .sub-menu li.menu-item-has-children ul li a {
-	color: #4c5867;
+	color: #333;
 }
 
 #site-navigation .sub-menu li.menu-item-has-children ul li:hover > a {
@@ -1565,7 +1565,7 @@ a,
 
 @media (max-width: 980px) {
 	.site-navigation-wrapper #site-navigation ul #flash-header-button .tg-header-button {
-		color: #4c5867;
+		color: #333;
 	}
 	#site-navigation ul #flash-header-button .tg-header-button {
 		background: none;
@@ -1645,7 +1645,7 @@ a,
 }
 
 .transparent #site-navigation ul.sub-menu li a {
-	color: #4c5867;
+	color: #333;
 	padding: 10px 30px;
 }
 
@@ -1662,7 +1662,7 @@ a,
 }
 
 .transparent #site-navigation ul.sub-menu li.menu-item-has-children ul li a {
-	color: #4c5867;
+	color: #333;
 }
 
 .transparent .cart-wrap .flash-cart-views {
@@ -4338,12 +4338,12 @@ WooCommerce
 
 #flash-header-button .tg-header-button {
 	color: #fff;
-	background: #30AFB8;
+	background: #30afb8;
 	margin-right: 25px;
 }
 
 #flash-header-button .tg-header-button:hover {
-	background: #14848c;
+	background: #37b6b7;
 }
 
 .right-logo-left-menu .header-bottom #flash-header-button a.tg-header-button {
@@ -4373,5 +4373,49 @@ WooCommerce
 }
 
 body.transparent #masthead .header-bottom #site-navigation ul li#flash-header-button:hover a.tg-header-button {
+	color: #fff;
+}
+
+.site-navigation-wrapper #site-navigation ul li:hover a {
+	color: #30afb8;
+}
+
+.site-navigation-wrapper #site-navigation ul li.current-menu-item a {
+	color: #30afb8;
+}
+
+.site-navigation-wrapper #site-navigation ul li.current_page_item a {
+	color: #30afb8;
+}
+
+.site-navigation-wrapper #site-navigation ul li.flash-header-button:hover a.tg-header-button {
+	color: #fff;
+}
+
+body.header-sticky .site-navigation-wrapper #site-navigation ul li:hover a {
+	color: #30afb8;
+}
+
+body.header-sticky .site-navigation-wrapper #site-navigation ul li a {
+	color: #333;
+}
+
+body.header-sticky .site-navigation-wrapper #site-navigation ul li.current-menu-item:hover a {
+	color: #30afb8;
+}
+
+body.header-sticky .site-navigation-wrapper #site-navigation ul li.current-menu-item a {
+	color: #30afb8;
+}
+
+body.header-sticky .site-navigation-wrapper #site-navigation ul li.current_page_item:hover a {
+	color: #30afb8;
+}
+
+body.header-sticky .site-navigation-wrapper #site-navigation ul li.current_page_item a {
+	color: #30afb8;
+}
+
+body.header-sticky .site-navigation-wrapper #site-navigation ul li a.tg-header-button {
 	color: #fff;
 }

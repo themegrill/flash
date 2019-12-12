@@ -200,21 +200,21 @@ Kirki::add_field( 'flash_config', array(
 	'output'      => array(
 		array(
 			'choice'   => 'link',
-			'element'  => '#site-navigation ul li a,.transparent.header-sticky .is-sticky #site-navigation ul li a, .transparent #site-navigation ul li a, .transparent.header-sticky #site-navigation ul li a',
+			'element'  => '#site-navigation ul li a,.transparent.header-sticky .is-sticky #site-navigation ul li a,.transparent #site-navigation ul li a, .transparent.headersticky #site-navigation ul li a',
 			'function' => 'css',
 			'property' => 'color',
 			'exclude'  => array( '#333333' ),
 		),
 		array(
 			'choice'   => 'hover',
-			'element'  => '#site-navigation ul li:hover > a,body.transparent.header-sticky #masthead-sticky-wrapper #masthead .header-bottom #site-navigation ul li:hover > a,body.transparent #masthead .header-bottom #site-navigation ul li:hover > a',
+			'element'  => '.site-navigation-wrapper #site-navigation ul li.current_page_item:hover > a,.site-navigation-wrapper #site-navigation ul li:hover a,body.transparent.header-sticky #masthead-sticky-wrapper #masthead .header-bottom #site-navigation ul li:hover > a,body.transparent #masthead .header-bottom #site-navigation ul li:hover > a',
 			'function' => 'css',
 			'property' => 'color',
 			'exclude'  => array( '#30afb8', '#30AFB8' ),
 		),
 		array(
 			'choice'   => 'active',
-			'element'  => '.transparent #site-navigation ul li.current-menu-item > a, #site-navigation ul li.current_page_item > a, body.transparent.header-sticky #masthead-sticky-wrapper.is-sticky #masthead .header-bottom #site-navigation ul li.current-flash-item a, #site-navigation ul li.current-flash-item a',
+			'element'  => '.transparent #site-navigation ul li.current-menu-item > a,.site-navigation-wrapper #site-navigation ul li.current_page_item > a, body.transparent.header-sticky #masthead-sticky-wrapper.is-sticky #masthead .header-bottom #site-navigation ul li.current-flash-item a, #site-navigation ul li.current-flash-item a',
 			'function' => 'css',
 			'property' => 'color',
 			'exclude'  => array( '#30afb8', '#30AFB8' ),
@@ -410,12 +410,6 @@ Kirki::add_field( 'flash_config', array(
 			'property' => 'background-color',
 			'exclude'  => array( '#37b6b7', '#37B6B7' ),
 		),
-		array(
-			'choice'   => 'link',
-			'element'  => '#site-navigation ul li:hover > a,body.transparent.header-sticky #masthead-sticky-wrapper #masthead .header-bottom #site-navigation ul li:hover > a,body.transparent #masthead .header-bottom #site-navigation ul li:hover > a',
-			'function' => 'css',
-			'property' => '@media (max-width: 980px)',
-		),
 	),
 ) );
 
@@ -546,21 +540,22 @@ Kirki::add_field( 'flash_config', array(
 	'output'      => array(
 		array(
 			'choice'   => 'link',
-			'element'  => '.transparent.header-sticky .is-sticky #site-navigation ul li a, .transparent #site-navigation ul li a, #site-navigation ul li a',
+			'element'  => '.transparent.header-sticky .is-sticky #site-navigation ul li a,body.header-sticky .site-navigation-wrapper #site-navigation ul li a, .transparent #site-navigation ul li a, #site-navigation ul li a',
 			'function' => 'css',
 			'property' => 'color',
 			'exclude'  => array( '#333333' ),
 		),
 		array(
 			'choice'   => 'hover',
-			'element'  => '.transparent.header-sticky .is-sticky #site-navigation ul li:hover > a,.header-sticky #site-navigation ul li:hover > a, body.transparent.header-sticky #masthead-sticky-wrapper #masthead .header-bottom #site-navigation ul li:hover > a',
+			'element'  => '.transparent.header-sticky .is-sticky #site-navigation ul li:hover > a,body.header-sticky .site-navigation-wrapper #site-navigation ul li:hover a ,body.header-sticky .site-navigation-wrapper #site-navigation ul li.current_page_item:hover a ,
+body.header-sticky .site-navigation-wrapper #site-navigation ul li.current-menu-item:hover a,.header-sticky #site-navigation ul li:hover > a, body.transparent.header-sticky #masthead-sticky-wrapper #masthead .header-bottom #site-navigation ul li:hover > a',
 			'function' => 'css',
 			'property' => 'color',
 			'exclude'  => array( '#30afb8', '#30AFB8' ),
 		),
 		array(
 			'choice'   => 'active',
-			'element'  => '.transparent.header-sticky .is-sticky #site-navigation ul li.current-menu-item > a,.transparent.header-sticky .is-sticky #site-navigation ul li.current_page_item  > a, body.transparent.header-sticky #masthead-sticky-wrapper.is-sticky #masthead .header-bottom #site-navigation ul li.current-flash-item a, #site-navigation ul li.current-flash-item a,.is-sticky #site-navigation ul li.current-menu-item > a,.is-sticky #site-navigation ul li.current_page_item  > a, #site-navigation ul li.current-menu-item > a, #site-navigation ul li.current_page_item  > a',
+			'element'  => '.transparent.header-sticky .is-sticky #site-navigation ul li.current-menu-item > a,body.header-sticky .site-navigation-wrapper #site-navigation ul li.current_page_item a,body.header-sticky .site-navigation-wrapper #site-navigation ul li.current-menu-item a,.transparent.header-sticky .is-sticky #site-navigation ul li.current_page_item  > a, body.transparent.header-sticky #masthead-sticky-wrapper.is-sticky #masthead .header-bottom #site-navigation ul li.current-flash-item a, #site-navigation ul li.current-flash-item a,.is-sticky #site-navigation ul li.current-menu-item > a,.is-sticky #site-navigation ul li.current_page_item  > a, #site-navigation ul li.current-menu-item > a, #site-navigation ul li.current_page_item  > a',
 			'function' => 'css',
 			'property' => 'color',
 			'exclude'  => array( '#30afb8', '#30AFB8' ),
