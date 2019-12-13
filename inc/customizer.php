@@ -207,7 +207,7 @@ Kirki::add_field( 'flash_config', array(
 		),
 		array(
 			'choice'   => 'hover',
-			'element'  => '.site-navigation-wrapper #site-navigation ul li.current_page_item:hover > a,.site-navigation-wrapper #site-navigation ul li:hover a,body.transparent.header-sticky #masthead-sticky-wrapper #masthead .header-bottom #site-navigation ul li:hover > a,body.transparent #masthead .header-bottom #site-navigation ul li:hover > a',
+			'element'  => '.site-navigation-wrapper #site-navigation ul li.current_page_item:hover > a,body.transparent #masthead .header-bottom .site-navigation-wrapper #site-navigation ul#primary-menu li:hover a,.site-navigation-wrapper #site-navigation ul li:hover a,body.transparent.header-sticky #masthead-sticky-wrapper #masthead .header-bottom #site-navigation ul li:hover > a,body.transparent #masthead .header-bottom #site-navigation ul li:hover > a',
 			'function' => 'css',
 			'property' => 'color',
 			'exclude'  => array( '#30afb8', '#30AFB8' ),
@@ -390,7 +390,7 @@ Kirki::add_field( 'flash_config', array(
 	'output'      => array(
 		array(
 			'choice'   => 'link',
-			'element'  => '#site-navigation ul #flash-header-button a.tg-header-button,
+			'element'  => '#site-navigation ul #flash-header-button a.tg-header-button,body.transparent.header-sticky .site #masthead-sticky-wrapper #masthead .header-bottom #site-navigation ul#primary-menu li.flash-header-button:hover > a.tg-header-button, 
 			 header#masthead .header-bottom nav#site-navigation ul.menu li#flash-header-button:hover a.tg-header-button',
 			'function' => 'css',
 			'property' => 'color',
@@ -547,7 +547,9 @@ Kirki::add_field( 'flash_config', array(
 		),
 		array(
 			'choice'   => 'hover',
-			'element'  => '.transparent.header-sticky .is-sticky #site-navigation ul li:hover > a,body.header-sticky .site-navigation-wrapper #site-navigation ul li:hover a ,body.header-sticky .site-navigation-wrapper #site-navigation ul li.current_page_item:hover a ,
+			'element'  => '.transparent.header-sticky .is-sticky #site-navigation ul li:hover > a,body.transparent.header-sticky .site #masthead-sticky-wrapper #masthead .header-bottom #site-navigation ul#primary-menu li.current-menu-item:hover a,
+body.transparent.header-sticky .site #masthead-sticky-wrapper #masthead .header-bottom #site-navigation ul#primary-menu li.current_page_item:hover a,
+body.transparent.header-sticky .site #masthead-sticky-wrapper #masthead .header-bottom #site-navigation ul#primary-menu li:hover a,body.header-sticky .site-navigation-wrapper #site-navigation ul li:hover a ,body.header-sticky .site-navigation-wrapper #site-navigation ul li.current_page_item:hover a ,
 body.header-sticky .site-navigation-wrapper #site-navigation ul li.current-menu-item:hover a,.header-sticky #site-navigation ul li:hover > a, body.transparent.header-sticky #masthead-sticky-wrapper #masthead .header-bottom #site-navigation ul li:hover > a',
 			'function' => 'css',
 			'property' => 'color',
