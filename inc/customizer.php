@@ -420,8 +420,8 @@ Kirki::add_field( 'flash_config', array(
 	'output'      => array(
 		array(
 			'choice'   => 'link',
-			'element'  => '#site-navigation ul #flash-header-button a.tg-header-button,body.transparent.header-sticky .site #masthead-sticky-wrapper #masthead .header-bottom #site-navigation ul#primary-menu li.flash-header-button:hover > a.tg-header-button,
-			 header#masthead .header-bottom nav#site-navigation ul.menu li#flash-header-button:hover a.tg-header-button',
+			'element'  => '#site-navigation ul #flash-header-button a.tg-header-button,body.transparent .site #masthead .header-bottom .site-navigation-wrapper #site-navigation ul#primary-menu li.flash-header-button:hover a.tg-header-button,body.transparent.header-sticky .site #masthead-sticky-wrapper #masthead .header-bottom #site-navigation ul#primary-menu li.flash-header-button:hover > a.tg-header-button,
+				header#masthead .header-bottom nav#site-navigation ul.menu li#flash-header-button:hover a.tg-header-button',
 			'function' => 'css',
 			'property' => 'color',
 			'exclude'  => array( '#ffffff', '#FFFFFF' ),
