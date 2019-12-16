@@ -1099,7 +1099,6 @@ Header
 	background-color: #f1f5f8;
 
 	.contact-info {
-		line-height: 30px;
 		float: left;
 		margin: 0;
 	}
@@ -5204,3 +5203,16 @@ p{
 
 }
 
+
+.site-header{
+		
+	.header-top{
+		padding: 5px 0;
+		font-size: 12px;
+
+			li{
+				padding: 0;
+			}
+	}
+
+}

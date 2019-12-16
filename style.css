@@ -1015,7 +1015,6 @@ Header
 }
 
 .header-top .contact-info {
-	line-height: 30px;
 	float: left;
 	margin: 0;
 }
@@ -4442,4 +4441,13 @@ body.transparent.header-sticky .site #masthead-sticky-wrapper #masthead .header-
 
 p:last-of-type {
 	margin: 0;
+}
+
+.site-header .header-top {
+	padding: 5px 0;
+	font-size: 12px;
+}
+
+.site-header .header-top li {
+	padding: 0;
 }
