@@ -3509,7 +3509,7 @@ Archive
 
 .entry-content,
 .entry-summary {
-	margin-top: 12px;
+	margin: 0 0 25px;
 	color: #606060;
 }
 
@@ -4438,4 +4438,8 @@ body.transparent #masthead .header-bottom .site-navigation-wrapper #site-navigat
 
 body.transparent.header-sticky .site #masthead-sticky-wrapper #masthead .header-bottom #site-navigation ul#primary-menu li.flash-header-button:hover a.tg-header-button {
 	color: #fff;
+}
+
+p:last-of-type {
+	margin: 0;
 }

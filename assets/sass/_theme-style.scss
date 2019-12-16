@@ -3903,7 +3903,7 @@ Archive
 
 .entry-content,
 .entry-summary {
-	margin-top: 12px;
+	margin: 0 0 25px;
 	color: #606060;
 }
 
@@ -5196,6 +5196,11 @@ body.transparent.header-sticky{
 }
 
 
- 
+p{
+	
+	&:last-of-type{
+		margin: 0;
+	}
 
+}
 
