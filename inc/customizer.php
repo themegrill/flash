@@ -170,6 +170,36 @@ Kirki::add_field( 'flash_config', array(
 	),
 ) );
 
+/** Top Header Background Color */
+Kirki::add_field( 'flash_config', array(
+	'type'            => 'color',
+	'settings'        => 'flash_header_top_background_color',
+	'label'           => esc_html__( 'Header Top Background Color', 'flash' ),
+	'description'     => esc_html__( 'Controls background color of header top.', 'flash' ),
+	'section'         => 'flash_top_header_options',
+	'priority'        => 80,
+	'default'         => '#f1f5f8',
+	'choices'         => array(
+		'alpha' => true,
+	),
+	'transport'       => 'postMessage',
+	'output'          => array(
+		array(
+			'element'  => array( '.site-header .header-top' ),
+			'function' => 'css',
+			'property' => 'background-color',
+			'exclude'  => array( '#f1f5f8', '#F1F5F8' ),
+		),
+	),
+	'active_callback' => array(
+		array(
+			'setting'  => 'flash_top_header',
+			'operator' => '==',
+			'value'    => 1,
+		),
+	),
+) );
+
 /** Menu Section */
 Kirki::add_section( 'flash_menu_options', array(
 	'title'      => esc_html__( 'Menu Settings', 'flash' ),
@@ -354,10 +384,10 @@ Kirki::add_field('flash_config', array(
 		'type'            => 'text',
 		'settings'        => 'flash_header_button_text',
 		'label'           => esc_html__( 'Header Button', 'flash' ),
-		'description' => esc_html__( 'Button Text', 'flash' ),
+		'description'     => esc_html__( 'Button Text', 'flash' ),
 		'section'         => 'flash_header_options',
 		'default'         => '',
-		'priority' => 30,
+		'priority'        => 30,
 	));
 
 /** Button link */
@@ -367,7 +397,7 @@ Kirki::add_field('flash_config', array(
 		'description'     => esc_html__( 'Button Link', 'flash' ),
 		'section'         => 'flash_header_options',
 		'default'         => '#',
-		'priority' => 30,
+		'priority'        => 30,
 	));
 
 /* Button Color Options*/
@@ -377,20 +407,20 @@ Kirki::add_field( 'flash_config', array(
 	'section'     => 'flash_header_options',
 	'priority'    => 30,
 	'choices'     => array(
-		'link'   => esc_attr__( 'Color', 'flash' ),
-		'background-color' => esc_attr__( 'Background Color', 'flash' ),
+		'link'                   => esc_attr__( 'Color', 'flash' ),
+		'background-color'       => esc_attr__( 'Background Color', 'flash' ),
 		'background-hover-color' => esc_attr__( 'Background Hover Color', 'flash' ),
 	),
 	'default'     => array(
-		'link'   => '#ffffff',
-		'background-color' => '#30afb8',
+		'link'                   => '#ffffff',
+		'background-color'       => '#30afb8',
 		'background-hover-color' => '#37b6b7',
 	),
 	'transport'   => 'auto',
 	'output'      => array(
 		array(
 			'choice'   => 'link',
-			'element'  => '#site-navigation ul #flash-header-button a.tg-header-button,body.transparent.header-sticky .site #masthead-sticky-wrapper #masthead .header-bottom #site-navigation ul#primary-menu li.flash-header-button:hover > a.tg-header-button, 
+			'element'  => '#site-navigation ul #flash-header-button a.tg-header-button,body.transparent.header-sticky .site #masthead-sticky-wrapper #masthead .header-bottom #site-navigation ul#primary-menu li.flash-header-button:hover > a.tg-header-button,
 			 header#masthead .header-bottom nav#site-navigation ul.menu li#flash-header-button:hover a.tg-header-button',
 			'function' => 'css',
 			'property' => 'color',
@@ -417,7 +447,7 @@ Kirki::add_field( 'flash_config', array(
 Kirki::add_field( 'flash_config', array(
 	'type'        => 'slider',
 	'settings'    => 'header_button_font_size',
-	'label' => esc_html__( 'Font Size', 'flash' ),
+	'label'       => esc_html__( 'Font Size', 'flash' ),
 	'section'     => 'flash_header_options',
 	'priority'    => 30,
 	'default'     => 14,
@@ -527,14 +557,16 @@ Kirki::add_field( 'flash_config', array(
 	'section'     => 'flash_header_options',
 	'priority'    => 50,
 	'choices'     => array(
-		'link'   => esc_attr__( 'Color', 'flash' ),
-		'hover'  => esc_attr__( 'Hover', 'flash' ),
-		'active' => esc_attr__( 'Active', 'flash' ),
+		'link'             => esc_attr__( 'Color', 'flash' ),
+		'hover'            => esc_attr__( 'Hover', 'flash' ),
+		'active'           => esc_attr__( 'Active', 'flash' ),
+		'background-color' => esc_attr__( 'Background Color', 'flash' ),
 	),
 	'default'     => array(
 		'link'   => '#333333',
 		'hover'  => '#30afb8',
 		'active' => '#30afb8',
+		'background-color' => '#ffffff',
 	),
 	'transport'   => 'auto',
 	'output'      => array(
@@ -548,9 +580,9 @@ Kirki::add_field( 'flash_config', array(
 		array(
 			'choice'   => 'hover',
 			'element'  => '.transparent.header-sticky .is-sticky #site-navigation ul li:hover > a,body.transparent.header-sticky .site #masthead-sticky-wrapper #masthead .header-bottom #site-navigation ul#primary-menu li.current-menu-item:hover a,
-body.transparent.header-sticky .site #masthead-sticky-wrapper #masthead .header-bottom #site-navigation ul#primary-menu li.current_page_item:hover a,
-body.transparent.header-sticky .site #masthead-sticky-wrapper #masthead .header-bottom #site-navigation ul#primary-menu li:hover a,body.header-sticky .site-navigation-wrapper #site-navigation ul li:hover a ,body.header-sticky .site-navigation-wrapper #site-navigation ul li.current_page_item:hover a ,
-body.header-sticky .site-navigation-wrapper #site-navigation ul li.current-menu-item:hover a,.header-sticky #site-navigation ul li:hover > a, body.transparent.header-sticky #masthead-sticky-wrapper #masthead .header-bottom #site-navigation ul li:hover > a',
+				body.transparent.header-sticky .site #masthead-sticky-wrapper #masthead .header-bottom #site-navigation ul#primary-menu li.current_page_item:hover a,
+				body.transparent.header-sticky .site #masthead-sticky-wrapper #masthead .header-bottom #site-navigation ul#primary-menu li:hover a,body.header-sticky .site-navigation-wrapper #site-navigation ul li:hover a ,body.header-sticky .site-navigation-wrapper #site-navigation ul li.current_page_item:hover a ,
+				body.header-sticky .site-navigation-wrapper #site-navigation ul li.current-menu-item:hover a,.header-sticky #site-navigation ul li:hover > a, body.transparent.header-sticky #masthead-sticky-wrapper #masthead .header-bottom #site-navigation ul li:hover > a',
 			'function' => 'css',
 			'property' => 'color',
 			'exclude'  => array( '#30afb8', '#30AFB8' ),
@@ -562,6 +594,13 @@ body.header-sticky .site-navigation-wrapper #site-navigation ul li.current-menu-
 			'property' => 'color',
 			'exclude'  => array( '#30afb8', '#30AFB8' ),
 		),
+		array(
+			'choice'   => 'background-color',
+			'element'  => '.transparent.header-sticky .is-sticky .header-bottom,.header-sticky .is-sticky .header-bottom',
+			'function' => 'css',
+			'property' => 'background-color',
+			'exclude'  => array( '#ffffff', '#FFFFFF' ),
+		),
 	),
 	'active_callback'  => array(
 		array(
@@ -569,7 +608,7 @@ body.header-sticky .site-navigation-wrapper #site-navigation ul li.current-menu-
 			'operator' => '==',
 			'value'    => 1,
 		),
-	)
+	),
 ) );
 
 /* Header border width size */
