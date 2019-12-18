@@ -593,13 +593,19 @@ Clearings
 
 	body{
 
-		.site-content{
+		.stretched-layout{
+			
+			.site-content{
 
-			.tg-container{
-				padding: 0;
-			}
+				.tg-container{
+						padding: 0;
+					}
+
+		  	}
 
 		}
+
+		
 
 	}
 
@@ -764,15 +770,6 @@ common
 .tg-container {
 	max-width: 1200px;
 	margin: 0 auto;
-	padding: 0 15px;
-}
-
-.site-content{
-
-	.tg-container{
-		padding: 0;
-	}
-
 }
 
 .overlay {
