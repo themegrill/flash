@@ -610,7 +610,7 @@ Clearings
 		width: 100%;
 		padding: 0 15px;
 	}
-	body .stretched-layout .site-content .tg-container {
+	body.stretched-layout .site-content .tg-container {
 		padding: 0;
 	}
 }
