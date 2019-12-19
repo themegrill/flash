@@ -662,6 +662,28 @@ Kirki::add_field( 'flash_config', array(
 	),
 ) );
 
+/** Page Header Title Setting */
+Kirki::add_field( 'flash_config', array(
+	'type'            => 'color',
+	'settings'        => 'flash_pageheader_title',
+	'label'           => esc_html__( 'Text', 'flash' ),
+	'section'         => 'flash_page_header_options',
+	'priority'        => 20,
+	'default'         => '#333333',
+	'choices'         => array(
+		'alpha' => true,
+	),
+	'transport'       => 'postMessage',
+	'output'          => array(
+		array(
+			'element'  => array( '#flash-breadcrumbs .trail-title' ),
+			'function' => 'css',
+			'property' => 'color',
+			'exclude'  => array( '#333333'),
+		),
+	),
+) );
+
 /** Remove Breadcrumbs setting */
 Kirki::add_field( 'flash_config', array(
 	'type'     => 'checkbox',
