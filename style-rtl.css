@@ -152,7 +152,7 @@ button,
 input,
 select,
 textarea {
-	color: #333;
+	color: #313B48;
 	font-family: Montserrat, sans-serif;
 	font-size: 14px;
 	line-height: 1.5;
@@ -362,7 +362,7 @@ textarea {
 .navigation .nav-links a,
 .bttn,
 button {
-	background: #333;
+	background: #313B48;
 	color: #fff;
 	cursor: pointer;
 	/* Improves usability and consistency of cursor style between image-type 'input' and others */
@@ -382,7 +382,7 @@ button {
 }
 
 input[type="button"], input[type="reset"], input[type="submit"] {
-	background: #333;
+	background: #313B48;
 	color: #fff;
 	cursor: pointer;
 	/* Improves usability and consistency of cursor style between image-type 'input' and others */
@@ -1137,7 +1137,7 @@ Header
 }
 
 .social-menu li a[href*="twitter.com"]:hover, .social-menu li a[href*="plus.google.com"]:hover, .social-menu li a[href*="linkedin.com"]:hover, .social-menu li a[href*="facebook.com"]:hover, .social-menu li a[href*="pinterest.com"]:hover, .social-menu li a[href*="instagram.com"]:hover, .social-menu li a[href*="youtube.com"]:hover {
-	color: #333;
+	color: #313B48;
 }
 
 .transparent .social-menu li a[href*="twitter.com"]:hover, .transparent .social-menu li a[href*="facebook.com"]:hover, .transparent .social-menu li a[href*="plus.google.com"]:hover, .transparent .social-menu li a[href*="linkedin.com"]:hover, .transparent .social-menu li a[href*="youtube.com"]:hover {
@@ -1149,7 +1149,7 @@ Header
 }
 
 .transparent .is-sticky .social-menu li a[href*="facebook.com"], .transparent .is-sticky .social-menu li a[href*="linkedin.com"], .transparent .is-sticky .social-menu li a[href*="twitter.com"], .transparent .is-sticky .social-menu li a[href*="plus.google.com"], .transparent .is-sticky .social-menu li a[href*="youtube.com"] {
-	color: #333;
+	color: #313B48;
 }
 
 /*-----------------Logo-----------------*/
@@ -1294,7 +1294,7 @@ Header
 }
 
 #site-navigation ul li a {
-	color: #333;
+	color: #313B48;
 }
 
 #site-navigation .sub-menu li.menu-item-has-children ul {
@@ -1314,7 +1314,7 @@ Header
 }
 
 #site-navigation .sub-menu li.menu-item-has-children ul li a {
-	color: #333;
+	color: #313B48;
 }
 
 #site-navigation .sub-menu li.menu-item-has-children ul li:hover > a {
@@ -1335,7 +1335,7 @@ Header
 }
 
 .sub-toggle {
-	color: #333;
+	color: #313B48;
 	-webkit-transition: all 0.5s ease;
 	transition: all 0.5s ease;
 }
@@ -1565,7 +1565,7 @@ a,
 
 @media (max-width: 980px) {
 	.site-navigation-wrapper #site-navigation ul #flash-header-button .tg-header-button {
-		color: #333;
+		color: #313B48;
 	}
 	#site-navigation ul #flash-header-button .tg-header-button {
 		background: none;
@@ -1630,7 +1630,7 @@ a,
 }
 
 .transparent #site-navigation ul li a {
-	color: #333;
+	color: #313B48;
 	display: inline-block;
 }
 
@@ -1645,7 +1645,7 @@ a,
 }
 
 .transparent #site-navigation ul.sub-menu li a {
-	color: #333;
+	color: #313B48;
 	padding: 10px 30px;
 }
 
@@ -1662,7 +1662,7 @@ a,
 }
 
 .transparent #site-navigation ul.sub-menu li.menu-item-has-children ul li a {
-	color: #333;
+	color: #313B48;
 }
 
 .transparent .cart-wrap .flash-cart-views {
@@ -1793,7 +1793,7 @@ a,
 }
 
 .transparent.header-sticky #site-navigation ul.sub-menu li a {
-	color: #333;
+	color: #313B48;
 }
 
 .transparent.header-sticky #site-navigation ul.sub-menu li a:hover {
@@ -1816,7 +1816,7 @@ a,
 .transparent.header-sticky .is-sticky .header-top {
 	background: #f1f5f8;
 	border: none;
-	color: #333;
+	color: #313B48;
 	-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 	-webkit-transition: all 0.5s ease;
@@ -1824,36 +1824,36 @@ a,
 }
 
 .transparent.header-sticky .is-sticky .header-top .contact-info li {
-	color: #333;
+	color: #313B48;
 }
 
 .transparent.header-sticky .is-sticky .header-top .contact-info li span {
-	color: #333;
+	color: #313B48;
 }
 
 .transparent.header-sticky .is-sticky .logo-text {
-	color: #333;
+	color: #313B48;
 }
 
 .transparent.header-sticky .is-sticky .logo-text a {
-	color: #333;
+	color: #313B48;
 }
 
 .transparent.header-sticky .is-sticky #site-navigation ul li a,
 .transparent.header-sticky .is-sticky #site-navigation ul.sub-menu li a {
-	color: #333;
+	color: #313B48;
 }
 
 .transparent.header-sticky .is-sticky .flash-cart-views a {
-	color: #333;
+	color: #313B48;
 }
 
 .transparent.header-sticky .is-sticky #site-navigation .menu-toggle .fa {
-	color: #333;
+	color: #313B48;
 }
 
 .transparent.header-sticky .is-sticky #site-navigation ul li .sub-toggle {
-	color: #333;
+	color: #313B48;
 }
 
 .transparent.header-sticky .is-sticky #site-navigation ul li:hover > .sub-toggle {
@@ -1868,12 +1868,12 @@ a,
 }
 
 .transparent.header-sticky .is-sticky .flash-cart-views {
-	border-color: #333;
+	border-color: #313B48;
 }
 
 .transparent.header-sticky .is-sticky .search-icon {
-	color: #333;
-	border-color: #333;
+	color: #313B48;
+	border-color: #313B48;
 }
 
 .transparent.header-sticky .custom-logo,
@@ -4396,7 +4396,7 @@ body.header-sticky .site-navigation-wrapper #site-navigation ul li:hover a {
 }
 
 body.header-sticky .site-navigation-wrapper #site-navigation ul li a {
-	color: #333;
+	color: #313B48;
 }
 
 body.header-sticky .site-navigation-wrapper #site-navigation ul li.current-menu-item:hover a {
@@ -4461,11 +4461,11 @@ p:last-of-type {
 }
 
 .site-navigation-wrapper #site-navigation ul ul.sub-menu a {
-	color: #333;
+	color: #313B48;
 }
 
 .site-navigation-wrapper #site-navigation ul li.menu-item-has-children:hover .sub-toggle {
-	color: #333;
+	color: #313B48;
 }
 
 .site-navigation-wrapper #site-navigation ul#primary-menu li.menu-item-has-children:hover .sub-toggle {
@@ -4477,7 +4477,7 @@ p:last-of-type {
 }
 
 .header-sticky li.menu-item-has-children .sub-toggle {
-	color: #333;
+	color: #313B48;
 }
 
 .header-sticky header .site-navigation-wrapper #site-navigation ul#primary-menu li.menu-item-has-children:hover .sub-toggle {
@@ -4485,7 +4485,7 @@ p:last-of-type {
 }
 
 body.header-sticky .site-navigation-wrapper #site-navigation ul li:hover ul a {
-	color: #333;
+	color: #313B48;
 }
 
 body.header-sticky .site-navigation-wrapper #site-navigation ul ul li:hover a {
@@ -4493,7 +4493,7 @@ body.header-sticky .site-navigation-wrapper #site-navigation ul ul li:hover a {
 }
 
 body.transparent #site-navigation ul li .sub-toggle {
-	color: #333;
+	color: #313B48;
 }
 
 body.transparent #masthead .header-bottom #site-navigation ul#primary-menu li:hover .sub-toggle {
@@ -4501,7 +4501,7 @@ body.transparent #masthead .header-bottom #site-navigation ul#primary-menu li:ho
 }
 
 body.transparent #masthead .site-navigation-wrapper #site-navigation ul#primary-menu li:hover ul a {
-	color: #333;
+	color: #313B48;
 }
 
 body.transparent #masthead .site-navigation-wrapper #site-navigation ul#primary-menu ul.sub-menu li:hover a {
@@ -4509,7 +4509,7 @@ body.transparent #masthead .site-navigation-wrapper #site-navigation ul#primary-
 }
 
 body.transparent.header-sticky #masthead-sticky-wrapper #masthead .header-bottom #site-navigation ul#primary-menu li:hover ul a {
-	color: #333;
+	color: #313B48;
 }
 
 body.transparent.header-sticky #masthead-sticky-wrapper #masthead .header-bottom #site-navigation ul#primary-menu li ul li:hover a {
@@ -4517,7 +4517,7 @@ body.transparent.header-sticky #masthead-sticky-wrapper #masthead .header-bottom
 }
 
 body.transparent.header-sticky .site-navigation-wrapper #site-navigation ul li .sub-toggle {
-	color: #333;
+	color: #313B48;
 }
 
 body.transparent.header-sticky #masthead .header-bottom .site-navigation-wrapper #site-navigation ul#primary-menu li:hover .sub-toggle {
