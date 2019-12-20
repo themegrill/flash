@@ -4452,3 +4452,75 @@ p:last-of-type {
 .site-header .header-top li {
 	padding: 0;
 }
+
+#site-navigation ul ul.sub-menu {
+	display: block;
+}
+
+#site-navigation ul ul.sub-menu a {
+	display: block;
+}
+
+.site-navigation-wrapper #site-navigation ul ul.sub-menu a {
+	color: #333;
+}
+
+.site-navigation-wrapper #site-navigation ul li.menu-item-has-children:hover .sub-toggle {
+	color: #333;
+}
+
+.site-navigation-wrapper #site-navigation ul#primary-menu li.menu-item-has-children:hover .sub-toggle {
+	color: #30afb8;
+}
+
+.site-navigation-wrapper #site-navigation ul.sub-menu li:hover a {
+	color: #30afb8;
+}
+
+.header-sticky li.menu-item-has-children .sub-toggle {
+	color: #333;
+}
+
+.header-sticky header .site-navigation-wrapper #site-navigation ul#primary-menu li.menu-item-has-children:hover .sub-toggle {
+	color: #30afb8;
+}
+
+body.header-sticky .site-navigation-wrapper #site-navigation ul li:hover ul a {
+	color: #333;
+}
+
+body.header-sticky .site-navigation-wrapper #site-navigation ul ul li:hover a {
+	color: #30afb8;
+}
+
+body.transparent #site-navigation ul li .sub-toggle {
+	color: #333;
+}
+
+body.transparent #masthead .header-bottom #site-navigation ul#primary-menu li:hover .sub-toggle {
+	color: #30afb8;
+}
+
+body.transparent #masthead .site-navigation-wrapper #site-navigation ul#primary-menu li:hover ul a {
+	color: #333;
+}
+
+body.transparent #masthead .site-navigation-wrapper #site-navigation ul#primary-menu ul.sub-menu li:hover a {
+	color: #30afb8;
+}
+
+body.transparent.header-sticky #masthead-sticky-wrapper #masthead .header-bottom #site-navigation ul#primary-menu li:hover ul a {
+	color: #333;
+}
+
+body.transparent.header-sticky #masthead-sticky-wrapper #masthead .header-bottom #site-navigation ul#primary-menu li ul li:hover a {
+	color: #30afb8;
+}
+
+body.transparent.header-sticky .site-navigation-wrapper #site-navigation ul li .sub-toggle {
+	color: #333;
+}
+
+body.transparent.header-sticky #masthead .header-bottom .site-navigation-wrapper #site-navigation ul#primary-menu li:hover .sub-toggle {
+	color: #30afb8;
+}
