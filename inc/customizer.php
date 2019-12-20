@@ -669,7 +669,7 @@ Kirki::add_field( 'flash_config', array(
 	'label'           => esc_html__( 'Text', 'flash' ),
 	'section'         => 'flash_page_header_options',
 	'priority'        => 20,
-	'default'         => '#333333',
+	'default'         => '#313b48',
 	'choices'         => array(
 		'alpha' => true,
 	),
@@ -679,7 +679,7 @@ Kirki::add_field( 'flash_config', array(
 			'element'  => array( '.breadcrumb-trail.breadcrumbs h1.trail-title' ),
 			'function' => 'css',
 			'property' => 'color',
-			'exclude'  => array( '#333333'),
+			'exclude'  => array( '#313b48','#313B48'),
 		),
 	),
 ) );
