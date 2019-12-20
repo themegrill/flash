@@ -676,7 +676,7 @@ Kirki::add_field( 'flash_config', array(
 	'transport'       => 'postMessage',
 	'output'          => array(
 		array(
-			'element'  => array( '#flash-breadcrumbs .trail-title' ),
+			'element'  => array( '.breadcrumb-trail.breadcrumbs h1.trail-title' ),
 			'function' => 'css',
 			'property' => 'color',
 			'exclude'  => array( '#333333'),
@@ -1646,8 +1646,8 @@ function flash_frontend_css() {
 			background-image: url('.esc_url($pageheader_background).');
 			color: #fff;
 		}
-		#flash-breadcrumbs a,
-		#flash-breadcrumbs span,
+		.breadcrumb-trail.breadcrumbs a,
+		.breadcrumb-trail.breadcrumbs .trail-items li span,
 		.breadcrumb-trail.breadcrumbs .trail-items li span::before{
 			color: #fff;
 		}

@@ -3895,7 +3895,7 @@ Archive
 
 .entry-content,
 .entry-summary {
-	margin: 0 0 25px;
+	margin: 0;
 	color: #606060;
 }
 
@@ -4156,8 +4156,7 @@ Bread Crumb
 
 .breadcrumb-trail.breadcrumbs {
 	background: #fafafa none repeat scroll 0 0;
-	margin-bottom: 30px;
-
+	
 	.trail-title {
 		float: left;
 		font-weight: 400;
