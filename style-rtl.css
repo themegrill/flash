@@ -1564,8 +1564,37 @@ a,
 }
 
 @media (max-width: 980px) {
+	.site-navigation-wrapper #site-navigation ul li:hover ul.sub-menu a {
+		color: #313B48;
+	}
+	body.transparent.header-sticky .site #masthead-sticky-wrapper header#masthead .header-bottom #site-navigation ul#primary-menu li.flash-header-button:hover a.tg-header-button {
+		color: #313B48;
+	}
+	body.non-transparent.header-sticky .site-navigation-wrapper #site-navigation ul li a {
+		color: #313B48;
+	}
+	body.header-sticky.transparent .site-navigation-wrapper #site-navigation ul li a, .transparent #site-navigation ul li a, #site-navigation ul li a {
+		color: #313B48;
+	}
+	body.transparent #site-navigation ul li a {
+		padding: 0 15px;
+	}
+	.transparent #site-navigation ul li a, #site-navigation ul li a {
+		color: #313B48;
+	}
+	body.transparent .site header#masthead .header-bottom .site-navigation-wrapper #site-navigation ul#primary-menu li.flash-header-button:hover a.tg-header-button {
+		color: #313B48;
+	}
+	body header#masthead .header-bottom nav#site-navigation ul.menu li#flash-header-button:hover a.tg-header-button {
+		color: #313B48;
+	}
+	body.transparent #site-navigation ul li a,
+	body #site-navigation ul li a,
 	.site-navigation-wrapper #site-navigation ul #flash-header-button .tg-header-button {
 		color: #313B48;
+	}
+	#site-navigation ul #flash-header-button a.tg-header-button {
+		padding: 0 15px;
 	}
 	#site-navigation ul #flash-header-button .tg-header-button {
 		background: none;
@@ -4532,7 +4561,7 @@ body.home .site-content {
 	padding: 0;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1024px) {
 	.site-content {
 		padding: 50px 0;
 	}
@@ -4541,7 +4570,7 @@ body.home .site-content {
 	}
 }
 
-@media (max-width: 980px) {
+@media (max-width: 768px) {
 	.site-content {
 		padding: 30px 0;
 	}
