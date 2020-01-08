@@ -1564,35 +1564,38 @@ a,
 }
 
 @media (max-width: 980px) {
-	.site-navigation-wrapper #site-navigation ul li:hover ul.sub-menu a {
+	.site-navigation-wrapper #site-navigation ul li.menu-item-has-children .sub-toggle,
+	body.transparent .site-navigation-wrapper nav#site-navigation ul li .sub-toggle, li.menu-item-has-children .sub-toggle {
+		color: #313B48;
+		background: none;
+	}
+	header#masthead .header-bottom .site-navigation-wrapper nav#site-navigation ul#primary-menu li.menu-item-has-children:hover .sub-toggle,
+	body.transparent.header-sticky header#masthead .header-bottom .site-navigation-wrapper nav#site-navigation ul#primary-menu li:hover .sub-toggle,
+	body.transparent.header-sticky .site-navigation-wrapper nav#site-navigation ul#primary-menu li .sub-toggle,
+	body.transparent.header-sticky .sticky-wrapper header#masthead .header-bottom .site-navigation-wrapper nav#site-navigation ul#primary-menu li:hover .sub-toggle {
 		color: #313B48;
 	}
-	body.transparent.header-sticky .site #masthead-sticky-wrapper header#masthead .header-bottom #site-navigation ul#primary-menu li.flash-header-button:hover a.tg-header-button {
+	body.transparent nav#site-navigation ul li a,
+	.transparent nav#site-navigation ul.sub-menu li a,
+	nav#site-navigation ul li a,
+	.site-navigation-wrapper nav#site-navigation ul li ul {
 		color: #313B48;
 	}
-	body.non-transparent.header-sticky .site-navigation-wrapper #site-navigation ul li a {
-		color: #313B48;
+	.site-navigation-wrapper nav#site-navigation ul li:hover ul a,
+	body.transparent #masthead .header-bottom .site-navigation-wrapper nav#site-navigation ul#primary-menu li:hover ul a,
+	body.header-sticky .site-navigation-wrapper nav#site-navigation ul li a,
+	body.header-sticky .site-navigation-wrapper nav#site-navigation ul#primary-menu li:hover ul a,
+	body.transparent.header-sticky .site-navigation-wrapper nav#site-navigation ul.sub-menu li a,
+	body.transparent.header-sticky .site #masthead-sticky-wrapper header#masthead .header-bottom .site-navigation-wrapper nav#site-navigation ul#primary-menu li:hover ul a {
+		color: unset;
 	}
-	body.header-sticky.transparent .site-navigation-wrapper #site-navigation ul li a, .transparent #site-navigation ul li a, #site-navigation ul li a {
-		color: #313B48;
-	}
-	body.transparent #site-navigation ul li a {
-		padding: 0 15px;
-	}
-	.transparent #site-navigation ul li a, #site-navigation ul li a {
-		color: #313B48;
-	}
-	body.transparent .site header#masthead .header-bottom .site-navigation-wrapper #site-navigation ul#primary-menu li.flash-header-button:hover a.tg-header-button {
-		color: #313B48;
-	}
-	body header#masthead .header-bottom nav#site-navigation ul.menu li#flash-header-button:hover a.tg-header-button {
-		color: #313B48;
-	}
-	body.transparent #site-navigation ul li a,
-	body #site-navigation ul li a,
+	body.transparent.header-sticky .site #masthead-sticky-wrapper header#masthead .header-bottom #site-navigation ul#primary-menu li.flash-header-button:hover a.tg-header-button,
+	body.transparent .site header#masthead .header-bottom .site-navigation-wrapper #site-navigation ul#primary-menu li.flash-header-button:hover a.tg-header-button,
+	body header#masthead .header-bottom nav#site-navigation ul.menu li#flash-header-button:hover a.tg-header-button,
 	.site-navigation-wrapper #site-navigation ul #flash-header-button .tg-header-button {
 		color: #313B48;
 	}
+	body.transparent #site-navigation ul li a,
 	#site-navigation ul #flash-header-button a.tg-header-button {
 		padding: 0 15px;
 	}
@@ -4425,7 +4428,7 @@ body.header-sticky .site-navigation-wrapper #site-navigation ul li:hover a {
 }
 
 body.header-sticky .site-navigation-wrapper #site-navigation ul li a {
-	color: #313B48;
+	color: #313b48;
 }
 
 body.header-sticky .site-navigation-wrapper #site-navigation ul li.current-menu-item:hover a {
@@ -4490,11 +4493,11 @@ p:last-of-type {
 }
 
 .site-navigation-wrapper #site-navigation ul ul.sub-menu a {
-	color: #313B48;
+	color: #313b48;
 }
 
 .site-navigation-wrapper #site-navigation ul li.menu-item-has-children:hover .sub-toggle {
-	color: #313B48;
+	color: #313b48;
 }
 
 .site-navigation-wrapper #site-navigation ul#primary-menu li.menu-item-has-children:hover .sub-toggle {
@@ -4506,7 +4509,7 @@ p:last-of-type {
 }
 
 .header-sticky li.menu-item-has-children .sub-toggle {
-	color: #313B48;
+	color: #313b48;
 }
 
 .header-sticky header .site-navigation-wrapper #site-navigation ul#primary-menu li.menu-item-has-children:hover .sub-toggle {
@@ -4514,7 +4517,7 @@ p:last-of-type {
 }
 
 body.header-sticky .site-navigation-wrapper #site-navigation ul li:hover ul a {
-	color: #313B48;
+	color: #313b48;
 }
 
 body.header-sticky .site-navigation-wrapper #site-navigation ul ul li:hover a {
@@ -4522,7 +4525,7 @@ body.header-sticky .site-navigation-wrapper #site-navigation ul ul li:hover a {
 }
 
 body.transparent #site-navigation ul li .sub-toggle {
-	color: #313B48;
+	color: #313b48;
 }
 
 body.transparent #masthead .header-bottom #site-navigation ul#primary-menu li:hover .sub-toggle {
@@ -4530,7 +4533,7 @@ body.transparent #masthead .header-bottom #site-navigation ul#primary-menu li:ho
 }
 
 body.transparent #masthead .site-navigation-wrapper #site-navigation ul#primary-menu li:hover ul a {
-	color: #313B48;
+	color: #313b48;
 }
 
 body.transparent #masthead .site-navigation-wrapper #site-navigation ul#primary-menu ul.sub-menu li:hover a {
@@ -4538,7 +4541,7 @@ body.transparent #masthead .site-navigation-wrapper #site-navigation ul#primary-
 }
 
 body.transparent.header-sticky #masthead-sticky-wrapper #masthead .header-bottom #site-navigation ul#primary-menu li:hover ul a {
-	color: #313B48;
+	color: #313b48;
 }
 
 body.transparent.header-sticky #masthead-sticky-wrapper #masthead .header-bottom #site-navigation ul#primary-menu li ul li:hover a {
@@ -4546,7 +4549,7 @@ body.transparent.header-sticky #masthead-sticky-wrapper #masthead .header-bottom
 }
 
 body.transparent.header-sticky .site-navigation-wrapper #site-navigation ul li .sub-toggle {
-	color: #313B48;
+	color: #313b48;
 }
 
 body.transparent.header-sticky #masthead .header-bottom .site-navigation-wrapper #site-navigation ul#primary-menu li:hover .sub-toggle {
