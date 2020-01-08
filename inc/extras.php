@@ -71,6 +71,26 @@ function flash_body_classes( $classes ) {
 }
 add_filter( 'body_class', 'flash_body_classes' );
 
+/**
+ * Adds class for page header
+ *
+ * @return string page header class
+ */
+function flash_pageheader_class() {
+	global $post;
+	$class = get_theme_mod( 'flash_pageheader_size', 'small' );
+
+	if ( is_singular( 'page' ) ) {
+		$option = get_post_meta( $post->ID, 'pageheader_size', true );
+
+		if ( 'theme-options' !== $option && '' !== $option ) {
+			$class = $option;
+		}
+	}
+
+	return $class;
+}
+
 if ( ! function_exists( 'flash_the_custom_logo' ) ) :
 /**
  * Displays the optional custom logo.
@@ -739,3 +759,21 @@ if ( ! function_exists( 'flash_pingback_header' ) ) :
 endif;
 
 add_action( 'wp_head', 'flash_pingback_header' );
+
+function flash_header_button_append( $items, $args ) {
+
+	$button_text   = get_theme_mod( 'flash_header_button_text' );
+	$button_link   = get_theme_mod( 'flash_header_button_link' );
+
+	if ( 'primary' === $args->theme_location && $button_text ) {
+
+		$items .= '<li class="flash-header-button" id="flash-header-button">';
+		$items .= '<a href="' . esc_url( $button_link ) . '" class="tg-header-button">';
+		$items .= $button_text;
+		$items .= '</a>';
+		$items .= '</li>';
+	}
+
+	return $items;
+}
+add_filter( 'wp_nav_menu_items', 'flash_header_button_append', 10, 2 );

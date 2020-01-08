@@ -61,6 +61,5 @@ function flash_is_woocommerce_pages() {
 	if ( is_shop() || is_product() || is_product_category() || is_product_tag() ) {
 		return true;
 	}
-
 	return false;
 }

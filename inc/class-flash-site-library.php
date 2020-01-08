@@ -37,13 +37,13 @@ class Flash_Site_Library {
 	public static function flash_site_library_get_demos() {
 		$template     = 'flash';
 		$packages     = get_transient( 'flash_site_library_theme_' . $template );
-		
+
 		if ( false === $packages ) {
 			$raw_packages = wp_safe_remote_get( "https://raw.githubusercontent.com/themegrill/themegrill-demo-pack/master/configs/{$template}.json" );
 
 			if ( ! is_wp_error( $raw_packages ) ) {
 				$packages = json_decode( wp_remote_retrieve_body( $raw_packages ) );
-				
+
 				if ( $packages ) {
 					set_transient( 'flash_site_library_theme_' . $template, $packages, WEEK_IN_SECONDS );
 				}

@@ -83,7 +83,6 @@ do_action( 'flash_before' ); ?>
 
 		<div class="header-bottom">
 			<div class="tg-container">
-
 				<div class="logo">
 					<?php if( function_exists( 'the_custom_logo' ) && has_custom_logo() ) : ?>
 					<figure class="logo-image">
@@ -123,6 +122,7 @@ do_action( 'flash_before' ); ?>
 					<?php $logo_position = get_theme_mod( 'flash_logo_position', 'left-logo-right-menu' ); ?>
 
 					<?php if ( $logo_position == 'center-logo-below-menu' ): ?>
+
 						<div class="header-action-container">
 
 							<?php if( ( get_theme_mod( 'flash_header_cart', '' ) !=  '1' ) && class_exists( 'WooCommerce' ) ) :
@@ -189,12 +189,13 @@ do_action( 'flash_before' ); ?>
 	/**
 	 * flash_after_header hook
 	 */
+
 	do_action( 'flash_after_header' ); ?>
 
 	<?php get_template_part( 'template-parts/header-media' ); ?>
 
 	<?php if( !is_front_page() ) : ?>
-	<nav id="flash-breadcrumbs" class="breadcrumb-trail breadcrumbs">
+	<nav id="flash-breadcrumbs" class="breadcrumb-trail breadcrumbs pageheader-<?php echo esc_attr( flash_pageheader_class() ); ?>">
 		<div class="tg-container">
 			<?php flash_page_title(); ?>
 			<?php flash_breadcrumbs(); ?>
