@@ -296,6 +296,8 @@ if ( is_admin() ) {
 	 * Load site library file.
 	 */
 	require get_template_directory() . '/inc/class-flash-site-library.php';
+
+	require get_template_directory() . '/inc/admin/class-flash-theme-review-notice.php';
 }
 
 /**

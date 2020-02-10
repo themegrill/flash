@@ -83,7 +83,7 @@ Unless otherwise specified, all the theme files, scripts and images including th
 = Version TBD =
 * Tweak - Update `screen-reader-text` CSS.
 
-= Version 1.3.1 - 2019-07-12 =
+= Version 1.3.2 - 2019-07-12 =
 * Remove - Removed dashboard message to align with the theme review guidelines
 
 = Version 1.3.0 - 2019-07-11 =
