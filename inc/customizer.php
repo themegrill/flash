@@ -33,6 +33,34 @@ Kirki::add_field( 'flash_config', array(
 	'priority'    => 8,
 ) );
 
+/* Retina Logo Option.*/
+Kirki::add_field( 'flash_config', array(
+	'type'     => 'checkbox',
+	'settings' => 'flash_retina_logo',
+	'label'    => esc_html__( 'Different Logo for Retina Devices.', 'flash' ),
+	'section'  => 'title_tagline',
+	'default'  => '0',
+	'priority' => 9,
+) );
+
+/* Retina Logo Upload.*/
+Kirki::add_field( 'flash_config', array(
+	'type'     => 'image',
+	'settings' => 'flash_retina_logo_upload',
+	'label'    => esc_html__( 'Retina Logo', 'flash' ),
+	'description'     => esc_html__( 'Please upload the retina logo double the size of logo. For eg: If you upload 100 * 100 pixels for logo then use 200 * 200 pixels for retina logo.', 'flash' ),
+	'section'  => 'title_tagline',
+	'default'  => '',
+	'priority' => 9,
+	'active_callback'  => array(
+		array(
+			'setting'  => 'flash_retina_logo',
+			'operator' => '==',
+			'value'    => 1,
+		),
+	),
+) );
+
 /** Theme Options Panel */
 Kirki::add_panel( 'flash_theme_options', array(
 	'priority'    => 100,
