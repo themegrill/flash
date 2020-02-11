@@ -48,7 +48,6 @@ Kirki::add_field( 'flash_config', array(
 	'type'     => 'image',
 	'settings' => 'flash_retina_logo_upload',
 	'label'    => esc_html__( 'Retina Logo', 'flash' ),
-	'description'     => esc_html__( 'Please upload the retina logo double the size of logo. For eg: If you upload 100 * 100 pixels for logo then use 200 * 200 pixels for retina logo.', 'flash' ),
 	'section'  => 'title_tagline',
 	'default'  => '',
 	'priority' => 9,
