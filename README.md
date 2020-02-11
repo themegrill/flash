@@ -1,7 +1,7 @@
 === Flash ===
 Author: ThemeGrill
 Requires at least: WordPress 4.3
-Tested up to: WordPress 5.2.2
+Tested up to: WordPress 5.3.2
 Version: 1.3.0
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
