@@ -37,7 +37,7 @@ Kirki::add_field( 'flash_config', array(
 Kirki::add_field( 'flash_config', array(
 	'type'     => 'checkbox',
 	'settings' => 'flash_retina_logo',
-	'label'    => esc_html__( 'Different Logo for Retina Devices.', 'flash' ),
+	'label'    => esc_html__( 'Different Logo for Retina Devices?', 'flash' ),
 	'section'  => 'title_tagline',
 	'default'  => '0',
 	'priority' => 9,
@@ -45,12 +45,12 @@ Kirki::add_field( 'flash_config', array(
 
 /* Retina Logo Upload.*/
 Kirki::add_field( 'flash_config', array(
-	'type'     => 'image',
-	'settings' => 'flash_retina_logo_upload',
-	'label'    => esc_html__( 'Retina Logo', 'flash' ),
-	'section'  => 'title_tagline',
-	'default'  => '',
-	'priority' => 9,
+	'type'             => 'image',
+	'settings'         => 'flash_retina_logo_upload',
+	'label'            => esc_html__( 'Retina Logo', 'flash' ),
+	'section'          => 'title_tagline',
+	'default'          => '',
+	'priority'         => 9,
 	'active_callback'  => array(
 		array(
 			'setting'  => 'flash_retina_logo',
