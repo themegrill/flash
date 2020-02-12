@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v3 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Flash 1.3.2\n"
+"Project-Id-Version: Flash 1.3.3\n"
 "Report-Msgid-Bugs-To: themegrill@gmail.com\n"
-"POT-Creation-Date: 2020-02-06 10:17:17+00:00\n"
+"POT-Creation-Date: 2020-02-11 09:44:32+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -892,234 +892,242 @@ msgstr ""
 msgid "Transparent Logo"
 msgstr ""
 
-#: inc/customizer.php:39
+#: inc/customizer.php:40
+msgid "Different Logo for Retina Devices?"
+msgstr ""
+
+#: inc/customizer.php:50
+msgid "Retina Logo"
+msgstr ""
+
+#: inc/customizer.php:66
 msgid "Flash Theme Options"
 msgstr ""
 
-#: inc/customizer.php:44
+#: inc/customizer.php:71
 msgid "General Settings"
 msgstr ""
 
-#: inc/customizer.php:54
+#: inc/customizer.php:81
 msgid "Site Layout"
 msgstr ""
 
-#: inc/customizer.php:60
+#: inc/customizer.php:87
 msgid "Wide Layout"
 msgstr ""
 
-#: inc/customizer.php:61
+#: inc/customizer.php:88
 msgid "Boxed Layout"
 msgstr ""
 
-#: inc/customizer.php:69
+#: inc/customizer.php:96
 msgid "Disable Preloader?"
 msgstr ""
 
-#: inc/customizer.php:79
+#: inc/customizer.php:106
 msgid "Disable Back to Top Button?"
 msgstr ""
 
-#: inc/customizer.php:87
+#: inc/customizer.php:114
 msgid "Top Header Settings"
 msgstr ""
 
-#: inc/customizer.php:97
+#: inc/customizer.php:124
 msgid "Enable Top Header"
 msgstr ""
 
-#: inc/customizer.php:107
+#: inc/customizer.php:134
 msgid "Top Header Left Content"
 msgstr ""
 
-#: inc/customizer.php:113 inc/customizer.php:136
+#: inc/customizer.php:140 inc/customizer.php:163
 msgid "Social Menu"
 msgstr ""
 
-#: inc/customizer.php:114 inc/customizer.php:137
+#: inc/customizer.php:141 inc/customizer.php:164
 msgid "Top Header Text"
 msgstr ""
 
-#: inc/customizer.php:115 inc/customizer.php:138
+#: inc/customizer.php:142 inc/customizer.php:165
 msgid "Disable"
 msgstr ""
 
-#: inc/customizer.php:130
+#: inc/customizer.php:157
 msgid "Top Header Right Content"
 msgstr ""
 
-#: inc/customizer.php:153
+#: inc/customizer.php:180
 msgid "Top Header Text Content"
 msgstr ""
 
-#: inc/customizer.php:175
+#: inc/customizer.php:202
 msgid "Header Settings"
 msgstr ""
 
-#: inc/customizer.php:185
+#: inc/customizer.php:212
 msgid "Logo and Menu Position"
 msgstr ""
 
-#: inc/customizer.php:201
+#: inc/customizer.php:228
 msgid "Remove Header Search Box"
 msgstr ""
 
-#: inc/customizer.php:211
+#: inc/customizer.php:238
 msgid "Remove Header Cart Icon"
 msgstr ""
 
-#: inc/customizer.php:222
+#: inc/customizer.php:249
 msgid "Sticky Header"
 msgstr ""
 
-#: inc/customizer.php:230
+#: inc/customizer.php:257
 msgid "Page Header Settings"
 msgstr ""
 
-#: inc/customizer.php:240
+#: inc/customizer.php:267
 msgid "Remove breadcrumbs from page header"
 msgstr ""
 
-#: inc/customizer.php:250
+#: inc/customizer.php:277
 msgid "Page Header Background"
 msgstr ""
 
-#: inc/customizer.php:258
+#: inc/customizer.php:285
 msgid "Archive Page Settings"
 msgstr ""
 
-#: inc/customizer.php:268
+#: inc/customizer.php:295
 msgid "Blog Style"
 msgstr ""
 
-#: inc/customizer.php:284
+#: inc/customizer.php:311
 msgid "Archive Page Layout"
 msgstr ""
 
-#: inc/customizer.php:301
+#: inc/customizer.php:328
 msgid "Remove date from post meta"
 msgstr ""
 
-#: inc/customizer.php:311
+#: inc/customizer.php:338
 msgid "Remove author from post meta"
 msgstr ""
 
-#: inc/customizer.php:321
+#: inc/customizer.php:348
 msgid "Remove comment count from post meta"
 msgstr ""
 
-#: inc/customizer.php:331
+#: inc/customizer.php:358
 msgid "Remove category from post meta"
 msgstr ""
 
-#: inc/customizer.php:341
+#: inc/customizer.php:368
 msgid "Remove tag from post meta"
 msgstr ""
 
-#: inc/customizer.php:349
+#: inc/customizer.php:376
 msgid "Post Settings"
 msgstr ""
 
-#: inc/customizer.php:360
+#: inc/customizer.php:387
 msgid "Single Post Layout"
 msgstr ""
 
-#: inc/customizer.php:377
+#: inc/customizer.php:404
 msgid "Enable Related Posts"
 msgstr ""
 
-#: inc/customizer.php:385
+#: inc/customizer.php:412
 msgid "Display Related Posts By:"
 msgstr ""
 
-#: inc/customizer.php:389
+#: inc/customizer.php:416
 msgid "Categories"
 msgstr ""
 
-#: inc/customizer.php:390
+#: inc/customizer.php:417
 msgid "Tags"
 msgstr ""
 
-#: inc/customizer.php:405
+#: inc/customizer.php:432
 msgid "Remove Author Bio from post"
 msgstr ""
 
-#: inc/customizer.php:415
+#: inc/customizer.php:442
 msgid "Remove next/previous link from post"
 msgstr ""
 
-#: inc/customizer.php:423
+#: inc/customizer.php:450
 msgid "Page Settings"
 msgstr ""
 
-#: inc/customizer.php:433
+#: inc/customizer.php:460
 msgid "Page Layout"
 msgstr ""
 
-#: inc/customizer.php:448
+#: inc/customizer.php:475
 msgid "Footer Settings"
 msgstr ""
 
-#: inc/customizer.php:458
+#: inc/customizer.php:485
 msgid "Footer Widget Area"
 msgstr ""
 
-#: inc/customizer.php:473
+#: inc/customizer.php:500
 msgid "Advanced Settings"
 msgstr ""
 
-#: inc/customizer.php:484
+#: inc/customizer.php:511
 msgid "Custom CSS"
 msgstr ""
 
-#: inc/customizer.php:498
+#: inc/customizer.php:525
 msgid "Google Font Settings"
 msgstr ""
 
-#: inc/customizer.php:508
+#: inc/customizer.php:535
 msgid "Body Typography"
 msgstr ""
 
-#: inc/customizer.php:604
+#: inc/customizer.php:631
 msgid "Base Color Scheme"
 msgstr ""
 
-#: inc/customizer.php:622
+#: inc/customizer.php:649
 msgid "Link Color"
 msgstr ""
 
-#: inc/customizer.php:634
+#: inc/customizer.php:661
 msgid "Main Text Color"
 msgstr ""
 
-#: inc/customizer.php:646
+#: inc/customizer.php:673
 msgid "Secondary Text Color"
 msgstr ""
 
-#: inc/customizer.php:708
+#: inc/customizer.php:735
 #: inc/kirki/controls/php/class-kirki-control-base.php:134
 #: inc/kirki/controls/views/image.php:36
 #: inc/kirki/field/class-kirki-field-image.php:49
 msgid "Default"
 msgstr ""
 
-#: inc/customizer.php:717
+#: inc/customizer.php:744
 msgid "Dark"
 msgstr ""
 
-#: inc/customizer.php:726
+#: inc/customizer.php:753
 msgid "Gray"
 msgstr ""
 
-#: inc/customizer.php:735
+#: inc/customizer.php:762
 msgid "Red"
 msgstr ""
 
-#: inc/customizer.php:744
+#: inc/customizer.php:771
 msgid "Yellow"
 msgstr ""
 
-#: inc/customizer.php:1283
+#: inc/customizer.php:1310
 msgid "View PRO version"
 msgstr ""
 
