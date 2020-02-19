@@ -286,18 +286,10 @@ require get_template_directory() . '/inc/siteorigin-panels.php';
  * Load required files for Flash notice in Admin page only.
  */
 if ( is_admin() ) {
-
-	/**
-	 * Load Welcome page file.
-	 */
 	require get_template_directory() . '/inc/class-flash-admin.php';
-
-	/**
-	 * Load site library file.
-	 */
 	require get_template_directory() . '/inc/class-flash-site-library.php';
-
 	require get_template_directory() . '/inc/admin/class-flash-theme-review-notice.php';
+	require get_template_directory() . '/inc/admin/class-flash-tdi-notice.php';
 }
 
 /**
