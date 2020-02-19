@@ -2,7 +2,7 @@
 Author: ThemeGrill
 Requires at least: WordPress 4.3
 Tested up to: WordPress 5.3.2
-Version: 1.3.3
+Version: 1.3.2
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 Tags: one-column, two-columns, left-sidebar, right-sidebar, grid-layout, custom-background, custom-colors, custom-menu, custom-logo, featured-images, footer-widgets, full-width-template, theme-options, threaded-comments, translation-ready, blog, e-commerce
@@ -80,12 +80,12 @@ Source: https://pixabay.com/en/coffee-book-flowers-setting-2390136/
 Unless otherwise specified, all the theme files, scripts and images including the screenshot image are licensed under [GNU GPL] (http://www.gnu.org/licenses/gpl-3.0.txt), version 3 or later.
 
 == Changelog ==
-= Version 1.3.3 - 2020-02-11 =
+= Version 1.3.2 - 2020-02-19 =
 * Tweak - Update `screen-reader-text` CSS.
 * Tweak - Added review notice.
 * Tweak - Added retina logo option.
 
-= Version 1.3.2 - 2019-07-12 =
+= Version 1.3.1 - 2019-07-12 =
 * Remove - Removed dashboard message to align with the theme review guidelines
 
 = Version 1.3.0 - 2019-07-11 =
