@@ -146,7 +146,7 @@ module.exports = function( grunt ){
 					'**',
 					'!.*',
 					'!*.md',
-					'!dist',
+					'!dist/**',
 					'!*.zip',
 					'!.*/**',
 					'!Gruntfile.js',
