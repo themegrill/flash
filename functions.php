@@ -100,6 +100,10 @@ if ( ! function_exists( 'flash_setup' ) ) :
 endif;
 add_action( 'after_setup_theme', 'flash_setup' );
 
+// Theme version.
+$flash_theme = wp_get_theme();
+define( 'FLASH_THEME_VERSION', $flash_theme->get( 'Version' ) );
+
 if ( ! function_exists( 'flash_content_width' ) ) :
 	/**
 	 * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -287,9 +291,9 @@ require get_template_directory() . '/inc/siteorigin-panels.php';
  */
 if ( is_admin() ) {
 	require get_template_directory() . '/inc/class-flash-admin.php';
-	require get_template_directory() . '/inc/class-flash-site-library.php';
 	require get_template_directory() . '/inc/admin/class-flash-theme-review-notice.php';
 	require get_template_directory() . '/inc/admin/class-flash-tdi-notice.php';
+	require get_template_directory() . '/inc/admin/class-flash-dashboard.php';
 }
 
 /**

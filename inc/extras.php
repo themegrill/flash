@@ -773,6 +773,10 @@ add_filter( 'wp_get_attachment_image_attributes', 'flash_change_logo_attr', 10, 
  */
 if ( ! function_exists( 'flash_plugin_version_compare' ) ) {
 	function flash_plugin_version_compare( $plugin_slug, $version_to_compare ) {
+		if ( ! function_exists( 'get_plugins' ) ) {
+			require_once ABSPATH . 'wp-admin/includes/plugin.php';
+		}
+
 		$installed_plugins = get_plugins();
 
 		// Plugin not installed.
