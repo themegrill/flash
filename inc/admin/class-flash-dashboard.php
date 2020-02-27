@@ -29,7 +29,10 @@ class Flash_Dashboard {
 	public function create_menu() {
 		$theme = wp_get_theme();
 
-		$page = add_theme_page( esc_html__( $theme->Name . ' ' . 'Options', 'flash' ), esc_html__( $theme->Name . ' ' . 'Options', 'flash' ), 'edit_theme_options', 'flash-options', array(
+		/* translators: %s: Theme Name. */
+		$theme_page_name = sprintf( esc_html__( '%s Options', 'flash' ), $theme->Name );
+
+		$page = add_theme_page( $theme_page_name, $theme_page_name, 'edit_theme_options', 'flash-options', array(
 			$this,
 			'option_page'
 		) );
