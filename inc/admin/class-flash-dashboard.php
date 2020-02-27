@@ -57,7 +57,7 @@ class Flash_Dashboard {
 				<p class="about-description">
 					<?php
 					/* translators: %s: Theme Name. */
-					echo sprintf( esc_html__( 'Important links to get you started with %s', 'flash' ), esc_html__( 'Flash', 'flash' ) );
+					echo sprintf( esc_html__( 'Important links to get you started with %s', 'flash' ), $theme->Name );
 					?>
 				</p>
 
