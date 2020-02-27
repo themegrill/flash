@@ -55,7 +55,7 @@ if ( ! class_exists( 'Flash_Admin' ) ) :
 		public function flash_ajax_import_button_handler() {
 			check_ajax_referer( 'flash_demo_import_nonce', 'security' );
 			$state = '';
-			if ( is_plugin_active( 'themegrill-demo-importer/themegrill-demo-importer.php' ) ) {
+			if ( class_exists( 'themegrill_demo_importer' ) ) {
 				$state = 'activated';
 			} elseif ( file_exists( WP_PLUGIN_DIR . '/themegrill-demo-importer/themegrill-demo-importer.php' ) ) {
 				$state = 'installed';
@@ -232,7 +232,7 @@ if ( ! class_exists( 'Flash_Admin' ) ) :
 				<a href="<?php echo esc_url( apply_filters( 'flash_pro_demo_url', 'https://demo.themegrill.com/flash-pro/demos/' ) ); ?>" class="button button-primary docs" target="_blank"><?php esc_html_e( 'View Pro Demos', 'flash' ); ?></a>
 
 				<?php
-				if ( is_plugin_active( 'themegrill-demo-importer/themegrill-demo-importer.php' ) ) { ?>
+				if ( class_exists( 'themegrill_demo_importer' ) ) { ?>
 					<a href="<?php echo esc_url( admin_url( 'themes.php?page=demo-importer' ) ); ?>" class="button button-secondary">
 						<?php esc_html_e( 'Demo Importer', 'flash' ); ?>
 					</a>
