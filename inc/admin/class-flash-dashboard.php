@@ -40,7 +40,7 @@ class Flash_Dashboard {
 	}
 
 	public function option_page() {
-		$theme        = wp_get_theme();
+		$theme = wp_get_theme();
 		?>
 		<div class="wrap">
 		<div class="flash-header">
@@ -54,7 +54,12 @@ class Flash_Dashboard {
 		<div class="welcome-panel">
 			<div class="welcome-panel-content">
 				<h2><?php esc_html_e( 'Welcome to Flash!', 'flash' ); ?></h2>
-				<p class="about-description"><?php esc_html_e( 'Important links to help you on working with Flash', 'flash' ); ?></p>
+				<p class="about-description">
+					<?php
+					/* translators: %s: Theme Name. */
+					echo sprintf( esc_html__( 'Important links to get you started with %s', 'flash' ), esc_html__( 'Flash', 'flash' ) );
+					?>
+				</p>
 
 				<div class="welcome-panel-column-container">
 					<div class="welcome-panel-column">
