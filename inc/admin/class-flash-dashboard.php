@@ -62,7 +62,7 @@ class Flash_Dashboard {
 					<div class="welcome-panel-column">
 						<h3><?php esc_html_e( 'Get Started', 'flash' ); ?></h3>
 						<a class="button button-primary button-hero"
-						   href="<?php echo esc_url( 'https://docs.flashtheme.com/en/category/getting-started-1470csx/' ); ?>"
+						   href="<?php echo esc_url( 'https://docs.themegrill.com/flash/#section-1' ); ?>"
 						   target="_blank"><?php esc_html_e( 'Learn Basics', 'flash' ); ?>
 						</a>
 					</div>
@@ -70,9 +70,9 @@ class Flash_Dashboard {
 					<div class="welcome-panel-column">
 						<h3><?php esc_html_e( 'Next Steps', 'flash' ); ?></h3>
 						<ul>
-							<li><?php printf( '<a target="_blank" href="%s" class="welcome-icon dashicons-media-text">' . esc_html__( 'Documentation', 'flash' ) . '</a>', esc_url( 'https://docs.flashtheme.com/en/' ) ); ?></li>
-							<li><?php printf( '<a target="_blank" href="%s" class="welcome-icon dashicons-layout">' . esc_html__( 'Starter Demos', 'flash' ) . '</a>', esc_url( 'https://flashtheme.com/demos/' ) ); ?></li>
-							<li><?php printf( '<a target="_blank" href="%s" class="welcome-icon welcome-add-page">' . esc_html__( 'Premium Version', 'flash' ) . '</a>', esc_url( 'https://flashtheme.com/pro/' ) ); ?></li>
+							<li><?php printf( '<a target="_blank" href="%s" class="welcome-icon dashicons-media-text">' . esc_html__( 'Documentation', 'flash' ) . '</a>', esc_url( 'https://docs.themegrill.com/flash' ) ); ?></li>
+							<li><?php printf( '<a target="_blank" href="%s" class="welcome-icon dashicons-layout">' . esc_html__( 'Starter Demos', 'flash' ) . '</a>', esc_url( 'https://demo.themegrill.com/flash-demos' ) ); ?></li>
+							<li><?php printf( '<a target="_blank" href="%s" class="welcome-icon welcome-add-page">' . esc_html__( 'Premium Version', 'flash' ) . '</a>', esc_url( 'http://themegrill.com/themes/flash' ) ); ?></li>
 						</ul>
 					</div>
 
@@ -80,7 +80,6 @@ class Flash_Dashboard {
 						<h3><?php esc_html_e( 'Further Actions', 'flash' ); ?></h3>
 						<ul>
 							<li><?php printf( '<a target="_blank" href="%s" class="welcome-icon dashicons-businesswoman">' . esc_html__( 'Got theme support question?', 'flash' ) . '</a>', esc_url( 'https://wordpress.org/support/theme/flash/' ) ); ?></li>
-							<li><?php printf( '<a target="_blank" href="%s" class="welcome-icon dashicons-groups">' . esc_html__( 'Join Flash Facebook Community', 'flash' ) . '</a>', esc_url( 'https://www.facebook.com/groups/flashtheme/' ) ); ?></li>
 							<li><?php printf( '<a target="_blank" href="%s" class="welcome-icon dashicons-thumbs-up">' . esc_html__( 'Leave a review', 'flash' ) . '</a>', esc_url( 'https://wordpress.org/support/theme/flash/reviews/' ) ); ?></li>
 						</ul>
 					</div>
