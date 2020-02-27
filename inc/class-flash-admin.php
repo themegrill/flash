@@ -110,9 +110,9 @@ if ( ! class_exists( 'Flash_Admin' ) ) :
 		 * Add admin notice.
 		 */
 		public function admin_notice() {
-			global $flash_version, $pagenow;
+			global $pagenow;
 
-			wp_enqueue_style( 'flash-message', get_template_directory_uri() . '/css/message.css', array(), $flash_version );
+			wp_enqueue_style( 'flash-message', get_template_directory_uri() . '/css/message.css', array(), FLASH_THEME_VERSION );
 
 			// Let's bail on theme activation.
 			$notice_nag = get_option( 'flash_admin_notice_welcome' );

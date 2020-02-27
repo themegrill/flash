@@ -36,9 +36,7 @@ class Flash_Dashboard {
 	}
 
 	public function enqueue_styles() {
-		global $flash_version;
-
-		wp_enqueue_style( 'flash-dashboard', get_template_directory_uri() . '/inc/admin/css/dashboard.css', array(), $flash_version );
+		wp_enqueue_style( 'flash-dashboard', get_template_directory_uri() . '/inc/admin/css/dashboard.css', array(), FLASH_THEME_VERSION );
 	}
 
 	public function option_page() {
