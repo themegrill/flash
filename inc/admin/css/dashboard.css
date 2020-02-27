@@ -1,0 +1,17 @@
+.appearance_page_flash-options .flash-container {
+	width: 1200px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.appearance_page_flash-options .wrap {
+	margin-top: 0;
+}
+
+.appearance_page_flash-options .wrap .flash-header {
+	background-color: #fff;
+	padding: 12px 20px;
+	border-bottom: 1px solid #ccd0d4;
+	margin-left: -20px;
+	margin-right: -20px;
+}
