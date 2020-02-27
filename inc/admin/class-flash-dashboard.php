@@ -85,7 +85,7 @@ class Flash_Dashboard {
 						<ul>
 							<li><?php printf( '<a target="_blank" href="%s" class="welcome-icon dashicons-media-text">' . esc_html__( 'Documentation', 'flash' ) . '</a>', esc_url( 'https://docs.themegrill.com/flash' ) ); ?></li>
 							<li><?php printf( '<a target="_blank" href="%s" class="welcome-icon dashicons-layout">' . esc_html__( 'Starter Demos', 'flash' ) . '</a>', esc_url( 'https://demo.themegrill.com/flash-demos' ) ); ?></li>
-							<li><?php printf( '<a target="_blank" href="%s" class="welcome-icon welcome-add-page">' . esc_html__( 'Premium Version', 'flash' ) . '</a>', esc_url( 'http://themegrill.com/themes/flash' ) ); ?></li>
+							<li><?php printf( '<a target="_blank" href="%s" class="welcome-icon dashicons-migrate">' . esc_html__( 'Premium Version', 'flash' ) . '</a>', esc_url( 'http://themegrill.com/themes/flash' ) ); ?></li>
 						</ul>
 					</div>
 
