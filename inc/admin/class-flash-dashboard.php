@@ -27,7 +27,9 @@ class Flash_Dashboard {
 	}
 
 	public function create_menu() {
-		$page = add_theme_page( 'Flash Options', 'Flash Options', 'edit_theme_options', 'flash-options', array(
+		$theme = wp_get_theme();
+
+		$page = add_theme_page( esc_html__( $theme->Name . ' ' . 'Options', 'flash' ), esc_html__( $theme->Name . ' ' . 'Options', 'flash' ), 'edit_theme_options', 'flash-options', array(
 			$this,
 			'option_page'
 		) );
@@ -47,13 +49,18 @@ class Flash_Dashboard {
 			<h1>
 				<?php
 				/* translators: %s: Theme version. */
-				echo sprintf( esc_html__( 'Flash %s', 'flash' ), $theme->Version );
+				echo sprintf( esc_html__( 'Flash %s', 'flash' ), FLASH_THEME_VERSION );
 				?>
 			</h1>
 		</div>
 		<div class="welcome-panel">
 			<div class="welcome-panel-content">
-				<h2><?php esc_html_e( 'Welcome to Flash!', 'flash' ); ?></h2>
+				<h2>
+					<?php
+					/* translators: %s: Theme Name. */
+					echo sprintf( esc_html__( 'Welcome to %s!', 'flash' ), $theme->Name );
+					?>
+				</h2>
 				<p class="about-description">
 					<?php
 					/* translators: %s: Theme Name. */
