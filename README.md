@@ -83,7 +83,7 @@ Unless otherwise specified, all the theme files, scripts and images including th
 
 == Changelog ==
 = TBD =
-* Tweak - Added new required header fields for style.css.
+* Add - Required header fields: `Tested up to` and `Requires PHP` in style.css.
 
 = Version 1.3.3 - 2020-02-27 =
 * Tweak - Refactor theme page according to WordPress theme guidelines
