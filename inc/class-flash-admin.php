@@ -22,8 +22,6 @@ if ( ! class_exists( 'Flash_Admin' ) ) :
 		 * Constructor.
 		 */
 		public function __construct() {
-			add_action( 'wp_loaded', array( __CLASS__, 'hide_notices' ) );
-			add_action( 'wp_loaded', array( $this, 'admin_notice' ) );
 			add_action( 'wp_ajax_import_button', array( $this, 'flash_ajax_import_button_handler' ) );
 			add_action( 'admin_enqueue_scripts', array( $this, 'flash_ajax_enqueue_scripts' ) );
 		}
@@ -103,76 +101,6 @@ if ( ! class_exists( 'Flash_Admin' ) ) :
 			}
 			wp_send_json( $response );
 			exit();
-		}
-
-		/**
-		/**
-		 * Add admin notice.
-		 */
-		public function admin_notice() {
-			global $pagenow;
-
-			wp_enqueue_style( 'flash-message', get_template_directory_uri() . '/css/message.css', array(), FLASH_THEME_VERSION );
-
-			// Let's bail on theme activation.
-			$notice_nag = get_option( 'flash_admin_notice_welcome' );
-			if ( ! $notice_nag ) {
-				add_action( 'admin_notices', array( $this, 'welcome_notice' ) );
-			}
-		}
-
-		/**
-		 * Hide a notice if the GET variable is set.
-		 */
-		public static function hide_notices() {
-			if ( isset( $_GET['flash-hide-notice'] ) && isset( $_GET['_flash_notice_nonce'] ) ) {
-				if ( ! wp_verify_nonce( $_GET['_flash_notice_nonce'], 'flash_hide_notices_nonce' ) ) {
-					wp_die( __( 'Action failed. Please refresh the page and retry.', 'flash' ) );
-				}
-
-				if ( ! current_user_can( 'manage_options' ) ) {
-					wp_die( __( 'Cheatin&#8217; huh?', 'flash' ) );
-				}
-
-				$hide_notice = sanitize_text_field( $_GET['flash-hide-notice'] );
-				update_option( 'flash_admin_notice_' . $hide_notice, 1 );
-
-				// Hide.
-				if ( 'welcome' === $_GET['flash-hide-notice'] ) {
-					update_option( 'flash_admin_notice_' . $hide_notice, 1 );
-				} else { // Show.
-					delete_option( 'flash_admin_notice_' . $hide_notice );
-				}
-			}
-		}
-
-		/**
-		 * Show welcome notice.
-		 */
-		public function welcome_notice() {
-			?>
-			<div id="message" class="updated flash-message">
-				<a class="flash-message-close notice-dismiss" href="<?php echo esc_url( wp_nonce_url( remove_query_arg( array( 'activated' ), add_query_arg( 'flash-hide-notice', 'welcome' ) ), 'flash_hide_notices_nonce', '_flash_notice_nonce' ) ); ?>">
-					<?php esc_html_e( 'Dismiss', 'flash' ); ?>
-				</a>
-
-				<div class="flash-message-wrapper">
-					<div class="flash-logo">
-						<img src="<?php echo get_template_directory_uri(); ?>/img/flash-logo.png" alt="<?php esc_html_e( 'Flash', 'flash' ); ?>" /><?php // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped, Squiz.PHP.EmbeddedPhp.SpacingBeforeClose ?>
-					</div>
-
-					<p>
-						<?php printf( esc_html__( 'Welcome! Thank you for choosing Flash! To fully take advantage of the best our theme can offer please make sure you visit our %1$swelcome page%2$s.', 'flash' ), '<a href="' . esc_url( admin_url( 'themes.php?page=flash-options' ) ) . '">', '</a>' ); ?>
-
-						<span class="plugin-install-notice"><?php esc_html_e( 'Clicking the button below will install and activate the ThemeGrill demo importer plugin.', 'flash' ); ?></span>
-					</p>
-
-					<div class="submit">
-						<a class="btn-get-started button button-primary button-hero" href="#" data-name="" data-slug="" aria-label="<?php esc_html_e( 'Get started with Flash', 'flash' ); ?>"><?php esc_html_e( 'Get started with Flash', 'flash' ); ?></a>
-					</div>
-				</div>
-			</div>
-			<?php
 		}
 	}
 
