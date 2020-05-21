@@ -64,9 +64,10 @@ var paths = {
     },
 
     adminscss: {
-        src: ['./inc/admin/sass/admin.scss'],
+        src: './inc/admin/sass/admin.scss',
         dest: './inc/admin/css/'
     },
+
 
     rtlcss: {
         src: ['./style.css'],
@@ -227,6 +228,18 @@ function styles() {
     return gulp.series(compileSass, prefixStyles, generateRTLCSS);
 }
 
+// Compiles AdminSass into AdminCSS
+function compileAdminSass() {
+    return gulp.src(paths.adminscss.src)
+        .pipe(sass({
+            indentType: 'tab',
+            indentWidth: 1,
+            outputStyle: 'expanded',
+            linefeed: 'crlf'
+        }).on('error', sass.logError))
+        .pipe(gulp.dest(paths.adminscss.dest))
+        .pipe(browserSync.stream());
+}
 // Lint php through phpcs and PHPCompatibility
 function lintPHP() {
     return gulp
@@ -255,6 +268,7 @@ function lintStyle() {
         )
         .on('error', notify.onError());
 }
+
 
 // Lint js files through eslint
 function lintJS() {
@@ -316,7 +330,9 @@ function compressZip() {
 // Watch for file changes
 function watch() {
     gulp.watch(paths.scss.src, styles);
+    gulp.watch(paths.adminscss.src, compileAdminSass);
     gulp.watch([paths.js.src, paths.php.src], browserSyncReload);
+
 }
 
 
@@ -342,6 +358,7 @@ exports.browserSyncStart = browserSyncStart;
 exports.browserSyncReload = browserSyncReload;
 exports.browserSyncStream = browserSyncStream;
 exports.compileSass = compileSass;
+exports.compileAdminSass = compileAdminSass;
 exports.prefixStyles = prefixStyles;
 exports.generateRTLCSS = generateRTLCSS;
 exports.minifyCSS = minifyCSS;
