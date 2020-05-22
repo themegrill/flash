@@ -80,6 +80,9 @@ Source: https://pixabay.com/en/coffee-book-flowers-setting-2390136/
 Unless otherwise specified, all the theme files, scripts and images including the screenshot image are licensed under [GNU GPL] (http://www.gnu.org/licenses/gpl-3.0.txt), version 3 or later.
 
 == Changelog ==
+= TBD =
+* Fix   - Theme name and version in the admin dashboard while child theme active.
+
 = Version 1.3.3 - 2020-02-27 =
 * Tweak - Refactor theme page according to WordPress theme guidelines
 
