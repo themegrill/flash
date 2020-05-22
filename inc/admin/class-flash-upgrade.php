@@ -51,9 +51,9 @@ class flash_Upgrade_Notice extends flash_Notice {
          * 2. If the user has ignored the message partially for 2 days.
          * 3. Dismiss always if clicked on 'Dismiss' button.
          */
-        if ( get_option('flash_upgrade_notice_start_time') > strtotime('-5 day')
+        if ( get_option('flash_upgrade_notice_start_time') > strtotime('0 day')
             || get_user_meta(get_current_user_id(), 'flash_upgrade_notice_dismiss', true)
-            || get_user_meta(get_current_user_id(), 'flash_upgrade_notice_dismiss_temporary_start_time', true) > strtotime('-2 day')
+            || get_user_meta(get_current_user_id(), 'flash_upgrade_notice_dismiss_temporary_start_time', true) > strtotime('0 day')
         ) {
             add_filter('flash_upgrade_notice_dismiss', '__return_true');
         } else {
