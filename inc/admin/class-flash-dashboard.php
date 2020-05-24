@@ -25,7 +25,7 @@ class Flash_Dashboard {
 	}
 
 	public function enqueue_scripts() {
-		wp_enqueue_style( 'flash-admin-dashboard', get_template_directory_uri() . '/inc/admin/css/dashboard.css' );
+		wp_enqueue_style( 'flash-admin-dashboard', get_template_directory_uri() . '/inc/admin/css/admin.css' );
 	}
 
 	public function create_menu() {
@@ -43,7 +43,7 @@ class Flash_Dashboard {
 	}
 
 	public function enqueue_styles() {
-		wp_enqueue_style( 'flash-dashboard', get_template_directory_uri() . '/inc/admin/css/dashboard.css', array(), FLASH_THEME_VERSION );
+		wp_enqueue_style( 'flash-dashboard', get_template_directory_uri() . '/inc/admin/css/admin.css', array(), FLASH_THEME_VERSION );
 	}
 
 	public function option_page() {
