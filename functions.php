@@ -295,6 +295,7 @@ if ( is_admin() ) {
 	require get_template_directory() . '/inc/admin/class-flash-notice.php';
 	require get_template_directory() . '/inc/admin/class-flash-dashboard.php';
 	require get_template_directory() . '/inc/admin/class-flash-welcome-notice.php';
+	require get_template_directory() . '/inc/admin/class-flash-upgrade-notice.php';
 	require get_template_directory() . '/inc/admin/class-flash-theme-review-notice.php';
 }
 
