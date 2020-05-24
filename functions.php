@@ -291,9 +291,10 @@ require get_template_directory() . '/inc/siteorigin-panels.php';
  */
 if ( is_admin() ) {
 	require get_template_directory() . '/inc/admin/class-flash-admin.php';
-	require get_template_directory() . '/inc/admin/class-flash-theme-review-notice.php';
 	require get_template_directory() . '/inc/admin/class-flash-tdi-notice.php';
 	require get_template_directory() . '/inc/admin/class-flash-dashboard.php';
+	require get_template_directory() . '/inc/admin/class-flash-welcome-notice.php';
+	require get_template_directory() . '/inc/admin/class-flash-theme-review-notice.php';
 }
 
 /**
