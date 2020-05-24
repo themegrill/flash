@@ -57,7 +57,10 @@ var paths = {
 		src: './assets/sass/**/*.scss',
 		dest: './'
 	},
-
+	adminscss: {
+		src : './inc/admin/sass/admin.scss',
+		dest: './inc/admin/css/'
+	},
 	css: {
 		src: [ './assets/css/*.css', '!./assets/css/*.min.css' ],
 		dest: './assets/css'
@@ -181,6 +184,19 @@ function compileSass() {
 		)
 		.pipe( gulp.dest( paths.scss.dest ) )
 		.on( 'error', notify.onError() );
+}
+
+function compileAdminSass() {
+	return gulp.src( paths.adminscss.src )
+		.pipe( sass({
+			indentType: 'tab',
+			indentWidth: 1,
+			outputStyle: 'expanded',
+			linefeed: 'crlf'
+		} )
+			.on( 'error', sass.logError) )
+		.pipe( gulp.dest( paths.adminscss.dest ) )
+		.pipe( browserSync.stream() );
 }
 
 // Prefixes CSS.
@@ -338,6 +354,7 @@ exports.browserSyncStart = browserSyncStart;
 exports.browserSyncReload = browserSyncReload;
 exports.browserSyncStream = browserSyncStream;
 exports.compileSass = compileSass;
+exports.compileAdminSass   = compileAdminSass;
 exports.prefixStyles = prefixStyles;
 exports.generateRTLCSS = generateRTLCSS;
 exports.minifyCSS = minifyCSS;
