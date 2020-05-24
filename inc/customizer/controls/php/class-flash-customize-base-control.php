@@ -19,7 +19,7 @@ class Flash_Customize_Base_Control extends WP_Customize_Control {
 	public function enqueue() {
 
 		// Scripts for nesting panel/section.
-		wp_enqueue_style( 'flash-customize-upsell-section', get_template_directory() . '/inc/customizer/assets/css/flash-customize-upsell-section.css' );
+		wp_enqueue_style( 'flash-customize-upsell-section', get_template_directory_uri() . '/inc/customizer/assets/css/flash-customize-upsell-section.css' );
 
 	}
 
