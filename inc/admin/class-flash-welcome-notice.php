@@ -52,7 +52,7 @@ class Flash_Welcome_Notice {
 						printf(
 							/* translators: 1: welcome page link starting html tag, 2: welcome page link ending html tag. */
 							esc_html__( 'Welcome! Thank you for choosing Flash! To fully take advantage of the best our theme can offer please make sure you visit our %1$swelcome page%2$s.', 'flash' ),
-							'<a href="' . esc_url( admin_url( 'themes.php?page=flash-welcome' ) ) . '">',
+							'<a href="' . esc_url( admin_url( 'themes.php?page=flash-options' ) ) . '">',
 							'</a>'
 						);
 						?>
