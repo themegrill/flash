@@ -100,7 +100,7 @@ class Flash_Customize_Upsell_Control extends Flash_Customize_Base_Control {
 		</div> <!-- /.flash-upsell-wrapper -->
 
 		<a class="upsell-cta" target="_blank"
-		   href="<?php echo esc_url( 'https://themegrill.com/contact/?utm_source=flash-dashboard-message&utm_medium=button-link&utm_campaign=pre-sales' ); ?>"><?php esc_html_e( 'View Pricing', 'flash' ); ?></a>
+		   href="<?php echo esc_url( 'https://themegrill.com/flash-pricing/?utm_source=flash-dashboard-message&utm_medium=view-pricing-link&utm_campaign=upgrade' ); ?>"><?php esc_html_e( 'View Pricing', 'flash' ); ?></a>
 
 		<?php
 	}
