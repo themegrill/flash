@@ -91,13 +91,13 @@ class Flash_Customize_Upsell_Control extends Flash_Customize_Base_Control {
 					?>
 				</li>
 				<li class="upsell-feature"><span
-						class="dashicons dashicons-yes"></span><?php esc_html_e( 'Advance Page Settings', 'flash' ); ?>
+						class="dashicons dashicons-yes"></span><?php esc_html_e( 'Advanced Page Settings', 'flash' ); ?>
 				</li>
 				<li class="upsell-feature"><span
 						class="dashicons dashicons-yes"></span>
 					<?php
 					/* Translators: %1$u number of particular feature */
-					echo sprintf( esc_html__( '%1$u+ Page Settings', 'flash' ), 14 );
+					echo sprintf( esc_html__( '%1$u+ Starter Demos', 'flash' ), 14 );
 					?>
 				</li>
 			</ul>
