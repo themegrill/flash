@@ -77,28 +77,16 @@ class Flash_Customize_Upsell_Control extends Flash_Customize_Base_Control {
 						class="dashicons dashicons-yes"></span><?php esc_html_e( 'Classic, Full Width, Grid Blog', 'flash' ); ?>
 				</li>
 				<li class="upsell-feature"><span
-						class="dashicons dashicons-yes"></span>
-					<?php
-					/* Translators: %1$u number of particular feature */
-					echo sprintf( esc_html__( '%1$u+ Footer Layouts', 'flash' ), 10 );
-					?>
+						class="dashicons dashicons-yes"></span><?php esc_html_e( '10+ Footer Layouts', 'flash' ); ?>
 				</li>
 				<li class="upsell-feature"><span
-						class="dashicons dashicons-yes"></span>
-					<?php
-					/* Translators: %1$u number of particular feature */
-					echo sprintf( esc_html__( '%1$u+ Customizer Options', 'flash' ), 100 );
-					?>
+						class="dashicons dashicons-yes"></span><?php esc_html_e( '100+ Customizer Options', 'flash' ); ?>
 				</li>
 				<li class="upsell-feature"><span
 						class="dashicons dashicons-yes"></span><?php esc_html_e( 'Advanced Page Settings', 'flash' ); ?>
 				</li>
 				<li class="upsell-feature"><span
-						class="dashicons dashicons-yes"></span>
-					<?php
-					/* Translators: %1$u number of particular feature */
-					echo sprintf( esc_html__( '%1$u+ Starter Demos', 'flash' ), 14 );
-					?>
+						class="dashicons dashicons-yes"></span><?php esc_html_e( '14+ Starter Demos', 'flash' ); ?>
 				</li>
 			</ul>
 
