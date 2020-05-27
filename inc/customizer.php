@@ -874,7 +874,7 @@ function flash_customize_register( $wp_customize ) {
 	);
 
 	$wp_customize->add_setting(
-		$flash_themename . '[flash_upsell]',
+		$flash_themename . '[-upsell]',
 		array(
 			'default'           => '',
 			'type'              => 'option',
@@ -885,9 +885,9 @@ function flash_customize_register( $wp_customize ) {
 	);
 
 	$wp_customize->add_control(
-		new Spacious_Upsell_Custom_Control(
+		new Flash_Upsell_Custom_Control(
 			$wp_customize,
-			$flash_themename . '[flash_upsell]',
+			$flash_themename . '[-upsell]',
 			array(
 				'label'   => __( 'You can add phone numbers, other contact info here as you like. This box also accepts shortcodes.', 'flash' ),
 				'section' => 'flash_upsell_section',

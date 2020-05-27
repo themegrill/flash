@@ -4,6 +4,10 @@ class Flash_Upsell_Custom_Control extends WP_Customize_Control {
 
 	public $type = 'flash-upsell-control';
 
+	public function enqueue() {
+		wp_enqueue_style( 'flash-customizer', get_template_directory_uri() . '/css/admin/customizer.css', array(), FLASH_THEME_VERSION );
+	}
+
 	public function render_content() {
 		?>
 		<div class="flash-upsell-wrapper">
