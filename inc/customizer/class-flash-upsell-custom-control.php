@@ -1,69 +1,11 @@
 <?php
-/**
- * Customize Upsellcontrol class.
- *
- * @package flash
- *
- * @see     WP_Customize_Control
- * @access  public
- */
 
-/**
- * Class Flash_Customize_Upsell_Control
- */
-class Flash_Customize_Upsell_Control extends WP_Customize_Control {
+class Flash_Upsell_Custom_Control extends WP_Customize_Control {
 
-	/**
-	 * Customize control type.
-	 *
-	 * @access public
-	 * @var    string
-	 */
-	public $type = 'flash-upsell';
+	public $type = 'flash_upsell_control';
 
-	/**
-	 * Flash_Customize_Upsell_Control constructor.
-	 *
-	 * @param WP_Customize_Manager $manager Customizer bootstrap instance.
-	 * @param string               $id      An specific ID of the section.
-	 * @param array                $args    Section arguments.
-	 */
-	public function __construct( WP_Customize_Manager $manager, $id, array $args = array() ) {
-
-		parent::__construct( $manager, $id, $args );
-
-	}
-
-	/**
-	 * Enqueues scripts
-	 */
-	public function enqueue() {
-		parent::enqueue();
-	}
-
-	/**
-	 * Refresh the parameters passed to the JavaScript via JSON.
-	 *
-	 * @see    WP_Customize_Control::to_json()
-	 * @access public
-	 * @return void
-	 */
-	public function to_json() {
-
-		parent::to_json();
-
-	}
-
-	/**
-	 * Renders the Underscore template for this control.
-	 *
-	 * @see    WP_Customize_Control::print_template()
-	 * @access protected
-	 * @return void
-	 */
-	protected function content_template() {
+	public function render_content() {
 		?>
-
 		<div class="flash-upsell-wrapper">
 			<ul class="upsell-features">
 				<h3 class="upsell-heading"><?php esc_html_e( 'More Awesome Features', 'flash' ); ?></h3>
@@ -104,15 +46,7 @@ class Flash_Customize_Upsell_Control extends WP_Customize_Control {
 
 		<a class="upsell-cta" target="_blank"
 		   href="<?php echo esc_url( 'https://themegrill.com/flash-pricing/?utm_source=flash-customizer&utm_medium=view-pricing-link&utm_campaign=upgrade' ); ?>"><?php esc_html_e( 'View Pricing', 'flash' ); ?></a>
-
 		<?php
-	}
-
-	/**
-	 * Render content is still called, so be sure to override it with an empty function in your subclass as well.
-	 */
-	protected function render_content() {
-
 	}
 
 }
