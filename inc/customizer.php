@@ -760,20 +760,11 @@ function flash_customize_register( $wp_customize ) {
 	// Include control classes.
 	require_once get_template_directory() . '/inc/customizer/class-flash-upsell-custom-control.php';
 
-	// Transport postMessage variable set
-	$customizer_selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
-
 	$color_scheme = flash_get_color_scheme();
 
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
-
-	/*
-	* Assigning the theme name
-	*/
-	$flash_themename = get_option( 'stylesheet' );
-	$flash_themename = preg_replace( '/\W/', '_', strtolower( $flash_themename ) );
 
 	// Add color scheme setting and control.
 	$wp_customize->add_setting(
