@@ -865,27 +865,29 @@ function flash_customize_register( $wp_customize ) {
 	);
 
 	$wp_customize->add_setting(
-		$flash_themename . '[-upsell]',
+		'flash_upsell',
 		array(
 			'default'           => '',
-			'type'              => 'option',
-			'transport'         => $customizer_selective_refresh,
 			'capability'        => 'edit_theme_options',
-			'sanitize_callback' => 'flash_editor_sanitize',
+			'sanitize_callback' => 'flash_links_sanitize',
 		)
 	);
 
 	$wp_customize->add_control(
 		new Flash_Upsell_Custom_Control(
 			$wp_customize,
-			$flash_themename . '[-upsell]',
+			'flash_upsell',
 			array(
-				'label'   => __( 'You can add phone numbers, other contact info here as you like. This box also accepts shortcodes.', 'flash' ),
 				'section' => 'flash_upsell_section',
-				'setting' => $flash_themename . '[flash_upsell]',
+				'setting' => 'flash_upsell',
 			)
 		)
 	);
+
+	// Sanitization of links.
+	function flash_links_sanitize() {
+		return false;
+	}
 }
 add_action( 'customize_register', 'flash_customize_register' );
 
