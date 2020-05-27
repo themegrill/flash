@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v3 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Flash 1.3.3\n"
+"Project-Id-Version: Flash 1.3.4\n"
 "Report-Msgid-Bugs-To: themegrill@gmail.com\n"
-"POT-Creation-Date: 2020-02-27 11:07:32+00:00\n"
+"POT-Creation-Date: 2020-05-27 07:31:49+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -103,61 +103,75 @@ msgstr ""
 msgid "Skip to content"
 msgstr ""
 
-#: inc/admin/class-flash-dashboard.php:35
+#: inc/admin/class-flash-admin.php:38
+msgid "Processing..."
+msgstr ""
+
+#: inc/admin/class-flash-dashboard.php:30
 #. translators: %s: Theme Name.
 msgid "%s Options"
 msgstr ""
 
-#: inc/admin/class-flash-dashboard.php:57
+#: inc/admin/class-flash-dashboard.php:47
 #. translators: %s: Theme version.
 msgid "Flash %s"
 msgstr ""
 
-#: inc/admin/class-flash-dashboard.php:66
+#: inc/admin/class-flash-dashboard.php:56
 #. translators: %s: Theme Name.
 msgid "Welcome to %s!"
 msgstr ""
 
-#: inc/admin/class-flash-dashboard.php:72
+#: inc/admin/class-flash-dashboard.php:62
 #. translators: %s: Theme Name.
 msgid "Important links to get you started with %s"
 msgstr ""
 
-#: inc/admin/class-flash-dashboard.php:78
+#: inc/admin/class-flash-dashboard.php:68
 msgid "Get Started"
 msgstr ""
 
-#: inc/admin/class-flash-dashboard.php:81
+#: inc/admin/class-flash-dashboard.php:71
 msgid "Learn Basics"
 msgstr ""
 
-#: inc/admin/class-flash-dashboard.php:86
+#: inc/admin/class-flash-dashboard.php:76
 msgid "Next Steps"
 msgstr ""
 
-#: inc/admin/class-flash-dashboard.php:88
+#: inc/admin/class-flash-dashboard.php:78
 msgid "Documentation"
 msgstr ""
 
-#: inc/admin/class-flash-dashboard.php:89
+#: inc/admin/class-flash-dashboard.php:79
 msgid "Starter Demos"
 msgstr ""
 
-#: inc/admin/class-flash-dashboard.php:90
+#: inc/admin/class-flash-dashboard.php:80
 msgid "Premium Version"
 msgstr ""
 
-#: inc/admin/class-flash-dashboard.php:95
+#: inc/admin/class-flash-dashboard.php:85
 msgid "Further Actions"
 msgstr ""
 
-#: inc/admin/class-flash-dashboard.php:97
-#: inc/admin/class-flash-theme-review-notice.php:105
+#: inc/admin/class-flash-dashboard.php:87
+#: inc/admin/class-flash-theme-review-notice.php:95
 msgid "Got theme support question?"
 msgstr ""
 
-#: inc/admin/class-flash-dashboard.php:98
+#: inc/admin/class-flash-dashboard.php:88
 msgid "Leave a review"
+msgstr ""
+
+#: inc/admin/class-flash-notice.php:59 inc/admin/class-flash-notice.php:78
+#: inc/admin/class-flash-welcome-notice.php:77
+msgid "Action failed. Please refresh the page and retry."
+msgstr ""
+
+#: inc/admin/class-flash-notice.php:63 inc/admin/class-flash-notice.php:82
+#: inc/admin/class-flash-welcome-notice.php:81
+msgid "Cheatin&#8217; huh?"
 msgstr ""
 
 #: inc/admin/class-flash-tdi-notice.php:40
@@ -189,66 +203,60 @@ msgid ""
 "fulfilled, you can simply delete this plugin now."
 msgstr ""
 
-#: inc/admin/class-flash-theme-review-notice.php:79
+#: inc/admin/class-flash-theme-review-notice.php:68
 #. Translators: %1$s current user display name.
 msgid ""
 "Howdy, %1$s! It seems that you have been using this theme for more than 15 "
 "days. We hope you are happy with everything that the theme has to offer. If "
 "you can spare a minute, please help us by leaving a 5-star review on "
-"WordPress.org. By spreading the love, we can continue to develop new "
+"WordPress.org.  By spreading the love, we can continue to develop new "
 "amazing features in the future, for free!"
 msgstr ""
 
-#: inc/admin/class-flash-theme-review-notice.php:90
+#: inc/admin/class-flash-theme-review-notice.php:80
 msgid "Sure"
 msgstr ""
 
-#: inc/admin/class-flash-theme-review-notice.php:95
+#: inc/admin/class-flash-theme-review-notice.php:85
+#: inc/admin/class-flash-upgrade-notice.php:95
 msgid "Maybe later"
 msgstr ""
 
-#: inc/admin/class-flash-theme-review-notice.php:100
+#: inc/admin/class-flash-theme-review-notice.php:90
 msgid "I already did"
 msgstr ""
 
-#: inc/class-flash-admin.php:40
-msgid "Activating "
+#: inc/admin/class-flash-upgrade-notice.php:90
+#. Translators: %1$s current user display name., %2$s this theme name., %3$s
+#. discount coupon code., %4$s discount percentage.
+msgid "Upgrade to pro"
 msgstr ""
 
-#: inc/class-flash-admin.php:45
-msgid "Processing..."
+#: inc/admin/class-flash-upgrade-notice.php:100
+msgid "Got pre sales queries?"
 msgstr ""
 
-#: inc/class-flash-admin.php:130
-msgid "Action failed. Please refresh the page and retry."
-msgstr ""
-
-#: inc/class-flash-admin.php:134
-msgid "Cheatin&#8217; huh?"
-msgstr ""
-
-#: inc/class-flash-admin.php:156
-msgid "Dismiss"
+#: inc/admin/class-flash-welcome-notice.php:26
+#: inc/class-flash-site-library.php:102
+msgid "Get started with Flash"
 msgstr ""
 
 #. Theme Name of the plugin/theme
 msgid "Flash"
 msgstr ""
 
-#: inc/class-flash-admin.php:165
+#: inc/admin/class-flash-welcome-notice.php:54
+#. translators: 1: welcome page link starting html tag, 2: welcome page link
+#. ending html tag.
 msgid ""
 "Welcome! Thank you for choosing Flash! To fully take advantage of the best "
 "our theme can offer please make sure you visit our %1$swelcome page%2$s."
 msgstr ""
 
-#: inc/class-flash-admin.php:167
+#: inc/admin/class-flash-welcome-notice.php:63
 msgid ""
-"Clicking the button below will install and activate the ThemeGrill demo "
-"importer plugin."
-msgstr ""
-
-#: inc/class-flash-admin.php:171 inc/class-flash-site-library.php:102
-msgid "Get started with Flash"
+"Clicking the button will install and activate the ThemeGrill demo importer "
+"plugin."
 msgstr ""
 
 #: inc/class-flash-site-library.php:73
@@ -621,247 +629,288 @@ msgstr ""
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
-#: inc/customizer.php:30
+#: inc/customizer/class-flash-upsell-custom-control.php:15
+msgid "More Awesome Features"
+msgstr ""
+
+#: inc/customizer/class-flash-upsell-custom-control.php:17
+msgid "Advanced Header Options"
+msgstr ""
+
+#: inc/customizer/class-flash-upsell-custom-control.php:20
+msgid "Flexible Menu Designs"
+msgstr ""
+
+#: inc/customizer/class-flash-upsell-custom-control.php:23
+msgid "Classic, Full Width, Grid Blog"
+msgstr ""
+
+#: inc/customizer/class-flash-upsell-custom-control.php:26
+msgid "10+ Footer Layouts"
+msgstr ""
+
+#: inc/customizer/class-flash-upsell-custom-control.php:29
+msgid "100+ Customizer Options"
+msgstr ""
+
+#: inc/customizer/class-flash-upsell-custom-control.php:32
+msgid "Advanced Page Settings"
+msgstr ""
+
+#: inc/customizer/class-flash-upsell-custom-control.php:35
+msgid "14+ Starter Demos"
+msgstr ""
+
+#: inc/customizer/class-flash-upsell-custom-control.php:43
+#. translators: %1$s discount coupon code., %2$s discount percentage
+msgid "Use the coupon code %1$s to get %2$s discount (limited time offer). Enjoy!"
+msgstr ""
+
+#: inc/customizer/class-flash-upsell-custom-control.php:52
+msgid "View Pricing"
+msgstr ""
+
+#: inc/customizer.php:35
 msgid "Transparent Logo"
 msgstr ""
 
-#: inc/customizer.php:40
+#: inc/customizer.php:48
 msgid "Different Logo for Retina Devices?"
 msgstr ""
 
-#: inc/customizer.php:50
+#: inc/customizer.php:61
 msgid "Retina Logo"
 msgstr ""
 
-#: inc/customizer.php:66
+#: inc/customizer.php:80
 msgid "Flash Theme Options"
 msgstr ""
 
-#: inc/customizer.php:71
+#: inc/customizer.php:88
 msgid "General Settings"
 msgstr ""
 
-#: inc/customizer.php:81
+#: inc/customizer.php:101
 msgid "Site Layout"
 msgstr ""
 
-#: inc/customizer.php:87
+#: inc/customizer.php:107
 msgid "Wide Layout"
 msgstr ""
 
-#: inc/customizer.php:88
+#: inc/customizer.php:108
 msgid "Boxed Layout"
 msgstr ""
 
-#: inc/customizer.php:96
+#: inc/customizer.php:119
 msgid "Disable Preloader?"
 msgstr ""
 
-#: inc/customizer.php:106
+#: inc/customizer.php:132
 msgid "Disable Back to Top Button?"
 msgstr ""
 
-#: inc/customizer.php:114
+#: inc/customizer.php:143
 msgid "Top Header Settings"
 msgstr ""
 
-#: inc/customizer.php:124
+#: inc/customizer.php:156
 msgid "Enable Top Header"
 msgstr ""
 
-#: inc/customizer.php:134
+#: inc/customizer.php:169
 msgid "Top Header Left Content"
 msgstr ""
 
-#: inc/customizer.php:140 inc/customizer.php:163
+#: inc/customizer.php:175 inc/customizer.php:201
 msgid "Social Menu"
 msgstr ""
 
-#: inc/customizer.php:141 inc/customizer.php:164
+#: inc/customizer.php:176 inc/customizer.php:202
 msgid "Top Header Text"
 msgstr ""
 
-#: inc/customizer.php:142 inc/customizer.php:165
+#: inc/customizer.php:177 inc/customizer.php:203
 msgid "Disable"
 msgstr ""
 
-#: inc/customizer.php:157
+#: inc/customizer.php:195
 msgid "Top Header Right Content"
 msgstr ""
 
-#: inc/customizer.php:180
+#: inc/customizer.php:221
 msgid "Top Header Text Content"
 msgstr ""
 
-#: inc/customizer.php:202
+#: inc/customizer.php:246
 msgid "Header Settings"
 msgstr ""
 
-#: inc/customizer.php:212
+#: inc/customizer.php:259
 msgid "Logo and Menu Position"
 msgstr ""
 
-#: inc/customizer.php:228
+#: inc/customizer.php:278
 msgid "Remove Header Search Box"
 msgstr ""
 
-#: inc/customizer.php:238
+#: inc/customizer.php:291
 msgid "Remove Header Cart Icon"
 msgstr ""
 
-#: inc/customizer.php:249
+#: inc/customizer.php:305
 msgid "Sticky Header"
 msgstr ""
 
-#: inc/customizer.php:257
+#: inc/customizer.php:316
 msgid "Page Header Settings"
 msgstr ""
 
-#: inc/customizer.php:267
+#: inc/customizer.php:329
 msgid "Remove breadcrumbs from page header"
 msgstr ""
 
-#: inc/customizer.php:277
+#: inc/customizer.php:342
 msgid "Page Header Background"
 msgstr ""
 
-#: inc/customizer.php:285
+#: inc/customizer.php:353
 msgid "Archive Page Settings"
 msgstr ""
 
-#: inc/customizer.php:295
+#: inc/customizer.php:366
 msgid "Blog Style"
 msgstr ""
 
-#: inc/customizer.php:311
+#: inc/customizer.php:385
 msgid "Archive Page Layout"
 msgstr ""
 
-#: inc/customizer.php:328
+#: inc/customizer.php:405
 msgid "Remove date from post meta"
 msgstr ""
 
-#: inc/customizer.php:338
+#: inc/customizer.php:418
 msgid "Remove author from post meta"
 msgstr ""
 
-#: inc/customizer.php:348
+#: inc/customizer.php:431
 msgid "Remove comment count from post meta"
 msgstr ""
 
-#: inc/customizer.php:358
+#: inc/customizer.php:444
 msgid "Remove category from post meta"
 msgstr ""
 
-#: inc/customizer.php:368
+#: inc/customizer.php:457
 msgid "Remove tag from post meta"
 msgstr ""
 
-#: inc/customizer.php:376
+#: inc/customizer.php:468
 msgid "Post Settings"
 msgstr ""
 
-#: inc/customizer.php:387
+#: inc/customizer.php:482
 msgid "Single Post Layout"
 msgstr ""
 
-#: inc/customizer.php:404
+#: inc/customizer.php:502
 msgid "Enable Related Posts"
 msgstr ""
 
-#: inc/customizer.php:412
+#: inc/customizer.php:513
 msgid "Display Related Posts By:"
 msgstr ""
 
-#: inc/customizer.php:416
+#: inc/customizer.php:517
 msgid "Categories"
 msgstr ""
 
-#: inc/customizer.php:417
+#: inc/customizer.php:518
 msgid "Tags"
 msgstr ""
 
-#: inc/customizer.php:432
+#: inc/customizer.php:536
 msgid "Remove Author Bio from post"
 msgstr ""
 
-#: inc/customizer.php:442
+#: inc/customizer.php:549
 msgid "Remove next/previous link from post"
 msgstr ""
 
-#: inc/customizer.php:450
+#: inc/customizer.php:560
 msgid "Page Settings"
 msgstr ""
 
-#: inc/customizer.php:460
+#: inc/customizer.php:573
 msgid "Page Layout"
 msgstr ""
 
-#: inc/customizer.php:475
+#: inc/customizer.php:591
 msgid "Footer Settings"
 msgstr ""
 
-#: inc/customizer.php:485
+#: inc/customizer.php:604
 msgid "Footer Widget Area"
 msgstr ""
 
-#: inc/customizer.php:500
+#: inc/customizer.php:622
 msgid "Advanced Settings"
 msgstr ""
 
-#: inc/customizer.php:511
+#: inc/customizer.php:636
 msgid "Custom CSS"
 msgstr ""
 
-#: inc/customizer.php:525
+#: inc/customizer.php:653
 msgid "Google Font Settings"
 msgstr ""
 
-#: inc/customizer.php:535
+#: inc/customizer.php:666
 msgid "Body Typography"
 msgstr ""
 
-#: inc/customizer.php:631
+#: inc/customizer.php:782
 msgid "Base Color Scheme"
 msgstr ""
 
-#: inc/customizer.php:649
+#: inc/customizer.php:808
 msgid "Link Color"
 msgstr ""
 
-#: inc/customizer.php:661
+#: inc/customizer.php:829
 msgid "Main Text Color"
 msgstr ""
 
-#: inc/customizer.php:673
+#: inc/customizer.php:850
 msgid "Secondary Text Color"
 msgstr ""
 
-#: inc/customizer.php:735
+#: inc/customizer.php:863
+msgid "View Pro Version"
+msgstr ""
+
+#: inc/customizer.php:952
 #: inc/kirki/controls/php/class-kirki-control-base.php:134
 #: inc/kirki/controls/views/image.php:36
 #: inc/kirki/field/class-kirki-field-image.php:49
 msgid "Default"
 msgstr ""
 
-#: inc/customizer.php:744
+#: inc/customizer.php:961
 msgid "Dark"
 msgstr ""
 
-#: inc/customizer.php:753
+#: inc/customizer.php:970
 msgid "Gray"
 msgstr ""
 
-#: inc/customizer.php:762
+#: inc/customizer.php:979
 msgid "Red"
 msgstr ""
 
-#: inc/customizer.php:771
+#: inc/customizer.php:988
 msgid "Yellow"
-msgstr ""
-
-#: inc/customizer.php:1310
-msgid "View PRO version"
 msgstr ""
 
 #: inc/demo-config.php:23

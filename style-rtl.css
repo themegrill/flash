@@ -6,7 +6,7 @@ Author: ThemeGrill
 Author URI: https://themegrill.com
 Description: Flash is free responsive multipurpose WordPress theme – truly a versatile theme perfect for any type of website you want. Like never before, it provides multiple pre-built demos which can be imported in seconds using ThemeGrill Demo Importer Plugin. The theme fully integrates with Flash Toolkit and SiteOrigin’s Page Builder Plugin that makes theme more user-friendly and easy. Additionally, theme features multiple blog layouts, WooCommerce support, multiple header styles, multiple color options etc.
 License: GNU General Public License v3 or later
-Version: 1.3.3
+Version: 1.3.4
 Tested up to: 5.4.1
 Requires PHP: 5.6
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -1899,7 +1899,7 @@ Slider
 }
 
 .tg-slider-widget .swiper-button-next:before {
-	content: "\";
+	content: " \  ";
 	font-family: fontawesome;
 	font-size: 30px;
 	color: #313b48;
@@ -1923,7 +1923,7 @@ Slider
 }
 
 .tg-slider-widget .swiper-button-prev:before {
-	content: "\";
+	content: " \  ";
 	font-family: fontawesome;
 	font-size: 30px;
 	color: #313b48;
@@ -2254,7 +2254,7 @@ Service
 }
 
 .tg-service-widget .service-more:after {
-	content: "\";
+	content: " \  ";
 	font-family: FontAwesome;
 	font-weight: 400;
 	position: absolute;
@@ -3359,7 +3359,7 @@ Footer
 
 #top-footer .widget ul li:after {
 	color: #fff;
-	content: "\";
+	content: " \  ";
 	font-family: fontawesome;
 	right: 0;
 	position: absolute;
@@ -3582,7 +3582,7 @@ Archive
 
 #secondary .widget ul li:after {
 	color: #000;
-	content: "\";
+	content: " \  ";
 	font-family: fontawesome;
 	right: 0;
 	position: absolute;
@@ -3769,7 +3769,7 @@ Bread Crumb
 
 .breadcrumb-trail.breadcrumbs .trail-items li span:before {
 	color: #a1a1a1;
-	content: "\";
+	content: " \  ";
 	font-family: fontawesome;
 	right: 0;
 	position: absolute;
@@ -4250,7 +4250,7 @@ WooCommerce
 
 .woocommerce .woocommerce-breadcrumb span:before {
 	color: #a1a1a1;
-	content: "\";
+	content: " \  ";
 	font-family: fontawesome;
 	right: 0;
 	position: absolute;
@@ -4285,7 +4285,7 @@ WooCommerce
 
 .woocommerce-breadcrumb span:before {
 	color: #a1a1a1;
-	content: "\";
+	content: " \  ";
 	font-family: fontawesome;
 	right: 0;
 	position: absolute;
