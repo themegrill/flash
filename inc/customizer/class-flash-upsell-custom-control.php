@@ -2,7 +2,7 @@
 
 class Flash_Upsell_Custom_Control extends WP_Customize_Control {
 
-	public $type = 'flash_upsell_control';
+	public $type = 'flash-upsell-control';
 
 	public function render_content() {
 		?>
