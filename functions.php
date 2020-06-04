@@ -96,8 +96,15 @@ if ( ! function_exists( 'flash_setup' ) ) :
 
 		// Gutenberg layout support.
 		add_theme_support( 'align-wide' );
+
+		// Add support for Block Styles.
+		add_theme_support( 'wp-block-styles' );
+
+	    // Responsive embeds support.
+		add_theme_support( 'responsive-embeds' );
 	}
 endif;
+
 add_action( 'after_setup_theme', 'flash_setup' );
 
 // Theme version.
