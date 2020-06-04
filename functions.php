@@ -107,6 +107,18 @@ endif;
 
 add_action( 'after_setup_theme', 'flash_setup' );
 
+/**
+ * Enqueue block editor styles.
+ *
+ * @since Flash 1.3.5
+ */
+function flash_block_editor_styles()
+{
+	wp_enqueue_style('flash-editor-googlefonts', '//fonts.googleapis.com/css?family=Open+Sans:400,600');
+	wp_enqueue_style('flash-block-editor-styles', get_template_directory_uri() . '/style-editor-block.css');
+}
+add_action('enqueue_block_editor_assets', 'flash_block_editor_styles', 1, 1);
+
 // Theme version.
 $flash_theme = wp_get_theme();
 define( 'FLASH_THEME_VERSION', $flash_theme->get( 'Version' ) );
