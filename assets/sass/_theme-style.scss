@@ -549,20 +549,29 @@ Clearings
 .full-width-center {
 	overflow: hidden;
 
-	.alignfull {
+	#primary {
+		
+	.entry-content {
+
+	> .alignfull {
 		margin-left: calc(50% - 50vw);
 		margin-right: calc(50% - 50vw);
 		max-width: unset;
 
-		img {
-			max-width: unset;
-		}
+	&.wp-block-cover, 
+	&.wp-block-cover-image, 
+	&.wp-block-cover,
+	&.wp-block-cover-image {
+		width: unset;
 	}
-
-	.alignwide {
+}
+	
+	> .alignwide {
 		margin-left: -100px;
 		margin-right: -100px;
 		max-width: unset;
+	}
+}
 	}
 
 	&.boxed {
@@ -570,12 +579,24 @@ Clearings
 			overflow: hidden;
 		}
 
-		.alignwide {
-			margin-left: -100px;
-			margin-right: -100px;
-		}
+		#primary {
 
+			.entry-content {
+
+				> .alignfull {
+					margin-left: -30px;
+					margin-right: -30px;
+
+					&.wp-block-cover,
+					&.wp-block-cover-image,
+					&.wp-block-cover,
+					&.wp-block-cover-image {
+						width: unset;
+}
 	}
+	}
+	}
+}
 }
 
 ul {
