@@ -1,22 +1,22 @@
 /* Basic Block Editor CSS */
 .editor-styles-wrapper {
 	background-color: #ffffff;
-	color: #444444;
-	font-size: 16px;
-	font-family: 'Open Sans', serif;
-	line-height: 1.6;
+	color: #333;
+	font-size: 14px;
+	font-family: Montserrat, sans-serif;
+	line-height: 1.5;
 	word-wrap: break-word;
 }
 
 .editor-styles-wrapper > * {
-	font-family: 'Open Sans', serif;
-	color: #444444;
+	font-family: Montserrat, sans-serif;
+	color: #333;
 }
 
 .editor-styles-wrapper .wp-block.editor-post-title__block .editor-post-title__input {
 	padding: 5px 0 0;
-	font-size: 32px;
-	line-height: 1.2;
-	color: #333333;
+	font-size: 20px;
+	line-height: 24px;
+	color: #606060;
 	font-weight: normal;
 }
