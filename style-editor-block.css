@@ -20,3 +20,11 @@
 	color: #606060;
 	font-weight: normal;
 }
+
+.wp-block {
+	max-width: 1140px;
+}
+
+.editor-styles-wrapper .wp-block[data-align="wide"] {
+	max-width: 1200px;
+}
