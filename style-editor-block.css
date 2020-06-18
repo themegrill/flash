@@ -64,3 +64,437 @@ Typography
 .editor-styles-wrapper h6 {
 	font-size: 16px;
 }
+
+/* Horizontal Lines */
+.editor-styles-wrapper hr {
+	background-color: #ccc;
+	border: 0;
+	height: 1px;
+	margin-bottom: 15px;
+}
+
+.editor-styles-wrapper b,
+.editor-styles-wrapper strong {
+	font-weight: bold;
+}
+
+.editor-styles-wrapper dfn,
+.editor-styles-wrapper cite,
+.editor-styles-wrapper em,
+.editor-styles-wrapper i {
+	font-style: italic;
+}
+
+.editor-styles-wrapper blockquote {
+	margin: 0 15px;
+	font-size: 20px;
+	font-style: italic;
+	font-family: "Montserrat", sans-serif;
+	font-weight: 300;
+}
+
+.editor-styles-wrapper address {
+	margin: 0 0 15px;
+}
+
+.editor-styles-wrapper pre {
+	background: #eee;
+	font-family: "Montserrat", sans-serif;
+	font-size: 15px;
+	font-size: 1.5rem;
+	line-height: 1.6;
+	margin-bottom: 1.6em;
+	max-width: 100%;
+	overflow: auto;
+	padding: 1.6em;
+}
+
+.editor-styles-wrapper code,
+.editor-styles-wrapper kbd,
+.editor-styles-wrapper tt,
+.editor-styles-wrapper var {
+	font: 15px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+}
+
+.editor-styles-wrapper abbr,
+.editor-styles-wrapper acronym {
+	border-bottom: 1px dotted #666;
+	cursor: help;
+}
+
+.editor-styles-wrapper mark,
+.editor-styles-wrapper ins {
+	background: #fff9c0;
+	text-decoration: none;
+}
+
+.editor-styles-wrapper sup,
+.editor-styles-wrapper sub {
+	font-size: 75%;
+	height: 0;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+.editor-styles-wrapper sup {
+	bottom: 1ex;
+}
+
+.editor-styles-wrapper sub {
+	top: 0.5ex;
+}
+
+.editor-styles-wrapper small {
+	font-size: 75%;
+}
+
+.editor-styles-wrapper big {
+	font-size: 125%;
+}
+
+.editor-styles-wrapper ul,
+.editor-styles-wrapper ol {
+	margin: 0 20px 15px 0;
+}
+
+.editor-styles-wrapper ul {
+	list-style: disc;
+}
+
+.editor-styles-wrapper ol {
+	list-style: decimal;
+}
+
+.editor-styles-wrapper li > ul,
+.editor-styles-wrapper li > ol {
+	margin-bottom: 0;
+	margin-right: 15px;
+}
+
+.editor-styles-wrapper dt {
+	font-weight: bold;
+}
+
+.editor-styles-wrapper dd {
+	margin: 0 15px 15px;
+}
+
+.editor-styles-wrapper img {
+	height: auto;
+	/* Make sure images are scaled correctly. */
+	max-width: 100%;
+	/* Adhere to tg-container width. */
+	vertical-align: middle;
+}
+
+.editor-styles-wrapper figure {
+	margin: 0;
+}
+
+.editor-styles-wrapper table {
+	margin: 0 0 15px;
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.editor-styles-wrapper th {
+	font-weight: bold;
+	border: 1px solid #ccc;
+	padding: 5px 10px;
+}
+
+.editor-styles-wrapper td {
+	border: 1px solid #ccc;
+	padding: 5px 10px;
+}
+
+.editor-styles-wrapper p {
+	margin: 0 0 30px;
+}
+
+/*--------------------------------------------------------------
+Forms
+--------------------------------------------------------------*/
+.editor-styles-wrapper button,
+.editor-styles-wrapper input,
+.editor-styles-wrapper select,
+.editor-styles-wrapper textarea {
+	font-size: 100%;
+	/* Corrects font size not being inherited in all browsers */
+	margin: 0;
+	/* Addresses margins set differently in IE6/7, F3/4, S5, Chrome */
+	vertical-align: middle;
+}
+
+.editor-styles-wrapper .navigation .nav-links a,
+.editor-styles-wrapper .bttn,
+.editor-styles-wrapper button {
+	background: #333;
+	color: #fff;
+	cursor: pointer;
+	/* Improves usability and consistency of cursor style between image-type 'input' and others */
+	font-size: 14px;
+	line-height: 13px;
+	border: none;
+	padding: 10px 15px;
+	font-weight: 400;
+	display: inline-block;
+	position: relative;
+	text-shadow: none;
+	-webkit-transition: background 0.5s ease;
+	transition: background 0.5s ease;
+	border-radius: 0;
+	-webkit-appearance: none;
+	-webkit-border-radius: 0;
+}
+
+.editor-styles-wrapper input[type="button"], .editor-styles-wrapper input[type="reset"], .editor-styles-wrapper input[type="submit"] {
+	background: #333;
+	color: #fff;
+	cursor: pointer;
+	/* Improves usability and consistency of cursor style between image-type 'input' and others */
+	font-size: 14px;
+	line-height: 13px;
+	border: none;
+	padding: 10px 15px;
+	font-weight: 400;
+	display: inline-block;
+	position: relative;
+	text-shadow: none;
+	-webkit-transition: background 0.5s ease;
+	transition: background 0.5s ease;
+	border-radius: 0;
+	-webkit-appearance: none;
+	-webkit-border-radius: 0;
+}
+
+.editor-styles-wrapper .navigation .nav-links a:hover,
+.editor-styles-wrapper .bttn:hover,
+.editor-styles-wrapper button {
+	color: #fff;
+}
+
+.editor-styles-wrapper input[type="button"]:hover, .editor-styles-wrapper input[type="reset"]:hover, .editor-styles-wrapper input[type="submit"]:hover {
+	color: #fff;
+}
+
+.editor-styles-wrapper input[type="checkbox"], .editor-styles-wrapper input[type="radio"] {
+	padding: 0;
+}
+
+.editor-styles-wrapper button:-moz-focus-inner {
+	/* Corrects inner padding and border displayed oddly in FF3/4 www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/ */
+	border: 0;
+	padding: 0;
+}
+
+.editor-styles-wrapper input:-moz-focus-inner {
+	/* Corrects inner padding and border displayed oddly in FF3/4 www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/ */
+	border: 0;
+	padding: 0;
+}
+
+.editor-styles-wrapper input[type="text"], .editor-styles-wrapper input[type="email"], .editor-styles-wrapper input[type="url"], .editor-styles-wrapper input[type="password"], .editor-styles-wrapper input[type="search"] {
+	color: #666;
+	border: 1px solid #ccc;
+	height: 36px;
+	width: 100%;
+	-webkit-appearance: none;
+	border-radius: 0;
+	-webkit-border-radius: 0;
+}
+
+.editor-styles-wrapper input[type="text"]:focus, .editor-styles-wrapper input[type="email"]:focus, .editor-styles-wrapper input[type="url"]:focus, .editor-styles-wrapper input[type="password"]:focus, .editor-styles-wrapper input[type="search"]:focus {
+	border: 1px solid #aaa;
+}
+
+.editor-styles-wrapper textarea:focus {
+	border: 1px solid #aaa;
+}
+
+.editor-styles-wrapper .searchform input[type="text"]:focus {
+	border: none;
+}
+
+.editor-styles-wrapper input[type="text"], .editor-styles-wrapper input[type="email"], .editor-styles-wrapper input[type="url"], .editor-styles-wrapper input[type="password"], .editor-styles-wrapper input[type="search"] {
+	padding: 3px 6px;
+}
+
+.editor-styles-wrapper textarea {
+	overflow: auto;
+	/* Removes default vertical scrollbar in IE6/7/8/9 */
+	padding-right: 3px;
+	vertical-align: top;
+	/* Improves readability and alignment in all browsers */
+	color: #666;
+	border: 1px solid #ccc;
+	height: 160px;
+	max-width: 100%;
+	width: 100%;
+}
+
+.editor-styles-wrapper button[type="submit"] {
+	margin-bottom: 50px;
+}
+
+/*--------------------------------------------------------------
+Links
+--------------------------------------------------------------*/
+.editor-styles-wrapper a {
+	color: #000;
+	text-decoration: none;
+	transition: all 0.3s ease-in-out;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+}
+
+.editor-styles-wrapper a:hover {
+	color: #000;
+}
+
+/*--------------------------------------------------------------
+Clearings
+--------------------------------------------------------------*/
+.editor-styles-wrapper .clearfix:after, .editor-styles-wrapper .clearfix:before,
+.editor-styles-wrapper .row:after,
+.editor-styles-wrapper .row:before,
+.editor-styles-wrapper .entry-content:after,
+.editor-styles-wrapper .entry-content:before,
+.editor-styles-wrapper .comment-content:after,
+.editor-styles-wrapper .comment-content:before,
+.editor-styles-wrapper .site-header:after,
+.editor-styles-wrapper .site-header:before,
+.editor-styles-wrapper .site-content:after,
+.editor-styles-wrapper .site-content:before,
+.editor-styles-wrapper .site-footer:after,
+.editor-styles-wrapper .site-footer:before,
+.editor-styles-wrapper .tg-container:after,
+.editor-styles-wrapper .tg-container:before {
+	content: "";
+	display: table;
+}
+
+.editor-styles-wrapper .clearfix:after,
+.editor-styles-wrapper .row:after,
+.editor-styles-wrapper .entry-content:after,
+.editor-styles-wrapper .comment-content:after,
+.editor-styles-wrapper .site-header:after,
+.editor-styles-wrapper .site-content:after,
+.editor-styles-wrapper .site-footer:after,
+.editor-styles-wrapper .tg-container:after {
+	clear: both;
+}
+
+.editor-styles-wrapper .clear {
+	clear: both;
+}
+
+.editor-styles-wrapper .wp-caption,
+.editor-styles-wrapper .wp-caption-text,
+.editor-styles-wrapper .sticky,
+.editor-styles-wrapper .gallery-caption,
+.editor-styles-wrapper .bypostauthor {
+	/*class required for wordpress*/
+}
+
+.editor-styles-wrapper .alignright {
+	text-align: left;
+}
+
+.editor-styles-wrapper .alignleft {
+	text-align: right;
+}
+
+.editor-styles-wrapper .aligncenter {
+	text-align: center;
+}
+
+.editor-styles-wrapper .alignleft {
+	float: right;
+	margin-left: 24px;
+}
+
+.editor-styles-wrapper .alignright {
+	float: left;
+	margin-right: 24px;
+}
+
+.editor-styles-wrapper .aligncenter {
+	clear: both;
+	display: block;
+	margin: 0 auto 28px;
+}
+
+.editor-styles-wrapper ul.wp-block-gallery {
+	margin: 0;
+}
+
+/*--------------------------------------------------------------
+Galleries
+--------------------------------------------------------------*/
+.editor-styles-wrapper .gallery {
+	margin-bottom: 1.5em;
+}
+
+.editor-styles-wrapper .gallery-item {
+	display: inline-block;
+	text-align: center;
+	vertical-align: top;
+	width: 100%;
+}
+
+.editor-styles-wrapper .gallery-columns-2 .gallery-item {
+	max-width: 50%;
+}
+
+.editor-styles-wrapper .gallery-columns-3 .gallery-item {
+	max-width: 33.33%;
+}
+
+.editor-styles-wrapper .gallery-columns-4 .gallery-item {
+	max-width: 25%;
+}
+
+.editor-styles-wrapper .gallery-columns-5 .gallery-item {
+	max-width: 20%;
+}
+
+.editor-styles-wrapper .gallery-columns-6 .gallery-item {
+	max-width: 16.66%;
+}
+
+.editor-styles-wrapper .gallery-columns-7 .gallery-item {
+	max-width: 14.28%;
+}
+
+.editor-styles-wrapper .gallery-columns-8 .gallery-item {
+	max-width: 12.5%;
+}
+
+.editor-styles-wrapper .gallery-columns-9 .gallery-item {
+	max-width: 11.11%;
+}
+
+.editor-styles-wrapper .gallery-caption {
+	display: block;
+}
+
+.editor-styles-wrapper .wp-caption,
+.editor-styles-wrapper .gallery-caption {
+	color: #666;
+	font-size: 13px;
+	font-style: italic;
+	margin-bottom: 21px;
+	max-width: 100%;
+}
+
+.editor-styles-wrapper .wp-caption img[class*="wp-image-"] {
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.editor-styles-wrapper .wp-caption .wp-caption-text {
+	margin: 11px 0;
+}
