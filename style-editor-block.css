@@ -353,51 +353,6 @@ Links
 	color: #000;
 }
 
-/*--------------------------------------------------------------
-Clearings
---------------------------------------------------------------*/
-.editor-styles-wrapper .clearfix:after, .editor-styles-wrapper .clearfix:before,
-.editor-styles-wrapper .row:after,
-.editor-styles-wrapper .row:before,
-.editor-styles-wrapper .entry-content:after,
-.editor-styles-wrapper .entry-content:before,
-.editor-styles-wrapper .comment-content:after,
-.editor-styles-wrapper .comment-content:before,
-.editor-styles-wrapper .site-header:after,
-.editor-styles-wrapper .site-header:before,
-.editor-styles-wrapper .site-content:after,
-.editor-styles-wrapper .site-content:before,
-.editor-styles-wrapper .site-footer:after,
-.editor-styles-wrapper .site-footer:before,
-.editor-styles-wrapper .tg-container:after,
-.editor-styles-wrapper .tg-container:before {
-	content: "";
-	display: table;
-}
-
-.editor-styles-wrapper .clearfix:after,
-.editor-styles-wrapper .row:after,
-.editor-styles-wrapper .entry-content:after,
-.editor-styles-wrapper .comment-content:after,
-.editor-styles-wrapper .site-header:after,
-.editor-styles-wrapper .site-content:after,
-.editor-styles-wrapper .site-footer:after,
-.editor-styles-wrapper .tg-container:after {
-	clear: both;
-}
-
-.editor-styles-wrapper .clear {
-	clear: both;
-}
-
-.editor-styles-wrapper .wp-caption,
-.editor-styles-wrapper .wp-caption-text,
-.editor-styles-wrapper .sticky,
-.editor-styles-wrapper .gallery-caption,
-.editor-styles-wrapper .bypostauthor {
-	/*class required for wordpress*/
-}
-
 .editor-styles-wrapper .alignright {
 	text-align: left;
 }
