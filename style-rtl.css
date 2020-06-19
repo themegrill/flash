@@ -564,25 +564,15 @@ Clearings
 	display: none;
 }
 
-.full-width,
-.full-width-center {
-	overflow: hidden;
-}
-
-.full-width .alignfull,
-.full-width-center .alignfull {
+.full-width #primary .entry-content > .alignfull,
+.full-width-center #primary .entry-content > .alignfull {
 	margin-right: calc(50% - 50vw);
 	margin-left: calc(50% - 50vw);
 	max-width: unset;
 }
 
-.full-width .alignfull img,
-.full-width-center .alignfull img {
-	max-width: unset;
-}
-
-.full-width .alignwide,
-.full-width-center .alignwide {
+.full-width #primary .entry-content > .alignwide,
+.full-width-center #primary .entry-content > .alignwide {
 	margin-right: -100px;
 	margin-left: -100px;
 	max-width: unset;
@@ -593,10 +583,10 @@ Clearings
 	overflow: hidden;
 }
 
-.full-width.boxed .alignwide,
-.full-width-center.boxed .alignwide {
-	margin-right: -100px;
-	margin-left: -100px;
+.full-width.boxed #primary .entry-content > .alignfull,
+.full-width-center.boxed #primary .entry-content > .alignfull {
+	margin-right: -30px;
+	margin-left: -30px;
 }
 
 ul.wp-block-gallery {
@@ -1899,7 +1889,7 @@ Slider
 }
 
 .tg-slider-widget .swiper-button-next:before {
-	content: " \  ";
+	content: "\";
 	font-family: fontawesome;
 	font-size: 30px;
 	color: #313b48;
@@ -1923,7 +1913,7 @@ Slider
 }
 
 .tg-slider-widget .swiper-button-prev:before {
-	content: " \  ";
+	content: "\";
 	font-family: fontawesome;
 	font-size: 30px;
 	color: #313b48;
@@ -2254,7 +2244,7 @@ Service
 }
 
 .tg-service-widget .service-more:after {
-	content: " \  ";
+	content: "\";
 	font-family: FontAwesome;
 	font-weight: 400;
 	position: absolute;
@@ -3359,7 +3349,7 @@ Footer
 
 #top-footer .widget ul li:after {
 	color: #fff;
-	content: " \  ";
+	content: "\";
 	font-family: fontawesome;
 	right: 0;
 	position: absolute;
@@ -3582,7 +3572,7 @@ Archive
 
 #secondary .widget ul li:after {
 	color: #000;
-	content: " \  ";
+	content: "\";
 	font-family: fontawesome;
 	right: 0;
 	position: absolute;
@@ -3769,7 +3759,7 @@ Bread Crumb
 
 .breadcrumb-trail.breadcrumbs .trail-items li span:before {
 	color: #a1a1a1;
-	content: " \  ";
+	content: "\";
 	font-family: fontawesome;
 	right: 0;
 	position: absolute;
@@ -4139,6 +4129,18 @@ Comments
 }
 
 /*--------------------------------------------------------------
+Gutenberg Blocks Layout.
+--------------------------------------------------------------*/
+.wp-block-gallery.alignleft, .wp-block-gallery.alignright, .wp-block-gallery.aligncenter,
+.wp-block-social-links.alignleft,
+.wp-block-social-links.alignright,
+.wp-block-social-links.aligncenter {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+}
+
+/*--------------------------------------------------------------
 WooCommerce
 --------------------------------------------------------------*/
 .woocommerce ul.products li.product a img,
@@ -4250,7 +4252,7 @@ WooCommerce
 
 .woocommerce .woocommerce-breadcrumb span:before {
 	color: #a1a1a1;
-	content: " \  ";
+	content: "\";
 	font-family: fontawesome;
 	right: 0;
 	position: absolute;
@@ -4285,7 +4287,7 @@ WooCommerce
 
 .woocommerce-breadcrumb span:before {
 	color: #a1a1a1;
-	content: " \  ";
+	content: "\";
 	font-family: fontawesome;
 	right: 0;
 	position: absolute;
