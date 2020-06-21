@@ -230,8 +230,6 @@ Forms
 .editor-styles-wrapper .navigation .nav-links a,
 .editor-styles-wrapper .bttn,
 .editor-styles-wrapper button {
-	background: #333;
-	color: #fff;
 	cursor: pointer;
 	/* Improves usability and consistency of cursor style between image-type 'input' and others */
 	font-size: 14px;
@@ -250,8 +248,6 @@ Forms
 }
 
 .editor-styles-wrapper input[type="button"], .editor-styles-wrapper input[type="reset"], .editor-styles-wrapper input[type="submit"] {
-	background: #333;
-	color: #fff;
 	cursor: pointer;
 	/* Improves usability and consistency of cursor style between image-type 'input' and others */
 	font-size: 14px;
@@ -267,16 +263,6 @@ Forms
 	border-radius: 0;
 	-webkit-appearance: none;
 	-webkit-border-radius: 0;
-}
-
-.editor-styles-wrapper .navigation .nav-links a:hover,
-.editor-styles-wrapper .bttn:hover,
-.editor-styles-wrapper button {
-	color: #fff;
-}
-
-.editor-styles-wrapper input[type="button"]:hover, .editor-styles-wrapper input[type="reset"]:hover, .editor-styles-wrapper input[type="submit"]:hover {
-	color: #fff;
 }
 
 .editor-styles-wrapper input[type="checkbox"], .editor-styles-wrapper input[type="radio"] {
