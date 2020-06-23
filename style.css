@@ -564,6 +564,11 @@ Clearings
 	display: none;
 }
 
+.full-width,
+.full-width-center {
+	overflow: hidden;
+}
+
 .full-width #primary .entry-content > .alignfull,
 .full-width-center #primary .entry-content > .alignfull {
 	margin-left: calc(50% - 50vw);
