@@ -557,11 +557,18 @@ overflow: hidden;
 		margin-left: calc(50% - 50vw);
 		margin-right: calc(50% - 50vw);
 		max-width: unset;
+
+	&.wp-block-cover, 
+	&.wp-block-cover-image, 
+	&.wp-block-cover,
+	&.wp-block-cover-image {
+		width: unset;
+	}
 }
 	
 	> .alignwide {
-		margin-left: -100px;
-		margin-right: -100px;
+		margin-left: -50px;
+		margin-right: -50px;
 		max-width: unset;
 	}
 }
@@ -577,12 +584,15 @@ overflow: hidden;
 			.entry-content {
 
 				> .alignfull {
-					margin-left: -30px;
-					margin-right: -30px;
+					
+						&.wp-block-cover,
+					&.wp-block-cover-image {
+						width: unset;
+					}
+				}
+			}
+		}
 	}
-	}
-	}
-}
 }
 
 ul {
