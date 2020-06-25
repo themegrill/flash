@@ -14,10 +14,9 @@
 }
 
 .editor-styles-wrapper .wp-block.editor-post-title__block .editor-post-title__input {
-	padding: 5px 0 0;
-	font-size: 20px;
+	padding: 6px 0;
+	font-size: 25px;
 	line-height: 24px;
-	color: #606060;
 	font-weight: normal;
 }
 
