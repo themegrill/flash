@@ -68,7 +68,6 @@ Typography
 /* Horizontal Lines */
 .editor-styles-wrapper hr {
 	background-color: #ccc;
-	border: 0;
 	height: 1px;
 	margin-bottom: 15px;
 }
@@ -155,7 +154,7 @@ Typography
 
 .editor-styles-wrapper ul,
 .editor-styles-wrapper ol {
-	margin: 0 20px 15px 0;
+	margin: 0 0 15px 20px;
 }
 
 .editor-styles-wrapper ul {
