@@ -591,15 +591,22 @@ Clearings
 	max-width: unset;
 }
 
-.full-width.boxed #content,
-.full-width-center.boxed #content {
-	overflow: hidden;
+.full-width.boxed #primary .entry-content > .alignfull,
+.full-width-center.boxed #primary .entry-content > .alignfull {
+	margin-right: -30px;
+	margin-left: -30px;
+	max-width: unset;
 }
 
 .full-width.boxed #primary .entry-content > .alignfull.wp-block-cover, .full-width.boxed #primary .entry-content > .alignfull.wp-block-cover-image,
 .full-width-center.boxed #primary .entry-content > .alignfull.wp-block-cover,
 .full-width-center.boxed #primary .entry-content > .alignfull.wp-block-cover-image {
 	width: unset;
+}
+
+.full-width.boxed #primary .entry-content > .alignwide,
+.full-width-center.boxed #primary .entry-content > .alignwide {
+	margin: 0;
 }
 
 ul.wp-block-gallery {

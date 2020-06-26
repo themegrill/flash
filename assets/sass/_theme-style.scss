@@ -575,20 +575,24 @@ overflow: hidden;
 	}
 
 	&.boxed {
-		#content {
-			overflow: hidden;
-		}
 
 		#primary {
 
 			.entry-content {
 
-				> .alignfull {
-					
+					> .alignfull {
+					margin-left: -30px;
+					margin-right: -30px;
+					max-width: unset;
+
 						&.wp-block-cover,
 					&.wp-block-cover-image {
 						width: unset;
 					}
+				}
+
+				> .alignwide {
+					margin: 0;
 				}
 			}
 		}
