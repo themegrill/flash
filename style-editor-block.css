@@ -450,12 +450,3 @@ Galleries
 .editor-styles-wrapper .wp-caption .wp-caption-text {
 	margin: 11px 0;
 }
-
-.editor-styles-wrapper .wp-block-gallery.alignleft, .editor-styles-wrapper .wp-block-gallery.alignright, .editor-styles-wrapper .wp-block-gallery.aligncenter,
-.editor-styles-wrapper .wp-block-social-links.alignleft,
-.editor-styles-wrapper .wp-block-social-links.alignright,
-.editor-styles-wrapper .wp-block-social-links.aligncenter {
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-}
