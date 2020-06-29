@@ -592,6 +592,7 @@ Clearings
 .full-width-center #primary .entry-content > .alignwide {
 	margin-right: -50px;
 	margin-left: -50px;
+	max-width: unset;
 	width: unset;
 }
 
