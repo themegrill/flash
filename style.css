@@ -146,6 +146,10 @@ a:focus {
 	outline: thin dotted;
 }
 
+embed, iframe, object {
+	max-width: 100%;
+}
+
 /*--------------------------------------------------------------
 Typography
 --------------------------------------------------------------*/
@@ -569,34 +573,45 @@ Clearings
 	overflow: hidden;
 }
 
-.full-width .alignfull,
-.full-width-center .alignfull {
+.full-width #primary .entry-content > .alignfull,
+.full-width-center #primary .entry-content > .alignfull {
 	margin-left: calc(50% - 50vw);
 	margin-right: calc(50% - 50vw);
 	max-width: unset;
 }
 
-.full-width .alignfull img,
-.full-width-center .alignfull img {
+.full-width #primary .entry-content > .alignfull.wp-block-cover, .full-width #primary .entry-content > .alignfull.wp-block-cover-image, .full-width #primary .entry-content > .alignfull.wp-block-cover, .full-width #primary .entry-content > .alignfull.wp-block-cover-image,
+.full-width-center #primary .entry-content > .alignfull.wp-block-cover,
+.full-width-center #primary .entry-content > .alignfull.wp-block-cover-image,
+.full-width-center #primary .entry-content > .alignfull.wp-block-cover,
+.full-width-center #primary .entry-content > .alignfull.wp-block-cover-image {
+	width: unset;
+}
+
+.full-width #primary .entry-content > .alignwide,
+.full-width-center #primary .entry-content > .alignwide {
+	margin-left: -50px;
+	margin-right: -50px;
+	max-width: unset;
+	width: unset;
+}
+
+.full-width.boxed #primary .entry-content > .alignfull,
+.full-width-center.boxed #primary .entry-content > .alignfull {
+	margin-left: -30px;
+	margin-right: -30px;
 	max-width: unset;
 }
 
-.full-width .alignwide,
-.full-width-center .alignwide {
-	margin-left: -100px;
-	margin-right: -100px;
-	max-width: unset;
+.full-width.boxed #primary .entry-content > .alignfull.wp-block-cover, .full-width.boxed #primary .entry-content > .alignfull.wp-block-cover-image,
+.full-width-center.boxed #primary .entry-content > .alignfull.wp-block-cover,
+.full-width-center.boxed #primary .entry-content > .alignfull.wp-block-cover-image {
+	width: unset;
 }
 
-.full-width.boxed #content,
-.full-width-center.boxed #content {
-	overflow: hidden;
-}
-
-.full-width.boxed .alignwide,
-.full-width-center.boxed .alignwide {
-	margin-left: -100px;
-	margin-right: -100px;
+.full-width.boxed #primary .entry-content > .alignwide,
+.full-width-center.boxed #primary .entry-content > .alignwide {
+	margin: 0;
 }
 
 ul.wp-block-gallery {
@@ -1899,7 +1914,7 @@ Slider
 }
 
 .tg-slider-widget .swiper-button-next:before {
-	content: " \  " /*rtl:" \  "*/;
+	content: "\" /*rtl:"\"*/;
 	font-family: fontawesome;
 	font-size: 30px;
 	color: #313b48;
@@ -1923,7 +1938,7 @@ Slider
 }
 
 .tg-slider-widget .swiper-button-prev:before {
-	content: " \  " /*rtl:" \  "*/;
+	content: "\" /*rtl:"\"*/;
 	font-family: fontawesome;
 	font-size: 30px;
 	color: #313b48;
@@ -2254,7 +2269,7 @@ Service
 }
 
 .tg-service-widget .service-more:after {
-	content: " \  " /*rtl:" \  "*/;
+	content: "\" /*rtl:"\"*/;
 	font-family: FontAwesome;
 	font-weight: 400;
 	position: absolute;
@@ -3359,7 +3374,7 @@ Footer
 
 #top-footer .widget ul li:after {
 	color: #fff;
-	content: " \  " /*rtl:" \  "*/;
+	content: "\" /*rtl:"\"*/;
 	font-family: fontawesome;
 	left: 0;
 	position: absolute;
@@ -3582,7 +3597,7 @@ Archive
 
 #secondary .widget ul li:after {
 	color: #000;
-	content: " \  " /*rtl:" \  "*/;
+	content: "\" /*rtl:"\"*/;
 	font-family: fontawesome;
 	left: 0;
 	position: absolute;
@@ -3769,7 +3784,7 @@ Bread Crumb
 
 .breadcrumb-trail.breadcrumbs .trail-items li span:before {
 	color: #a1a1a1;
-	content: " \  " /*rtl:" \  "*/;
+	content: "\" /*rtl:"\"*/;
 	font-family: fontawesome;
 	left: 0;
 	position: absolute;
@@ -4139,6 +4154,18 @@ Comments
 }
 
 /*--------------------------------------------------------------
+Gutenberg Blocks Layout.
+--------------------------------------------------------------*/
+.wp-block-gallery.alignleft, .wp-block-gallery.alignright, .wp-block-gallery.aligncenter,
+.wp-block-social-links.alignleft,
+.wp-block-social-links.alignright,
+.wp-block-social-links.aligncenter {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+}
+
+/*--------------------------------------------------------------
 WooCommerce
 --------------------------------------------------------------*/
 .woocommerce ul.products li.product a img,
@@ -4250,7 +4277,7 @@ WooCommerce
 
 .woocommerce .woocommerce-breadcrumb span:before {
 	color: #a1a1a1;
-	content: " \  " /*rtl:" \  "*/;
+	content: "\" /*rtl:"\"*/;
 	font-family: fontawesome;
 	left: 0;
 	position: absolute;
@@ -4285,7 +4312,7 @@ WooCommerce
 
 .woocommerce-breadcrumb span:before {
 	color: #a1a1a1;
-	content: " \  " /*rtl:" \  "*/;
+	content: "\" /*rtl:"\"*/;
 	font-family: fontawesome;
 	left: 0;
 	position: absolute;
