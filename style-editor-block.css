@@ -84,7 +84,6 @@ Typography
 }
 
 .editor-styles-wrapper blockquote {
-	margin: 0 15px;
 	font-size: 20px;
 	font-style: italic;
 	font-family: "Montserrat", sans-serif;
@@ -99,12 +98,17 @@ Typography
 	background: #eee;
 	font-family: "Montserrat", sans-serif;
 	font-size: 15px;
-	font-size: 1.5rem;
 	line-height: 1.6;
 	margin-bottom: 1.6em;
 	max-width: 100%;
 	overflow: auto;
 	padding: 1.6em;
+}
+
+.editor-styles-wrapper embed,
+.editor-styles-wrapper iframe,
+.editor-styles-wrapper object {
+	max-width: 100%;
 }
 
 .editor-styles-wrapper code,
@@ -263,6 +267,16 @@ Forms
 	-webkit-border-radius: 0;
 }
 
+.editor-styles-wrapper .navigation .nav-links a:hover,
+.editor-styles-wrapper .bttn:hover,
+button {
+	color: #fff;
+}
+
+.editor-styles-wrapper input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover {
+	color: #fff;
+}
+
 .editor-styles-wrapper input[type="checkbox"], .editor-styles-wrapper input[type="radio"] {
 	padding: 0;
 }
@@ -313,7 +327,6 @@ Forms
 	/* Improves readability and alignment in all browsers */
 	color: #666;
 	border: 1px solid #ccc;
-	height: 160px;
 	max-width: 100%;
 	width: 100%;
 }
@@ -436,4 +449,13 @@ Galleries
 
 .editor-styles-wrapper .wp-caption .wp-caption-text {
 	margin: 11px 0;
+}
+
+.editor-styles-wrapper .wp-block-gallery.alignleft, .editor-styles-wrapper .wp-block-gallery.alignright, .editor-styles-wrapper .wp-block-gallery.aligncenter,
+.editor-styles-wrapper .wp-block-social-links.alignleft,
+.editor-styles-wrapper .wp-block-social-links.alignright,
+.editor-styles-wrapper .wp-block-social-links.aligncenter {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
 }
