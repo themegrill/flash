@@ -270,6 +270,18 @@ Forms
 	color: #fff;
 }
 
+.editor-styles-wrapper button.components-button {
+    color: #1e1e1e;
+}
+
+.editor-styles-wrapper .components-button.is-pressed {
+    color: #fff;
+}
+
+.editor-styles-wrapper .wp-social-link button {
+    color: #fff;
+}
+
 .editor-styles-wrapper input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover {
 	color: #fff;
 }
