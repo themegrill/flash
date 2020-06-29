@@ -100,7 +100,6 @@ Typography
 	font-size: 15px;
 	line-height: 1.6;
 	margin-bottom: 1.6em;
-	max-width: 100%;
 	overflow: auto;
 	padding: 1.6em;
 }
@@ -267,9 +266,7 @@ Forms
 	-webkit-border-radius: 0;
 }
 
-.editor-styles-wrapper .navigation .nav-links a:hover,
-.editor-styles-wrapper .bttn:hover,
-button {
+.editor-styles-wrapper button {
 	color: #fff;
 }
 
