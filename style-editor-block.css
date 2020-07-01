@@ -360,11 +360,11 @@ Links
 }
 
 .editor-styles-wrapper .alignright {
-	text-align: left;
+	text-align: right;
 }
 
 .editor-styles-wrapper .alignleft {
-	text-align: right;
+	text-align: left;
 }
 
 .editor-styles-wrapper .aligncenter {
@@ -372,12 +372,12 @@ Links
 }
 
 .editor-styles-wrapper .alignleft {
-	float: right;
+	float: left;
 	margin-left: 24px;
 }
 
 .editor-styles-wrapper .alignright {
-	float: left;
+	float: right;
 	margin-right: 24px;
 }
 
