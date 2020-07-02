@@ -561,9 +561,7 @@ overflow: hidden;
 		margin-left: calc(50% - 50vw);
 		margin-right: calc(50% - 50vw);
 		max-width: unset;
-
-	&.wp-block-cover, 
-	&.wp-block-cover-image, 
+		
 	&.wp-block-cover,
 	&.wp-block-cover-image {
 		width: unset;

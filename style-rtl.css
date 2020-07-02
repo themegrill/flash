@@ -580,9 +580,7 @@ Clearings
 	max-width: unset;
 }
 
-.full-width #primary .entry-content > .alignfull.wp-block-cover, .full-width #primary .entry-content > .alignfull.wp-block-cover-image, .full-width #primary .entry-content > .alignfull.wp-block-cover, .full-width #primary .entry-content > .alignfull.wp-block-cover-image,
-.full-width-center #primary .entry-content > .alignfull.wp-block-cover,
-.full-width-center #primary .entry-content > .alignfull.wp-block-cover-image,
+.full-width #primary .entry-content > .alignfull.wp-block-cover, .full-width #primary .entry-content > .alignfull.wp-block-cover-image,
 .full-width-center #primary .entry-content > .alignfull.wp-block-cover,
 .full-width-center #primary .entry-content > .alignfull.wp-block-cover-image {
 	width: unset;
