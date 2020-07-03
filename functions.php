@@ -96,9 +96,28 @@ if ( ! function_exists( 'flash_setup' ) ) :
 
 		// Gutenberg layout support.
 		add_theme_support( 'align-wide' );
+
+		// Add support for Block Styles.
+		add_theme_support( 'wp-block-styles' );
+
+	    // Responsive embeds support.
+		add_theme_support( 'responsive-embeds' );
 	}
 endif;
+
 add_action( 'after_setup_theme', 'flash_setup' );
+
+/**
+ * Enqueue block editor styles.
+ *
+ * @since Flash 1.3.5
+ */
+function flash_block_editor_styles()
+{
+	wp_enqueue_style('flash-editor-googlefonts', '//fonts.googleapis.com/css?family=Montserrat:400,700');
+	wp_enqueue_style('flash-block-editor-styles', get_template_directory_uri() . '/style-editor-block.css');
+}
+add_action('enqueue_block_editor_assets', 'flash_block_editor_styles', 1, 1);
 
 // Theme version.
 $flash_theme = wp_get_theme();
@@ -290,10 +309,13 @@ require get_template_directory() . '/inc/siteorigin-panels.php';
  * Load required files for Flash notice in Admin page only.
  */
 if ( is_admin() ) {
-	require get_template_directory() . '/inc/class-flash-admin.php';
-	require get_template_directory() . '/inc/admin/class-flash-theme-review-notice.php';
+	require get_template_directory() . '/inc/admin/class-flash-admin.php';
 	require get_template_directory() . '/inc/admin/class-flash-tdi-notice.php';
+	require get_template_directory() . '/inc/admin/class-flash-notice.php';
 	require get_template_directory() . '/inc/admin/class-flash-dashboard.php';
+	require get_template_directory() . '/inc/admin/class-flash-welcome-notice.php';
+	require get_template_directory() . '/inc/admin/class-flash-upgrade-notice.php';
+	require get_template_directory() . '/inc/admin/class-flash-theme-review-notice.php';
 }
 
 /**

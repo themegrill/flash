@@ -21,11 +21,6 @@ class Flash_Dashboard {
 	private function setup_hooks() {
 		add_action( 'admin_menu', array( $this, 'create_menu' ) );
 
-		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
-	}
-
-	public function enqueue_scripts() {
-		wp_enqueue_style( 'flash-admin-dashboard', get_template_directory_uri() . '/inc/admin/css/dashboard.css' );
 	}
 
 	public function create_menu() {
@@ -39,11 +34,6 @@ class Flash_Dashboard {
 			'option_page'
 		) );
 
-		add_action( 'admin_print_styles-' . $page, array( $this, 'enqueue_styles' ) );
-	}
-
-	public function enqueue_styles() {
-		wp_enqueue_style( 'flash-dashboard', get_template_directory_uri() . '/inc/admin/css/dashboard.css', array(), FLASH_THEME_VERSION );
 	}
 
 	public function option_page() {
