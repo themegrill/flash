@@ -76,7 +76,7 @@ Kirki::add_field(
 Kirki::add_panel(
 	'flash_theme_options',
 	array(
-		'priority' => 100,
+		'priority' => 2,
 		'title'    => esc_html__( 'Flash Theme Options', 'flash' ),
 	)
 );
