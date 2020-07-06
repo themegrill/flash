@@ -751,18 +751,16 @@ if ( ! function_exists( 'flash_change_logo_attr' ) ) :
 				$custom_logo = $custom_logo[0];
 			}
 
-		if ( isset( $attr['class'] ) && 'custom-logo' === $attr['class'] ) {
+				if ( isset( $attr['class'] ) && 'custom-logo' === $attr['class'] ) {
 
-			if ( 1 == get_theme_mod( 'flash_retina_logo', 0 ) ) {
-				$retina_logo = get_theme_mod( 'flash_retina_logo_upload' );
+					if ( 1 == get_theme_mod( 'flash_retina_logo', 0 ) ) {
+						$retina_logo = get_theme_mod( 'flash_retina_logo_upload' );
 
-				if ( $retina_logo ) {
-					$attr['srcset'] = $custom_logo . ' 1x, ' . $retina_logo . ' 2x';
+						if ( $retina_logo ) {
+							$attr['srcset'] = $custom_logo . ' 1x, ' . $retina_logo . ' 2x';
+						}
+					}
 				}
-			}
-
-		}
-
 		return $attr;
 	}
 
