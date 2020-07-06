@@ -747,9 +747,10 @@ if ( ! function_exists( 'flash_change_logo_attr' ) ) :
 	  */
 	function flash_change_logo_attr( $attr, $attachment, $size ) {
 		$custom_logo = wp_get_attachment_image_src( get_theme_mod( 'custom_logo' ), 'full' );
-		if ($custom_logo ) {
-			$custom_logo = $custom_logo[0];
-	}
+			if ($custom_logo ) {
+				$custom_logo = $custom_logo[0];
+			}
+
 		if ( isset( $attr['class'] ) && 'custom-logo' === $attr['class'] ) {
 
 			if ( 1 == get_theme_mod( 'flash_retina_logo', 0 ) ) {
