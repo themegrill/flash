@@ -741,23 +741,25 @@ endif;
 add_action( 'wp_head', 'flash_pingback_header' );
 
 if ( ! function_exists( 'flash_change_logo_attr' ) ) :
-
 	/**
 	  * Update image attributes for retina logo.
 	  */
 	  function flash_change_logo_attr( $attr, $attachment, $size ) {
 		$custom_logo = wp_get_attachment_image_src( get_theme_mod( 'custom_logo' ), 'full' );
-		if ($custom_logo ) {
+		if ( $custom_logo ) {
 			$custom_logo = $custom_logo[0];
 		}
+
 		if ( isset( $attr['class'] ) && 'custom-logo' === $attr['class'] ) {
 			if ( 1 == get_theme_mod( 'flash_retina_logo', 0 ) ) {
 				$retina_logo = get_theme_mod( 'flash_retina_logo_upload' );
+
 				if ( $retina_logo ) {
 					$attr['srcset'] = $custom_logo . ' 1x, ' . $retina_logo . ' 2x';
 				}
 			}
 		}
+
 		return $attr;
 	}
 endif;
