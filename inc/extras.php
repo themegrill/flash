@@ -446,8 +446,8 @@ function flash_darkcolor( $hex, $steps ) {
 	$return      = '#';
 
 	foreach ( $color_parts as $color ) {
-		$color  = hexdec( $color ); // Convert to decimal
-		$color  = max( 0, min( 255, $color + $steps ) ); // Adjust color
+		$color  = hexdec( $color );                                   // Convert to decimal
+		$color  = max( 0, min( 255, $color + $steps ) );              // Adjust color
 		$return .= str_pad( dechex( $color ), 2, '0', STR_PAD_LEFT ); // Make two char hex code
 	}
 
@@ -497,7 +497,8 @@ if ( ! function_exists( 'flash_get_layout' ) ) :
 endif;
 
 /**
- * Returns true if on a page which uses WooCommerce templates (cart and checkout are standard pages with shortcodes and which are also included)
+ * Returns true if on a page which uses WooCommerce templates (cart and checkout are standard pages with shortcodes and
+ * which are also included)
  *
  * @access public
  * @return bool
@@ -522,7 +523,7 @@ function flash_is_woocommerce_page() {
 			"woocommerce_view_order_page_id",
 			"woocommerce_change_password_page_id",
 			"woocommerce_logout_page_id",
-			"woocommerce_lost_password_page_id"
+			"woocommerce_lost_password_page_id",
 		);
 
 		foreach ( $woocommerce_keys as $wc_page_id ) {
