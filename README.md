@@ -82,6 +82,7 @@ Unless otherwise specified, all the theme files, scripts and images including th
 
 == Changelog ==
 = TBD =
+* Enhancement - Update protocol to prevent not secure issue.
 * Fix - Error notice while using retina logo option.
 
 = Version 1.3.4 - 2020-05-27 =
