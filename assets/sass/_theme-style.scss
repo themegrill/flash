@@ -141,7 +141,9 @@ i {
 	font-style: italic;
 }
 
-blockquote {
+blockquote,
+.wp-block-quote,
+.wp-block-quote.is-style-large {
 	margin: 0 15px;
 	font-size: 20px;
 	font-style: italic;
@@ -246,7 +248,7 @@ h6 {
 Elements
 --------------------------------------------------------------*/
 
-hr {
+hr, .wp-block-separator {
 	background-color: #ccc;
 	border: 0;
 	height: 1px;
@@ -301,11 +303,9 @@ table {
 
 th {
 	font-weight: bold;
-	border: 1px solid #ccc;
-	padding: 5px 10px;
 }
 
-td {
+td, th, .wp-block-table th, .wp-block-table td {
 	border: 1px solid #ccc;
 	padding: 5px 10px;
 }
@@ -554,20 +554,20 @@ Clearings
 overflow: hidden;
 
 	#primary {
-		
+
 	.entry-content {
 
 	> .alignfull {
 		margin-left: calc(50% - 50vw);
 		margin-right: calc(50% - 50vw);
 		max-width: unset;
-		
+
 	&.wp-block-cover,
 	&.wp-block-cover-image {
 		width: unset;
 	}
 }
-	
+
 	> .alignwide {
 		margin-left: -50px;
 		margin-right: -50px;

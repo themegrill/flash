@@ -16,6 +16,7 @@
 .editor-styles-wrapper .wp-block.editor-post-title__block .editor-post-title__input {
 	padding: 6px 0;
 	font-size: 25px;
+	font-family: Montserrat, sans-serif;
 	line-height: 24px;
 	font-weight: normal;
 }
@@ -65,7 +66,8 @@ Typography
 }
 
 /* Horizontal Lines */
-.editor-styles-wrapper hr {
+.editor-styles-wrapper hr,
+.wp-block-separator {
 	background-color: #ccc;
 	height: 1px;
 	margin-bottom: 15px;
@@ -83,7 +85,9 @@ Typography
 	font-style: italic;
 }
 
-.editor-styles-wrapper blockquote {
+.editor-styles-wrapper blockquote,
+.editor-styles-wrapper .wp-block-quote,
+.editor-styles-wrapper .wp-block-quote.is-style-large {
 	font-size: 20px;
 	font-style: italic;
 	font-family: "Montserrat", sans-serif;
@@ -183,9 +187,7 @@ Typography
 
 .editor-styles-wrapper img {
 	height: auto;
-	/* Make sure images are scaled correctly. */
 	max-width: 100%;
-	/* Adhere to tg-container width. */
 	vertical-align: middle;
 }
 
@@ -201,11 +203,12 @@ Typography
 
 .editor-styles-wrapper th {
 	font-weight: bold;
-	border: 1px solid #ccc;
-	padding: 5px 10px;
 }
 
-.editor-styles-wrapper td {
+.editor-styles-wrapper td,
+.editor-styles-wrapper th,
+.wp-block-table th,
+.wp-block-table td {
 	border: 1px solid #ccc;
 	padding: 5px 10px;
 }
@@ -217,20 +220,17 @@ Typography
 /*--------------------------------------------------------------
 Forms
 --------------------------------------------------------------*/
-.editor-styles-wrapper button,
 .editor-styles-wrapper input,
 .editor-styles-wrapper select,
 .editor-styles-wrapper textarea {
 	font-size: 100%;
-	/* Corrects font size not being inherited in all browsers */
 	margin: 0;
-	/* Addresses margins set differently in IE6/7, F3/4, S5, Chrome */
 	vertical-align: middle;
 }
 
-.editor-styles-wrapper .navigation .nav-links a,
-.editor-styles-wrapper .bttn,
-.editor-styles-wrapper button {
+.editor-styles-wrapper input[type="button"],
+.editor-styles-wrapper input[type="reset"],
+.editor-styles-wrapper input[type="submit"] {
 	cursor: pointer;
 	/* Improves usability and consistency of cursor style between image-type 'input' and others */
 	font-size: 14px;
@@ -248,61 +248,17 @@ Forms
 	-webkit-border-radius: 0;
 }
 
-.editor-styles-wrapper input[type="button"], .editor-styles-wrapper input[type="reset"], .editor-styles-wrapper input[type="submit"] {
-	cursor: pointer;
-	/* Improves usability and consistency of cursor style between image-type 'input' and others */
-	font-size: 14px;
-	line-height: 13px;
-	border: none;
-	padding: 10px 15px;
-	font-weight: 400;
-	display: inline-block;
-	position: relative;
-	text-shadow: none;
-	-webkit-transition: background 0.5s ease;
-	transition: background 0.5s ease;
-	border-radius: 0;
-	-webkit-appearance: none;
-	-webkit-border-radius: 0;
-}
-
-.editor-styles-wrapper button {
+.editor-styles-wrapper input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover {
 	color: #fff;
 }
 
-.editor-styles-wrapper button.components-button {
-    color: #1e1e1e;
-}
-
-.editor-styles-wrapper .components-button.is-pressed {
-    color: #fff;
-}
-
-.editor-styles-wrapper .wp-social-link button {
-    color: #fff;
-}
-
-.editor-styles-wrapper input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover {
-	color: #fff;
-}
-
-.editor-styles-wrapper input[type="checkbox"], .editor-styles-wrapper input[type="radio"] {
-	padding: 0;
-}
-
-.editor-styles-wrapper button:-moz-focus-inner {
-	/* Corrects inner padding and border displayed oddly in FF3/4 www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/ */
-	border: 0;
-	padding: 0;
-}
-
-.editor-styles-wrapper input:-moz-focus-inner {
-	/* Corrects inner padding and border displayed oddly in FF3/4 www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/ */
-	border: 0;
-	padding: 0;
-}
-
-.editor-styles-wrapper input[type="text"], .editor-styles-wrapper input[type="email"], .editor-styles-wrapper input[type="url"], .editor-styles-wrapper input[type="password"], .editor-styles-wrapper input[type="search"] {
+.editor-styles-wrapper input[type="text"],
+.editor-styles-wrapper input[type="email"],
+.editor-styles-wrapper input[type="url"],
+.editor-styles-wrapper input[type="password"],
+.editor-styles-wrapper input[type="search"] {
 	color: #666;
 	border: 1px solid #ccc;
 	height: 36px;
@@ -312,7 +268,11 @@ Forms
 	-webkit-border-radius: 0;
 }
 
-.editor-styles-wrapper input[type="text"]:focus, .editor-styles-wrapper input[type="email"]:focus, .editor-styles-wrapper input[type="url"]:focus, .editor-styles-wrapper input[type="password"]:focus, .editor-styles-wrapper input[type="search"]:focus {
+.editor-styles-wrapper input[type="text"]:focus,
+.editor-styles-wrapper input[type="email"]:focus,
+.editor-styles-wrapper input[type="url"]:focus,
+.editor-styles-wrapper input[type="password"]:focus,
+.editor-styles-wrapper input[type="search"]:focus {
 	border: 1px solid #aaa;
 }
 
@@ -324,7 +284,11 @@ Forms
 	border: none;
 }
 
-.editor-styles-wrapper input[type="text"], .editor-styles-wrapper input[type="email"], .editor-styles-wrapper input[type="url"], .editor-styles-wrapper input[type="password"], .editor-styles-wrapper input[type="search"] {
+.editor-styles-wrapper input[type="text"],
+.editor-styles-wrapper input[type="email"],
+.editor-styles-wrapper input[type="url"],
+.editor-styles-wrapper input[type="password"],
+.editor-styles-wrapper input[type="search"] {
 	padding: 3px 6px;
 }
 
