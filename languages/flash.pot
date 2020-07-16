@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v3 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Flash 1.3.4\n"
+"Project-Id-Version: Flash 1.3.5\n"
 "Report-Msgid-Bugs-To: themegrill@gmail.com\n"
-"POT-Creation-Date: 2020-05-27 07:31:49+00:00\n"
+"POT-Creation-Date: 2020-07-16 08:48:51+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -51,51 +51,51 @@ msgstr ""
 msgid "Footer"
 msgstr ""
 
-#: functions.php:135 inc/meta-boxes.php:19
+#: functions.php:154 inc/meta-boxes.php:19
 msgid "Right Sidebar"
 msgstr ""
 
-#: functions.php:137
+#: functions.php:156
 msgid "Add widgets here for right sidebar."
 msgstr ""
 
-#: functions.php:145 inc/meta-boxes.php:24
+#: functions.php:164 inc/meta-boxes.php:24
 msgid "Left Sidebar"
 msgstr ""
 
-#: functions.php:147
+#: functions.php:166
 msgid "Add widgets here for left sidebar."
 msgstr ""
 
-#: functions.php:155
+#: functions.php:174
 msgid "Footer Sidebar 1"
 msgstr ""
 
-#: functions.php:157
+#: functions.php:176
 msgid "Add widgets here for footer sidebar 1."
 msgstr ""
 
-#: functions.php:165
+#: functions.php:184
 msgid "Footer Sidebar 2"
 msgstr ""
 
-#: functions.php:167
+#: functions.php:186
 msgid "Add widgets here for footer sidebar 2."
 msgstr ""
 
-#: functions.php:175
+#: functions.php:194
 msgid "Footer Sidebar 3"
 msgstr ""
 
-#: functions.php:177
+#: functions.php:196
 msgid "Add widgets here for footer sidebar 3."
 msgstr ""
 
-#: functions.php:185
+#: functions.php:204
 msgid "Footer Sidebar 4"
 msgstr ""
 
-#: functions.php:187
+#: functions.php:206
 msgid "Add widgets here for footer sidebar 4."
 msgstr ""
 
@@ -279,48 +279,48 @@ msgstr ""
 msgid "Buy Now"
 msgstr ""
 
-#: inc/class-tgm-plugin-activation.php:327 inc/extras.php:587
+#: inc/class-tgm-plugin-activation.php:327 inc/extras.php:605
 msgid "Install Required Plugins"
 msgstr ""
 
-#: inc/class-tgm-plugin-activation.php:328 inc/extras.php:588
+#: inc/class-tgm-plugin-activation.php:328 inc/extras.php:606
 msgid "Install Plugins"
 msgstr ""
 
-#: inc/class-tgm-plugin-activation.php:330 inc/extras.php:590
+#: inc/class-tgm-plugin-activation.php:330 inc/extras.php:608
 #. translators: %s: plugin name.
 msgid "Installing Plugin: %s"
 msgstr ""
 
-#: inc/class-tgm-plugin-activation.php:332 inc/extras.php:592
+#: inc/class-tgm-plugin-activation.php:332 inc/extras.php:610
 #. translators: %s: plugin name.
 msgid "Updating Plugin: %s"
 msgstr ""
 
-#: inc/class-tgm-plugin-activation.php:333 inc/extras.php:593
+#: inc/class-tgm-plugin-activation.php:333 inc/extras.php:611
 msgid "Something went wrong with the plugin API."
 msgstr ""
 
-#: inc/class-tgm-plugin-activation.php:370 inc/extras.php:630
+#: inc/class-tgm-plugin-activation.php:370 inc/extras.php:648
 #. translators: 1: plugin name(s).
 msgid "Begin installing plugin"
 msgid_plural "Begin installing plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/class-tgm-plugin-activation.php:375 inc/extras.php:635
+#: inc/class-tgm-plugin-activation.php:375 inc/extras.php:653
 msgid "Begin updating plugin"
 msgid_plural "Begin updating plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/class-tgm-plugin-activation.php:380 inc/extras.php:640
+#: inc/class-tgm-plugin-activation.php:380 inc/extras.php:658
 msgid "Begin activating plugin"
 msgid_plural "Begin activating plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/class-tgm-plugin-activation.php:385 inc/extras.php:645
+#: inc/class-tgm-plugin-activation.php:385 inc/extras.php:663
 msgid "Return to Required Plugins Installer"
 msgstr ""
 
@@ -332,43 +332,43 @@ msgid "Return to the Dashboard"
 msgstr ""
 
 #: inc/class-tgm-plugin-activation.php:387
-#: inc/class-tgm-plugin-activation.php:3159 inc/extras.php:646
+#: inc/class-tgm-plugin-activation.php:3159 inc/extras.php:664
 msgid "Plugin activated successfully."
 msgstr ""
 
 #: inc/class-tgm-plugin-activation.php:388
-#: inc/class-tgm-plugin-activation.php:2952 inc/extras.php:647
+#: inc/class-tgm-plugin-activation.php:2952 inc/extras.php:665
 msgid "The following plugin was activated successfully:"
 msgstr ""
 
-#: inc/class-tgm-plugin-activation.php:390 inc/extras.php:649
+#: inc/class-tgm-plugin-activation.php:390 inc/extras.php:667
 #. translators: 1: plugin name.
 msgid "No action taken. Plugin %1$s was already active."
 msgstr ""
 
-#: inc/class-tgm-plugin-activation.php:392 inc/extras.php:651
+#: inc/class-tgm-plugin-activation.php:392 inc/extras.php:669
 #. translators: 1: plugin name.
 msgid ""
 "Plugin not activated. A higher version of %s is needed for this theme. "
 "Please update the plugin."
 msgstr ""
 
-#: inc/class-tgm-plugin-activation.php:394 inc/extras.php:653
+#: inc/class-tgm-plugin-activation.php:394 inc/extras.php:671
 #. translators: 1: dashboard link.
 msgid "All plugins installed and activated successfully. %1$s"
 msgstr ""
 
-#: inc/class-tgm-plugin-activation.php:395 inc/extras.php:654
+#: inc/class-tgm-plugin-activation.php:395 inc/extras.php:672
 msgid "Dismiss this notice"
 msgstr ""
 
-#: inc/class-tgm-plugin-activation.php:396 inc/extras.php:655
+#: inc/class-tgm-plugin-activation.php:396 inc/extras.php:673
 msgid ""
 "There are one or more required or recommended plugins to install, update or "
 "activate."
 msgstr ""
 
-#: inc/class-tgm-plugin-activation.php:397 inc/extras.php:656
+#: inc/class-tgm-plugin-activation.php:397 inc/extras.php:674
 msgid "Please contact the administrator of this site for help."
 msgstr ""
 
@@ -913,119 +913,59 @@ msgstr ""
 msgid "Yellow"
 msgstr ""
 
-#: inc/demo-config.php:23
-msgid "Flash Default"
-msgstr ""
-
-#: inc/demo-config.php:27
-msgid "Flash OnePage"
-msgstr ""
-
-#: inc/demo-config.php:31
-msgid "Flash Food"
-msgstr ""
-
-#: inc/demo-config.php:35
-msgid "Flash Construction"
-msgstr ""
-
-#: inc/demo-config.php:39
-msgid "Flash Food V2"
-msgstr ""
-
-#: inc/demo-config.php:43
-msgid "Flash Construction V2"
-msgstr ""
-
-#: inc/demo-config.php:47
-msgid "Flash Pro Default"
-msgstr ""
-
-#: inc/demo-config.php:52
-msgid "Flash Pro Church"
-msgstr ""
-
-#: inc/demo-config.php:57
-msgid "Flash Pro Education"
-msgstr ""
-
-#: inc/demo-config.php:62
-msgid "Flash Pro Gym"
-msgstr ""
-
-#: inc/demo-config.php:67
-msgid "Flash Pro Health"
-msgstr ""
-
-#: inc/demo-config.php:72
-msgid "Flash Pro Store"
-msgstr ""
-
-#: inc/demo-config.php:77
-msgid "Flash Pro Wedding"
-msgstr ""
-
-#: inc/demo-config.php:82
-msgid "Flash Pro Agency"
-msgstr ""
-
-#: inc/demo-config.php:87
-msgid "Flash Pro Band"
-msgstr ""
-
-#: inc/extras.php:118
+#: inc/extras.php:129
 msgid "Copyright %1$s %2$s"
 msgstr ""
 
-#: inc/extras.php:120
+#: inc/extras.php:131
 msgid "Theme: %1$s by %2$s."
 msgstr ""
 
-#: inc/extras.php:121
+#: inc/extras.php:132
 msgid "Proudly powered by %s"
 msgstr ""
 
-#: inc/extras.php:121
+#: inc/extras.php:132
 msgid "https://wordpress.org/"
 msgstr ""
 
-#: inc/extras.php:121
+#: inc/extras.php:132
 msgid "WordPress"
 msgstr ""
 
-#: inc/extras.php:140
+#: inc/extras.php:151
 msgid "Home"
 msgstr ""
 
-#: inc/extras.php:285 inc/extras.php:288 inc/extras.php:298 inc/extras.php:306
+#: inc/extras.php:296 inc/extras.php:299 inc/extras.php:309 inc/extras.php:317
 msgid "Y"
 msgstr ""
 
-#: inc/extras.php:288 inc/extras.php:291 inc/extras.php:301
+#: inc/extras.php:299 inc/extras.php:302 inc/extras.php:312
 msgid "M"
 msgstr ""
 
-#: inc/extras.php:291
+#: inc/extras.php:302
 msgid "jS"
 msgstr ""
 
-#: inc/extras.php:322
+#: inc/extras.php:333
 msgid "Page "
 msgstr ""
 
-#: inc/extras.php:327
+#: inc/extras.php:338
 msgid "Search results for: "
 msgstr ""
 
-#: inc/extras.php:332
+#: inc/extras.php:343
 msgid "404 Error"
 msgstr ""
 
-#: inc/extras.php:353
+#: inc/extras.php:363
 msgid "Page NOT Found"
 msgstr ""
 
-#: inc/extras.php:356
+#: inc/extras.php:365
 msgid "Search Results for: %s"
 msgstr ""
 
