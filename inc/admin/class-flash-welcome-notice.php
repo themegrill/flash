@@ -43,7 +43,7 @@ class Flash_Welcome_Notice {
 
 			<div class="flash-message__content">
 				<div class="flash-message__image">
-					<img class="flash-screenshot" src="<?php echo get_template_directory_uri(); ?>/screenshot.jpg" alt="<?php esc_html_e( 'Flash', 'flash' ); ?>" /><?php // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped, Squiz.PHP.EmbeddedPhp.SpacingBeforeClose ?>
+					<img class="flash-screenshot" src="<?php echo esc_url( get_template_directory_uri() ); ?>/screenshot.jpg" alt="<?php esc_html_e( 'Flash', 'flash' ); ?>" /><?php // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped, Squiz.PHP.EmbeddedPhp.SpacingBeforeClose ?>
 				</div>
 
 				<div class="flash-message__text">
