@@ -12,22 +12,21 @@ responsive CSS
 		width: 97%;
 	}
 
-	.full-width #primary .entry-content > .alignwide
-	{
-	margin-left: -10px;
-	margin-right: -10px;
+	.full-width #primary .entry-content > .alignwide {
+		margin-left: -10px;
+		margin-right: -10px;
 	}
 
 	.full-width-center #primary .entry-content > .alignwide {
-	margin-left: -50px;
-	margin-right: -50px;
+		margin-left: -50px;
+		margin-right: -50px;
 	}
 
 	.full-width-center #primary .entry-content > .alignfull {
 		margin-left: -100px;
 		margin-right: -100px;
 	}
-	}
+}
 
 @media (max-width: 980px) {
 	.logo,
@@ -375,14 +374,14 @@ responsive CSS
 
 	.full-width #primary .entry-content > .alignwide,
 	.full-width-center #primary .entry-content > .alignwide {
-	margin-left: -15px;
-	margin-right: -15px;
+		margin-left: -15px;
+		margin-right: -15px;
 	}
 
 	.full-width.box-layout #primary .entry-content > .alignwide,
 	.full-width-center.box-layout #primary .entry-content > .alignwide {
-	margin-left: -15px;
-	margin-right: -15px;
+		margin-left: -15px;
+		margin-right: -15px;
 	}
 
 	.full-width.box-layout #primary .entry-content > .alignfull,
@@ -395,7 +394,7 @@ responsive CSS
 		margin-left: -15px;
 		margin-right: -15px;
 	}
-	}
+}
 
 @media (max-width: 600px) {
 	.header-top .tg-container {
