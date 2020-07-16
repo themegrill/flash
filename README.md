@@ -78,8 +78,8 @@ Unless otherwise specified, all the theme files, scripts and images including th
 
 == Changelog ==
 = TBD =
-* Enhancement - Update protocol to prevent not secure issue.
-* Fix - Error notice while using retina logo option.
+* Enhancement - Gutenberg compatibility.
+* Tweak - Change http protocol to https.
 
 = Version 1.3.4 - 2020-05-27 =
 * Add - Required header fields: `Tested up to` and `Requires PHP` in style.css.
