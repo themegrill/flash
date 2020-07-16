@@ -319,13 +319,6 @@ if ( is_admin() ) {
 }
 
 /**
- * Load Demo Importer Configs.
- */
-if ( class_exists( 'TG_Demo_Importer' ) ) {
-	require get_template_directory() . '/inc/demo-config.php';
-}
-
-/**
  * Fetch and set the typography value as Kirki defines within the theme.
  *
  * @since Flash 1.2.8
