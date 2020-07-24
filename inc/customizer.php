@@ -757,8 +757,10 @@ add_action( 'after_setup_theme', 'flash_custom_header_and_background' );
  */
 function flash_customize_register( $wp_customize ) {
 
+	// Custom customizer section classes.
+	require_once get_template_directory() . '/inc/admin/class-flash-upsell-section.php';
+
 	// Include control classes.
-	require_once get_template_directory() . '/inc/customizer/class-flash-upsell-custom-control.php';
 
 	$color_scheme = flash_get_color_scheme();
 
@@ -856,33 +858,20 @@ function flash_customize_register( $wp_customize ) {
 	/**
 	 * Upsell.
 	 */
+	// Register `FLASH_Upsell_Section` type section.
+	$wp_customize->register_section_type( 'FLASH_Upsell_Section' );
+
+	// Add `FLASH_Upsell_Section` to display pro link.
 	$wp_customize->add_section(
-		'flash_upsell_section',
-		array(
-			'priority' => 1,
-			'title'    => __( 'View Pro Version', 'flash' ),
-		)
-	);
-
-	$wp_customize->add_setting(
-		'flash_upsell',
-		array(
-			'default'           => '',
-			'capability'        => 'edit_theme_options',
-			'sanitize_callback' => 'flash_links_sanitize',
-		)
-	);
-
-	$wp_customize->add_control(
-		new Flash_Upsell_Custom_Control(
-			$wp_customize,
-			'flash_upsell',
+		new FLASH_Upsell_Section( $wp_customize, 'flash_upsell_section',
 			array(
-				'section' => 'flash_upsell_section',
-				'setting' => 'flash_upsell',
+				'title'      => esc_html__( 'View Pro version', 'flash' ),
+				'url'        => 'https://themegrill.com/flash-pricing/?utm_source=flash-customizer&utm_medium=view-pricing-link&utm_campaign=upgrade',
+				'capability' => 'edit_theme_options',
+				'priority'   => 1,
 			)
 		)
-	);
+
 
 	// Sanitization of links.
 	function flash_links_sanitize() {
@@ -1071,7 +1060,7 @@ endif; // flash_sanitize_color_scheme
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function flash_customize_preview_scripts() {
-	wp_enqueue_script( 'flash-customizer-js', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20151215', true );
+	wp_enqueue_script( 'flash-customizer-js', get_template_directory_uri() . '/js/customizer.js', array(  'customize-preview', 'jquery' ), false, true );
 	wp_enqueue_script( 'flash-color-scheme-control', get_template_directory_uri() . '/js/color-scheme-control.js', array( 'customize-controls', 'iris', 'underscore', 'wp-util' ), '20160816', true );
 	wp_localize_script( 'flash-color-scheme-control', 'colorScheme', flash_get_color_schemes() );
 }
