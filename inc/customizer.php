@@ -883,7 +883,6 @@ function flash_customize_register( $wp_customize ) {
 			/* Theme Instructions Panel CSS */
 			li#accordion-section-flash_upsell_section h3.accordion-section-title {
 				background-color: #30AFB8 !important;
-				border-left-color: #14848c !important;
 				color: #fff !important;
 				padding: 0;
 			}
@@ -915,8 +914,7 @@ function flash_customize_register( $wp_customize ) {
 			}
 
 			li#accordion-section-flash_upsell_section h3.accordion-section-title:hover {
-				background-color: #09ad6f !important;
-				border-left-color: #04a267 !important;
+				background-color: #1C9BA4 !important;
 				color: #fff !important;
 			}
 
