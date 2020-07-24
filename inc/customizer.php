@@ -871,7 +871,80 @@ function flash_customize_register( $wp_customize ) {
 				'priority'   => 1,
 			)
 		)
+	);
+	/*
+	 * Custom Scripts
+	 */
+	add_action( 'customize_controls_print_footer_scripts', 'flash_customizer_custom_scripts' );
 
+	function flash_customizer_custom_scripts() {
+		?>
+		<style>
+			/* Theme Instructions Panel CSS */
+			li#accordion-section-flash_upsell_section h3.accordion-section-title {
+				background-color: #30AFB8 !important;
+				border-left-color: #14848c !important;
+				color: #fff !important;
+				padding: 0;
+			}
+
+			#accordion-section-flash_upsell_section h3 a:after {
+				content: '\f345';
+				color: #fff;
+				position: absolute;
+				top: 12px;
+				right: 10px;
+				z-index: 1;
+				font: 400 20px/1 dashicons;
+				speak: none;
+				display: block;
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+				text-decoration: none !important;
+			}
+
+			li#accordion-section-flash_upsell_section h3.accordion-section-title a {
+				color: #fff;
+				display: block;
+				text-decoration: none;
+				padding: 12px 15px 15px;
+			}
+
+			li#accordion-section-flash_upsell_section h3.accordion-section-title a:focus {
+				box-shadow: none;
+			}
+
+			li#accordion-section-flash_upsell_section h3.accordion-section-title:hover {
+				background-color: #09ad6f !important;
+				border-left-color: #04a267 !important;
+				color: #fff !important;
+			}
+
+			li#accordion-section-flash_upsell_section h3.accordion-section-title:after {
+				color: #fff !important;
+			}
+		</style>
+
+		<script>
+			(
+				function ( $, api ) {
+					api.sectionConstructor['flash-upsell-section'] = api.Section.extend( {
+
+						// No events for this type of section.
+						attachEvents : function () {
+						},
+
+						// Always make the section active.
+						isContextuallyActive : function () {
+							return true;
+						}
+					} );
+				}
+			)( jQuery, wp.customize );
+
+		</script>
+		<?php
+	}
 
 	// Sanitization of links.
 	function flash_links_sanitize() {
