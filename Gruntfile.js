@@ -154,6 +154,7 @@ module.exports = function( grunt ){
 					'!package-lock.json',
 					'!node_modules/**',
 					'!sass/**',
+					'!phpcs.xml',
 					'README.md'
 				],
 				dest: 'flash',
