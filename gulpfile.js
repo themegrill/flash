@@ -224,7 +224,6 @@ function generateRTLCSS() {
 		.src( paths.rtlcss.src )
 		.pipe( rtlcss() )
 		.pipe( rename( { suffix: '-rtl' } ) )
-		.pipe( lec( { verbose : true, eolc : 'LF', encoding : 'utf8' } ) )
 		.pipe( gulp.dest( paths.rtlcss.dest ) )
 		.on( 'error', notify.onError() );
 }
@@ -315,7 +314,6 @@ function generatePotFile() {
 				team: info.teamEmail
 			} )
 		)
-		.pipe( lec( { verbose : true, eolc : 'LF', encoding : 'utf8' } ) )
 		.pipe( gulp.dest( 'languages/' + info.slug + '.pot' ) )
 		.on( 'error', notify.onError() );
 }
@@ -325,7 +323,6 @@ function compressZip() {
 	return gulp
 		.src( paths.zip.src )
 		.pipe( zip( info.slug + '.zip' ) )
-		.pipe( lec( { verbose : true, eolc : 'LF', encoding : 'utf8' } ) )
 		.pipe( gulp.dest( paths.zip.dest ) )
 		.on( 'error', notify.onError() )
 		.pipe( notify( {
