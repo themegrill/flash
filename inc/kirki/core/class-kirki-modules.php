@@ -4,9 +4,9 @@
  *
  * @package     Kirki
  * @category    Core
- * @author      Aristeides Stathopoulos
- * @copyright   Copyright (c) 2017, Aristeides Stathopoulos
- * @license    https://opensource.org/licenses/MIT
+ * @author      Ari Stathopoulos (@aristath)
+ * @copyright   Copyright (c) 2020, David Vongries
+ * @license     https://opensource.org/licenses/MIT
  * @since       3.0.0
  */
 
@@ -56,14 +56,13 @@ class Kirki_Modules {
 	 */
 	public function setup_default_modules() {
 		self::$modules = apply_filters(
-			'kirki_modules', array(
+			'kirki_modules',
+			array(
 				'css'                => 'Kirki_Modules_CSS',
 				'css-vars'           => 'Kirki_Modules_CSS_Vars',
-				'customizer-styling' => 'Kirki_Modules_Customizer_Styling',
 				'icons'              => 'Kirki_Modules_Icons',
 				'loading'            => 'Kirki_Modules_Loading',
 				'tooltips'           => 'Kirki_Modules_Tooltips',
-				'branding'           => 'Kirki_Modules_Customizer_Branding',
 				'postMessage'        => 'Kirki_Modules_PostMessage',
 				'selective-refresh'  => 'Kirki_Modules_Selective_Refresh',
 				'field-dependencies' => 'Kirki_Modules_Field_Dependencies',

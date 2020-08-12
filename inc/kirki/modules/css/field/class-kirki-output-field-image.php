@@ -4,8 +4,8 @@
  *
  * @package     Kirki
  * @subpackage  Controls
- * @copyright   Copyright (c) 2017, Aristeides Stathopoulos
- * @license    https://opensource.org/licenses/MIT
+ * @copyright   Copyright (c) 2020, David Vongries
+ * @license     https://opensource.org/licenses/MIT
  * @since       3.0.10
  */
 
@@ -26,7 +26,8 @@ class Kirki_Output_Field_Image extends Kirki_Output {
 			return;
 		}
 		$output = wp_parse_args(
-			$output, array(
+			$output,
+			array(
 				'media_query' => 'global',
 				'prefix'      => '',
 				'units'       => '',

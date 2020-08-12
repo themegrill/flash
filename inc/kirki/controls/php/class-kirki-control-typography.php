@@ -4,8 +4,8 @@
  *
  * @package     Kirki
  * @subpackage  Controls
- * @copyright   Copyright (c) 2017, Aristeides Stathopoulos
- * @license    https://opensource.org/licenses/MIT
+ * @copyright   Copyright (c) 2020, David Vongries
+ * @license     https://opensource.org/licenses/MIT
  * @since       2.0
  */
 
@@ -94,12 +94,6 @@ class Kirki_Control_Typography extends Kirki_Control_Base {
 						<select {{{ data.inputAttrs }}} class="variant" id="kirki-typography-variant-{{{ data.id }}}"></select>
 					</div>
 				<# } #>
-				<div class="kirki-host-font-locally">
-					<label>
-						<input type="checkbox">
-						<?php esc_html_e( 'Download font-family to server instead of using the Google CDN.', 'kirki' ); ?>
-					</label>
-				</div>
 			<# } #>
 
 			<# if ( ! _.isUndefined( data.default['font-size'] ) ) { #>

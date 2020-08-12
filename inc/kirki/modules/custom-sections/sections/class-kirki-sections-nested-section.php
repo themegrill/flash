@@ -4,8 +4,8 @@
  *
  * @package     Kirki
  * @subpackage  Custom Sections Module
- * @copyright   Copyright (c) 2017, Aristeides Stathopoulos
- * @license    https://opensource.org/licenses/MIT
+ * @copyright   Copyright (c) 2020, David Vongries
+ * @license     https://opensource.org/licenses/MIT
  * @since       2.2.0
  */
 
@@ -41,7 +41,8 @@ class Kirki_Sections_Nested_Section extends WP_Customize_Section {
 	 */
 	public function json() {
 		$array = wp_array_slice_assoc(
-			(array) $this, array(
+			(array) $this,
+			array(
 				'id',
 				'description',
 				'priority',
