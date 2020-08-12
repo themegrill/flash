@@ -260,11 +260,6 @@ function flash_scripts() {
 add_action( 'wp_enqueue_scripts', 'flash_scripts' );
 
 /**
- * Load TGM Activation file.
- */
-require get_template_directory() . '/inc/class-tgm-plugin-activation.php';
-
-/**
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
