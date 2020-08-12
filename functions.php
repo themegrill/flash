@@ -260,11 +260,6 @@ function flash_scripts() {
 add_action( 'wp_enqueue_scripts', 'flash_scripts' );
 
 /**
- * Load TGM Activation file.
- */
-require get_template_directory() . '/inc/class-tgm-plugin-activation.php';
-
-/**
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
@@ -310,7 +305,6 @@ require get_template_directory() . '/inc/siteorigin-panels.php';
  */
 if ( is_admin() ) {
 	require get_template_directory() . '/inc/admin/class-flash-admin.php';
-	require get_template_directory() . '/inc/admin/class-flash-tdi-notice.php';
 	require get_template_directory() . '/inc/admin/class-flash-notice.php';
 	require get_template_directory() . '/inc/admin/class-flash-dashboard.php';
 	require get_template_directory() . '/inc/admin/class-flash-welcome-notice.php';
