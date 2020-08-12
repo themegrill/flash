@@ -80,6 +80,7 @@ Unless otherwise specified, all the theme files, scripts and images including th
 = TBD =
 * Tweak - Add and improve theme-related notices.
 * Remove - TGMPA library to recommend plugins
+* Updated - Kirki to 3.1.5
 
 = Version 1.3.6 - 2020-07-27 =
 * Fix - Theme name and version in the admin dashboard while child theme active.
