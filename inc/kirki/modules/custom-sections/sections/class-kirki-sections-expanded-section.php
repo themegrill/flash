@@ -4,8 +4,8 @@
  *
  * @package     Kirki
  * @subpackage  Custom Sections Module
- * @copyright   Copyright (c) 2017, Aristeides Stathopoulos
- * @license    https://opensource.org/licenses/MIT
+ * @copyright   Copyright (c) 2020, David Vongries
+ * @license     https://opensource.org/licenses/MIT
  * @since       2.2.0
  */
 

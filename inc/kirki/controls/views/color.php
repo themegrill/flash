@@ -4,8 +4,8 @@
  *
  * @package     Kirki
  * @subpackage  Controls
- * @copyright   Copyright (c) 2017, Aristeides Stathopoulos
- * @license    https://opensource.org/licenses/MIT
+ * @copyright   Copyright (c) 2020, David Vongries
+ * @license     https://opensource.org/licenses/MIT
  * @since       3.0.17
  */
 
@@ -24,7 +24,7 @@ data = _.defaults( data, {
 } );
 #>
 
-<div class="kirki-input-container" data-id="{{ data['data-id'] }}">
+<div class="kirki-input-container" data-id="{{ data['data-id'] }}" data-has-alpha="{{ data['data-alpha'] }}">
 	<label>
 		<# if ( data.label ) { #>
 			<span class="customize-control-title">{{{ data.label }}}</span>

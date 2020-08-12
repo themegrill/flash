@@ -4,9 +4,9 @@
  *
  * @package     Kirki
  * @category    Core
- * @author      Aristeides Stathopoulos
- * @copyright   Copyright (c) 2017, Aristeides Stathopoulos
- * @license    https://opensource.org/licenses/MIT
+ * @author      Ari Stathopoulos (@aristath)
+ * @copyright   Copyright (c) 2020, David Vongries
+ * @license     https://opensource.org/licenses/MIT
  * @since       1.0
  */
 
@@ -97,22 +97,6 @@ final class Kirki_Fonts {
 	}
 
 	/**
-	 * Return an array of backup fonts based on the font-category
-	 *
-	 * @return array
-	 */
-	public static function get_backup_fonts() {
-		$backup_fonts = array(
-			'sans-serif'  => 'Helvetica, Arial, sans-serif',
-			'serif'       => 'Georgia, serif',
-			'display'     => '"Comic Sans MS", cursive, sans-serif',
-			'handwriting' => '"Comic Sans MS", cursive, sans-serif',
-			'monospace'   => '"Lucida Console", Monaco, monospace',
-		);
-		return apply_filters( 'kirki_fonts_backup_fonts', $backup_fonts );
-	}
-
-	/**
 	 * Return an array of all available Google Fonts.
 	 *
 	 * @return array    All Google Fonts.
@@ -122,8 +106,13 @@ final class Kirki_Fonts {
 		// Get fonts from cache.
 		self::$google_fonts = get_site_transient( 'kirki_googlefonts_cache' );
 
-		// If we're debugging, don't use cached.
-		if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
+		/**
+		 * Reset the cache if we're using action=kirki-reset-cache in the URL.
+		 *
+		 * Note to code reviewers:
+		 * There's no need to check nonces or anything else, this is a simple true/false evaluation.
+		 */
+		if ( ! empty( $_GET['action'] ) && 'kirki-reset-cache' === $_GET['action'] ) { // phpcs:ignore WordPress.Security.NonceVerification
 			self::$google_fonts = false;
 		}
 
@@ -134,7 +123,7 @@ final class Kirki_Fonts {
 
 		// If we got this far, cache was empty so we need to get from JSON.
 		ob_start();
-		include wp_normalize_path( dirname( __FILE__ ) . '/webfonts.json' );
+		include wp_normalize_path( dirname( __FILE__ ) . '/webfonts.json' ); // phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude
 
 		$fonts_json = ob_get_clean();
 		$fonts      = json_decode( $fonts_json, true );
@@ -154,7 +143,7 @@ final class Kirki_Fonts {
 		self::$google_fonts = apply_filters( 'kirki_fonts_google_fonts', $google_fonts );
 
 		// Save the array in cache.
-		$cache_time = apply_filters( 'kirki_googlefonts_transient_time', HOUR_IN_SECONDS );
+		$cache_time = apply_filters( 'kirki_googlefonts_transient_time', DAY_IN_SECONDS );
 		set_site_transient( 'kirki_googlefonts_cache', self::$google_fonts, $cache_time );
 
 		return self::$google_fonts;

@@ -62,7 +62,6 @@ if ( _.isUndefined( window.kirkiSetSettingValue ) ) {
 					break;
 
 				case 'kirki-select':
-				case 'kirki-fontawesome':
 					$this.setSelectWoo( $this.findElement( setting, 'select' ), value );
 					break;
 
@@ -830,7 +829,13 @@ kirki = jQuery.extend( kirki, {
 				} );
 
 				element.on( 'change keyup paste click', function() {
-					kirki.setting.set( control.id, jQuery( this ).val() );
+					var val = jQuery( this ).val();
+					if ( isNaN( val ) ) {
+						val = parseFloat( val, 10 );
+						val = ( isNaN( val ) ) ? 0 : val;
+						jQuery( this ).attr( 'value', val );
+					}
+					kirki.setting.set( control.id, val );
 				} );
 			}
 
@@ -899,7 +904,7 @@ kirki = jQuery.extend( kirki, {
 							previewImage  = jsonImg.url;
 
 						if ( ! _.isUndefined( jsonImg.sizes ) ) {
-							previewImg = jsonImg.sizes.full.url;
+							previewImage = jsonImg.sizes.full.url;
 							if ( ! _.isUndefined( jsonImg.sizes.medium ) ) {
 								previewImage = jsonImg.sizes.medium.url;
 							} else if ( ! _.isUndefined( jsonImg.sizes.thumbnail ) ) {
@@ -1964,13 +1969,15 @@ wp.customize.controlConstructor['kirki-editor'] = wp.customize.kirkiDynamicContr
 			id      = 'kirki-editor-' + control.id.replace( '[', '' ).replace( ']', '' ),
 			editor;
 
-		wp.editor.initialize( id, {
-			tinymce: {
-				wpautop: true
-			},
-			quicktags: true,
-			mediaButtons: true
-		} );
+		if ( wp.editor && wp.editor.initialize ) {
+			wp.editor.initialize( id, {
+				tinymce: {
+					wpautop: true
+				},
+				quicktags: true,
+				mediaButtons: true
+			} );
+		}
 
 		editor = tinyMCE.get( id );
 
@@ -1984,45 +1991,6 @@ wp.customize.controlConstructor['kirki-editor'] = wp.customize.kirkiDynamicContr
 				wp.customize.instance( control.id ).set( content );
 			} );
 		}
-	}
-} );
-/* global fontAwesomeJSON */
-wp.customize.controlConstructor['kirki-fontawesome'] = wp.customize.kirkiDynamicControl.extend( {
-
-	initKirkiControl: function() {
-
-		var control  = this,
-			element  = this.container.find( 'select' ),
-			icons    = jQuery.parseJSON( fontAwesomeJSON ),
-			selectValue,
-			selectWooOptions = {
-				data: [],
-				escapeMarkup: function( markup ) {
-					return markup;
-				},
-				templateResult: function( val ) {
-					return '<i class="fa fa-lg fa-' + val.id + '" aria-hidden="true"></i>' + ' ' + val.text;
-				},
-				templateSelection: function( val ) {
-					return '<i class="fa fa-lg fa-' + val.id + '" aria-hidden="true"></i>' + ' ' + val.text;
-				}
-			},
-			select;
-
-		_.each( icons.icons, function( icon ) {
-			selectWooOptions.data.push( {
-				id: icon.id,
-				text: icon.name
-			} );
-		} );
-
-		select = jQuery( element ).selectWoo( selectWooOptions );
-
-		select.on( 'change', function() {
-			selectValue = jQuery( this ).val();
-			control.setting.set( selectValue );
-		} );
-		select.val( control.setting._value ).trigger( 'change' );
 	}
 } );
 wp.customize.controlConstructor['kirki-multicheck'] = wp.customize.kirkiDynamicControl.extend( {
@@ -3170,7 +3138,6 @@ wp.customize.controlConstructor['kirki-typography'] = wp.customize.kirkiDynamicC
 		control.renderFontSelector();
 		control.renderBackupFontSelector();
 		control.renderVariantSelector();
-		control.localFontsCheckbox();
 
 		// Font-size.
 		if ( 'undefined' !== typeof control.params.default['font-size'] ) {
@@ -3566,22 +3533,6 @@ wp.customize.controlConstructor['kirki-typography'] = wp.customize.kirkiDynamicC
 			google: googleFonts,
 			standard: standardFonts
 		};
-	},
-
-	localFontsCheckbox: function() {
-		var control           = this,
-			checkboxContainer = control.container.find( '.kirki-host-font-locally' ),
-			checkbox          = control.container.find( '.kirki-host-font-locally input' ),
-			checked           = jQuery( checkbox ).is( ':checked' );
-
-		if ( control.setting._value && control.setting._value.downloadFont ) {
-			jQuery( checkbox ).attr( 'checked', 'checked' );
-		}
-
-		jQuery( checkbox ).on( 'change', function() {
-			checked = jQuery( checkbox ).is( ':checked' );
-			control.saveValue( 'downloadFont', checked );
-		} );
 	},
 
 	/**

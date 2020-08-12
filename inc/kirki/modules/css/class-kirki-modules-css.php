@@ -4,9 +4,9 @@
  *
  * @package     Kirki
  * @category    Modules
- * @author      Aristeides Stathopoulos
- * @copyright   Copyright (c) 2017, Aristeides Stathopoulos
- * @license    https://opensource.org/licenses/MIT
+ * @author      Ari Stathopoulos (@aristath)
+ * @copyright   Copyright (c) 2020, David Vongries
+ * @license     https://opensource.org/licenses/MIT
  * @since       3.0.0
  */
 
@@ -26,14 +26,6 @@ class Kirki_Modules_CSS {
 	private static $instance;
 
 	/**
-	 * Whether we've already processed this or not.
-	 *
-	 * @access public
-	 * @var bool
-	 */
-	public $processed = false;
-
-	/**
 	 * The CSS array
 	 *
 	 * @access public
@@ -42,40 +34,12 @@ class Kirki_Modules_CSS {
 	public static $css_array = array();
 
 	/**
-	 * Set to true if you want to use the AJAX method.
-	 *
-	 * @access public
-	 * @var bool
-	 */
-	public static $ajax = false;
-
-	/**
-	 * The Kirki_CSS_To_File object.
-	 *
-	 * @access protected
-	 * @since 3.0.0
-	 * @var object
-	 */
-	protected $css_to_file;
-
-	/**
-	 * Should we enqueue font-awesome?
-	 *
-	 * @static
-	 * @access protected
-	 * @since 3.0.26
-	 * @var bool
-	 */
-	protected static $enqueue_fa = false;
-
-	/**
 	 * Constructor
 	 *
 	 * @access protected
 	 */
 	protected function __construct() {
 		$class_files = array(
-			'Kirki_CSS_To_File'                         => '/class-kirki-css-to-file.php',
 			'Kirki_Modules_CSS_Generator'               => '/class-kirki-modules-css-generator.php',
 			'Kirki_Output'                              => '/class-kirki-output.php',
 			'Kirki_Output_Field_Background'             => '/field/class-kirki-output-field-background.php',
@@ -91,7 +55,7 @@ class Kirki_Modules_CSS {
 
 		foreach ( $class_files as $class_name => $file ) {
 			if ( ! class_exists( $class_name ) ) {
-				include_once wp_normalize_path( dirname( __FILE__ ) . $file );
+				include_once wp_normalize_path( dirname( __FILE__ ) . $file ); // phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude
 			}
 		}
 		add_action( 'init', array( $this, 'init' ) );
@@ -119,125 +83,124 @@ class Kirki_Modules_CSS {
 	 * @access public
 	 */
 	public function init() {
-		global $wp_customize;
 
 		Kirki_Modules_Webfonts::get_instance();
-
-		$config   = apply_filters( 'kirki_config', array() );
-		$priority = 999;
-		if ( isset( $config['styles_priority'] ) ) {
-			$priority = absint( $config['styles_priority'] );
-		}
 
 		// Allow completely disabling Kirki CSS output.
 		if ( ( defined( 'KIRKI_NO_OUTPUT' ) && true === KIRKI_NO_OUTPUT ) || ( isset( $config['disable_output'] ) && true === $config['disable_output'] ) ) {
 			return;
 		}
 
-		$method = apply_filters( 'kirki_dynamic_css_method', 'inline' );
-		if ( $wp_customize ) {
+		// Admin styles, adds compatibility with the new WordPress editor (Gutenberg).
+		add_action( 'enqueue_block_editor_assets', array( $this, 'enqueue_styles' ), 100 );
 
-			// If we're in the customizer, load inline no matter what.
-			add_action( 'wp_enqueue_scripts', array( $this, 'inline_dynamic_css' ), $priority );
-			add_action( 'enqueue_block_editor_assets', array( $this, 'inline_dynamic_css' ), $priority );
+		add_action( 'wp', array( $this, 'print_styles_action' ) );
 
-			// If we're using file method, on save write the new styles.
-			if ( 'file' === $method ) {
-				$this->css_to_file = new Kirki_CSS_To_File();
-				add_action( 'customize_save_after', array( $this->css_to_file, 'write_file' ) );
+		if ( ! apply_filters( 'kirki_output_inline_styles', true ) ) {
+			$config   = apply_filters( 'kirki_config', array() );
+			$priority = 999;
+			if ( isset( $config['styles_priority'] ) ) {
+				$priority = absint( $config['styles_priority'] );
 			}
+			add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ), $priority );
+		} else {
+			add_action( 'wp_head', array( $this, 'print_styles_inline' ), 999 );
+		}
+	}
+
+	/**
+	 * Print styles inline.
+	 *
+	 * @access public
+	 * @since 3.0.36
+	 * @return void
+	 */
+	public function print_styles_inline() {
+		echo '<style id="kirki-inline-styles">';
+		$this->print_styles();
+		echo '</style>';
+	}
+
+	/**
+	 * Enqueue the styles.
+	 *
+	 * @access public
+	 * @since 3.0.36
+	 * @return void
+	 */
+	public function enqueue_styles() {
+
+		$args = array(
+			'action' => apply_filters( 'kirki_styles_action_handle', 'kirki-styles' ),
+		);
+		if ( is_admin() && ! is_customize_preview() ) {
+			$args['editor'] = '1';
+		}
+
+		// Enqueue the dynamic stylesheet.
+		wp_enqueue_style(
+			'kirki-styles',
+			add_query_arg( $args, site_url() ),
+			array(),
+			KIRKI_VERSION
+		);
+	}
+
+	/**
+	 * Prints the styles as an enqueued file.
+	 *
+	 * @access public
+	 * @since 3.0.36
+	 * @return void
+	 */
+	public function print_styles_action() {
+		/**
+		 * Note to code reviewers:
+		 * There is no need for a nonce check here, we're only checking if this is a valid request or not.
+		 */
+		if ( empty( $_GET['action'] ) || apply_filters( 'kirki_styles_action_handle', 'kirki-styles' ) !== $_GET['action'] ) { // phpcs:ignore WordPress.Security.NonceVerification
 			return;
 		}
 
-		if ( 'file' === $method ) {
-
-			// Attempt to write the CSS to file.
-			$this->css_to_file = new Kirki_CSS_To_File();
-
-			// If we succesd, load this file.
-			$failed = get_transient( 'kirki_css_write_to_file_failed' );
-
-			// If writing CSS to file hasn't failed, just enqueue this file.
-			if ( ! $failed ) {
-				add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_compiled_file' ), $priority );
-				return;
-			}
-		}
-
-		// If we are in the customizer, load CSS using inline-styles.
-		// If we are in the frontend AND self::$ajax is true, then load dynamic CSS using AJAX.
-		if ( ( true === self::$ajax ) || ( isset( $config['inline_css'] ) && false === $config['inline_css'] ) ) {
-			add_action( 'wp_enqueue_scripts', array( $this, 'frontend_styles' ), $priority );
-			add_action( 'wp_ajax_kirki_dynamic_css', array( $this, 'ajax_dynamic_css' ) );
-			add_action( 'wp_ajax_nopriv_kirki_dynamic_css', array( $this, 'ajax_dynamic_css' ) );
-			return;
-		}
-
-		// If we got this far then add styles inline.
-		add_action( 'wp_enqueue_scripts', array( $this, 'inline_dynamic_css' ), $priority );
-
-		// Admin styles, adds Gutenberg compatibility.
-		add_action( 'admin_enqueue_scripts', array( $this, 'inline_dynamic_css' ), $priority );
-	}
-
-	/**
-	 * Enqueues compiled CSS file.
-	 *
-	 * @access public
-	 * @since 3.0.0
-	 */
-	public function enqueue_compiled_file() {
-		wp_enqueue_style( 'kirki-styles', $this->css_to_file->get_url(), array(), $this->css_to_file->get_timestamp() );
-	}
-	/**
-	 * Adds inline styles.
-	 *
-	 * @access public
-	 */
-	public function inline_dynamic_css() {
-		$configs = Kirki::$config;
-		if ( ! $this->processed ) {
-			foreach ( $configs as $config_id => $args ) {
-				if ( isset( $args['disable_output'] ) && true === $args['disable_output'] ) {
-					continue;
-				}
-				$styles = self::loop_controls( $config_id );
-				$styles = apply_filters( "kirki_{$config_id}_dynamic_css", $styles );
-				if ( ! empty( $styles ) ) {
-					$stylesheet = apply_filters( "kirki_{$config_id}_stylesheet", false );
-					if ( $stylesheet ) {
-						wp_add_inline_style( $stylesheet, $styles );
-						continue;
-					}
-					wp_enqueue_style( 'kirki-styles-' . $config_id, trailingslashit( Kirki::$url ) . 'assets/css/kirki-styles.css', array(), KIRKI_VERSION );
-					wp_add_inline_style( 'kirki-styles-' . $config_id, $styles );
-				}
-			}
-			$this->processed = true;
-		}
-
-		if ( self::$enqueue_fa && apply_filters( 'kirki_load_fontawesome', true ) ) {
-			wp_enqueue_script( 'kirki-fontawesome-font', 'https://use.fontawesome.com/30858dc40a.js', array(), '4.0.7', true );
-		}
-	}
-
-	/**
-	 * Get the dynamic-css.php file
-	 *
-	 * @access public
-	 */
-	public function ajax_dynamic_css() {
-		require wp_normalize_path( Kirki::$path . '/modules/css/dynamic-css.php' );
+		// This is a stylesheet.
+		header( 'Content-type: text/css' );
+		$this->print_styles();
 		exit;
 	}
 
 	/**
-	 * Enqueues the ajax stylesheet.
+	 * Prints the styles.
 	 *
 	 * @access public
 	 */
-	public function frontend_styles() {
-		wp_enqueue_style( 'kirki-styles-php', admin_url( 'admin-ajax.php' ) . '?action=kirki_dynamic_css', array(), KIRKI_VERSION );
+	public function print_styles() {
+
+		// Go through all configs.
+		$configs = Kirki::$config;
+		foreach ( $configs as $config_id => $args ) {
+			if ( isset( $args['disable_output'] ) && true === $args['disable_output'] ) {
+				continue;
+			}
+			$styles = self::loop_controls( $config_id );
+			$styles = apply_filters( "kirki_{$config_id}_dynamic_css", $styles );
+			if ( ! empty( $styles ) ) {
+				/**
+				 * Note to code reviewers:
+				 *
+				 * Though all output should be run through an escaping function, this is pure CSS.
+				 *
+				 * When used in the print_styles_action() method the PHP header() call makes the browser interpret it as such.
+				 * No code, script or anything else can be executed from inside a stylesheet.
+				 *
+				 * When using in the print_styles_inline() method the wp_strip_all_tags call we use below
+				 * strips anything that has the possibility to be malicious, and since this is inslide a <style> tag
+				 * it can only be interpreted by the browser as such.
+				 * wp_strip_all_tags() excludes the possibility of someone closing the <style> tag and then opening something else.
+				 */
+				echo wp_strip_all_tags( $styles ); // phpcs:ignore WordPress.Security.EscapeOutput
+			}
+		}
+		do_action( 'kirki_dynamic_css' );
 	}
 
 	/**
@@ -308,27 +271,26 @@ class Kirki_Modules_CSS {
 	}
 
 	/**
-	 * Runs when we're adding a font-awesome field to allow enqueueing the
-	 * fontawesome script on the frontend.
+	 * The FA field got deprecated in v3.0.42.
+	 * This is here for backwards-compatibility in case a theme was calling it directly.
 	 *
 	 * @static
 	 * @since 3.0.26
 	 * @access public
 	 * @return void
 	 */
-	public static function add_fontawesome_script() {
-		self::$enqueue_fa = true;
-	}
+	public static function add_fontawesome_script() {}
 
 	/**
-	 * Check if FontAwesome should be loaded.
+	 * The FA field got deprecated in v3.0.42.
+	 * This is here for backwards-compatibility in case a theme was calling it directly.
 	 *
 	 * @static
 	 * @since 3.0.35
 	 * @access public
-	 * @return void
+	 * @return false
 	 */
 	public static function get_enqueue_fa() {
-		return self::$enqueue_fa;
+		return false;
 	}
 }
