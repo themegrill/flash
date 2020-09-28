@@ -85,7 +85,7 @@ function flash_meta_form( $flash_metabox_field ) {
 			case 'flash_page_layout':
 				if( empty( $flash_meta ) ) { $flash_meta = 'default-layout'; } ?>
 
-				<input id="flash-layout-type-<?php echo $field['value']; ?>" class="post-format" type="radio" name="<?php echo $field['id']; ?>" value="<?php echo $field['value']; ?>" <?php checked( $field['value'], $flash_meta ); ?>/>
+				<input id="flash-layout-type-<?php echo $field['value']; ?>" class="post-format" type="radio" name="<?php echo $field['id']; ?>" value="<?php echo esc_attr ( $field['value'] ); ?>" <?php checked( $field['value'], $flash_meta ); ?>/>
 				<label class="post-format-icon" for="flash-layout-type-<?php echo $field['value']; ?>"><?php echo $field['label']; ?></label><br/>
 				<?php
 
@@ -95,7 +95,7 @@ function flash_meta_form( $flash_metabox_field ) {
 			case 'flash_transparency':
 				if( empty( $flash_meta ) ) { $flash_meta = 'non-transparent'; } ?>
 
-				<input id="flash-header-type-<?php echo $field['value']; ?>" class="post-format" type="radio" name="<?php echo $field['id']; ?>" value="<?php echo $field['value']; ?>" <?php checked( $field['value'], $flash_meta ); ?>/>
+				<input id="flash-header-type-<?php echo $field['value']; ?>" class="post-format" type="radio" name="<?php echo $field['id']; ?>" value="<?php echo esc_attr( $field['value'] ); ?>" <?php checked( $field['value'], $flash_meta ); ?>/>
 				<label class="post-format-icon" for="flash-header-type-<?php echo $field['value']; ?>"><?php echo $field['label']; ?></label><br/>
 				<?php
 			break;
