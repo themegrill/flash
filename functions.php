@@ -260,7 +260,7 @@ function flash_scripts() {
 add_action( 'wp_enqueue_scripts', 'flash_scripts' );
 
 // Migrating customize options.
-require get_template_directory() . 'inc/migration.php';
+require get_template_directory() . '/inc/migration.php';
 
 // Custom template tags for this theme.
 require get_template_directory() . '/inc/template-tags.php';
