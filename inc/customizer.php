@@ -338,7 +338,7 @@ Kirki::add_field(
 	'flash_config',
 	array(
 		'type'     => 'image',
-		'settings' => 'flash_pageheader_background',
+		'settings' => 'flash_pageheader_background_image',
 		'label'    => esc_html__( 'Page Header Background', 'flash' ),
 		'section'  => 'flash_page_header_options',
 		'default'  => '',
@@ -1489,7 +1489,7 @@ add_action( 'wp_enqueue_scripts', 'flash_secondary_text_color_css', 13 );
  * @see wp_add_inline_style()
  */
 function flash_frontend_css() {
-	$pageheader_background = get_theme_mod( 'flash_pageheader_background', '' );
+	$pageheader_background = get_theme_mod( 'flash_pageheader_background_image', '' );
 	$customizer_input_css  = get_theme_mod( 'flash_custom_css', '' );
 	$css                   = '';
 	// Don't do anything if the pageheader image is not uploaded.
