@@ -339,7 +339,7 @@ Kirki::add_field(
 	array(
 		'type'     => 'image',
 		'settings' => 'flash_pageheader_background_image',
-		'label'    => esc_html__( 'Page Header Background', 'flash' ),
+		'label'    => esc_html__( 'Page Header Background Image', 'flash' ),
 		'section'  => 'flash_page_header_options',
 		'default'  => '',
 		'priority' => 20,
