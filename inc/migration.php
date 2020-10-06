@@ -26,7 +26,8 @@ function flash_page_header_bg_customize_migrate() {
 
 	$old_bg = get_theme_mod( 'flash_pageheader_background', '' );
 
-	if ( '' !== $old_bg ) {
+	if ( $old_bg ) {
+		set_theme_mod( 'flash_pageheader_background_image', $old_bg );
 		remove_theme_mod( 'flash_pageheader_background' );
 	}
 
