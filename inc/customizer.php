@@ -343,6 +343,21 @@ Kirki::add_field(
 		'section'  => 'flash_page_header_options',
 		'default'  => '',
 		'priority' => 20,
+		'transport' => 'postMessage',
+		'js_vars'   => array(
+			array(
+				'element'  => '.breadcrumb-trail.breadcrumbs',
+				'function' => 'css',
+				'property' => 'background-image',
+			),
+		),
+		'output'    => array(
+			array(
+				'element'  => '.breadcrumb-trail.breadcrumbs',
+				'function' => 'css',
+				'property' => 'background-image',
+			),
+		),
 	)
 );
 
@@ -1495,11 +1510,11 @@ function flash_frontend_css() {
 	// Don't do anything if the pageheader image is not uploaded.
 	if ( $pageheader_background ) {
 		$css .= '
-		/* Pageheader Background */
-		#flash-breadcrumbs {
-			background-image: url(' . esc_url( $pageheader_background ) . ');
+		/* Pageheader Background. */
+		.breadcrumb-trail.breadcrumbs {
 			color: #fff;
 		}
+
 		#flash-breadcrumbs a,
 		#flash-breadcrumbs span,
 		.breadcrumb-trail.breadcrumbs .trail-items li span::before{
