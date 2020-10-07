@@ -296,6 +296,7 @@ Kirki::add_field(
 		'active_callback' => 'flash_is_woocommerce_active',
 	)
 );
+
 // Sticky Header Setting.
 Kirki::add_field(
 	'flash_config',
@@ -308,6 +309,7 @@ Kirki::add_field(
 		'priority' => 40,
 	)
 );
+
 // Page Header Section.
 Kirki::add_section(
 	'flash_page_header_options',
@@ -434,7 +436,7 @@ Kirki::add_field(
 	)
 );
 
-/** Meta - Comment Count */
+// Meta - Comment Count.
 Kirki::add_field(
 	'flash_config',
 	array(
