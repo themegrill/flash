@@ -334,15 +334,13 @@ Kirki::add_field(
 );
 
 /** Page Header Background Setting */
-Kirki::add_field(
-	'flash_config',
-	array(
-		'type'     => 'image',
-		'settings' => 'flash_pageheader_background_image',
-		'label'    => esc_html__( 'Page Header Background Image', 'flash' ),
-		'section'  => 'flash_page_header_options',
-		'default'  => '',
-		'priority' => 20,
+Kirki::add_field( 'flash_config', array(
+		'type'      => 'image',
+		'settings'  => 'flash_pageheader_background_image',
+		'label'     => esc_html__( 'Page Header Background Image', 'flash' ),
+		'section'   => 'flash_page_header_options',
+		'default'   => '',
+		'priority'  => 20,
 		'transport' => 'postMessage',
 		'js_vars'   => array(
 			array(
@@ -878,7 +876,9 @@ function flash_customize_register( $wp_customize ) {
 
 	// Add `FLASH_Upsell_Section` to display pro link.
 	$wp_customize->add_section(
-		new FLASH_Upsell_Section( $wp_customize, 'flash_upsell_section',
+		new FLASH_Upsell_Section(
+			$wp_customize,
+			'flash_upsell_section',
 			array(
 				'title'      => esc_html__( 'View Pro version', 'flash' ),
 				'url'        => 'https://themegrill.com/flash-pricing/?utm_source=flash-customizer&utm_medium=view-pricing-link&utm_campaign=upgrade',
@@ -1146,7 +1146,7 @@ endif; // flash_sanitize_color_scheme
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function flash_customize_preview_scripts() {
-	wp_enqueue_script( 'flash-customizer-js', get_template_directory_uri() . '/js/customizer.js', array(  'customize-preview', 'jquery' ), false, true );
+	wp_enqueue_script( 'flash-customizer-js', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview', 'jquery' ), false, true );
 	wp_enqueue_script( 'flash-color-scheme-control', get_template_directory_uri() . '/js/color-scheme-control.js', array( 'customize-controls', 'iris', 'underscore', 'wp-util' ), '20160816', true );
 	wp_localize_script( 'flash-color-scheme-control', 'colorScheme', flash_get_color_schemes() );
 }
@@ -1555,4 +1555,5 @@ function flash_frontend_css() {
 		wp_add_inline_style( 'flash-style', $css );
 	}
 }
+
 add_action( 'wp_enqueue_scripts', 'flash_frontend_css', 14 );
