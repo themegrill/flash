@@ -1526,10 +1526,11 @@ function flash_frontend_css() {
 	$pageheader_background = get_theme_mod( 'flash_pageheader_background_image', '' );
 	$customizer_input_css  = get_theme_mod( 'flash_custom_css', '' );
 	$css                   = '';
-	// Don't do anything if the pageheader image is not uploaded.
+
+	// Don't do anything if the page header image is not uploaded.
 	if ( $pageheader_background ) {
 		$css .= '
-		/* Pageheader Background. */
+		/* Page header Background. */
 		.breadcrumb-trail.breadcrumbs {
 			color: #fff;
 		}
