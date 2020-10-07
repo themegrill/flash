@@ -259,50 +259,32 @@ function flash_scripts() {
 
 add_action( 'wp_enqueue_scripts', 'flash_scripts' );
 
-/**
- * Custom template tags for this theme.
- */
+// Custom template tags for this theme.
 require get_template_directory() . '/inc/template-tags.php';
 
-/**
- * Custom functions that act independently of the theme templates.
- */
+// Custom functions that act independently of the theme templates.
 require get_template_directory() . '/inc/extras.php';
 
-/**
- * Kirki Toolkit.
- */
+// Kirki Toolkit.
 require get_template_directory() . '/inc/kirki/kirki.php';
 
-/**
- * Customizer additions.
- */
+// Customizer additions.
 require get_template_directory() . '/inc/customizer.php';
 
-/**
- * Load Metaboxes.
- */
+// Load Metaboxes.
 require get_template_directory() . '/inc/meta-boxes.php';
 
-/**
- * Load Jetpack compatibility file.
- */
+// Load Jetpack compatibility file.
 require get_template_directory() . '/inc/jetpack.php';
 
 
-/**
- * Load WooCommerce compatibility file.
- */
+// Load WooCommerce compatibility file.
 require get_template_directory() . '/inc/woocommerce.php';
 
-/**
- * Load SiteOrigin Panels compatibility file.
- */
+// Load SiteOrigin Panels compatibility file.
 require get_template_directory() . '/inc/siteorigin-panels.php';
 
-/**
- * Load required files for Flash notice in Admin page only.
- */
+// Load required files for Flash notice in Admin page only.
 if ( is_admin() ) {
 	require get_template_directory() . '/inc/admin/class-flash-admin.php';
 	require get_template_directory() . '/inc/admin/class-flash-notice.php';
@@ -311,6 +293,10 @@ if ( is_admin() ) {
 	require get_template_directory() . '/inc/admin/class-flash-upgrade-notice.php';
 	require get_template_directory() . '/inc/admin/class-flash-theme-review-notice.php';
 }
+
+// Migrating customize options.
+require get_template_directory() . '/inc/migration.php';
+
 
 /**
  * Fetch and set the typography value as Kirki defines within the theme.
