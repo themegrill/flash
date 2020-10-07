@@ -11,6 +11,7 @@
 function flash_kirki_configuration() {
 	return array( 'url_path' => get_template_directory_uri() . '/inc/kirki/' );
 }
+
 add_filter( 'kirki/config', 'flash_kirki_configuration' );
 
 if ( ! class_exists( 'Kirki' ) ) {
@@ -39,7 +40,7 @@ Kirki::add_field(
 	)
 );
 
-/* Retina Logo Option.*/
+// Retina Logo Option.
 Kirki::add_field(
 	'flash_config',
 	array(
@@ -52,7 +53,7 @@ Kirki::add_field(
 	)
 );
 
-/* Retina Logo Upload.*/
+// Retina Logo Upload.
 Kirki::add_field(
 	'flash_config',
 	array(
@@ -72,7 +73,7 @@ Kirki::add_field(
 	)
 );
 
-/** Theme Options Panel */
+// Theme Options Panel.
 Kirki::add_panel(
 	'flash_theme_options',
 	array(
@@ -81,7 +82,7 @@ Kirki::add_panel(
 	)
 );
 
-/** General Section */
+// General Section.
 Kirki::add_section(
 	'flash_general_options',
 	array(
@@ -92,7 +93,7 @@ Kirki::add_section(
 	)
 );
 
-/** Site Layout Settings */
+// Site Layout Settings.
 Kirki::add_field(
 	'flash_config',
 	array(
@@ -110,7 +111,7 @@ Kirki::add_field(
 	)
 );
 
-/** Preloader Options */
+// Preloader Options.
 Kirki::add_field(
 	'flash_config',
 	array(
@@ -123,7 +124,7 @@ Kirki::add_field(
 	)
 );
 
-/** Scroll to Top button Options */
+// Scroll to Top button Options.
 Kirki::add_field(
 	'flash_config',
 	array(
@@ -136,7 +137,7 @@ Kirki::add_field(
 	)
 );
 
-/** Top Header Section */
+// Top Header Section.
 Kirki::add_section(
 	'flash_top_header_options',
 	array(
@@ -147,7 +148,7 @@ Kirki::add_section(
 	)
 );
 
-/** Top Header Enable/Disable Setting */
+// Top Header Enable/Disable Setting.
 Kirki::add_field(
 	'flash_top_header',
 	array(
@@ -160,7 +161,7 @@ Kirki::add_field(
 	)
 );
 
-/** Top Header Left Settings */
+// Top Header Left Settings.
 Kirki::add_field(
 	'flash_config',
 	array(
@@ -186,7 +187,7 @@ Kirki::add_field(
 	)
 );
 
-/** Top Header Right Settings */
+// Top Header Right Settings.
 Kirki::add_field(
 	'flash_config',
 	array(
@@ -212,7 +213,7 @@ Kirki::add_field(
 	)
 );
 
-/** Top Header Text */
+// Top Header Text.
 Kirki::add_field(
 	'flash_config',
 	array(
@@ -239,7 +240,7 @@ Kirki::add_field(
 	)
 );
 
-/** Header Section */
+// Header Section.
 Kirki::add_section(
 	'flash_header_options',
 	array(
@@ -250,7 +251,7 @@ Kirki::add_section(
 	)
 );
 
-/** Logo and Menu Position */
+// Logo and Menu Position.
 Kirki::add_field(
 	'flash_config',
 	array(
@@ -269,7 +270,7 @@ Kirki::add_field(
 	)
 );
 
-/** Search Icon Setting */
+// Search Icon Setting.
 Kirki::add_field(
 	'flash_config',
 	array(
@@ -282,7 +283,7 @@ Kirki::add_field(
 	)
 );
 
-/** Header Cart Setting */
+// Header Cart Setting.
 Kirki::add_field(
 	'flash_config',
 	array(
@@ -295,8 +296,7 @@ Kirki::add_field(
 		'active_callback' => 'flash_is_woocommerce_active',
 	)
 );
-
-/** Sticky Header Setting */
+// Sticky Header Setting.
 Kirki::add_field(
 	'flash_config',
 	array(
@@ -308,8 +308,7 @@ Kirki::add_field(
 		'priority' => 40,
 	)
 );
-
-/** Page Header Section */
+// Page Header Section.
 Kirki::add_section(
 	'flash_page_header_options',
 	array(
@@ -320,7 +319,7 @@ Kirki::add_section(
 	)
 );
 
-/** Remove Breadcrumbs setting */
+// Remove Breadcrumbs setting.
 Kirki::add_field(
 	'flash_config',
 	array(
@@ -333,7 +332,7 @@ Kirki::add_field(
 	)
 );
 
-/** Page Header Background Setting */
+// Page Header Background Setting.
 Kirki::add_field( 'flash_config', array(
 		'type'      => 'image',
 		'settings'  => 'flash_pageheader_background_image',
@@ -359,7 +358,7 @@ Kirki::add_field( 'flash_config', array(
 	)
 );
 
-/** Archive Page */
+// Archive Page.
 Kirki::add_section(
 	'flash_archive_options',
 	array(
@@ -370,7 +369,7 @@ Kirki::add_section(
 	)
 );
 
-/** Blog Styles */
+// Blog Styles.
 Kirki::add_field(
 	'flash_config',
 	array(
@@ -389,7 +388,7 @@ Kirki::add_field(
 	)
 );
 
-/** Archive Page Layout */
+// Archive Page Layout.
 Kirki::add_field(
 	'flash_config',
 	array(
@@ -409,7 +408,7 @@ Kirki::add_field(
 	)
 );
 
-/** Meta - Date */
+// Meta - Date.
 Kirki::add_field(
 	'flash_config',
 	array(
@@ -422,7 +421,7 @@ Kirki::add_field(
 	)
 );
 
-/** Meta - Author */
+// Meta - Author.
 Kirki::add_field(
 	'flash_config',
 	array(
@@ -448,7 +447,7 @@ Kirki::add_field(
 	)
 );
 
-/** Meta - Category */
+// Meta - Category.
 Kirki::add_field(
 	'flash_config',
 	array(
@@ -461,7 +460,7 @@ Kirki::add_field(
 	)
 );
 
-/** Meta - Tag */
+// Meta - Tag.
 Kirki::add_field(
 	'flash_config',
 	array(
@@ -474,7 +473,7 @@ Kirki::add_field(
 	)
 );
 
-/** Post Settings */
+// Post Settings.
 Kirki::add_section(
 	'flash_post_options',
 	array(
@@ -486,7 +485,7 @@ Kirki::add_section(
 	)
 );
 
-/** Post Layout */
+// Post Layout.
 Kirki::add_field(
 	'flash_config',
 	array(
@@ -506,7 +505,7 @@ Kirki::add_field(
 	)
 );
 
-/** Related Posts option */
+// Related Posts option.
 Kirki::add_field(
 	'flash_config',
 	array(
@@ -540,7 +539,7 @@ Kirki::add_field(
 	)
 );
 
-/** Author Bio */
+// Author Bio.
 Kirki::add_field(
 	'flash_config',
 	array(
@@ -553,7 +552,7 @@ Kirki::add_field(
 	)
 );
 
-/** Post Navigation */
+// Post Navigation.
 Kirki::add_field(
 	'flash_config',
 	array(
@@ -566,7 +565,7 @@ Kirki::add_field(
 	)
 );
 
-/** Page Settings */
+// Page Settings.
 Kirki::add_section(
 	'flash_page_options',
 	array(
@@ -577,7 +576,7 @@ Kirki::add_section(
 	)
 );
 
-/** Page Layout */
+// Page Layout.
 Kirki::add_field(
 	'flash_config',
 	array(
@@ -597,7 +596,7 @@ Kirki::add_field(
 	)
 );
 
-/** Footer  */
+// Footer.
 Kirki::add_section(
 	'flash_footer_options',
 	array(
@@ -608,7 +607,7 @@ Kirki::add_section(
 	)
 );
 
-/** Footer Widget */
+// Footer Widget.
 Kirki::add_field(
 	'flash_config',
 	array(
@@ -628,7 +627,7 @@ Kirki::add_field(
 	)
 );
 
-/** Advanced Settings  */
+// Advanced Settings.
 Kirki::add_section(
 	'flash_advanced_section',
 	array(
@@ -659,7 +658,7 @@ if ( ! function_exists( 'wp_update_custom_css_post' ) ) {
 	);
 }
 
-/** Google Font Settings Section  */
+// Google Font Settings Section.
 Kirki::add_section(
 	'flash_google_font_section',
 	array(
@@ -701,7 +700,7 @@ Kirki::add_field(
  *
  * @since Flash 1.0
  *
- * @see flash_header_style()
+ * @see   flash_header_style()
  */
 function flash_custom_header_and_background() {
 	$color_scheme             = flash_get_color_scheme();
@@ -711,13 +710,13 @@ function flash_custom_header_and_background() {
 	/**
 	 * Filter the arguments used when adding 'custom-background' support in Flash.
 	 *
+	 * @param array $args    {
+	 *                       An array of custom-background support arguments.
+	 *
+	 * @type string $default -color Default color of the background.
+	 * }
 	 * @since Flash 1.0
 	 *
-	 * @param array $args {
-	 *     An array of custom-background support arguments.
-	 *
-	 *     @type string $default-color Default color of the background.
-	 * }
 	 */
 	add_theme_support(
 		'custom-background',
@@ -730,21 +729,21 @@ function flash_custom_header_and_background() {
 	);
 
 	/**
-	* Filter the arguments used when adding 'customheader' support in Flash.
-	*
-	* @since Flash 1.0
-	*
-	* @param array $args {
-	*     An array of customheader support arguments.
-	*
-	*     @type string $defaulttextcolor Default color of the header text.
-	*     @type int      $width            Width in pixels of the custom header image. Default 1200.
-	*     @type int      $height           Height in pixels of the custom header image. Default 280.
-	*     @type bool     $flexheight      Whether to allow flexibleheight header images. Default true.
-	*     @type callable $wpheadcallback Callback function used to style the header image and text
-	*                                      displayed on the blog.
-	* }
-	*/
+	 * Filter the arguments used when adding 'customheader' support in Flash.
+	 *
+	 * @param array   $args             {
+	 *                                  An array of customheader support arguments.
+	 *
+	 * @type string   $defaulttextcolor Default color of the header text.
+	 * @type int      $width            Width in pixels of the custom header image. Default 1200.
+	 * @type int      $height           Height in pixels of the custom header image. Default 280.
+	 * @type bool     $flexheight       Whether to allow flexibleheight header images. Default true.
+	 * @type callable $wpheadcallback   Callback function used to style the header image and text
+	 *                                      displayed on the blog.
+	 * }
+	 * @since Flash 1.0
+	 *
+	 */
 	add_theme_support(
 		'custom-header',
 		apply_filters(
@@ -761,6 +760,7 @@ function flash_custom_header_and_background() {
 		)
 	);
 }
+
 add_action( 'after_setup_theme', 'flash_custom_header_and_background' );
 
 /**
@@ -964,9 +964,10 @@ function flash_customize_register( $wp_customize ) {
 		return false;
 	}
 }
+
 add_action( 'customize_register', 'flash_customize_register' );
 
-// Header Cart Icon Active Callback
+// Header Cart Icon Active Callback.
 function flash_is_woocommerce_active() {
 	if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
 		return true;
@@ -975,10 +976,11 @@ function flash_is_woocommerce_active() {
 	}
 }
 
-// Sanitize Google Font
+// Sanitize Google Font.
 function flash_fonts_sanitize( $input, $setting ) {
 	// Get the list of choices from the control associated with the setting.
 	$choices = $setting->manager->get_control( $setting->id )->choices;
+
 	// If the input is a valid key, return it, else, return the default.
 	return ( array_key_exists( $input, $choices ) ? $input : $setting->default );
 }
@@ -995,9 +997,9 @@ function flash_fonts_sanitize( $input, $setting ) {
  * 3. Main Text Color.
  * 4. Secondary Text Color.
  *
+ * @return array An associative array of color scheme options.
  * @since Flash 1.0
  *
- * @return array An associative array of color scheme options.
  */
 function flash_get_color_schemes() {
 	/**
@@ -1005,20 +1007,20 @@ function flash_get_color_schemes() {
 	 *
 	 * The default schemes include 'default', 'dark', 'gray', 'red', and 'yellow'.
 	 *
-	 * @since Flash 1.0
-	 *
 	 * @param array $schemes {
-	 *     Associative array of color schemes data.
+	 *                       Associative array of color schemes data.
 	 *
-	 *     @type array $slug {
+	 * @type array  $slug    {
 	 *         Associative array of information for setting up the color scheme.
 	 *
-	 *         @type string $label  Color scheme label.
-	 *         @type array  $colors HEX codes for default colors prepended with a hash symbol ('#').
+	 * @type string $label   Color scheme label.
+	 * @type array  $colors  HEX codes for default colors prepended with a hash symbol ('#').
 	 *                              Colors are defined in the following order: Main background, page
 	 *                              background, link, main text, secondary text.
 	 *     }
 	 * }
+	 * @since Flash 1.0
+	 *
 	 */
 	return apply_filters(
 		'flash_color_schemes',
@@ -1078,9 +1080,9 @@ if ( ! function_exists( 'flash_get_color_scheme' ) ) :
 	 *
 	 * Create your own flash_get_color_scheme() function to override in a child theme.
 	 *
+	 * @return array An associative array of either the current or default color scheme HEX values.
 	 * @since Flash 1.0
 	 *
-	 * @return array An associative array of either the current or default color scheme HEX values.
 	 */
 	function flash_get_color_scheme() {
 		$color_scheme_option = get_theme_mod( 'color_scheme', 'default' );
@@ -1101,9 +1103,9 @@ if ( ! function_exists( 'flash_get_color_scheme_choices' ) ) :
 	 * Create your own flash_get_color_scheme_choices() function to override
 	 * in a child theme.
 	 *
+	 * @return array Array of color schemes.
 	 * @since Flash 1.0
 	 *
-	 * @return array Array of color schemes.
 	 */
 	function flash_get_color_scheme_choices() {
 		$color_schemes                = flash_get_color_schemes();
@@ -1125,10 +1127,11 @@ if ( ! function_exists( 'flash_sanitize_color_scheme' ) ) :
 	 * Create your own flash_sanitize_color_scheme() function to override
 	 * in a child theme.
 	 *
+	 * @param string $value Color scheme name value.
+	 *
+	 * @return string Color scheme name.
 	 * @since Flash 1.0
 	 *
-	 * @param string $value Color scheme name value.
-	 * @return string Color scheme name.
 	 */
 	function flash_sanitize_color_scheme( $value ) {
 		$color_schemes = flash_get_color_scheme_choices();
@@ -1146,10 +1149,19 @@ endif; // flash_sanitize_color_scheme
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function flash_customize_preview_scripts() {
-	wp_enqueue_script( 'flash-customizer-js', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview', 'jquery' ), false, true );
-	wp_enqueue_script( 'flash-color-scheme-control', get_template_directory_uri() . '/js/color-scheme-control.js', array( 'customize-controls', 'iris', 'underscore', 'wp-util' ), '20160816', true );
+	wp_enqueue_script( 'flash-customizer-js', get_template_directory_uri() . '/js/customizer.js', array(
+		'customize-preview',
+		'jquery',
+	), false, true );
+	wp_enqueue_script( 'flash-color-scheme-control', get_template_directory_uri() . '/js/color-scheme-control.js', array(
+		'customize-controls',
+		'iris',
+		'underscore',
+		'wp-util',
+	), '20160816', true );
 	wp_localize_script( 'flash-color-scheme-control', 'colorScheme', flash_get_color_schemes() );
 }
+
 add_action( 'customize_controls_enqueue_scripts', 'flash_customize_preview_scripts', 99 );
 add_action( 'customize_preview_init', 'flash_customize_preview_scripts', 99 );
 
@@ -1158,7 +1170,7 @@ add_action( 'customize_preview_init', 'flash_customize_preview_scripts', 99 );
  *
  * @since Flash 1.0
  *
- * @see wp_add_inline_style()
+ * @see   wp_add_inline_style()
  */
 function flash_color_scheme_css() {
 	$color_scheme_option = get_theme_mod( 'color_scheme', 'default' );
@@ -1198,10 +1210,11 @@ add_action( 'wp_enqueue_scripts', 'flash_color_scheme_css' );
 /**
  * Returns CSS for the color schemes.
  *
+ * @param array $colors Color scheme colors.
+ *
+ * @return string Color scheme CSS.
  * @since Flash 1.0
  *
- * @param array $colors Color scheme colors.
- * @return string Color scheme CSS.
  */
 function flash_get_color_scheme_css( $colors ) {
 	$colors = wp_parse_args(
@@ -1321,6 +1334,7 @@ function flash_color_scheme_css_template() {
 	</script>
 	<?php
 }
+
 add_action( 'customize_controls_print_footer_scripts', 'flash_color_scheme_css_template' );
 
 /**
@@ -1328,7 +1342,7 @@ add_action( 'customize_controls_print_footer_scripts', 'flash_color_scheme_css_t
  *
  * @since Flash 1.0
  *
- * @see wp_add_inline_style()
+ * @see   wp_add_inline_style()
  */
 function flash_link_color_css() {
 	$color_scheme  = flash_get_color_scheme();
@@ -1344,7 +1358,7 @@ function flash_link_color_css() {
 	$link_color_rgb = flash_hex2rgb( $link_color );
 
 	// Generate Darker Color
-	$link_color_dark = flash_darkcolor( $link_color, -20 );
+	$link_color_dark = flash_darkcolor( $link_color, - 20 );
 
 	// If we get this far, we have a custom color scheme.
 	$border_color = vsprintf( 'rgba( %1$s, %2$s, %3$s, 0.8)', $link_color_rgb );
@@ -1419,6 +1433,7 @@ function flash_link_color_css() {
 
 	wp_add_inline_style( 'flash-style', sprintf( $css, $link_color, $border_color, $link_color_dark ) );
 }
+
 add_action( 'wp_enqueue_scripts', 'flash_link_color_css', 11 );
 
 /**
@@ -1426,7 +1441,7 @@ add_action( 'wp_enqueue_scripts', 'flash_link_color_css', 11 );
  *
  * @since Flash 1.0
  *
- * @see wp_add_inline_style()
+ * @see   wp_add_inline_style()
  */
 function flash_main_text_color_css() {
 	$color_scheme    = flash_get_color_scheme();
@@ -1467,6 +1482,7 @@ function flash_main_text_color_css() {
 
 	wp_add_inline_style( 'flash-style', sprintf( $css, $main_text_color, $border_color ) );
 }
+
 add_action( 'wp_enqueue_scripts', 'flash_main_text_color_css', 12 );
 
 /**
@@ -1474,7 +1490,7 @@ add_action( 'wp_enqueue_scripts', 'flash_main_text_color_css', 12 );
  *
  * @since Flash 1.0
  *
- * @see wp_add_inline_style()
+ * @see   wp_add_inline_style()
  */
 function flash_secondary_text_color_css() {
 	$color_scheme         = flash_get_color_scheme();
@@ -1495,13 +1511,14 @@ function flash_secondary_text_color_css() {
 
 	wp_add_inline_style( 'flash-style', sprintf( $css, $secondary_text_color ) );
 }
+
 add_action( 'wp_enqueue_scripts', 'flash_secondary_text_color_css', 13 );
 /**
  * Enqueues front-end CSS for the other settings.
  *
  * @since Flash 1.0
  *
- * @see wp_add_inline_style()
+ * @see   wp_add_inline_style()
  */
 function flash_frontend_css() {
 	$pageheader_background = get_theme_mod( 'flash_pageheader_background_image', '' );
