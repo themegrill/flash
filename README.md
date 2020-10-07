@@ -79,7 +79,7 @@ Unless otherwise specified, all the theme files, scripts and images including th
 == Changelog ==
 = TBD =
 * Fix - Radio button selected by clicking label.
-* Fix - Page Header Background Image option.
+* Fix - Page header background image issue.
 
 = Version 1.3.7 - 2020-08-12 =
 * Tweak - Add and improve theme-related notices.
