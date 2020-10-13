@@ -30,6 +30,8 @@ Code ideas for the color scheme was borrowed from Twenty Sixteen. © Copyright 2
 
 Flash Theme bundles the following third-party resources:
 
+ Images on screenshot is from https://pxhere.com/ link. License: Creative Commons Zero (CC0)
+
 Font Awesome icon font, Copyright © 2015, Dave Gandy,
 Font License: SIL OFL 1.1, http://scripts.sil.org/OFL
 Code License: MIT License, http://www.opensource.org/licenses/MIT
