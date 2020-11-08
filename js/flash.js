@@ -191,20 +191,13 @@ jQuery( window ).load( function () {
 
 			var sliderInstance = new Swiper( container, {
 				paginationClickable: true,
+				disableOnInteraction : true,
 				slidesPerView: 1,
 				nextButton: nextButton,
 				prevButton: prevButton,
 				autoplay: 4000,
 				speed: 1000,
 				loop: true,
-			} );
-
-			jQuery( this ).on( 'mouseenter', function () {
-				sliderInstance.stopAutoplay();
-			} );
-
-			jQuery( this ).on( 'mouseleave', function () {
-				sliderInstance.startAutoplay();
 			} );
 		} );
 
