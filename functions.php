@@ -222,7 +222,7 @@ function flash_scripts() {
 	// Font Awessome
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome' . $suffix . '.css', array(), false, false );
 	// Swiper CSS
-	wp_register_style( 'swiper', get_template_directory_uri() . '/css/swiper-bundle' . $suffix . '.css', array(), false, false );
+	wp_register_style( 'swiper', get_template_directory_uri() . '/css/swiper' . $suffix . '.css', array(), false, false );
 
 	wp_enqueue_style( 'flash-style', get_stylesheet_uri() );
 	wp_style_add_data( 'flash-style', 'rtl', 'replace' );
@@ -230,7 +230,7 @@ function flash_scripts() {
 	// Responsive
 	wp_enqueue_style( 'responsive', get_template_directory_uri() . '/css/responsive' . $suffix . '.css', array(), false, false );
 	wp_style_add_data( 'responsive', 'rtl', 'replace' );
-	wp_register_script( 'swiper', get_template_directory_uri() . '/js/swiper-bundle' . $suffix . '.js', array( 'jquery' ), '', true );
+	wp_register_script( 'swiper', get_template_directory_uri() . '/js/swiper' . $suffix . '.js', array( 'jquery' ), '', true );
 
 	if ( get_theme_mod( 'flash_sticky_header', '' ) == '1' ) {
 		wp_enqueue_script( 'sticky', get_template_directory_uri() . '/js/jquery.sticky' . $suffix . '.js', array( 'jquery' ), '', true );
