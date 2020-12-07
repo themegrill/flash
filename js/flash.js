@@ -5,8 +5,8 @@ jQuery( document ).ready(
 		 * Onepage nav closing issue on menu item click
 		 */
 		// Hide nav if screen size <= 980px
-		function hideNav( mdmScreen ) {
-			if ( mdmScreen.matches ) { // If media query matches
+		function hideNav(mdmScreen) {
+			if (mdmScreen.matches) { // If media query matches
 				jQuery( '.main-navigation .menu' ).slideUp( 'slow' );
 			} else {
 				jQuery( '#site-navigation ul' ).show();
@@ -33,7 +33,7 @@ jQuery( document ).ready(
 		/**
 		 * Search
 		 */
-		var hideSearchForm = function() {
+		var hideSearchForm = function () {
 			jQuery( '.search-wrap .search-box' ).removeClass( 'active' );
 		};
 		jQuery( '.search-wrap .search-icon' ).on(
@@ -52,12 +52,12 @@ jQuery( document ).ready(
 				// For esc key press.
 				jQuery( document ).on(
 					'keyup',
-					function ( e ) {
+					function (e) {
 
 						// on esc key press.
-						if ( 27 === e.keyCode ) {
-							 // if search box is opened.
-							if ( jQuery( '.search-wrap .search-box' ).hasClass( 'active' ) ) {
+						if (27 === e.keyCode) {
+							// if search box is opened.
+							if (jQuery( '.search-wrap .search-box' ).hasClass( 'active' )) {
 								hideSearchForm();
 							}
 
@@ -67,9 +67,9 @@ jQuery( document ).ready(
 
 				jQuery( document ).on(
 					'click.outEvent',
-					function( e ) {
-						if ( e.target.closest( '.search-wrap' )  ) {
-							 return;
+					function (e) {
+						if (e.target.closest( '.search-wrap' )) {
+							return;
 						}
 
 						hideSearchForm();
@@ -99,17 +99,17 @@ jQuery( document ).ready(
 		jQuery( '.main-navigation .sub-toggle' ).on(
 			'click',
 			function () {
-				var currentIcon    = jQuery( this ).children( '.fa' );
-				var currentSubMenu = jQuery( this ).parent( 'li' ),
-				menuWithChildren   = currentSubMenu.siblings( '.menu-item-has-children' );
+				var currentIcon      = jQuery( this ).children( '.fa' );
+				var currentSubMenu   = jQuery( this ).parent( 'li' ),
+					menuWithChildren = currentSubMenu.siblings( '.menu-item-has-children' );
 
 				// get siblings icons
 				var siblingsIcon = menuWithChildren.find( '.fa' );
 
 				currentIcon.toggleClass( 'animate-icon' );
 
-				if ( siblingsIcon.hasClass( 'animate-icon' ) ) {
-					  siblingsIcon.removeClass( 'animate-icon' );
+				if (siblingsIcon.hasClass( 'animate-icon' )) {
+					siblingsIcon.removeClass( 'animate-icon' );
 				}
 
 				menuWithChildren.not( currentSubMenu ).removeClass( 'mobile-menu--slided' ).children( 'ul' ).slideUp( '1000' );
@@ -136,19 +136,19 @@ jQuery( document ).ready(
 		);
 
 		// Sticky menu
-		if ( typeof jQuery.fn.sticky !== 'undefined' ) {
+		if (typeof jQuery.fn.sticky !== 'undefined') {
 			var wpAdminBar = jQuery( '#wpadminbar' );
-			if ( wpAdminBar.length ) {
-				jQuery( '.header-sticky .site-header' ).sticky( { topSpacing: wpAdminBar.height() } );
+			if (wpAdminBar.length) {
+				jQuery( '.header-sticky .site-header' ).sticky( {topSpacing: wpAdminBar.height()} );
 			} else {
-				jQuery( '.header-sticky .site-header' ).sticky( { topSpacing: 0 } );
+				jQuery( '.header-sticky .site-header' ).sticky( {topSpacing: 0} );
 			}
 		}
 
 		/**
 		 * Widgets
 		 */
-		if ( typeof jQuery.fn.counterUp !== 'undefined' ) {
+		if (typeof jQuery.fn.counterUp !== 'undefined') {
 			jQuery( '.counter' ).counterUp(
 				{
 					delay: 10,
@@ -165,8 +165,8 @@ jQuery( document ).ready(
 					function () {
 						jQuery( window ).scroll(
 							function () {
-								if ( jQuery( this ).scrollTop() > 1000 ) {
-									  jQuery( '#scroll-up' ).fadeIn();
+								if (jQuery( this ).scrollTop() > 1000) {
+									jQuery( '#scroll-up' ).fadeIn();
 								} else {
 									jQuery( '#scroll-up' ).fadeOut();
 								}
@@ -189,7 +189,7 @@ jQuery( document ).ready(
 		);
 
 		// Preloader
-		if ( jQuery( '#preloader-background' ).length > 0 ) {
+		if (jQuery( '#preloader-background' ).length > 0) {
 			setTimeout(
 				function () {
 					jQuery( '#preloader-background' ).hide();
@@ -204,7 +204,7 @@ jQuery( document ).ready(
 		var windowHeight = jQuery( window ).height();
 		var sliderClass  = jQuery( '.tg-slider-widget.full-screen .swiper-container' );
 
-		if ( jQuery( 'body' ).hasClass( 'transparent' ) ) {
+		if (jQuery( 'body' ).hasClass( 'transparent' )) {
 			sliderClass.css(
 				{
 					'height': windowHeight
@@ -226,10 +226,10 @@ jQuery( window ).load(
 		/**
 		 * Swiper for sliders
 		 */
-		if ( typeof Swiper === 'function' ) {
-			  // Main Slider
+		if (typeof Swiper === 'function') {
+			// Main Slider.
 			jQuery( '.tg-section.tg-slider-widget' ).each(
-				function ( index, element ) {
+				function (index, element) {
 					var container  = jQuery( this ).find( '.swiper-container' );
 					var nextButton = jQuery( this ).find( '.swiper-button-next' );
 					var prevButton = jQuery( this ).find( '.swiper-button-prev' );
@@ -252,20 +252,20 @@ jQuery( window ).load(
 					jQuery( this ).on(
 						'mouseenter',
 						function () {
-							sliderInstance.autoplay.stop()
+							sliderInstance.autoplay.stop();
 						}
 					);
 
 					jQuery( this ).on(
 						'mouseleave',
 						function () {
-							sliderInstance.autoplay.start()
+							sliderInstance.autoplay.start();
 						}
 					);
 				}
 			);
 
-			  //TESTIMONIAL SLIDER
+			// Testimonial Slider.
 			var testimonial_slider = new Swiper(
 				'.tg-testimonial-widget .swiper-container',
 				{
@@ -275,26 +275,26 @@ jQuery( window ).load(
 					slidesPerView: 2,
 					spaceBetween: 30,
 					breakpoints: {
-						  1024: {
-								slidesPerView: 2,
-								spaceBetween: 30
+						1024: {
+							slidesPerView: 2,
+							spaceBetween: 30
 						},
-						  768: {
-								slidesPerView: 1,
-								spaceBetween: 10
+						768: {
+							slidesPerView: 1,
+							spaceBetween: 10
 						},
-						  640: {
-								slidesPerView: 1,
-								spaceBetween: 10
+						640: {
+							slidesPerView: 1,
+							spaceBetween: 10
 						},
-						  320: {
-								slidesPerView: 1,
-								spaceBetween: 10
+						320: {
+							slidesPerView: 1,
+							spaceBetween: 10
 						}
 					}
 				}
 			);
-			  //client SLIDER
+			// Client Slider.
 			var clientlogo_slider = new Swiper(
 				'.tg-client-widget .swiper-container',
 				{
@@ -307,8 +307,8 @@ jQuery( window ).load(
 			);
 		}
 
-		// Isotope
-		if ( typeof jQuery.fn.isotope === 'function' ) {
+		// Isotope.
+		if (typeof jQuery.fn.isotope === 'function') {
 			var $grid = jQuery( '.grid' ).isotope(
 				{
 					itemSelector: '.element-item',
@@ -316,9 +316,9 @@ jQuery( window ).load(
 				}
 			);
 
-			// filter functions
+			// Filter Functions.
 			var filterFns = {
-				   // show if number is greater than 50
+				// show if number is greater than 50
 				numberGreaterThan50: function () {
 					var number = jQuery( this ).find( '.number' ).text();
 					return parseInt( number, 10 ) > 50;
@@ -336,13 +336,13 @@ jQuery( window ).load(
 				function () {
 					var filterValue = jQuery( this ).attr( 'data-filter' );
 					// use filterFn if matches value
-					filterValue = filterFns[ filterValue ] || filterValue;
-					$grid.isotope( { filter: filterValue } );
+					filterValue = filterFns[filterValue] || filterValue;
+					$grid.isotope( {filter: filterValue} );
 				}
 			);
 			// change is-checked class on buttons
 			jQuery( '.button-group' ).each(
-				function ( i, buttonGroup ) {
+				function (i, buttonGroup) {
 					var $buttonGroup = jQuery( buttonGroup );
 					$buttonGroup.on(
 						'click',
