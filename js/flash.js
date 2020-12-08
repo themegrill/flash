@@ -241,11 +241,13 @@ jQuery( window ).load(
 						{
 							paginationClickable: true,
 							slidesPerView: 1,
-							nextButton: nextButton,
-							prevButton: prevButton,
 							autoplay: 4000,
 							speed: 1000,
 							loop: true,
+							navigation: {
+								nextEl: nextButton,
+								prevEl: prevButton,
+							}
 						}
 					);
 
@@ -269,7 +271,10 @@ jQuery( window ).load(
 			var testimonial_slider = new Swiper(
 				'.tg-testimonial-widget .swiper-container',
 				{
-					pagination: '.swiper-pagination',
+					pagination: {
+						el: '.swiper-pagination',
+						clickable: true,
+					},
 					paginationClickable: true,
 					direction: 'horizontal',
 					slidesPerView: 2,
@@ -294,11 +299,11 @@ jQuery( window ).load(
 					}
 				}
 			);
+
 			// Client Slider.
 			var clientlogo_slider = new Swiper(
 				'.tg-client-widget .swiper-container',
 				{
-					paginationClickable: true,
 					slidesPerView: 4,
 					autoplay: 1000,
 					direction: 'horizontal',
@@ -323,13 +328,13 @@ jQuery( window ).load(
 					var number = jQuery( this ).find( '.number' ).text();
 					return parseInt( number, 10 ) > 50;
 				},
-				// show if name ends with -ium
+				// Show if name ends with -ium
 				ium: function () {
 					var name = jQuery( this ).find( '.name' ).text();
 					return name.match( /ium$/ );
 				}
 			};
-			// bind filter button click
+			// Bind filter button click.
 			jQuery( '.filters-button-group' ).on(
 				'click',
 				'button',
@@ -340,7 +345,7 @@ jQuery( window ).load(
 					$grid.isotope( {filter: filterValue} );
 				}
 			);
-			// change is-checked class on buttons
+			// Change is-checked class on buttons.
 			jQuery( '.button-group' ).each(
 				function (i, buttonGroup) {
 					var $buttonGroup = jQuery( buttonGroup );
