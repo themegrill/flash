@@ -116,6 +116,11 @@ if ( ! function_exists( 'flash_top_header_content' ) ) :
 	}
 endif;
 
+add_action( 'flash_footer_copyright', 'flash_footer_copyright',10 );
+/**
+ * function to show the footer info, copyright information
+ */
+
 if ( ! function_exists( 'flash_footer_copyright' ) ) :
 	/**
 	 * Footer Copyright Text.
@@ -123,20 +128,19 @@ if ( ! function_exists( 'flash_footer_copyright' ) ) :
 	 * @since Flash 1.0
 	 */
 	function flash_footer_copyright() {
-		?>
-		<div class="copyright">
-	<span class="copyright-text">
-		<?php printf( esc_html__( 'Copyright %1$s %2$s', 'flash' ), '&copy; ', date( 'Y' ) ); ?>
-		<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php echo get_bloginfo( 'name' ); ?></a>
-		<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'flash' ), 'Flash', '<a href="https://themegrill.com/themes/flash" rel="author">ThemeGrill</a>' ); ?>
-		<?php printf( esc_html__( 'Proudly powered by %s', 'flash' ), '<a href="'.esc_url( __( 'https://wordpress.org/', 'flash' ) ).'">' . esc_html__( 'WordPress', 'flash' ) . '</a>' ); ?>
-	</span>
-		</div><!-- .copyright -->
-		<?php
+		$site_link = '<a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '" ><span>' . get_bloginfo( 'name', 'display' ) . '</span></a>';
+
+		$wp_link = '<a href="' . esc_url( 'https://wordpress.org' ) . '" target="_blank" title="' . esc_attr__( 'WordPress', 'flash' ) . '"rel="nofollow"><span>' . esc_html__( 'WordPress', 'flash' ) . '</span></a>';
+
+		$tg_link = '<a href="' . esc_url( 'https://themegrill.com/themes/flash' ) . '" target="_blank" title="' . esc_attr__( 'Flash', 'flash' ) . '" rel="nofollow"><span>' . esc_html__( 'Flash', 'flash' ) . '</span></a>';
+
+		$default_footer_value = sprintf( esc_html__( 'Copyright &copy; %1$s %2$s. All rights reserved.', 'flash' ), date( 'Y' ), $site_link ) . ' ' . sprintf( esc_html__( 'Theme: %1$s by %2$s.', 'flash' ), $tg_link, 'ThemeGrill' ) . ' ' . sprintf( esc_html__( 'Powered by %s.', 'flash' ), $wp_link );
+
+		$flash_footer_copyright = '<div class="copyright-text">' . $default_footer_value . '</div>';
+
+		echo $flash_footer_copyright;
 	}
 endif;
-
-add_action( 'flash_copyright_area', 'flash_footer_copyright' );
 
 if ( ! function_exists( 'flash_breadcrumbs' ) ) :
 	/**
