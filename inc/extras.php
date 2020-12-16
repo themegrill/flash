@@ -101,14 +101,16 @@ if ( ! function_exists( 'flash_top_header_content' ) ) :
 
 			return wp_kses_post( $header_text );
 		} elseif ( ( get_theme_mod( $position ) == 'social-menu' ) ) {
-			$social_menu = wp_nav_menu( array(
-				'theme_location' => 'social',
-				'menu_class'     => 'social-menu',
-				'fallback_cb'    => false,
-				'link_before'    => '<span class="screen-reader-text">',
-				'link_after'     => '</span>',
-				'depth'          => 1,
-			) );
+			$social_menu = wp_nav_menu(
+				array(
+					'theme_location' => 'social',
+					'menu_class'     => 'social-menu',
+					'fallback_cb'    => false,
+					'link_before'    => '<span class="screen-reader-text">',
+					'link_after'     => '</span>',
+					'depth'          => 1,
+				)
+			);
 
 			return $social_menu;
 		}
@@ -116,18 +118,18 @@ if ( ! function_exists( 'flash_top_header_content' ) ) :
 	}
 endif;
 
-add_action( 'flash_copyright_area', 'flash_copyright_area',10 );
-/**
- * function to show the footer info, copyright information
- */
-
-if ( ! function_exists( 'flash_copyright_area' ) ) :
+if ( ! function_exists( 'flash_footer_copyright' ) ) :
 	/**
 	 * Footer Copyright Text.
 	 *
 	 * @since Flash 1.0
 	 */
-	function flash_copyright_area() {
+	function flash_footer_copyright() {         ?>
+		<div class="copyright">
+
+	<span class="copyright-text">
+
+		<?php
 		$site_link = '<a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '" ><span>' . get_bloginfo( 'name', 'display' ) . '</span></a>';
 
 		$wp_link = '<a href="' . esc_url( 'https://wordpress.org' ) . '" target="_blank" title="' . esc_attr__( 'WordPress', 'flash' ) . '"rel="nofollow"><span>' . esc_html__( 'WordPress', 'flash' ) . '</span></a>';
@@ -139,8 +141,16 @@ if ( ! function_exists( 'flash_copyright_area' ) ) :
 		$flash_copyright_area = '<div class="copyright-text">' . $default_footer_value . '</div>';
 
 		echo $flash_copyright_area;
+		?>
+	</span>
+
+		</div><!-- .copyright -->
+
+		<?php
 	}
 endif;
+
+add_action( 'flash_copyright_area', 'flash_footer_copyright' );
 
 if ( ! function_exists( 'flash_breadcrumbs' ) ) :
 	/**
@@ -227,7 +237,6 @@ if ( ! function_exists( 'flash_breadcrumbs' ) ) :
 					foreach ( $cat_parents as $parents ) {
 						$cat_display .= '<li class="trail-item item-category"><span>' . $parents . '</span></li>';
 					}
-
 				}
 
 				// Check if the post is in a category
@@ -240,7 +249,6 @@ if ( ! function_exists( 'flash_breadcrumbs' ) ) :
 					echo '<li class="trail-item"><span>' . esc_html( get_the_title() ) . '</span></li>';
 
 				}
-
 			} elseif ( is_category() ) {
 
 				// Category page
@@ -275,7 +283,6 @@ if ( ! function_exists( 'flash_breadcrumbs' ) ) :
 					// Just display current page if not parents
 					echo '<li class="trail-item"><span>' . esc_html( get_the_title() ) . '</span></li>';
 				}
-
 			} elseif ( is_tag() ) {
 
 				// Tag page
@@ -423,7 +430,11 @@ function flash_hex2rgb( $color ) {
 		return array();
 	}
 
-	return array( 'red' => $r, 'green' => $g, 'blue' => $b );
+	return array(
+		'red'   => $r,
+		'green' => $g,
+		'blue'  => $b,
+	);
 }
 
 /**
@@ -450,8 +461,8 @@ function flash_darkcolor( $hex, $steps ) {
 	$return      = '#';
 
 	foreach ( $color_parts as $color ) {
-		$color  = hexdec( $color );                                   // Convert to decimal
-		$color  = max( 0, min( 255, $color + $steps ) );              // Adjust color
+		$color   = hexdec( $color );                                   // Convert to decimal
+		$color   = max( 0, min( 255, $color + $steps ) );              // Adjust color
 		$return .= str_pad( dechex( $color ), 2, '0', STR_PAD_LEFT ); // Make two char hex code
 	}
 
@@ -516,18 +527,18 @@ function flash_is_woocommerce_page() {
 		}
 
 		$woocommerce_keys = array(
-			"woocommerce_shop_page_id",
-			"woocommerce_terms_page_id",
-			"woocommerce_cart_page_id",
-			"woocommerce_checkout_page_id",
-			"woocommerce_pay_page_id",
-			"woocommerce_thanks_page_id",
-			"woocommerce_myaccount_page_id",
-			"woocommerce_edit_address_page_id",
-			"woocommerce_view_order_page_id",
-			"woocommerce_change_password_page_id",
-			"woocommerce_logout_page_id",
-			"woocommerce_lost_password_page_id",
+			'woocommerce_shop_page_id',
+			'woocommerce_terms_page_id',
+			'woocommerce_cart_page_id',
+			'woocommerce_checkout_page_id',
+			'woocommerce_pay_page_id',
+			'woocommerce_thanks_page_id',
+			'woocommerce_myaccount_page_id',
+			'woocommerce_edit_address_page_id',
+			'woocommerce_view_order_page_id',
+			'woocommerce_change_password_page_id',
+			'woocommerce_logout_page_id',
+			'woocommerce_lost_password_page_id',
 		);
 
 		foreach ( $woocommerce_keys as $wc_page_id ) {
@@ -535,7 +546,6 @@ function flash_is_woocommerce_page() {
 				return true;
 			}
 		}
-
 	}
 
 	return false;
@@ -603,7 +613,6 @@ if ( ! function_exists( 'flash_related_posts' ) ) {
 		return $query;
 
 	}
-
 }
 
 if ( ! function_exists( 'flash_pingback_header' ) ) :
