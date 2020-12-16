@@ -116,18 +116,18 @@ if ( ! function_exists( 'flash_top_header_content' ) ) :
 	}
 endif;
 
-add_action( 'flash_footer_copyright', 'flash_footer_copyright',10 );
+add_action( 'flash_copyright_area', 'flash_copyright_area',10 );
 /**
  * function to show the footer info, copyright information
  */
 
-if ( ! function_exists( 'flash_footer_copyright' ) ) :
+if ( ! function_exists( 'flash_copyright_area' ) ) :
 	/**
 	 * Footer Copyright Text.
 	 *
 	 * @since Flash 1.0
 	 */
-	function flash_footer_copyright() {
+	function flash_copyright_area() {
 		$site_link = '<a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '" ><span>' . get_bloginfo( 'name', 'display' ) . '</span></a>';
 
 		$wp_link = '<a href="' . esc_url( 'https://wordpress.org' ) . '" target="_blank" title="' . esc_attr__( 'WordPress', 'flash' ) . '"rel="nofollow"><span>' . esc_html__( 'WordPress', 'flash' ) . '</span></a>';
@@ -136,9 +136,9 @@ if ( ! function_exists( 'flash_footer_copyright' ) ) :
 
 		$default_footer_value = sprintf( esc_html__( 'Copyright &copy; %1$s %2$s. All rights reserved.', 'flash' ), date( 'Y' ), $site_link ) . ' ' . sprintf( esc_html__( 'Theme: %1$s by %2$s.', 'flash' ), $tg_link, 'ThemeGrill' ) . ' ' . sprintf( esc_html__( 'Powered by %s.', 'flash' ), $wp_link );
 
-		$flash_footer_copyright = '<div class="copyright-text">' . $default_footer_value . '</div>';
+		$flash_copyright_area = '<div class="copyright-text">' . $default_footer_value . '</div>';
 
-		echo $flash_footer_copyright;
+		echo $flash_copyright_area;
 	}
 endif;
 
