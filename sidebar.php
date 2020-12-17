@@ -14,14 +14,15 @@ if ( ! is_active_sidebar( 'flash_right_sidebar' ) ) {
 	return;
 }
 
-if( $layout == 'right-sidebar' || ( class_exists('WooCommerce') && flash_is_woocommerce_pages() ) ) { ?>
-<aside id="secondary" class="widget-area" role="complementary">
+if ( $layout == 'right-sidebar' ) { ?>
+	<aside id="secondary" class="widget-area" role="complementary">
 
 	<?php
 	/**
 	 * flash_before_sidebar hook
 	 */
-	do_action( 'flash_before_sidebar' ); ?>
+	do_action( 'flash_before_sidebar' );
+	?>
 
 	<?php dynamic_sidebar( 'flash_right_sidebar' ); ?>
 
@@ -29,7 +30,8 @@ if( $layout == 'right-sidebar' || ( class_exists('WooCommerce') && flash_is_wooc
 	/**
 	 * flash_after_sidebar hook
 	 */
-	do_action( 'flash_after_sidebar' ); ?>
+	do_action( 'flash_after_sidebar' );
+	?>
 
 </aside><!-- #secondary -->
 <?php } ?>

@@ -80,6 +80,7 @@ Unless otherwise specified, all the theme files, scripts and images including th
 
 == Changelog ==
 = TBD =
+* Fix     - Blog/Post sidebar issue in Full width.
 * Updated - Swiper to `5.4.5`
 * Tweak   - Update footer credit link with `rel="nofollow"` attributes.
 
