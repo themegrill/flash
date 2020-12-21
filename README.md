@@ -81,9 +81,10 @@ Unless otherwise specified, all the theme files, scripts and images including th
 == Changelog ==
 = TBD =
 * Fix     - Blog/Post sidebar issue in Full width.
-* Updated - Swiper to `5.4.5`
+* Fix     - Testimonial Slider Bullet Pagination.
 * Tweak   - Update footer credit link with `rel="nofollow"` attributes.
 * Fix     - Footer credit credentials link.
+* Updated - Swiper to `5.4.5`
 
 = Version 1.3.8 - 2020-10-07 =
 * Fix - Radio button selected by clicking label.

@@ -250,20 +250,15 @@ jQuery( window ).load(
 							}
 						}
 					);
-
-					jQuery( this ).on(
-						'mouseenter',
-						function () {
+					jQuery( this ).on( {
+						mouseenter: function() {
 							sliderInstance.autoplay.stop();
-						}
-					);
+						},
 
-					jQuery( this ).on(
-						'mouseleave',
-						function () {
+						mouseleave: function() {
 							sliderInstance.autoplay.start();
 						}
-					);
+					} );
 				}
 			);
 
