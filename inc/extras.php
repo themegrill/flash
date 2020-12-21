@@ -124,24 +124,14 @@ if ( ! function_exists( 'flash_footer_copyright' ) ) :
 	 *
 	 * @since Flash 1.0
 	 */
-	function flash_footer_copyright() {         ?>
+	function flash_footer_copyright()
+	{ ?>
 		<div class="copyright">
-
 	<span class="copyright-text">
-
-		<?php
-		$site_link = '<a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '" ><span>' . get_bloginfo( 'name', 'display' ) . '</span></a>';
-
-		$wp_link = '<a href="' . esc_url( 'https://wordpress.org' ) . '" target="_blank" title="' . esc_attr__( 'WordPress', 'flash' ) . '"rel="nofollow"><span>' . esc_html__( 'WordPress', 'flash' ) . '</span></a>';
-
-		$tg_link = '<a href="' . esc_url( 'https://themegrill.com/themes/flash' ) . '" target="_blank" title="' . esc_attr__( 'Flash', 'flash' ) . '" rel="nofollow"><span>' . esc_html__( 'Flash', 'flash' ) . '</span></a>';
-
-		$default_footer_value = sprintf( esc_html__( 'Copyright &copy; %1$s %2$s. All rights reserved.', 'flash' ), date( 'Y' ), $site_link ) . ' ' . sprintf( esc_html__( 'Theme: %1$s by %2$s.', 'flash' ), $tg_link, 'ThemeGrill' ) . ' ' . sprintf( esc_html__( 'Powered by %s.', 'flash' ), $wp_link );
-
-		$flash_copyright_area = '<div class="copyright-text">' . $default_footer_value . '</div>';
-
-		echo $flash_copyright_area;
-		?>
+		<?php printf(esc_html__('Copyright %1$s %2$s', 'flash'), '&copy; ', date('Y')); ?>
+		<a href="<?php echo esc_url(home_url('/')); ?>"><?php echo get_bloginfo('name'); ?></a>
+		<?php printf(esc_html__('All rights reserved.', 'flash') . esc_html__(' Theme: %2$s by %1$s.', 'flash'), 'ThemeGrill', '<a href="' . esc_url('https://themegrill.com/themes/flash/') . '" target="_blank" rel="nofollow">Flash</a>'); ?>
+		<?php printf(esc_html__('Powered by %s', 'flash'), '<a href="' . esc_url(__('https://wordpress.org/', 'flash')) . '"target="_blank" rel="nofollow">' . esc_html__('WordPress', 'flash') . '</a>'); ?>
 	</span>
 
 		</div><!-- .copyright -->
@@ -150,7 +140,7 @@ if ( ! function_exists( 'flash_footer_copyright' ) ) :
 	}
 endif;
 
-add_action( 'flash_copyright_area', 'flash_footer_copyright' );
+add_action('flash_copyright_area', 'flash_footer_copyright');
 
 if ( ! function_exists( 'flash_breadcrumbs' ) ) :
 	/**
