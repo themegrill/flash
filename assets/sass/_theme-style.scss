@@ -4778,3 +4778,11 @@ WooCommerce
 		}
 	}
 }
+
+// Slider
+.slider-arrow .swiper-button-prev:after {
+	content: none;
+}
+.slider-arrow .swiper-button-next:after {
+	content: none;
+}
