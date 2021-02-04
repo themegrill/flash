@@ -20,7 +20,6 @@
     "grunt-contrib-cssmin": "^0.14.0",
     "grunt-contrib-jshint": "~0.11.3",
     "grunt-contrib-sass": "^1.0.0",
-    "grunt-contrib-uglify": "^0.10.1",
     "grunt-contrib-watch": "~0.6.1",
     "grunt-wp-i18n": "~0.5.3",
     "gulp": "^4.0.2",
@@ -53,6 +52,8 @@
     "build": "npm run styles && npm run uglify && npm run makepot && npm run compress"
   },
   "dependencies": {
+    "grunt-contrib-uglify": "^5.0.0",
+    "grunt-contrib-uglify-es": "github:gruntjs/grunt-contrib-uglify#harmony",
     "gulp-line-ending-corrector": "^1.0.3"
   }
 }
