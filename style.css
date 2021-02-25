@@ -4320,3 +4320,11 @@ WooCommerce
 .woocommerce-breadcrumb span:first-of-type:before {
 	content: none;
 }
+
+.slider-arrow .swiper-button-prev:after {
+	content: none;
+}
+
+.slider-arrow .swiper-button-next:after {
+	content: none;
+}
