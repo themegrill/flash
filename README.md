@@ -83,6 +83,7 @@ Unless otherwise specified, all the theme files, scripts and images including th
 * Fix - Image Overlapping Issue in Firefox Browser.
 * Fix - Double Arrow Issue in FT: Slider while Sliding.
 * Fix - Slider autoplay issue in responsive version.
+* Tweak - Update Screenshot Image.
 
 = Version 1.3.9 - 2020-12-21 =
 * Fix     - Blog/Post sidebar issue in Full width.
