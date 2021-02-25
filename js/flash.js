@@ -262,12 +262,9 @@ jQuery( window ).on(
 							sliderInstance.autoplay.start();
 						}
 					} );
-					setTimeout(
-						() => {
-							sliderInstance.update();
-						},
-						500
-					)
+					setTimeout( function() {
+						sliderInstance.update();
+					}, 500 );
 				}
 			);
 
