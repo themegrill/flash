@@ -220,8 +220,9 @@ jQuery( document ).ready(
 	}
 );
 
-jQuery( window ).load(
-	function () {
+jQuery( window ).on(
+	'load',
+	function() {
 
 		/**
 		 * Swiper for sliders
@@ -229,7 +230,7 @@ jQuery( window ).load(
 		if (typeof Swiper === 'function') {
 			// Main Slider.
 			jQuery( '.tg-section.tg-slider-widget' ).each(
-				function (index, element) {
+				function ( index, element) {
 					var container  = jQuery( this ).find( '.swiper-container' );
 					var nextButton = jQuery( this ).find( '.swiper-button-next' );
 					var prevButton = jQuery( this ).find( '.swiper-button-prev' );
@@ -241,12 +242,14 @@ jQuery( window ).load(
 						{
 							paginationClickable: true,
 							slidesPerView: 1,
-							autoplay: 4000,
+							autoplay: {
+								delay: 4000
+							},
 							speed: 1000,
 							loop: true,
 							navigation: {
 								nextEl: nextButton,
-								prevEl: prevButton,
+								prevEl: prevButton
 							}
 						}
 					);
