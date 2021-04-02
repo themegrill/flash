@@ -48,6 +48,16 @@ class Flash_Theme_Review_Notice {
 		$current_user             = wp_get_current_user();
 		$ignored_notice           = get_user_meta( $user_id, 'flash_ignore_theme_review_notice', true );
 		$ignored_notice_partially = get_user_meta( $user_id, 'nag_flash_ignore_theme_review_notice_partially', true );
+		$dismiss_url              = wp_nonce_url(
+			add_query_arg( 'nag_flash_ignore_theme_review_notice', 0 ),
+			'nag_flash_ignore_theme_review_notice_nonce',
+			'_flash_ignore_theme_review_notice_nonce'
+		);
+		$temporary_dismiss_url    = wp_nonce_url(
+			add_query_arg( 'nag_flash_ignore_theme_review_notice_partially', 0 ),
+			'nag_flash_ignore_theme_review_notice_partially_nonce',
+			'_flash_ignore_theme_review_notice_nonce'
+		);
 
 		/**
 		 * Return from notice display if:
@@ -61,42 +71,52 @@ class Flash_Theme_Review_Notice {
 		}
 		?>
 		<div class="notice notice-success flash-notice theme-review-notice" style="position:relative;">
-			<p>
-				<?php
-				printf(
-					/* Translators: %1$s current user display name. */
-					esc_html__(
-						'Howdy, %1$s! It seems that you have been using this theme for more than 15 days. We hope you are happy with everything that the theme has to offer. If you can spare a minute, please help us by leaving a 5-star review on WordPress.org.  By spreading the love, we can continue to develop new amazing features in the future, for free!',
-						'flash'
-					),
-					'<strong>' . esc_html( $current_user->display_name ) . '</strong>'
-				);
-				?>
-			</p>
+			<div class="flash-message__content">
+				<div class="flash-message__image">
+					<img class="flash-screenshot" src="<?php echo esc_url( get_template_directory_uri() ); ?>/screenshot.jpg" alt="<?php esc_attr_e( 'Flash', 'flash' ); ?>" /><?php // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped, Squiz.PHP.EmbeddedPhp.SpacingBeforeClose ?>
+				</div>
 
-			<div class="links">
-				<a href="https://wordpress.org/support/theme/flash/reviews/?filter=5#new-post" class="btn button-primary" target="_blank">
-					<span class="dashicons dashicons-thumbs-up"></span>
-					<span><?php esc_html_e( 'Sure', 'flash' ); ?></span>
-				</a>
+				<div class="flash-message__text">
+					<p>
+						<?php
+						printf(
+							/* Translators: %1$s current user display name. */
+							esc_html__(
+								'Howdy, %1$s! It seems that you have been using this theme for more than 15 days. We hope you are happy with everything that the theme has to offer. If you can spare a minute, please help us by leaving a 5-star review on WordPress.org.  By spreading the love, we can continue to develop new amazing features in the future, for free!',
+								'flash'
+							),
+							'<strong>' . esc_html( $current_user->display_name ) . '</strong>'
+						);
+						?>
+					</p>
 
-				<a href="?nag_flash_ignore_theme_review_notice_partially=0" class="btn button-secondary">
-					<span class="dashicons dashicons-calendar"></span>
-					<span><?php esc_html_e( 'Maybe later', 'flash' ); ?></span>
-				</a>
+					<div class="links">
+						<a href="https://wordpress.org/support/theme/flash/reviews/?filter=5#new-post" class="btn button-primary" target="_blank">
+							<span class="dashicons dashicons-thumbs-up"></span>
+							<span><?php esc_html_e( 'Sure', 'flash' ); ?></span>
+						</a>
 
-				<a href="?nag_flash_ignore_theme_review_notice=0" class="btn button-secondary">
-					<span class="dashicons dashicons-smiley"></span>
-					<span><?php esc_html_e( 'I already did', 'flash' ); ?></span>
-				</a>
+						<a href="<?php echo esc_url( $temporary_dismiss_url ); ?>" class="btn button-secondary">
+							<span class="dashicons dashicons-calendar"></span>
+							<span><?php esc_html_e( 'Maybe later', 'flash' ); ?></span>
+						</a>
 
-				<a href="<?php echo esc_url( 'https://wordpress.org/support/theme/flash/' ); ?>" class="btn button-secondary" target="_blank">
-					<span class="dashicons dashicons-edit"></span>
-					<span><?php esc_html_e( 'Got theme support question?', 'flash' ); ?></span>
-				</a>
-			</div> <!-- /.links -->
+						<a href="<?php echo esc_url( $dismiss_url ); ?>" class="btn button-secondary">
+							<span class="dashicons dashicons-smiley"></span>
+							<span><?php esc_html_e( 'I already did', 'flash' ); ?></span>
+						</a>
 
-			<a class="notice-dismiss" href="?nag_flash_ignore_theme_review_notice=0"></a>
+						<a href="<?php echo esc_url( 'https://wordpress.org/support/theme/flash/' ); ?>" class="btn button-secondary" target="_blank">
+							<span class="dashicons dashicons-edit"></span>
+							<span><?php esc_html_e( 'Got theme support question?', 'flash' ); ?></span>
+						</a>
+					</div> <!-- /.links -->
+				</div> <!-- /.flash-message__text -->
+
+				<a class="notice-dismiss" href="<?php echo esc_url( $dismiss_url ); ?>"></a>
+
+			</div> <!-- /.flash-message__content -->
+
 		</div> <!-- /.theme-review-notice -->
 		<?php
 	}
@@ -105,9 +125,17 @@ class Flash_Theme_Review_Notice {
 	 * `I already did` button or `dismiss` button: remove the review notice permanently.
 	 */
 	public function ignore_theme_review_notice() {
-		/* If user clicks to ignore the notice, add that to their user meta */
-		if ( isset( $_GET['nag_flash_ignore_theme_review_notice'] ) && '0' == $_GET['nag_flash_ignore_theme_review_notice'] ) {
-			add_user_meta( get_current_user_id(), 'flash_ignore_theme_review_notice', 'true', true );
+
+		// If user clicks to ignore the notice, add that to their user meta.
+		if ( isset( $_GET['nag_flash_ignore_theme_review_notice'] ) && isset( $_GET['_flash_ignore_theme_review_notice_nonce'] ) ) {
+
+			if ( ! wp_verify_nonce( wp_unslash( $_GET['_flash_ignore_theme_review_notice_nonce'] ), 'nag_flash_ignore_theme_review_notice_nonce' ) ) {
+				wp_die( esc_html__( 'Action failed. Please refresh the page and retry.', 'flash' ) );
+			}
+
+			if ( '0' === $_GET['nag_flash_ignore_theme_review_notice'] ) {
+				add_user_meta( get_current_user_id(), 'flash_ignore_theme_review_notice', 'true', true );
+			}
 		}
 	}
 
@@ -115,11 +143,20 @@ class Flash_Theme_Review_Notice {
 	 * `Maybe later` button: remove the review notice partially.
 	 */
 	public function ignore_theme_review_notice_partially() {
-		/* If user clicks to ignore the notice, add that to their user meta */
-		if ( isset( $_GET['nag_flash_ignore_theme_review_notice_partially'] ) && '0' == $_GET['nag_flash_ignore_theme_review_notice_partially'] ) {
-			update_user_meta( get_current_user_id(), 'nag_flash_ignore_theme_review_notice_partially', time() );
+
+		// If user clicks to ignore the notice, add that to their user meta.
+		if ( isset( $_GET['nag_flash_ignore_theme_review_notice_partially'] ) && isset( $_GET['_flash_ignore_theme_review_notice_nonce'] ) ) {
+
+			if ( ! wp_verify_nonce( wp_unslash( $_GET['_flash_ignore_theme_review_notice_nonce'] ), 'nag_flash_ignore_theme_review_notice_partially_nonce' ) ) {
+				wp_die( esc_html__( 'Action failed. Please refresh the page and retry.', 'flash' ) );
+			}
+
+			if ( '0' === $_GET['nag_flash_ignore_theme_review_notice_partially'] ) {
+				update_user_meta( get_current_user_id(), 'nag_flash_ignore_theme_review_notice_partially', time() );
+			}
 		}
 	}
+
 
 	/**
 	 * Remove the data set after the theme has been switched to other theme.
