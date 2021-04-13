@@ -66,39 +66,57 @@ class Flash_Theme_Review_Notice {
 		 * 2. If the user has ignored the message partially for 15 days.
 		 * 3. Dismiss always if clicked on 'I Already Did' button.
 		 */
-		if ( ( get_option( 'flash_theme_installed_time' ) > strtotime( '-15 day' ) ) || ( $ignored_notice_partially > strtotime( '-15 day' ) ) || ( $ignored_notice ) ) {
+		if ( ( get_option( 'flash_theme_installed_time' ) > strtotime( '-0 day' ) ) || ( $ignored_notice_partially > strtotime( '-15 sec' ) ) || ( $ignored_notice ) ) {
 			return;
 		}
 		?>
 		<div class="notice notice-success flash-notice theme-review-notice" style="position:relative;">
 			<div class="flash-message__content">
 				<div class="flash-message__image">
-					<img class="flash-screenshot" src="<?php echo esc_url( get_template_directory_uri() ); ?>/screenshot.jpg" alt="<?php esc_attr_e( 'Flash', 'flash' ); ?>" /><?php // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped, Squiz.PHP.EmbeddedPhp.SpacingBeforeClose ?>
+					<img class="flash-logo--png" src="<?php echo esc_url( get_template_directory_uri() . '/inc/admin/images/flash-logo-square.png' ); ?>" alt="<?php esc_attr_e( 'Flash', 'flash' ); ?>" />
 				</div>
 
 				<div class="flash-message__text">
-					<p>
+					<h3><?php printf( esc_html( 'HAKUNA %s' ), '<strong>MATATA!</strong>' ); ?></h3>
+					<p>(
 						<?php
 						printf(
-							/* Translators: %1$s current user display name. */
-							esc_html__(
-								'Howdy, %1$s! It seems that you have been using this theme for more than 15 days. We hope you are happy with everything that the theme has to offer. If you can spare a minute, please help us by leaving a 5-star review on WordPress.org.  By spreading the love, we can continue to develop new amazing features in the future, for free!',
-								'flash'
-							),
-							'<strong>' . esc_html( $current_user->display_name ) . '</strong>'
+							/* translators: %s: Smile icon */
+							esc_html__( 'The above word is just to draw your attention. %s', 'flash' ),
+							'<span class="dashicons dashicons-smiley smile-icon"></span>'
 						);
+						?>
+					)</p>
+					<p>
+						<?php
+							printf(
+								/* translators: %1$s: Opening of strong tag, %2$s: Theme's Name, %3$s: Closing of strong tag  */
+								esc_html__( 'Hope you are having a nice experience with %1$s %2$s %3$s theme. Please provide this theme a nice review.', 'flash' ),
+								'<strong>',
+								esc_html( wp_get_theme()->get( 'Name' ) ),
+								'</strong>'
+							);
+						?>
+					</p>
+					<strong>
+						<?php
+							esc_html_e( 'What benefit would you have?', 'flash' )
+						?>
+					</strong>
+					<p>
+						<?php
+							printf(
+								/* translators: %s: Smiley icon */
+								esc_html__( 'Basically, it would encourage us to release updates regularly with new features & bug fixes so that you can keep on using the theme without any issues and also to provide free support like we have been doing. %s', 'flash' ),
+								'<span class="dashicons dashicons-smiley smile-icon"></span>'
+							);
 						?>
 					</p>
 
 					<div class="links">
 						<a href="https://wordpress.org/support/theme/flash/reviews/?filter=5#new-post" class="btn button-primary" target="_blank">
-							<span class="dashicons dashicons-thumbs-up"></span>
-							<span><?php esc_html_e( 'Sure', 'flash' ); ?></span>
-						</a>
-
-						<a href="<?php echo esc_url( $temporary_dismiss_url ); ?>" class="btn button-secondary">
-							<span class="dashicons dashicons-calendar"></span>
-							<span><?php esc_html_e( 'Maybe later', 'flash' ); ?></span>
+						<span class="dashicons dashicons-external"></span>
+							<span><?php esc_html_e( 'Sure, I\'d love to!', 'flash' ); ?></span>
 						</a>
 
 						<a href="<?php echo esc_url( $dismiss_url ); ?>" class="btn button-secondary">
@@ -106,9 +124,14 @@ class Flash_Theme_Review_Notice {
 							<span><?php esc_html_e( 'I already did', 'flash' ); ?></span>
 						</a>
 
+						<a href="<?php echo esc_url( $temporary_dismiss_url ); ?>" class="btn button-secondary">
+							<span class="dashicons dashicons-calendar"></span>
+							<span><?php esc_html_e( 'Maybe later', 'flash' ); ?></span>
+						</a>
+
 						<a href="<?php echo esc_url( 'https://wordpress.org/support/theme/flash/' ); ?>" class="btn button-secondary" target="_blank">
-							<span class="dashicons dashicons-edit"></span>
-							<span><?php esc_html_e( 'Got theme support question?', 'flash' ); ?></span>
+							<span class="dashicons dashicons-testimonial"></span>
+							<span><?php esc_html_e( 'I have a query', 'flash' ); ?></span>
 						</a>
 					</div> <!-- /.links -->
 				</div> <!-- /.flash-message__text -->
