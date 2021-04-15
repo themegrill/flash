@@ -23,12 +23,14 @@
 
 	.links {
 		margin: 1.2em 0;
+		display: flex;
 
 		a {
 			margin-right:  10px;
 
 			& > span {
 				vertical-align: middle;
+				padding-right: 5px;
 			}
 		}
 	}
@@ -160,6 +162,13 @@ a.flash-message-close {
 		flex-direction: column;
 	  }
 	}
+
+	a.btn{
+		display: flex;
+		max-width: fit-content;
+		justify-content: center;
+		align-items: center;
+	  }
   
 	.flash-message__image {
 	  flex: 0;

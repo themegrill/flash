@@ -45,7 +45,6 @@ class Flash_Theme_Review_Notice {
 	 */
 	public function review_notice_markup() {
 		$user_id                  = get_current_user_id();
-		$current_user             = wp_get_current_user();
 		$ignored_notice           = get_user_meta( $user_id, 'flash_ignore_theme_review_notice', true );
 		$ignored_notice_partially = get_user_meta( $user_id, 'nag_flash_ignore_theme_review_notice_partially', true );
 		$dismiss_url              = wp_nonce_url(
@@ -121,7 +120,7 @@ class Flash_Theme_Review_Notice {
 
 						<a href="<?php echo esc_url( $dismiss_url ); ?>" class="btn button-secondary">
 							<span class="dashicons dashicons-smiley"></span>
-							<span><?php esc_html_e( 'I already did', 'flash' ); ?></span>
+							<span><?php esc_html_e( 'I already did!', 'flash' ); ?></span>
 						</a>
 
 						<a href="<?php echo esc_url( $temporary_dismiss_url ); ?>" class="btn button-secondary">

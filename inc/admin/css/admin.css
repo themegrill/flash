@@ -23,6 +23,7 @@
 
 .flash-notice .links {
 	margin: 1.2em 0;
+	display: flex;
 }
 
 .flash-notice .links a {
@@ -31,6 +32,7 @@
 
 .flash-notice .links a > span {
 	vertical-align: middle;
+	padding-right: 5px;
 }
 
 .flash-notice .notice-text .coupon-code {
@@ -149,6 +151,13 @@ a.flash-message-close:before {
 		display: flex;
 		flex-direction: column;
 	}
+}
+
+.flash-notice.theme-review-notice a.btn {
+	display: flex;
+	max-width: fit-content;
+	justify-content: center;
+	align-items: center;
 }
 
 .flash-notice.theme-review-notice .flash-message__image {
