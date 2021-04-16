@@ -144,14 +144,14 @@ a.flash-message-close {
 	border-left-color: #289dcc;
 	padding: 20px 15px;
   
-	.flash-message__content{
-	  @media screen and (max-width: 768px){
+	.flash-message__content {
+	  @media screen and (max-width: 768px) {
 		display: flex;
 		flex-direction: column;
 	  }
 	}
 
-	a.btn{
+	a.btn {
 		display: flex;
 		max-width: fit-content;
 		justify-content: center;
@@ -209,7 +209,7 @@ a.flash-message-close {
 	  box-shadow: none;
 	  color: #fff;
 
-	  @media screen and (max-width: 768px){
+	  @media screen and (max-width: 768px) {
 		margin-bottom: 10px;
 	  }
 	}
@@ -220,7 +220,7 @@ a.flash-message-close {
 	  background: #f6f7f7;
 	  vertical-align: top;
 
-	  @media screen and (max-width: 603px){
+	  @media screen and (max-width: 603px) {
 		margin-bottom: 10px;
 	  }
 	}
