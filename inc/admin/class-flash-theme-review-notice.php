@@ -76,7 +76,7 @@ class Flash_Theme_Review_Notice {
 				</div>
 
 				<div class="flash-message__text">
-					<h3><?php printf( esc_html( 'HAKUNA %s' ), '<strong>MATATA!</strong>' ); ?></h3>
+					<h3><?php echo esc_html( 'HAKUNA MATATA!' ); ?></h3>
 					<p>(
 						<?php
 						printf(

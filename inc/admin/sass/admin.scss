@@ -13,10 +13,7 @@
 	margin-right: -20px;
 }
 
-
-/**
- * Notices.
- */
+// Notices.
 .flash-notice {
 	position: relative;
 	padding: 8px 40px 8px 8px;
@@ -24,6 +21,7 @@
 	.links {
 		margin: 1.2em 0;
 		display: flex;
+		flex-wrap: wrap;
 
 		a {
 			margin-right:  10px;
@@ -46,9 +44,7 @@
 	}
 }
 
-/**
- * Welcome notice.
- */
+// Welcome notice.
 .flash-message__content {
 	display: flex;
 
@@ -110,15 +106,13 @@ a.flash-message-close {
 	}
 }
 
-@media screen and (max-width: 782px) {
+@media screen and (max-width: 768px) {
 	.flash-message__image {
 		display: none;
 	}
 }
 
-/**
- * Dashboard page.
- */
+//Dashboard page.
 .wrap .flash-header {
 	background-color: #fff;
 	padding: 12px 20px;
@@ -131,10 +125,8 @@ a.flash-message-close {
 	margin-top: 0;
 }
 
-/**
- * Responsive.
- */
-@media (max-width: 600px) {
+// Responsive.
+@media (max-width: 768px) {
 	.flash-message__content {
 		.flash-screenshot {
 			display: none;
@@ -147,17 +139,13 @@ a.flash-message-close {
 	}
 }
 
-/**
- * Flash Review Notice
- */
-
+// Flash Review Notice.
  .flash-notice.theme-review-notice {
-
 	border-left-color: #289dcc;
 	padding: 20px 15px;
   
 	.flash-message__content{
-	  @media screen and (max-width: 720px){
+	  @media screen and (max-width: 768px){
 		display: flex;
 		flex-direction: column;
 	  }
@@ -177,26 +165,27 @@ a.flash-message-close {
 	  margin-left: 10px;
 	  padding-right: 0;
 	  border-right: none;
-	  @media screen and (max-width: 720px){
+
+	  @media screen and (max-width: 768px) {
 		margin-bottom: 15px;
 		margin-right: 0px;
 		margin-left: 0px;
 	  }
 	}
   
-	.flash-logo--png{
+	.flash-logo--png {
 	  width: 80px;
 	  height: 80px;
 	}
   
-	h3{
+	h3 {
 	  font-size: 21px;
 	  margin: 0;
 	  line-height: 1;
 	  color: #000;
 	}
 	
-	p{
+	p {
 	  font-size: 14px;
 	  line-height: 21px;
 	  color: #3C434A;
@@ -205,7 +194,7 @@ a.flash-message-close {
 	  max-width: 720px;
 	}
   
-	span.dashicons.dashicons-smiley.smile-icon{
+	span.dashicons.dashicons-smiley.smile-icon {
 	  background: #f7e143;
 	  border-radius: 50%;
 	  font-size: 15px;
@@ -214,33 +203,34 @@ a.flash-message-close {
 	  height: 17px;
 	}
   
-	.button-primary{
+	.button-primary {
 	  background: #289dcc;
 	  border-color: #289dcc;
 	  box-shadow: none;
 	  color: #fff;
-	  @media screen and (max-width: 603px){
+
+	  @media screen and (max-width: 768px){
 		margin-bottom: 10px;
 	  }
 	}
   
-	.button-secondary{
+	.button-secondary {
 	  color: #289dcc;
 	  border-color: #289dcc;
 	  background: #f6f7f7;
 	  vertical-align: top;
+
 	  @media screen and (max-width: 603px){
 		margin-bottom: 10px;
 	  }
 	}
   
-	strong{
+	strong {
 	  color: #000;
 	}
   
 	.links {
 	  margin: 1.2em 0 5px 0;
 	}
-  
   }
   

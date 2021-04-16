@@ -13,9 +13,6 @@
 	margin-right: -20px;
 }
 
-/**
- * Notices.
- */
 .flash-notice {
 	position: relative;
 	padding: 8px 40px 8px 8px;
@@ -24,6 +21,7 @@
 .flash-notice .links {
 	margin: 1.2em 0;
 	display: flex;
+	flex-wrap: wrap;
 }
 
 .flash-notice .links a {
@@ -43,9 +41,6 @@
 	text-decoration: none;
 }
 
-/**
- * Welcome notice.
- */
 .flash-message__content {
 	display: flex;
 }
@@ -104,15 +99,12 @@ a.flash-message-close:before {
 	transition: all .1s ease-in-out;
 }
 
-@media screen and (max-width: 782px) {
+@media screen and (max-width: 768px) {
 	.flash-message__image {
 		display: none;
 	}
 }
 
-/**
- * Dashboard page.
- */
 .wrap .flash-header {
 	background-color: #fff;
 	padding: 12px 20px;
@@ -125,10 +117,7 @@ a.flash-message-close:before {
 	margin-top: 0;
 }
 
-/**
- * Responsive.
- */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
 	.flash-message__content .flash-screenshot {
 		display: none;
 	}
@@ -138,15 +127,12 @@ a.flash-message-close:before {
 	}
 }
 
-/**
- * Flash Review Notice
- */
 .flash-notice.theme-review-notice {
 	border-left-color: #289dcc;
 	padding: 20px 15px;
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 768px) {
 	.flash-notice.theme-review-notice .flash-message__content {
 		display: flex;
 		flex-direction: column;
@@ -169,7 +155,7 @@ a.flash-message-close:before {
 	border-right: none;
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 768px) {
 	.flash-notice.theme-review-notice .flash-message__image {
 		margin-bottom: 15px;
 		margin-right: 0px;
@@ -214,7 +200,7 @@ a.flash-message-close:before {
 	color: #fff;
 }
 
-@media screen and (max-width: 603px) {
+@media screen and (max-width: 768px) {
 	.flash-notice.theme-review-notice .button-primary {
 		margin-bottom: 10px;
 	}
