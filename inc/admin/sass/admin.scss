@@ -107,7 +107,7 @@ a.flash-message-close {
 }
 
 @media screen and (max-width: 768px) {
-	.flash-message__image {
+	.flash-message__content .flash-message__image {
 		display: none;
 	}
 }
@@ -139,7 +139,7 @@ a.flash-message-close {
 	}
 }
 
-// Flash Review Notice.
+// Flash review notice.
  .flash-notice.theme-review-notice {
 	border-left-color: #289dcc;
 	padding: 20px 15px;
@@ -165,12 +165,6 @@ a.flash-message-close {
 	  margin-left: 10px;
 	  padding-right: 0;
 	  border-right: none;
-
-	  @media screen and (max-width: 768px) {
-		margin-bottom: 15px;
-		margin-right: 0px;
-		margin-left: 0px;
-	  }
 	}
   
 	.flash-logo--png {
