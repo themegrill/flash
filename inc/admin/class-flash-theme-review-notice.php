@@ -98,9 +98,7 @@ class Flash_Theme_Review_Notice {
 						?>
 					</p>
 					<strong>
-						<?php
-							esc_html_e( 'What benefit would you have?', 'flash' )
-						?>
+						<?php esc_html_e( 'What benefit would you have?', 'flash' ); ?>
 					</strong>
 					<p>
 						<?php
