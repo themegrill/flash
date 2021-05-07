@@ -80,6 +80,9 @@ License: GNU GPL, Version 3, https://www.gnu.org/licenses/gpl-3.0.html
 Unless otherwise specified, all the theme files, scripts and images including the screenshot image are licensed under [GNU GPL] (http://www.gnu.org/licenses/gpl-3.0.txt), version 3 or later.
 
 == Changelog ==
+= TBD =
+* Tweak - Update screenshot image source link.
+
 = Version 1.4.0.1 - 2021-02-25 =
 * Fix - Flash.js minified merge issue.
 
