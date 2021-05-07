@@ -29,8 +29,9 @@ Flash is distributed under the terms of the GNU GPL
 Code ideas for the color scheme was borrowed from Twenty Sixteen. © Copyright 2014-2015 WordPress.org - GPL v2.0
 
 Flash Theme bundles the following third-party resources:
+Images used in the screenshot are licensed under Creative Commons Zero (CC0):
 
- Images on screenshot is from https://pxhere.com/ link. License: Creative Commons Zero (CC0)
+https://pxhere.com/en/photo/835224
 
 Font Awesome icon font, Copyright © 2015, Dave Gandy,
 Font License: SIL OFL 1.1, http://scripts.sil.org/OFL
