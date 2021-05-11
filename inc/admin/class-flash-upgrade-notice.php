@@ -78,8 +78,8 @@ class Flash_Upgrade_Notice extends Flash_Notice {
 					),
 					'<strong>' . esc_html( $current_user->display_name ) . '</strong>',
 					'Flash',
-					'<code class="coupon-code">upgrade15</code>',
-					'15%'
+					'<code class="coupon-code">TGFREEUSER</code>',
+					'25%'
 				);
 				?>
 			</p>
