@@ -205,7 +205,7 @@ a.flash-message-close:before {
 	vertical-align: top;
 }
 
-@media screen and (max-width: 603px) {
+@media screen and (max-width: 768px) {
 	.flash-notice.theme-review-notice .button-secondary {
 		margin-bottom: 10px;
 	}
