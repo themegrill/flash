@@ -82,6 +82,7 @@ Unless otherwise specified, all the theme files, scripts and images including th
 == Changelog ==
 = TBD =
 * Tweak - Update screenshot image source link.
+* Tweak - Update Screenshot Image.
 
 = Version 1.4.0.1 - 2021-02-25 =
 * Fix - Flash.js minified merge issue.
