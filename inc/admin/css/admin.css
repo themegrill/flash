@@ -128,7 +128,7 @@ a.flash-message-close:before {
 }
 
 .flash-notice.theme-review-notice {
-	border-left-color: #289dcc;
+	border-left-color: #30afb8;
 	padding: 20px 15px;
 }
 
@@ -171,8 +171,7 @@ a.flash-message-close:before {
 	font-size: 14px;
 	line-height: 21px;
 	color: #3C434A;
-	margin: 0;
-	margin-bottom: 6px;
+	margin: 0 0 6px 0;
 	max-width: 720px;
 }
 
@@ -186,8 +185,8 @@ a.flash-message-close:before {
 }
 
 .flash-notice.theme-review-notice .button-primary {
-	background: #289dcc;
-	border-color: #289dcc;
+	background: #30afb8;
+	border-color: #30afb8;
 	box-shadow: none;
 	color: #fff;
 }
@@ -199,8 +198,8 @@ a.flash-message-close:before {
 }
 
 .flash-notice.theme-review-notice .button-secondary {
-	color: #289dcc;
-	border-color: #289dcc;
+	color: #30afb8;
+	border-color: #30afb8;
 	background: #f6f7f7;
 	vertical-align: top;
 }

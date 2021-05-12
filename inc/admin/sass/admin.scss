@@ -34,6 +34,7 @@
 	}
 
 	.notice-text {
+
 		.coupon-code {
 			display: inline-block;
 		}
@@ -79,6 +80,7 @@
 		}
 
 		a {
+
 			&:before {
 				margin: 5px;
 				vertical-align: middle;
@@ -128,6 +130,7 @@ a.flash-message-close {
 // Responsive.
 @media (max-width: 768px) {
 	.flash-message__content {
+
 		.flash-screenshot {
 			display: none;
 		}
@@ -141,90 +144,88 @@ a.flash-message-close {
 
 // Flash review notice.
  .flash-notice.theme-review-notice {
-	border-left-color: #289dcc;
+	border-left-color: #30afb8;
 	padding: 20px 15px;
-  
+
 	.flash-message__content {
-	  @media screen and (max-width: 768px) {
-		display: flex;
-		flex-direction: column;
-	  }
+		@media screen and (max-width: 768px) {
+			display: flex;
+			flex-direction: column;
+		}
 	}
 
 	a.btn {
 		display: flex;
 		max-width: fit-content;
 		justify-content: center;
-		align-items: center;
-	  }
-  
+		align-items: center
+	}
+
 	.flash-message__image {
-	  flex: 0;
-	  min-height: auto;
-	  margin-right: 35px;
-	  margin-left: 10px;
-	  padding-right: 0;
-	  border-right: none;
+		flex: 0;
+		min-height: auto;
+		margin-right: 35px;
+		margin-left: 10px;
+		padding-right: 0;
+		border-right: none;
 	}
-  
+
 	.flash-logo--png {
-	  width: 80px;
-	  height: 80px;
+		width: 80px;
+		height: 80px;
 	}
-  
+
 	h3 {
-	  font-size: 21px;
-	  margin: 0;
-	  line-height: 1;
-	  color: #000;
+		font-size: 21px;
+		margin: 0;
+		line-height: 1;
+		color: #000;
 	}
-	
+
 	p {
-	  font-size: 14px;
-	  line-height: 21px;
-	  color: #3C434A;
-	  margin: 0;
-	  margin-bottom: 6px;
-	  max-width: 720px;
+		font-size: 14px;
+		line-height: 21px;
+		color: #3C434A;
+		margin: 0 0 6px 0;
+		max-width: 720px;
 	}
-  
+
 	span.dashicons.dashicons-smiley.smile-icon {
-	  background: #f7e143;
-	  border-radius: 50%;
-	  font-size: 15px;
-	  border: 1px solid;
-	  width: 17px;
-	  height: 17px;
+		background: #f7e143;
+		border-radius: 50%;
+		font-size: 15px;
+		border: 1px solid;
+		width: 17px;
+		height: 17px;
 	}
-  
+
 	.button-primary {
-	  background: #289dcc;
-	  border-color: #289dcc;
-	  box-shadow: none;
-	  color: #fff;
+		background: #30afb8;
+		border-color: #30afb8;
+		box-shadow: none;
+		color: #fff;
 
-	  @media screen and (max-width: 768px) {
-		margin-bottom: 10px;
-	  }
+		@media screen and (max-width: 768px) {
+			margin-bottom: 10px;
+		}
 	}
-  
+
 	.button-secondary {
-	  color: #289dcc;
-	  border-color: #289dcc;
-	  background: #f6f7f7;
-	  vertical-align: top;
+		color: #30afb8;
+		border-color: #30afb8;
+		background: #f6f7f7;
+		vertical-align: top;
 
-	  @media screen and (max-width: 768px) {
-		margin-bottom: 10px;
-	  }
+		@media screen and (max-width: 768px) {
+			margin-bottom: 10px;
+		}
 	}
-  
+
 	strong {
-	  color: #000;
+		color: #000;
 	}
-  
+
 	.links {
-	  margin: 1.2em 0 5px 0;
+		margin: 1.2em 0 5px 0;
 	}
-  }
-  
+}
