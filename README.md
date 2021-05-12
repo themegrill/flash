@@ -81,6 +81,7 @@ Unless otherwise specified, all the theme files, scripts and images including th
 
 == Changelog ==
 = TBD =
+* Tweak - Update screenshot image source link.
 * Tweak - Update Screenshot Image.
 * Tweak - Update screenshot image source link.
 
