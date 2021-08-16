@@ -114,7 +114,7 @@ add_action( 'after_setup_theme', 'flash_setup' );
  */
 function flash_block_editor_styles()
 {
-	wp_enqueue_style('flash-editor-googlefonts', '//fonts.googleapis.com/css?family=Montserrat:400,700');
+	wp_enqueue_style('flash-editor-googlefonts', '//fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
 	wp_enqueue_style('flash-block-editor-styles', get_template_directory_uri() . '/style-editor-block.css');
 }
 add_action('enqueue_block_editor_assets', 'flash_block_editor_styles', 1, 1);
