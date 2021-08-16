@@ -29,8 +29,9 @@ Flash is distributed under the terms of the GNU GPL
 Code ideas for the color scheme was borrowed from Twenty Sixteen. © Copyright 2014-2015 WordPress.org - GPL v2.0
 
 Flash Theme bundles the following third-party resources:
+Images used in the screenshot are licensed under Creative Commons Zero (CC0):
 
- Images on screenshot is from https://pxhere.com/ link. License: Creative Commons Zero (CC0)
+https://pxhere.com/en/photo/835224
 
 Font Awesome icon font, Copyright © 2015, Dave Gandy,
 Font License: SIL OFL 1.1, http://scripts.sil.org/OFL
@@ -79,6 +80,13 @@ License: GNU GPL, Version 3, https://www.gnu.org/licenses/gpl-3.0.html
 Unless otherwise specified, all the theme files, scripts and images including the screenshot image are licensed under [GNU GPL] (http://www.gnu.org/licenses/gpl-3.0.txt), version 3 or later.
 
 == Changelog ==
+= Version 1.4.2 - 2021-07-20 =
+* Update - Kirki version to `3.1.9`
+
+= Version 1.4.1 - 2021-05-13 =
+* Tweak - Update Screenshot Image.
+* Tweak - Update screenshot image source link.
+
 = Version 1.4.0.1 - 2021-02-25 =
 * Fix - Flash.js minified merge issue.
 
