@@ -895,8 +895,8 @@ function flash_customize_register( $wp_customize ) {
 			$wp_customize,
 			'flash_review_section',
 			array(
-				'title'      => esc_html__( 'Add Review', 'zakra' ),
-				'url'        => 'https://wordpress.org/support/theme/flash/reviews/#new-post',
+				'title'      => esc_html__( 'Leave a Review on .org', 'flash' ),
+				'url'        => 'https://wordpress.org/support/theme/flash/reviews/?filter=5/#new-post',
 				'capability' => 'edit_theme_options',
 				'priority'   => 200,
 			)
