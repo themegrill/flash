@@ -902,6 +902,7 @@ function flash_customize_register( $wp_customize ) {
 			)
 		)
 	);
+
 	/*
 	 * Custom Scripts
 	 */
