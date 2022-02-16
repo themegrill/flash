@@ -852,6 +852,94 @@ Kirki::add_field(
 	)
 );
 
+/** Panel Footer **/
+Kirki::add_panel(
+	'flash_footer',
+	array(
+		'title'    => esc_html__( 'Footer', 'flash' ),
+		'priority' => 40,
+	)
+);
+
+// Section - Footer Widgets Area.
+Kirki::add_section(
+	'flash_footer_widgets_area',
+	array(
+		'title'      => esc_html__( 'Footer Widgets Area', 'flash' ),
+		'panel'      => 'flash_footer',
+		'capability' => 'edit_theme_options',
+		'priority'   => 10,
+	)
+);
+
+// Footer Widget.
+Kirki::add_field(
+	'flash_config',
+	array(
+		'type'     => 'radio-image',
+		'settings' => 'flash_footer_widgets',
+		'label'    => esc_html__( 'Style', 'flash' ),
+		'section'  => 'flash_footer_widgets_area',
+		'default'  => '4',
+		'priority' => 10,
+		'multiple' => 1,
+		'choices'  => array(
+			'1' => get_template_directory_uri() . '/images/col-1.png',
+			'2' => get_template_directory_uri() . '/images/col-2.png',
+			'3' => get_template_directory_uri() . '/images/col-3.png',
+			'4' => get_template_directory_uri() . '/images/col-4.png',
+		),
+	)
+);
+
+// Setting - Footer Scroll to Top Footer Header.
+Kirki::add_field(
+	'flash_config',
+	array(
+		'type'     => 'custom',
+		'settings' => 'flash_scroll_to_top_fixed_header',
+		'section'  => 'flash_footer_scroll_top',
+		'default'  => '<div style="margin-top: 15px; padding: 5px; text-align: center; background-color: #333; color: #fff; border-radius: 50px;">' . esc_html__( 'Fixed', 'flash' ) . '</div>',
+		'priority' => 20,
+	)
+);
+
+// Section - Footer Scroll to Top.
+Kirki::add_section(
+	'flash_footer_scroll_top',
+	array(
+		'title'      => esc_html__( 'Scroll to Top', 'flash' ),
+		'panel'      => 'flash_footer',
+		'capability' => 'edit_theme_options',
+		'priority'   => 40,
+	)
+);
+
+// Setting - Footer Scroll to Top Footer Header.
+Kirki::add_field(
+	'flash_config',
+	array(
+		'type'     => 'custom',
+		'settings' => 'flash_scroll_to_top_fixed_header',
+		'section'  => 'flash_footer_scroll_top',
+		'default'  => '<div style="margin-top: 15px; padding: 5px; text-align: center; background-color: #333; color: #fff; border-radius: 50px;">' . esc_html__( 'Fixed', 'flash' ) . '</div>',
+		'priority' => 10,
+	)
+);
+
+// Setting - Scroll to Top button Options.
+Kirki::add_field(
+	'flash_config',
+	array(
+		'type'     => 'checkbox',
+		'settings' => 'flash_disable_back_to_top',
+		'label'    => esc_html__( 'Disable', 'flash' ),
+		'section'  => 'flash_footer_scroll_top',
+		'default'  => '',
+		'priority' => 20,
+	)
+);
+
 // Theme Options Panel.
 Kirki::add_panel(
 	'flash_theme_options',
@@ -882,19 +970,6 @@ Kirki::add_field(
 		'section'  => 'flash_general_options',
 		'default'  => '',
 		'priority' => 20,
-	)
-);
-
-// Scroll to Top button Options.
-Kirki::add_field(
-	'flash_config',
-	array(
-		'type'     => 'checkbox',
-		'settings' => 'flash_disable_back_to_top',
-		'label'    => esc_html__( 'Disable Back to Top Button?', 'flash' ),
-		'section'  => 'flash_general_options',
-		'default'  => '',
-		'priority' => 30,
 	)
 );
 
@@ -973,26 +1048,6 @@ Kirki::add_section(
 		'panel'      => 'flash_theme_options',
 		'priority'   => 80,
 		'capability' => 'edit_theme_options',
-	)
-);
-
-// Footer Widget.
-Kirki::add_field(
-	'flash_config',
-	array(
-		'type'     => 'radio-image',
-		'settings' => 'flash_footer_widgets',
-		'label'    => esc_html__( 'Footer Widget Area', 'flash' ),
-		'section'  => 'flash_footer_options',
-		'default'  => '4',
-		'priority' => 10,
-		'multiple' => 1,
-		'choices'  => array(
-			'1' => get_template_directory_uri() . '/images/col-1.png',
-			'2' => get_template_directory_uri() . '/images/col-2.png',
-			'3' => get_template_directory_uri() . '/images/col-3.png',
-			'4' => get_template_directory_uri() . '/images/col-4.png',
-		),
 	)
 );
 
