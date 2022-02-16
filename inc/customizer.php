@@ -27,6 +27,210 @@ Kirki::add_config(
 	)
 );
 
+/** Panel Global **/
+Kirki::add_panel(
+	'flash_global',
+	array(
+		'title'    => esc_html__( 'Global', 'flash' ),
+		'priority' => 10,
+	)
+);
+
+/** Section Colors - Needs to be section. */
+Kirki::add_panel(
+	'flash_colors',
+	array(
+		'title'    => esc_html__( 'Colors', 'flash' ),
+		'panel'    => 'flash_global',
+		'priority' => 10,
+	)
+);
+
+// Sub-section - Base Colors.
+Kirki::add_section(
+	'flash_base_colors',
+	array(
+		'title'      => esc_html__( 'Base Colors', 'flash' ),
+		'panel'      => 'flash_colors',
+		'capability' => 'edit_theme_options',
+	)
+);
+
+// Sub-section - Heading Colors.
+Kirki::add_section(
+	'flash_heading_colors',
+	array(
+		'title'      => esc_html__( 'Heading Colors', 'flash' ),
+		'panel'      => 'flash_colors',
+		'capability' => 'edit_theme_options',
+	)
+);
+
+/** Section Background - Needs to be section. */
+Kirki::add_section(
+	'flash_background',
+	array(
+		'title'      => esc_html__( 'Background', 'flash' ),
+		'panel'      => 'flash_global',
+		'capability' => 'edit_theme_options',
+	)
+);
+
+/** Section Layout - Needs to be section. */
+Kirki::add_panel(
+	'flash_layout',
+	array(
+		'title'      => esc_html__( 'Layout', 'flash' ),
+		'panel'      => 'flash_global',
+		'capability' => 'edit_theme_options',
+		'priority'   => 20,
+	)
+);
+
+// Sub-section - Site Layout.
+Kirki::add_section(
+	'flash_site_layout',
+	array(
+		'title'      => esc_html__( 'Site Layout', 'flash' ),
+		'panel'      => 'flash_layout',
+		'capability' => 'edit_theme_options',
+	)
+);
+
+// Setting - Flash site layout.
+Kirki::add_field(
+	'flash_config',
+	array(
+		'type'     => 'radio-buttonset',
+		'settings' => 'flash_site_layout',
+		'label'    => esc_html__( 'Container Style', 'flash' ),
+		'section'  => 'flash_site_layout',
+		'default'  => 'wide',
+		'priority' => 10,
+		'multiple' => 1,
+		'choices'  => array(
+			'wide'  => esc_attr__( 'Wide Layout', 'flash' ),
+			'boxed' => esc_attr__( 'Boxed Layout', 'flash' ),
+		),
+	)
+);
+
+// Sub-section - Sidebar Layout.
+Kirki::add_section(
+	'flash_sidebar_layout',
+	array(
+		'title'      => esc_html__( 'Sidebar Layout', 'flash' ),
+		'panel'      => 'flash_layout',
+		'capability' => 'edit_theme_options',
+	)
+);
+
+// Setting - Page Layout.
+Kirki::add_field(
+	'flash_config',
+	array(
+		'type'     => 'radio-image',
+		'settings' => 'flash_page_layout',
+		'label'    => esc_html__( 'Page', 'flash' ),
+		'section'  => 'flash_sidebar_layout',
+		'default'  => 'right-sidebar',
+		'priority' => 10,
+		'multiple' => 1,
+		'choices'  => array(
+			'right-sidebar'     => get_template_directory_uri() . '/images/right-sidebar.png',
+			'left-sidebar'      => get_template_directory_uri() . '/images/left-sidebar.png',
+			'full-width'        => get_template_directory_uri() . '/images/full-width.png',
+			'full-width-center' => get_template_directory_uri() . '/images/full-width-center.png',
+		),
+	)
+);
+
+// Setting - Post Layout.
+Kirki::add_field(
+	'flash_config',
+	array(
+		'type'     => 'radio-image',
+		'settings' => 'flash_post_layout',
+		'label'    => esc_html__( 'Single Post', 'flash' ),
+		'section'  => 'flash_sidebar_layout',
+		'default'  => 'right-sidebar',
+		'priority' => 20,
+		'multiple' => 1,
+		'choices'  => array(
+			'right-sidebar'     => get_template_directory_uri() . '/images/right-sidebar.png',
+			'left-sidebar'      => get_template_directory_uri() . '/images/left-sidebar.png',
+			'full-width'        => get_template_directory_uri() . '/images/full-width.png',
+			'full-width-center' => get_template_directory_uri() . '/images/full-width-center.png',
+		),
+	)
+);
+
+// Setting - Blog/Archive Layout.
+Kirki::add_field(
+	'flash_config',
+	array(
+		'type'     => 'radio-image',
+		'settings' => 'flash_archive_layout',
+		'label'    => esc_html__( 'Blog/Archive', 'flash' ),
+		'section'  => 'flash_sidebar_layout',
+		'default'  => 'right-sidebar',
+		'priority' => 30,
+		'multiple' => 1,
+		'choices'  => array(
+			'right-sidebar'     => get_template_directory_uri() . '/images/right-sidebar.png',
+			'left-sidebar'      => get_template_directory_uri() . '/images/left-sidebar.png',
+			'full-width'        => get_template_directory_uri() . '/images/full-width.png',
+			'full-width-center' => get_template_directory_uri() . '/images/full-width-center.png',
+		),
+	)
+);
+
+/** Section - Typography - Needs to be section. */
+Kirki::add_panel(
+	'flash_typography',
+	array(
+		'title'      => esc_html__( 'Typography', 'flash' ),
+		'panel'      => 'flash_global',
+		'capability' => 'edit_theme_options',
+		'priority'   => 30,
+	)
+);
+
+// Sub-section - Base.
+Kirki::add_section(
+	'flash_base_typography',
+	array(
+		'title'      => esc_html__( 'Base', 'flash' ),
+		'panel'      => 'flash_typography',
+		'capability' => 'edit_theme_options',
+	)
+);
+
+Kirki::add_field(
+	'flash_config',
+	array(
+		'type'     => 'typography',
+		'settings' => 'flash_body_font',
+		'label'    => esc_attr__( 'Body', 'flash' ),
+		'section'  => 'flash_base_typography',
+		'default'  => array(
+			'font-family' => 'Montserrat',
+			'variant'     => 'regular',
+		),
+		'priority' => 10,
+		'output'   => array(
+			array(
+				'element' => array( 'body' ),
+			),
+		),
+		'js_vars'  => array(
+			array(
+				'element' => array( 'body' ),
+			),
+		),
+	)
+);
+
 /** Customizer Options Using Kirki Toolkit */
 Kirki::add_field(
 	'flash_config',
@@ -90,24 +294,6 @@ Kirki::add_section(
 		'panel'      => 'flash_theme_options',
 		'priority'   => 10,
 		'capability' => 'edit_theme_options',
-	)
-);
-
-// Site Layout Settings.
-Kirki::add_field(
-	'flash_config',
-	array(
-		'type'     => 'radio-buttonset',
-		'settings' => 'flash_site_layout',
-		'label'    => esc_html__( 'Site Layout', 'flash' ),
-		'section'  => 'flash_general_options',
-		'default'  => 'wide',
-		'priority' => 10,
-		'multiple' => 1,
-		'choices'  => array(
-			'wide'  => esc_attr__( 'Wide Layout', 'flash' ),
-			'boxed' => esc_attr__( 'Boxed Layout', 'flash' ),
-		),
 	)
 );
 
@@ -390,26 +576,6 @@ Kirki::add_field(
 	)
 );
 
-// Archive Page Layout.
-Kirki::add_field(
-	'flash_config',
-	array(
-		'type'     => 'radio-image',
-		'settings' => 'flash_archive_layout',
-		'label'    => esc_html__( 'Archive Page Layout', 'flash' ),
-		'section'  => 'flash_archive_options',
-		'default'  => 'right-sidebar',
-		'priority' => 20,
-		'multiple' => 1,
-		'choices'  => array(
-			'right-sidebar'     => get_template_directory_uri() . '/images/right-sidebar.png',
-			'left-sidebar'      => get_template_directory_uri() . '/images/left-sidebar.png',
-			'full-width'        => get_template_directory_uri() . '/images/full-width.png',
-			'full-width-center' => get_template_directory_uri() . '/images/full-width-center.png',
-		),
-	)
-);
-
 // Meta - Date.
 Kirki::add_field(
 	'flash_config',
@@ -487,26 +653,6 @@ Kirki::add_section(
 	)
 );
 
-// Post Layout.
-Kirki::add_field(
-	'flash_config',
-	array(
-		'type'     => 'radio-image',
-		'settings' => 'flash_post_layout',
-		'label'    => esc_html__( 'Single Post Layout', 'flash' ),
-		'section'  => 'flash_post_options',
-		'default'  => 'right-sidebar',
-		'priority' => 10,
-		'multiple' => 1,
-		'choices'  => array(
-			'right-sidebar'     => get_template_directory_uri() . '/images/right-sidebar.png',
-			'left-sidebar'      => get_template_directory_uri() . '/images/left-sidebar.png',
-			'full-width'        => get_template_directory_uri() . '/images/full-width.png',
-			'full-width-center' => get_template_directory_uri() . '/images/full-width-center.png',
-		),
-	)
-);
-
 // Related Posts option.
 Kirki::add_field(
 	'flash_config',
@@ -575,26 +721,6 @@ Kirki::add_section(
 		'panel'      => 'flash_theme_options',
 		'priority'   => 70,
 		'capability' => 'edit_theme_options',
-	)
-);
-
-// Page Layout.
-Kirki::add_field(
-	'flash_config',
-	array(
-		'type'     => 'radio-image',
-		'settings' => 'flash_page_layout',
-		'label'    => esc_html__( 'Page Layout', 'flash' ),
-		'section'  => 'flash_page_options',
-		'default'  => 'right-sidebar',
-		'priority' => 10,
-		'multiple' => 1,
-		'choices'  => array(
-			'right-sidebar'     => get_template_directory_uri() . '/images/right-sidebar.png',
-			'left-sidebar'      => get_template_directory_uri() . '/images/left-sidebar.png',
-			'full-width'        => get_template_directory_uri() . '/images/full-width.png',
-			'full-width-center' => get_template_directory_uri() . '/images/full-width-center.png',
-		),
 	)
 );
 
@@ -669,31 +795,6 @@ Kirki::add_section(
 		'priority'   => 110,
 		'capability' => 'edit_theme_options',
 
-	)
-);
-
-Kirki::add_field(
-	'flash_config',
-	array(
-		'type'     => 'typography',
-		'settings' => 'flash_body_font',
-		'label'    => esc_attr__( 'Body Typography', 'flash' ),
-		'section'  => 'flash_google_font_section',
-		'default'  => array(
-			'font-family' => 'Montserrat',
-			'variant'     => 'regular',
-		),
-		'priority' => 10,
-		'output'   => array(
-			array(
-				'element' => array( 'body' ),
-			),
-		),
-		'js_vars'  => array(
-			array(
-				'element' => array( 'body' ),
-			),
-		),
 	)
 );
 
@@ -782,6 +883,7 @@ function flash_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
+	$wp_customize->get_control( 'background_image' )->section   = 'flash_background';
 
 	// Add color scheme setting and control.
 	$wp_customize->add_setting(
@@ -796,8 +898,8 @@ function flash_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'color_scheme',
 		array(
-			'label'    => esc_html__( 'Base Color Scheme', 'flash' ),
-			'section'  => 'colors',
+			'label'    => esc_html__( 'Scheme', 'flash' ),
+			'section'  => 'flash_base_colors',
 			'type'     => 'select',
 			'choices'  => flash_get_color_scheme_choices(),
 			'priority' => 1,
@@ -822,8 +924,8 @@ function flash_customize_register( $wp_customize ) {
 			$wp_customize,
 			'link_color',
 			array(
-				'label'   => esc_html__( 'Link Color', 'flash' ),
-				'section' => 'colors',
+				'label'   => esc_html__( 'Primary Color', 'flash' ),
+				'section' => 'flash_base_colors',
 			)
 		)
 	);
@@ -843,8 +945,8 @@ function flash_customize_register( $wp_customize ) {
 			$wp_customize,
 			'main_text_color',
 			array(
-				'label'   => esc_html__( 'Main Text Color', 'flash' ),
-				'section' => 'colors',
+				'label'   => esc_html__( 'Headings', 'flash' ),
+				'section' => 'flash_heading_colors',
 			)
 		)
 	);
@@ -864,8 +966,8 @@ function flash_customize_register( $wp_customize ) {
 			$wp_customize,
 			'secondary_text_color',
 			array(
-				'label'   => esc_html__( 'Secondary Text Color', 'flash' ),
-				'section' => 'colors',
+				'label'   => esc_html__( 'Text Color', 'flash' ),
+				'section' => 'flash_base_colors',
 			)
 		)
 	);
