@@ -940,6 +940,83 @@ Kirki::add_field(
 	)
 );
 
+/** Panel - Additional **/
+Kirki::add_panel(
+	'flash_additional',
+	array(
+		'title'    => esc_html__( 'Additional', 'flash' ),
+		'priority' => 80,
+	)
+);
+
+// Section - Integration.
+Kirki::add_section(
+	'flash_integration',
+	array(
+		'title'      => esc_html__( 'Integration', 'flash' ),
+		'panel'      => 'flash_additional',
+		'capability' => 'edit_theme_options',
+		'priority'   => 10,
+	)
+);
+
+// Setting - Custom CSS
+if ( ! function_exists( 'wp_update_custom_css_post' ) ) {
+	Kirki::add_field(
+		'flash_config',
+		array(
+			'type'     => 'code',
+			'settings' => 'flash_custom_css',
+			'label'    => esc_html__( 'Custom CSS', 'flash' ),
+			'section'  => 'flash_integration',
+			'default'  => '',
+			'priority' => 10,
+			'choices'  => array(
+				'language' => 'css',
+				'theme'    => 'monokai',
+				'height'   => 250,
+			),
+		)
+	);
+}
+
+// Section - Optimization.
+Kirki::add_section(
+	'flash_optimization',
+	array(
+		'title'      => esc_html__( 'Optimization', 'flash' ),
+		'panel'      => 'flash_additional',
+		'capability' => 'edit_theme_options',
+		'priority'   => 20,
+	)
+);
+
+// Setting - Optimization Preloader Header.
+Kirki::add_field(
+	'flash_config',
+	array(
+		'type'     => 'custom',
+		'settings' => 'flash_preloader_header',
+		'section'  => 'flash_optimization',
+		'default'  => '<div style="margin-top: 15px; padding: 5px; text-align: center; background-color: #333; color: #fff; border-radius: 50px;">' . esc_html__( 'Preloader', 'flash' ) . '</div>',
+		'priority' => 10,
+	)
+);
+
+// Setting - Preloader Options.
+Kirki::add_field(
+	'flash_config',
+	array(
+		'type'     => 'checkbox',
+		'settings' => 'flash_disable_preloader',
+		'label'    => esc_html__( 'Disable', 'flash' ),
+		'section'  => 'flash_optimization',
+		'default'  => '',
+		'priority' => 10,
+	)
+);
+
+
 // Theme Options Panel.
 Kirki::add_panel(
 	'flash_theme_options',
@@ -957,19 +1034,6 @@ Kirki::add_section(
 		'panel'      => 'flash_theme_options',
 		'priority'   => 10,
 		'capability' => 'edit_theme_options',
-	)
-);
-
-// Preloader Options.
-Kirki::add_field(
-	'flash_config',
-	array(
-		'type'     => 'checkbox',
-		'settings' => 'flash_disable_preloader',
-		'label'    => esc_html__( 'Disable Preloader?', 'flash' ),
-		'section'  => 'flash_general_options',
-		'default'  => '',
-		'priority' => 20,
 	)
 );
 
@@ -1062,25 +1126,6 @@ Kirki::add_section(
 
 	)
 );
-
-if ( ! function_exists( 'wp_update_custom_css_post' ) ) {
-	Kirki::add_field(
-		'flash_config',
-		array(
-			'type'     => 'code',
-			'settings' => 'flash_custom_css',
-			'label'    => esc_html__( 'Custom CSS', 'flash' ),
-			'section'  => 'flash_advanced_section',
-			'default'  => '',
-			'priority' => 10,
-			'choices'  => array(
-				'language' => 'css',
-				'theme'    => 'monokai',
-				'height'   => 250,
-			),
-		)
-	);
-}
 
 // Google Font Settings Section.
 Kirki::add_section(
