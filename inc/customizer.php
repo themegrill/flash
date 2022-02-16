@@ -206,6 +206,7 @@ Kirki::add_section(
 	)
 );
 
+// Setting - Body Typography.
 Kirki::add_field(
 	'flash_config',
 	array(
@@ -231,7 +232,51 @@ Kirki::add_field(
 	)
 );
 
-/** Customizer Options Using Kirki Toolkit */
+/** Panel - Header **/
+Kirki::add_panel(
+	'flash_header',
+	array(
+		'title'    => esc_html__( 'Header', 'flash' ),
+		'priority' => 20,
+	)
+);
+
+/** Section - Site Identity - Needs to be section. */
+Kirki::add_section(
+	'title_tagline',
+	array(
+		'title'      => esc_html__( 'Site Identity', 'flash' ),
+		'panel'      => 'flash_header',
+		'capability' => 'edit_theme_options',
+		'priority'   => 10,
+	)
+);
+
+// Setting - Site Identity Visibility Header.
+Kirki::add_field(
+	'flash_config',
+	array(
+		'type'     => 'custom',
+		'settings' => 'flash_siteidentity_visibility_header',
+		'section'  => 'title_tagline',
+		'default'  => '<div style="margin-top: 15px; padding: 5px; text-align: center; background-color: #333; color: #fff; border-radius: 50px;">' . esc_html__( 'Visibility', 'flash' ) . '</div>',
+		'priority' => 1,
+	)
+);
+
+// Setting - Site Identity Site Logo Header.
+Kirki::add_field(
+	'flash_config',
+	array(
+		'type'     => 'custom',
+		'settings' => 'flash_siteidentity_site_logo_header',
+		'section'  => 'title_tagline',
+		'default'  => '<div style="margin-top: 15px; padding: 5px; text-align: center; background-color: #333; color: #fff; border-radius: 50px;">' . esc_html__( 'Site Logo', 'flash' ) . '</div>',
+		'priority' => 5,
+	)
+);
+
+// Setting - Transparent Logo - Customizer Options Using Kirki Toolkit.
 Kirki::add_field(
 	'flash_config',
 	array(
@@ -240,11 +285,11 @@ Kirki::add_field(
 		'label'    => esc_html__( 'Transparent Logo', 'flash' ),
 		'section'  => 'title_tagline',
 		'default'  => '',
-		'priority' => 8,
+		'priority' => 10,
 	)
 );
 
-// Retina Logo Option.
+// Setting - Retina Logo enable Option.
 Kirki::add_field(
 	'flash_config',
 	array(
@@ -253,11 +298,11 @@ Kirki::add_field(
 		'label'    => esc_html__( 'Different Logo for Retina Devices?', 'flash' ),
 		'section'  => 'title_tagline',
 		'default'  => '0',
-		'priority' => 9,
+		'priority' => 20,
 	)
 );
 
-// Retina Logo Upload.
+// Setting - Retina Logo Upload.
 Kirki::add_field(
 	'flash_config',
 	array(
@@ -266,7 +311,7 @@ Kirki::add_field(
 		'label'           => esc_html__( 'Retina Logo', 'flash' ),
 		'section'         => 'title_tagline',
 		'default'         => '',
-		'priority'        => 9,
+		'priority'        => 30,
 		'active_callback' => array(
 			array(
 				'setting'  => 'flash_retina_logo',
@@ -274,6 +319,236 @@ Kirki::add_field(
 				'value'    => 1,
 			),
 		),
+	)
+);
+
+// Setting - Site Identity Site Info Header.
+Kirki::add_field(
+	'flash_config',
+	array(
+		'type'     => 'custom',
+		'settings' => 'flash_siteidentity_site_info_header',
+		'section'  => 'title_tagline',
+		'default'  => '<div style="margin-top: 15px; padding: 5px; text-align: center; background-color: #333; color: #fff; border-radius: 50px;">' . esc_html__( 'Site Info', 'flash' ) . '</div>',
+		'priority' => 30,
+	)
+);
+
+/** Section - Header Media. */
+Kirki::add_section(
+	'header_image',
+	array(
+		'title'      => esc_html__( 'Header Media', 'flash' ),
+		'panel'      => 'flash_header',
+		'capability' => 'edit_theme_options',
+	)
+);
+
+/** Section - Header Top Bar. */
+Kirki::add_section(
+	'flash_header_top_bar',
+	array(
+		'title'      => esc_html__( 'Header Top Bar', 'flash' ),
+		'panel'      => 'flash_header',
+		'capability' => 'edit_theme_options',
+	)
+);
+
+// Setting - Enable/Disable.
+Kirki::add_field(
+	'flash_top_header',
+	array(
+		'type'     => 'toggle',
+		'settings' => 'flash_top_header',
+		'label'    => esc_html__( 'Enable', 'flash' ),
+		'section'  => 'flash_header_top_bar',
+		'default'  => '1',
+		'priority' => 10,
+	)
+);
+
+// Setting - Left Content.
+Kirki::add_field(
+	'flash_config',
+	array(
+		'type'            => 'select',
+		'settings'        => 'flash_top_header_left',
+		'label'           => esc_html__( 'Left Content', 'flash' ),
+		'section'         => 'flash_header_top_bar',
+		'default'         => 'disable',
+		'priority'        => 20,
+		'multiple'        => 1,
+		'choices'         => array(
+			'social-menu' => esc_attr__( 'Social Menu', 'flash' ),
+			'header-text' => esc_attr__( 'Top Header Text', 'flash' ),
+			'disable'     => esc_attr__( 'Disable', 'flash' ),
+		),
+		'active_callback' => array(
+			array(
+				'setting'  => 'flash_top_header',
+				'operator' => '==',
+				'value'    => 1,
+			),
+		),
+	)
+);
+
+// Setting - Right Content.
+Kirki::add_field(
+	'flash_config',
+	array(
+		'type'            => 'select',
+		'settings'        => 'flash_top_header_right',
+		'label'           => esc_html__( 'Right Content', 'flash' ),
+		'section'         => 'flash_header_top_bar',
+		'default'         => 'disable',
+		'priority'        => 30,
+		'multiple'        => 1,
+		'choices'         => array(
+			'social-menu' => esc_attr__( 'Social Menu', 'flash' ),
+			'header-text' => esc_attr__( 'Top Header Text', 'flash' ),
+			'disable'     => esc_attr__( 'Disable', 'flash' ),
+		),
+		'active_callback' => array(
+			array(
+				'setting'  => 'flash_top_header',
+				'operator' => '==',
+				'value'    => 1,
+			),
+		),
+	)
+);
+
+// Setting - Text.
+Kirki::add_field(
+	'flash_config',
+	array(
+		'type'            => 'editor',
+		'settings'        => 'flash_top_header_text',
+		'label'           => esc_html__( 'Top Header Text Content', 'flash' ),
+		'section'         => 'flash_header_top_bar',
+		'default'         => '',
+		'priority'        => 40,
+		'transport'       => 'postMessage',
+		'js_vars'         => array(
+			array(
+				'element'  => '.header-top .left-content',
+				'function' => 'html',
+			),
+		),
+		'active_callback' => array(
+			array(
+				'setting'  => 'flash_top_header',
+				'operator' => '==',
+				'value'    => 1,
+			),
+		),
+	)
+);
+
+/** Section - Primary Header. */
+Kirki::add_section(
+	'flash_primary_header',
+	array(
+		'title'      => esc_html__( 'Primary Header', 'flash' ),
+		'panel'      => 'flash_header',
+		'capability' => 'edit_theme_options',
+	)
+);
+
+// Setting - Header Style.
+Kirki::add_field(
+	'flash_config',
+	array(
+		'type'     => 'radio-image',
+		'settings' => 'flash_logo_position',
+		'label'    => esc_html__( 'Style', 'flash' ),
+		'section'  => 'flash_primary_header',
+		'default'  => 'left-logo-right-menu',
+		'priority' => 10,
+		'multiple' => 1,
+		'choices'  => array(
+			'left-logo-right-menu'   => get_template_directory_uri() . '/images/left-logo.png',
+			'right-logo-left-menu'   => get_template_directory_uri() . '/images/RIGHT.png',
+			'center-logo-below-menu' => get_template_directory_uri() . '/images/center-below.png',
+		),
+	)
+);
+
+// Setting - Header Search Header.
+Kirki::add_field(
+	'flash_config',
+	array(
+		'type'     => 'custom',
+		'settings' => 'flash_header_search_header',
+		'section'  => 'flash_primary_header',
+		'default'  => '<div style="margin-top: 15px; padding: 5px; text-align: center; background-color: #333; color: #fff; border-radius: 50px;">' . esc_html__( 'Search', 'flash' ) . '</div>',
+		'priority' => 20,
+	)
+);
+
+// Setting - Header Search Icon.
+Kirki::add_field(
+	'flash_config',
+	array(
+		'type'     => 'checkbox',
+		'settings' => 'flash_header_search',
+		'label'    => esc_html__( 'Disable', 'flash' ),
+		'section'  => 'flash_primary_header',
+		'default'  => '',
+		'priority' => 30,
+	)
+);
+
+// Setting - Header Cart Icon Header.
+Kirki::add_field(
+	'flash_config',
+	array(
+		'type'            => 'custom',
+		'settings'        => 'flash_header_cart_header',
+		'section'         => 'flash_primary_header',
+		'default'         => '<div style="margin-top: 15px; padding: 5px; text-align: center; background-color: #333; color: #fff; border-radius: 50px;">' . esc_html__( 'Cart', 'flash' ) . '</div>',
+		'priority'        => 40,
+		'active_callback' => 'flash_is_woocommerce_active',
+	)
+);
+
+// Setting - Header Cart Icon.
+Kirki::add_field(
+	'flash_config',
+	array(
+		'type'            => 'checkbox',
+		'settings'        => 'flash_header_cart',
+		'label'           => esc_html__( 'Disable', 'flash' ),
+		'section'         => 'flash_header_options',
+		'default'         => '',
+		'priority'        => 50,
+		'active_callback' => 'flash_is_woocommerce_active',
+	)
+);
+
+// Setting - Sticky Header Header.
+Kirki::add_field(
+	'flash_config',
+	array(
+		'type'     => 'custom',
+		'settings' => 'flash_header_sticky_header',
+		'section'  => 'flash_primary_header',
+		'default'  => '<div style="margin-top: 15px; padding: 5px; text-align: center; background-color: #333; color: #fff; border-radius: 50px;">' . esc_html__( 'Sticky Header', 'flash' ) . '</div>',
+		'priority' => 60,
+	)
+);
+
+// Setting - Sticky Header.
+Kirki::add_field(
+	'flash_config',
+	array(
+		'type'     => 'toggle',
+		'settings' => 'flash_sticky_header',
+		'label'    => esc_html__( 'Enable', 'flash' ),
+		'section'  => 'flash_primary_header',
+		'default'  => '',
+		'priority' => 70,
 	)
 );
 
@@ -334,98 +609,6 @@ Kirki::add_section(
 	)
 );
 
-// Top Header Enable/Disable Setting.
-Kirki::add_field(
-	'flash_top_header',
-	array(
-		'type'     => 'toggle',
-		'settings' => 'flash_top_header',
-		'label'    => esc_html__( 'Enable Top Header', 'flash' ),
-		'section'  => 'flash_top_header_options',
-		'default'  => '1',
-		'priority' => 10,
-	)
-);
-
-// Top Header Left Settings.
-Kirki::add_field(
-	'flash_config',
-	array(
-		'type'            => 'select',
-		'settings'        => 'flash_top_header_left',
-		'label'           => esc_html__( 'Top Header Left Content', 'flash' ),
-		'section'         => 'flash_top_header_options',
-		'default'         => 'disable',
-		'priority'        => 20,
-		'multiple'        => 1,
-		'choices'         => array(
-			'social-menu' => esc_attr__( 'Social Menu', 'flash' ),
-			'header-text' => esc_attr__( 'Top Header Text', 'flash' ),
-			'disable'     => esc_attr__( 'Disable', 'flash' ),
-		),
-		'active_callback' => array(
-			array(
-				'setting'  => 'flash_top_header',
-				'operator' => '==',
-				'value'    => 1,
-			),
-		),
-	)
-);
-
-// Top Header Right Settings.
-Kirki::add_field(
-	'flash_config',
-	array(
-		'type'            => 'select',
-		'settings'        => 'flash_top_header_right',
-		'label'           => esc_html__( 'Top Header Right Content', 'flash' ),
-		'section'         => 'flash_top_header_options',
-		'default'         => 'disable',
-		'priority'        => 30,
-		'multiple'        => 1,
-		'choices'         => array(
-			'social-menu' => esc_attr__( 'Social Menu', 'flash' ),
-			'header-text' => esc_attr__( 'Top Header Text', 'flash' ),
-			'disable'     => esc_attr__( 'Disable', 'flash' ),
-		),
-		'active_callback' => array(
-			array(
-				'setting'  => 'flash_top_header',
-				'operator' => '==',
-				'value'    => 1,
-			),
-		),
-	)
-);
-
-// Top Header Text.
-Kirki::add_field(
-	'flash_config',
-	array(
-		'type'            => 'editor',
-		'settings'        => 'flash_top_header_text',
-		'label'           => esc_html__( 'Top Header Text Content', 'flash' ),
-		'section'         => 'flash_top_header_options',
-		'default'         => '',
-		'priority'        => 40,
-		'transport'       => 'postMessage',
-		'js_vars'         => array(
-			array(
-				'element'  => '.header-top .left-content',
-				'function' => 'html',
-			),
-		),
-		'active_callback' => array(
-			array(
-				'setting'  => 'flash_top_header',
-				'operator' => '==',
-				'value'    => 1,
-			),
-		),
-	)
-);
-
 // Header Section.
 Kirki::add_section(
 	'flash_header_options',
@@ -434,65 +617,6 @@ Kirki::add_section(
 		'panel'      => 'flash_theme_options',
 		'priority'   => 30,
 		'capability' => 'edit_theme_options',
-	)
-);
-
-// Logo and Menu Position.
-Kirki::add_field(
-	'flash_config',
-	array(
-		'type'     => 'radio-image',
-		'settings' => 'flash_logo_position',
-		'label'    => esc_html__( 'Logo and Menu Position', 'flash' ),
-		'section'  => 'flash_header_options',
-		'default'  => 'left-logo-right-menu',
-		'priority' => 10,
-		'multiple' => 1,
-		'choices'  => array(
-			'left-logo-right-menu'   => get_template_directory_uri() . '/images/left-logo.png',
-			'right-logo-left-menu'   => get_template_directory_uri() . '/images/RIGHT.png',
-			'center-logo-below-menu' => get_template_directory_uri() . '/images/center-below.png',
-		),
-	)
-);
-
-// Search Icon Setting.
-Kirki::add_field(
-	'flash_config',
-	array(
-		'type'     => 'checkbox',
-		'settings' => 'flash_header_search',
-		'label'    => esc_html__( 'Remove Header Search Box', 'flash' ),
-		'section'  => 'flash_header_options',
-		'default'  => '',
-		'priority' => 20,
-	)
-);
-
-// Header Cart Setting.
-Kirki::add_field(
-	'flash_config',
-	array(
-		'type'            => 'checkbox',
-		'settings'        => 'flash_header_cart',
-		'label'           => esc_html__( 'Remove Header Cart Icon', 'flash' ),
-		'section'         => 'flash_header_options',
-		'default'         => '',
-		'priority'        => 30,
-		'active_callback' => 'flash_is_woocommerce_active',
-	)
-);
-
-// Sticky Header Setting.
-Kirki::add_field(
-	'flash_config',
-	array(
-		'type'     => 'toggle',
-		'settings' => 'flash_sticky_header',
-		'label'    => esc_html__( 'Sticky Header', 'flash' ),
-		'section'  => 'flash_header_options',
-		'default'  => '',
-		'priority' => 40,
 	)
 );
 
@@ -880,10 +1004,14 @@ function flash_customize_register( $wp_customize ) {
 
 	$color_scheme = flash_get_color_scheme();
 
-	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
-	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
-	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
-	$wp_customize->get_control( 'background_image' )->section   = 'flash_background';
+	$wp_customize->get_setting( 'blogname' )->transport           = 'postMessage';
+	$wp_customize->get_control( 'blogname' )->priority            = 80;
+	$wp_customize->get_setting( 'blogdescription' )->transport    = 'postMessage';
+	$wp_customize->get_control( 'blogdescription' )->priority     = 85;
+	$wp_customize->get_setting( 'header_textcolor' )->transport   = 'postMessage';
+	$wp_customize->get_control( 'display_header_text' )->priority = 5;
+	$wp_customize->get_control( 'background_image' )->section     = 'flash_background';
+	$wp_customize->get_control( 'header_video' )->description     = '';
 
 	// Add color scheme setting and control.
 	$wp_customize->add_setting(
