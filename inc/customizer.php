@@ -1016,129 +1016,6 @@ Kirki::add_field(
 	)
 );
 
-
-// Theme Options Panel.
-Kirki::add_panel(
-	'flash_theme_options',
-	array(
-		'priority' => 2,
-		'title'    => esc_html__( 'Flash Theme Options', 'flash' ),
-	)
-);
-
-// General Section.
-Kirki::add_section(
-	'flash_general_options',
-	array(
-		'title'      => esc_html__( 'General Settings', 'flash' ),
-		'panel'      => 'flash_theme_options',
-		'priority'   => 10,
-		'capability' => 'edit_theme_options',
-	)
-);
-
-// Top Header Section.
-Kirki::add_section(
-	'flash_top_header_options',
-	array(
-		'title'      => esc_html__( 'Top Header Settings', 'flash' ),
-		'panel'      => 'flash_theme_options',
-		'priority'   => 20,
-		'capability' => 'edit_theme_options',
-	)
-);
-
-// Header Section.
-Kirki::add_section(
-	'flash_header_options',
-	array(
-		'title'      => esc_html__( 'Header Settings', 'flash' ),
-		'panel'      => 'flash_theme_options',
-		'priority'   => 30,
-		'capability' => 'edit_theme_options',
-	)
-);
-
-// Page Header Section.
-Kirki::add_section(
-	'flash_page_header_options',
-	array(
-		'title'      => esc_html__( 'Page Header Settings', 'flash' ),
-		'panel'      => 'flash_theme_options',
-		'priority'   => 40,
-		'capability' => 'edit_theme_options',
-	)
-);
-
-// Archive Page.
-Kirki::add_section(
-	'flash_archive_options',
-	array(
-		'title'      => esc_html__( 'Archive Page Settings', 'flash' ),
-		'panel'      => 'flash_theme_options',
-		'priority'   => 50,
-		'capability' => 'edit_theme_options',
-	)
-);
-
-// Post Settings.
-Kirki::add_section(
-	'flash_post_options',
-	array(
-		'title'      => esc_html__( 'Post Settings', 'flash' ),
-		'panel'      => 'flash_theme_options',
-		'priority'   => 60,
-		'capability' => 'edit_theme_options',
-
-	)
-);
-
-// Page Settings.
-Kirki::add_section(
-	'flash_page_options',
-	array(
-		'title'      => esc_html__( 'Page Settings', 'flash' ),
-		'panel'      => 'flash_theme_options',
-		'priority'   => 70,
-		'capability' => 'edit_theme_options',
-	)
-);
-
-// Footer.
-Kirki::add_section(
-	'flash_footer_options',
-	array(
-		'title'      => esc_html__( 'Footer Settings', 'flash' ),
-		'panel'      => 'flash_theme_options',
-		'priority'   => 80,
-		'capability' => 'edit_theme_options',
-	)
-);
-
-// Advanced Settings.
-Kirki::add_section(
-	'flash_advanced_section',
-	array(
-		'title'      => esc_html__( 'Advanced Settings', 'flash' ),
-		'panel'      => 'flash_theme_options',
-		'priority'   => 90,
-		'capability' => 'edit_theme_options',
-
-	)
-);
-
-// Google Font Settings Section.
-Kirki::add_section(
-	'flash_google_font_section',
-	array(
-		'title'      => esc_html__( 'Google Font Settings', 'flash' ),
-		'panel'      => 'flash_theme_options',
-		'priority'   => 110,
-		'capability' => 'edit_theme_options',
-
-	)
-);
-
 /**
  * Sets up the WordPress core custom header and custom background features.
  *
@@ -1227,8 +1104,11 @@ function flash_customize_register( $wp_customize ) {
 	$wp_customize->get_control( 'blogdescription' )->priority     = 85;
 	$wp_customize->get_setting( 'header_textcolor' )->transport   = 'postMessage';
 	$wp_customize->get_control( 'display_header_text' )->priority = 5;
+	$wp_customize->get_control( 'background_color' )->section     = 'flash_background';
 	$wp_customize->get_control( 'background_image' )->section     = 'flash_background';
 	$wp_customize->get_control( 'header_video' )->description     = '';
+
+	$wp_customize->remove_section( 'background_image' );
 
 	// Add color scheme setting and control.
 	$wp_customize->add_setting(
