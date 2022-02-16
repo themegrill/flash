@@ -552,6 +552,306 @@ Kirki::add_field(
 	)
 );
 
+/** Panel - Content **/
+Kirki::add_panel(
+	'flash_content',
+	array(
+		'title'    => esc_html__( 'Content', 'flash' ),
+		'priority' => 30,
+	)
+);
+
+// Section - Page Header.
+Kirki::add_section(
+	'flash_page_header',
+	array(
+		'title'      => esc_html__( 'Page Header', 'flash' ),
+		'panel'      => 'flash_content',
+		'capability' => 'edit_theme_options',
+		'priority'   => 10,
+	)
+);
+
+// Setting - Page Header General Header.
+Kirki::add_field(
+	'flash_config',
+	array(
+		'type'     => 'custom',
+		'settings' => 'flash_page_header_general_header',
+		'section'  => 'flash_page_header',
+		'default'  => '<div style="margin-top: 15px; padding: 5px; text-align: center; background-color: #333; color: #fff; border-radius: 50px;">' . esc_html__( 'General', 'flash' ) . '</div>',
+		'priority' => 10,
+	)
+);
+
+// Setting - Page Header Background Image.
+Kirki::add_field( 'flash_config', array(
+	'type'      => 'image',
+	'settings'  => 'flash_pageheader_background_image',
+	'label'     => esc_html__( 'Background Image', 'flash' ),
+	'section'   => 'flash_page_header',
+	'default'   => '',
+	'priority'  => 20,
+	'transport' => 'postMessage',
+	'js_vars'   => array(
+		array(
+			'element'  => '.breadcrumb-trail.breadcrumbs',
+			'function' => 'css',
+			'property' => 'background-image',
+		),
+	),
+	'output'    => array(
+		array(
+			'element'  => '.breadcrumb-trail.breadcrumbs',
+			'function' => 'css',
+			'property' => 'background-image',
+		),
+	),
+)
+);
+
+// Setting - Page Header Breadcrumbs Header.
+Kirki::add_field(
+	'flash_config',
+	array(
+		'type'     => 'custom',
+		'settings' => 'flash_page_header_breadcrumb_header',
+		'section'  => 'flash_page_header',
+		'default'  => '<div style="margin-top: 15px; padding: 5px; text-align: center; background-color: #333; color: #fff; border-radius: 50px;">' . esc_html__( 'Breadcrumbs', 'flash' ) . '</div>',
+		'priority' => 30,
+	)
+);
+
+// Setting - Disable Breadcrumbs.
+Kirki::add_field(
+	'flash_config',
+	array(
+		'type'     => 'checkbox',
+		'settings' => 'flash_remove_breadcrumbs',
+		'label'    => esc_html__( 'Disable', 'flash' ),
+		'section'  => 'flash_page_header',
+		'default'  => '',
+		'priority' => 40,
+	)
+);
+
+// Section - Blog/Archive.
+Kirki::add_section(
+	'flash_blog_archive',
+	array(
+		'title'      => esc_html__( 'Blog/Archive', 'flash' ),
+		'panel'      => 'flash_content',
+		'capability' => 'edit_theme_options',
+		'priority'   => 20,
+	)
+);
+
+// Setting - Blog Styles.
+Kirki::add_field(
+	'flash_config',
+	array(
+		'type'     => 'radio-image',
+		'settings' => 'flash_blog_style',
+		'label'    => esc_html__( 'Style', 'flash' ),
+		'section'  => 'flash_blog_archive',
+		'default'  => 'classic-layout',
+		'priority' => 10,
+		'multiple' => 1,
+		'choices'  => array(
+			'classic-layout'     => get_template_directory_uri() . '/images/blog-style-classic.png',
+			'full-width-archive' => get_template_directory_uri() . '/images/blog-style-classic-full.png',
+			'grid-view'          => get_template_directory_uri() . '/images/blog-style-grid.png',
+		),
+	)
+);
+
+// Setting - Blog/Archive Post meta Header.
+Kirki::add_field(
+	'flash_config',
+	array(
+		'type'     => 'custom',
+		'settings' => 'flash_blog_post_meta_header',
+		'section'  => 'flash_blog_archive',
+		'default'  => '<div style="margin-top: 15px; padding: 5px; text-align: center; background-color: #333; color: #fff; border-radius: 50px;">' . esc_html__( 'Post Meta', 'flash' ) . '</div>',
+		'priority' => 20,
+	)
+);
+
+// Meta - Date.
+Kirki::add_field(
+	'flash_config',
+	array(
+		'type'     => 'checkbox',
+		'settings' => 'flash_remove_meta_date',
+		'label'    => esc_html__( 'Disable Date', 'flash' ),
+		'section'  => 'flash_blog_archive',
+		'default'  => '',
+		'priority' => 30,
+	)
+);
+
+// Setting - Post Meta Author.
+Kirki::add_field(
+	'flash_config',
+	array(
+		'type'     => 'checkbox',
+		'settings' => 'flash_remove_meta_author',
+		'label'    => esc_html__( 'Disable Author', 'flash' ),
+		'section'  => 'flash_blog_archive',
+		'default'  => '',
+		'priority' => 40,
+	)
+);
+
+// Setting - Post Meta Comment Count.
+Kirki::add_field(
+	'flash_config',
+	array(
+		'type'     => 'checkbox',
+		'settings' => 'flash_remove_meta_comment_count',
+		'label'    => esc_html__( 'Disable Comment', 'flash' ),
+		'section'  => 'flash_blog_archive',
+		'default'  => '',
+		'priority' => 50,
+	)
+);
+
+// Setting - Post Meta Category.
+Kirki::add_field(
+	'flash_config',
+	array(
+		'type'     => 'checkbox',
+		'settings' => 'flash_remove_meta_category',
+		'label'    => esc_html__( 'Disable Category', 'flash' ),
+		'section'  => 'flash_blog_archive',
+		'default'  => '',
+		'priority' => 60,
+	)
+);
+
+// Setting - Post Meta Tags.
+Kirki::add_field(
+	'flash_config',
+	array(
+		'type'     => 'checkbox',
+		'settings' => 'flash_remove_meta_tag',
+		'label'    => esc_html__( 'Disable Tag', 'flash' ),
+		'section'  => 'flash_blog_archive',
+		'default'  => '',
+		'priority' => 70,
+	)
+);
+
+// Section - Single Post.
+Kirki::add_section(
+	'flash_single_post',
+	array(
+		'title'      => esc_html__( 'Single Post', 'flash' ),
+		'panel'      => 'flash_content',
+		'capability' => 'edit_theme_options',
+		'priority'   => 30,
+	)
+);
+
+// Setting - Single Post Related Post Header.
+Kirki::add_field(
+	'flash_config',
+	array(
+		'type'     => 'custom',
+		'settings' => 'flash_single_post_related_post_header',
+		'section'  => 'flash_single_post',
+		'default'  => '<div style="margin-top: 15px; padding: 5px; text-align: center; background-color: #333; color: #fff; border-radius: 50px;">' . esc_html__( 'Related Posts', 'flash' ) . '</div>',
+		'priority' => 10,
+	)
+);
+
+// Setting - Enable Related Posts.
+Kirki::add_field(
+	'flash_config',
+	array(
+		'type'     => 'switch',
+		'settings' => 'flash_related_post_option',
+		'label'    => esc_html__( 'Enable', 'flash' ),
+		'section'  => 'flash_single_post',
+		'default'  => 0,
+		'priority' => 20,
+	)
+);
+
+// Setting - Post Related To.
+Kirki::add_field(
+	'flash_config',
+	array(
+		'type'            => 'radio',
+		'settings'        => 'flash_related_post_option_display',
+		'label'           => esc_html__( 'Posts Related To', 'flash' ),
+		'section'         => 'flash_single_post',
+		'default'         => 'categories',
+		'choices'         => array(
+			'categories' => esc_attr__( 'Categories', 'flash' ),
+			'tags'       => esc_attr__( 'Tags', 'flash' ),
+		),
+		'active_callback' => array(
+			array(
+				'setting'  => 'flash_related_post_option',
+				'operator' => '==',
+				'value'    => 1,
+			),
+		),
+		'priority'         => 30,
+	)
+);
+
+// Setting - Single Post Author Bio Header.
+Kirki::add_field(
+	'flash_config',
+	array(
+		'type'     => 'custom',
+		'settings' => 'flash_author_bio_header',
+		'section'  => 'flash_single_post',
+		'default'  => '<div style="margin-top: 15px; padding: 5px; text-align: center; background-color: #333; color: #fff; border-radius: 50px;">' . esc_html__( 'Author Bio', 'flash' ) . '</div>',
+		'priority' => 50,
+	)
+);
+
+// Setting - Author Bio.
+Kirki::add_field(
+	'flash_config',
+	array(
+		'type'     => 'checkbox',
+		'settings' => 'flash_remove_single_bio',
+		'label'    => esc_html__( 'Disable', 'flash' ),
+		'section'  => 'flash_single_post',
+		'default'  => '',
+		'priority' => 50,
+	)
+);
+
+// Setting - Single Post Post Navigation Header.
+Kirki::add_field(
+	'flash_config',
+	array(
+		'type'     => 'custom',
+		'settings' => 'flash_single_post_navigation_header',
+		'section'  => 'flash_single_post',
+		'default'  => '<div style="margin-top: 15px; padding: 5px; text-align: center; background-color: #333; color: #fff; border-radius: 50px;">' . esc_html__( 'Post Navigation', 'flash' ) . '</div>',
+		'priority' => 60,
+	)
+);
+
+// Setting - Disable Post Navigation.
+Kirki::add_field(
+	'flash_config',
+	array(
+		'type'     => 'checkbox',
+		'settings' => 'flash_remove_single_nav',
+		'label'    => esc_html__( 'Disable', 'flash' ),
+		'section'  => 'flash_single_post',
+		'default'  => '',
+		'priority' => 70,
+	)
+);
+
 // Theme Options Panel.
 Kirki::add_panel(
 	'flash_theme_options',
@@ -631,45 +931,6 @@ Kirki::add_section(
 	)
 );
 
-// Remove Breadcrumbs setting.
-Kirki::add_field(
-	'flash_config',
-	array(
-		'type'     => 'checkbox',
-		'settings' => 'flash_remove_breadcrumbs',
-		'label'    => esc_html__( 'Remove breadcrumbs from page header', 'flash' ),
-		'section'  => 'flash_page_header_options',
-		'default'  => '',
-		'priority' => 10,
-	)
-);
-
-// Page Header Background Setting.
-Kirki::add_field( 'flash_config', array(
-		'type'      => 'image',
-		'settings'  => 'flash_pageheader_background_image',
-		'label'     => esc_html__( 'Page Header Background Image', 'flash' ),
-		'section'   => 'flash_page_header_options',
-		'default'   => '',
-		'priority'  => 20,
-		'transport' => 'postMessage',
-		'js_vars'   => array(
-			array(
-				'element'  => '.breadcrumb-trail.breadcrumbs',
-				'function' => 'css',
-				'property' => 'background-image',
-			),
-		),
-		'output'    => array(
-			array(
-				'element'  => '.breadcrumb-trail.breadcrumbs',
-				'function' => 'css',
-				'property' => 'background-image',
-			),
-		),
-	)
-);
-
 // Archive Page.
 Kirki::add_section(
 	'flash_archive_options',
@@ -678,90 +939,6 @@ Kirki::add_section(
 		'panel'      => 'flash_theme_options',
 		'priority'   => 50,
 		'capability' => 'edit_theme_options',
-	)
-);
-
-// Blog Styles.
-Kirki::add_field(
-	'flash_config',
-	array(
-		'type'     => 'radio-image',
-		'settings' => 'flash_blog_style',
-		'label'    => esc_html__( 'Blog Style', 'flash' ),
-		'section'  => 'flash_archive_options',
-		'default'  => 'classic-layout',
-		'priority' => 10,
-		'multiple' => 1,
-		'choices'  => array(
-			'classic-layout'     => get_template_directory_uri() . '/images/blog-style-classic.png',
-			'full-width-archive' => get_template_directory_uri() . '/images/blog-style-classic-full.png',
-			'grid-view'          => get_template_directory_uri() . '/images/blog-style-grid.png',
-		),
-	)
-);
-
-// Meta - Date.
-Kirki::add_field(
-	'flash_config',
-	array(
-		'type'     => 'checkbox',
-		'settings' => 'flash_remove_meta_date',
-		'label'    => esc_html__( 'Remove date from post meta', 'flash' ),
-		'section'  => 'flash_archive_options',
-		'default'  => '',
-		'priority' => 30,
-	)
-);
-
-// Meta - Author.
-Kirki::add_field(
-	'flash_config',
-	array(
-		'type'     => 'checkbox',
-		'settings' => 'flash_remove_meta_author',
-		'label'    => esc_html__( 'Remove author from post meta', 'flash' ),
-		'section'  => 'flash_archive_options',
-		'default'  => '',
-		'priority' => 40,
-	)
-);
-
-// Meta - Comment Count.
-Kirki::add_field(
-	'flash_config',
-	array(
-		'type'     => 'checkbox',
-		'settings' => 'flash_remove_meta_comment_count',
-		'label'    => esc_html__( 'Remove comment count from post meta', 'flash' ),
-		'section'  => 'flash_archive_options',
-		'default'  => '',
-		'priority' => 50,
-	)
-);
-
-// Meta - Category.
-Kirki::add_field(
-	'flash_config',
-	array(
-		'type'     => 'checkbox',
-		'settings' => 'flash_remove_meta_category',
-		'label'    => esc_html__( 'Remove category from post meta', 'flash' ),
-		'section'  => 'flash_archive_options',
-		'default'  => '',
-		'priority' => 60,
-	)
-);
-
-// Meta - Tag.
-Kirki::add_field(
-	'flash_config',
-	array(
-		'type'     => 'checkbox',
-		'settings' => 'flash_remove_meta_tag',
-		'label'    => esc_html__( 'Remove tag from post meta', 'flash' ),
-		'section'  => 'flash_archive_options',
-		'default'  => '',
-		'priority' => 70,
 	)
 );
 
@@ -774,66 +951,6 @@ Kirki::add_section(
 		'priority'   => 60,
 		'capability' => 'edit_theme_options',
 
-	)
-);
-
-// Related Posts option.
-Kirki::add_field(
-	'flash_config',
-	array(
-		'type'     => 'switch',
-		'settings' => 'flash_related_post_option',
-		'label'    => esc_html__( 'Enable Related Posts', 'flash' ),
-		'section'  => 'flash_post_options',
-		'default'  => 0,
-	)
-);
-
-Kirki::add_field(
-	'flash_config',
-	array(
-		'type'            => 'radio',
-		'settings'        => 'flash_related_post_option_display',
-		'label'           => esc_html__( 'Display Related Posts By:', 'flash' ),
-		'section'         => 'flash_post_options',
-		'default'         => 'categories',
-		'choices'         => array(
-			'categories' => esc_attr__( 'Categories', 'flash' ),
-			'tags'       => esc_attr__( 'Tags', 'flash' ),
-		),
-		'active_callback' => array(
-			array(
-				'setting'  => 'flash_related_post_option',
-				'operator' => '==',
-				'value'    => 1,
-			),
-		),
-	)
-);
-
-// Author Bio.
-Kirki::add_field(
-	'flash_config',
-	array(
-		'type'     => 'checkbox',
-		'settings' => 'flash_remove_single_bio',
-		'label'    => esc_html__( 'Remove Author Bio from post', 'flash' ),
-		'section'  => 'flash_post_options',
-		'default'  => '',
-		'priority' => 20,
-	)
-);
-
-// Post Navigation.
-Kirki::add_field(
-	'flash_config',
-	array(
-		'type'     => 'checkbox',
-		'settings' => 'flash_remove_single_nav',
-		'label'    => esc_html__( 'Remove next/previous link from post', 'flash' ),
-		'section'  => 'flash_post_options',
-		'default'  => '',
-		'priority' => 30,
 	)
 );
 
