@@ -380,7 +380,7 @@ Kirki::add_field(
 		'multiple'        => 1,
 		'choices'         => array(
 			'social-menu' => esc_attr__( 'Social Menu', 'flash' ),
-			'header-text' => esc_attr__( 'Top Header Text', 'flash' ),
+			'header-text' => esc_attr__( 'Text', 'flash' ),
 			'disable'     => esc_attr__( 'Disable', 'flash' ),
 		),
 		'active_callback' => array(
@@ -406,7 +406,7 @@ Kirki::add_field(
 		'multiple'        => 1,
 		'choices'         => array(
 			'social-menu' => esc_attr__( 'Social Menu', 'flash' ),
-			'header-text' => esc_attr__( 'Top Header Text', 'flash' ),
+			'header-text' => esc_attr__( 'Text', 'flash' ),
 			'disable'     => esc_attr__( 'Disable', 'flash' ),
 		),
 		'active_callback' => array(
