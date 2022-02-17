@@ -889,6 +889,20 @@ function flash_customize_register( $wp_customize ) {
 			)
 		)
 	);
+
+	$wp_customize->add_section(
+		new FLASH_Upsell_Section(
+			$wp_customize,
+			'flash_review_section',
+			array(
+				'title'      => esc_html__( 'Leave a Review on .org', 'flash' ),
+				'url'        => 'https://wordpress.org/support/theme/flash/reviews/?filter=5/#new-post',
+				'capability' => 'edit_theme_options',
+				'priority'   => 200,
+			)
+		)
+	);
+
 	/*
 	 * Custom Scripts
 	 */
@@ -937,6 +951,19 @@ function flash_customize_register( $wp_customize ) {
 
 			li#accordion-section-flash_upsell_section h3.accordion-section-title:after {
 				color: #fff !important;
+			}
+
+			li#accordion-section-flash_review_section h3.accordion-section-title {
+				background-color: #30AFB8 !important;
+				color: #fff !important;
+				padding: 0;
+			}
+
+			li#accordion-section-flash_review_section h3.accordion-section-title a {
+				color: #fff;
+				display: block;
+				text-decoration: none;
+				padding: 12px 15px 15px;
 			}
 		</style>
 
