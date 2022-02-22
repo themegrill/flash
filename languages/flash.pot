@@ -1,14 +1,14 @@
-# Copyright (C) 2021 ThemeGrill
+# Copyright (C) 2022 ThemeGrill
 # This file is distributed under the GNU General Public License v3 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Flash 1.4.3\n"
+"Project-Id-Version: Flash 1.4.4\n"
 "Report-Msgid-Bugs-To: themegrill@gmail.com\n"
-"POT-Creation-Date: 2021-08-17 06:32:16+00:00\n"
+"POT-Creation-Date: 2022-02-22 08:45:11+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2021-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2022-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: ThemeGrill <themegrill@gmail.com\n"
 "X-Generator: grunt-wp-i18n 0.5.4\n"
@@ -47,7 +47,7 @@ msgstr ""
 msgid "Social"
 msgstr ""
 
-#: functions.php:61
+#: functions.php:61 inc/customizer.php:859
 msgid "Footer"
 msgstr ""
 
@@ -280,246 +280,306 @@ msgstr ""
 msgid "Buy Now"
 msgstr ""
 
-#: inc/customizer.php:36
-msgid "Transparent Logo"
+#: inc/customizer.php:34
+msgid "Global"
 msgstr ""
 
-#: inc/customizer.php:49
-msgid "Different Logo for Retina Devices?"
+#: inc/customizer.php:43
+msgid "Colors"
 msgstr ""
 
-#: inc/customizer.php:62
-msgid "Retina Logo"
+#: inc/customizer.php:53
+msgid "Base Colors"
 msgstr ""
 
-#: inc/customizer.php:81
-msgid "Flash Theme Options"
+#: inc/customizer.php:63
+msgid "Heading Colors"
 msgstr ""
 
-#: inc/customizer.php:89
-msgid "General Settings"
+#: inc/customizer.php:73
+msgid "Background"
 msgstr ""
 
-#: inc/customizer.php:102
+#: inc/customizer.php:83
+msgid "Layout"
+msgstr ""
+
+#: inc/customizer.php:94
 msgid "Site Layout"
 msgstr ""
 
-#: inc/customizer.php:108
+#: inc/customizer.php:106
+msgid "Container Style"
+msgstr ""
+
+#: inc/customizer.php:112
 msgid "Wide Layout"
 msgstr ""
 
-#: inc/customizer.php:109
+#: inc/customizer.php:113
 msgid "Boxed Layout"
 msgstr ""
 
-#: inc/customizer.php:120
-msgid "Disable Preloader?"
+#: inc/customizer.php:122
+msgid "Sidebar Layout"
 msgstr ""
 
-#: inc/customizer.php:133
-msgid "Disable Back to Top Button?"
+#: inc/customizer.php:134
+msgid "Page"
 msgstr ""
 
-#: inc/customizer.php:144
-msgid "Top Header Settings"
+#: inc/customizer.php:154 inc/customizer.php:749
+msgid "Single Post"
 msgstr ""
 
-#: inc/customizer.php:157
-msgid "Enable Top Header"
+#: inc/customizer.php:174 inc/customizer.php:642
+msgid "Blog/Archive"
 msgstr ""
 
-#: inc/customizer.php:170
-msgid "Top Header Left Content"
+#: inc/customizer.php:192
+msgid "Typography"
 msgstr ""
 
-#: inc/customizer.php:176 inc/customizer.php:202
-msgid "Social Menu"
+#: inc/customizer.php:203
+msgid "Base"
 msgstr ""
 
-#: inc/customizer.php:177 inc/customizer.php:203
-msgid "Top Header Text"
+#: inc/customizer.php:215
+msgid "Body"
 msgstr ""
 
-#: inc/customizer.php:178 inc/customizer.php:204
-msgid "Disable"
+#: inc/customizer.php:239
+msgid "Header"
 msgstr ""
 
-#: inc/customizer.php:196
-msgid "Top Header Right Content"
+#: inc/customizer.php:248
+msgid "Site Identity"
 msgstr ""
 
-#: inc/customizer.php:222
-msgid "Top Header Text Content"
+#: inc/customizer.php:262
+msgid "Visibility"
 msgstr ""
 
-#: inc/customizer.php:247
-msgid "Header Settings"
+#: inc/customizer.php:274
+msgid "Site Logo"
 msgstr ""
 
-#: inc/customizer.php:260
-msgid "Logo and Menu Position"
+#: inc/customizer.php:285
+msgid "Transparent Logo"
 msgstr ""
 
-#: inc/customizer.php:279
-msgid "Remove Header Search Box"
+#: inc/customizer.php:298
+msgid "Different Logo for Retina Devices?"
 msgstr ""
 
-#: inc/customizer.php:292
-msgid "Remove Header Cart Icon"
+#: inc/customizer.php:311
+msgid "Retina Logo"
 msgstr ""
 
-#: inc/customizer.php:306
-msgid "Sticky Header"
-msgstr ""
-
-#: inc/customizer.php:317
-msgid "Page Header Settings"
-msgstr ""
-
-#: inc/customizer.php:330
-msgid "Remove breadcrumbs from page header"
+#: inc/customizer.php:332
+msgid "Site Info"
 msgstr ""
 
 #: inc/customizer.php:341
-msgid "Page Header Background Image"
+msgid "Header Media"
 msgstr ""
 
-#: inc/customizer.php:367
-msgid "Archive Page Settings"
+#: inc/customizer.php:351
+msgid "Header Top Bar"
 msgstr ""
 
-#: inc/customizer.php:380
-msgid "Blog Style"
+#: inc/customizer.php:363 inc/customizer.php:548 inc/customizer.php:774
+msgid "Enable"
 msgstr ""
 
-#: inc/customizer.php:399
-msgid "Archive Page Layout"
+#: inc/customizer.php:376
+msgid "Left Content"
 msgstr ""
 
-#: inc/customizer.php:419
-msgid "Remove date from post meta"
+#: inc/customizer.php:382 inc/customizer.php:408
+msgid "Social Menu"
 msgstr ""
 
-#: inc/customizer.php:432
-msgid "Remove author from post meta"
+#: inc/customizer.php:383 inc/customizer.php:409
+msgid "Text"
 msgstr ""
 
-#: inc/customizer.php:445
-msgid "Remove comment count from post meta"
+#: inc/customizer.php:384 inc/customizer.php:410 inc/customizer.php:496
+#: inc/customizer.php:522 inc/customizer.php:631 inc/customizer.php:823
+#: inc/customizer.php:848 inc/customizer.php:936 inc/customizer.php:1012
+msgid "Disable"
 msgstr ""
 
-#: inc/customizer.php:458
-msgid "Remove category from post meta"
+#: inc/customizer.php:402
+msgid "Right Content"
 msgstr ""
 
-#: inc/customizer.php:471
-msgid "Remove tag from post meta"
+#: inc/customizer.php:428
+msgid "Top Header Text Content"
 msgstr ""
 
-#: inc/customizer.php:482
-msgid "Post Settings"
+#: inc/customizer.php:453
+msgid "Primary Header"
 msgstr ""
 
-#: inc/customizer.php:496
-msgid "Single Post Layout"
+#: inc/customizer.php:465 inc/customizer.php:655 inc/customizer.php:881
+msgid "Style"
 msgstr ""
 
-#: inc/customizer.php:516
-msgid "Enable Related Posts"
+#: inc/customizer.php:485
+msgid "Search"
 msgstr ""
 
-#: inc/customizer.php:527
-msgid "Display Related Posts By:"
+#: inc/customizer.php:510
+msgid "Cart"
 msgstr ""
 
-#: inc/customizer.php:531
+#: inc/customizer.php:537
+msgid "Sticky Header"
+msgstr ""
+
+#: inc/customizer.php:559
+msgid "Content"
+msgstr ""
+
+#: inc/customizer.php:568
+msgid "Page Header"
+msgstr ""
+
+#: inc/customizer.php:582
+msgid "General"
+msgstr ""
+
+#: inc/customizer.php:591
+#: inc/kirki/controls/php/class-kirki-control-background.php:54
+msgid "Background Image"
+msgstr ""
+
+#: inc/customizer.php:620
+msgid "Breadcrumbs"
+msgstr ""
+
+#: inc/customizer.php:675
+msgid "Post Meta"
+msgstr ""
+
+#: inc/customizer.php:686
+msgid "Disable Date"
+msgstr ""
+
+#: inc/customizer.php:699
+msgid "Disable Author"
+msgstr ""
+
+#: inc/customizer.php:712
+msgid "Disable Comment"
+msgstr ""
+
+#: inc/customizer.php:725
+msgid "Disable Category"
+msgstr ""
+
+#: inc/customizer.php:738
+msgid "Disable Tag"
+msgstr ""
+
+#: inc/customizer.php:763
+msgid "Related Posts"
+msgstr ""
+
+#: inc/customizer.php:787
+msgid "Posts Related To"
+msgstr ""
+
+#: inc/customizer.php:791
 msgid "Categories"
 msgstr ""
 
-#: inc/customizer.php:532
+#: inc/customizer.php:792
 msgid "Tags"
 msgstr ""
 
-#: inc/customizer.php:550
-msgid "Remove Author Bio from post"
+#: inc/customizer.php:812
+msgid "Author Bio"
 msgstr ""
 
-#: inc/customizer.php:563
-msgid "Remove next/previous link from post"
+#: inc/customizer.php:837
+msgid "Post Navigation"
 msgstr ""
 
-#: inc/customizer.php:574
-msgid "Page Settings"
+#: inc/customizer.php:868
+msgid "Footer Widgets Area"
 msgstr ""
 
-#: inc/customizer.php:587
-msgid "Page Layout"
+#: inc/customizer.php:902 inc/customizer.php:925
+#: inc/kirki/controls/php/class-kirki-control-background.php:119
+msgid "Fixed"
 msgstr ""
 
-#: inc/customizer.php:605
-msgid "Footer Settings"
+#: inc/customizer.php:911
+msgid "Scroll to Top"
 msgstr ""
 
-#: inc/customizer.php:618
-msgid "Footer Widget Area"
+#: inc/customizer.php:947
+msgid "Additional"
 msgstr ""
 
-#: inc/customizer.php:636
-msgid "Advanced Settings"
+#: inc/customizer.php:956
+msgid "Integration"
 msgstr ""
 
-#: inc/customizer.php:650
+#: inc/customizer.php:970
 msgid "Custom CSS"
 msgstr ""
 
-#: inc/customizer.php:667
-msgid "Google Font Settings"
+#: inc/customizer.php:987
+msgid "Optimization"
 msgstr ""
 
-#: inc/customizer.php:680
-msgid "Body Typography"
+#: inc/customizer.php:1001
+msgid "Preloader"
 msgstr ""
 
-#: inc/customizer.php:799
-msgid "Base Color Scheme"
+#: inc/customizer.php:1126
+msgid "Scheme"
 msgstr ""
 
-#: inc/customizer.php:825
-msgid "Link Color"
+#: inc/customizer.php:1152
+msgid "Primary Color"
 msgstr ""
 
-#: inc/customizer.php:846
-msgid "Main Text Color"
+#: inc/customizer.php:1173
+msgid "Headings"
 msgstr ""
 
-#: inc/customizer.php:867
-msgid "Secondary Text Color"
+#: inc/customizer.php:1194
+msgid "Text Color"
 msgstr ""
 
-#: inc/customizer.php:885
+#: inc/customizer.php:1212
 msgid "View Pro version"
 msgstr ""
 
-#: inc/customizer.php:1031
+#: inc/customizer.php:1358
 #: inc/kirki/controls/php/class-kirki-control-base.php:134
 #: inc/kirki/controls/views/image.php:36
 #: inc/kirki/field/class-kirki-field-image.php:49
 msgid "Default"
 msgstr ""
 
-#: inc/customizer.php:1040
+#: inc/customizer.php:1367
 msgid "Dark"
 msgstr ""
 
-#: inc/customizer.php:1049
+#: inc/customizer.php:1376
 msgid "Gray"
 msgstr ""
 
-#: inc/customizer.php:1058
+#: inc/customizer.php:1385
 msgid "Red"
 msgstr ""
 
-#: inc/customizer.php:1067
+#: inc/customizer.php:1394
 msgid "Yellow"
 msgstr ""
 
@@ -585,10 +645,6 @@ msgstr ""
 
 #: inc/kirki/controls/php/class-kirki-control-background.php:48
 msgid "Background Color"
-msgstr ""
-
-#: inc/kirki/controls/php/class-kirki-control-background.php:54
-msgid "Background Image"
 msgstr ""
 
 #: inc/kirki/controls/php/class-kirki-control-background.php:59
@@ -704,10 +760,6 @@ msgstr ""
 
 #: inc/kirki/controls/php/class-kirki-control-background.php:116
 msgid "Scroll"
-msgstr ""
-
-#: inc/kirki/controls/php/class-kirki-control-background.php:119
-msgid "Fixed"
 msgstr ""
 
 #: inc/kirki/controls/php/class-kirki-control-base.php:136
