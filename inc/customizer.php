@@ -1615,8 +1615,9 @@ function flash_get_color_scheme_css( $colors ) {
 	.tg-service-widget .service-content-wrap,.section-title-wrapper .section-description,.team-wrapper .team-content-wrapper .team-content,.testimonial-container .testimonial-wrapper .testimonial-slide .testominial-content-wrapper .testimonial-content, button, input, select, textarea,.entry-meta a,.cat-links a,.entry-footer a,.entry-meta span,.single .entry-content-block .entry-footer span a,.single .entry-content-block .entry-footer span,#comments .comment-list article.comment-body .comment-metadata a,#comments .comment-list article.comment-body .comment-author,#respond #commentform p,.testimonial-container .testimonial-degicnation,.fun-facts-section .fun-facts-title-wrap,.blog-section .row:nth-child(odd) .entry-meta a,.blog-section .row:nth-child(even) .entry-meta a,.tg-blog-widget-layout-2 .read-more-container .entry-author a,.blog-section .tg-blog-widget-layout-2 .read-more-container .entry-author,.tg-slider-widget .caption-desc {
 		color: {$colors['secondary_text_color']};
 	}
+
 	@media(max-width: 980px){
-		#site-navigation ul li.menu-item-has-children .sub-toggle{
+		#site-navigation ul li.menu-item-has-children .sub-toggle {
 			background-color: {$colors['link_color']};
 		}
 	}
@@ -1746,8 +1747,9 @@ function flash_link_color_css() {
 	.tg-service-widget .service-more:hover{
 		color: %3$s;
 	}
+
 	@media(max-width: 980px){
-		#site-navigation ul li.menu-item-has-children .sub-toggle{
+		#site-navigation ul li.menu-item-has-children span.sub-toggle {
 			background-color: %1$s;
 		}
 	}
