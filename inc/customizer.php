@@ -520,7 +520,7 @@ Kirki::add_field(
 		'type'            => 'checkbox',
 		'settings'        => 'flash_header_cart',
 		'label'           => esc_html__( 'Disable', 'flash' ),
-		'section'         => 'flash_header_options',
+		'section'         => 'flash_primary_header',
 		'default'         => '',
 		'priority'        => 50,
 		'active_callback' => 'flash_is_woocommerce_active',
