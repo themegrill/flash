@@ -87,6 +87,10 @@ If you want to integrate Kirki in your theme or plugin, please read the instruct
 
 ## Changelog ##
 
+### TBD ###
+
+* Fixed: Cart icon disable option.
+
 ### 3.1.9 - July 19, 2021 ###
 
 * Fixed: Styling issue in Switch control.
