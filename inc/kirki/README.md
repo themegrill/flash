@@ -1,3 +1,4 @@
+
 # Kirki Customizer Framework #
 **Contributors:** [davidvongries](https://profiles.wordpress.org/davidvongries), [aristath](https://profiles.wordpress.org/aristath), [dannycooper](https://profiles.wordpress.org/dannycooper), [wplemon](https://profiles.wordpress.org/wplemon), [igmoweb](https://profiles.wordpress.org/igmoweb)  
 **Tags:** customizer, options framework, theme, mods, toolkit, gutenberg  
@@ -89,7 +90,7 @@ If you want to integrate Kirki in your theme or plugin, please read the instruct
 
 ### TBD ###
 
-* Fixed: Cart icon disable option.
+* Fix - Option to enable header cart icon not appearing.
 
 ### 3.1.9 - July 19, 2021 ###
 
