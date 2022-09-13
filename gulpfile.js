@@ -59,7 +59,7 @@ var paths = {
 		dest: './'
 	},
 	adminscss: {
-		src : './inc/admin/sass/admin.scss',
+		src: './inc/admin/sass/admin.scss',
 		dest: './inc/admin/css/'
 	},
 	css: {
@@ -183,21 +183,21 @@ function compileSass() {
 				linefeed: 'crlf'
 			} )
 		)
-		.pipe( lec( { verbose : true, eolc : 'LF', encoding : 'utf8' } ) )
+		.pipe( lec( { verbose: true, eolc: 'LF', encoding: 'utf8' } ) )
 		.pipe( gulp.dest( paths.scss.dest ) )
 		.on( 'error', notify.onError() );
 }
 
 function compileAdminSass() {
 	return gulp.src( paths.adminscss.src )
-		.pipe( sass({
+		.pipe( sass( {
 			indentType: 'tab',
 			indentWidth: 1,
 			outputStyle: 'expanded',
 			linefeed: 'crlf'
 		} )
-			.on( 'error', sass.logError) )
-		.pipe( lec( { verbose : true, eolc : 'LF', encoding : 'utf8' } ) )
+			.on( 'error', sass.logError ) )
+		.pipe( lec( { verbose: true, eolc: 'LF', encoding: 'utf8' } ) )
 		.pipe( gulp.dest( paths.adminscss.dest ) )
 		.pipe( browserSync.stream() );
 }
@@ -212,7 +212,7 @@ function prefixStyles() {
 				cascade: false
 			} )
 		)
-		.pipe( lec( { verbose : true, eolc : 'LF', encoding : 'utf8' } ) )
+		.pipe( lec( { verbose: true, eolc: 'LF', encoding: 'utf8' } ) )
 		.pipe( gulp.dest( paths.prefixStyles.dest ) )
 		.pipe( browserSync.stream() )
 		.on( 'error', notify.onError() );
@@ -234,7 +234,7 @@ function minifyCSS() {
 		.src( paths.css.src )
 		.pipe( uglifycss() )
 		.pipe( rename( { suffix: '.min' } ) )
-		.pipe( lec( { verbose : true, eolc : 'LF', encoding : 'utf8' } ) )
+		.pipe( lec( { verbose: true, eolc: 'LF', encoding: 'utf8' } ) )
 		.pipe( gulp.dest( paths.css.dest ) );
 }
 
@@ -286,7 +286,7 @@ function minifyImg() {
 	return gulp
 		.src( paths.img.src )
 		.pipe( imagemin() )
-		.pipe( lec( { verbose : true, eolc : 'LF', encoding : 'utf8' } ) )
+		.pipe( lec( { verbose: true, eolc: 'LF', encoding: 'utf8' } ) )
 		.pipe( gulp.dest( paths.img.dest ) )
 		.on( 'error', notify.onError() );
 }
@@ -297,7 +297,7 @@ function minifyJs() {
 		.src( paths.js.src )
 		.pipe( uglify() )
 		.pipe( rename( { suffix: '.min' } ) )
-		.pipe( lec( { verbose : true, eolc : 'LF', encoding : 'utf8' } ) )
+		.pipe( lec( { verbose: true, eolc: 'LF', encoding: 'utf8' } ) )
 		.pipe( gulp.dest( paths.js.dest ) )
 		.on( 'error', notify.onError() );
 }
@@ -335,8 +335,8 @@ function compressZip() {
 // Watch for file changes
 function watch() {
 	gulp.watch( paths.scss.src, styles  );
-	gulp.watch(paths.php.src, browserSyncReload );
-	gulp.watch(paths.js.src, browserSyncReload);
+	gulp.watch( paths.php.src, browserSyncReload );
+	gulp.watch( paths.js.src, browserSyncReload );
 }
 
 
