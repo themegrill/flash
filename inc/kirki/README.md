@@ -88,10 +88,6 @@ If you want to integrate Kirki in your theme or plugin, please read the instruct
 
 ## Changelog ##
 
-### TBD ###
-
-* Fix - Option to enable header cart icon not appearing.
-
 ### 3.1.9 - July 19, 2021 ###
 
 * Fixed: Styling issue in Switch control.

@@ -81,7 +81,8 @@ Unless otherwise specified, all the theme files, scripts and images including th
 
 == Changelog ==
 = Version TBD =
-* Fix - Primary color not affecting mobile caret icon color.
+* Fix - Primary color not affecting mobile cart icon color.
+* Fix - Option to enable header cart icon not appearing.
 
 = Version 1.4.4 - 2022-02-22 =
 * Enhancement - Rearrangement of Customizer Options.
