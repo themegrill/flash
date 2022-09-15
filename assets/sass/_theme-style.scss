@@ -1,6 +1,11 @@
 /*--------------------------------------------------------------
 Normalize
 --------------------------------------------------------------*/
+:root {
+	--primary-color: #21858c;
+	--brightness: 80%;
+	--lightbrightness: 110%;
+}
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre, a,
@@ -923,111 +928,34 @@ Preloader CSS
 	}
 }
 
-@-webkit-keyframes preloader {
-
-	0% {
-		height: 5px;
-		-webkit-transform: translateY(0);
-		background: #21858c;
-	}
-
-	25% {
-		height: 30px;
-		-webkit-transform: translateY(15px);
-		background: #30aeb7;
-	}
-
-	50% {
-		height: 5px;
-		-webkit-transform: translateY(0);
-		background: #21858c;
-	}
-
-	100% {
-		height: 5px;
-		-webkit-transform: translateY(0);
-		background: #21858c;
-	}
-}
-
-@-moz-keyframes preloader {
-
-	0% {
-		height: 5px;
-		-moz-transform: translateY(0);
-		background: #21858c;
-	}
-
-	25% {
-		height: 30px;
-		-moz-transform: translateY(15px);
-		background: #30aeb7;
-	}
-
-	50% {
-		height: 5px;
-		-moz-transform: translateY(0);
-		background: #21858c;
-	}
-
-	100% {
-		height: 5px;
-		-moz-transform: translateY(0);
-		background: #21858c;
-	}
-}
-
-@-ms-keyframes preloader {
-
-	0% {
-		height: 5px;
-		-ms-transform: translateY(0);
-		background: #21858c;
-	}
-
-	25% {
-		height: 30px;
-		-ms-transform: translateY(15px);
-		background: #30aeb7;
-	}
-
-	50% {
-		height: 5px;
-		-ms-transform: translateY(0);
-		background: #21858c;
-	}
-
-	100% {
-		height: 5px;
-		-ms-transform: translateY(0);
-		background: #21858c;
-	}
-}
-
 @keyframes preloader {
 
 	0% {
 		height: 5px;
 		transform: translateY(0);
-		background: #21858c;
+		background:var(--primary-color);
+		filter: brightness(var(--brightness));
 	}
 
 	25% {
 		height: 30px;
 		transform: translateY(15px);
-		background: #30aeb7;
+		background: var(--primary-color);
+		filter: brightness(var(--lightbrightness));
 	}
 
 	50% {
 		height: 5px;
 		transform: translateY(0);
-		background: #21858c;
+		background: var(--primary-color);
+		filter: brightness(var(--brightness));
 	}
 
 	100% {
 		height: 5px;
 		transform: translateY(0);
-		background: #21858c;
+		background: var(--primary-color);
+		filter: brightness(var(--brightness));
 	}
 }
 

@@ -6,7 +6,7 @@ Author: ThemeGrill
 Author URI: https://themegrill.com
 Description: Flash is free responsive multipurpose WordPress theme – truly a versatile theme perfect for any type of website you want. Like never before, it provides multiple pre-built demos which can be imported in seconds using ThemeGrill Demo Importer Plugin. The theme fully integrates with Flash Toolkit and SiteOrigin’s Page Builder Plugin that makes theme more user-friendly and easy. Additionally, theme features multiple blog layouts, WooCommerce support, multiple header styles, multiple color options etc.
 License: GNU General Public License v3 or later
-Version: 1.4.4
+Version: 1.4.5
 Tested up to: 5.4.1
 Requires PHP: 5.6
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -47,6 +47,12 @@ theme style
 /*--------------------------------------------------------------
 Normalize
 --------------------------------------------------------------*/
+:root {
+	--primary-color: #21858c;
+	--brightness: 80%;
+	--lightbrightness: 110%;
+}
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre, a,
 abbr, acronym, address, big, cite, code, del, dfn,
@@ -913,22 +919,34 @@ Preloader CSS
 	0% {
 		height: 5px;
 		-webkit-transform: translateY(0);
-		background: #21858c;
+		transform: translateY(0);
+		background: var(--primary-color);
+		-webkit-filter: brightness(var(--brightness));
+		filter: brightness(var(--brightness));
 	}
 	25% {
 		height: 30px;
 		-webkit-transform: translateY(15px);
-		background: #30aeb7;
+		transform: translateY(15px);
+		background: var(--primary-color);
+		-webkit-filter: brightness(var(--lightbrightness));
+		filter: brightness(var(--lightbrightness));
 	}
 	50% {
 		height: 5px;
 		-webkit-transform: translateY(0);
-		background: #21858c;
+		transform: translateY(0);
+		background: var(--primary-color);
+		-webkit-filter: brightness(var(--brightness));
+		filter: brightness(var(--brightness));
 	}
 	100% {
 		height: 5px;
 		-webkit-transform: translateY(0);
-		background: #21858c;
+		transform: translateY(0);
+		background: var(--primary-color);
+		-webkit-filter: brightness(var(--brightness));
+		filter: brightness(var(--brightness));
 	}
 }
 
@@ -937,25 +955,33 @@ Preloader CSS
 		height: 5px;
 		-webkit-transform: translateY(0);
 		transform: translateY(0);
-		background: #21858c;
+		background: var(--primary-color);
+		-webkit-filter: brightness(var(--brightness));
+		filter: brightness(var(--brightness));
 	}
 	25% {
 		height: 30px;
 		-webkit-transform: translateY(15px);
 		transform: translateY(15px);
-		background: #30aeb7;
+		background: var(--primary-color);
+		-webkit-filter: brightness(var(--lightbrightness));
+		filter: brightness(var(--lightbrightness));
 	}
 	50% {
 		height: 5px;
 		-webkit-transform: translateY(0);
 		transform: translateY(0);
-		background: #21858c;
+		background: var(--primary-color);
+		-webkit-filter: brightness(var(--brightness));
+		filter: brightness(var(--brightness));
 	}
 	100% {
 		height: 5px;
 		-webkit-transform: translateY(0);
 		transform: translateY(0);
-		background: #21858c;
+		background: var(--primary-color);
+		-webkit-filter: brightness(var(--brightness));
+		filter: brightness(var(--brightness));
 	}
 }
 

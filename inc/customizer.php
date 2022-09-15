@@ -1729,7 +1729,12 @@ function flash_link_color_css() {
 	.woocommerce ul.products li.product .button:hover, .woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover,.added_to_cart.wc-forward:hover{
 		background-color: %3$s;
 	}
-
+	#preloader-background span {
+		background-color: %3$s;
+	}
+	#preloader-background span {
+		--primary-color : %3$s;
+	}
 	.feature-product-section .tg-feature-product-widget .featured-image-desc::before,.blog-section .row:nth-child(odd) .tg-blog-widget:hover .post-image::before{
 			border-right-color: %1$s;
 		}
