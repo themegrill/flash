@@ -82,7 +82,7 @@ Unless otherwise specified, all the theme files, scripts and images including th
 
 == Changelog ==
 = TBD =
-* Fix - Preloader background color issue from customizer.
+* Fix - Primary color option not affecting Preloader.
 
 = Version 1.4.5 - 2022-09-13 =
 * Fix - Primary color option not affecting mobile cart icon color.
