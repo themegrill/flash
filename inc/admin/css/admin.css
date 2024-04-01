@@ -99,6 +99,20 @@ a.flash-message-close:before {
 	transition: all .1s ease-in-out;
 }
 
+.welcome-panel .welcome-panel-content h2 {
+	color: white;
+	padding: 10px 48px;
+}
+
+.welcome-panel .welcome-panel-content .about-description {
+	padding: 10px 48px;
+	color: white;
+}
+
+.welcome-panel-column {
+	display: block;
+}
+
 @media screen and (max-width: 768px) {
 	.flash-message__content .flash-message__image {
 		display: none;
@@ -128,7 +142,7 @@ a.flash-message-close:before {
 }
 
 .flash-notice.theme-review-notice {
-	border-left-color: #6547DB;
+	border-left-color: #30afb8;
 	padding: 20px 15px;
 }
 
@@ -173,7 +187,6 @@ a.flash-message-close:before {
 	color: #3C434A;
 	margin: 0 0 6px 0;
 	max-width: 720px;
-	padding: 2px 0;
 }
 
 .flash-notice.theme-review-notice span.dashicons.dashicons-smiley.smile-icon {
@@ -186,8 +199,8 @@ a.flash-message-close:before {
 }
 
 .flash-notice.theme-review-notice .button-primary {
-	background: #6547DB;
-	border-color: #6547DB;
+	background: #30afb8;
+	border-color: #30afb8;
 	box-shadow: none;
 	color: #fff;
 }
@@ -199,8 +212,8 @@ a.flash-message-close:before {
 }
 
 .flash-notice.theme-review-notice .button-secondary {
-	color: #6547DB;
-	border-color: #6547DB;
+	color: #30afb8;
+	border-color: #30afb8;
 	background: #f6f7f7;
 	vertical-align: top;
 }

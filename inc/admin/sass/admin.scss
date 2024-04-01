@@ -108,6 +108,25 @@ a.flash-message-close {
 	}
 }
 
+.welcome-panel {
+	.welcome-panel-content {
+
+		h2 {
+			color: white;
+			padding: 10px 48px;
+		}
+
+		.about-description {
+			padding: 10px 48px;
+			color: white;
+		}
+	}
+}
+
+.welcome-panel-column {
+	display: block;
+}
+
 @media screen and (max-width: 768px) {
 	.flash-message__content .flash-message__image {
 		display: none;

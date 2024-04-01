@@ -20,7 +20,6 @@ class Flash_Dashboard {
 
 	private function setup_hooks() {
 		add_action( 'admin_menu', array( $this, 'create_menu' ) );
-
 	}
 
 	public function create_menu() {
@@ -43,7 +42,6 @@ class Flash_Dashboard {
 				'option_page',
 			)
 		);
-
 	}
 
 	public function option_page() {
@@ -58,7 +56,7 @@ class Flash_Dashboard {
 			<h1>
 				<?php
 				/* translators: %s: Theme version. */
-				echo sprintf( esc_html__( 'Flash %s', 'flash' ), $theme->Version );
+				printf( esc_html__( 'Flash %s', 'flash' ), $theme->Version );
 				?>
 			</h1>
 		</div>
@@ -67,13 +65,13 @@ class Flash_Dashboard {
 				<h2>
 					<?php
 					/* translators: %s: Theme Name. */
-					echo sprintf( esc_html__( 'Welcome to %s!', 'flash' ), $theme->Name );
+					printf( esc_html__( 'Welcome to %s!', 'flash' ), $theme->Name );
 					?>
 				</h2>
 				<p class="about-description">
 					<?php
 					/* translators: %s: Theme Name. */
-					echo sprintf( esc_html__( 'Important links to get you started with %s', 'flash' ), $theme->Name );
+					printf( esc_html__( 'Important links to get you started with %s', 'flash' ), $theme->Name );
 					?>
 				</p>
 
@@ -81,8 +79,8 @@ class Flash_Dashboard {
 					<div class="welcome-panel-column">
 						<h3><?php esc_html_e( 'Get Started', 'flash' ); ?></h3>
 						<a class="button button-primary button-hero"
-						   href="<?php echo esc_url( 'https://docs.themegrill.com/flash/#section-1' ); ?>"
-						   target="_blank"><?php esc_html_e( 'Learn Basics', 'flash' ); ?>
+							href="<?php echo esc_url( 'https://docs.themegrill.com/flash/#section-1' ); ?>"
+							target="_blank"><?php esc_html_e( 'Learn Basics', 'flash' ); ?>
 						</a>
 					</div>
 

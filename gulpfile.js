@@ -335,6 +335,7 @@ function compressZip() {
 // Watch for file changes
 function watch() {
 	gulp.watch( paths.scss.src, styles  );
+	gulp.watch( paths.adminscss.src, compileAdminSass  );
 	gulp.watch( paths.php.src, browserSyncReload );
 	gulp.watch( paths.js.src, browserSyncReload );
 }
