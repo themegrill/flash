@@ -2,7 +2,7 @@
     "name": "themegrill/flash",
     "description": "Free responsive multipurpose WordPress theme from ThemeGrill",
     "type": "project",
-    "require": {
+    "require-dev": {
         "squizlabs/php_codesniffer": "3.2",
         "wp-coding-standards/wpcs": "0.14.0",
         "wimg/php-compatibility": "*",
