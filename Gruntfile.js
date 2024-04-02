@@ -144,6 +144,8 @@ module.exports = function( grunt ){
 			files: {
 				src: [
 					'**',
+					'!vendor',
+					'!vendor/**',
 					'!.*',
 					'!*.md',
 					'!dist/**',
