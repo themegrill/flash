@@ -114,7 +114,6 @@ if ( ! function_exists( 'flash_top_header_content' ) ) :
 
 			return $social_menu;
 		}
-
 	}
 endif;
 
@@ -124,14 +123,14 @@ if ( ! function_exists( 'flash_footer_copyright' ) ) :
 	 *
 	 * @since Flash 1.0
 	 */
-	function flash_footer_copyright()
-	{ ?>
+	function flash_footer_copyright() {
+		?>
 		<div class="copyright">
 	<span class="copyright-text">
-		<?php printf(esc_html__('Copyright %1$s %2$s', 'flash'), '&copy; ', date('Y')); ?>
-		<a href="<?php echo esc_url(home_url('/')); ?>"><?php echo get_bloginfo('name'); ?></a>
-		<?php printf(esc_html__('All rights reserved.', 'flash') . esc_html__(' Theme: %2$s by %1$s.', 'flash'), 'ThemeGrill', '<a href="' . esc_url('https://themegrill.com/themes/flash/') . '" target="_blank" rel="nofollow">Flash</a>'); ?>
-		<?php printf(esc_html__('Powered by %s', 'flash'), '<a href="' . esc_url(__('https://wordpress.org/', 'flash')) . '"target="_blank" rel="nofollow">' . esc_html__('WordPress', 'flash') . '</a>'); ?>
+		<?php printf( esc_html__( 'Copyright %1$s %2$s', 'flash' ), '&copy; ', date( 'Y' ) ); ?>
+		<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php echo get_bloginfo( 'name' ); ?></a>
+		<?php printf( esc_html__( 'All rights reserved.', 'flash' ) . esc_html__( ' Theme: %2$s by %1$s.', 'flash' ), 'ThemeGrill', '<a href="' . esc_url( '#' ) . '" target="_blank" rel="nofollow">Flash</a>' ); ?>
+		<?php printf( esc_html__( 'Powered by %s', 'flash' ), '<a href="' . esc_url( __( 'https://wordpress.org/', 'flash' ) ) . '"target="_blank" rel="nofollow">' . esc_html__( 'WordPress', 'flash' ) . '</a>' ); ?>
 	</span>
 
 		</div><!-- .copyright -->
@@ -140,7 +139,7 @@ if ( ! function_exists( 'flash_footer_copyright' ) ) :
 	}
 endif;
 
-add_action('flash_copyright_area', 'flash_footer_copyright');
+add_action( 'flash_copyright_area', 'flash_footer_copyright' );
 
 if ( ! function_exists( 'flash_breadcrumbs' ) ) :
 	/**
@@ -347,7 +346,6 @@ if ( ! function_exists( 'flash_breadcrumbs' ) ) :
 			echo '</ul>';
 
 		}
-
 	}
 endif;
 
@@ -601,7 +599,6 @@ if ( ! function_exists( 'flash_related_posts' ) ) {
 		$query = ! isset( $break ) ? new WP_Query( $args ) : new WP_Query();
 
 		return $query;
-
 	}
 }
 
