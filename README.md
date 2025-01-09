@@ -2,8 +2,8 @@
 === Flash ===
 Author: ThemeGrill
 Requires at least: WordPress 4.3
-Version: 1.4.6
-Tested up to: 6.4
+Version: 1.4.8
+Tested up to: 6.7
 Requires PHP: 5.6
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
@@ -81,8 +81,11 @@ License: GNU GPL, Version 3, https://www.gnu.org/licenses/gpl-3.0.html
 Unless otherwise specified, all the theme files, scripts and images including the screenshot image are licensed under [GNU GPL] (http://www.gnu.org/licenses/gpl-3.0.txt), version 3 or later.
 
 == Changelog ==
-= Version TBD =
-* Update - Twitter Icon.
+= Version 1.4.8 - 2025-01-09 =
+* Update - WordPress test upto version.
+
+= Version 1.4.7 - 2024-09-11 =
+* Update - Twitter icon.
 * 
 = Version 1.4.6 - 2024-04-02 =
 * Fix - Primary color option not affecting Preloader.
