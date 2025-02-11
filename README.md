@@ -2,7 +2,7 @@
 === Flash ===
 Author: ThemeGrill
 Requires at least: WordPress 4.3
-Version: 1.4.8
+Version: 1.4.9
 Tested up to: 6.7
 Requires PHP: 5.6
 License: GPLv3 or later
@@ -81,6 +81,9 @@ License: GNU GPL, Version 3, https://www.gnu.org/licenses/gpl-3.0.html
 Unless otherwise specified, all the theme files, scripts and images including the screenshot image are licensed under [GNU GPL] (http://www.gnu.org/licenses/gpl-3.0.txt), version 3 or later.
 
 == Changelog ==
+= Version 1.4.9 - 2025-02-11 =
+* Update - Kirki to 4.2.0.
+
 = Version 1.4.8 - 2025-01-09 =
 * Update - WordPress test upto version.
 
