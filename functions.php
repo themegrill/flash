@@ -219,8 +219,47 @@ add_action( 'widgets_init', 'flash_widgets_init' );
 function flash_scripts() {
 	$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
 
-	// Font Awessome
-	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome' . $suffix . '.css', array(), false, false );
+	// Font Awesome 6.7.1.
+	$font_awesome_styles = array(
+		array(
+			'handle'  => 'font-awesome-4',
+			'file'    => '/v4-shims',
+			'version' => '4.7.0',
+		),
+		array(
+			'handle'  => 'font-awesome-all',
+			'file'    => '/all',
+			'version' => '6.7.2',
+		),
+		array(
+			'handle'  => 'font-awesome-solid',
+			'file'    => '/solid',
+			'version' => '6.7.2',
+		),
+		array(
+			'handle'  => 'font-awesome-regular',
+			'file'    => '/regular',
+			'version' => '6.7.2',
+		),
+		array(
+			'handle'  => 'font-awesome-brands',
+			'file'    => '/brands',
+			'version' => '6.7.2',
+		),
+	);
+
+	foreach ( $font_awesome_styles as $style ) {
+		wp_register_style(
+			$style['handle'],
+			get_template_directory_uri() . '/css' . $style['file'] . $suffix . '.css',
+			false,
+			$style['version']
+		);
+		wp_enqueue_style( $style['handle'] );
+	}
+
+	// Font Awesome
+//	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome' . $suffix . '.css', array(), false, false );
 	// Swiper CSS
 	wp_register_style( 'swiper', get_template_directory_uri() . '/css/swiper' . $suffix . '.css', array(), false, false );
 
