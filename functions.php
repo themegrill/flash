@@ -55,23 +55,28 @@ if ( ! function_exists( 'flash_setup' ) ) :
 		add_theme_support( 'custom-logo' );
 
 		// This theme uses wp_nav_menu() in one location.
-		register_nav_menus( array(
-			'primary' => esc_html__( 'Primary', 'flash' ),
-			'social'  => esc_html__( 'Social', 'flash' ),
-			'footer'  => esc_html__( 'Footer', 'flash' ),
-		) );
+		register_nav_menus(
+			array(
+				'primary' => esc_html__( 'Primary', 'flash' ),
+				'social'  => esc_html__( 'Social', 'flash' ),
+				'footer'  => esc_html__( 'Footer', 'flash' ),
+			)
+		);
 
 		/*
 		 * Switch default core markup for search form, comment form, and comments
 		 * to output valid HTML5.
 		 */
-		add_theme_support( 'html5', array(
-			'search-form',
-			'comment-form',
-			'comment-list',
-			'gallery',
-			'caption',
-		) );
+		add_theme_support(
+			'html5',
+			array(
+				'search-form',
+				'comment-form',
+				'comment-list',
+				'gallery',
+				'caption',
+			)
+		);
 
 		/**
 		 * Enable support for woocommerce and woocommerce 3.0 product gallery
@@ -84,10 +89,13 @@ if ( ! function_exists( 'flash_setup' ) ) :
 		/**
 		 * Enable support for SiteOrigin Page Builder
 		 */
-		add_theme_support( 'siteorigin-panels', array(
-			'margin-bottom'       => 0,
-			'recommended-widgets' => false,
-		) );
+		add_theme_support(
+			'siteorigin-panels',
+			array(
+				'margin-bottom'       => 0,
+				'recommended-widgets' => false,
+			)
+		);
 
 		/**
 		 * Enable Support for selective refresh widgets in Customizer
@@ -100,7 +108,7 @@ if ( ! function_exists( 'flash_setup' ) ) :
 		// Add support for Block Styles.
 		add_theme_support( 'wp-block-styles' );
 
-	    // Responsive embeds support.
+		// Responsive embeds support.
 		add_theme_support( 'responsive-embeds' );
 	}
 endif;
@@ -112,12 +120,11 @@ add_action( 'after_setup_theme', 'flash_setup' );
  *
  * @since Flash 1.3.5
  */
-function flash_block_editor_styles()
-{
-	wp_enqueue_style('flash-editor-googlefonts', '//fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
-	wp_enqueue_style('flash-block-editor-styles', get_template_directory_uri() . '/style-editor-block.css');
+function flash_block_editor_styles() {
+	wp_enqueue_style( 'flash-editor-googlefonts', '//fonts.googleapis.com/css?family=Montserrat:400,700&display=swap' );
+	wp_enqueue_style( 'flash-block-editor-styles', get_template_directory_uri() . '/style-editor-block.css' );
 }
-add_action('enqueue_block_editor_assets', 'flash_block_editor_styles', 1, 1);
+add_action( 'enqueue_block_editor_assets', 'flash_block_editor_styles', 1, 1 );
 
 // Theme version.
 $flash_theme = wp_get_theme();
@@ -150,65 +157,77 @@ endif;
  */
 function flash_widgets_init() {
 	// Right Sidebar
-	register_sidebar( array(
-		'name'          => esc_html__( 'Right Sidebar', 'flash' ),
-		'id'            => 'flash_right_sidebar',
-		'description'   => esc_html__( 'Add widgets here for right sidebar.', 'flash' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>',
-	) );
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Right Sidebar', 'flash' ),
+			'id'            => 'flash_right_sidebar',
+			'description'   => esc_html__( 'Add widgets here for right sidebar.', 'flash' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+		)
+	);
 	// Left Sidebar
-	register_sidebar( array(
-		'name'          => esc_html__( 'Left Sidebar', 'flash' ),
-		'id'            => 'flash_left_sidebar',
-		'description'   => esc_html__( 'Add widgets here for left sidebar.', 'flash' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>',
-	) );
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Left Sidebar', 'flash' ),
+			'id'            => 'flash_left_sidebar',
+			'description'   => esc_html__( 'Add widgets here for left sidebar.', 'flash' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+		)
+	);
 	// Footer 1
-	register_sidebar( array(
-		'name'          => esc_html__( 'Footer Sidebar 1', 'flash' ),
-		'id'            => 'flash_footer_sidebar1',
-		'description'   => esc_html__( 'Add widgets here for footer sidebar 1.', 'flash' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>',
-	) );
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer Sidebar 1', 'flash' ),
+			'id'            => 'flash_footer_sidebar1',
+			'description'   => esc_html__( 'Add widgets here for footer sidebar 1.', 'flash' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+		)
+	);
 	// Footer 2
-	register_sidebar( array(
-		'name'          => esc_html__( 'Footer Sidebar 2', 'flash' ),
-		'id'            => 'flash_footer_sidebar2',
-		'description'   => esc_html__( 'Add widgets here for footer sidebar 2.', 'flash' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>',
-	) );
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer Sidebar 2', 'flash' ),
+			'id'            => 'flash_footer_sidebar2',
+			'description'   => esc_html__( 'Add widgets here for footer sidebar 2.', 'flash' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+		)
+	);
 	// Footer 3
-	register_sidebar( array(
-		'name'          => esc_html__( 'Footer Sidebar 3', 'flash' ),
-		'id'            => 'flash_footer_sidebar3',
-		'description'   => esc_html__( 'Add widgets here for footer sidebar 3.', 'flash' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>',
-	) );
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer Sidebar 3', 'flash' ),
+			'id'            => 'flash_footer_sidebar3',
+			'description'   => esc_html__( 'Add widgets here for footer sidebar 3.', 'flash' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+		)
+	);
 	// Footer 4
-	register_sidebar( array(
-		'name'          => esc_html__( 'Footer Sidebar 4', 'flash' ),
-		'id'            => 'flash_footer_sidebar4',
-		'description'   => esc_html__( 'Add widgets here for footer sidebar 4.', 'flash' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>',
-	) );
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer Sidebar 4', 'flash' ),
+			'id'            => 'flash_footer_sidebar4',
+			'description'   => esc_html__( 'Add widgets here for footer sidebar 4.', 'flash' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+		)
+	);
 }
 
 add_action( 'widgets_init', 'flash_widgets_init' );
@@ -259,7 +278,7 @@ function flash_scripts() {
 	}
 
 	// Font Awesome
-//	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome' . $suffix . '.css', array(), false, false );
+	//  wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome' . $suffix . '.css', array(), false, false );
 	// Swiper CSS
 	wp_register_style( 'swiper', get_template_directory_uri() . '/css/swiper' . $suffix . '.css', array(), false, false );
 
@@ -305,7 +324,12 @@ require get_template_directory() . '/inc/template-tags.php';
 require get_template_directory() . '/inc/extras.php';
 
 // Kirki Toolkit.
-require get_template_directory() . '/inc/kirki/kirki.php';
+add_action(
+	'init',
+	function () {
+		require get_template_directory() . '/inc/kirki/kirki.php';
+	}
+);
 
 // Customizer additions.
 require get_template_directory() . '/inc/customizer.php';
@@ -344,7 +368,7 @@ require get_template_directory() . '/inc/migration.php';
  */
 function flash_font_family_change() {
 	// Lets bail out if no 'theme_mods_flash' option found.
-	if ( false === ( $mods = get_option( "theme_mods_flash" ) ) ) {
+	if ( false === ( $mods = get_option( 'theme_mods_flash' ) ) ) {
 		return;
 	}
 
@@ -364,8 +388,8 @@ function flash_font_family_change() {
 	}
 
 	$value = array(
-		'font-family'    => $font_family,
-		'variant'        => 'regular',
+		'font-family' => $font_family,
+		'variant'     => 'regular',
 	);
 
 	// Update the 'flash_body_font' theme mod.
