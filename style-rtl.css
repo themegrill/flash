@@ -6,8 +6,8 @@ Author: ThemeGrill
 Author URI: https://themegrill.com
 Description: Flash is free responsive multipurpose WordPress theme – truly a versatile theme perfect for any type of website you want. Like never before, it provides multiple pre-built demos which can be imported in seconds using ThemeGrill Demo Importer Plugin. The theme fully integrates with Flash Toolkit and SiteOrigin’s Page Builder Plugin that makes theme more user-friendly and easy. Additionally, theme features multiple blog layouts, WooCommerce support, multiple header styles, multiple color options etc.
 License: GNU General Public License v3 or later
-Version: 1.4.5
-Tested up to: 5.4.1
+Version: 1.4.9
+Tested up to: 6.7
 Requires PHP: 5.6
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: flash
@@ -1158,6 +1158,22 @@ Header
 
 .social-menu li a[href*="youtube.com"]::before {
 	content: "\f16a";
+}
+
+.social-menu li a[href*="x.com"]::before {
+	content: "\e61b";
+}
+
+.social-menu li a[href*="linkedin.com"]::before {
+	content: "\f0e1";
+}
+
+.social-menu li a[href*="telegram"]::before {
+	content: "\f2c6";
+}
+
+.social-menu li a[href*="web.whatsapp.com"]::before, .social-menu li a[href*="whatsapp.com"]::before {
+	content: "\f232";
 }
 
 .social-menu li a[href*="twitter.com"]:hover, .social-menu li a[href*="plus.google.com"]:hover, .social-menu li a[href*="linkedin.com"]:hover, .social-menu li a[href*="facebook.com"]:hover, .social-menu li a[href*="pinterest.com"]:hover, .social-menu li a[href*="instagram.com"]:hover, .social-menu li a[href*="youtube.com"]:hover {

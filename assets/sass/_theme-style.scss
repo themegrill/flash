@@ -1137,6 +1137,21 @@ Header
 		content: "\f16a";
 	}
 
+	&[href*="x.com"]::before {
+		content: "\e61b";
+	}
+
+	&[href*="linkedin.com"]::before {
+		content: "\f0e1";
+	}
+	&[href*="telegram"]::before {
+		content: "\f2c6";
+	}
+
+	&[href*="web.whatsapp.com"]::before,&[href*="whatsapp.com"]::before {
+		content: "\f232";
+	}
+
 	&[href*="twitter.com"]:hover,
 	&[href*="plus.google.com"]:hover,
 	&[href*="linkedin.com"]:hover,
