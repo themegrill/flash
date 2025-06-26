@@ -327,9 +327,7 @@ require get_template_directory() . '/inc/extras.php';
 require get_template_directory() . '/inc/kirki/kirki.php';
 
 // Customizer additions.s
-add_action('init', function (){
-	require get_template_directory() . '/inc/customizer.php';
-});
+require get_template_directory() . '/inc/customizer.php';
 
 // Load Metaboxes.
 require get_template_directory() . '/inc/meta-boxes.php';

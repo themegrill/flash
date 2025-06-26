@@ -19,1003 +19,1005 @@ if ( ! class_exists( 'Kirki' ) ) {
 }
 
 /** Flash Kirki Config */
-Kirki::add_config(
-	'flash_config',
-	array(
-		'capability'  => 'edit_theme_options',
-		'option_type' => 'theme_mod',
-	)
-);
+add_action('init', function (){
+	Kirki::add_config(
+		'flash_config',
+		array(
+			'capability'  => 'edit_theme_options',
+			'option_type' => 'theme_mod',
+		)
+	);
 
-/** Panel Global **/
-Kirki::add_panel(
-	'flash_global',
-	array(
-		'title'    => esc_html__( 'Global', 'flash' ),
-		'priority' => 10,
-	)
-);
+	/** Panel Global **/
+	Kirki::add_panel(
+		'flash_global',
+		array(
+			'title'    => esc_html__( 'Global', 'flash' ),
+			'priority' => 10,
+		)
+	);
 
-/** Section Colors - Needs to be section. */
-Kirki::add_panel(
-	'flash_colors',
-	array(
-		'title'    => esc_html__( 'Colors', 'flash' ),
-		'panel'    => 'flash_global',
-		'priority' => 10,
-	)
-);
+	/** Section Colors - Needs to be section. */
+	Kirki::add_panel(
+		'flash_colors',
+		array(
+			'title'    => esc_html__( 'Colors', 'flash' ),
+			'panel'    => 'flash_global',
+			'priority' => 10,
+		)
+	);
 
 // Sub-section - Base Colors.
-Kirki::add_section(
-	'flash_base_colors',
-	array(
-		'title'      => esc_html__( 'Base Colors', 'flash' ),
-		'panel'      => 'flash_colors',
-		'capability' => 'edit_theme_options',
-	)
-);
+	Kirki::add_section(
+		'flash_base_colors',
+		array(
+			'title'      => esc_html__( 'Base Colors', 'flash' ),
+			'panel'      => 'flash_colors',
+			'capability' => 'edit_theme_options',
+		)
+	);
 
 // Sub-section - Heading Colors.
-Kirki::add_section(
-	'flash_heading_colors',
-	array(
-		'title'      => esc_html__( 'Heading Colors', 'flash' ),
-		'panel'      => 'flash_colors',
-		'capability' => 'edit_theme_options',
-	)
-);
+	Kirki::add_section(
+		'flash_heading_colors',
+		array(
+			'title'      => esc_html__( 'Heading Colors', 'flash' ),
+			'panel'      => 'flash_colors',
+			'capability' => 'edit_theme_options',
+		)
+	);
 
-/** Section Background - Needs to be section. */
-Kirki::add_section(
-	'flash_background',
-	array(
-		'title'      => esc_html__( 'Background', 'flash' ),
-		'panel'      => 'flash_global',
-		'capability' => 'edit_theme_options',
-	)
-);
+	/** Section Background - Needs to be section. */
+	Kirki::add_section(
+		'flash_background',
+		array(
+			'title'      => esc_html__( 'Background', 'flash' ),
+			'panel'      => 'flash_global',
+			'capability' => 'edit_theme_options',
+		)
+	);
 
-/** Section Layout - Needs to be section. */
-Kirki::add_panel(
-	'flash_layout',
-	array(
-		'title'      => esc_html__( 'Layout', 'flash' ),
-		'panel'      => 'flash_global',
-		'capability' => 'edit_theme_options',
-		'priority'   => 20,
-	)
-);
+	/** Section Layout - Needs to be section. */
+	Kirki::add_panel(
+		'flash_layout',
+		array(
+			'title'      => esc_html__( 'Layout', 'flash' ),
+			'panel'      => 'flash_global',
+			'capability' => 'edit_theme_options',
+			'priority'   => 20,
+		)
+	);
 
 // Sub-section - Site Layout.
-Kirki::add_section(
-	'flash_site_layout',
-	array(
-		'title'      => esc_html__( 'Site Layout', 'flash' ),
-		'panel'      => 'flash_layout',
-		'capability' => 'edit_theme_options',
-	)
-);
+	Kirki::add_section(
+		'flash_site_layout',
+		array(
+			'title'      => esc_html__( 'Site Layout', 'flash' ),
+			'panel'      => 'flash_layout',
+			'capability' => 'edit_theme_options',
+		)
+	);
 
 // Setting - Flash site layout.
-Kirki::add_field(
-	'flash_config',
-	array(
-		'type'     => 'radio-buttonset',
-		'settings' => 'flash_site_layout',
-		'label'    => esc_html__( 'Container Style', 'flash' ),
-		'section'  => 'flash_site_layout',
-		'default'  => 'wide',
-		'priority' => 10,
-		'multiple' => 1,
-		'choices'  => array(
-			'wide'  => esc_attr__( 'Wide Layout', 'flash' ),
-			'boxed' => esc_attr__( 'Boxed Layout', 'flash' ),
-		),
-	)
-);
-
-// Sub-section - Sidebar Layout.
-Kirki::add_section(
-	'flash_sidebar_layout',
-	array(
-		'title'      => esc_html__( 'Sidebar Layout', 'flash' ),
-		'panel'      => 'flash_layout',
-		'capability' => 'edit_theme_options',
-	)
-);
-
-// Setting - Page Layout.
-Kirki::add_field(
-	'flash_config',
-	array(
-		'type'     => 'radio-image',
-		'settings' => 'flash_page_layout',
-		'label'    => esc_html__( 'Page', 'flash' ),
-		'section'  => 'flash_sidebar_layout',
-		'default'  => 'right-sidebar',
-		'priority' => 10,
-		'multiple' => 1,
-		'choices'  => array(
-			'right-sidebar'     => get_template_directory_uri() . '/images/right-sidebar.png',
-			'left-sidebar'      => get_template_directory_uri() . '/images/left-sidebar.png',
-			'full-width'        => get_template_directory_uri() . '/images/full-width.png',
-			'full-width-center' => get_template_directory_uri() . '/images/full-width-center.png',
-		),
-	)
-);
-
-// Setting - Post Layout.
-Kirki::add_field(
-	'flash_config',
-	array(
-		'type'     => 'radio-image',
-		'settings' => 'flash_post_layout',
-		'label'    => esc_html__( 'Single Post', 'flash' ),
-		'section'  => 'flash_sidebar_layout',
-		'default'  => 'right-sidebar',
-		'priority' => 20,
-		'multiple' => 1,
-		'choices'  => array(
-			'right-sidebar'     => get_template_directory_uri() . '/images/right-sidebar.png',
-			'left-sidebar'      => get_template_directory_uri() . '/images/left-sidebar.png',
-			'full-width'        => get_template_directory_uri() . '/images/full-width.png',
-			'full-width-center' => get_template_directory_uri() . '/images/full-width-center.png',
-		),
-	)
-);
-
-// Setting - Blog/Archive Layout.
-Kirki::add_field(
-	'flash_config',
-	array(
-		'type'     => 'radio-image',
-		'settings' => 'flash_archive_layout',
-		'label'    => esc_html__( 'Blog/Archive', 'flash' ),
-		'section'  => 'flash_sidebar_layout',
-		'default'  => 'right-sidebar',
-		'priority' => 30,
-		'multiple' => 1,
-		'choices'  => array(
-			'right-sidebar'     => get_template_directory_uri() . '/images/right-sidebar.png',
-			'left-sidebar'      => get_template_directory_uri() . '/images/left-sidebar.png',
-			'full-width'        => get_template_directory_uri() . '/images/full-width.png',
-			'full-width-center' => get_template_directory_uri() . '/images/full-width-center.png',
-		),
-	)
-);
-
-/** Section - Typography - Needs to be section. */
-Kirki::add_panel(
-	'flash_typography',
-	array(
-		'title'      => esc_html__( 'Typography', 'flash' ),
-		'panel'      => 'flash_global',
-		'capability' => 'edit_theme_options',
-		'priority'   => 30,
-	)
-);
-
-// Sub-section - Base.
-Kirki::add_section(
-	'flash_base_typography',
-	array(
-		'title'      => esc_html__( 'Base', 'flash' ),
-		'panel'      => 'flash_typography',
-		'capability' => 'edit_theme_options',
-	)
-);
-
-// Setting - Body Typography.
-Kirki::add_field(
-	'flash_config',
-	array(
-		'type'     => 'typography',
-		'settings' => 'flash_body_font',
-		'label'    => esc_attr__( 'Body', 'flash' ),
-		'section'  => 'flash_base_typography',
-		'default'  => array(
-			'font-family' => 'Montserrat',
-			'variant'     => 'regular',
-		),
-		'priority' => 10,
-		'output'   => array(
-			array(
-				'element' => array( 'body' ),
-			),
-		),
-		'js_vars'  => array(
-			array(
-				'element' => array( 'body' ),
-			),
-		),
-	)
-);
-
-/** Panel - Header **/
-Kirki::add_panel(
-	'flash_header',
-	array(
-		'title'    => esc_html__( 'Header', 'flash' ),
-		'priority' => 20,
-	)
-);
-
-/** Section - Site Identity - Needs to be section. */
-Kirki::add_section(
-	'title_tagline',
-	array(
-		'title'      => esc_html__( 'Site Identity', 'flash' ),
-		'panel'      => 'flash_header',
-		'capability' => 'edit_theme_options',
-		'priority'   => 10,
-	)
-);
-
-// Setting - Site Identity Visibility Header.
-Kirki::add_field(
-	'flash_config',
-	array(
-		'type'     => 'custom',
-		'settings' => 'flash_siteidentity_visibility_header',
-		'section'  => 'title_tagline',
-		'default'  => '<div style="margin-top: 15px; padding: 5px; text-align: center; background-color: #333; color: #fff; border-radius: 50px;">' . esc_html__( 'Visibility', 'flash' ) . '</div>',
-		'priority' => 1,
-	)
-);
-
-// Setting - Site Identity Site Logo Header.
-Kirki::add_field(
-	'flash_config',
-	array(
-		'type'     => 'custom',
-		'settings' => 'flash_siteidentity_site_logo_header',
-		'section'  => 'title_tagline',
-		'default'  => '<div style="margin-top: 15px; padding: 5px; text-align: center; background-color: #333; color: #fff; border-radius: 50px;">' . esc_html__( 'Site Logo', 'flash' ) . '</div>',
-		'priority' => 5,
-	)
-);
-
-// Setting - Transparent Logo - Customizer Options Using Kirki Toolkit.
-Kirki::add_field(
-	'flash_config',
-	array(
-		'type'     => 'image',
-		'settings' => 'flash_transparent_logo',
-		'label'    => esc_html__( 'Transparent Logo', 'flash' ),
-		'section'  => 'title_tagline',
-		'default'  => '',
-		'priority' => 10,
-	)
-);
-
-// Setting - Retina Logo enable Option.
-Kirki::add_field(
-	'flash_config',
-	array(
-		'type'     => 'checkbox',
-		'settings' => 'flash_retina_logo',
-		'label'    => esc_html__( 'Different Logo for Retina Devices?', 'flash' ),
-		'section'  => 'title_tagline',
-		'default'  => '0',
-		'priority' => 20,
-	)
-);
-
-// Setting - Retina Logo Upload.
-Kirki::add_field(
-	'flash_config',
-	array(
-		'type'            => 'image',
-		'settings'        => 'flash_retina_logo_upload',
-		'label'           => esc_html__( 'Retina Logo', 'flash' ),
-		'section'         => 'title_tagline',
-		'default'         => '',
-		'priority'        => 30,
-		'active_callback' => array(
-			array(
-				'setting'  => 'flash_retina_logo',
-				'operator' => '==',
-				'value'    => 1,
-			),
-		),
-	)
-);
-
-// Setting - Site Identity Site Info Header.
-Kirki::add_field(
-	'flash_config',
-	array(
-		'type'     => 'custom',
-		'settings' => 'flash_siteidentity_site_info_header',
-		'section'  => 'title_tagline',
-		'default'  => '<div style="margin-top: 15px; padding: 5px; text-align: center; background-color: #333; color: #fff; border-radius: 50px;">' . esc_html__( 'Site Info', 'flash' ) . '</div>',
-		'priority' => 30,
-	)
-);
-
-/** Section - Header Media. */
-Kirki::add_section(
-	'header_image',
-	array(
-		'title'      => esc_html__( 'Header Media', 'flash' ),
-		'panel'      => 'flash_header',
-		'capability' => 'edit_theme_options',
-	)
-);
-
-/** Section - Header Top Bar. */
-Kirki::add_section(
-	'flash_header_top_bar',
-	array(
-		'title'      => esc_html__( 'Header Top Bar', 'flash' ),
-		'panel'      => 'flash_header',
-		'capability' => 'edit_theme_options',
-	)
-);
-
-// Setting - Enable/Disable.
-Kirki::add_field(
-	'flash_top_header',
-	array(
-		'type'     => 'toggle',
-		'settings' => 'flash_top_header',
-		'label'    => esc_html__( 'Enable', 'flash' ),
-		'section'  => 'flash_header_top_bar',
-		'default'  => '1',
-		'priority' => 10,
-	)
-);
-
-// Setting - Left Content.
-Kirki::add_field(
-	'flash_config',
-	array(
-		'type'            => 'select',
-		'settings'        => 'flash_top_header_left',
-		'label'           => esc_html__( 'Left Content', 'flash' ),
-		'section'         => 'flash_header_top_bar',
-		'default'         => 'disable',
-		'priority'        => 20,
-		'multiple'        => 1,
-		'choices'         => array(
-			'social-menu' => esc_attr__( 'Social Menu', 'flash' ),
-			'header-text' => esc_attr__( 'Text', 'flash' ),
-			'disable'     => esc_attr__( 'Disable', 'flash' ),
-		),
-		'active_callback' => array(
-			array(
-				'setting'  => 'flash_top_header',
-				'operator' => '==',
-				'value'    => 1,
-			),
-		),
-	)
-);
-
-// Setting - Right Content.
-Kirki::add_field(
-	'flash_config',
-	array(
-		'type'            => 'select',
-		'settings'        => 'flash_top_header_right',
-		'label'           => esc_html__( 'Right Content', 'flash' ),
-		'section'         => 'flash_header_top_bar',
-		'default'         => 'disable',
-		'priority'        => 30,
-		'multiple'        => 1,
-		'choices'         => array(
-			'social-menu' => esc_attr__( 'Social Menu', 'flash' ),
-			'header-text' => esc_attr__( 'Text', 'flash' ),
-			'disable'     => esc_attr__( 'Disable', 'flash' ),
-		),
-		'active_callback' => array(
-			array(
-				'setting'  => 'flash_top_header',
-				'operator' => '==',
-				'value'    => 1,
-			),
-		),
-	)
-);
-
-// Setting - Text.
-Kirki::add_field(
-	'flash_config',
-	array(
-		'type'            => 'editor',
-		'settings'        => 'flash_top_header_text',
-		'label'           => esc_html__( 'Top Header Text Content', 'flash' ),
-		'section'         => 'flash_header_top_bar',
-		'default'         => '',
-		'priority'        => 40,
-		'transport'       => 'postMessage',
-		'js_vars'         => array(
-			array(
-				'element'  => '.header-top .left-content',
-				'function' => 'html',
-			),
-		),
-		'active_callback' => array(
-			array(
-				'setting'  => 'flash_top_header',
-				'operator' => '==',
-				'value'    => 1,
-			),
-		),
-	)
-);
-
-/** Section - Primary Header. */
-Kirki::add_section(
-	'flash_primary_header',
-	array(
-		'title'      => esc_html__( 'Primary Header', 'flash' ),
-		'panel'      => 'flash_header',
-		'capability' => 'edit_theme_options',
-	)
-);
-
-// Setting - Header Style.
-Kirki::add_field(
-	'flash_config',
-	array(
-		'type'     => 'radio-image',
-		'settings' => 'flash_logo_position',
-		'label'    => esc_html__( 'Style', 'flash' ),
-		'section'  => 'flash_primary_header',
-		'default'  => 'left-logo-right-menu',
-		'priority' => 10,
-		'multiple' => 1,
-		'choices'  => array(
-			'left-logo-right-menu'   => get_template_directory_uri() . '/images/left-logo.png',
-			'right-logo-left-menu'   => get_template_directory_uri() . '/images/RIGHT.png',
-			'center-logo-below-menu' => get_template_directory_uri() . '/images/center-below.png',
-		),
-	)
-);
-
-// Setting - Header Search Header.
-Kirki::add_field(
-	'flash_config',
-	array(
-		'type'     => 'custom',
-		'settings' => 'flash_header_search_header',
-		'section'  => 'flash_primary_header',
-		'default'  => '<div style="margin-top: 15px; padding: 5px; text-align: center; background-color: #333; color: #fff; border-radius: 50px;">' . esc_html__( 'Search', 'flash' ) . '</div>',
-		'priority' => 20,
-	)
-);
-
-// Setting - Header Search Icon.
-Kirki::add_field(
-	'flash_config',
-	array(
-		'type'     => 'checkbox',
-		'settings' => 'flash_header_search',
-		'label'    => esc_html__( 'Disable', 'flash' ),
-		'section'  => 'flash_primary_header',
-		'default'  => '',
-		'priority' => 30,
-	)
-);
-
-// Setting - Header Cart Icon Header.
-Kirki::add_field(
-	'flash_config',
-	array(
-		'type'            => 'custom',
-		'settings'        => 'flash_header_cart_header',
-		'section'         => 'flash_primary_header',
-		'default'         => '<div style="margin-top: 15px; padding: 5px; text-align: center; background-color: #333; color: #fff; border-radius: 50px;">' . esc_html__( 'Cart', 'flash' ) . '</div>',
-		'priority'        => 40,
-		'active_callback' => 'flash_is_woocommerce_active',
-	)
-);
-
-// Setting - Header Cart Icon.
-Kirki::add_field(
-	'flash_config',
-	array(
-		'type'            => 'checkbox',
-		'settings'        => 'flash_header_cart',
-		'label'           => esc_html__( 'Disable', 'flash' ),
-		'section'         => 'flash_primary_header',
-		'default'         => '',
-		'priority'        => 50,
-		'active_callback' => 'flash_is_woocommerce_active',
-	)
-);
-
-// Setting - Sticky Header Header.
-Kirki::add_field(
-	'flash_config',
-	array(
-		'type'     => 'custom',
-		'settings' => 'flash_header_sticky_header',
-		'section'  => 'flash_primary_header',
-		'default'  => '<div style="margin-top: 15px; padding: 5px; text-align: center; background-color: #333; color: #fff; border-radius: 50px;">' . esc_html__( 'Sticky Header', 'flash' ) . '</div>',
-		'priority' => 60,
-	)
-);
-
-// Setting - Sticky Header.
-Kirki::add_field(
-	'flash_config',
-	array(
-		'type'     => 'toggle',
-		'settings' => 'flash_sticky_header',
-		'label'    => esc_html__( 'Enable', 'flash' ),
-		'section'  => 'flash_primary_header',
-		'default'  => '',
-		'priority' => 70,
-	)
-);
-
-/** Panel - Content **/
-Kirki::add_panel(
-	'flash_content',
-	array(
-		'title'    => esc_html__( 'Content', 'flash' ),
-		'priority' => 30,
-	)
-);
-
-// Section - Page Header.
-Kirki::add_section(
-	'flash_page_header',
-	array(
-		'title'      => esc_html__( 'Page Header', 'flash' ),
-		'panel'      => 'flash_content',
-		'capability' => 'edit_theme_options',
-		'priority'   => 10,
-	)
-);
-
-// Setting - Page Header General Header.
-Kirki::add_field(
-	'flash_config',
-	array(
-		'type'     => 'custom',
-		'settings' => 'flash_page_header_general_header',
-		'section'  => 'flash_page_header',
-		'default'  => '<div style="margin-top: 15px; padding: 5px; text-align: center; background-color: #333; color: #fff; border-radius: 50px;">' . esc_html__( 'General', 'flash' ) . '</div>',
-		'priority' => 10,
-	)
-);
-
-// Setting - Page Header Background Image.
-Kirki::add_field( 'flash_config', array(
-	'type'      => 'image',
-	'settings'  => 'flash_pageheader_background_image',
-	'label'     => esc_html__( 'Background Image', 'flash' ),
-	'section'   => 'flash_page_header',
-	'default'   => '',
-	'priority'  => 20,
-	'transport' => 'postMessage',
-	'js_vars'   => array(
-		array(
-			'element'  => '.breadcrumb-trail.breadcrumbs',
-			'function' => 'css',
-			'property' => 'background-image',
-		),
-	),
-	'output'    => array(
-		array(
-			'element'  => '.breadcrumb-trail.breadcrumbs',
-			'function' => 'css',
-			'property' => 'background-image',
-		),
-	),
-)
-);
-
-// Setting - Page Header Breadcrumbs Header.
-Kirki::add_field(
-	'flash_config',
-	array(
-		'type'     => 'custom',
-		'settings' => 'flash_page_header_breadcrumb_header',
-		'section'  => 'flash_page_header',
-		'default'  => '<div style="margin-top: 15px; padding: 5px; text-align: center; background-color: #333; color: #fff; border-radius: 50px;">' . esc_html__( 'Breadcrumbs', 'flash' ) . '</div>',
-		'priority' => 30,
-	)
-);
-
-// Setting - Disable Breadcrumbs.
-Kirki::add_field(
-	'flash_config',
-	array(
-		'type'     => 'checkbox',
-		'settings' => 'flash_remove_breadcrumbs',
-		'label'    => esc_html__( 'Disable', 'flash' ),
-		'section'  => 'flash_page_header',
-		'default'  => '',
-		'priority' => 40,
-	)
-);
-
-// Section - Blog/Archive.
-Kirki::add_section(
-	'flash_blog_archive',
-	array(
-		'title'      => esc_html__( 'Blog/Archive', 'flash' ),
-		'panel'      => 'flash_content',
-		'capability' => 'edit_theme_options',
-		'priority'   => 20,
-	)
-);
-
-// Setting - Blog Styles.
-Kirki::add_field(
-	'flash_config',
-	array(
-		'type'     => 'radio-image',
-		'settings' => 'flash_blog_style',
-		'label'    => esc_html__( 'Style', 'flash' ),
-		'section'  => 'flash_blog_archive',
-		'default'  => 'classic-layout',
-		'priority' => 10,
-		'multiple' => 1,
-		'choices'  => array(
-			'classic-layout'     => get_template_directory_uri() . '/images/blog-style-classic.png',
-			'full-width-archive' => get_template_directory_uri() . '/images/blog-style-classic-full.png',
-			'grid-view'          => get_template_directory_uri() . '/images/blog-style-grid.png',
-		),
-	)
-);
-
-// Setting - Blog/Archive Post meta Header.
-Kirki::add_field(
-	'flash_config',
-	array(
-		'type'     => 'custom',
-		'settings' => 'flash_blog_post_meta_header',
-		'section'  => 'flash_blog_archive',
-		'default'  => '<div style="margin-top: 15px; padding: 5px; text-align: center; background-color: #333; color: #fff; border-radius: 50px;">' . esc_html__( 'Post Meta', 'flash' ) . '</div>',
-		'priority' => 20,
-	)
-);
-
-// Meta - Date.
-Kirki::add_field(
-	'flash_config',
-	array(
-		'type'     => 'checkbox',
-		'settings' => 'flash_remove_meta_date',
-		'label'    => esc_html__( 'Disable Date', 'flash' ),
-		'section'  => 'flash_blog_archive',
-		'default'  => '',
-		'priority' => 30,
-	)
-);
-
-// Setting - Post Meta Author.
-Kirki::add_field(
-	'flash_config',
-	array(
-		'type'     => 'checkbox',
-		'settings' => 'flash_remove_meta_author',
-		'label'    => esc_html__( 'Disable Author', 'flash' ),
-		'section'  => 'flash_blog_archive',
-		'default'  => '',
-		'priority' => 40,
-	)
-);
-
-// Setting - Post Meta Comment Count.
-Kirki::add_field(
-	'flash_config',
-	array(
-		'type'     => 'checkbox',
-		'settings' => 'flash_remove_meta_comment_count',
-		'label'    => esc_html__( 'Disable Comment', 'flash' ),
-		'section'  => 'flash_blog_archive',
-		'default'  => '',
-		'priority' => 50,
-	)
-);
-
-// Setting - Post Meta Category.
-Kirki::add_field(
-	'flash_config',
-	array(
-		'type'     => 'checkbox',
-		'settings' => 'flash_remove_meta_category',
-		'label'    => esc_html__( 'Disable Category', 'flash' ),
-		'section'  => 'flash_blog_archive',
-		'default'  => '',
-		'priority' => 60,
-	)
-);
-
-// Setting - Post Meta Tags.
-Kirki::add_field(
-	'flash_config',
-	array(
-		'type'     => 'checkbox',
-		'settings' => 'flash_remove_meta_tag',
-		'label'    => esc_html__( 'Disable Tag', 'flash' ),
-		'section'  => 'flash_blog_archive',
-		'default'  => '',
-		'priority' => 70,
-	)
-);
-
-// Section - Single Post.
-Kirki::add_section(
-	'flash_single_post',
-	array(
-		'title'      => esc_html__( 'Single Post', 'flash' ),
-		'panel'      => 'flash_content',
-		'capability' => 'edit_theme_options',
-		'priority'   => 30,
-	)
-);
-
-// Setting - Single Post Related Post Header.
-Kirki::add_field(
-	'flash_config',
-	array(
-		'type'     => 'custom',
-		'settings' => 'flash_single_post_related_post_header',
-		'section'  => 'flash_single_post',
-		'default'  => '<div style="margin-top: 15px; padding: 5px; text-align: center; background-color: #333; color: #fff; border-radius: 50px;">' . esc_html__( 'Related Posts', 'flash' ) . '</div>',
-		'priority' => 10,
-	)
-);
-
-// Setting - Enable Related Posts.
-Kirki::add_field(
-	'flash_config',
-	array(
-		'type'     => 'switch',
-		'settings' => 'flash_related_post_option',
-		'label'    => esc_html__( 'Enable', 'flash' ),
-		'section'  => 'flash_single_post',
-		'default'  => 0,
-		'priority' => 20,
-	)
-);
-
-// Setting - Post Related To.
-Kirki::add_field(
-	'flash_config',
-	array(
-		'type'            => 'radio',
-		'settings'        => 'flash_related_post_option_display',
-		'label'           => esc_html__( 'Posts Related To', 'flash' ),
-		'section'         => 'flash_single_post',
-		'default'         => 'categories',
-		'choices'         => array(
-			'categories' => esc_attr__( 'Categories', 'flash' ),
-			'tags'       => esc_attr__( 'Tags', 'flash' ),
-		),
-		'active_callback' => array(
-			array(
-				'setting'  => 'flash_related_post_option',
-				'operator' => '==',
-				'value'    => 1,
-			),
-		),
-		'priority'         => 30,
-	)
-);
-
-// Setting - Single Post Author Bio Header.
-Kirki::add_field(
-	'flash_config',
-	array(
-		'type'     => 'custom',
-		'settings' => 'flash_author_bio_header',
-		'section'  => 'flash_single_post',
-		'default'  => '<div style="margin-top: 15px; padding: 5px; text-align: center; background-color: #333; color: #fff; border-radius: 50px;">' . esc_html__( 'Author Bio', 'flash' ) . '</div>',
-		'priority' => 50,
-	)
-);
-
-// Setting - Author Bio.
-Kirki::add_field(
-	'flash_config',
-	array(
-		'type'     => 'checkbox',
-		'settings' => 'flash_remove_single_bio',
-		'label'    => esc_html__( 'Disable', 'flash' ),
-		'section'  => 'flash_single_post',
-		'default'  => '',
-		'priority' => 50,
-	)
-);
-
-// Setting - Single Post Post Navigation Header.
-Kirki::add_field(
-	'flash_config',
-	array(
-		'type'     => 'custom',
-		'settings' => 'flash_single_post_navigation_header',
-		'section'  => 'flash_single_post',
-		'default'  => '<div style="margin-top: 15px; padding: 5px; text-align: center; background-color: #333; color: #fff; border-radius: 50px;">' . esc_html__( 'Post Navigation', 'flash' ) . '</div>',
-		'priority' => 60,
-	)
-);
-
-// Setting - Disable Post Navigation.
-Kirki::add_field(
-	'flash_config',
-	array(
-		'type'     => 'checkbox',
-		'settings' => 'flash_remove_single_nav',
-		'label'    => esc_html__( 'Disable', 'flash' ),
-		'section'  => 'flash_single_post',
-		'default'  => '',
-		'priority' => 70,
-	)
-);
-
-/** Panel Footer **/
-Kirki::add_panel(
-	'flash_footer',
-	array(
-		'title'    => esc_html__( 'Footer', 'flash' ),
-		'priority' => 40,
-	)
-);
-
-// Section - Footer Widgets Area.
-Kirki::add_section(
-	'flash_footer_widgets_area',
-	array(
-		'title'      => esc_html__( 'Footer Widgets Area', 'flash' ),
-		'panel'      => 'flash_footer',
-		'capability' => 'edit_theme_options',
-		'priority'   => 10,
-	)
-);
-
-// Footer Widget.
-Kirki::add_field(
-	'flash_config',
-	array(
-		'type'     => 'radio-image',
-		'settings' => 'flash_footer_widgets',
-		'label'    => esc_html__( 'Style', 'flash' ),
-		'section'  => 'flash_footer_widgets_area',
-		'default'  => '4',
-		'priority' => 10,
-		'multiple' => 1,
-		'choices'  => array(
-			'1' => get_template_directory_uri() . '/images/col-1.png',
-			'2' => get_template_directory_uri() . '/images/col-2.png',
-			'3' => get_template_directory_uri() . '/images/col-3.png',
-			'4' => get_template_directory_uri() . '/images/col-4.png',
-		),
-	)
-);
-
-// Setting - Footer Scroll to Top Footer Header.
-Kirki::add_field(
-	'flash_config',
-	array(
-		'type'     => 'custom',
-		'settings' => 'flash_scroll_to_top_fixed_header',
-		'section'  => 'flash_footer_scroll_top',
-		'default'  => '<div style="margin-top: 15px; padding: 5px; text-align: center; background-color: #333; color: #fff; border-radius: 50px;">' . esc_html__( 'Fixed', 'flash' ) . '</div>',
-		'priority' => 20,
-	)
-);
-
-// Section - Footer Scroll to Top.
-Kirki::add_section(
-	'flash_footer_scroll_top',
-	array(
-		'title'      => esc_html__( 'Scroll to Top', 'flash' ),
-		'panel'      => 'flash_footer',
-		'capability' => 'edit_theme_options',
-		'priority'   => 40,
-	)
-);
-
-// Setting - Footer Scroll to Top Footer Header.
-Kirki::add_field(
-	'flash_config',
-	array(
-		'type'     => 'custom',
-		'settings' => 'flash_scroll_to_top_fixed_header',
-		'section'  => 'flash_footer_scroll_top',
-		'default'  => '<div style="margin-top: 15px; padding: 5px; text-align: center; background-color: #333; color: #fff; border-radius: 50px;">' . esc_html__( 'Fixed', 'flash' ) . '</div>',
-		'priority' => 10,
-	)
-);
-
-// Setting - Scroll to Top button Options.
-Kirki::add_field(
-	'flash_config',
-	array(
-		'type'     => 'checkbox',
-		'settings' => 'flash_disable_back_to_top',
-		'label'    => esc_html__( 'Disable', 'flash' ),
-		'section'  => 'flash_footer_scroll_top',
-		'default'  => '',
-		'priority' => 20,
-	)
-);
-
-/** Panel - Additional **/
-Kirki::add_panel(
-	'flash_additional',
-	array(
-		'title'    => esc_html__( 'Additional', 'flash' ),
-		'priority' => 80,
-	)
-);
-
-// Section - Integration.
-Kirki::add_section(
-	'flash_integration',
-	array(
-		'title'      => esc_html__( 'Integration', 'flash' ),
-		'panel'      => 'flash_additional',
-		'capability' => 'edit_theme_options',
-		'priority'   => 10,
-	)
-);
-
-// Setting - Custom CSS
-if ( ! function_exists( 'wp_update_custom_css_post' ) ) {
 	Kirki::add_field(
 		'flash_config',
 		array(
-			'type'     => 'code',
-			'settings' => 'flash_custom_css',
-			'label'    => esc_html__( 'Custom CSS', 'flash' ),
-			'section'  => 'flash_integration',
-			'default'  => '',
+			'type'     => 'radio-buttonset',
+			'settings' => 'flash_site_layout',
+			'label'    => esc_html__( 'Container Style', 'flash' ),
+			'section'  => 'flash_site_layout',
+			'default'  => 'wide',
 			'priority' => 10,
+			'multiple' => 1,
 			'choices'  => array(
-				'language' => 'css',
-				'theme'    => 'monokai',
-				'height'   => 250,
+				'wide'  => esc_attr__( 'Wide Layout', 'flash' ),
+				'boxed' => esc_attr__( 'Boxed Layout', 'flash' ),
 			),
 		)
 	);
-}
+
+// Sub-section - Sidebar Layout.
+	Kirki::add_section(
+		'flash_sidebar_layout',
+		array(
+			'title'      => esc_html__( 'Sidebar Layout', 'flash' ),
+			'panel'      => 'flash_layout',
+			'capability' => 'edit_theme_options',
+		)
+	);
+
+// Setting - Page Layout.
+	Kirki::add_field(
+		'flash_config',
+		array(
+			'type'     => 'radio-image',
+			'settings' => 'flash_page_layout',
+			'label'    => esc_html__( 'Page', 'flash' ),
+			'section'  => 'flash_sidebar_layout',
+			'default'  => 'right-sidebar',
+			'priority' => 10,
+			'multiple' => 1,
+			'choices'  => array(
+				'right-sidebar'     => get_template_directory_uri() . '/images/right-sidebar.png',
+				'left-sidebar'      => get_template_directory_uri() . '/images/left-sidebar.png',
+				'full-width'        => get_template_directory_uri() . '/images/full-width.png',
+				'full-width-center' => get_template_directory_uri() . '/images/full-width-center.png',
+			),
+		)
+	);
+
+// Setting - Post Layout.
+	Kirki::add_field(
+		'flash_config',
+		array(
+			'type'     => 'radio-image',
+			'settings' => 'flash_post_layout',
+			'label'    => esc_html__( 'Single Post', 'flash' ),
+			'section'  => 'flash_sidebar_layout',
+			'default'  => 'right-sidebar',
+			'priority' => 20,
+			'multiple' => 1,
+			'choices'  => array(
+				'right-sidebar'     => get_template_directory_uri() . '/images/right-sidebar.png',
+				'left-sidebar'      => get_template_directory_uri() . '/images/left-sidebar.png',
+				'full-width'        => get_template_directory_uri() . '/images/full-width.png',
+				'full-width-center' => get_template_directory_uri() . '/images/full-width-center.png',
+			),
+		)
+	);
+
+// Setting - Blog/Archive Layout.
+	Kirki::add_field(
+		'flash_config',
+		array(
+			'type'     => 'radio-image',
+			'settings' => 'flash_archive_layout',
+			'label'    => esc_html__( 'Blog/Archive', 'flash' ),
+			'section'  => 'flash_sidebar_layout',
+			'default'  => 'right-sidebar',
+			'priority' => 30,
+			'multiple' => 1,
+			'choices'  => array(
+				'right-sidebar'     => get_template_directory_uri() . '/images/right-sidebar.png',
+				'left-sidebar'      => get_template_directory_uri() . '/images/left-sidebar.png',
+				'full-width'        => get_template_directory_uri() . '/images/full-width.png',
+				'full-width-center' => get_template_directory_uri() . '/images/full-width-center.png',
+			),
+		)
+	);
+
+	/** Section - Typography - Needs to be section. */
+	Kirki::add_panel(
+		'flash_typography',
+		array(
+			'title'      => esc_html__( 'Typography', 'flash' ),
+			'panel'      => 'flash_global',
+			'capability' => 'edit_theme_options',
+			'priority'   => 30,
+		)
+	);
+
+// Sub-section - Base.
+	Kirki::add_section(
+		'flash_base_typography',
+		array(
+			'title'      => esc_html__( 'Base', 'flash' ),
+			'panel'      => 'flash_typography',
+			'capability' => 'edit_theme_options',
+		)
+	);
+
+// Setting - Body Typography.
+	Kirki::add_field(
+		'flash_config',
+		array(
+			'type'     => 'typography',
+			'settings' => 'flash_body_font',
+			'label'    => esc_attr__( 'Body', 'flash' ),
+			'section'  => 'flash_base_typography',
+			'default'  => array(
+				'font-family' => 'Montserrat',
+				'variant'     => 'regular',
+			),
+			'priority' => 10,
+			'output'   => array(
+				array(
+					'element' => array( 'body' ),
+				),
+			),
+			'js_vars'  => array(
+				array(
+					'element' => array( 'body' ),
+				),
+			),
+		)
+	);
+
+	/** Panel - Header **/
+	Kirki::add_panel(
+		'flash_header',
+		array(
+			'title'    => esc_html__( 'Header', 'flash' ),
+			'priority' => 20,
+		)
+	);
+
+	/** Section - Site Identity - Needs to be section. */
+	Kirki::add_section(
+		'title_tagline',
+		array(
+			'title'      => esc_html__( 'Site Identity', 'flash' ),
+			'panel'      => 'flash_header',
+			'capability' => 'edit_theme_options',
+			'priority'   => 10,
+		)
+	);
+
+// Setting - Site Identity Visibility Header.
+	Kirki::add_field(
+		'flash_config',
+		array(
+			'type'     => 'custom',
+			'settings' => 'flash_siteidentity_visibility_header',
+			'section'  => 'title_tagline',
+			'default'  => '<div style="margin-top: 15px; padding: 5px; text-align: center; background-color: #333; color: #fff; border-radius: 50px;">' . esc_html__( 'Visibility', 'flash' ) . '</div>',
+			'priority' => 1,
+		)
+	);
+
+// Setting - Site Identity Site Logo Header.
+	Kirki::add_field(
+		'flash_config',
+		array(
+			'type'     => 'custom',
+			'settings' => 'flash_siteidentity_site_logo_header',
+			'section'  => 'title_tagline',
+			'default'  => '<div style="margin-top: 15px; padding: 5px; text-align: center; background-color: #333; color: #fff; border-radius: 50px;">' . esc_html__( 'Site Logo', 'flash' ) . '</div>',
+			'priority' => 5,
+		)
+	);
+
+// Setting - Transparent Logo - Customizer Options Using Kirki Toolkit.
+	Kirki::add_field(
+		'flash_config',
+		array(
+			'type'     => 'image',
+			'settings' => 'flash_transparent_logo',
+			'label'    => esc_html__( 'Transparent Logo', 'flash' ),
+			'section'  => 'title_tagline',
+			'default'  => '',
+			'priority' => 10,
+		)
+	);
+
+// Setting - Retina Logo enable Option.
+	Kirki::add_field(
+		'flash_config',
+		array(
+			'type'     => 'checkbox',
+			'settings' => 'flash_retina_logo',
+			'label'    => esc_html__( 'Different Logo for Retina Devices?', 'flash' ),
+			'section'  => 'title_tagline',
+			'default'  => '0',
+			'priority' => 20,
+		)
+	);
+
+// Setting - Retina Logo Upload.
+	Kirki::add_field(
+		'flash_config',
+		array(
+			'type'            => 'image',
+			'settings'        => 'flash_retina_logo_upload',
+			'label'           => esc_html__( 'Retina Logo', 'flash' ),
+			'section'         => 'title_tagline',
+			'default'         => '',
+			'priority'        => 30,
+			'active_callback' => array(
+				array(
+					'setting'  => 'flash_retina_logo',
+					'operator' => '==',
+					'value'    => 1,
+				),
+			),
+		)
+	);
+
+// Setting - Site Identity Site Info Header.
+	Kirki::add_field(
+		'flash_config',
+		array(
+			'type'     => 'custom',
+			'settings' => 'flash_siteidentity_site_info_header',
+			'section'  => 'title_tagline',
+			'default'  => '<div style="margin-top: 15px; padding: 5px; text-align: center; background-color: #333; color: #fff; border-radius: 50px;">' . esc_html__( 'Site Info', 'flash' ) . '</div>',
+			'priority' => 30,
+		)
+	);
+
+	/** Section - Header Media. */
+	Kirki::add_section(
+		'header_image',
+		array(
+			'title'      => esc_html__( 'Header Media', 'flash' ),
+			'panel'      => 'flash_header',
+			'capability' => 'edit_theme_options',
+		)
+	);
+
+	/** Section - Header Top Bar. */
+	Kirki::add_section(
+		'flash_header_top_bar',
+		array(
+			'title'      => esc_html__( 'Header Top Bar', 'flash' ),
+			'panel'      => 'flash_header',
+			'capability' => 'edit_theme_options',
+		)
+	);
+
+// Setting - Enable/Disable.
+	Kirki::add_field(
+		'flash_top_header',
+		array(
+			'type'     => 'toggle',
+			'settings' => 'flash_top_header',
+			'label'    => esc_html__( 'Enable', 'flash' ),
+			'section'  => 'flash_header_top_bar',
+			'default'  => '1',
+			'priority' => 10,
+		)
+	);
+
+// Setting - Left Content.
+	Kirki::add_field(
+		'flash_config',
+		array(
+			'type'            => 'select',
+			'settings'        => 'flash_top_header_left',
+			'label'           => esc_html__( 'Left Content', 'flash' ),
+			'section'         => 'flash_header_top_bar',
+			'default'         => 'disable',
+			'priority'        => 20,
+			'multiple'        => 1,
+			'choices'         => array(
+				'social-menu' => esc_attr__( 'Social Menu', 'flash' ),
+				'header-text' => esc_attr__( 'Text', 'flash' ),
+				'disable'     => esc_attr__( 'Disable', 'flash' ),
+			),
+			'active_callback' => array(
+				array(
+					'setting'  => 'flash_top_header',
+					'operator' => '==',
+					'value'    => 1,
+				),
+			),
+		)
+	);
+
+// Setting - Right Content.
+	Kirki::add_field(
+		'flash_config',
+		array(
+			'type'            => 'select',
+			'settings'        => 'flash_top_header_right',
+			'label'           => esc_html__( 'Right Content', 'flash' ),
+			'section'         => 'flash_header_top_bar',
+			'default'         => 'disable',
+			'priority'        => 30,
+			'multiple'        => 1,
+			'choices'         => array(
+				'social-menu' => esc_attr__( 'Social Menu', 'flash' ),
+				'header-text' => esc_attr__( 'Text', 'flash' ),
+				'disable'     => esc_attr__( 'Disable', 'flash' ),
+			),
+			'active_callback' => array(
+				array(
+					'setting'  => 'flash_top_header',
+					'operator' => '==',
+					'value'    => 1,
+				),
+			),
+		)
+	);
+
+// Setting - Text.
+	Kirki::add_field(
+		'flash_config',
+		array(
+			'type'            => 'editor',
+			'settings'        => 'flash_top_header_text',
+			'label'           => esc_html__( 'Top Header Text Content', 'flash' ),
+			'section'         => 'flash_header_top_bar',
+			'default'         => '',
+			'priority'        => 40,
+			'transport'       => 'postMessage',
+			'js_vars'         => array(
+				array(
+					'element'  => '.header-top .left-content',
+					'function' => 'html',
+				),
+			),
+			'active_callback' => array(
+				array(
+					'setting'  => 'flash_top_header',
+					'operator' => '==',
+					'value'    => 1,
+				),
+			),
+		)
+	);
+
+	/** Section - Primary Header. */
+	Kirki::add_section(
+		'flash_primary_header',
+		array(
+			'title'      => esc_html__( 'Primary Header', 'flash' ),
+			'panel'      => 'flash_header',
+			'capability' => 'edit_theme_options',
+		)
+	);
+
+// Setting - Header Style.
+	Kirki::add_field(
+		'flash_config',
+		array(
+			'type'     => 'radio-image',
+			'settings' => 'flash_logo_position',
+			'label'    => esc_html__( 'Style', 'flash' ),
+			'section'  => 'flash_primary_header',
+			'default'  => 'left-logo-right-menu',
+			'priority' => 10,
+			'multiple' => 1,
+			'choices'  => array(
+				'left-logo-right-menu'   => get_template_directory_uri() . '/images/left-logo.png',
+				'right-logo-left-menu'   => get_template_directory_uri() . '/images/RIGHT.png',
+				'center-logo-below-menu' => get_template_directory_uri() . '/images/center-below.png',
+			),
+		)
+	);
+
+// Setting - Header Search Header.
+	Kirki::add_field(
+		'flash_config',
+		array(
+			'type'     => 'custom',
+			'settings' => 'flash_header_search_header',
+			'section'  => 'flash_primary_header',
+			'default'  => '<div style="margin-top: 15px; padding: 5px; text-align: center; background-color: #333; color: #fff; border-radius: 50px;">' . esc_html__( 'Search', 'flash' ) . '</div>',
+			'priority' => 20,
+		)
+	);
+
+// Setting - Header Search Icon.
+	Kirki::add_field(
+		'flash_config',
+		array(
+			'type'     => 'checkbox',
+			'settings' => 'flash_header_search',
+			'label'    => esc_html__( 'Disable', 'flash' ),
+			'section'  => 'flash_primary_header',
+			'default'  => '',
+			'priority' => 30,
+		)
+	);
+
+// Setting - Header Cart Icon Header.
+	Kirki::add_field(
+		'flash_config',
+		array(
+			'type'            => 'custom',
+			'settings'        => 'flash_header_cart_header',
+			'section'         => 'flash_primary_header',
+			'default'         => '<div style="margin-top: 15px; padding: 5px; text-align: center; background-color: #333; color: #fff; border-radius: 50px;">' . esc_html__( 'Cart', 'flash' ) . '</div>',
+			'priority'        => 40,
+			'active_callback' => 'flash_is_woocommerce_active',
+		)
+	);
+
+// Setting - Header Cart Icon.
+	Kirki::add_field(
+		'flash_config',
+		array(
+			'type'            => 'checkbox',
+			'settings'        => 'flash_header_cart',
+			'label'           => esc_html__( 'Disable', 'flash' ),
+			'section'         => 'flash_primary_header',
+			'default'         => '',
+			'priority'        => 50,
+			'active_callback' => 'flash_is_woocommerce_active',
+		)
+	);
+
+// Setting - Sticky Header Header.
+	Kirki::add_field(
+		'flash_config',
+		array(
+			'type'     => 'custom',
+			'settings' => 'flash_header_sticky_header',
+			'section'  => 'flash_primary_header',
+			'default'  => '<div style="margin-top: 15px; padding: 5px; text-align: center; background-color: #333; color: #fff; border-radius: 50px;">' . esc_html__( 'Sticky Header', 'flash' ) . '</div>',
+			'priority' => 60,
+		)
+	);
+
+// Setting - Sticky Header.
+	Kirki::add_field(
+		'flash_config',
+		array(
+			'type'     => 'toggle',
+			'settings' => 'flash_sticky_header',
+			'label'    => esc_html__( 'Enable', 'flash' ),
+			'section'  => 'flash_primary_header',
+			'default'  => '',
+			'priority' => 70,
+		)
+	);
+
+	/** Panel - Content **/
+	Kirki::add_panel(
+		'flash_content',
+		array(
+			'title'    => esc_html__( 'Content', 'flash' ),
+			'priority' => 30,
+		)
+	);
+
+// Section - Page Header.
+	Kirki::add_section(
+		'flash_page_header',
+		array(
+			'title'      => esc_html__( 'Page Header', 'flash' ),
+			'panel'      => 'flash_content',
+			'capability' => 'edit_theme_options',
+			'priority'   => 10,
+		)
+	);
+
+// Setting - Page Header General Header.
+	Kirki::add_field(
+		'flash_config',
+		array(
+			'type'     => 'custom',
+			'settings' => 'flash_page_header_general_header',
+			'section'  => 'flash_page_header',
+			'default'  => '<div style="margin-top: 15px; padding: 5px; text-align: center; background-color: #333; color: #fff; border-radius: 50px;">' . esc_html__( 'General', 'flash' ) . '</div>',
+			'priority' => 10,
+		)
+	);
+
+// Setting - Page Header Background Image.
+	Kirki::add_field( 'flash_config', array(
+			'type'      => 'image',
+			'settings'  => 'flash_pageheader_background_image',
+			'label'     => esc_html__( 'Background Image', 'flash' ),
+			'section'   => 'flash_page_header',
+			'default'   => '',
+			'priority'  => 20,
+			'transport' => 'postMessage',
+			'js_vars'   => array(
+				array(
+					'element'  => '.breadcrumb-trail.breadcrumbs',
+					'function' => 'css',
+					'property' => 'background-image',
+				),
+			),
+			'output'    => array(
+				array(
+					'element'  => '.breadcrumb-trail.breadcrumbs',
+					'function' => 'css',
+					'property' => 'background-image',
+				),
+			),
+		)
+	);
+
+// Setting - Page Header Breadcrumbs Header.
+	Kirki::add_field(
+		'flash_config',
+		array(
+			'type'     => 'custom',
+			'settings' => 'flash_page_header_breadcrumb_header',
+			'section'  => 'flash_page_header',
+			'default'  => '<div style="margin-top: 15px; padding: 5px; text-align: center; background-color: #333; color: #fff; border-radius: 50px;">' . esc_html__( 'Breadcrumbs', 'flash' ) . '</div>',
+			'priority' => 30,
+		)
+	);
+
+// Setting - Disable Breadcrumbs.
+	Kirki::add_field(
+		'flash_config',
+		array(
+			'type'     => 'checkbox',
+			'settings' => 'flash_remove_breadcrumbs',
+			'label'    => esc_html__( 'Disable', 'flash' ),
+			'section'  => 'flash_page_header',
+			'default'  => '',
+			'priority' => 40,
+		)
+	);
+
+// Section - Blog/Archive.
+	Kirki::add_section(
+		'flash_blog_archive',
+		array(
+			'title'      => esc_html__( 'Blog/Archive', 'flash' ),
+			'panel'      => 'flash_content',
+			'capability' => 'edit_theme_options',
+			'priority'   => 20,
+		)
+	);
+
+// Setting - Blog Styles.
+	Kirki::add_field(
+		'flash_config',
+		array(
+			'type'     => 'radio-image',
+			'settings' => 'flash_blog_style',
+			'label'    => esc_html__( 'Style', 'flash' ),
+			'section'  => 'flash_blog_archive',
+			'default'  => 'classic-layout',
+			'priority' => 10,
+			'multiple' => 1,
+			'choices'  => array(
+				'classic-layout'     => get_template_directory_uri() . '/images/blog-style-classic.png',
+				'full-width-archive' => get_template_directory_uri() . '/images/blog-style-classic-full.png',
+				'grid-view'          => get_template_directory_uri() . '/images/blog-style-grid.png',
+			),
+		)
+	);
+
+// Setting - Blog/Archive Post meta Header.
+	Kirki::add_field(
+		'flash_config',
+		array(
+			'type'     => 'custom',
+			'settings' => 'flash_blog_post_meta_header',
+			'section'  => 'flash_blog_archive',
+			'default'  => '<div style="margin-top: 15px; padding: 5px; text-align: center; background-color: #333; color: #fff; border-radius: 50px;">' . esc_html__( 'Post Meta', 'flash' ) . '</div>',
+			'priority' => 20,
+		)
+	);
+
+// Meta - Date.
+	Kirki::add_field(
+		'flash_config',
+		array(
+			'type'     => 'checkbox',
+			'settings' => 'flash_remove_meta_date',
+			'label'    => esc_html__( 'Disable Date', 'flash' ),
+			'section'  => 'flash_blog_archive',
+			'default'  => '',
+			'priority' => 30,
+		)
+	);
+
+// Setting - Post Meta Author.
+	Kirki::add_field(
+		'flash_config',
+		array(
+			'type'     => 'checkbox',
+			'settings' => 'flash_remove_meta_author',
+			'label'    => esc_html__( 'Disable Author', 'flash' ),
+			'section'  => 'flash_blog_archive',
+			'default'  => '',
+			'priority' => 40,
+		)
+	);
+
+// Setting - Post Meta Comment Count.
+	Kirki::add_field(
+		'flash_config',
+		array(
+			'type'     => 'checkbox',
+			'settings' => 'flash_remove_meta_comment_count',
+			'label'    => esc_html__( 'Disable Comment', 'flash' ),
+			'section'  => 'flash_blog_archive',
+			'default'  => '',
+			'priority' => 50,
+		)
+	);
+
+// Setting - Post Meta Category.
+	Kirki::add_field(
+		'flash_config',
+		array(
+			'type'     => 'checkbox',
+			'settings' => 'flash_remove_meta_category',
+			'label'    => esc_html__( 'Disable Category', 'flash' ),
+			'section'  => 'flash_blog_archive',
+			'default'  => '',
+			'priority' => 60,
+		)
+	);
+
+// Setting - Post Meta Tags.
+	Kirki::add_field(
+		'flash_config',
+		array(
+			'type'     => 'checkbox',
+			'settings' => 'flash_remove_meta_tag',
+			'label'    => esc_html__( 'Disable Tag', 'flash' ),
+			'section'  => 'flash_blog_archive',
+			'default'  => '',
+			'priority' => 70,
+		)
+	);
+
+// Section - Single Post.
+	Kirki::add_section(
+		'flash_single_post',
+		array(
+			'title'      => esc_html__( 'Single Post', 'flash' ),
+			'panel'      => 'flash_content',
+			'capability' => 'edit_theme_options',
+			'priority'   => 30,
+		)
+	);
+
+// Setting - Single Post Related Post Header.
+	Kirki::add_field(
+		'flash_config',
+		array(
+			'type'     => 'custom',
+			'settings' => 'flash_single_post_related_post_header',
+			'section'  => 'flash_single_post',
+			'default'  => '<div style="margin-top: 15px; padding: 5px; text-align: center; background-color: #333; color: #fff; border-radius: 50px;">' . esc_html__( 'Related Posts', 'flash' ) . '</div>',
+			'priority' => 10,
+		)
+	);
+
+// Setting - Enable Related Posts.
+	Kirki::add_field(
+		'flash_config',
+		array(
+			'type'     => 'switch',
+			'settings' => 'flash_related_post_option',
+			'label'    => esc_html__( 'Enable', 'flash' ),
+			'section'  => 'flash_single_post',
+			'default'  => 0,
+			'priority' => 20,
+		)
+	);
+
+// Setting - Post Related To.
+	Kirki::add_field(
+		'flash_config',
+		array(
+			'type'            => 'radio',
+			'settings'        => 'flash_related_post_option_display',
+			'label'           => esc_html__( 'Posts Related To', 'flash' ),
+			'section'         => 'flash_single_post',
+			'default'         => 'categories',
+			'choices'         => array(
+				'categories' => esc_attr__( 'Categories', 'flash' ),
+				'tags'       => esc_attr__( 'Tags', 'flash' ),
+			),
+			'active_callback' => array(
+				array(
+					'setting'  => 'flash_related_post_option',
+					'operator' => '==',
+					'value'    => 1,
+				),
+			),
+			'priority'         => 30,
+		)
+	);
+
+// Setting - Single Post Author Bio Header.
+	Kirki::add_field(
+		'flash_config',
+		array(
+			'type'     => 'custom',
+			'settings' => 'flash_author_bio_header',
+			'section'  => 'flash_single_post',
+			'default'  => '<div style="margin-top: 15px; padding: 5px; text-align: center; background-color: #333; color: #fff; border-radius: 50px;">' . esc_html__( 'Author Bio', 'flash' ) . '</div>',
+			'priority' => 50,
+		)
+	);
+
+// Setting - Author Bio.
+	Kirki::add_field(
+		'flash_config',
+		array(
+			'type'     => 'checkbox',
+			'settings' => 'flash_remove_single_bio',
+			'label'    => esc_html__( 'Disable', 'flash' ),
+			'section'  => 'flash_single_post',
+			'default'  => '',
+			'priority' => 50,
+		)
+	);
+
+// Setting - Single Post Post Navigation Header.
+	Kirki::add_field(
+		'flash_config',
+		array(
+			'type'     => 'custom',
+			'settings' => 'flash_single_post_navigation_header',
+			'section'  => 'flash_single_post',
+			'default'  => '<div style="margin-top: 15px; padding: 5px; text-align: center; background-color: #333; color: #fff; border-radius: 50px;">' . esc_html__( 'Post Navigation', 'flash' ) . '</div>',
+			'priority' => 60,
+		)
+	);
+
+// Setting - Disable Post Navigation.
+	Kirki::add_field(
+		'flash_config',
+		array(
+			'type'     => 'checkbox',
+			'settings' => 'flash_remove_single_nav',
+			'label'    => esc_html__( 'Disable', 'flash' ),
+			'section'  => 'flash_single_post',
+			'default'  => '',
+			'priority' => 70,
+		)
+	);
+
+	/** Panel Footer **/
+	Kirki::add_panel(
+		'flash_footer',
+		array(
+			'title'    => esc_html__( 'Footer', 'flash' ),
+			'priority' => 40,
+		)
+	);
+
+// Section - Footer Widgets Area.
+	Kirki::add_section(
+		'flash_footer_widgets_area',
+		array(
+			'title'      => esc_html__( 'Footer Widgets Area', 'flash' ),
+			'panel'      => 'flash_footer',
+			'capability' => 'edit_theme_options',
+			'priority'   => 10,
+		)
+	);
+
+// Footer Widget.
+	Kirki::add_field(
+		'flash_config',
+		array(
+			'type'     => 'radio-image',
+			'settings' => 'flash_footer_widgets',
+			'label'    => esc_html__( 'Style', 'flash' ),
+			'section'  => 'flash_footer_widgets_area',
+			'default'  => '4',
+			'priority' => 10,
+			'multiple' => 1,
+			'choices'  => array(
+				'1' => get_template_directory_uri() . '/images/col-1.png',
+				'2' => get_template_directory_uri() . '/images/col-2.png',
+				'3' => get_template_directory_uri() . '/images/col-3.png',
+				'4' => get_template_directory_uri() . '/images/col-4.png',
+			),
+		)
+	);
+
+// Setting - Footer Scroll to Top Footer Header.
+	Kirki::add_field(
+		'flash_config',
+		array(
+			'type'     => 'custom',
+			'settings' => 'flash_scroll_to_top_fixed_header',
+			'section'  => 'flash_footer_scroll_top',
+			'default'  => '<div style="margin-top: 15px; padding: 5px; text-align: center; background-color: #333; color: #fff; border-radius: 50px;">' . esc_html__( 'Fixed', 'flash' ) . '</div>',
+			'priority' => 20,
+		)
+	);
+
+// Section - Footer Scroll to Top.
+	Kirki::add_section(
+		'flash_footer_scroll_top',
+		array(
+			'title'      => esc_html__( 'Scroll to Top', 'flash' ),
+			'panel'      => 'flash_footer',
+			'capability' => 'edit_theme_options',
+			'priority'   => 40,
+		)
+	);
+
+// Setting - Footer Scroll to Top Footer Header.
+	Kirki::add_field(
+		'flash_config',
+		array(
+			'type'     => 'custom',
+			'settings' => 'flash_scroll_to_top_fixed_header',
+			'section'  => 'flash_footer_scroll_top',
+			'default'  => '<div style="margin-top: 15px; padding: 5px; text-align: center; background-color: #333; color: #fff; border-radius: 50px;">' . esc_html__( 'Fixed', 'flash' ) . '</div>',
+			'priority' => 10,
+		)
+	);
+
+// Setting - Scroll to Top button Options.
+	Kirki::add_field(
+		'flash_config',
+		array(
+			'type'     => 'checkbox',
+			'settings' => 'flash_disable_back_to_top',
+			'label'    => esc_html__( 'Disable', 'flash' ),
+			'section'  => 'flash_footer_scroll_top',
+			'default'  => '',
+			'priority' => 20,
+		)
+	);
+
+	/** Panel - Additional **/
+	Kirki::add_panel(
+		'flash_additional',
+		array(
+			'title'    => esc_html__( 'Additional', 'flash' ),
+			'priority' => 80,
+		)
+	);
+
+// Section - Integration.
+	Kirki::add_section(
+		'flash_integration',
+		array(
+			'title'      => esc_html__( 'Integration', 'flash' ),
+			'panel'      => 'flash_additional',
+			'capability' => 'edit_theme_options',
+			'priority'   => 10,
+		)
+	);
+
+// Setting - Custom CSS
+	if ( ! function_exists( 'wp_update_custom_css_post' ) ) {
+		Kirki::add_field(
+			'flash_config',
+			array(
+				'type'     => 'code',
+				'settings' => 'flash_custom_css',
+				'label'    => esc_html__( 'Custom CSS', 'flash' ),
+				'section'  => 'flash_integration',
+				'default'  => '',
+				'priority' => 10,
+				'choices'  => array(
+					'language' => 'css',
+					'theme'    => 'monokai',
+					'height'   => 250,
+				),
+			)
+		);
+	}
 
 // Section - Optimization.
-Kirki::add_section(
-	'flash_optimization',
-	array(
-		'title'      => esc_html__( 'Optimization', 'flash' ),
-		'panel'      => 'flash_additional',
-		'capability' => 'edit_theme_options',
-		'priority'   => 20,
-	)
-);
+	Kirki::add_section(
+		'flash_optimization',
+		array(
+			'title'      => esc_html__( 'Optimization', 'flash' ),
+			'panel'      => 'flash_additional',
+			'capability' => 'edit_theme_options',
+			'priority'   => 20,
+		)
+	);
 
 // Setting - Optimization Preloader Header.
-Kirki::add_field(
-	'flash_config',
-	array(
-		'type'     => 'custom',
-		'settings' => 'flash_preloader_header',
-		'section'  => 'flash_optimization',
-		'default'  => '<div style="margin-top: 15px; padding: 5px; text-align: center; background-color: #333; color: #fff; border-radius: 50px;">' . esc_html__( 'Preloader', 'flash' ) . '</div>',
-		'priority' => 10,
-	)
-);
+	Kirki::add_field(
+		'flash_config',
+		array(
+			'type'     => 'custom',
+			'settings' => 'flash_preloader_header',
+			'section'  => 'flash_optimization',
+			'default'  => '<div style="margin-top: 15px; padding: 5px; text-align: center; background-color: #333; color: #fff; border-radius: 50px;">' . esc_html__( 'Preloader', 'flash' ) . '</div>',
+			'priority' => 10,
+		)
+	);
 
 // Setting - Preloader Options.
-Kirki::add_field(
-	'flash_config',
-	array(
-		'type'     => 'checkbox',
-		'settings' => 'flash_disable_preloader',
-		'label'    => esc_html__( 'Disable', 'flash' ),
-		'section'  => 'flash_optimization',
-		'default'  => '',
-		'priority' => 10,
-	)
-);
+	Kirki::add_field(
+		'flash_config',
+		array(
+			'type'     => 'checkbox',
+			'settings' => 'flash_disable_preloader',
+			'label'    => esc_html__( 'Disable', 'flash' ),
+			'section'  => 'flash_optimization',
+			'default'  => '',
+			'priority' => 10,
+		)
+	);
 
+});
 /**
  * Sets up the WordPress core custom header and custom background features.
  *
