@@ -155,7 +155,7 @@ do_action( 'flash_before' ); ?>
 				</div>
 
 				<div class="header-action-container">
-					<?php if( ( get_theme_mod( 'flash_header_cart', '' ) !=  '1' ) && class_exists( 'WooCommerce' ) ) : ?>
+					<?php if( ( get_theme_mod( 'flash_header_cart', '' ) !=  '1' ) && class_exists( 'WooCommerce' ) && isset( WC()->cart ) ) : ?>
 					<div class="cart-wrap">
 						<div class="flash-cart-views">
 
