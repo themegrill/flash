@@ -31,7 +31,7 @@
     "gulp-phpcs": "^2.2.0",
     "gulp-plumber": "^1.2.0",
     "gulp-rtlcss": "^1.2.0",
-    "gulp-sass": "^4.0.1",
+    "gulp-sass": "^5.1.0",
     "gulp-stylelint": "^7.0.0",
     "gulp-uglify": "^3.0.0",
     "gulp-uglifycss": "^1.0.9",
@@ -53,6 +53,7 @@
     "build": "npm run styles && npm run uglify && npm run makepot && npm run compress"
   },
   "dependencies": {
-    "gulp-line-ending-corrector": "^1.0.3"
+    "gulp-line-ending-corrector": "^1.0.3",
+    "sass": "^1.77.0"
   }
 }

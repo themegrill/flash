@@ -2075,7 +2075,7 @@ Slider
 		opacity: 0;
 
 		&:before {
-			content: lrt-to-rtl("\f105", "\f104", true);
+			content: lrt-to-rtl("f105", "f104", true);
 			font-family: fontawesome;
 			font-size: 30px;
 			color: #313b48;
@@ -2100,7 +2100,7 @@ Slider
 		opacity: 0;
 
 		&:before {
-			content: lrt-to-rtl("\f104", "\f105", true);
+			content: lrt-to-rtl("f104", "f105", true);
 			font-family: fontawesome;
 			font-size: 30px;
 			color: #313b48;
@@ -2474,7 +2474,7 @@ Service
 		}
 
 		&:after {
-			content: lrt-to-rtl("\f178", "\f177", true);
+			content: lrt-to-rtl("f178", "f177", true);
 			font-family: FontAwesome;
 			font-weight: 400;
 			position: absolute;
@@ -3693,7 +3693,7 @@ Footer
 
 				&:after {
 					color: #fff;
-					content: lrt-to-rtl("\f105", "\f104", true);
+					content: lrt-to-rtl("f105", "f104", true);
 					font-family: fontawesome;
 					left: 0;
 					position: absolute;
@@ -3921,7 +3921,7 @@ Archive
 
 				&:after {
 					color: #000;
-					content: lrt-to-rtl("\f105", "\f104", true);
+					content: lrt-to-rtl("f105", "f104", true);
 					font-family: fontawesome;
 					left: 0;
 					position: absolute;
@@ -4120,7 +4120,7 @@ Bread Crumb
 
 		&:before {
 			color: #a1a1a1;
-			content: lrt-to-rtl("\f105", "\f104", true);
+			content: lrt-to-rtl("f105", "f104", true);
 			font-family: fontawesome;
 			left: 0;
 			position: absolute;
@@ -4665,7 +4665,7 @@ WooCommerce
 
 			&:before {
 				color: #a1a1a1;
-				content: lrt-to-rtl("\f105", "\f104", true);
+				content: lrt-to-rtl("f105", "f104", true);
 				font-family: fontawesome;
 				left: 0;
 				position: absolute;
@@ -4709,7 +4709,7 @@ WooCommerce
 
 		&:before {
 			color: #a1a1a1;
-			content: lrt-to-rtl("\f105", "\f104", true);
+			content: lrt-to-rtl("f105", "f104", true);
 			font-family: fontawesome;
 			left: 0;
 			position: absolute;
