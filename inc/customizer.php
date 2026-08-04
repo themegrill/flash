@@ -1484,6 +1484,19 @@ function flash_customize_preview_scripts() {
 		'customize-preview',
 		'jquery',
 	), false, true );
+}
+
+add_action( 'customize_preview_init', 'flash_customize_preview_scripts', 99 );
+
+/**
+ * Enqueues the Color Scheme control script in the Customizer controls panel.
+ *
+ * Only registered on customize_controls_enqueue_scripts: its 'iris' and
+ * 'customize-controls' dependencies are only registered by core when
+ * is_admin() is true, which the customize_preview_init (front-end preview
+ * iframe) context never is.
+ */
+function flash_customize_control_scripts() {
 	wp_enqueue_script( 'flash-color-scheme-control', get_template_directory_uri() . '/js/color-scheme-control.js', array(
 		'customize-controls',
 		'iris',
@@ -1493,8 +1506,7 @@ function flash_customize_preview_scripts() {
 	wp_localize_script( 'flash-color-scheme-control', 'colorScheme', flash_get_color_schemes() );
 }
 
-add_action( 'customize_controls_enqueue_scripts', 'flash_customize_preview_scripts', 99 );
-add_action( 'customize_preview_init', 'flash_customize_preview_scripts', 99 );
+add_action( 'customize_controls_enqueue_scripts', 'flash_customize_control_scripts', 99 );
 
 /**
  * Enqueues front-end CSS for color scheme.
