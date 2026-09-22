@@ -26,40 +26,27 @@
 	<exclude-pattern>*/vendor/*</exclude-pattern>
  	<exclude-pattern>*/node_modules/*</exclude-pattern>
 
+	<!-- Exclude the bundled third-party Kirki library; not our code to lint. -->
+	<exclude-pattern>*/inc/kirki/*</exclude-pattern>
+
 	<!-- Include the WordPress ruleset, with exclusions. -->
 	<rule ref="WordPress">
 		<exclude name="Generic.WhiteSpace.ScopeIndent.IncorrectExact" />
 		<exclude name="Generic.WhiteSpace.ScopeIndent.Incorrect" />
 		<exclude name="PEAR.Functions.FunctionCallSignature.Indent" />
-		<exclude name="WordPress.VIP.RestrictedFunctions" />
+		<exclude name="WordPress.Files.FileName" />
 	</rule>
 
-	<!-- Verify that the text_domain is set to the desired text-domain.
-		 Multiple valid text domains can be provided as a comma-delimited list. -->
+	<!-- Verify that the text_domain is set to the desired text-domain. -->
 	<rule ref="WordPress.WP.I18n">
 		<properties>
-			<property name="text_domain" type="array" value="cenote" />
-		</properties>
-	</rule>
-
-	<!-- Allow for theme specific exceptions to the file name rules based
-		 on the theme hierarchy. -->
-	<rule ref="WordPress.Files.FileName">
-		<properties>
-			<property name="is_theme" value="true" />
-		</properties>
-	</rule>
-
-	<!-- Verify that no WP functions are used which are deprecated or have been removed.
-		 The minimum version set here should be in line with the minimum WP version
-		 as set in the "Requires at least" tag in the readme.txt file. -->
-	<rule ref="WordPress.WP.DeprecatedFunctions">
-		<properties>
-			<property name="minimum_supported_version" value="4.0" />
+			<property name="text_domain" type="array">
+				<element value="flash" />
+			</property>
 		</properties>
 	</rule>
 
 	<!-- Include sniffs for PHP cross-version compatibility. -->
-	<config name="testVersion" value="5.2-99.0"/>
-	<rule ref="PHPCompatibility"/>
+	<config name="testVersion" value="7.4-"/>
+	<rule ref="PHPCompatibilityWP"/>
 </ruleset>
