@@ -109,7 +109,8 @@ module.exports = function( grunt ){
 				options: {
 					potFilename: 'flash.pot',
 					exclude: [
-						'deploy/.*' // Exclude deploy directory
+						'deploy/.*', // Exclude deploy directory
+						'inc/kirki/.*' // Exclude bundled third-party Kirki library
 					]
 				}
 			}
