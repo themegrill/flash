@@ -1,0 +1,41 @@
+name: PHPCS
+
+on:
+  pull_request:
+    paths:
+      - '**.php'
+
+jobs:
+  phpcs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '7.4'
+          tools: composer
+
+      - name: Get changed PHP files
+        id: changed-files
+        uses: tj-actions/changed-files@v45
+        with:
+          files: '**.php'
+          separator: ' '
+
+      - name: Install Composer dependencies
+        if: steps.changed-files.outputs.any_changed == 'true'
+        run: composer install --no-interaction --no-progress
+
+      - name: Run PHPCS on changed files
+        if: steps.changed-files.outputs.any_changed == 'true'
+        env:
+          PHP_FILES: ${{ steps.changed-files.outputs.added_files }} ${{ steps.changed-files.outputs.copied_files }} ${{ steps.changed-files.outputs.modified_files }} ${{ steps.changed-files.outputs.renamed_files }}
+        run: |
+          if [ -n "$(echo "$PHP_FILES" | xargs)" ]; then
+            composer phpcs -- $PHP_FILES
+          else
+            echo "No existing PHP files to lint (only deletions in this PR)."
+          fi

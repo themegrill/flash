@@ -29,7 +29,15 @@ module.exports = function( grunt ){
 		// Minify all .js files.
 		uglify: {
 			 options: {
-        		preserveComments: /(?:^!|@(?:license|preserve|cc_on))/
+				// Keep output ES5 for legacy-browser support.
+				compress: {
+					arrows: false
+				},
+				// `preserveComments` was removed in grunt-contrib-uglify 2.x+;
+				// this is the option UglifyJS itself understands.
+				output: {
+					comments: /(?:^!|@(?:license|preserve|cc_on))/
+				}
 			},
 			frontend: {
 				files: [{
@@ -91,6 +99,7 @@ module.exports = function( grunt ){
 			options: {
 				type: 'wp-theme',
 				domainPath: 'languages',
+				potComments: 'Copyright (C) {year} ThemeGrill\nThis file is distributed under the GNU General Public License, version 3 (GPLv3).',
 				potHeaders: {
 					'report-msgid-bugs-to': 'themegrill@gmail.com',
 					'language-team': 'ThemeGrill <themegrill@gmail.com'
@@ -100,7 +109,8 @@ module.exports = function( grunt ){
 				options: {
 					potFilename: 'flash.pot',
 					exclude: [
-						'deploy/.*' // Exclude deploy directory
+						'deploy/.*', // Exclude deploy directory
+						'inc/kirki/.*' // Exclude bundled third-party Kirki library
 					]
 				}
 			}
@@ -157,6 +167,8 @@ module.exports = function( grunt ){
 					'!node_modules/**',
 					'!sass/**',
 					'!phpcs.xml',
+					'!composer.json',
+					'!composer.lock',
 					'README.md'
 				],
 				dest: 'flash',
