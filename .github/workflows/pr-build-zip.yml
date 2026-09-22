@@ -13,6 +13,9 @@ jobs:
       node-version: '20.x'
       php-version: '7.4'
       package-manager: npm
+      # package-lock.json isn't committed in this repo (.gitignore), so `npm ci`
+      # (the default install here) has nothing to install from.
+      install-command: npm install
       composer-install: true
       build-command: npm run build
       zip-glob: 'dist/*.zip'
