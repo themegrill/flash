@@ -10,6 +10,7 @@
   "license": "GPL-3.0+",
   "main": "Gruntfile.js",
   "devDependencies": {
+    "@playwright/test": "^1.63.0",
     "autoprefixer": "^8.5.1",
     "browser-sync": "^2.24.4",
     "eslint": "^4.19.1",
@@ -50,7 +51,8 @@
     "uglify": "gulp minifyJs",
     "makepot": "grunt makepot",
     "compress": "grunt compress",
-    "build": "npm run styles && npm run uglify && npm run makepot && npm run compress"
+    "build": "npm run styles && npm run uglify && npm run makepot && npm run compress",
+    "test:e2e": "playwright test"
   },
   "dependencies": {
     "gulp-line-ending-corrector": "^1.0.3",

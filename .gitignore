@@ -35,3 +35,14 @@ flash.zip
 
 # Package Json file
 /package-lock.json
+
+# claudegrill — local credentials, never commit
+.themegrill-qa/.env.local
+
+# Playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+# Saved admin session (a live auth cookie)
+/tests/e2e/.auth/
