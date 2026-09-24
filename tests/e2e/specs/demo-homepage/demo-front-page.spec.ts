@@ -15,7 +15,10 @@ test("the imported demo front page renders its Flash Toolkit sections @demo @dem
   page,
 }) => {
   const errors: string[] = [];
-  page.on("pageerror", (err) => errors.push(err.message));
+  page.on("console", (msg) => {
+    if (msg.type() === "error") errors.push(msg.text());
+  });
+  page.on("pageerror", (err) => errors.push(`pageerror: ${err.message}`));
 
   await visit(page, "/");
   const layout = page.locator(".panel-layout");
@@ -23,7 +26,7 @@ test("the imported demo front page renders its Flash Toolkit sections @demo @dem
 
   await expect(layout.locator(".panel-grid").first()).toBeVisible();
   expect(await layout.locator("[class*='widget_themegrill_flash_']").count()).toBeGreaterThan(0);
-  expect(errors, `page errors: ${errors.join("; ")}`).toEqual([]);
+  expect(errors, `console errors: ${errors.join("; ")}`).toEqual([]);
 });
 
 /**

@@ -24,25 +24,47 @@ test.beforeEach(async ({ page }) => {
  * @source flash-qa-report.html "Tested — No Issue Found (WooCommerce)" 2026-09-18
  * @why AJAX add-to-cart on /shop/ immediately updates the header cart count
  *      through flash_woocommerce_header_add_to_cart_fragment
- *      (inc/woocommerce.php:37-58). Asserts the count goes up by one rather
- *      than an absolute value, because the admin's cart persists, and removes
- *      the added line afterwards.
+ *      (inc/woocommerce.php:37-58). The admin's cart persists between runs, so
+ *      the spec adds a product that is not already in it, asserts the count
+ *      goes up by one, and removes that new line afterwards, leaving the cart
+ *      exactly as it found it.
  */
 test("adding a product from the shop bumps the header cart count @demo @woocommerce", async ({
   page,
 }) => {
+  await visit(page, "/cart/");
+  const inCart = new Set(
+    (
+      await page
+        .locator("tr.cart_item .product-name a, .wc-block-components-product-name")
+        .allInnerTexts()
+    ).map((t) => t.trim()),
+  );
+
+  await visit(page, "/shop/");
   const count = page.locator("#masthead .header-action-container .cart-value");
   const before = Number((await count.innerText()).trim());
 
-  const product = page.locator("ul.products li.product").filter({
+  const candidates = page.locator("ul.products li.product").filter({
     has: page.locator(".ajax_add_to_cart"),
-  }).first();
-  const name = (await product.locator(".woocommerce-loop-product__title").innerText()).trim();
-  await product.locator(".ajax_add_to_cart").click();
+  });
+  let product = null;
+  let name = "";
+  for (const item of await candidates.all()) {
+    const title = (await item.locator(".woocommerce-loop-product__title").innerText()).trim();
+    if (!inCart.has(title)) {
+      product = item;
+      name = title;
+      break;
+    }
+  }
+  test.skip(product === null, "every purchasable shop product is already in the cart");
 
+  await product!.locator(".ajax_add_to_cart").click();
   await expect(count).toHaveText(String(before + 1));
 
-  // Leave the persistent cart as it was.
+  // Leave the persistent cart as it was: the line is new, so removing it
+  // restores the original contents.
   await visit(page, "/cart/");
   const line = page.locator("tr.cart_item, .wc-block-cart-items__row").filter({ hasText: name }).first();
   await line.locator("a.remove, .wc-block-cart-item__remove-link").first().click();
