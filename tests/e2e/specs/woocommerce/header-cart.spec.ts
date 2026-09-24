@@ -60,15 +60,20 @@ test("adding a product from the shop bumps the header cart count @demo @woocomme
   }
   test.skip(product === null, "every purchasable shop product is already in the cart");
 
-  await product!.locator(".ajax_add_to_cart").click();
-  await expect(count).toHaveText(String(before + 1));
+  try {
+    await product!.locator(".ajax_add_to_cart").click();
+    await expect(count).toHaveText(String(before + 1));
+  } finally {
+    // Leave the persistent cart as it was, even when the assertion above
+    // fails: the line is new, so removing it restores the original contents.
+    await visit(page, "/cart/");
+    const line = page.locator("tr.cart_item, .wc-block-cart-items__row").filter({ hasText: name }).first();
+    if (await line.count()) {
+      await line.locator("a.remove, .wc-block-cart-item__remove-link").first().click();
+      await expect(line).toHaveCount(0);
+    }
+  }
 
-  // Leave the persistent cart as it was: the line is new, so removing it
-  // restores the original contents.
-  await visit(page, "/cart/");
-  const line = page.locator("tr.cart_item, .wc-block-cart-items__row").filter({ hasText: name }).first();
-  await line.locator("a.remove, .wc-block-cart-item__remove-link").first().click();
-  await expect(line).toHaveCount(0);
   // The header count is server-rendered; reload before comparing.
   await visit(page, "/cart/");
   await expect(page.locator("#masthead .header-action-container .cart-value")).toHaveText(String(before));
