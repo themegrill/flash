@@ -1,0 +1,39 @@
+# Development and VCS
+/.git
+/.github
+/.gitignore
+/.distignore
+/.editorconfig
+/.eslintrc.json
+/.jscsrc
+/.jshintignore
+/.jshintrc
+/.stylelintrc.json
+/.DS_Store
+Thumbs.db
+
+# Build tooling
+/node_modules
+/vendor
+/package.json
+/package-lock.json
+/.npmrc
+/composer.json
+/composer.lock
+/Gruntfile.js
+/gulpfile.js
+/phpcs.xml
+/assets/sass
+/.sass-cache
+/dist
+/deploy
+*.zip
+
+# QA (claudegrill + Playwright)
+/.themegrill-qa
+/tests
+/playwright.config.ts
+/test-results
+/playwright-report
+/blob-report
+/playwright

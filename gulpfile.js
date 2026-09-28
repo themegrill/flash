@@ -125,7 +125,16 @@ var paths = {
 			'!*.md',
 			'!gulpfile.js',
 			'!composer.lock',
-			'!phpcs.xml'
+			'!phpcs.xml',
+			'!tests',
+			'!tests/**',
+			'!playwright.config.ts',
+			'!test-results',
+			'!test-results/**',
+			'!playwright-report',
+			'!playwright-report/**',
+			'!blob-report',
+			'!blob-report/**'
 		],
 		dest: './dist'
 	}
