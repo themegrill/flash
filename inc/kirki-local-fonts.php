@@ -9,7 +9,11 @@ function flash_kirki_local_fonts_ready() {
 		return wp_is_writable( WP_CONTENT_DIR );
 	}
 
-	return wp_is_writable( $dir ) || (bool) get_option( 'kirki_downloaded_font_files' );
+	if ( wp_is_writable( $dir ) ) {
+		return true;
+	}
+
+	return (bool) glob( $dir . '/*/*.*' );
 }
 
 function flash_kirki_skip_fonts_when_unwritable( $fonts ) {
