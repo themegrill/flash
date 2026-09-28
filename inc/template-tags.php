@@ -101,7 +101,7 @@ function flash_categorized_blog() {
 		// Count the number of categories that are attached to the posts.
 		$all_the_cool_cats = count( $all_the_cool_cats );
 
-		set_transient( 'flash_categories', $all_the_cool_cats );
+		set_transient( 'flash_categories', $all_the_cool_cats, DAY_IN_SECONDS );
 	}
 
 	if ( $all_the_cool_cats > 1 ) {
@@ -124,4 +124,6 @@ function flash_category_transient_flusher() {
 	delete_transient( 'flash_categories' );
 }
 add_action( 'edit_category', 'flash_category_transient_flusher' );
-add_action( 'save_post',     'flash_category_transient_flusher' );
+add_action( 'save_post', 'flash_category_transient_flusher' );
+add_action( 'create_category', 'flash_category_transient_flusher' );
+add_action( 'delete_category', 'flash_category_transient_flusher' );

@@ -147,7 +147,10 @@ if ( ! function_exists( 'flash_content_width' ) ) :
 		$GLOBALS['content_width'] = apply_filters( 'flash_content_width', $content_width );
 	}
 
-	add_action( 'after_setup_theme', 'flash_content_width', 0 );
+	// template_redirect, not after_setup_theme: flash_get_layout() relies on
+	// is_page()/is_single()/$post, which aren't reliable until the main query
+	// has been parsed.
+	add_action( 'template_redirect', 'flash_content_width' );
 endif;
 
 /**
