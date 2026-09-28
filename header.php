@@ -125,7 +125,7 @@ do_action( 'flash_before' ); ?>
 					<?php if ( $logo_position == 'center-logo-below-menu' ): ?>
 						<div class="header-action-container">
 
-							<?php if( ( get_theme_mod( 'flash_header_cart', '' ) !=  '1' ) && class_exists( 'WooCommerce' ) ) :
+							<?php if( ( get_theme_mod( 'flash_header_cart', '' ) !=  '1' ) && class_exists( 'WooCommerce' ) && isset( WC()->cart ) ) :
 							$cart_url = function_exists( 'wc_get_cart_url' ) ? wc_get_cart_url() : WC()->cart->get_cart_url();
 							?>
 
