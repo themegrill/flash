@@ -23,8 +23,10 @@ function flash_kirki_schedule_font_prewarm() {
 	}
 
 	if ( ! wp_next_scheduled( 'flash_kirki_prewarm_fonts' ) ) {
-		wp_schedule_single_event( time() + 5, 'flash_kirki_prewarm_fonts' );
+		wp_schedule_single_event( time(), 'flash_kirki_prewarm_fonts' );
 	}
+
+	spawn_cron();
 }
 add_action( 'customize_save_after', 'flash_kirki_schedule_font_prewarm' );
 
