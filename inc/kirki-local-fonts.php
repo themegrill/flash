@@ -2,19 +2,23 @@
 
 defined( 'ABSPATH' ) || exit;
 
-function flash_kirki_local_fonts_writable() {
+function flash_kirki_local_fonts_ready() {
 	$dir = WP_CONTENT_DIR . '/fonts';
 
-	return file_exists( $dir ) ? wp_is_writable( $dir ) : wp_is_writable( WP_CONTENT_DIR );
+	if ( ! file_exists( $dir ) ) {
+		return wp_is_writable( WP_CONTENT_DIR );
+	}
+
+	return wp_is_writable( $dir ) || (bool) get_option( 'kirki_downloaded_font_files' );
 }
 
 function flash_kirki_skip_fonts_when_unwritable( $fonts ) {
-	return flash_kirki_local_fonts_writable() ? $fonts : array();
+	return flash_kirki_local_fonts_ready() ? $fonts : array();
 }
 add_filter( 'kirki_enqueue_google_fonts', 'flash_kirki_skip_fonts_when_unwritable' );
 
 function flash_kirki_schedule_font_prewarm() {
-	if ( ! flash_kirki_local_fonts_writable() ) {
+	if ( ! flash_kirki_local_fonts_ready() ) {
 		return;
 	}
 
