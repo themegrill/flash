@@ -2,7 +2,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-function flash_kirki_local_fonts_ready() {
+function flash_kirki_local_fonts_ready( $fonts = array() ) {
 	$dir = WP_CONTENT_DIR . '/fonts';
 
 	if ( ! file_exists( $dir ) ) {
@@ -13,11 +13,26 @@ function flash_kirki_local_fonts_ready() {
 		return true;
 	}
 
-	return (bool) glob( $dir . '/*/*.*' );
+	if ( empty( $fonts ) ) {
+		return (bool) glob( $dir . '/*/*.*' );
+	}
+
+	foreach ( array_keys( $fonts ) as $family ) {
+		$folder = $dir . '/' . sanitize_key( strtolower( str_replace( ' ', '-', $family ) ) );
+		if ( ! glob( $folder . '/*.*' ) ) {
+			return false;
+		}
+	}
+
+	return true;
 }
 
 function flash_kirki_skip_fonts_when_unwritable( $fonts ) {
-	return flash_kirki_local_fonts_ready() ? $fonts : array();
+	if ( is_admin() || is_customize_preview() ) {
+		return $fonts;
+	}
+
+	return flash_kirki_local_fonts_ready( $fonts ) ? $fonts : array();
 }
 add_filter( 'kirki_enqueue_google_fonts', 'flash_kirki_skip_fonts_when_unwritable' );
 
