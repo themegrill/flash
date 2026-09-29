@@ -46,7 +46,7 @@ test("redundant Font Awesome stylesheets are no longer requested and the header 
 }) => {
   const faRequests: string[] = [];
   page.on("request", (req) => {
-    const match = req.url().match(/\/css\/(all|solid|regular|brands|v4-shims)\.min\.css/);
+    const match = req.url().match(/\/css\/(all|solid|regular|brands|v4-shims)(?:\.min)?\.css/);
     if (match) faRequests.push(match[1]);
   });
 
