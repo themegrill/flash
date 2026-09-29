@@ -137,20 +137,32 @@ if ( ! function_exists( 'flash_content_width' ) ) :
 	 * @global int $content_width
 	 **/
 	function flash_content_width() {
-		$content_width = 780;
-
-		$classes = flash_get_layout();
-		if ( $classes == 'full-width' ) {
-			$content_width = 1200;
-		}
-
-		$GLOBALS['content_width'] = apply_filters( 'flash_content_width', $content_width );
+		$GLOBALS['content_width'] = apply_filters( 'flash_content_width', 780 );
 	}
 
-	// template_redirect, not after_setup_theme: flash_get_layout() relies on
-	// is_page()/is_single()/$post, which aren't reliable until the main query
-	// has been parsed.
-	add_action( 'template_redirect', 'flash_content_width' );
+	// Sets the theme's own default early, so wp-admin (image size caps, the block
+	// editor) and REST API requests -- which never reach template_redirect -- still
+	// get a value.
+	add_action( 'after_setup_theme', 'flash_content_width', 0 );
+endif;
+
+if ( ! function_exists( 'flash_content_width_for_layout' ) ) :
+	/**
+	 * Widen content_width for a full-width page's actual frontend render.
+	 *
+	 * Run on template_redirect, not after_setup_theme: flash_get_layout() relies
+	 * on is_page()/is_single()/$post, which aren't reliable until the main query
+	 * has been parsed.
+	 *
+	 * @global int $content_width
+	 **/
+	function flash_content_width_for_layout() {
+		if ( 'full-width' == flash_get_layout() ) {
+			$GLOBALS['content_width'] = apply_filters( 'flash_content_width', 1200 );
+		}
+	}
+
+	add_action( 'template_redirect', 'flash_content_width_for_layout' );
 endif;
 
 /**
