@@ -121,10 +121,56 @@ add_action( 'after_setup_theme', 'flash_setup' );
  * @since Flash 1.3.5
  */
 function flash_block_editor_styles() {
-	wp_enqueue_style( 'flash-editor-googlefonts', '//fonts.googleapis.com/css?family=Montserrat:400,700&display=swap' );
 	wp_enqueue_style( 'flash-block-editor-styles', get_template_directory_uri() . '/style-editor-block.css' );
+
+	$editor_css = flash_block_editor_dynamic_css();
+
+	if ( $editor_css ) {
+		wp_add_inline_style( 'flash-block-editor-styles', $editor_css );
+	}
 }
 add_action( 'enqueue_block_editor_assets', 'flash_block_editor_styles', 1, 1 );
+
+function flash_block_editor_dynamic_css() {
+	$default = array(
+		'font-family'    => 'Montserrat',
+		'variant'        => 'regular',
+		'font-size'      => '14px',
+		'line-height'    => '1.5',
+		'letter-spacing' => '0',
+		'color'          => '#333333',
+		'text-transform' => 'none',
+		'text-align'     => 'inherit',
+	);
+
+	$font = wp_parse_args( get_theme_mod( 'flash_body_font', $default ), $default );
+
+	return '.editor-styles-wrapper, .editor-styles-wrapper > * { font-family: ' . esc_html( $font['font-family'] ) . ', sans-serif; font-size: ' . esc_html( $font['font-size'] ) . '; line-height: ' . esc_html( $font['line-height'] ) . '; letter-spacing: ' . esc_html( $font['letter-spacing'] ) . '; color: ' . esc_html( $font['color'] ) . '; text-transform: ' . esc_html( $font['text-transform'] ) . '; text-align: ' . esc_html( $font['text-align'] ) . '; }';
+}
+
+function flash_block_editor_fonts() {
+	if ( ! is_admin() ) {
+		return;
+	}
+
+	$default = array(
+		'font-family' => 'Montserrat',
+		'variant'     => 'regular',
+	);
+
+	$font   = wp_parse_args( get_theme_mod( 'flash_body_font', $default ), $default );
+	$family = $font['font-family'];
+
+	if ( ! \Kirki\Module\Webfonts\Fonts::is_google_font( $family ) ) {
+		return;
+	}
+
+	$weight = 'italic' === $font['variant'] ? '400i' : str_replace( array( 'regular', 'bold', 'italic' ), array( '400', '', 'i' ), $font['variant'] );
+	$url    = 'https://fonts.googleapis.com/css?family=' . str_replace( ' ', '+', trim( $family ) ) . ':' . $weight . '&subset=cyrillic,cyrillic-ext,devanagari,greek,greek-ext,khmer,latin,latin-ext,vietnamese,hebrew,arabic,bengali,gujarati,tamil,telugu,thai&display=swap';
+
+	wp_enqueue_style( 'flash-editor-googlefonts', $url );
+}
+add_action( 'enqueue_block_assets', 'flash_block_editor_fonts' );
 
 // Theme version.
 $flash_theme = wp_get_theme();
