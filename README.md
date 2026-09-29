@@ -1,10 +1,10 @@
 
 === Flash ===
 Author: ThemeGrill
-Requires at least: WordPress 4.3
+Requires at least: WordPress 5.8
 Version: 1.4.12
-Tested up to: 6.8
-Requires PHP: 5.6
+Tested up to: 7.1
+Requires PHP: 7.4
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 Tags: one-column, two-columns, left-sidebar, right-sidebar, grid-layout, custom-background, custom-colors, custom-menu, custom-logo, featured-images, footer-widgets, full-width-template, theme-options, threaded-comments, translation-ready, blog, e-commerce
