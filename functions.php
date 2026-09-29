@@ -145,7 +145,16 @@ function flash_block_editor_dynamic_css() {
 
 	$font = wp_parse_args( get_theme_mod( 'flash_body_font', $default ), $default );
 
-	return '.editor-styles-wrapper, .editor-styles-wrapper > * { font-family: ' . esc_html( $font['font-family'] ) . ', sans-serif; font-size: ' . esc_html( $font['font-size'] ) . '; line-height: ' . esc_html( $font['line-height'] ) . '; letter-spacing: ' . esc_html( $font['letter-spacing'] ) . '; color: ' . esc_html( $font['color'] ) . '; text-transform: ' . esc_html( $font['text-transform'] ) . '; text-align: ' . esc_html( $font['text-align'] ) . '; }';
+	$family = $font['font-family'];
+	if ( false !== strpos( $family, ' ' ) && false === strpos( $family, '"' ) ) {
+		$family = '"' . $family . '"';
+	}
+
+	$font_weight = str_replace( 'italic', '', $font['variant'] );
+	$font_weight = in_array( $font_weight, array( '', 'regular' ), true ) ? '400' : $font_weight;
+	$font_style  = false !== strpos( $font['variant'], 'italic' ) ? 'italic' : 'normal';
+
+	return '.editor-styles-wrapper, .editor-styles-wrapper > * { font-family: ' . wp_strip_all_tags( $family ) . ', sans-serif; font-size: ' . wp_strip_all_tags( $font['font-size'] ) . '; font-weight: ' . wp_strip_all_tags( $font_weight ) . '; font-style: ' . wp_strip_all_tags( $font_style ) . '; line-height: ' . wp_strip_all_tags( $font['line-height'] ) . '; letter-spacing: ' . wp_strip_all_tags( $font['letter-spacing'] ) . '; color: ' . wp_strip_all_tags( $font['color'] ) . '; text-transform: ' . wp_strip_all_tags( $font['text-transform'] ) . '; text-align: ' . wp_strip_all_tags( $font['text-align'] ) . '; }';
 }
 
 function flash_block_editor_fonts() {
