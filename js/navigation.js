@@ -110,7 +110,7 @@
  * Scrollbar on small device menu when header is sticky
  *
  */
-jQuery( window ).load( function () {
+jQuery( window ).on( 'load', function () {
 
 	// Check screen width and if sticky header
 	if ( window.matchMedia( '(max-width: 980px)' ).matches && jQuery( '#masthead-sticky-wrapper' ).length >= 1 ) {
