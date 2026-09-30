@@ -325,6 +325,7 @@ require get_template_directory() . '/inc/extras.php';
 
 // Kirki Toolkit.
 require get_template_directory() . '/inc/kirki/kirki.php';
+require get_template_directory() . '/inc/kirki-local-fonts.php';
 
 // Customizer additions.s
 require get_template_directory() . '/inc/customizer.php';
