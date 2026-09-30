@@ -133,15 +133,11 @@ add_action( 'enqueue_block_editor_assets', 'flash_block_editor_styles', 1, 1 );
 
 function flash_block_editor_dynamic_css() {
 	$default = array(
-		'font-family'    => 'Montserrat',
-		'variant'        => 'regular',
-		'font-size'      => '14px',
-		'line-height'    => '1.5',
-		'letter-spacing' => '0',
-		'text-transform' => 'none',
-		'text-align'     => 'inherit',
+		'font-family' => 'Montserrat',
+		'variant'     => 'regular',
 	);
 
+	// The free theme's body typography only offers family and variant, so only those reach post content.
 	$font = wp_parse_args( get_theme_mod( 'flash_body_font', $default ), $default );
 
 	$family = $font['font-family'];
@@ -153,11 +149,39 @@ function flash_block_editor_dynamic_css() {
 	$font_weight = in_array( $font_weight, array( '', 'regular' ), true ) ? '400' : $font_weight;
 	$font_style  = false !== strpos( $font['variant'], 'italic' ) ? 'italic' : 'normal';
 
-	return '.editor-styles-wrapper, .editor-styles-wrapper > * { font-family: ' . wp_strip_all_tags( $family ) . ', sans-serif; font-size: ' . wp_strip_all_tags( $font['font-size'] ) . '; font-weight: ' . wp_strip_all_tags( $font_weight ) . '; font-style: ' . wp_strip_all_tags( $font_style ) . '; line-height: ' . wp_strip_all_tags( $font['line-height'] ) . '; letter-spacing: ' . wp_strip_all_tags( $font['letter-spacing'] ) . '; text-transform: ' . wp_strip_all_tags( $font['text-transform'] ) . '; text-align: ' . wp_strip_all_tags( $font['text-align'] ) . '; }';
+	$css = '.editor-styles-wrapper, .editor-styles-wrapper > * { font-family: ' . wp_strip_all_tags( $family ) . ', sans-serif; font-weight: ' . wp_strip_all_tags( $font_weight ) . '; font-style: ' . wp_strip_all_tags( $font_style ) . '; }';
+
+	/*
+	 * The front end colors post text and headings with Colors > Heading Colors > Headings
+	 * (or the color scheme's text color), and only overrides the stylesheet's #606060 when
+	 * it differs from the default. The editor follows the same rule.
+	 */
+	$color_scheme = flash_get_color_scheme();
+	$main_color   = get_theme_mod( 'main_text_color', $color_scheme[2] );
+
+	if ( 'default' !== get_theme_mod( 'color_scheme', 'default' ) || $main_color !== $color_scheme[2] ) {
+		$css .= '.editor-styles-wrapper, .editor-styles-wrapper > * { color: ' . wp_strip_all_tags( $main_color ) . '; }';
+	}
+
+	// Primary Color: the front end only colors links in post content when it differs from the scheme default.
+	$link_color = get_theme_mod( 'link_color', $color_scheme[1] );
+
+	if ( $link_color !== $color_scheme[1] ) {
+		$css .= '.editor-styles-wrapper a { color: ' . wp_strip_all_tags( $link_color ) . '; }';
+	}
+
+	return $css;
 }
 
 function flash_block_editor_fonts() {
-	if ( ! is_admin() ) {
+	// Only load the canvas font in the block editor. Kirki's font helper is missing when another Kirki version takes over.
+	if ( ! is_admin() || ! class_exists( '\Kirki\Module\Webfonts\Fonts' ) ) {
+		return;
+	}
+
+	$screen = get_current_screen();
+
+	if ( ! $screen || ! $screen->is_block_editor() ) {
 		return;
 	}
 
