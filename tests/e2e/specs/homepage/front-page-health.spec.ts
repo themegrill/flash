@@ -30,6 +30,47 @@ test("front page serves with no console errors and the preloader clears @fresh @
 /**
  * @area homepage
  * @tier fresh
+ * @source themegrill/flash-pro#21
+ * @guards themegrill/flash-pro#21
+ * @why functions.php:flash_scripts() used to enqueue css/solid.min.css,
+ *      css/regular.min.css and css/brands.min.css alongside css/all.min.css,
+ *      even though all.min.css already ships its own byte-identical copy of
+ *      every rule (and @font-face) those three files contain - verified by
+ *      diffing every rule block between the files. Guards the actual enqueue
+ *      change (the three redundant requests must be gone, the two real ones
+ *      must remain) and that the header search icon (searchform.php /
+ *      header.php) still resolves a glyph.
+ */
+test("redundant Font Awesome stylesheets are no longer requested and the header search icon still renders @fresh @homepage", async ({
+  page,
+}) => {
+  const faRequests: string[] = [];
+  page.on("request", (req) => {
+    const match = req.url().match(/\/css\/(all|solid|regular|brands|v4-shims)(?:\.min)?\.css/);
+    if (match) faRequests.push(match[1]);
+  });
+
+  await page.goto("/");
+  await waitForPreloader(page);
+
+  expect(faRequests, "all.min.css should still be requested").toContain("all");
+  expect(faRequests, "v4-shims.min.css should still be requested").toContain("v4-shims");
+  expect(faRequests, "solid.min.css is redundant with all.min.css").not.toContain("solid");
+  expect(faRequests, "regular.min.css is redundant with all.min.css").not.toContain("regular");
+  expect(faRequests, "brands.min.css is redundant with all.min.css").not.toContain("brands");
+
+  const icon = page.locator(".search-wrap .search-icon .fa-search");
+  await expect(icon).toBeVisible();
+  const glyph = await icon.evaluate(
+    (el) => getComputedStyle(el, "::before").content,
+  );
+  expect(glyph, "search icon glyph should still resolve").not.toBe("none");
+  expect(glyph.replace(/['"]/g, "").trim().length).toBeGreaterThan(0);
+});
+
+/**
+ * @area homepage
+ * @tier fresh
  * @source js/flash.js:121, js/navigation.js:113
  * @guards themegrill/flash-pro#82
  * @why jQuery(window).load(fn) is the pre-3.0 alias for the window `load`
