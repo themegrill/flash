@@ -118,7 +118,8 @@ jQuery( document ).ready(
 		);
 
 		// One Page Nav
-		jQuery( window ).load(
+		jQuery( window ).on(
+			'load',
 			function () {
 				var top_offset = jQuery( '#masthead-sticky-wrapper' ).height() - 1;
 				jQuery( '#site-navigation' ).onePageNav(
