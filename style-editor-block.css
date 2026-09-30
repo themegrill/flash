@@ -1,7 +1,7 @@
 /* Basic Block Editor CSS */
 .editor-styles-wrapper {
 	background-color: #ffffff;
-	color: #333;
+	color: #606060;
 	font-size: 14px;
 	font-family: Montserrat, sans-serif;
 	line-height: 1.5;
@@ -10,7 +10,7 @@
 
 .editor-styles-wrapper > * {
 	font-family: Montserrat, sans-serif;
-	color: #333;
+	color: #606060;
 }
 
 .editor-styles-wrapper .wp-block.editor-post-title__block .editor-post-title__input {

@@ -138,7 +138,6 @@ function flash_block_editor_dynamic_css() {
 		'font-size'      => '14px',
 		'line-height'    => '1.5',
 		'letter-spacing' => '0',
-		'color'          => '#333333',
 		'text-transform' => 'none',
 		'text-align'     => 'inherit',
 	);
@@ -154,7 +153,7 @@ function flash_block_editor_dynamic_css() {
 	$font_weight = in_array( $font_weight, array( '', 'regular' ), true ) ? '400' : $font_weight;
 	$font_style  = false !== strpos( $font['variant'], 'italic' ) ? 'italic' : 'normal';
 
-	return '.editor-styles-wrapper, .editor-styles-wrapper > * { font-family: ' . wp_strip_all_tags( $family ) . ', sans-serif; font-size: ' . wp_strip_all_tags( $font['font-size'] ) . '; font-weight: ' . wp_strip_all_tags( $font_weight ) . '; font-style: ' . wp_strip_all_tags( $font_style ) . '; line-height: ' . wp_strip_all_tags( $font['line-height'] ) . '; letter-spacing: ' . wp_strip_all_tags( $font['letter-spacing'] ) . '; color: ' . wp_strip_all_tags( $font['color'] ) . '; text-transform: ' . wp_strip_all_tags( $font['text-transform'] ) . '; text-align: ' . wp_strip_all_tags( $font['text-align'] ) . '; }';
+	return '.editor-styles-wrapper, .editor-styles-wrapper > * { font-family: ' . wp_strip_all_tags( $family ) . ', sans-serif; font-size: ' . wp_strip_all_tags( $font['font-size'] ) . '; font-weight: ' . wp_strip_all_tags( $font_weight ) . '; font-style: ' . wp_strip_all_tags( $font_style ) . '; line-height: ' . wp_strip_all_tags( $font['line-height'] ) . '; letter-spacing: ' . wp_strip_all_tags( $font['letter-spacing'] ) . '; text-transform: ' . wp_strip_all_tags( $font['text-transform'] ) . '; text-align: ' . wp_strip_all_tags( $font['text-align'] ) . '; }';
 }
 
 function flash_block_editor_fonts() {

@@ -15,6 +15,8 @@ test.use({ storageState: ADMIN_STATE });
  *      install this guards that the canvas renders the theme's own
  *      documented default font, size and color, and that the actual Google
  *      Font file is requested inside the iframe - not just declared in CSS.
+ *      Text color must equal what the front end gives post content (#606060
+ *      from style.css in the free theme): the editor used to stay #333.
  */
 test("the block editor canvas reflects the default body typography and loads the font @fresh @block-editor", async ({
   page,
@@ -36,7 +38,15 @@ test("the block editor canvas reflects the default body typography and loads the
 
   await expect(wrapper).toHaveCSS("font-family", /Montserrat/);
   await expect(wrapper).toHaveCSS("font-size", "14px");
-  await expect(wrapper).toHaveCSS("color", "rgb(51, 51, 51)");
+
+  // Front-end colour of post content, from the first post.
+  const front = await page.context().newPage();
+  await front.goto("/?p=1");
+  const content = front.locator(".entry-content").first();
+  test.skip((await content.count()) === 0, "needs a post with ID 1");
+  const frontColor = await content.evaluate((e) => getComputedStyle(e).color);
+  await front.close();
+  await expect(wrapper).toHaveCSS("color", frontColor);
 
   await fontRequest;
 });
