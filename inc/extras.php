@@ -218,14 +218,18 @@ if ( ! function_exists( 'flash_breadcrumbs' ) ) :
 					$slice_array   = array_slice( $category, -1 );
 					$last_category = array_pop( $slice_array );
 
-					// Get parent any categories and create array
-					$get_cat_parents = rtrim( get_category_parents( $last_category->term_id, true, ',' ), ',' );
-					$cat_parents     = explode( ',', $get_cat_parents );
+					// Get parent categories and the category itself, top-most ancestor first.
+					$cat_ancestors   = array_reverse( get_ancestors( $last_category->term_id, 'category' ) );
+					$cat_ancestors[] = $last_category->term_id;
 
 					// Loop through parent categories and store in variable $cat_display
 					$cat_display = '';
-					foreach ( $cat_parents as $parents ) {
-						$cat_display .= '<li class="trail-item item-category"><span>' . $parents . '</span></li>';
+					foreach ( $cat_ancestors as $cat_id ) {
+						$cat_term = get_term( $cat_id, 'category' );
+
+						if ( $cat_term && ! is_wp_error( $cat_term ) ) {
+							$cat_display .= '<li class="trail-item item-category"><span><a href="' . esc_url( get_category_link( $cat_id ) ) . '">' . esc_html( $cat_term->name ) . '</a></span></li>';
+						}
 					}
 				}
 
@@ -294,28 +298,28 @@ if ( ! function_exists( 'flash_breadcrumbs' ) ) :
 				// Day archive
 
 				// Year link
-				echo '<li class="trail-item"><a class="item-year" href="' . esc_url( get_year_link( get_the_time( __( 'Y', 'flash' ) ) ) ) . '" title="' . esc_attr( get_the_time( __( 'Y', 'flash' ) ) ) . '"><span>' . esc_html( get_the_time( __( 'Y', 'flash' ) ) ) . '</span></a></li>';
+				echo '<li class="trail-item"><a class="item-year" href="' . esc_url( get_year_link( get_the_time( 'Y' ) ) ) . '" title="' . esc_attr( get_the_time( 'Y' ) ) . '"><span>' . esc_html( get_the_time( 'Y' ) ) . '</span></a></li>';
 
 				// Month link
-				echo '<li class="trail-item"><a class="item-month" href="' . esc_url( get_month_link( get_the_time( __( 'Y', 'flash' ) ), get_the_time( __( 'M', 'flash' ) ) ) ) . '" title="' . esc_attr( get_the_time( __( 'M', 'flash' ) ) ) . '"><span>' . esc_html( get_the_time( __( 'M', 'flash' ) ) ) . '</span></a></li>';
+				echo '<li class="trail-item"><a class="item-month" href="' . esc_url( get_month_link( get_the_time( 'Y' ), get_the_time( 'm' ) ) ) . '" title="' . esc_attr( get_the_time( 'M' ) ) . '"><span>' . esc_html( get_the_time( 'M' ) ) . '</span></a></li>';
 
 				// Day display
-				echo '<li class="trail-item"><span>' . esc_html( get_the_time( __( 'jS', 'flash' ) ) . get_the_time( __( 'M', 'flash' ) ) ) . '</span></li>';
+				echo '<li class="trail-item"><span>' . esc_html( get_the_time( 'jS' ) . ' ' . get_the_time( 'M' ) ) . '</span></li>';
 
 			} elseif ( is_month() ) {
 
 				// Month Archive
 
 				// Year link
-				echo '<li class="trail-item"><a class="item-year" href="' . esc_url( get_year_link( get_the_time( __( 'Y', 'flash' ) ) ) ) . '" title="' . esc_attr( get_the_time( __( 'Y', 'flash' ) ) ) . '"><span>' . esc_html( get_the_time( __( 'Y', 'flash' ) ) ) . '</span></a></li>';
+				echo '<li class="trail-item"><a class="item-year" href="' . esc_url( get_year_link( get_the_time( 'Y' ) ) ) . '" title="' . esc_attr( get_the_time( 'Y' ) ) . '"><span>' . esc_html( get_the_time( 'Y' ) ) . '</span></a></li>';
 
 				// Month link
-				echo '<li class="trail-item"><span>' . esc_html( get_the_time( __( 'M', 'flash' ) ) ) . '</span></li>';
+				echo '<li class="trail-item"><span>' . esc_html( get_the_time( 'M' ) ) . '</span></li>';
 
 			} elseif ( is_year() ) {
 
 				// Display year archive
-				echo '<li class="trail-item"><span>' . esc_html( get_the_time( __( 'Y', 'flash' ) ) ) . '</span></li>';
+				echo '<li class="trail-item"><span>' . esc_html( get_the_time( 'Y' ) ) . '</span></li>';
 
 			} elseif ( is_author() ) {
 
@@ -326,7 +330,9 @@ if ( ! function_exists( 'flash_breadcrumbs' ) ) :
 				$userdata = get_userdata( $author );
 
 				// Display author name
-				echo '<li class="trail-item"><span>' . esc_html( $userdata->display_name ) . '</span></li>';
+				if ( $userdata ) {
+					echo '<li class="trail-item"><span>' . esc_html( $userdata->display_name ) . '</span></li>';
+				}
 
 			} elseif ( get_query_var( 'paged' ) ) {
 
