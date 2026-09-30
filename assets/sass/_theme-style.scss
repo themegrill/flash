@@ -867,6 +867,18 @@ common
 
 .site {
 	background-color: #fff;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+.site-header,
+.site-footer {
+	flex-shrink: 0;
+}
+
+.site-content {
+	flex: 1 0 auto;
 }
 
 /*--------------------------------------------------------------
@@ -1645,6 +1657,7 @@ a,
 		background: #fff none repeat scroll 0 0;
 		box-shadow: 0 0 12px 1px rgba(0, 0, 0, 0.3);
 		margin: 30px 0;
+		min-height: calc(100vh - 60px);
 		position: relative;
 	}
 

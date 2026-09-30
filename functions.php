@@ -121,10 +121,88 @@ add_action( 'after_setup_theme', 'flash_setup' );
  * @since Flash 1.3.5
  */
 function flash_block_editor_styles() {
-	wp_enqueue_style( 'flash-editor-googlefonts', '//fonts.googleapis.com/css?family=Montserrat:400,700&display=swap' );
 	wp_enqueue_style( 'flash-block-editor-styles', get_template_directory_uri() . '/style-editor-block.css' );
+
+	$editor_css = flash_block_editor_dynamic_css();
+
+	if ( $editor_css ) {
+		wp_add_inline_style( 'flash-block-editor-styles', $editor_css );
+	}
 }
 add_action( 'enqueue_block_editor_assets', 'flash_block_editor_styles', 1, 1 );
+
+function flash_block_editor_dynamic_css() {
+	$default = array(
+		'font-family' => 'Montserrat',
+		'variant'     => 'regular',
+	);
+
+	// The free theme's body typography only offers family and variant, so only those reach post content.
+	$font = wp_parse_args( get_theme_mod( 'flash_body_font', $default ), $default );
+
+	$family = $font['font-family'];
+	if ( false !== strpos( $family, ' ' ) && false === strpos( $family, '"' ) ) {
+		$family = '"' . $family . '"';
+	}
+
+	$font_weight = str_replace( 'italic', '', $font['variant'] );
+	$font_weight = in_array( $font_weight, array( '', 'regular' ), true ) ? '400' : $font_weight;
+	$font_style  = false !== strpos( $font['variant'], 'italic' ) ? 'italic' : 'normal';
+
+	$css = '.editor-styles-wrapper, .editor-styles-wrapper > * { font-family: ' . wp_strip_all_tags( $family ) . ', sans-serif; font-weight: ' . wp_strip_all_tags( $font_weight ) . '; font-style: ' . wp_strip_all_tags( $font_style ) . '; }';
+
+	/*
+	 * The front end colors post text and headings with Colors > Heading Colors > Headings
+	 * (or the color scheme's text color), and only overrides the stylesheet's #606060 when
+	 * it differs from the default. The editor follows the same rule.
+	 */
+	$color_scheme = flash_get_color_scheme();
+	$main_color   = get_theme_mod( 'main_text_color', $color_scheme[2] );
+
+	if ( 'default' !== get_theme_mod( 'color_scheme', 'default' ) || $main_color !== $color_scheme[2] ) {
+		$css .= '.editor-styles-wrapper, .editor-styles-wrapper > * { color: ' . wp_strip_all_tags( $main_color ) . '; }';
+	}
+
+	// Primary Color: the front end only colors links in post content when it differs from the scheme default.
+	$link_color = get_theme_mod( 'link_color', $color_scheme[1] );
+
+	if ( $link_color !== $color_scheme[1] ) {
+		$css .= '.editor-styles-wrapper a { color: ' . wp_strip_all_tags( $link_color ) . '; }';
+	}
+
+	return $css;
+}
+
+function flash_block_editor_fonts() {
+	// Only load the canvas font in the block editor. Kirki's font helper is missing when another Kirki version takes over.
+	if ( ! is_admin() || ! class_exists( '\Kirki\Module\Webfonts\Fonts' ) ) {
+		return;
+	}
+
+	$screen = get_current_screen();
+
+	if ( ! $screen || ! $screen->is_block_editor() ) {
+		return;
+	}
+
+	$default = array(
+		'font-family' => 'Montserrat',
+		'variant'     => 'regular',
+	);
+
+	$font   = wp_parse_args( get_theme_mod( 'flash_body_font', $default ), $default );
+	$family = $font['font-family'];
+
+	if ( ! \Kirki\Module\Webfonts\Fonts::is_google_font( $family ) ) {
+		return;
+	}
+
+	$weight = 'italic' === $font['variant'] ? '400i' : str_replace( array( 'regular', 'bold', 'italic' ), array( '400', '', 'i' ), $font['variant'] );
+	$url    = 'https://fonts.googleapis.com/css?family=' . str_replace( ' ', '+', trim( $family ) ) . ':' . $weight . '&subset=cyrillic,cyrillic-ext,devanagari,greek,greek-ext,khmer,latin,latin-ext,vietnamese,hebrew,arabic,bengali,gujarati,tamil,telugu,thai&display=swap';
+
+	wp_enqueue_style( 'flash-editor-googlefonts', $url );
+}
+add_action( 'enqueue_block_assets', 'flash_block_editor_fonts' );
 
 // Theme version.
 $flash_theme = wp_get_theme();
@@ -137,17 +215,32 @@ if ( ! function_exists( 'flash_content_width' ) ) :
 	 * @global int $content_width
 	 **/
 	function flash_content_width() {
-		$content_width = 780;
-
-		$classes = flash_get_layout();
-		if ( $classes == 'full-width' ) {
-			$content_width = 1200;
-		}
-
-		$GLOBALS['content_width'] = apply_filters( 'flash_content_width', $content_width );
+		$GLOBALS['content_width'] = apply_filters( 'flash_content_width', 780 );
 	}
 
+	// Sets the theme's own default early, so wp-admin (image size caps, the block
+	// editor) and REST API requests -- which never reach template_redirect -- still
+	// get a value.
 	add_action( 'after_setup_theme', 'flash_content_width', 0 );
+endif;
+
+if ( ! function_exists( 'flash_content_width_for_layout' ) ) :
+	/**
+	 * Widen content_width for a full-width page's actual frontend render.
+	 *
+	 * Run on template_redirect, not after_setup_theme: flash_get_layout() relies
+	 * on is_page()/is_single()/$post, which aren't reliable until the main query
+	 * has been parsed.
+	 *
+	 * @global int $content_width
+	 **/
+	function flash_content_width_for_layout() {
+		if ( 'full-width' == flash_get_layout() ) {
+			$GLOBALS['content_width'] = apply_filters( 'flash_content_width', 1200 );
+		}
+	}
+
+	add_action( 'template_redirect', 'flash_content_width_for_layout' );
 endif;
 
 /**
@@ -250,21 +343,6 @@ function flash_scripts() {
 			'file'    => '/all',
 			'version' => '6.7.2',
 		),
-		array(
-			'handle'  => 'font-awesome-solid',
-			'file'    => '/solid',
-			'version' => '6.7.2',
-		),
-		array(
-			'handle'  => 'font-awesome-regular',
-			'file'    => '/regular',
-			'version' => '6.7.2',
-		),
-		array(
-			'handle'  => 'font-awesome-brands',
-			'file'    => '/brands',
-			'version' => '6.7.2',
-		),
 	);
 
 	foreach ( $font_awesome_styles as $style ) {
@@ -325,6 +403,7 @@ require get_template_directory() . '/inc/extras.php';
 
 // Kirki Toolkit.
 require get_template_directory() . '/inc/kirki/kirki.php';
+require get_template_directory() . '/inc/kirki-local-fonts.php';
 
 // Customizer additions.s
 require get_template_directory() . '/inc/customizer.php';

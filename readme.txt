@@ -3,7 +3,6 @@ Author: ThemeGrill
 Requires at least: WordPress 5.8
 Version: 1.5.0
 Tested up to: 7.1
-Requires at least: 5.0
 Requires PHP: 7.4
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
@@ -82,26 +81,26 @@ Unless otherwise specified, all the theme files, scripts and images including th
 
 == Changelog ==
 = Version 1.5.0 - 2026-10-01 =
-
-- Dev - WordPress 7.1 compatibility.
-- Dev - Replace deprecated jQuery load handlers.
-- Dev - Remove unused Font Awesome style files.
-- Dev - Minimum WordPress version to 5.8 and PHP version to 7.4.
-- Tweak - Load the block editor Google font based on the selected body font.
-- Tweak - Improve performance of the theme review notice cleanup on sites with many users.
-- Fix - Breadcrumb category trail not linking parent categories.
-- Fix - Footer not sticking to the bottom of the page on short content.
-- Fix - Content width not being applied correctly in the admin and block editor.
-- Fix - Fatal error in the header cart when WooCommerce cart is not yet initialized.
-- Fix - Categorized blog cache not refreshing when categories are created or deleted.
-- Fix - Breadcrumb date archives showing untranslated or malformed dates and a PHP notice on author archives.
-- Fix - Block editor typography (fonts, sizes, and colors) didn't reflect the Customizer's configured settings.
+* Dev - WordPress 7.1 compatibility.
+* Dev - Replace deprecated jQuery load handlers.
+* Dev - Remove unused Font Awesome style files.
+* Dev - Minimum WordPress version to 5.8 and PHP version to 7.4.
+* Tweak - Load the block editor Google font based on the selected body font.
+* Tweak - Improve performance of the theme review notice cleanup on sites with many users.
+* Fix - Breadcrumb category trail not linking parent categories.
+* Fix - Footer not sticking to the bottom of the page on short content.
+* Fix - Content width not being applied correctly in the admin and block editor.
+* Fix - Fatal error in the header cart when WooCommerce cart is not yet initialized.
+* Fix - Categorized blog cache not refreshing when categories are created or deleted.
+* Fix - Breadcrumb date archives showing untranslated or malformed dates and a PHP notice on author archives.
+* Fix - Block editor typography (fonts, sizes, and colors) didn't reflect the Customizer's configured settings.
 
 = Version 1.4.12 - 2025-08-12 =
 
 - Update - General security measure.
 
-- = Version 1.4.11 - 2025-06-27 =
+= Version 1.4.11 - 2025-06-27 =
+
 - Fix - Customizer section issue.
 
 = Version 1.4.10 - 2025-06-17 =
@@ -119,7 +118,9 @@ Unless otherwise specified, all the theme files, scripts and images including th
 = Version 1.4.7 - 2024-09-11 =
 
 - Update - Twitter icon.
-- = Version 1.4.6 - 2024-04-02 =
+
+= Version 1.4.6 - 2024-04-02 =
+
 - Fix - Primary color option not affecting Preloader.
 - Fix - Dashboard style issue.
 
@@ -366,9 +367,7 @@ Unless otherwise specified, all the theme files, scripts and images including th
 - Fix - Menu Spacing Issue
 
 = 1.0.1 - 2016-11-16 =
-
-- Adds TGM Activation File to recommend Flash Toolkit and SiteOrigin Pagebuilder
+* Adds TGM Activation File to recommend Flash Toolkit and SiteOrigin Pagebuilder
 
 = 1.0.0 - 2016-10-27 =
-
-- Initial Release
+* Initial Release

@@ -193,6 +193,12 @@
       "js/isotope*.js",
       "js/waypoints*.js",
       "js/jquery.counterup*.js"
+    ],
+    "block-editor": [
+      "functions.php",
+      "inc/customizer.php",
+      "inc/kirki/**",
+      "style-editor-block.css"
     ]
   }
 }

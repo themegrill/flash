@@ -37,6 +37,10 @@ function flash_wc_wrapper_end() {
 add_filter( 'woocommerce_add_to_cart_fragments', 'flash_woocommerce_header_add_to_cart_fragment' );
 
 function flash_woocommerce_header_add_to_cart_fragment( $fragments ) {
+	if ( ! isset( WC()->cart ) ) {
+		return $fragments;
+	}
+
 	ob_start();
 	$cart_url = function_exists( 'wc_get_cart_url' ) ? wc_get_cart_url() : WC()->cart->get_cart_url();
 	?>
@@ -50,17 +54,4 @@ function flash_woocommerce_header_add_to_cart_fragment( $fragments ) {
 
 	$fragments['div.flash-cart-views'] = ob_get_clean();
 	return $fragments;
-}
-
-/**
- * Check if the current viewed page is of WooCommerce
- *
- * @return void
- */
-function flash_is_woocommerce_pages() {
-	if ( is_shop() || is_product() || is_product_category() || is_product_tag() ) {
-		return true;
-	}
-
-	return false;
 }
