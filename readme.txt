@@ -92,6 +92,7 @@ Unless otherwise specified, all the theme files, scripts and images including th
 * Fix - Content width not being applied correctly in the admin and block editor.
 * Fix - Fatal error in the header cart when WooCommerce cart is not yet initialized.
 * Fix - Categorized blog cache not refreshing when categories are created or deleted.
+* Fix - Homepage Slider not initializing when Elementor is active (Swiper script handle collision).
 * Fix - Breadcrumb date archives showing untranslated or malformed dates and a PHP notice on author archives.
 * Fix - Block editor typography (fonts, sizes, and colors) didn't reflect the Customizer's configured settings.
 
