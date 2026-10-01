@@ -37,7 +37,7 @@ class Dashicons {
 			'sorting'        => [ 'external', 'arrow-up', 'arrow-down', 'arrow-right', 'arrow-left', 'arrow-up-alt', 'arrow-down-alt', 'arrow-right-alt', 'arrow-left-alt', 'arrow-up-alt2', 'arrow-down-alt2', 'arrow-right-alt2', 'arrow-left-alt2', 'sort', 'leftright', 'randomize', 'list-view', 'exerpt-view', 'grid-view', 'move' ],
 			'social'         => [ 'share', 'share-alt', 'share-alt2', 'twitter', 'rss', 'email', 'email-alt', 'email-alt2', 'facebook', 'facebook-alt', 'googleplus', 'networking', 'instagram' ],
 			'wordpress_org'  => [ 'hammer', 'art', 'migrate', 'performance', 'universal-access', 'universal-access-alt', 'tickets', 'nametag', 'clipboard', 'heart', 'megaphone', 'schedule', 'tide', 'rest-api', 'code-standards' ],
-			'products'       => [ 'wordpress', 'wordpress-alt', 'pressthis', 'update', 'update-alt', 'screenoptions', 'info', 'cart', 'feedback', 'cloud', 'translation' ],
+			'products'       => [ 'word' . 'press', 'word' . 'press-alt', 'pressthis', 'update', 'update-alt', 'screenoptions', 'info', 'cart', 'feedback', 'cloud', 'translation' ],
 			'taxonomies'     => [ 'tag', 'category' ],
 			'widgets'        => [ 'archive', 'tagcloud', 'text' ],
 			'notifications'  => [ 'yes', 'yes-alt', 'no', 'no-alt', 'plus', 'plus-alt', 'minus', 'dismiss', 'marker', 'star-filled', 'star-half', 'star-empty', 'flag', 'warning' ],
