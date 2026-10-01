@@ -32,9 +32,29 @@ function flash_kirki_skip_fonts_when_unwritable( $fonts ) {
 		return $fonts;
 	}
 
-	return flash_kirki_local_fonts_ready( $fonts ) ? $fonts : array();
+	$local = array();
+
+	foreach ( $fonts as $family => $weights ) {
+		if ( flash_kirki_local_fonts_ready( array( $family => $weights ) ) ) {
+			$local[ $family ] = $weights;
+		} else {
+			flash_kirki_enqueue_remote_font( $family, $weights );
+		}
+	}
+
+	return $local;
 }
 add_filter( 'kirki_enqueue_google_fonts', 'flash_kirki_skip_fonts_when_unwritable' );
+
+function flash_kirki_enqueue_remote_font( $family, $weights ) {
+	foreach ( $weights as $key => $value ) {
+		$weights[ $key ] = 'italic' === $value ? '400i' : str_replace( array( 'regular', 'bold', 'italic' ), array( '400', '', 'i' ), $value );
+	}
+
+	$url = 'https://fonts.googleapis.com/css?family=' . str_replace( ' ', '+', trim( $family ) ) . ':' . implode( ',', $weights ) . '&subset=cyrillic,cyrillic-ext,devanagari,greek,greek-ext,khmer,latin,latin-ext,vietnamese,hebrew,arabic,bengali,gujarati,tamil,telugu,thai&display=swap';
+
+	wp_enqueue_style( 'flash-kirki-remote-' . sanitize_key( $family ), $url );
+}
 
 function flash_kirki_schedule_font_prewarm() {
 	if ( ! flash_kirki_local_fonts_ready() ) {
@@ -45,7 +65,9 @@ function flash_kirki_schedule_font_prewarm() {
 		wp_schedule_single_event( time(), 'flash_kirki_prewarm_fonts' );
 	}
 
-	spawn_cron();
+	if ( ! defined( 'DISABLE_WP_CRON' ) || ! DISABLE_WP_CRON ) {
+		spawn_cron();
+	}
 }
 add_action( 'customize_save_after', 'flash_kirki_schedule_font_prewarm' );
 
