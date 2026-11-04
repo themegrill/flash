@@ -85,3 +85,5 @@
 		} );
 	} );
 } )( wp.customize );
+
+// Pilot test.
