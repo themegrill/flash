@@ -52,3 +52,5 @@ get_header(); ?>
 get_sidebar();
 get_sidebar( 'left' );
 get_footer();
+
+// Pilot test: harmless change to trigger the lint workflow.

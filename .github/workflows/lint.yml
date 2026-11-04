@@ -1,0 +1,12 @@
+name: Lint
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+
+jobs:
+  lint:
+    # PILOT: points at the unmerged branch; switch to @master once themegrill/workflows#2 merges.
+    uses: themegrill/workflows/.github/workflows/lint.yml@add-shared-lint
+    with:
+      php-version: '7.4'
